@@ -1,0 +1,187 @@
+{
+  "name": "Pharma & Biotech Clinical Trials, OpenFDA Recalls & NPI Provider Lead Radar (3-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Pharma & Biotech Clinical Trials, OpenFDA Recalls & NPI Provider Lead Radar (3-Actor Cascade)\n\nDaily life-sciences intelligence pipeline for biotech BD teams and healthcare funds: extracts Phase 2/3 studies on ClinicalTrials.gov, cross-checks OpenFDA adverse events/recalls, and enriches healthcare NPI providers.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/us-clinical-trials-biotech-radar`](https://apify.com/b2b-quant-apis/us-clinical-trials-biotech-radar)\n- [`b2b-quant-apis/us-fda-recalls-safety-monitor`](https://apify.com/b2b-quant-apis/us-fda-recalls-safety-monitor)\n- [`b2b-quant-apis/us-healthcare-npi-provider-lead-enricher`](https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "3b858e16-b046-55d7-9134-6cedfdce05d0",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "81746b8e-126f-5e0c-b308-91918c7abe1d",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"conditions\": [\n    \"oncology\",\n    \"obesity\",\n    \"alzheimer\"\n  ],\n  \"phases\": [\n    \"PHASE2\",\n    \"PHASE3\"\n  ],\n  \"max_studies\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "e1fd3f27-32fb-59dd-bff7-e08eb81651d9",
+      "name": "Step 1: us-clinical-trials-biotech-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fda-recalls-safety-monitor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"drug_names\": [\n    \"ozempic\",\n    \"semaglutide\",\n    \"eliquis\"\n  ],\n  \"include_recalls\": true,\n  \"max_results\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "40409579-193a-5e4b-af67-2ae5521cac9f",
+      "name": "Step 2: us-fda-recalls-safety-monitor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-healthcare-npi-provider-lead-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"taxonomies\": [\n    \"Cardiology\",\n    \"Dermatology\"\n  ],\n  \"state\": \"NY\",\n  \"max_results\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "fd6f7ce9-023c-519b-bc96-2f5027b67fdc",
+      "name": "Step 3: us-healthcare-npi-provider-lead-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '03_pharma_biotech_patent_clinical_radar', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "2368b92f-735b-5865-88e8-c8d461e2015c",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: us-clinical-trials-biotech-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: us-clinical-trials-biotech-radar": {
+      "main": [
+        [
+          {
+            "node": "Step 2: us-fda-recalls-safety-monitor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: us-fda-recalls-safety-monitor": {
+      "main": [
+        [
+          {
+            "node": "Step 3: us-healthcare-npi-provider-lead-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: us-healthcare-npi-provider-lead-enricher": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/us-clinical-trials-biotech-radar",
+      "b2b-quant-apis/us-fda-recalls-safety-monitor",
+      "b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.09
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

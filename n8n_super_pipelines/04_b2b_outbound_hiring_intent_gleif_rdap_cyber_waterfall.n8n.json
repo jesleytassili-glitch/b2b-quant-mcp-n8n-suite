@@ -1,0 +1,221 @@
+{
+  "name": "B2B Outbound Hiring Intent, GLEIF Corporate KYB, ICANN RDAP & CISA KEV Cyber Waterfall (4-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## B2B Outbound Hiring Intent, GLEIF Corporate KYB, ICANN RDAP & CISA KEV Cyber Waterfall (4-Actor Cascade)\n\nHigh-converting B2B outbound GTM and security waterfall: detects tech companies actively hiring engineers on Greenhouse ATS, verifies their global legal entity via GLEIF LEI, audits domain trust via ICANN RDAP, and flags CISA KEV vulnerabilities.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/multi-ats-tech-job-board-hiring-radar`](https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar)\n- [`b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb`](https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb)\n- [`b2b-quant-apis/icann-rdap-domain-whois-brand-recon`](https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon)\n- [`b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor`](https://apify.com/b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "8a78469f-7808-5ce0-80e1-64974be3e56b",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "a65ca8a5-fb2c-5354-b07f-f9a9d742faa0",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyBoards\": \"stripe,cloudflare\",\n  \"keyword\": \"engineer\",\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "f6bd0877-feec-56bf-b73d-f06a27439306",
+      "name": "Step 1: multi-ats-tech-job-board-hiring-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~global-gleif-lei-corporate-ownership-kyb/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyName\": \"Microsoft\",\n  \"countryCode\": \"US\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "6059f7ad-33d1-5895-a3cd-f7704042f04b",
+      "name": "Step 2: global-gleif-lei-corporate-ownership-kyb",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": \"stripe.com,cloudflare.com,shopify.com\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "669ca5b6-7452-5d1f-9947-e9bcb52b97e6",
+      "name": "Step 3: icann-rdap-domain-whois-brand-recon",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~cisa-kev-ransomware-vulnerability-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"vendorKeyword\": \"Microsoft\",\n  \"onlyRansomware\": false,\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "8db534b2-c221-55fa-af78-9661b746153a",
+      "name": "Step 4: cisa-kev-ransomware-vulnerability-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '04_b2b_outbound_hiring_intent_gleif_rdap_cyber_waterfall', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "69d66c7f-7dd8-5a73-ab06-b51e001de4b1",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1580,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: multi-ats-tech-job-board-hiring-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: multi-ats-tech-job-board-hiring-radar": {
+      "main": [
+        [
+          {
+            "node": "Step 2: global-gleif-lei-corporate-ownership-kyb",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: global-gleif-lei-corporate-ownership-kyb": {
+      "main": [
+        [
+          {
+            "node": "Step 3: icann-rdap-domain-whois-brand-recon",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: icann-rdap-domain-whois-brand-recon": {
+      "main": [
+        [
+          {
+            "node": "Step 4: cisa-kev-ransomware-vulnerability-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 4: cisa-kev-ransomware-vulnerability-auditor": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+      "b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+      "b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+      "b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.08
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Global Vendor KYB, SEC EDGAR, FDIC BankFind, EU VAT, EPA & Brazil CNPJ Waterfall (5-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Global Vendor KYB, SEC EDGAR, FDIC BankFind, EU VAT, EPA & Brazil CNPJ Waterfall (5-Actor Cascade)\n\nEnd-to-end corporate vendor onboarding & continuous KYB waterfall. Screens counterparties across US SEC EDGAR filings, US EPA environmental compliance, FDIC bank institutional health, EU VIES cross-border VAT validity, and Brazil Receita Federal CNPJ/QSA.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/us-sec-edgar-filings-insider-radar`](https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar)\n- [`b2b-quant-apis/us-epa-echo-environmental-compliance-auditor`](https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor)\n- [`b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor`](https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor)\n- [`b2b-quant-apis/eu-vies-vat-tax-compliance-auditor`](https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor)\n- [`b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher`](https://apify.com/b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "8b00c95d-b92a-5bfe-8ec4-a377cd343eb1",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "b44c9de6-1d7d-506f-9ab0-c6a70846702e",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "5a37a1ae-2252-5bf5-aa80-b7466750eecf",
+      "name": "Step 1: us-sec-edgar-filings-insider-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"queries\": [\n    {\n      \"facility_name\": \"ExxonMobil\",\n      \"state\": \"TX\"\n    },\n    {\n      \"facility_name\": \"Chevron\",\n      \"state\": \"CA\"\n    }\n  ],\n  \"max_results_per_query\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "2fa498bd-f748-5d43-99c5-058d346775ce",
+      "name": "Step 2: us-epa-echo-environmental-compliance-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fdic-bankfind-institution-financial-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"bank_names\": [\n    \"JPMorgan Chase Bank\",\n    \"Bank of America\",\n    \"Citibank\"\n  ],\n  \"state\": \"\",\n  \"only_active\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "9bea5200-a0bb-5388-947f-c953d024ee00",
+      "name": "Step 3: us-fdic-bankfind-institution-financial-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-vies-vat-tax-compliance-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"vat_numbers\": [\n    \"IE6388047V\",\n    \"DE118607914\",\n    \"FR40303265045\"\n  ],\n  \"requester_vat\": \"\"\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "850806d8-f021-5a47-b4a5-4a3621fc42a9",
+      "name": "Step 4: eu-vies-vat-tax-compliance-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"cnpjs\": [\n    \"00000000000191\",\n    \"33000167000101\"\n  ],\n  \"include_qsa\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "42567a63-258a-5ca0-808b-aa87678436c1",
+      "name": "Step 5: brazil-b2b-cnpj-qsa-lead-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1580,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '01_global_vendor_kyb_compliance_waterfall', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "e51bb065-b087-5ae5-a362-f97069876a7b",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1860,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: us-sec-edgar-filings-insider-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: us-sec-edgar-filings-insider-radar": {
+      "main": [
+        [
+          {
+            "node": "Step 2: us-epa-echo-environmental-compliance-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: us-epa-echo-environmental-compliance-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 3: us-fdic-bankfind-institution-financial-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: us-fdic-bankfind-institution-financial-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 4: eu-vies-vat-tax-compliance-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 4: eu-vies-vat-tax-compliance-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 5: brazil-b2b-cnpj-qsa-lead-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 5: brazil-b2b-cnpj-qsa-lead-enricher": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+      "b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+      "b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+      "b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.125
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

@@ -1,0 +1,187 @@
+{
+  "name": "US Federal GovCon (SAM.gov) Daily B2B Lead Scraper + SEC & EPA Due Diligence (3-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## US Federal GovCon (SAM.gov) Daily B2B Lead Scraper + SEC & EPA Due Diligence (3-Actor Cascade)\n\nMonitors active US federal contract solicitations on SAM.gov every morning at 07:00 AM, enriches prime contractors with SEC EDGAR 10-K/8-K/Form 4 filings and EPA compliance history, and routes high-intent B2B opportunities to CRM.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/us-sam-gov-federal-procurement-auditor`](https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor)\n- [`b2b-quant-apis/us-sec-edgar-filings-insider-radar`](https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar)\n- [`b2b-quant-apis/us-epa-echo-environmental-compliance-auditor`](https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "24dedabe-a703-5c3b-b625-813453a6b8ff",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "7eb965e5-d242-529c-871f-7dd73f9d75a2",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"keyword\": \"cybersecurity\",\n  \"awardingAgency\": \"\",\n  \"minAwardAmount\": 50000,\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "37a6f552-651c-50ee-a4ad-3235cfab1d3a",
+      "name": "Step 1: us-sam-gov-federal-procurement-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "c111a666-e4dd-5afb-b01b-f792b73f7e21",
+      "name": "Step 2: us-sec-edgar-filings-insider-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"queries\": [\n    {\n      \"facility_name\": \"ExxonMobil\",\n      \"state\": \"TX\"\n    },\n    {\n      \"facility_name\": \"Chevron\",\n      \"state\": \"CA\"\n    }\n  ],\n  \"max_results_per_query\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "0602cb40-29a9-5068-bc54-1d9305dffbc7",
+      "name": "Step 3: us-epa-echo-environmental-compliance-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '02_us_federal_govcon_lead_enrichment_daily', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "c917ed07-e5d6-5883-b704-c42a61a575d0",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: us-sam-gov-federal-procurement-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: us-sam-gov-federal-procurement-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 2: us-sec-edgar-filings-insider-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: us-sec-edgar-filings-insider-radar": {
+      "main": [
+        [
+          {
+            "node": "Step 3: us-epa-echo-environmental-compliance-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: us-epa-echo-environmental-compliance-auditor": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+      "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.105
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

@@ -1,0 +1,2547 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "B2B Quant & Regulatory Compliance APIs (@b2b-quant-apis)",
+    "version": "1.2.0",
+    "description": "Suite of 15 stateless B2B regulatory, tax, healthcare, environmental, financial, and government procurement intelligence APIs across the United States, European Union, and Brazil.",
+    "contact": {
+      "name": "B2B Quant APIs",
+      "url": "https://apify.com/b2b-quant-apis"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Cloud Production Stateless Gateway"
+    }
+  ],
+  "security": [
+    {
+      "ApifyBearerAuth": []
+    },
+    {
+      "RapidApiProxyKey": []
+    }
+  ],
+  "paths": {
+    "/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_b2b_gov_procurement_pncp_radar",
+        "summary": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+        "description": "Extracts, filters, and enriches live Brazilian government public tenders (Pregão Eletrônico, Dispensa - Lei 14.133) from the official PNCP API with item-level pricing, ME/EPP flags, and LLM-ready RAG Markdown briefs. | PPE Event: `tender-analyzed` ($0.03 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/b2b_gov_procurement_pncp_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/b2b_gov_procurement_pncp_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_tax_reform_ncm_classtrib_auditor",
+        "summary": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+        "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts. | PPE Event: `tax-item-audited` ($0.01 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "ECOMMERCE"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_tax_reform_ncm_classtrib_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_tax_reform_ncm_classtrib_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~healthcare-tiss-xml-validator/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_healthcare_tiss_xml_validator",
+        "summary": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+        "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas). | PPE Event: `tiss-lot-validated` ($0.05 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/healthcare_tiss_xml_validator_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/healthcare_tiss_xml_validator_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-antt-freight-cte-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_antt_freight_cte_auditor",
+        "summary": "Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor",
+        "description": "Calculates the mandatory Brazilian ANTT minimum road freight floor (Lei 13.703/2018 - CCD x km + CC) and audits CT-e 4.00 XML invoices in batch to prevent automatic ANTT/SEFAZ fines. | PPE Event: `freight-audit-completed` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_antt_freight_cte_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_antt_freight_cte_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-healthcare-npi-provider-lead-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_healthcare_npi_provider_lead_enricher",
+        "summary": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+        "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers. | PPE Event: `npi-lead-enriched` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_healthcare_npi_provider_lead_enricher_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_healthcare_npi_provider_lead_enricher_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-fda-recalls-safety-monitor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_fda_recalls_safety_monitor",
+        "summary": "US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+        "description": "Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance. | PPE Event: `fda-recall-extracted` ($0.03 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "NEWS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_fda_recalls_safety_monitor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_fda_recalls_safety_monitor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~global-b2b-email-domain-security-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_global_b2b_email_domain_security_auditor",
+        "summary": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+        "description": "High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies. | PPE Event: `domain-email-audited` ($0.005 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/global_b2b_email_domain_security_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/global_b2b_email_domain_security_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_clinical_trials_biotech_radar",
+        "summary": "US ClinicalTrials.gov Biotech & Pharma Study Radar",
+        "description": "B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs. | PPE Event: `clinical-trial-extracted` ($0.04 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_clinical_trials_biotech_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_clinical_trials_biotech_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-nhtsa-vehicle-vin-recall-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_nhtsa_vehicle_vin_recall_auditor",
+        "summary": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+        "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs. | PPE Event: `vin-decoded-audited` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_nhtsa_vehicle_vin_recall_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_nhtsa_vehicle_vin_recall_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_b2b_cnpj_qsa_lead_enricher",
+        "summary": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+        "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details. | PPE Event: `cnpj-lead-enriched` ($0.015 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_b2b_cnpj_qsa_lead_enricher_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_b2b_cnpj_qsa_lead_enricher_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_sec_edgar_filings_insider_radar",
+        "summary": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+        "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents. | PPE Event: `sec-filing-analyzed` ($0.04 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_sec_edgar_filings_insider_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_sec_edgar_filings_insider_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~eu-vies-vat-tax-compliance-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_eu_vies_vat_tax_compliance_auditor",
+        "summary": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+        "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates. | PPE Event: `eu-vat-audited` ($0.015 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "ECOMMERCE"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/eu_vies_vat_tax_compliance_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/eu_vies_vat_tax_compliance_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_epa_echo_environmental_compliance_auditor",
+        "summary": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+        "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100). | PPE Event: `epa-facility-audited` ($0.03 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_epa_echo_environmental_compliance_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_epa_echo_environmental_compliance_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-fdic-bankfind-institution-financial-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_fdic_bankfind_institution_financial_auditor",
+        "summary": "US FDIC BankFind Institution & Solvency Risk Auditor",
+        "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams. | PPE Event: `fdic-bank-audited` ($0.025 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_fdic_bankfind_institution_financial_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_fdic_bankfind_institution_financial_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_sam_gov_federal_procurement_auditor",
+        "summary": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+        "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs. | PPE Event: `federal-contract-audited` ($0.035 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_sam_gov_federal_procurement_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_sam_gov_federal_procurement_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_multi_ats_tech_job_board_hiring_radar",
+        "summary": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+        "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams. | PPE Event: `job-signal-extracted` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "JOBS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/multi_ats_tech_job_board_hiring_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/multi_ats_tech_job_board_hiring_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~global-gleif-lei-corporate-ownership-kyb/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_global_gleif_lei_corporate_ownership_kyb",
+        "summary": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+        "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100). | PPE Event: `corporate-entity-audited` ($0.025 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/global_gleif_lei_corporate_ownership_kyb_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/global_gleif_lei_corporate_ownership_kyb_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_census_fcc_real_estate_geo_enricher",
+        "summary": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+        "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores. | PPE Event: `property-geo-enriched` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_census_fcc_real_estate_geo_enricher_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_census_fcc_real_estate_geo_enricher_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_icann_rdap_domain_whois_brand_recon",
+        "summary": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+        "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100). | PPE Event: `domain-whois-audited` ($0.015 USD).",
+        "tags": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "ECOMMERCE"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/icann_rdap_domain_whois_brand_recon_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/icann_rdap_domain_whois_brand_recon_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~cisa-kev-ransomware-vulnerability-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_cisa_kev_ransomware_vulnerability_auditor",
+        "summary": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar",
+        "description": "Audits IT vendors and software stacks against the official U.S. CISA Known Exploited Vulnerabilities (KEV) Catalog (Zero-Key). Flags active ransomware campaigns, BOD 22-01/26-04 patch deadlines, CWEs, and Threat Severity Scores (0-100). | PPE Event: `cve-vulnerability-audited` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cisa_kev_ransomware_vulnerability_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cisa_kev_ransomware_vulnerability_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApifyBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Apify API Token for direct or RapidAPI backend authentication."
+      },
+      "RapidApiProxyKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "RapidAPI subscriber key."
+      }
+    },
+    "schemas": {
+      "b2b_gov_procurement_pncp_radar_Input": {
+        "type": "object",
+        "title": "Brazil Gov Procurement & Bidding Radar (PNCP API)",
+        "description": "",
+        "properties": {
+          "uf": {
+            "type": "string",
+            "title": "State (UF)",
+            "description": "Two-letter Brazilian state code (e.g., SP, RJ, MG, PR, RS, SC, BA). Leave empty to search nationwide.",
+            "default": "SP"
+          },
+          "keywords": {
+            "type": "array",
+            "title": "Target Keywords (Filter by Product/Service)",
+            "description": "Optional list of keywords to filter tenders by object or item description (case-insensitive, accent-insensitive). Leave empty to return all tenders.",
+            "default": []
+          },
+          "codigoModalidadeContratacao": {
+            "type": "string",
+            "title": "Procurement Modality Code (Lei 14.133)",
+            "description": "6 = Pregão Eletrônico (Most common), 8 = Dispensa de Licitação, 4 = Concorrência Eletrônica.",
+            "default": "6",
+            "enum": [
+              "6",
+              "8",
+              "4",
+              "1",
+              "5",
+              "7",
+              "9"
+            ]
+          },
+          "dataInicial": {
+            "type": "string",
+            "title": "Start Date (YYYYMMDD)",
+            "description": "Publication start date in YYYYMMDD format. If omitted, defaults to 15 days ago.",
+            "default": ""
+          },
+          "dataFinal": {
+            "type": "string",
+            "title": "End Date (YYYYMMDD)",
+            "description": "Publication end date in YYYYMMDD format. If omitted, defaults to today.",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Tenders to Extract",
+            "description": "Maximum number of matched tenders to output (Pay-Per-Event cap protection).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 500
+          },
+          "fetchItems": {
+            "type": "boolean",
+            "title": "Enrich with Detailed Item List & Unit Prices",
+            "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
+            "default": true
+          }
+        },
+        "required": []
+      },
+      "b2b_gov_procurement_pncp_radar_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) Output Record",
+        "properties": {}
+      },
+      "brazil_tax_reform_ncm_classtrib_auditor_Input": {
+        "type": "object",
+        "title": "Brazil Tax Reform 2026 Auditor (NCM to cClassTrib & NF-e XML)",
+        "description": "",
+        "properties": {
+          "catalogItems": {
+            "type": "array",
+            "title": "Product Catalog Items (NCM + Description)",
+            "description": "List of products with 'ncm' (8 digits) and optional 'description' or 'sku' to map to 2026 IBS/CBS cClassTrib and CST.",
+            "default": [
+              {
+                "sku": "ITEM-001",
+                "ncm": "10063021",
+                "description": "Arroz beneficiado parboilizado tipo 1"
+              },
+              {
+                "sku": "ITEM-002",
+                "ncm": "30049099",
+                "description": "Medicamento para uso humano em doses"
+              },
+              {
+                "sku": "ITEM-003",
+                "ncm": "22030000",
+                "description": "Cerveja de malte em lata 350ml"
+              },
+              {
+                "sku": "ITEM-004",
+                "ncm": "84713012",
+                "description": "Notebook portátil para processamento de dados"
+              },
+              {
+                "sku": "ITEM-005",
+                "ncm": "49019900",
+                "description": "Livro impresso didático"
+              }
+            ]
+          },
+          "nfeXmlList": {
+            "type": "array",
+            "title": "NF-e / NFC-e XML Payloads (Optional)",
+            "description": "Optional list of raw NF-e / NFC-e XML strings to extract <det> items, validate 2026 <IBSCBS> tags, and map NCM -> cClassTrib.",
+            "default": []
+          },
+          "uf": {
+            "type": "string",
+            "title": "Reference State (UF)",
+            "description": "Two-letter Brazilian state for transition simulations (2026 test rate: 0.9% CBS + 0.1% IBS).",
+            "default": "SP"
+          }
+        },
+        "required": []
+      },
+      "brazil_tax_reform_ncm_classtrib_auditor_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor Output Record",
+        "properties": {}
+      },
+      "healthcare_tiss_xml_validator_Input": {
+        "type": "object",
+        "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Auto-Fixer",
+        "description": "",
+        "properties": {
+          "tissXmlPayloads": {
+            "type": "array",
+            "title": "TISS XML Batch Payloads (Raw XML Strings)",
+            "description": "List of ANS TISS XML strings to validate structure, check 8-digit TUSS codes, and recalculate the mandatory <epilogo><hash> MD5 checksum.",
+            "default": [
+              "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+            ]
+          },
+          "autoFixHash": {
+            "type": "boolean",
+            "title": "Auto-Recalculate and Repair ANS MD5 Hash",
+            "description": "If true, recalculates the official ANS TISS MD5 hash over the XML body content and outputs the repaired XML ready for health insurer upload.",
+            "default": true
+          }
+        },
+        "required": []
+      },
+      "healthcare_tiss_xml_validator_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer Output Record",
+        "properties": {}
+      },
+      "brazil_antt_freight_cte_auditor_Input": {
+        "type": "object",
+        "title": "Brazil ANTT Minimum Freight & CT-e XML Batch Auditor",
+        "description": "",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "title": "Route Simulations (Distance km, Axles, Cargo Type)",
+            "description": "List of freight operations to audit against the ANTT Minimum Freight Table (Tabela A - Lotação).",
+            "default": [
+              {
+                "routeId": "ROT-001",
+                "origin": "Campinas/SP",
+                "destination": "Goiânia/GO",
+                "distanceKm": 815,
+                "axles": 6,
+                "cargoType": "carga_geral",
+                "chargedFreightBRL": 6800.0
+              },
+              {
+                "routeId": "ROT-002",
+                "origin": "Rondonópolis/MT",
+                "destination": "Santos/SP",
+                "distanceKm": 1410,
+                "axles": 7,
+                "cargoType": "granel_solido",
+                "chargedFreightBRL": 9200.0
+              }
+            ]
+          },
+          "cteXmlList": {
+            "type": "array",
+            "title": "CT-e 4.00 XML Payloads (Optional)",
+            "description": "Optional list of raw CT-e XML strings to extract <vTPrest>, origin/destination, and audit ANTT compliance.",
+            "default": []
+          },
+          "defaultAxles": {
+            "type": "integer",
+            "title": "Default Fleet Axles (for CT-e XMLs without MDF-e axle count)",
+            "description": "Number of axles (2 to 9) to assume when auditing raw CT-e XML files.",
+            "default": 6,
+            "minimum": 2,
+            "maximum": 9
+          }
+        },
+        "required": []
+      },
+      "brazil_antt_freight_cte_auditor_DatasetItem": {
+        "type": "object",
+        "title": "Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor Output Record",
+        "properties": {}
+      },
+      "us_healthcare_npi_provider_lead_enricher_Input": {
+        "type": "object",
+        "title": "US Healthcare NPI Provider, Doctor & Clinic Lead Enricher Input",
+        "description": "",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code",
+            "description": "Two-letter US State code (e.g., FL, NY, CA, TX).",
+            "default": "FL"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "Optional city filter (e.g., Miami, Orlando, Los Angeles).",
+            "default": "Miami"
+          },
+          "taxonomyDescription": {
+            "type": "string",
+            "title": "Specialty / Taxonomy Description",
+            "description": "Specialty/Taxonomy e.g. Dentist, Dermatology, Internal Medicine, Physical Therapist.",
+            "default": "Dentist"
+          },
+          "enumerationType": {
+            "type": "string",
+            "title": "Enumeration Type (NPI-1 / NPI-2)",
+            "description": "Filter by Individual Providers (NPI-1), Organizations/Clinics (NPI-2), or All.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "NPI-1",
+              "NPI-2"
+            ]
+          },
+          "postalCode": {
+            "type": "string",
+            "title": "Postal / ZIP Code",
+            "description": "Optional US ZIP code prefix (e.g., 331, 33131).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Results",
+            "description": "Maximum number of healthcare provider leads to extract and enrich (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": []
+      },
+      "us_healthcare_npi_provider_lead_enricher_DatasetItem": {
+        "type": "object",
+        "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) Output Record",
+        "properties": {
+          "npiNumber": {
+            "type": "string",
+            "title": "NPI Number"
+          },
+          "providerType": {
+            "type": "string",
+            "title": "Provider Type"
+          },
+          "fullNameOrOrgName": {
+            "type": "string",
+            "title": "Full Name / Organization"
+          },
+          "primarySpecialty": {
+            "type": "string",
+            "title": "Primary Specialty"
+          },
+          "LicenseNumber": {
+            "type": "string",
+            "title": "State License Number"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "phone": {
+            "type": "string",
+            "title": "Direct Phone"
+          },
+          "addressLine": {
+            "type": "string",
+            "title": "Practice Address"
+          },
+          "leadQualityScore": {
+            "type": "integer",
+            "title": "Lead Quality Score (0-100)"
+          },
+          "markdownLeadCard": {
+            "type": "string",
+            "title": "Markdown Lead Dossier"
+          }
+        }
+      },
+      "us_fda_recalls_safety_monitor_Input": {
+        "type": "object",
+        "title": "US FDA Recalls & Safety Enforcement Monitor Input",
+        "description": "Configure the FDA regulatory domain, hazard classification filter, search keywords, and US state filter to extract enriched FDA recall intelligence.",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "FDA Regulatory Domain",
+            "description": "Select the FDA enforcement category to monitor: food, drug, or device.",
+            "default": "food",
+            "enum": [
+              "food",
+              "drug",
+              "device"
+            ]
+          },
+          "classification": {
+            "type": "string",
+            "title": "Hazard Classification",
+            "description": "Filter recalls by FDA hazard severity class (Class I = highest life-threatening risk, Class II = moderate/reversible risk, Class III = low risk).",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "Class I",
+              "Class II",
+              "Class III"
+            ]
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Search Keyword (Optional)",
+            "description": "Optional search keyword in reason_for_recall or product_description (e.g., 'salmonella', 'listeria', 'undeclared', 'pacemaker').",
+            "default": ""
+          },
+          "state": {
+            "type": "string",
+            "title": "US State Code (Optional)",
+            "description": "Optional 2-letter US State of recalling firm (e.g., 'CA', 'NY', 'TX', 'FL').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Results",
+            "description": "Maximum number of recall enforcement records to fetch (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "domain"
+        ]
+      },
+      "us_fda_recalls_safety_monitor_DatasetItem": {
+        "type": "object",
+        "title": "US FDA Recalls & Safety Monitor (Food, Drug & Devices) Output Record",
+        "properties": {
+          "recallNumber": {
+            "type": "string",
+            "title": "Recall Number",
+            "description": "Official FDA recall event or enforcement number."
+          },
+          "domain": {
+            "type": "string",
+            "title": "FDA Domain",
+            "description": "Regulatory domain (food, drug, device)."
+          },
+          "classification": {
+            "type": "string",
+            "title": "Classification",
+            "description": "FDA hazard severity class (Class I, Class II, Class III)."
+          },
+          "severityScore": {
+            "type": "integer",
+            "title": "Severity Score (0-100)",
+            "description": "Quantitative risk score based on hazard class, recall status, and nationwide distribution."
+          },
+          "recallingFirm": {
+            "type": "string",
+            "title": "Recalling Firm",
+            "description": "Manufacturer, distributor, or firm initiating the recall."
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "2-letter US State code of the recalling firm."
+          },
+          "status": {
+            "type": "string",
+            "title": "Recall Status",
+            "description": "Current enforcement status (Ongoing, Completed, Terminated, Pending)."
+          },
+          "reportDate": {
+            "type": "string",
+            "title": "Report Date",
+            "description": "Formatted FDA enforcement report date (YYYY-MM-DD)."
+          },
+          "reasonForRecall": {
+            "type": "string",
+            "title": "Reason for Recall",
+            "description": "Official FDA summary of the defect, contamination, or safety hazard."
+          },
+          "productDescription": {
+            "type": "string",
+            "title": "Product Description",
+            "description": "Detailed description of the recalled product, packaging, and brand."
+          },
+          "markdownLegalBrief": {
+            "type": "string",
+            "title": "Markdown Legal & Compliance Brief",
+            "description": "Ready-to-use Markdown dossier for Product Liability litigation and supply chain QA."
+          }
+        }
+      },
+      "global_b2b_email_domain_security_auditor_Input": {
+        "type": "object",
+        "title": "Global B2B Email & Domain Deliverability, MX, SPF & DMARC Security Auditor Input",
+        "description": "",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "title": "Target Emails or Domains",
+            "description": "List of email addresses or domain names to audit",
+            "default": [
+              "contact@openai.com",
+              "sales@stripe.com",
+              "fake@mailinator.com"
+            ]
+          },
+          "checkDmarcAndSpf": {
+            "type": "boolean",
+            "title": "Audit SPF & DMARC Security Policies",
+            "description": "Query TXT records for SPF and _dmarc policies",
+            "default": true
+          }
+        },
+        "required": [
+          "targets"
+        ]
+      },
+      "global_b2b_email_domain_security_auditor_DatasetItem": {
+        "type": "object",
+        "title": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor Output Record",
+        "properties": {
+          "inputTarget": {
+            "type": "string",
+            "title": "Input Target",
+            "description": "Original email address or domain submitted for audit"
+          },
+          "domain": {
+            "type": "string",
+            "title": "Normalized Domain",
+            "description": "Extracted and normalized domain name"
+          },
+          "isValidSyntax": {
+            "type": "boolean",
+            "title": "Valid Syntax",
+            "description": "Whether the input satisfies RFC 5322 email or DNS hostname syntax"
+          },
+          "isDisposable": {
+            "type": "boolean",
+            "title": "Disposable Domain",
+            "description": "Whether the domain belongs to a known temporary/disposable email provider"
+          },
+          "isRoleAccount": {
+            "type": "boolean",
+            "title": "Role Account",
+            "description": "Whether the email local-part is a generic role address (sales@, admin@, support@, etc.)"
+          },
+          "hasMxRecords": {
+            "type": "boolean",
+            "title": "Has MX Records",
+            "description": "Whether the domain has active Mail Exchange (MX) DNS records"
+          },
+          "emailProvider": {
+            "type": "string",
+            "title": "Email Provider",
+            "description": "Detected B2B email provider or gateway from MX records"
+          },
+          "hasSpf": {
+            "type": "boolean",
+            "title": "Has SPF",
+            "description": "Whether the domain publishes a valid v=spf1 TXT policy"
+          },
+          "hasDmarc": {
+            "type": "boolean",
+            "title": "Has DMARC",
+            "description": "Whether _dmarc.<domain> publishes a valid v=DMARC1 TXT policy"
+          },
+          "dmarcPolicy": {
+            "type": "string",
+            "title": "DMARC Policy",
+            "description": "Extracted DMARC enforcement policy (reject, quarantine, none, missing, or skipped)"
+          },
+          "deliverabilityScore": {
+            "type": "integer",
+            "title": "Deliverability Score",
+            "description": "Composite B2B deliverability and domain security score (0-100)"
+          },
+          "statusVerdict": {
+            "type": "string",
+            "title": "Status Verdict",
+            "description": "Final audit verdict classification"
+          }
+        }
+      },
+      "us_clinical_trials_biotech_radar_Input": {
+        "type": "object",
+        "title": "US ClinicalTrials.gov Biotech, Pharma Sponsor & Recruiting Study Radar Input",
+        "description": "",
+        "properties": {
+          "condition": {
+            "type": "string",
+            "title": "Disease or Medical Condition",
+            "description": "Disease, medical condition, or therapeutic area query (e.g., Diabetes, Non-Small Cell Lung Cancer, Obesity, Alzheimer).",
+            "default": "Diabetes"
+          },
+          "overallStatus": {
+            "type": "string",
+            "title": "Study Recruitment Status",
+            "description": "Filter clinical studies by current recruitment status on ClinicalTrials.gov.",
+            "default": "RECRUITING",
+            "enum": [
+              "RECRUITING",
+              "NOT_YET_RECRUITING",
+              "ACTIVE_NOT_RECRUITING",
+              "COMPLETED",
+              "ALL"
+            ]
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Studies to Extract",
+            "description": "Maximum number of clinical trial records to fetch (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": []
+      },
+      "us_clinical_trials_biotech_radar_DatasetItem": {
+        "type": "object",
+        "title": "US ClinicalTrials.gov Biotech & Pharma Study Radar Output Record",
+        "properties": {}
+      },
+      "us_nhtsa_vehicle_vin_recall_auditor_Input": {
+        "type": "object",
+        "title": "US NHTSA Vehicle VIN Decoder, Fleet Specs & Safety Recall Auditor Input",
+        "description": "",
+        "properties": {
+          "vins": {
+            "type": "array",
+            "title": "Vehicle Identification Numbers (VINs)",
+            "description": "List of 17-character Vehicle Identification Numbers to decode and audit.",
+            "default": [
+              "5UXWX7C5*BA",
+              "1HGCM82633A004352"
+            ]
+          },
+          "checkRecalls": {
+            "type": "boolean",
+            "title": "Check NHTSA Safety Recalls",
+            "description": "Query official NHTSA Recall API by decoded Make, Model, and Model Year.",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max VINs to Process",
+            "description": "Maximum number of VINs to decode and audit per run.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 500
+          }
+        },
+        "required": [
+          "vins"
+        ]
+      },
+      "us_nhtsa_vehicle_vin_recall_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor Output Record",
+        "properties": {
+          "vin": {
+            "type": "string",
+            "title": "VIN"
+          },
+          "isValidVinFormat": {
+            "type": "boolean",
+            "title": "Valid Format"
+          },
+          "make": {
+            "type": "string",
+            "title": "Make"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "modelYear": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "title": "Model Year"
+          },
+          "vehicleType": {
+            "type": "string",
+            "title": "Vehicle Type"
+          },
+          "bodyClass": {
+            "type": "string",
+            "title": "Body Class"
+          },
+          "engineCylinders": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "title": "Engine Cylinders"
+          },
+          "displacementL": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "title": "Displacement (L)"
+          },
+          "fuelTypePrimary": {
+            "type": "string",
+            "title": "Primary Fuel Type"
+          },
+          "driveType": {
+            "type": "string",
+            "title": "Drive Type"
+          },
+          "manufacturer": {
+            "type": "string",
+            "title": "Manufacturer"
+          },
+          "plantCity": {
+            "type": "string",
+            "title": "Plant City"
+          },
+          "plantCountry": {
+            "type": "string",
+            "title": "Plant Country"
+          },
+          "errorCode": {
+            "type": "string",
+            "title": "NHTSA Error Code"
+          },
+          "recallsCount": {
+            "type": "integer",
+            "title": "Recalls Count"
+          },
+          "fleetSafetyStatus": {
+            "type": "string",
+            "title": "Fleet Safety Status"
+          },
+          "recallsSummary": {
+            "type": "array",
+            "title": "Recalls Summary"
+          },
+          "source": {
+            "type": "string",
+            "title": "Data Source"
+          },
+          "auditedAt": {
+            "type": "string",
+            "title": "Audited At (UTC)"
+          }
+        }
+      },
+      "brazil_b2b_cnpj_qsa_lead_enricher_Input": {
+        "type": "object",
+        "title": "Brazil B2B CNPJ Company, Partners (QSA), CNAE & Simples Lead Enricher Input",
+        "description": "",
+        "properties": {
+          "cnpjs": {
+            "type": "array",
+            "title": "CNPJs List",
+            "description": "List of Brazilian CNPJ numbers to validate and enrich.",
+            "default": [
+              "00.000.000/0001-91",
+              "33.000.167/0001-01"
+            ]
+          },
+          "includeSecondaryCnaes": {
+            "type": "boolean",
+            "title": "Include Secondary CNAEs",
+            "description": "Include all secondary economic activities (CNAEs Secundários) in the output record and markdown dossier.",
+            "default": true
+          },
+          "timeoutSeconds": {
+            "type": "integer",
+            "title": "HTTP Timeout (Seconds)",
+            "description": "HTTP timeout in seconds for each API request to BrasilAPI and OpenCNPJA.",
+            "default": 15,
+            "minimum": 3,
+            "maximum": 60
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum CNPJs to Process",
+            "description": "Maximum number of CNPJ records to process in a single execution.",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 5000
+          }
+        },
+        "required": [
+          "cnpjs"
+        ]
+      },
+      "brazil_b2b_cnpj_qsa_lead_enricher_DatasetItem": {
+        "type": "object",
+        "title": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher Output Record",
+        "properties": {
+          "cnpj": {
+            "type": "string",
+            "description": "14-digit unformatted CNPJ identifier."
+          },
+          "cnpjFormatted": {
+            "type": "string",
+            "description": "Formatted CNPJ (XX.XXX.XXX/XXXX-XX)."
+          },
+          "isValidMod11": {
+            "type": "boolean",
+            "description": "Whether the CNPJ passed Modulo 11 check-digit validation."
+          },
+          "status": {
+            "type": "string",
+            "description": "Enrichment status (ENRICHED, INVALID_MOD11, NOT_FOUND, API_ERROR)."
+          },
+          "dataSource": {
+            "type": "string",
+            "description": "Primary source of enrichment (BrasilAPI, OpenCNPJA, FallbackCache, LOCAL_MOD11_VALIDATOR)."
+          },
+          "razaoSocial": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Official corporate legal name (Razão Social)."
+          },
+          "nomeFantasia": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Trade name (Nome Fantasia)."
+          },
+          "situacaoCadastral": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Registration status at Receita Federal (e.g. ATIVA, BAIXADA, INAPTA)."
+          },
+          "cnaePrincipalCodigo": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Primary economic activity code (CNAE Fiscal)."
+          },
+          "cnaePrincipalDescricao": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Primary economic activity description."
+          },
+          "capitalSocialBRL": {
+            "type": "number",
+            "description": "Registered share capital in BRL (Capital Social)."
+          },
+          "opcaoPeloSimples": {
+            "type": "boolean",
+            "description": "Whether the company is opted into Simples Nacional tax regime."
+          },
+          "opcaoPeloMei": {
+            "type": "boolean",
+            "description": "Whether the company is registered as MEI (Microempreendedor Individual)."
+          },
+          "uf": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Brazilian state code (UF)."
+          },
+          "municipio": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Municipality / City name."
+          },
+          "sociosCount": {
+            "type": "integer",
+            "description": "Total number of partners and directors in QSA."
+          },
+          "qsa": {
+            "type": "array",
+            "description": "List of partners and administrators (Quadro de Sócios e Administradores)."
+          },
+          "cnaesSecundarios": {
+            "type": "array",
+            "description": "List of secondary CNAE codes and descriptions."
+          },
+          "markdownCompanyDossier": {
+            "type": "string",
+            "description": "Structured Markdown company dossier ready for LLM/AI agents and CRM ingestion."
+          }
+        }
+      },
+      "us_sec_edgar_filings_insider_radar_Input": {
+        "type": "object",
+        "title": "US SEC EDGAR Filings & Insider Trading Radar Input",
+        "description": "Configure the Ticker or 10-digit CIK, SEC Form Type filter, and maximum filings to extract and score from the official U.S. SEC EDGAR Submissions API.",
+        "properties": {
+          "tickerOrCik": {
+            "type": "string",
+            "title": "Stock Ticker or SEC CIK",
+            "description": "Public company stock ticker (e.g., 'AAPL', 'MSFT', 'NVDA', 'TSLA', 'JPM') or 10-digit SEC Central Index Key (e.g., '0000320193').",
+            "default": "AAPL"
+          },
+          "formType": {
+            "type": "string",
+            "title": "SEC Filing Form Type",
+            "description": "Filter by specific SEC regulatory form type or select ALL.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "10-K",
+              "10-Q",
+              "8-K",
+              "4"
+            ]
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Document Description / Item Keyword (Optional)",
+            "description": "Optional filter in primary document description or 8-K items (e.g., '5.02', '2.02', 'acquisition', 'restatement').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Results",
+            "description": "Maximum number of SEC EDGAR filings to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "tickerOrCik"
+        ]
+      },
+      "us_sec_edgar_filings_insider_radar_DatasetItem": {
+        "type": "object",
+        "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) Output Record",
+        "properties": {
+          "accessionNumber": {
+            "type": "string",
+            "title": "Accession Number",
+            "description": "Unique SEC EDGAR filing accession identifier."
+          },
+          "cik": {
+            "type": "string",
+            "title": "CIK (10-Digit)",
+            "description": "Official 10-digit SEC Central Index Key."
+          },
+          "ticker": {
+            "type": "string",
+            "title": "Ticker",
+            "description": "Primary exchange stock ticker symbol."
+          },
+          "companyName": {
+            "type": "string",
+            "title": "Company Name",
+            "description": "Official registrant entity name on file with the SEC."
+          },
+          "formType": {
+            "type": "string",
+            "title": "Form Type",
+            "description": "SEC regulatory filing form code (10-K, 10-Q, 8-K, 4, etc.)."
+          },
+          "filingDate": {
+            "type": "string",
+            "title": "Filing Date",
+            "description": "Date the filing was accepted by SEC EDGAR (YYYY-MM-DD)."
+          },
+          "reportDate": {
+            "type": "string",
+            "title": "Period Report Date",
+            "description": "Period of report covered by the filing (YYYY-MM-DD)."
+          },
+          "governanceAlertScore": {
+            "type": "integer",
+            "title": "Governance Alert Score (0-100)",
+            "description": "Quantitative materiality & governance attention score (0-100)."
+          },
+          "itemsSummary": {
+            "type": "string",
+            "title": "Material Items / Description",
+            "description": "Reported 8-K item codes or primary filing description."
+          },
+          "edgarDocumentUrl": {
+            "type": "string",
+            "title": "SEC Archive URL",
+            "description": "Direct URL to the official filing document on sec.gov/Archives."
+          },
+          "markdownGovernanceBrief": {
+            "type": "string",
+            "title": "Markdown Governance & RAG Brief",
+            "description": "Executive Markdown dossier ready for financial due diligence and LLM RAG ingestion."
+          }
+        }
+      },
+      "eu_vies_vat_tax_compliance_auditor_Input": {
+        "type": "object",
+        "title": "EU VIES VAT Number Validator & Reverse Charge Auditor Input",
+        "description": "Provide one or more European Union (27 Member States + XI Northern Ireland) VAT identification numbers to validate syntax, active VIES registration, trader legal name/address, and Intra-EU Reverse Charge eligibility.",
+        "properties": {
+          "vatNumbers": {
+            "type": "string",
+            "title": "EU VAT Numbers (Comma or Line Separated)",
+            "description": "Comma, space, or newline-separated EU VAT numbers including 2-letter country prefix (e.g., 'IE6388047V, DE811128135, FR40303265045').",
+            "default": "IE6388047V, DE811128135"
+          },
+          "requesterCountryCode": {
+            "type": "string",
+            "title": "Seller / Requester EU Country Code",
+            "description": "2-letter EU country code of the invoicing entity (e.g., 'DE', 'NL', 'FR', 'IE') to determine Cross-Border B2B Reverse Charge (0% VAT) vs. Domestic VAT.",
+            "default": "DE"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum VAT Numbers to Audit",
+            "description": "Maximum number of VAT records to audit in a single batch (1 to 200).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "vatNumbers"
+        ]
+      },
+      "eu_vies_vat_tax_compliance_auditor_DatasetItem": {
+        "type": "object",
+        "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor Output Record",
+        "properties": {
+          "fullVatNumber": {
+            "type": "string",
+            "title": "Full VAT Number",
+            "description": "Normalized EU VAT identifier including Member State prefix."
+          },
+          "countryCode": {
+            "type": "string",
+            "title": "Member State Code",
+            "description": "2-letter EU VIES jurisdiction code (AT, BE, DE, EL, ES, FR, IE, IT, NL, XI, etc.)."
+          },
+          "vatNumber": {
+            "type": "string",
+            "title": "National VAT Number",
+            "description": "National numeric/alphanumeric VAT digits without country prefix."
+          },
+          "syntaxValid": {
+            "type": "boolean",
+            "title": "Syntax Valid",
+            "description": "Whether the VAT number matches the official Member State structural regex."
+          },
+          "viesActive": {
+            "type": "boolean",
+            "title": "VIES Active Registration",
+            "description": "Whether the VAT number is actively registered for Intra-EU cross-border transactions."
+          },
+          "traderName": {
+            "type": "string",
+            "title": "Registered Trader Name",
+            "description": "Legal company name returned by the European Commission VIES registry."
+          },
+          "traderAddress": {
+            "type": "string",
+            "title": "Registered Address",
+            "description": "Official corporate address on file in the Member State tax registry."
+          },
+          "reverseChargeStatus": {
+            "type": "string",
+            "title": "Reverse Charge Eligibility",
+            "description": "Tax invoicing determination (ELIGIBLE_INTRA_EU_0_VAT, DOMESTIC_STANDARD_VAT, or DO_NOT_ZERO_RATE)."
+          },
+          "complianceRiskScore": {
+            "type": "integer",
+            "title": "Compliance Risk Score (0-100)",
+            "description": "Quantitative tax audit risk score (0 = lowest risk/verified active, 100 = invalid/high risk)."
+          },
+          "verificationSource": {
+            "type": "string",
+            "title": "Verification Source",
+            "description": "Indicates EU_VIES_LIVE_API or ALGORITHMIC_FALLBACK_MS_MAINTENANCE."
+          },
+          "markdownVatCertificate": {
+            "type": "string",
+            "title": "Markdown Tax Compliance Certificate",
+            "description": "Audit-ready Markdown VAT compliance certificate for ERP/Finance attachment."
+          }
+        }
+      },
+      "us_epa_echo_environmental_compliance_auditor_Input": {
+        "type": "object",
+        "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Input",
+        "description": "Configure US State, facility name, ZIP code, and Significant Non-Complier (SNC) filters to audit industrial environmental compliance via U.S. EPA ECHO.",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code (2-Letter)",
+            "description": "2-letter US State code where industrial facilities are located (e.g., 'TX', 'CA', 'LA', 'OH', 'PA').",
+            "default": "TX"
+          },
+          "facilityName": {
+            "type": "string",
+            "title": "Facility or Company Name (Optional)",
+            "description": "Optional facility or operator name keyword (e.g., 'Refinery', 'Chemical', 'Plant', 'Energy').",
+            "default": ""
+          },
+          "zipCode": {
+            "type": "string",
+            "title": "5-Digit US ZIP Code (Optional)",
+            "description": "Optional 5-digit US postal code to narrow environmental due diligence (e.g., '77506', '77002').",
+            "default": ""
+          },
+          "significantViolatorsOnly": {
+            "type": "boolean",
+            "title": "Significant Violators Only (SNC / HPV)",
+            "description": "Filter exclusively for facilities currently in Significant Non-Compliance (SNC) under CAA, CWA, or RCRA.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Facilities to Audit",
+            "description": "Maximum number of EPA-regulated facilities to extract and score (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
+      "us_epa_echo_environmental_compliance_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Output Record",
+        "properties": {
+          "registryId": {
+            "type": "string",
+            "title": "EPA Registry ID",
+            "description": "Official U.S. EPA Facility Registry Service (FRS) identifier."
+          },
+          "facilityName": {
+            "type": "string",
+            "title": "Facility Name",
+            "description": "Regulated industrial plant or facility name."
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "City where the facility is located."
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "2-letter US State code."
+          },
+          "complianceStatus": {
+            "type": "string",
+            "title": "EPA Compliance Status",
+            "description": "Current compliance status across Clean Air, Clean Water, and RCRA statutes."
+          },
+          "sncFlag": {
+            "type": "boolean",
+            "title": "Significant Non-Complier (SNC)",
+            "description": "True if flagged as Significant Non-Complier or High Priority Violator."
+          },
+          "quartersInNonCompliance": {
+            "type": "integer",
+            "title": "Quarters in Non-Compliance (3-Yr)",
+            "description": "Number of quarters (0 to 12) in non-compliance over the last 3 years."
+          },
+          "totalPenaltiesUsd": {
+            "type": "number",
+            "title": "Total Penalties (USD)",
+            "description": "Cumulative formal enforcement monetary penalties assessed in USD."
+          },
+          "environmentalLiabilityScore": {
+            "type": "integer",
+            "title": "Environmental Liability Score (0-100)",
+            "description": "Quantitative ESG and environmental liability risk score (0-100)."
+          },
+          "inspectionCount5Yr": {
+            "type": "integer",
+            "title": "Inspections (5-Yr)",
+            "description": "Total federal and state regulatory inspections conducted."
+          },
+          "markdownEsgDueDiligenceBrief": {
+            "type": "string",
+            "title": "Markdown ESG & M&A Due Diligence Brief",
+            "description": "Executive environmental liability dossier for commercial real estate, M&A, and ESG risk teams."
+          }
+        }
+      },
+      "us_fdic_bankfind_institution_financial_auditor_Input": {
+        "type": "object",
+        "title": "US FDIC BankFind Institution & Solvency Risk Auditor Input",
+        "description": "Configure bank name, US state filter, active status, and maximum results to audit FDIC-insured financial institutions and counterparty treasury risk.",
+        "properties": {
+          "institutionName": {
+            "type": "string",
+            "title": "Bank / Institution Name (Optional)",
+            "description": "Optional bank name keyword (e.g., 'JPMorgan', 'Citibank', 'Morgan Stanley', 'Bank of America').",
+            "default": ""
+          },
+          "state": {
+            "type": "string",
+            "title": "US State Code (Optional)",
+            "description": "2-letter US State code of bank headquarters (e.g., 'NY', 'CA', 'TX', 'OH', 'NC', 'SD').",
+            "default": "NY"
+          },
+          "activeOnly": {
+            "type": "boolean",
+            "title": "Active FDIC Institutions Only",
+            "description": "Filter exclusively for currently active FDIC-insured banks (ACTIVE=1).",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Institutions to Audit",
+            "description": "Maximum number of FDIC institutions to extract and score (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": []
+      },
+      "us_fdic_bankfind_institution_financial_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US FDIC BankFind Institution & Solvency Risk Auditor Output Record",
+        "properties": {
+          "certNumber": {
+            "type": "string",
+            "title": "FDIC Certificate #",
+            "description": "Official unique FDIC Certificate Number."
+          },
+          "institutionName": {
+            "type": "string",
+            "title": "Institution Name",
+            "description": "Official legal name of the banking institution."
+          },
+          "city": {
+            "type": "string",
+            "title": "Headquarters City",
+            "description": "City of headquarters."
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "2-letter US State abbreviation."
+          },
+          "activeStatus": {
+            "type": "boolean",
+            "title": "Active Status",
+            "description": "True if currently active and insured by the FDIC."
+          },
+          "totalAssetsMillionsUsd": {
+            "type": "number",
+            "title": "Total Assets ($ Millions)",
+            "description": "Total consolidated assets reported in millions of USD."
+          },
+          "totalDepositsMillionsUsd": {
+            "type": "number",
+            "title": "Total Deposits ($ Millions)",
+            "description": "Total domestic and foreign deposits in millions of USD."
+          },
+          "equityRatioPct": {
+            "type": "number",
+            "title": "Equity-to-Assets Ratio (%)",
+            "description": "Tier/Book Equity capital as a percentage of total assets."
+          },
+          "roaPct": {
+            "type": "number",
+            "title": "Return on Assets — ROA (%)",
+            "description": "Net income as a percentage of average total assets."
+          },
+          "counterpartyHealthScore": {
+            "type": "integer",
+            "title": "Counterparty Health Score (0-100)",
+            "description": "Quantitative treasury solvency & capital adequacy score (0-100)."
+          },
+          "markdownTreasuryRiskBrief": {
+            "type": "string",
+            "title": "Markdown Treasury Counterparty Risk Brief",
+            "description": "Executive Markdown dossier for CFOs, Corporate Treasurers, and Fintech Risk Teams."
+          }
+        }
+      },
+      "us_sam_gov_federal_procurement_auditor_Input": {
+        "type": "object",
+        "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Input",
+        "description": "Configure contract scope keyword, federal awarding agency filter, minimum award value in USD, and maximum results to extract and score U.S. Federal Government B2G contracts.",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "title": "Contract Scope / Technology Keyword",
+            "description": "Keyword searched in federal contract award descriptions (e.g., 'cybersecurity', 'cloud software', 'medical supplies', 'autonomous').",
+            "default": "cybersecurity"
+          },
+          "awardingAgency": {
+            "type": "string",
+            "title": "Federal Awarding Agency (Optional)",
+            "description": "Optional filter by top-tier U.S. Federal Agency name (e.g., 'Department of Defense', 'Department of Veterans Affairs').",
+            "default": ""
+          },
+          "minAwardAmount": {
+            "type": "integer",
+            "title": "Minimum Contract Value (USD)",
+            "description": "Minimum contract obligation amount in USD (0 to 1,000,000,000).",
+            "default": 50000,
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Contracts to Extract",
+            "description": "Maximum number of federal contract awards to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "keyword"
+        ]
+      },
+      "us_sam_gov_federal_procurement_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Output Record",
+        "properties": {
+          "awardId": {
+            "type": "string",
+            "title": "Federal Award ID (PIID)",
+            "description": "Official Procurement Instrument Identifier (PIID)."
+          },
+          "recipientName": {
+            "type": "string",
+            "title": "Contractor / Recipient Name",
+            "description": "Legal entity awarded the federal contract."
+          },
+          "awardingAgency": {
+            "type": "string",
+            "title": "Awarding Agency",
+            "description": "Top-tier U.S. Federal Department or Agency."
+          },
+          "awardingSubAgency": {
+            "type": "string",
+            "title": "Awarding Sub-Agency",
+            "description": "Specific bureau, command, or sub-agency."
+          },
+          "awardAmountUsd": {
+            "type": "number",
+            "title": "Award Amount (USD)",
+            "description": "Total federal contract award amount in USD."
+          },
+          "startDate": {
+            "type": "string",
+            "title": "Start Date",
+            "description": "Contract period of performance start date (YYYY-MM-DD)."
+          },
+          "endDate": {
+            "type": "string",
+            "title": "End Date",
+            "description": "Contract period of performance end/renewal date (YYYY-MM-DD)."
+          },
+          "contractAwardType": {
+            "type": "string",
+            "title": "Contract Award Type",
+            "description": "Federal procurement instrument type (Definitive Contract, Delivery Order, BPA Call, Purchase Order)."
+          },
+          "b2gOpportunityScore": {
+            "type": "integer",
+            "title": "B2G Opportunity Score (0-100)",
+            "description": "Quantitative score evaluating contract value, recompete window, and B2G subcontracting potential (0-100)."
+          },
+          "description": {
+            "type": "string",
+            "title": "Contract Scope Description",
+            "description": "Official summary of goods or services procured."
+          },
+          "markdownProcurementBrief": {
+            "type": "string",
+            "title": "Markdown B2G Procurement Intelligence Brief",
+            "description": "Executive Markdown dossier for GovCon capture teams, B2B sales, and AI RAG agents."
+          }
+        }
+      },
+      "multi_ats_tech_job_board_hiring_radar_Input": {
+        "type": "object",
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Input",
+        "description": "Configure target company Greenhouse ATS board tokens, optional role/department keyword filter, and maximum job signals to extract.",
+        "properties": {
+          "companyBoards": {
+            "type": "string",
+            "title": "Company ATS Board Tokens (Comma-Separated)",
+            "description": "Comma-separated Greenhouse board tokens (e.g., 'stripe,cloudflare,gitlab,airtable').",
+            "default": "stripe,cloudflare"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Role / Department Keyword Filter (Optional)",
+            "description": "Optional keyword to filter job titles or departments (e.g., 'engineer', 'security', 'sales', 'data').",
+            "default": "engineer"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Job Signals to Extract",
+            "description": "Maximum number of job openings to extract and score across boards (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyBoards"
+        ]
+      },
+      "multi_ats_tech_job_board_hiring_radar_DatasetItem": {
+        "type": "object",
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Output Record",
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "title": "ATS Job ID",
+            "description": "Unique job requisition identifier on the ATS board."
+          },
+          "companyBoard": {
+            "type": "string",
+            "title": "Company Board Token",
+            "description": "Company slug on Greenhouse ATS."
+          },
+          "jobTitle": {
+            "type": "string",
+            "title": "Job Title",
+            "description": "Published title of the open position."
+          },
+          "department": {
+            "type": "string",
+            "title": "Department",
+            "description": "Primary organizational department."
+          },
+          "location": {
+            "type": "string",
+            "title": "Office / Location",
+            "description": "Geographic location or remote region."
+          },
+          "workplaceType": {
+            "type": "string",
+            "title": "Workplace Type",
+            "description": "Remote, Hybrid, or Onsite classification."
+          },
+          "updatedAt": {
+            "type": "string",
+            "title": "Last Updated Timestamp",
+            "description": "ISO timestamp when the job requisition was updated."
+          },
+          "hiringIntentScore": {
+            "type": "integer",
+            "title": "B2B Hiring Intent Score (0-100)",
+            "description": "Score measuring B2B budget expansion and technical buying intent (0-100)."
+          },
+          "jobUrl": {
+            "type": "string",
+            "title": "Direct Job Application URL",
+            "description": "Public URL to the job posting."
+          },
+          "techSignals": {
+            "type": "string",
+            "title": "Detected Tech / Budget Signals",
+            "description": "Key technical and strategic hiring signals."
+          },
+          "markdownHiringBrief": {
+            "type": "string",
+            "title": "Markdown Hiring Intent Brief",
+            "description": "Executive Markdown dossier for B2B sales and technical recruiters."
+          }
+        }
+      },
+      "global_gleif_lei_corporate_ownership_kyb_Input": {
+        "type": "object",
+        "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Input",
+        "description": "Configure legal entity search query or 20-character LEI codes, optional jurisdiction filter, and maximum entities to audit.",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "title": "Legal Entity Name or LEI Search Query",
+            "description": "Corporate legal name to search in the Global LEI Index (e.g., 'Microsoft', 'Siemens', 'JPMorgan', 'Petrobras').",
+            "default": "Microsoft"
+          },
+          "countryCode": {
+            "type": "string",
+            "title": "Country / Jurisdiction Filter (Optional ISO-2)",
+            "description": "Optional 2-letter ISO country filter (e.g., 'US', 'DE', 'GB', 'BR').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Corporate Entities to Audit",
+            "description": "Maximum number of GLEIF LEI records to extract and score (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyName"
+        ]
+      },
+      "global_gleif_lei_corporate_ownership_kyb_DatasetItem": {
+        "type": "object",
+        "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Output Record",
+        "properties": {
+          "leiCode": {
+            "type": "string",
+            "title": "20-Char LEI Code",
+            "description": "ISO 17442 Global Legal Entity Identifier."
+          },
+          "legalName": {
+            "type": "string",
+            "title": "Official Legal Name",
+            "description": "Registered legal name of the entity."
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Legal Jurisdiction",
+            "description": "ISO country/subdivision of legal formation."
+          },
+          "entityStatus": {
+            "type": "string",
+            "title": "Entity Operational Status",
+            "description": "ACTIVE or INACTIVE legal entity status."
+          },
+          "registrationStatus": {
+            "type": "string",
+            "title": "LEI Registration Status",
+            "description": "ISSUED, LAPSED, RETIRED, or ANNULLED."
+          },
+          "registeredAs": {
+            "type": "string",
+            "title": "Local Business Registry ID",
+            "description": "Local commercial register number."
+          },
+          "headquartersCity": {
+            "type": "string",
+            "title": "Headquarters City",
+            "description": "City of corporate headquarters."
+          },
+          "headquartersCountry": {
+            "type": "string",
+            "title": "Headquarters Country",
+            "description": "ISO country code of headquarters."
+          },
+          "nextRenewalDate": {
+            "type": "string",
+            "title": "Next LEI Renewal Date",
+            "description": "Scheduled annual LEI renewal timestamp."
+          },
+          "kybTrustScore": {
+            "type": "integer",
+            "title": "KYB Trust Score (0-100)",
+            "description": "Quantitative KYB compliance and registration validity score (0-100)."
+          },
+          "markdownKybBrief": {
+            "type": "string",
+            "title": "Markdown KYB Compliance Brief",
+            "description": "Executive KYB audit dossier for banking, M&A, and vendor onboarding."
+          }
+        }
+      },
+      "us_census_fcc_real_estate_geo_enricher_Input": {
+        "type": "object",
+        "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Input",
+        "description": "Configure semicolon-separated U.S. property coordinates (latitude,longitude) and census year to extract official FIPS, Census Tract, County, and PropTech underwriting scores.",
+        "properties": {
+          "coordinatesList": {
+            "type": "string",
+            "title": "U.S. Property Coordinates (lat,lon separated by ';')",
+            "description": "Semicolon-separated latitude,longitude pairs (e.g., '40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431').",
+            "default": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431"
+          },
+          "censusYear": {
+            "type": "string",
+            "title": "Census Vintage Year",
+            "description": "Decennial Census geography vintage ('2020' or '2010').",
+            "default": "2020"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Properties to Enrich",
+            "description": "Maximum number of U.S. property coordinate pairs to enrich (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "coordinatesList"
+        ]
+      },
+      "us_census_fcc_real_estate_geo_enricher_DatasetItem": {
+        "type": "object",
+        "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Output Record",
+        "properties": {
+          "censusBlockFips": {
+            "type": "string",
+            "title": "15-Digit Census Block FIPS",
+            "description": "Official 15-digit U.S. Census Block FIPS identifier."
+          },
+          "censusTractFips": {
+            "type": "string",
+            "title": "11-Digit Census Tract FIPS",
+            "description": "11-digit Census Tract code used for HUD, Fannie Mae, and Opportunity Zone underwriting."
+          },
+          "countyFips": {
+            "type": "string",
+            "title": "5-Digit County FIPS",
+            "description": "Official 5-digit U.S. County FIPS code."
+          },
+          "countyName": {
+            "type": "string",
+            "title": "County Name",
+            "description": "Official County or Parish name."
+          },
+          "stateCode": {
+            "type": "string",
+            "title": "State USPS Code",
+            "description": "Two-letter U.S. State or Territory code."
+          },
+          "stateName": {
+            "type": "string",
+            "title": "State Name",
+            "description": "Full U.S. State name."
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude",
+            "description": "Property latitude coordinate."
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude",
+            "description": "Property longitude coordinate."
+          },
+          "realEstateInvestmentScore": {
+            "type": "integer",
+            "title": "PropTech Investment Score (0-100)",
+            "description": "Quantitative commercial corridor and metro tier score (0-100)."
+          },
+          "bboxSummary": {
+            "type": "string",
+            "title": "Census Block Bounding Box",
+            "description": "Geographic bounding box coordinates [minLon, minLat, maxLon, maxLat]."
+          },
+          "markdownPropertyBrief": {
+            "type": "string",
+            "title": "Markdown PropTech & FIPS Dossier",
+            "description": "Executive Markdown brief for real estate underwriting, insurance, and franchise siting."
+          }
+        }
+      },
+      "icann_rdap_domain_whois_brand_recon_Input": {
+        "type": "object",
+        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Input",
+        "description": "Configure comma-separated domain names and maximum domains to audit against official ICANN/Verisign RDAP registries.",
+        "properties": {
+          "domains": {
+            "type": "string",
+            "title": "Domain Names (Comma-Separated)",
+            "description": "Comma-separated domain names to audit via official RDAP (e.g., 'stripe.com,cloudflare.com,shopify.com').",
+            "default": "stripe.com,cloudflare.com,shopify.com"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Domains to Audit",
+            "description": "Maximum number of domains to query and score in a single run (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "domains"
+        ]
+      },
+      "icann_rdap_domain_whois_brand_recon_DatasetItem": {
+        "type": "object",
+        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Output Record",
+        "properties": {
+          "domainName": {
+            "type": "string",
+            "title": "Domain Name",
+            "description": "ASCII LDH domain name audited."
+          },
+          "registryHandle": {
+            "type": "string",
+            "title": "Registry Handle ID",
+            "description": "Official registry ROID / Handle."
+          },
+          "registrarName": {
+            "type": "string",
+            "title": "Accredited Registrar",
+            "description": "ICANN-accredited registrar legal name."
+          },
+          "registrationDate": {
+            "type": "string",
+            "title": "Creation / Registration Date",
+            "description": "Original domain registration timestamp (ISO-8601)."
+          },
+          "expirationDate": {
+            "type": "string",
+            "title": "Registry Expiration Date",
+            "description": "Upcoming domain expiration timestamp (ISO-8601)."
+          },
+          "domainAgeYears": {
+            "type": "number",
+            "title": "Estimated Domain Age (Years)",
+            "description": "Domain longevity in years since creation."
+          },
+          "transferLocked": {
+            "type": "boolean",
+            "title": "Transfer Lock Active",
+            "description": "True if clientTransferProhibited or serverTransferProhibited is active."
+          },
+          "dnssecSigned": {
+            "type": "boolean",
+            "title": "DNSSEC Delegation Signed",
+            "description": "True if DNSSEC cryptographic signing is enabled."
+          },
+          "nameserversCount": {
+            "type": "integer",
+            "title": "Nameservers Count",
+            "description": "Number of authoritative DNS nameservers."
+          },
+          "domainTrustScore": {
+            "type": "integer",
+            "title": "Domain Trust Score (0-100)",
+            "description": "Quantitative brand security and antifraud longevity score (0-100)."
+          },
+          "markdownWhoisBrief": {
+            "type": "string",
+            "title": "Markdown RDAP & Brand Security Dossier",
+            "description": "Executive Markdown dossier for KYB antifraud, brand protection, and M&A due diligence."
+          }
+        }
+      },
+      "cisa_kev_ransomware_vulnerability_auditor_Input": {
+        "type": "object",
+        "title": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar Input",
+        "description": "Configure vendor/product keyword filter, optional ransomware-only filter, and maximum CVE vulnerabilities to extract and score.",
+        "properties": {
+          "vendorKeyword": {
+            "type": "string",
+            "title": "Vendor / Product Keyword Filter",
+            "description": "Vendor or software product keyword (e.g., 'Microsoft', 'Cisco', 'Fortinet', 'Linux', 'VMware', or leave empty for latest KEV additions).",
+            "default": "Microsoft"
+          },
+          "onlyRansomware": {
+            "type": "boolean",
+            "title": "Only Known Ransomware Campaigns",
+            "description": "If true, filters strictly for CVEs with confirmed ransomware campaign exploitation ('Known').",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum CVEs to Extract",
+            "description": "Maximum number of exploited CVE records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "vendorKeyword"
+        ]
+      },
+      "cisa_kev_ransomware_vulnerability_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar Output Record",
+        "properties": {
+          "cveId": {
+            "type": "string",
+            "title": "CVE Identifier",
+            "description": "Official CVE vulnerability ID."
+          },
+          "vendorProject": {
+            "type": "string",
+            "title": "Vendor / Project",
+            "description": "Hardware or software vendor."
+          },
+          "product": {
+            "type": "string",
+            "title": "Affected Product",
+            "description": "Specific product or appliance."
+          },
+          "vulnerabilityName": {
+            "type": "string",
+            "title": "Vulnerability Title",
+            "description": "Official CISA vulnerability title."
+          },
+          "dateAdded": {
+            "type": "string",
+            "title": "Date Added to CISA KEV",
+            "description": "Date added to the Known Exploited Vulnerabilities catalog."
+          },
+          "dueDate": {
+            "type": "string",
+            "title": "Federal Patch Deadline",
+            "description": "Mandatory remediation deadline under CISA BOD directives."
+          },
+          "knownRansomwareCampaignUse": {
+            "type": "string",
+            "title": "Ransomware Campaign Use",
+            "description": "Known or Unknown active ransomware exploitation."
+          },
+          "cwes": {
+            "type": "string",
+            "title": "CWE Weakness Classes",
+            "description": "Associated Common Weakness Enumeration codes."
+          },
+          "threatSeverityScore": {
+            "type": "integer",
+            "title": "Threat Severity Score (0-100)",
+            "description": "Quantitative urgency score combining active exploitation, ransomware use, and RCE/SQLi class (0-100)."
+          },
+          "requiredAction": {
+            "type": "string",
+            "title": "Mandatory Remediation Action",
+            "description": "CISA-mandated mitigation or patching directive."
+          },
+          "markdownThreatBrief": {
+            "type": "string",
+            "title": "Markdown DevSecOps & SOC2 Threat Brief",
+            "description": "Executive Markdown advisory for MSSPs, CISOs, and automated patch pipelines."
+          }
+        }
+      }
+    }
+  }
+}
