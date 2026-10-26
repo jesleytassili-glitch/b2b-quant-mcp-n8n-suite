@@ -2,7 +2,7 @@
   "manifestVersion": "2026.10",
   "publisher": "b2b-quant-apis",
   "storeProfileUrl": "https://apify.com/b2b-quant-apis",
-  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
   "targetDirectories": [
     "https://mcp.so",
     "https://smithery.ai",
@@ -10,7 +10,7 @@
     "https://www.pulsemcp.com/servers",
     "https://rapidapi.com/hub"
   ],
-  "totalServers": 20,
+  "totalServers": 25,
   "servers": [
     {
       "slug": "b2b-gov-procurement-pncp-radar",
@@ -1331,6 +1331,274 @@
         "vendorKeyword": "Microsoft",
         "onlyRansomware": false,
         "maxResults": 15
+      }
+    },
+    {
+      "slug": "brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "fullActorName": "b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "title": "Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer",
+      "description": "Fetches official Central Bank of Brazil (BCB SGS & Olinda) macroeconomic series (Selic, CDI, IPCA, IGP-M, PTAX USD/EUR) and calculates automated B2B contract, lease, and treasury monetary adjustments.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "contract-index-calculated",
+        "eventTitle": "BCB PTAX, Selic, CDI or IPCA Contract Index Calculated",
+        "eventPriceUsd": 0.015
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "indicators": {
+            "type": "string",
+            "title": "BCB SGS Indicator Codes or Names (CSV)",
+            "description": "Comma-separated BCB indicators: SELIC (432), IPCA (433), IGP-M (189), PTAX_USD (1), CDI (12).",
+            "default": "SELIC,IPCA,IGP-M,PTAX_USD"
+          },
+          "contractBaseValueBrl": {
+            "type": "number",
+            "title": "Base Contract / Invoice Value (BRL)",
+            "description": "Principal value in BRL to simulate monetary adjustment against the latest indicator rate.",
+            "default": 10000
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Indicators to Process",
+            "description": "Maximum number of indicator records to return (1 to 20).",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 20
+          }
+        },
+        "required": [
+          "indicators"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "indicators": "SELIC,IPCA,IGP-M,PTAX_USD",
+        "contractBaseValueBrl": 10000,
+        "maxResults": 5
+      }
+    },
+    {
+      "slug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "fullActorName": "b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+      "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "financial-institution-audited",
+        "eventTitle": "Brazil Pix ISPB & SPI Financial Institution Audited",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "LEAD_GENERATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "institutionQuery": {
+            "type": "string",
+            "title": "Bank / FinTech Name or ISPB Code",
+            "description": "Institution name keyword or 8-digit ISPB code (e.g., 'Itau', 'Nu Pagamentos', 'Banco do Brasil', '00000000').",
+            "default": "Banco"
+          },
+          "onlyDirectPix": {
+            "type": "boolean",
+            "title": "Only Direct SPI Pix Settlement Participants",
+            "description": "When enabled, filters only institutions with direct settlement accounts in the Central Bank SPI.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Institutions to Audit",
+            "description": "Maximum number of audited financial institutions to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "institutionQuery"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "institutionQuery": "Banco",
+        "onlyDirectPix": false,
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "fullActorName": "b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+      "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "cnae-municipality-enriched",
+        "eventTitle": "Brazil IBGE CNAE 2.3 Subclass & Tax Activity Enriched",
+        "eventPriceUsd": 0.015
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "cnaeCodes": {
+            "type": "string",
+            "title": "CNAE 2.3 Subclass Codes (CSV)",
+            "description": "Comma-separated 7-digit Brazilian CNAE codes (e.g., '6201501, 4711302, 8630503').",
+            "default": "6201501,4711302,8630503"
+          },
+          "targetUf": {
+            "type": "string",
+            "title": "Target State UF (for IBGE Capital/Municipal Lookup)",
+            "description": "Two-letter Brazilian state UF code (e.g., SP, RJ, MG, PR).",
+            "default": "SP"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CNAE Codes to Enrich",
+            "description": "Maximum number of CNAE subclass records to return (1 to 50).",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "cnaeCodes"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "cnaeCodes": "6201501,4711302,8630503",
+        "targetUf": "SP",
+        "maxResults": 5
+      }
+    },
+    {
+      "slug": "brazil-cep-geocoordinates-logistics-auditor",
+      "fullActorName": "b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+      "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+      "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "cep-geo-audited",
+        "eventTitle": "Brazil CEP Geocoordinates & IBGE City Code Audited",
+        "eventPriceUsd": 0.01
+      },
+      "categories": [
+        "AI",
+        "ECOMMERCE",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "ceps": {
+            "type": "string",
+            "title": "Brazilian 8-Digit CEPs (CSV)",
+            "description": "Comma-separated Brazilian postal codes (e.g., '01310100, 20040002, 30140071').",
+            "default": "01310100,20040002,30140071"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CEPs to Audit",
+            "description": "Maximum number of CEP records to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "ceps"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "ceps": "01310100,20040002,30140071",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "brazil-camara-legislative-regulatory-risk-radar",
+      "fullActorName": "b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+      "title": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar",
+      "description": "Monitors Brazilian Chamber of Deputies (Camara dos Deputados API v2) legislative bills (PL, PLP, PEC, MPV). Filters by sector/tax keyword, extracts official summary (ementa), presentation date, and Regulatory Risk Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "legislative-bill-analyzed",
+        "eventTitle": "Brazil Congress Legislative Bill & Tax Risk Analyzed",
+        "eventPriceUsd": 0.025
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "NEWS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "billType": {
+            "type": "string",
+            "title": "Legislative Proposition Type (PL, PLP, PEC, MPV)",
+            "description": "Type of legislative bill: PL (Ordinary Law), PLP (Complementary Law), PEC (Constitutional Amendment), MPV (Provisional Measure).",
+            "default": "PL"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Sector / Regulatory Keyword Filter",
+            "description": "Optional keyword to filter bill summaries (e.g., tributo, imposto, credito, trabalho, digital). Leave empty for latest bills.",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Legislative Bills to Analyze",
+            "description": "Maximum number of legislative propositions to return (1 to 50).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "billType"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "billType": "PL",
+        "keyword": "",
+        "maxResults": 10
       }
     }
   ]

@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nBatch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor](https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-cep-geocoordinates-logistics-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "7a7f1c8e-93a3-59dc-8be9-3b52df087c56",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "550a50dc-c96b-5393-abf7-ae94e602eb09",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"ceps\": \"01310100,20040002,30140071\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "69b8a2fc-7031-522d-b8ec-f0ded7b1ae93",
+      "name": "Apify Engine: brazil-cep-geocoordinates-logistics-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "638c1474-b44c-5547-92a2-48efe8743b90",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "83cb0586-eb1b-5cb2-a1e9-b6257f19bd3a",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-cep-geocoordinates-logistics-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "27f55422-0eb9-5c38-9765-0424dcce9b8e",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-cep-geocoordinates-logistics-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-cep-geocoordinates-logistics-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+    "estimatedPpeUsdPerEvent": 0.01
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

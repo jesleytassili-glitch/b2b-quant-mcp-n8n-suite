@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nAudits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor](https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-pix-ispb-cvm-financial-kyb-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "b63119b6-4f21-54dd-8c97-9fd2198792cc",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "8acfcdf0-0c7a-5d3f-92f4-6ee7e827bb8a",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"institutionQuery\": \"Banco\",\n  \"onlyDirectPix\": true,\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "25415a09-082e-57d7-960a-6175f58ca7bd",
+      "name": "Apify Engine: brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c308ac2c-5411-55b1-b9ae-1d6cdaed12e8",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "cf79b43b-4125-5125-9eed-61ed742a91a7",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-pix-ispb-cvm-financial-kyb-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "c5cc4640-0421-5c44-952a-d7572162eddf",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-pix-ispb-cvm-financial-kyb-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-pix-ispb-cvm-financial-kyb-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+    "estimatedPpeUsdPerEvent": 0.02
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

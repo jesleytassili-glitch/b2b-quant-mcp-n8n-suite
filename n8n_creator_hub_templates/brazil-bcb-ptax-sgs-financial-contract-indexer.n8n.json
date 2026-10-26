@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nFetches official Central Bank of Brazil (BCB SGS & Olinda) macroeconomic series (Selic, CDI, IPCA, IGP-M, PTAX USD/EUR) and calculates automated B2B contract, lease, and treasury monetary adjustments.\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer](https://apify.com/b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-bcb-ptax-sgs-financial-contract-indexer** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "edd9d5ba-dd89-5b20-a69d-0893e73bc65b",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "59c78749-7db0-5fb1-ad43-9249820d7771",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-bcb-ptax-sgs-financial-contract-indexer/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"indicators\": \"SELIC,IPCA,IGP-M,PTAX_USD\",\n  \"contractBaseValueBrl\": 10000,\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "9bb6c0ba-58e6-5554-8418-5935e7b5e7bf",
+      "name": "Apify Engine: brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ade56f7a-5c49-5a93-9393-2b462f844cb3",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "31fee255-42c2-537d-bf4a-7d5cd9f2bd8c",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-bcb-ptax-sgs-financial-contract-indexer', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "84dfb8de-b997-56e3-adf8-c04d54f16d24",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-bcb-ptax-sgs-financial-contract-indexer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-bcb-ptax-sgs-financial-contract-indexer": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer",
+    "estimatedPpeUsdPerEvent": 0.015
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

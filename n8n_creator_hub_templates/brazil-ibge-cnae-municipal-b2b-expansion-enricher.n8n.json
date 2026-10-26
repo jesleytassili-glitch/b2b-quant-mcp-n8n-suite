@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nEnriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher](https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-ibge-cnae-municipal-b2b-expansion-enricher** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "c5496f08-2d49-5e03-9e3a-ade257628b03",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "44c00fe6-f6d6-5b7a-bb26-1a024b2a90e8",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"cnaeCodes\": \"6201501,4711302,8630503\",\n  \"targetUf\": \"SP\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "17d896df-5b62-545c-9811-fbc28f9ebc32",
+      "name": "Apify Engine: brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "543fa6f0-76ea-5e9f-bbec-14b5ea86b1c2",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "e1b75848-622a-5c2a-b3ed-41389bc728dd",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-ibge-cnae-municipal-b2b-expansion-enricher', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "f7f1b1ba-39a6-559a-821c-d21eaf75bcfb",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-ibge-cnae-municipal-b2b-expansion-enricher": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+    "estimatedPpeUsdPerEvent": 0.015
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

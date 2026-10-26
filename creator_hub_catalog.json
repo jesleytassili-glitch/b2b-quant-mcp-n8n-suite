@@ -1,8 +1,8 @@
 {
   "apify_username": "b2b-quant-apis",
-  "total_n8n_workflows": 24,
-  "single_actor_templates": 20,
-  "super_pipelines": 4,
+  "total_n8n_workflows": 30,
+  "single_actor_templates": 25,
+  "super_pipelines": 5,
   "entries": [
     {
       "type": "single_actor_template",
@@ -39,6 +39,76 @@
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-b2b-cnpj-qsa-lead-enricher.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
       "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "workflow_name": "Automated Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-bcb-ptax-sgs-financial-contract-indexer.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-bcb-ptax-sgs-financial-contract-indexer/run-sync-get-dataset-items",
+      "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-camara-legislative-regulatory-risk-radar",
+      "workflow_name": "Automated Brazil Congress Legislative Bills & Tax Regulatory Risk Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-camara-legislative-regulatory-risk-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-camara-legislative-regulatory-risk-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.025,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-cep-geocoordinates-logistics-auditor",
+      "workflow_name": "Automated Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-cep-geocoordinates-logistics-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.01,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "workflow_name": "Automated Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-ibge-cnae-municipal-b2b-expansion-enricher.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items",
+      "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "workflow_name": "Automated Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-pix-ispb-cvm-financial-kyb-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
       "n8n_categories": [
         "AI & LLMs",
         "Sales",
@@ -334,6 +404,20 @@
         "b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
       ],
       "combined_ppe_usd_per_cascade": 0.08
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "05_brazil_b2b_erp_fintech_cnae_cep_pix_bcb_waterfall",
+      "workflow_name": "Brazil B2B ERP, FinTech KYB, IBGE CNAE, CEP Geo-Logistics & BCB PTAX/Selic Waterfall (5-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\05_brazil_b2b_erp_fintech_cnae_cep_pix_bcb_waterfall.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+        "b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+        "b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+        "b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+        "b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
+      ],
+      "combined_ppe_usd_per_cascade": 0.075
     }
   ]
 }

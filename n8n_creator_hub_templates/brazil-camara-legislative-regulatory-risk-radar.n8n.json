@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil Congress Legislative Bills & Tax Regulatory Risk Radar — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil Congress Legislative Bills & Tax Regulatory Risk Radar Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nMonitors Brazilian Chamber of Deputies (Camara dos Deputados API v2) legislative bills (PL, PLP, PEC, MPV). Filters by sector/tax keyword, extracts official summary (ementa), presentation date, and Regulatory Risk Scores (0-100).\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar](https://apify.com/b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-camara-legislative-regulatory-risk-radar** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "80e258df-3949-5746-9fa1-465ec457c3d0",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "726114d7-6ad7-57cc-83f3-a4078030f00a",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-camara-legislative-regulatory-risk-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"billType\": \"PL\",\n  \"keyword\": \"\",\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "545e491b-d59c-5ffd-8a4d-ee0ef6f8044b",
+      "name": "Apify Engine: brazil-camara-legislative-regulatory-risk-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "e56d5bc4-5d0c-5cd4-87f3-d1bb819eb5e7",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "7e1ad9a2-6b80-5be7-b3a7-8a589e28c2ce",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-camara-legislative-regulatory-risk-radar', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "6d195e7c-6ef1-54e0-8a88-5fdb50fefc80",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-camara-legislative-regulatory-risk-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-camara-legislative-regulatory-risk-radar": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+    "estimatedPpeUsdPerEvent": 0.025
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

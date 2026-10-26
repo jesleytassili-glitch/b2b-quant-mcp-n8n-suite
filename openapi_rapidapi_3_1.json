@@ -763,6 +763,191 @@
           }
         }
       }
+    },
+    "/acts/b2b-quant-apis~brazil-bcb-ptax-sgs-financial-contract-indexer/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_bcb_ptax_sgs_financial_contract_indexer",
+        "summary": "Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer",
+        "description": "Fetches official Central Bank of Brazil (BCB SGS & Olinda) macroeconomic series (Selic, CDI, IPCA, IGP-M, PTAX USD/EUR) and calculates automated B2B contract, lease, and treasury monetary adjustments. | PPE Event: `contract-index-calculated` ($0.015 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_bcb_ptax_sgs_financial_contract_indexer_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_bcb_ptax_sgs_financial_contract_indexer_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_pix_ispb_cvm_financial_kyb_auditor",
+        "summary": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+        "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100). | PPE Event: `financial-institution-audited` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_pix_ispb_cvm_financial_kyb_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_pix_ispb_cvm_financial_kyb_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_ibge_cnae_municipal_b2b_expansion_enricher",
+        "summary": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+        "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance. | PPE Event: `cnae-municipality-enriched` ($0.015 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_ibge_cnae_municipal_b2b_expansion_enricher_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_ibge_cnae_municipal_b2b_expansion_enricher_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+        "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100). | PPE Event: `cep-geo-audited` ($0.01 USD).",
+        "tags": [
+          "AI",
+          "ECOMMERCE",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_cep_geocoordinates_logistics_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_cep_geocoordinates_logistics_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~brazil-camara-legislative-regulatory-risk-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_brazil_camara_legislative_regulatory_risk_radar",
+        "summary": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar",
+        "description": "Monitors Brazilian Chamber of Deputies (Camara dos Deputados API v2) legislative bills (PL, PLP, PEC, MPV). Filters by sector/tax keyword, extracts official summary (ementa), presentation date, and Regulatory Risk Scores (0-100). | PPE Event: `legislative-bill-analyzed` ($0.025 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "NEWS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/brazil_camara_legislative_regulatory_risk_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/brazil_camara_legislative_regulatory_risk_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -2539,6 +2724,405 @@
             "type": "string",
             "title": "Markdown DevSecOps & SOC2 Threat Brief",
             "description": "Executive Markdown advisory for MSSPs, CISOs, and automated patch pipelines."
+          }
+        }
+      },
+      "brazil_bcb_ptax_sgs_financial_contract_indexer_Input": {
+        "type": "object",
+        "title": "Brazil BCB PTAX, Selic, CDI & IPCA Contract Indexer Input",
+        "description": "",
+        "properties": {
+          "indicators": {
+            "type": "string",
+            "title": "BCB SGS Indicator Codes or Names (CSV)",
+            "description": "Comma-separated BCB indicators: SELIC (432), IPCA (433), IGP-M (189), PTAX_USD (1), CDI (12).",
+            "default": "SELIC,IPCA,IGP-M,PTAX_USD"
+          },
+          "contractBaseValueBrl": {
+            "type": "number",
+            "title": "Base Contract / Invoice Value (BRL)",
+            "description": "Principal value in BRL to simulate monetary adjustment against the latest indicator rate.",
+            "default": 10000
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Indicators to Process",
+            "description": "Maximum number of indicator records to return (1 to 20).",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 20
+          }
+        },
+        "required": [
+          "indicators"
+        ]
+      },
+      "brazil_bcb_ptax_sgs_financial_contract_indexer_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer Output Record",
+        "properties": {
+          "indicatorCode": {
+            "type": "string",
+            "title": "Indicator Code",
+            "description": "BCB SGS series code."
+          },
+          "indicatorName": {
+            "type": "string",
+            "title": "Indicator Name",
+            "description": "Official macroeconomic indicator name."
+          },
+          "referenceDate": {
+            "type": "string",
+            "title": "Reference Date",
+            "description": "Latest official publication date (DD/MM/YYYY)."
+          },
+          "latestRateValue": {
+            "type": "number",
+            "title": "Latest Rate / Value",
+            "description": "Latest official value or rate published by BCB."
+          },
+          "unitType": {
+            "type": "string",
+            "title": "Unit / Periodicity",
+            "description": "Rate unit (% p.a., % p.m., BRL/USD)."
+          },
+          "contractBaseValueBrl": {
+            "type": "number",
+            "title": "Base Contract Value (BRL)",
+            "description": "Input contract principal in BRL."
+          },
+          "adjustedContractValueBrl": {
+            "type": "number",
+            "title": "Adjusted Contract Value (BRL)",
+            "description": "Simulated adjusted value in BRL."
+          },
+          "financialImpactScore": {
+            "type": "integer",
+            "title": "Financial Impact Score (0-100)",
+            "description": "Quantitative treasury materiality score (0-100)."
+          },
+          "markdownTreasuryBrief": {
+            "type": "string",
+            "title": "Markdown Treasury & ERP Brief",
+            "description": "Executive report for CFOs, ERPs, and legal contract automation."
+          }
+        }
+      },
+      "brazil_pix_ispb_cvm_financial_kyb_auditor_Input": {
+        "type": "object",
+        "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Input",
+        "description": "",
+        "properties": {
+          "institutionQuery": {
+            "type": "string",
+            "title": "Bank / FinTech Name or ISPB Code",
+            "description": "Institution name keyword or 8-digit ISPB code (e.g., 'Itau', 'Nu Pagamentos', 'Banco do Brasil', '00000000').",
+            "default": "Banco"
+          },
+          "onlyDirectPix": {
+            "type": "boolean",
+            "title": "Only Direct SPI Pix Settlement Participants",
+            "description": "When enabled, filters only institutions with direct settlement accounts in the Central Bank SPI.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Institutions to Audit",
+            "description": "Maximum number of audited financial institutions to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "institutionQuery"
+        ]
+      },
+      "brazil_pix_ispb_cvm_financial_kyb_auditor_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Output Record",
+        "properties": {
+          "ispbCode": {
+            "type": "string",
+            "title": "ISPB Code (8 Digits)",
+            "description": "Official Central Bank of Brazil ISPB identifier."
+          },
+          "institutionName": {
+            "type": "string",
+            "title": "Legal Institution Name",
+            "description": "Full corporate name registered in the SPI."
+          },
+          "shortName": {
+            "type": "string",
+            "title": "Short Trading Name",
+            "description": "Abbreviated clearing name."
+          },
+          "participationModality": {
+            "type": "string",
+            "title": "Pix Participation Modality",
+            "description": "Role in the Pix ecosystem."
+          },
+          "participationType": {
+            "type": "string",
+            "title": "SPI Settlement Type",
+            "description": "Direct (Direta) or Indirect (Indireta) settlement."
+          },
+          "operationStartDate": {
+            "type": "string",
+            "title": "Operation Start Date",
+            "description": "Official Pix SPI activation timestamp."
+          },
+          "kybTrustScore": {
+            "type": "integer",
+            "title": "KYB & Clearing Trust Score (0-100)",
+            "description": "Quantitative AML/KYB clearing reliability score (0-100)."
+          },
+          "markdownKybDossier": {
+            "type": "string",
+            "title": "Markdown Financial KYB Dossier",
+            "description": "Executive report for FinTech BaaS, treasury, and AML compliance teams."
+          }
+        }
+      },
+      "brazil_ibge_cnae_municipal_b2b_expansion_enricher_Input": {
+        "type": "object",
+        "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Input",
+        "description": "",
+        "properties": {
+          "cnaeCodes": {
+            "type": "string",
+            "title": "CNAE 2.3 Subclass Codes (CSV)",
+            "description": "Comma-separated 7-digit Brazilian CNAE codes (e.g., '6201501, 4711302, 8630503').",
+            "default": "6201501,4711302,8630503"
+          },
+          "targetUf": {
+            "type": "string",
+            "title": "Target State UF (for IBGE Capital/Municipal Lookup)",
+            "description": "Two-letter Brazilian state UF code (e.g., SP, RJ, MG, PR).",
+            "default": "SP"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CNAE Codes to Enrich",
+            "description": "Maximum number of CNAE subclass records to return (1 to 50).",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "cnaeCodes"
+        ]
+      },
+      "brazil_ibge_cnae_municipal_b2b_expansion_enricher_DatasetItem": {
+        "type": "object",
+        "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Output Record",
+        "properties": {
+          "cnaeSubclassId": {
+            "type": "string",
+            "title": "CNAE 7-Digit Code",
+            "description": "Official 7-digit CNAE 2.3 subclass identifier."
+          },
+          "cnaeDescription": {
+            "type": "string",
+            "title": "Official CNAE Description",
+            "description": "Official IBGE CONCLA subclass description."
+          },
+          "sectionCode": {
+            "type": "string",
+            "title": "Macro Section",
+            "description": "IBGE macro economic section."
+          },
+          "divisionDescription": {
+            "type": "string",
+            "title": "Economic Division",
+            "description": "IBGE 2-digit division description."
+          },
+          "permittedActivitiesCount": {
+            "type": "integer",
+            "title": "Permitted Activities Count",
+            "description": "Total specific activities covered by this CNAE."
+          },
+          "sampleActivities": {
+            "type": "string",
+            "title": "Sample Covered Activities",
+            "description": "Top activities included in this CNAE."
+          },
+          "targetUf": {
+            "type": "string",
+            "title": "Target State UF",
+            "description": "Queried Brazilian state UF."
+          },
+          "b2bFitScore": {
+            "type": "integer",
+            "title": "B2B Tax & Expansion Fit Score (0-100)",
+            "description": "Quantitative score for B2B segmentation and fiscal clarity (0-100)."
+          },
+          "markdownCnaeDossier": {
+            "type": "string",
+            "title": "Markdown Fiscal & B2B Segmentation Dossier",
+            "description": "Executive report for accountants, ERPs, and B2B lead segmentation."
+          }
+        }
+      },
+      "brazil_cep_geocoordinates_logistics_auditor_Input": {
+        "type": "object",
+        "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Input",
+        "description": "",
+        "properties": {
+          "ceps": {
+            "type": "string",
+            "title": "Brazilian 8-Digit CEPs (CSV)",
+            "description": "Comma-separated Brazilian postal codes (e.g., '01310100, 20040002, 30140071').",
+            "default": "01310100,20040002,30140071"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CEPs to Audit",
+            "description": "Maximum number of CEP records to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "ceps"
+        ]
+      },
+      "brazil_cep_geocoordinates_logistics_auditor_DatasetItem": {
+        "type": "object",
+        "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Output Record",
+        "properties": {
+          "cep": {
+            "type": "string",
+            "title": "CEP (8 Digits)",
+            "description": "Standardized 8-digit Brazilian postal code."
+          },
+          "stateUf": {
+            "type": "string",
+            "title": "State UF",
+            "description": "Two-letter Brazilian state code."
+          },
+          "cityName": {
+            "type": "string",
+            "title": "City / Municipality",
+            "description": "Official municipality name."
+          },
+          "neighborhood": {
+            "type": "string",
+            "title": "Neighborhood / Bairro",
+            "description": "District or neighborhood."
+          },
+          "street": {
+            "type": "string",
+            "title": "Street / Logradouro",
+            "description": "Street address."
+          },
+          "ibgeCityCode": {
+            "type": "string",
+            "title": "IBGE 7-Digit City Code",
+            "description": "Official 7-digit IBGE municipality code for NF-e/CT-e."
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude",
+            "description": "WGS84 Latitude coordinate."
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude",
+            "description": "WGS84 Longitude coordinate."
+          },
+          "logisticsReadinessScore": {
+            "type": "integer",
+            "title": "Logistics & NF-e Readiness Score (0-100)",
+            "description": "Quantitative score for last-mile routing and tax invoice completeness (0-100)."
+          },
+          "markdownLogisticsDossier": {
+            "type": "string",
+            "title": "Markdown Logistics & NF-e Dossier",
+            "description": "Executive report for e-commerce, TMS/WMS, and ERP tax engines."
+          }
+        }
+      },
+      "brazil_camara_legislative_regulatory_risk_radar_Input": {
+        "type": "object",
+        "title": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar Input",
+        "description": "",
+        "properties": {
+          "billType": {
+            "type": "string",
+            "title": "Legislative Proposition Type (PL, PLP, PEC, MPV)",
+            "description": "Type of legislative bill: PL (Ordinary Law), PLP (Complementary Law), PEC (Constitutional Amendment), MPV (Provisional Measure).",
+            "default": "PL"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Sector / Regulatory Keyword Filter",
+            "description": "Optional keyword to filter bill summaries (e.g., tributo, imposto, credito, trabalho, digital). Leave empty for latest bills.",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Legislative Bills to Analyze",
+            "description": "Maximum number of legislative propositions to return (1 to 50).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "billType"
+        ]
+      },
+      "brazil_camara_legislative_regulatory_risk_radar_DatasetItem": {
+        "type": "object",
+        "title": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar Output Record",
+        "properties": {
+          "propositionId": {
+            "type": "string",
+            "title": "Proposition ID",
+            "description": "Official Camara dos Deputados proposition ID."
+          },
+          "billCode": {
+            "type": "string",
+            "title": "Bill Code (Tipo N/Ano)",
+            "description": "Formatted legislative identifier (e.g., PL 1156/2026)."
+          },
+          "billType": {
+            "type": "string",
+            "title": "Proposition Type",
+            "description": "PL, PLP, PEC, or MPV."
+          },
+          "billYear": {
+            "type": "integer",
+            "title": "Presentation Year",
+            "description": "Year the bill was introduced."
+          },
+          "presentationDate": {
+            "type": "string",
+            "title": "Presentation Date",
+            "description": "ISO timestamp of presentation."
+          },
+          "summaryEmenta": {
+            "type": "string",
+            "title": "Official Bill Summary (Ementa)",
+            "description": "Official summary of the legislative proposal."
+          },
+          "officialUri": {
+            "type": "string",
+            "title": "Official API URI",
+            "description": "Direct link to the proposition record."
+          },
+          "regulatoryRiskScore": {
+            "type": "integer",
+            "title": "Regulatory Impact & Risk Score (0-100)",
+            "description": "Quantitative corporate and tax impact score (0-100)."
+          },
+          "markdownGovRelBrief": {
+            "type": "string",
+            "title": "Markdown GovRel & Legal Brief",
+            "description": "Executive report for law firms, tax advisors, and corporate GovRel teams."
           }
         }
       }
