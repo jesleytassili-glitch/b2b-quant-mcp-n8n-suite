@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) — MCP Server, n8n Workflow &amp; B2B API (@b2b-quant-apis)</title>
+  <meta name="description" content="B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers." />
+  <link rel="canonical" href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-healthcare-npi-provider-lead-enricher.html" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) \u2014 MCP Server, n8n Workflow & REST API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Cloud, Linux, Windows, macOS", "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.", "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-healthcare-npi-provider-lead-enricher.html", "sameAs": ["https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher", "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite"], "offers": {"@type": "Offer", "price": "0.02", "priceCurrency": "USD", "description": "Pay-Per-Event (npi-lead-enriched)"}}</script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b0f19; color: #f3f4f6; line-height: 1.6; padding: 2rem 1rem; margin: 0; }
+    .wrap { max-width: 920px; margin: 0 auto; background: #111827; border: 1px solid #1f2937; border-radius: 0.75rem; padding: 2rem; }
+    h1 { font-size: 1.85rem; margin-bottom: 0.5rem; color: #10b981; }
+    .meta { color: #9ca3af; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    pre { background: #030712; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; border: 1px solid #1f2937; color: #a5b4fc; }
+    .btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .btn { text-decoration: none; padding: 0.65rem 1.2rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.92rem; }
+    .btn-green { background: #10b981; color: #052e16; }
+    .btn-dark { background: #1f2937; color: #f3f4f6; border: 1px solid #374151; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/" style="color:#6ee7b7;text-decoration:none;">&larr; Back to Full 25-Actor B2B Suite</a></p>
+    <h1>US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)</h1>
+    <p class="meta">Actor ID: <code>b2b-quant-apis/us-healthcare-npi-provider-lead-enricher</code> | Pricing: <strong>$0.02 USD / npi-lead-enriched</strong> | MCP Server Ready</p>
+    <p>B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.</p>
+    <div class="btns">
+      <a class="btn btn-green" href="https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher" target="_blank" rel="noopener">Run on Apify Store &rarr;</a>
+      <a class="btn btn-dark" href="https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-healthcare-npi-provider-lead-enricher.n8n.json" target="_blank" rel="noopener">Download n8n Workflow (.json)</a>
+      <a class="btn btn-dark" href="https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher" target="_blank" rel="noopener">Connect Streamable MCP</a>
+    </div>
+    <h2>Sample JSON Input Payload</h2>
+    <pre>{
+  "taxonomies": [
+    "Cardiology",
+    "Dermatology"
+  ],
+  "state": "NY",
+  "max_results": 10
+}</pre>
+    <h2>1-Click Claude Desktop / Cursor MCP Config</h2>
+    <pre>{
+  "mcpServers": {
+    "us-healthcare-npi-provider-lead-enricher": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server", "--actors", "b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"],
+      "env": { "APIFY_TOKEN": "&lt;YOUR_APIFY_TOKEN&gt;" }
+    }
+  }
+}</pre>
+  </div>
+</body>
+</html>

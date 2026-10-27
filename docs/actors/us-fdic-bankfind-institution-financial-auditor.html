@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US FDIC BankFind Institution & Solvency Risk Auditor — MCP Server, n8n Workflow &amp; B2B API (@b2b-quant-apis)</title>
+  <meta name="description" content="Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams." />
+  <link rel="canonical" href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fdic-bankfind-institution-financial-auditor.html" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "US FDIC BankFind Institution & Solvency Risk Auditor \u2014 MCP Server, n8n Workflow & REST API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Cloud, Linux, Windows, macOS", "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.", "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fdic-bankfind-institution-financial-auditor.html", "sameAs": ["https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor", "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite"], "offers": {"@type": "Offer", "price": "0.025", "priceCurrency": "USD", "description": "Pay-Per-Event (fdic-bank-audited)"}}</script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b0f19; color: #f3f4f6; line-height: 1.6; padding: 2rem 1rem; margin: 0; }
+    .wrap { max-width: 920px; margin: 0 auto; background: #111827; border: 1px solid #1f2937; border-radius: 0.75rem; padding: 2rem; }
+    h1 { font-size: 1.85rem; margin-bottom: 0.5rem; color: #10b981; }
+    .meta { color: #9ca3af; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    pre { background: #030712; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; border: 1px solid #1f2937; color: #a5b4fc; }
+    .btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .btn { text-decoration: none; padding: 0.65rem 1.2rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.92rem; }
+    .btn-green { background: #10b981; color: #052e16; }
+    .btn-dark { background: #1f2937; color: #f3f4f6; border: 1px solid #374151; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/" style="color:#6ee7b7;text-decoration:none;">&larr; Back to Full 25-Actor B2B Suite</a></p>
+    <h1>US FDIC BankFind Institution & Solvency Risk Auditor</h1>
+    <p class="meta">Actor ID: <code>b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor</code> | Pricing: <strong>$0.025 USD / fdic-bank-audited</strong> | MCP Server Ready</p>
+    <p>Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.</p>
+    <div class="btns">
+      <a class="btn btn-green" href="https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor" target="_blank" rel="noopener">Run on Apify Store &rarr;</a>
+      <a class="btn btn-dark" href="https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-fdic-bankfind-institution-financial-auditor.n8n.json" target="_blank" rel="noopener">Download n8n Workflow (.json)</a>
+      <a class="btn btn-dark" href="https://mcp.apify.com/?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor" target="_blank" rel="noopener">Connect Streamable MCP</a>
+    </div>
+    <h2>Sample JSON Input Payload</h2>
+    <pre>{
+  "bank_names": [
+    "JPMorgan Chase Bank",
+    "Bank of America",
+    "Citibank"
+  ],
+  "state": "",
+  "only_active": true
+}</pre>
+    <h2>1-Click Claude Desktop / Cursor MCP Config</h2>
+    <pre>{
+  "mcpServers": {
+    "us-fdic-bankfind-institution-financial-auditor": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server", "--actors", "b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor"],
+      "env": { "APIFY_TOKEN": "&lt;YOUR_APIFY_TOKEN&gt;" }
+    }
+  }
+}</pre>
+  </div>
+</body>
+</html>
