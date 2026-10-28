@@ -2,11 +2,14 @@
 
 [![Apify Store Publisher](https://img.shields.io/badge/Apify_Store-%40b2b--quant--apis-00C853?style=for-the-badge&logo=apify)](https://apify.com/b2b-quant-apis)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-20_Live_Servers-6366F1?style=for-the-badge)](https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar)
-[![n8n Workflows](https://img.shields.io/badge/n8n-24_Ready_Workflows-FF6D5A?style=for-the-badge&logo=n8n)](./n8n_super_pipelines/)
+[![n8n Workflows](https://img.shields.io/badge/n8n-30_Ready_Workflows-FF6D5A?style=for-the-badge&logo=n8n)](./n8n_super_pipelines/)
 [![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1.0_Spec-85EA2D?style=for-the-badge&logo=openapiinitiative)](./openapi_rapidapi_3_1.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![M8ven Score](https://m8ven.ai/badge/mcp/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)](https://m8ven.ai/mcp/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)
+[![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
+[![jesleytassili-glitch/b2b-quant-mcp-n8n-suite MCP server](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/badges/score.svg)](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)
 
-Production-grade suite of **20 Stateless B2B Intelligence, KYB Compliance, GovCon, Healthcare, FinTech, Real Estate, Cybersecurity, and Tax Audit Engines** hosted on **[Apify Store (`@b2b-quant-apis`)](https://apify.com/b2b-quant-apis)**.
+Production-grade suite of **25 Stateless B2B Intelligence, KYB Compliance, GovCon, Healthcare, FinTech, Real Estate, Cybersecurity, and Tax Audit Engines** hosted on **[Apify Store (`@b2b-quant-apis`)](https://apify.com/b2b-quant-apis)**.
 
 Designed for **Machine-to-Machine (M2M) scheduled pipelines** and **Autonomous AI Agents**:
 - **20 MCP Servers** ready for **Claude Desktop**, **Cursor IDE**, **Windsurf**, **Smithery**, and **Glama.ai**;
