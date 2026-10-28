@@ -1,0 +1,179 @@
+{
+  "status": "succeeded",
+  "service": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+  "slug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+  "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.015,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/brazil-ibge-cnae-municipal-b2b-expansion-enricher.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "cnaeCodes": {
+        "title": "CNAE 2.3 Subclass Codes (CSV)",
+        "type": "string",
+        "description": "Comma-separated 7-digit Brazilian CNAE codes (e.g., '6201501, 4711302, 8630503').",
+        "editor": "textfield",
+        "default": "6201501,4711302,8630503"
+      },
+      "targetUf": {
+        "title": "Target State UF (for IBGE Capital/Municipal Lookup)",
+        "type": "string",
+        "description": "Two-letter Brazilian state UF code (e.g., SP, RJ, MG, PR).",
+        "editor": "textfield",
+        "default": "SP"
+      },
+      "maxResults": {
+        "title": "Max CNAE Codes to Enrich",
+        "type": "integer",
+        "description": "Maximum number of CNAE subclass records to return (1 to 50).",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 50
+      }
+    },
+    "required": [
+      "cnaeCodes"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "cnaeSubclassId": {
+          "type": "string",
+          "title": "CNAE 7-Digit Code",
+          "description": "Official 7-digit CNAE 2.3 subclass identifier."
+        },
+        "cnaeDescription": {
+          "type": "string",
+          "title": "Official CNAE Description",
+          "description": "Official IBGE CONCLA subclass description."
+        },
+        "sectionCode": {
+          "type": "string",
+          "title": "Macro Section",
+          "description": "IBGE macro economic section."
+        },
+        "divisionDescription": {
+          "type": "string",
+          "title": "Economic Division",
+          "description": "IBGE 2-digit division description."
+        },
+        "permittedActivitiesCount": {
+          "type": "integer",
+          "title": "Permitted Activities Count",
+          "description": "Total specific activities covered by this CNAE."
+        },
+        "sampleActivities": {
+          "type": "string",
+          "title": "Sample Covered Activities",
+          "description": "Top activities included in this CNAE."
+        },
+        "targetUf": {
+          "type": "string",
+          "title": "Target State UF",
+          "description": "Queried Brazilian state UF."
+        },
+        "b2bFitScore": {
+          "type": "integer",
+          "title": "B2B Tax & Expansion Fit Score (0-100)",
+          "description": "Quantitative score for B2B segmentation and fiscal clarity (0-100)."
+        },
+        "markdownCnaeDossier": {
+          "type": "string",
+          "title": "Markdown Fiscal & B2B Segmentation Dossier",
+          "description": "Executive report for accountants, ERPs, and B2B lead segmentation."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Brazil IBGE CNAE 2.3 & B2B Segmentation Overview",
+        "transformation": {
+          "fields": [
+            "cnaeSubclassId",
+            "cnaeDescription",
+            "sectionCode",
+            "divisionDescription",
+            "permittedActivitiesCount",
+            "targetUf",
+            "b2bFitScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "cnaeSubclassId": {
+              "label": "CNAE ID",
+              "format": "text"
+            },
+            "cnaeDescription": {
+              "label": "CNAE Description",
+              "format": "text"
+            },
+            "sectionCode": {
+              "label": "Section",
+              "format": "text"
+            },
+            "divisionDescription": {
+              "label": "Division",
+              "format": "text"
+            },
+            "permittedActivitiesCount": {
+              "label": "Activities #",
+              "format": "number"
+            },
+            "targetUf": {
+              "label": "State UF",
+              "format": "text"
+            },
+            "b2bFitScore": {
+              "label": "B2B Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "15000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+        "description": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher — Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.015",
+          "actorSlug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+          "eventName": "cnae-municipality-enriched",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        }
+      }
+    ]
+  }
+}

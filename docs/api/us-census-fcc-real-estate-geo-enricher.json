@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+  "slug": "us-census-fcc-real-estate-geo-enricher",
+  "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-census-fcc-real-estate-geo-enricher.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Input",
+    "description": "Configure semicolon-separated U.S. property coordinates (latitude,longitude) and census year to extract official FIPS, Census Tract, County, and PropTech underwriting scores.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "coordinatesList": {
+        "title": "U.S. Property Coordinates (lat,lon separated by ';')",
+        "type": "string",
+        "description": "Semicolon-separated latitude,longitude pairs (e.g., '40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431').",
+        "editor": "textfield",
+        "default": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431"
+      },
+      "censusYear": {
+        "title": "Census Vintage Year",
+        "type": "string",
+        "description": "Decennial Census geography vintage ('2020' or '2010').",
+        "editor": "textfield",
+        "default": "2020"
+      },
+      "maxResults": {
+        "title": "Maximum Properties to Enrich",
+        "type": "integer",
+        "description": "Maximum number of U.S. property coordinate pairs to enrich (1 to 100).",
+        "editor": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "coordinatesList"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "censusBlockFips": {
+          "type": "string",
+          "title": "15-Digit Census Block FIPS",
+          "description": "Official 15-digit U.S. Census Block FIPS identifier."
+        },
+        "censusTractFips": {
+          "type": "string",
+          "title": "11-Digit Census Tract FIPS",
+          "description": "11-digit Census Tract code used for HUD, Fannie Mae, and Opportunity Zone underwriting."
+        },
+        "countyFips": {
+          "type": "string",
+          "title": "5-Digit County FIPS",
+          "description": "Official 5-digit U.S. County FIPS code."
+        },
+        "countyName": {
+          "type": "string",
+          "title": "County Name",
+          "description": "Official County or Parish name."
+        },
+        "stateCode": {
+          "type": "string",
+          "title": "State USPS Code",
+          "description": "Two-letter U.S. State or Territory code."
+        },
+        "stateName": {
+          "type": "string",
+          "title": "State Name",
+          "description": "Full U.S. State name."
+        },
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+          "description": "Property latitude coordinate."
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+          "description": "Property longitude coordinate."
+        },
+        "realEstateInvestmentScore": {
+          "type": "integer",
+          "title": "PropTech Investment Score (0-100)",
+          "description": "Quantitative commercial corridor and metro tier score (0-100)."
+        },
+        "bboxSummary": {
+          "type": "string",
+          "title": "Census Block Bounding Box",
+          "description": "Geographic bounding box coordinates [minLon, minLat, maxLon, maxLat]."
+        },
+        "markdownPropertyBrief": {
+          "type": "string",
+          "title": "Markdown PropTech & FIPS Dossier",
+          "description": "Executive Markdown brief for real estate underwriting, insurance, and franchise siting."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US Real Estate Census Tract & FIPS PropTech Overview",
+        "transformation": {
+          "fields": [
+            "censusBlockFips",
+            "censusTractFips",
+            "countyFips",
+            "countyName",
+            "stateCode",
+            "stateName",
+            "latitude",
+            "longitude",
+            "realEstateInvestmentScore",
+            "bboxSummary"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "censusBlockFips": {
+              "label": "Block FIPS (15d)",
+              "format": "text"
+            },
+            "censusTractFips": {
+              "label": "Tract FIPS (11d)",
+              "format": "text"
+            },
+            "countyFips": {
+              "label": "County FIPS",
+              "format": "text"
+            },
+            "countyName": {
+              "label": "County",
+              "format": "text"
+            },
+            "stateCode": {
+              "label": "State",
+              "format": "text"
+            },
+            "stateName": {
+              "label": "State Name",
+              "format": "text"
+            },
+            "latitude": {
+              "label": "Latitude",
+              "format": "number"
+            },
+            "longitude": {
+              "label": "Longitude",
+              "format": "number"
+            },
+            "realEstateInvestmentScore": {
+              "label": "PropTech Score",
+              "format": "number"
+            },
+            "bboxSummary": {
+              "label": "Bounding Box",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-census-fcc-real-estate-geo-enricher",
+        "description": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher — Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "us-census-fcc-real-estate-geo-enricher",
+          "eventName": "property-geo-enriched",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+        }
+      }
+    ]
+  }
+}

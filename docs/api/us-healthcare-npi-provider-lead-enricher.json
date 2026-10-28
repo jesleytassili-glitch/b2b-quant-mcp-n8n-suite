@@ -1,0 +1,225 @@
+{
+  "status": "succeeded",
+  "service": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+  "slug": "us-healthcare-npi-provider-lead-enricher",
+  "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-healthcare-npi-provider-lead-enricher/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-healthcare-npi-provider-lead-enricher.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US Healthcare NPI Provider, Doctor & Clinic Lead Enricher Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "state": {
+        "title": "US State Code",
+        "type": "string",
+        "description": "Two-letter US State code (e.g., FL, NY, CA, TX).",
+        "editor": "textfield",
+        "default": "FL",
+        "prefill": "FL"
+      },
+      "city": {
+        "title": "City",
+        "type": "string",
+        "description": "Optional city filter (e.g., Miami, Orlando, Los Angeles).",
+        "editor": "textfield",
+        "default": "Miami",
+        "prefill": "Miami"
+      },
+      "taxonomyDescription": {
+        "title": "Specialty / Taxonomy Description",
+        "type": "string",
+        "description": "Specialty/Taxonomy e.g. Dentist, Dermatology, Internal Medicine, Physical Therapist.",
+        "editor": "textfield",
+        "default": "Dentist",
+        "prefill": "Dentist"
+      },
+      "enumerationType": {
+        "title": "Enumeration Type (NPI-1 / NPI-2)",
+        "type": "string",
+        "description": "Filter by Individual Providers (NPI-1), Organizations/Clinics (NPI-2), or All.",
+        "editor": "select",
+        "default": "ALL",
+        "enum": [
+          "ALL",
+          "NPI-1",
+          "NPI-2"
+        ],
+        "enumTitles": [
+          "All Providers & Clinics",
+          "NPI-1 (Individual Doctors/Providers)",
+          "NPI-2 (Organizations/Clinics/Hospitals)"
+        ]
+      },
+      "postalCode": {
+        "title": "Postal / ZIP Code",
+        "type": "string",
+        "description": "Optional US ZIP code prefix (e.g., 331, 33131).",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Max Results",
+        "type": "integer",
+        "description": "Maximum number of healthcare provider leads to extract and enrich (1 to 200).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "required": []
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "type": "object",
+      "properties": {
+        "npiNumber": {
+          "type": "string",
+          "title": "NPI Number"
+        },
+        "providerType": {
+          "type": "string",
+          "title": "Provider Type"
+        },
+        "fullNameOrOrgName": {
+          "type": "string",
+          "title": "Full Name / Organization"
+        },
+        "primarySpecialty": {
+          "type": "string",
+          "title": "Primary Specialty"
+        },
+        "LicenseNumber": {
+          "type": "string",
+          "title": "State License Number"
+        },
+        "city": {
+          "type": "string",
+          "title": "City"
+        },
+        "state": {
+          "type": "string",
+          "title": "State"
+        },
+        "phone": {
+          "type": "string",
+          "title": "Direct Phone"
+        },
+        "addressLine": {
+          "type": "string",
+          "title": "Practice Address"
+        },
+        "leadQualityScore": {
+          "type": "integer",
+          "title": "Lead Quality Score (0-100)"
+        },
+        "markdownLeadCard": {
+          "type": "string",
+          "title": "Markdown Lead Dossier"
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US Healthcare NPI Provider Leads Overview",
+        "transformation": {
+          "fields": [
+            "npiNumber",
+            "providerType",
+            "fullNameOrOrgName",
+            "primarySpecialty",
+            "LicenseNumber",
+            "city",
+            "state",
+            "phone",
+            "addressLine",
+            "leadQualityScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "npiNumber": {
+              "label": "NPI Number",
+              "format": "text"
+            },
+            "providerType": {
+              "label": "Type (NPI-1/NPI-2)",
+              "format": "text"
+            },
+            "fullNameOrOrgName": {
+              "label": "Provider / Clinic Name",
+              "format": "text"
+            },
+            "primarySpecialty": {
+              "label": "Primary Specialty",
+              "format": "text"
+            },
+            "LicenseNumber": {
+              "label": "License #",
+              "format": "text"
+            },
+            "city": {
+              "label": "City",
+              "format": "text"
+            },
+            "state": {
+              "label": "State",
+              "format": "text"
+            },
+            "phone": {
+              "label": "Phone",
+              "format": "text"
+            },
+            "addressLine": {
+              "label": "Practice Address",
+              "format": "text"
+            },
+            "leadQualityScore": {
+              "label": "Lead Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-healthcare-npi-provider-lead-enricher",
+        "description": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) — B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "us-healthcare-npi-provider-lead-enricher",
+          "eventName": "npi-lead-enriched",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+        }
+      }
+    ]
+  }
+}

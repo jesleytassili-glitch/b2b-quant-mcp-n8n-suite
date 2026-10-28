@@ -1,0 +1,158 @@
+{
+  "status": "succeeded",
+  "service": "US ClinicalTrials.gov Biotech & Pharma Study Radar",
+  "slug": "us-clinical-trials-biotech-radar",
+  "description": "B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.04,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-clinical-trials-biotech-radar",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-clinical-trials-biotech-radar.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US ClinicalTrials.gov Biotech, Pharma Sponsor & Recruiting Study Radar Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "condition": {
+        "title": "Disease or Medical Condition",
+        "type": "string",
+        "description": "Disease, medical condition, or therapeutic area query (e.g., Diabetes, Non-Small Cell Lung Cancer, Obesity, Alzheimer).",
+        "editor": "textfield",
+        "default": "Diabetes",
+        "prefill": "Diabetes"
+      },
+      "overallStatus": {
+        "title": "Study Recruitment Status",
+        "type": "string",
+        "description": "Filter clinical studies by current recruitment status on ClinicalTrials.gov.",
+        "editor": "select",
+        "default": "RECRUITING",
+        "enum": [
+          "RECRUITING",
+          "NOT_YET_RECRUITING",
+          "ACTIVE_NOT_RECRUITING",
+          "COMPLETED",
+          "ALL"
+        ],
+        "enumTitles": [
+          "Recruiting Now",
+          "Not Yet Recruiting",
+          "Active, Not Recruiting",
+          "Completed",
+          "All Statuses"
+        ]
+      },
+      "maxResults": {
+        "title": "Max Studies to Extract",
+        "type": "integer",
+        "description": "Maximum number of clinical trial records to fetch (1 to 100).",
+        "editor": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": []
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+      "overview": {
+        "title": "Clinical Trials & Biotech Sponsors Overview",
+        "transformation": {
+          "fields": [
+            "nctId",
+            "briefTitle",
+            "overallStatus",
+            "leadSponsorName",
+            "leadSponsorClass",
+            "phases",
+            "enrollmentCount",
+            "conditions",
+            "locationsCount",
+            "studyUrl"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "nctId": {
+              "label": "NCT ID",
+              "format": "text"
+            },
+            "briefTitle": {
+              "label": "Brief Title",
+              "format": "text"
+            },
+            "overallStatus": {
+              "label": "Status",
+              "format": "text"
+            },
+            "leadSponsorName": {
+              "label": "Lead Sponsor",
+              "format": "text"
+            },
+            "leadSponsorClass": {
+              "label": "Sponsor Class",
+              "format": "text"
+            },
+            "phases": {
+              "label": "Phases",
+              "format": "array"
+            },
+            "enrollmentCount": {
+              "label": "Enrollment",
+              "format": "number"
+            },
+            "conditions": {
+              "label": "Conditions",
+              "format": "array"
+            },
+            "locationsCount": {
+              "label": "Clinical Sites",
+              "format": "number"
+            },
+            "studyUrl": {
+              "label": "ClinicalTrials.gov URL",
+              "format": "link"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "40000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-clinical-trials-biotech-radar",
+        "description": "US ClinicalTrials.gov Biotech & Pharma Study Radar — B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.04",
+          "actorSlug": "us-clinical-trials-biotech-radar",
+          "eventName": "clinical-trial-extracted",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-clinical-trials-biotech-radar"
+        }
+      }
+    ]
+  }
+}

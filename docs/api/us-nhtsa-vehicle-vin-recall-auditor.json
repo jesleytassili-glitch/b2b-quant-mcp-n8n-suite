@@ -1,0 +1,256 @@
+{
+  "status": "succeeded",
+  "service": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+  "slug": "us-nhtsa-vehicle-vin-recall-auditor",
+  "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-nhtsa-vehicle-vin-recall-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-nhtsa-vehicle-vin-recall-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US NHTSA Vehicle VIN Decoder, Fleet Specs & Safety Recall Auditor Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "vins": {
+        "title": "Vehicle Identification Numbers (VINs)",
+        "type": "array",
+        "description": "List of 17-character Vehicle Identification Numbers to decode and audit.",
+        "editor": "stringList",
+        "default": [
+          "5UXWX7C5*BA",
+          "1HGCM82633A004352"
+        ],
+        "prefill": [
+          "5UXWX7C5*BA",
+          "1HGCM82633A004352"
+        ]
+      },
+      "checkRecalls": {
+        "title": "Check NHTSA Safety Recalls",
+        "type": "boolean",
+        "description": "Query official NHTSA Recall API by decoded Make, Model, and Model Year.",
+        "editor": "checkbox",
+        "default": true
+      },
+      "maxResults": {
+        "title": "Max VINs to Process",
+        "type": "integer",
+        "description": "Maximum number of VINs to decode and audit per run.",
+        "editor": "number",
+        "default": 50,
+        "minimum": 1,
+        "maximum": 500
+      }
+    },
+    "required": [
+      "vins"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "vin": {
+          "type": "string",
+          "title": "VIN"
+        },
+        "isValidVinFormat": {
+          "type": "boolean",
+          "title": "Valid Format"
+        },
+        "make": {
+          "type": "string",
+          "title": "Make"
+        },
+        "model": {
+          "type": "string",
+          "title": "Model"
+        },
+        "modelYear": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "title": "Model Year"
+        },
+        "vehicleType": {
+          "type": "string",
+          "title": "Vehicle Type"
+        },
+        "bodyClass": {
+          "type": "string",
+          "title": "Body Class"
+        },
+        "engineCylinders": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "title": "Engine Cylinders"
+        },
+        "displacementL": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Displacement (L)"
+        },
+        "fuelTypePrimary": {
+          "type": "string",
+          "title": "Primary Fuel Type"
+        },
+        "driveType": {
+          "type": "string",
+          "title": "Drive Type"
+        },
+        "manufacturer": {
+          "type": "string",
+          "title": "Manufacturer"
+        },
+        "plantCity": {
+          "type": "string",
+          "title": "Plant City"
+        },
+        "plantCountry": {
+          "type": "string",
+          "title": "Plant Country"
+        },
+        "errorCode": {
+          "type": "string",
+          "title": "NHTSA Error Code"
+        },
+        "recallsCount": {
+          "type": "integer",
+          "title": "Recalls Count"
+        },
+        "fleetSafetyStatus": {
+          "type": "string",
+          "title": "Fleet Safety Status"
+        },
+        "recallsSummary": {
+          "type": "array",
+          "title": "Recalls Summary"
+        },
+        "source": {
+          "type": "string",
+          "title": "Data Source"
+        },
+        "auditedAt": {
+          "type": "string",
+          "title": "Audited At (UTC)"
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Vehicle VIN Specs & Recall Overview",
+        "transformation": {
+          "fields": [
+            "vin",
+            "isValidVinFormat",
+            "make",
+            "model",
+            "modelYear",
+            "vehicleType",
+            "bodyClass",
+            "engineCylinders",
+            "fuelTypePrimary",
+            "plantCountry",
+            "recallsCount",
+            "fleetSafetyStatus"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "vin": {
+              "label": "VIN",
+              "format": "text"
+            },
+            "isValidVinFormat": {
+              "label": "Valid VIN Format",
+              "format": "boolean"
+            },
+            "make": {
+              "label": "Make",
+              "format": "text"
+            },
+            "model": {
+              "label": "Model",
+              "format": "text"
+            },
+            "modelYear": {
+              "label": "Model Year",
+              "format": "number"
+            },
+            "vehicleType": {
+              "label": "Vehicle Type",
+              "format": "text"
+            },
+            "bodyClass": {
+              "label": "Body Class",
+              "format": "text"
+            },
+            "engineCylinders": {
+              "label": "Cylinders",
+              "format": "number"
+            },
+            "fuelTypePrimary": {
+              "label": "Fuel Type",
+              "format": "text"
+            },
+            "plantCountry": {
+              "label": "Plant Country",
+              "format": "text"
+            },
+            "recallsCount": {
+              "label": "Recalls Count",
+              "format": "number"
+            },
+            "fleetSafetyStatus": {
+              "label": "Fleet Safety Status",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-nhtsa-vehicle-vin-recall-auditor",
+        "description": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor — Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "us-nhtsa-vehicle-vin-recall-auditor",
+          "eventName": "vin-decoded-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+        }
+      }
+    ]
+  }
+}

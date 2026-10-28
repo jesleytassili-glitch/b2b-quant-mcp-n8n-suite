@@ -1,0 +1,215 @@
+{
+  "status": "succeeded",
+  "service": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+  "slug": "us-sam-gov-federal-procurement-auditor",
+  "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.035,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-sam-gov-federal-procurement-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Input",
+    "description": "Configure contract scope keyword, federal awarding agency filter, minimum award value in USD, and maximum results to extract and score U.S. Federal Government B2G contracts.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "keyword": {
+        "title": "Contract Scope / Technology Keyword",
+        "type": "string",
+        "description": "Keyword searched in federal contract award descriptions (e.g., 'cybersecurity', 'cloud software', 'medical supplies', 'autonomous').",
+        "editor": "textfield",
+        "default": "cybersecurity"
+      },
+      "awardingAgency": {
+        "title": "Federal Awarding Agency (Optional)",
+        "type": "string",
+        "description": "Optional filter by top-tier U.S. Federal Agency name (e.g., 'Department of Defense', 'Department of Veterans Affairs').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "minAwardAmount": {
+        "title": "Minimum Contract Value (USD)",
+        "type": "integer",
+        "description": "Minimum contract obligation amount in USD (0 to 1,000,000,000).",
+        "editor": "number",
+        "default": 50000,
+        "minimum": 0,
+        "maximum": 1000000000
+      },
+      "maxResults": {
+        "title": "Maximum Contracts to Extract",
+        "type": "integer",
+        "description": "Maximum number of federal contract awards to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "keyword"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "awardId": {
+          "type": "string",
+          "title": "Federal Award ID (PIID)",
+          "description": "Official Procurement Instrument Identifier (PIID)."
+        },
+        "recipientName": {
+          "type": "string",
+          "title": "Contractor / Recipient Name",
+          "description": "Legal entity awarded the federal contract."
+        },
+        "awardingAgency": {
+          "type": "string",
+          "title": "Awarding Agency",
+          "description": "Top-tier U.S. Federal Department or Agency."
+        },
+        "awardingSubAgency": {
+          "type": "string",
+          "title": "Awarding Sub-Agency",
+          "description": "Specific bureau, command, or sub-agency."
+        },
+        "awardAmountUsd": {
+          "type": "number",
+          "title": "Award Amount (USD)",
+          "description": "Total federal contract award amount in USD."
+        },
+        "startDate": {
+          "type": "string",
+          "title": "Start Date",
+          "description": "Contract period of performance start date (YYYY-MM-DD)."
+        },
+        "endDate": {
+          "type": "string",
+          "title": "End Date",
+          "description": "Contract period of performance end/renewal date (YYYY-MM-DD)."
+        },
+        "contractAwardType": {
+          "type": "string",
+          "title": "Contract Award Type",
+          "description": "Federal procurement instrument type (Definitive Contract, Delivery Order, BPA Call, Purchase Order)."
+        },
+        "b2gOpportunityScore": {
+          "type": "integer",
+          "title": "B2G Opportunity Score (0-100)",
+          "description": "Quantitative score evaluating contract value, recompete window, and B2G subcontracting potential (0-100)."
+        },
+        "description": {
+          "type": "string",
+          "title": "Contract Scope Description",
+          "description": "Official summary of goods or services procured."
+        },
+        "markdownProcurementBrief": {
+          "type": "string",
+          "title": "Markdown B2G Procurement Intelligence Brief",
+          "description": "Executive Markdown dossier for GovCon capture teams, B2B sales, and AI RAG agents."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US Federal Contracts & SAM.gov B2G Radar Overview",
+        "transformation": {
+          "fields": [
+            "awardId",
+            "recipientName",
+            "awardingAgency",
+            "awardingSubAgency",
+            "awardAmountUsd",
+            "startDate",
+            "endDate",
+            "contractAwardType",
+            "b2gOpportunityScore",
+            "description"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "awardId": {
+              "label": "Award ID (PIID)",
+              "format": "text"
+            },
+            "recipientName": {
+              "label": "Winning Contractor",
+              "format": "text"
+            },
+            "awardingAgency": {
+              "label": "Awarding Agency",
+              "format": "text"
+            },
+            "awardingSubAgency": {
+              "label": "Sub-Agency",
+              "format": "text"
+            },
+            "awardAmountUsd": {
+              "label": "Award Amount (USD)",
+              "format": "number"
+            },
+            "startDate": {
+              "label": "Start Date",
+              "format": "text"
+            },
+            "endDate": {
+              "label": "End Date",
+              "format": "text"
+            },
+            "contractAwardType": {
+              "label": "Contract Type",
+              "format": "text"
+            },
+            "b2gOpportunityScore": {
+              "label": "B2G Score",
+              "format": "number"
+            },
+            "description": {
+              "label": "Scope Description",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "35000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-sam-gov-federal-procurement-auditor",
+        "description": "US Federal Contracts & SAM.gov Procurement B2G Radar — Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.035",
+          "actorSlug": "us-sam-gov-federal-procurement-auditor",
+          "eventName": "federal-contract-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+        }
+      }
+    ]
+  }
+}

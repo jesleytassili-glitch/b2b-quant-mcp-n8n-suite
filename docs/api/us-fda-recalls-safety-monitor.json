@@ -1,0 +1,242 @@
+{
+  "status": "succeeded",
+  "service": "US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+  "slug": "us-fda-recalls-safety-monitor",
+  "description": "Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.03,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fda-recalls-safety-monitor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fda-recalls-safety-monitor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-fda-recalls-safety-monitor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US FDA Recalls & Safety Enforcement Monitor Input",
+    "description": "Configure the FDA regulatory domain, hazard classification filter, search keywords, and US state filter to extract enriched FDA recall intelligence.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "domain": {
+        "title": "FDA Regulatory Domain",
+        "type": "string",
+        "description": "Select the FDA enforcement category to monitor: food, drug, or device.",
+        "editor": "select",
+        "default": "food",
+        "enum": [
+          "food",
+          "drug",
+          "device"
+        ],
+        "enumTitles": [
+          "Food & Supplements",
+          "Drugs & Pharmaceuticals",
+          "Medical Devices"
+        ]
+      },
+      "classification": {
+        "title": "Hazard Classification",
+        "type": "string",
+        "description": "Filter recalls by FDA hazard severity class (Class I = highest life-threatening risk, Class II = moderate/reversible risk, Class III = low risk).",
+        "editor": "select",
+        "default": "ALL",
+        "enum": [
+          "ALL",
+          "Class I",
+          "Class II",
+          "Class III"
+        ],
+        "enumTitles": [
+          "All Severity Classes",
+          "Class I (Highest Risk / Life-Threatening)",
+          "Class II (Moderate/Reversible Risk)",
+          "Class III (Low Risk / Labeling)"
+        ]
+      },
+      "keyword": {
+        "title": "Search Keyword (Optional)",
+        "type": "string",
+        "description": "Optional search keyword in reason_for_recall or product_description (e.g., 'salmonella', 'listeria', 'undeclared', 'pacemaker').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "state": {
+        "title": "US State Code (Optional)",
+        "type": "string",
+        "description": "Optional 2-letter US State of recalling firm (e.g., 'CA', 'NY', 'TX', 'FL').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Maximum Results",
+        "type": "integer",
+        "description": "Maximum number of recall enforcement records to fetch (1 to 200).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "required": [
+      "domain"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "recallNumber": {
+          "type": "string",
+          "title": "Recall Number",
+          "description": "Official FDA recall event or enforcement number."
+        },
+        "domain": {
+          "type": "string",
+          "title": "FDA Domain",
+          "description": "Regulatory domain (food, drug, device)."
+        },
+        "classification": {
+          "type": "string",
+          "title": "Classification",
+          "description": "FDA hazard severity class (Class I, Class II, Class III)."
+        },
+        "severityScore": {
+          "type": "integer",
+          "title": "Severity Score (0-100)",
+          "description": "Quantitative risk score based on hazard class, recall status, and nationwide distribution."
+        },
+        "recallingFirm": {
+          "type": "string",
+          "title": "Recalling Firm",
+          "description": "Manufacturer, distributor, or firm initiating the recall."
+        },
+        "state": {
+          "type": "string",
+          "title": "State",
+          "description": "2-letter US State code of the recalling firm."
+        },
+        "status": {
+          "type": "string",
+          "title": "Recall Status",
+          "description": "Current enforcement status (Ongoing, Completed, Terminated, Pending)."
+        },
+        "reportDate": {
+          "type": "string",
+          "title": "Report Date",
+          "description": "Formatted FDA enforcement report date (YYYY-MM-DD)."
+        },
+        "reasonForRecall": {
+          "type": "string",
+          "title": "Reason for Recall",
+          "description": "Official FDA summary of the defect, contamination, or safety hazard."
+        },
+        "productDescription": {
+          "type": "string",
+          "title": "Product Description",
+          "description": "Detailed description of the recalled product, packaging, and brand."
+        },
+        "markdownLegalBrief": {
+          "type": "string",
+          "title": "Markdown Legal & Compliance Brief",
+          "description": "Ready-to-use Markdown dossier for Product Liability litigation and supply chain QA."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US FDA Recalls & Safety Enforcement Overview",
+        "transformation": {
+          "fields": [
+            "recallNumber",
+            "domain",
+            "classification",
+            "severityScore",
+            "recallingFirm",
+            "state",
+            "status",
+            "reportDate",
+            "reasonForRecall",
+            "productDescription"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "recallNumber": {
+              "label": "Recall Number",
+              "format": "text"
+            },
+            "domain": {
+              "label": "Domain",
+              "format": "text"
+            },
+            "classification": {
+              "label": "Hazard Class",
+              "format": "text"
+            },
+            "severityScore": {
+              "label": "Severity Score",
+              "format": "number"
+            },
+            "recallingFirm": {
+              "label": "Recalling Firm",
+              "format": "text"
+            },
+            "state": {
+              "label": "State",
+              "format": "text"
+            },
+            "status": {
+              "label": "Status",
+              "format": "text"
+            },
+            "reportDate": {
+              "label": "Report Date",
+              "format": "text"
+            },
+            "reasonForRecall": {
+              "label": "Reason for Recall",
+              "format": "text"
+            },
+            "productDescription": {
+              "label": "Product Description",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "30000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-fda-recalls-safety-monitor",
+        "description": "US FDA Recalls & Safety Monitor (Food, Drug & Devices) — Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.03",
+          "actorSlug": "us-fda-recalls-safety-monitor",
+          "eventName": "fda-recall-extracted",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fda-recalls-safety-monitor"
+        }
+      }
+    ]
+  }
+}

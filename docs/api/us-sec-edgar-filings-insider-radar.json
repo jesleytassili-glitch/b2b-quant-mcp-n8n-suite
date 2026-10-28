@@ -1,0 +1,227 @@
+{
+  "status": "succeeded",
+  "service": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+  "slug": "us-sec-edgar-filings-insider-radar",
+  "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.04,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-sec-edgar-filings-insider-radar.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US SEC EDGAR Filings & Insider Trading Radar Input",
+    "description": "Configure the Ticker or 10-digit CIK, SEC Form Type filter, and maximum filings to extract and score from the official U.S. SEC EDGAR Submissions API.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "tickerOrCik": {
+        "title": "Stock Ticker or SEC CIK",
+        "type": "string",
+        "description": "Public company stock ticker (e.g., 'AAPL', 'MSFT', 'NVDA', 'TSLA', 'JPM') or 10-digit SEC Central Index Key (e.g., '0000320193').",
+        "editor": "textfield",
+        "default": "AAPL"
+      },
+      "formType": {
+        "title": "SEC Filing Form Type",
+        "type": "string",
+        "description": "Filter by specific SEC regulatory form type or select ALL.",
+        "editor": "select",
+        "default": "ALL",
+        "enum": [
+          "ALL",
+          "10-K",
+          "10-Q",
+          "8-K",
+          "4"
+        ],
+        "enumTitles": [
+          "All Major Filings (10-K, 10-Q, 8-K, Form 4)",
+          "Form 10-K (Annual Financial Report)",
+          "Form 10-Q (Quarterly Financial Report)",
+          "Form 8-K (Material Corporate Events)",
+          "Form 4 (Insider Trading Statement)"
+        ]
+      },
+      "keyword": {
+        "title": "Document Description / Item Keyword (Optional)",
+        "type": "string",
+        "description": "Optional filter in primary document description or 8-K items (e.g., '5.02', '2.02', 'acquisition', 'restatement').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Maximum Results",
+        "type": "integer",
+        "description": "Maximum number of SEC EDGAR filings to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "tickerOrCik"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "accessionNumber": {
+          "type": "string",
+          "title": "Accession Number",
+          "description": "Unique SEC EDGAR filing accession identifier."
+        },
+        "cik": {
+          "type": "string",
+          "title": "CIK (10-Digit)",
+          "description": "Official 10-digit SEC Central Index Key."
+        },
+        "ticker": {
+          "type": "string",
+          "title": "Ticker",
+          "description": "Primary exchange stock ticker symbol."
+        },
+        "companyName": {
+          "type": "string",
+          "title": "Company Name",
+          "description": "Official registrant entity name on file with the SEC."
+        },
+        "formType": {
+          "type": "string",
+          "title": "Form Type",
+          "description": "SEC regulatory filing form code (10-K, 10-Q, 8-K, 4, etc.)."
+        },
+        "filingDate": {
+          "type": "string",
+          "title": "Filing Date",
+          "description": "Date the filing was accepted by SEC EDGAR (YYYY-MM-DD)."
+        },
+        "reportDate": {
+          "type": "string",
+          "title": "Period Report Date",
+          "description": "Period of report covered by the filing (YYYY-MM-DD)."
+        },
+        "governanceAlertScore": {
+          "type": "integer",
+          "title": "Governance Alert Score (0-100)",
+          "description": "Quantitative materiality & governance attention score (0-100)."
+        },
+        "itemsSummary": {
+          "type": "string",
+          "title": "Material Items / Description",
+          "description": "Reported 8-K item codes or primary filing description."
+        },
+        "edgarDocumentUrl": {
+          "type": "string",
+          "title": "SEC Archive URL",
+          "description": "Direct URL to the official filing document on sec.gov/Archives."
+        },
+        "markdownGovernanceBrief": {
+          "type": "string",
+          "title": "Markdown Governance & RAG Brief",
+          "description": "Executive Markdown dossier ready for financial due diligence and LLM RAG ingestion."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US SEC EDGAR Filings & Insider Radar Overview",
+        "transformation": {
+          "fields": [
+            "accessionNumber",
+            "cik",
+            "ticker",
+            "companyName",
+            "formType",
+            "filingDate",
+            "reportDate",
+            "governanceAlertScore",
+            "itemsSummary",
+            "edgarDocumentUrl"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "accessionNumber": {
+              "label": "Accession Number",
+              "format": "text"
+            },
+            "cik": {
+              "label": "CIK",
+              "format": "text"
+            },
+            "ticker": {
+              "label": "Ticker",
+              "format": "text"
+            },
+            "companyName": {
+              "label": "Company Name",
+              "format": "text"
+            },
+            "formType": {
+              "label": "Form Type",
+              "format": "text"
+            },
+            "filingDate": {
+              "label": "Filing Date",
+              "format": "text"
+            },
+            "reportDate": {
+              "label": "Report Date",
+              "format": "text"
+            },
+            "governanceAlertScore": {
+              "label": "Alert Score",
+              "format": "number"
+            },
+            "itemsSummary": {
+              "label": "Items / Description",
+              "format": "text"
+            },
+            "edgarDocumentUrl": {
+              "label": "SEC Document URL",
+              "format": "link"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "40000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-sec-edgar-filings-insider-radar",
+        "description": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) — Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.04",
+          "actorSlug": "us-sec-edgar-filings-insider-radar",
+          "eventName": "sec-filing-analyzed",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+        }
+      }
+    ]
+  }
+}

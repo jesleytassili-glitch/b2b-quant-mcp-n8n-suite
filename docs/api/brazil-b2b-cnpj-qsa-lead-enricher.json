@@ -1,0 +1,278 @@
+{
+  "status": "succeeded",
+  "service": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+  "slug": "brazil-b2b-cnpj-qsa-lead-enricher",
+  "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.015,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/brazil-b2b-cnpj-qsa-lead-enricher.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Brazil B2B CNPJ Company, Partners (QSA), CNAE & Simples Lead Enricher Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "cnpjs": {
+        "title": "CNPJs List",
+        "type": "array",
+        "description": "List of Brazilian CNPJ numbers to validate and enrich.",
+        "editor": "stringList",
+        "default": [
+          "00.000.000/0001-91",
+          "33.000.167/0001-01"
+        ],
+        "prefill": [
+          "00.000.000/0001-91",
+          "33.000.167/0001-01"
+        ]
+      },
+      "includeSecondaryCnaes": {
+        "title": "Include Secondary CNAEs",
+        "type": "boolean",
+        "description": "Include all secondary economic activities (CNAEs Secundários) in the output record and markdown dossier.",
+        "editor": "checkbox",
+        "default": true
+      },
+      "timeoutSeconds": {
+        "title": "HTTP Timeout (Seconds)",
+        "type": "integer",
+        "description": "HTTP timeout in seconds for each API request to BrasilAPI and OpenCNPJA.",
+        "editor": "number",
+        "default": 15,
+        "minimum": 3,
+        "maximum": 60
+      },
+      "maxResults": {
+        "title": "Maximum CNPJs to Process",
+        "type": "integer",
+        "description": "Maximum number of CNPJ records to process in a single execution.",
+        "editor": "number",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 5000
+      }
+    },
+    "required": [
+      "cnpjs"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "cnpj": {
+          "type": "string",
+          "description": "14-digit unformatted CNPJ identifier."
+        },
+        "cnpjFormatted": {
+          "type": "string",
+          "description": "Formatted CNPJ (XX.XXX.XXX/XXXX-XX)."
+        },
+        "isValidMod11": {
+          "type": "boolean",
+          "description": "Whether the CNPJ passed Modulo 11 check-digit validation."
+        },
+        "status": {
+          "type": "string",
+          "description": "Enrichment status (ENRICHED, INVALID_MOD11, NOT_FOUND, API_ERROR)."
+        },
+        "dataSource": {
+          "type": "string",
+          "description": "Primary source of enrichment (BrasilAPI, OpenCNPJA, FallbackCache, LOCAL_MOD11_VALIDATOR)."
+        },
+        "razaoSocial": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Official corporate legal name (Razão Social)."
+        },
+        "nomeFantasia": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Trade name (Nome Fantasia)."
+        },
+        "situacaoCadastral": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Registration status at Receita Federal (e.g. ATIVA, BAIXADA, INAPTA)."
+        },
+        "cnaePrincipalCodigo": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Primary economic activity code (CNAE Fiscal)."
+        },
+        "cnaePrincipalDescricao": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Primary economic activity description."
+        },
+        "capitalSocialBRL": {
+          "type": "number",
+          "description": "Registered share capital in BRL (Capital Social)."
+        },
+        "opcaoPeloSimples": {
+          "type": "boolean",
+          "description": "Whether the company is opted into Simples Nacional tax regime."
+        },
+        "opcaoPeloMei": {
+          "type": "boolean",
+          "description": "Whether the company is registered as MEI (Microempreendedor Individual)."
+        },
+        "uf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Brazilian state code (UF)."
+        },
+        "municipio": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Municipality / City name."
+        },
+        "sociosCount": {
+          "type": "integer",
+          "description": "Total number of partners and directors in QSA."
+        },
+        "qsa": {
+          "type": "array",
+          "description": "List of partners and administrators (Quadro de Sócios e Administradores)."
+        },
+        "cnaesSecundarios": {
+          "type": "array",
+          "description": "List of secondary CNAE codes and descriptions."
+        },
+        "markdownCompanyDossier": {
+          "type": "string",
+          "description": "Structured Markdown company dossier ready for LLM/AI agents and CRM ingestion."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Overview",
+        "transformation": {
+          "fields": [
+            "cnpjFormatted",
+            "isValidMod11",
+            "razaoSocial",
+            "nomeFantasia",
+            "situacaoCadastral",
+            "cnaePrincipalCodigo",
+            "cnaePrincipalDescricao",
+            "capitalSocialBRL",
+            "opcaoPeloSimples",
+            "opcaoPeloMei",
+            "uf",
+            "municipio",
+            "sociosCount"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "cnpjFormatted": {
+              "label": "CNPJ",
+              "format": "text"
+            },
+            "isValidMod11": {
+              "label": "Valid Mod 11",
+              "format": "boolean"
+            },
+            "razaoSocial": {
+              "label": "Razão Social",
+              "format": "text"
+            },
+            "nomeFantasia": {
+              "label": "Nome Fantasia",
+              "format": "text"
+            },
+            "situacaoCadastral": {
+              "label": "Situação Cadastral",
+              "format": "text"
+            },
+            "cnaePrincipalCodigo": {
+              "label": "CNAE Código",
+              "format": "text"
+            },
+            "cnaePrincipalDescricao": {
+              "label": "CNAE Descrição",
+              "format": "text"
+            },
+            "capitalSocialBRL": {
+              "label": "Capital Social (BRL)",
+              "format": "number"
+            },
+            "opcaoPeloSimples": {
+              "label": "Simples Nacional",
+              "format": "boolean"
+            },
+            "opcaoPeloMei": {
+              "label": "MEI",
+              "format": "boolean"
+            },
+            "uf": {
+              "label": "UF",
+              "format": "text"
+            },
+            "municipio": {
+              "label": "Município",
+              "format": "text"
+            },
+            "sociosCount": {
+              "label": "Sócios (QSA)",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "15000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/brazil-b2b-cnpj-qsa-lead-enricher",
+        "description": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher — Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.015",
+          "actorSlug": "brazil-b2b-cnpj-qsa-lead-enricher",
+          "eventName": "cnpj-lead-enriched",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+        }
+      }
+    ]
+  }
+}

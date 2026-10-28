@@ -1,0 +1,131 @@
+{
+  "status": "succeeded",
+  "service": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+  "slug": "healthcare-tiss-xml-validator",
+  "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.05,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/healthcare-tiss-xml-validator",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~healthcare-tiss-xml-validator/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/healthcare-tiss-xml-validator.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Auto-Fixer",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "tissXmlPayloads": {
+        "title": "TISS XML Batch Payloads (Raw XML Strings)",
+        "type": "array",
+        "description": "List of ANS TISS XML strings to validate structure, check 8-digit TUSS codes, and recalculate the mandatory <epilogo><hash> MD5 checksum.",
+        "default": [
+          "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+        ],
+        "editor": "stringList"
+      },
+      "autoFixHash": {
+        "title": "Auto-Recalculate and Repair ANS MD5 Hash",
+        "type": "boolean",
+        "description": "If true, recalculates the official ANS TISS MD5 hash over the XML body content and outputs the repaired XML ready for health insurer upload.",
+        "default": true,
+        "editor": "checkbox"
+      }
+    },
+    "required": []
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+      "overview": {
+        "title": "TISS 4.03.00 Anti-Glosa Audit Report",
+        "transformation": {
+          "fields": [
+            "loteNumero",
+            "registroANS",
+            "tissVersion",
+            "guiasCount",
+            "valorTotalLoteBRL",
+            "statusConformidade",
+            "originalHash",
+            "calculatedAnsMd5Hash",
+            "errorsFoundCount"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "loteNumero": {
+              "label": "Batch #",
+              "format": "text"
+            },
+            "registroANS": {
+              "label": "ANS Insurer ID",
+              "format": "text"
+            },
+            "tissVersion": {
+              "label": "TISS Version",
+              "format": "text"
+            },
+            "guiasCount": {
+              "label": "Guides Count",
+              "format": "number"
+            },
+            "valorTotalLoteBRL": {
+              "label": "Batch Total (BRL)",
+              "format": "number"
+            },
+            "statusConformidade": {
+              "label": "Compliance Status",
+              "format": "text"
+            },
+            "originalHash": {
+              "label": "Original Hash",
+              "format": "text"
+            },
+            "calculatedAnsMd5Hash": {
+              "label": "Valid ANS MD5 Hash",
+              "format": "text"
+            },
+            "errorsFoundCount": {
+              "label": "Glosa Risks Found",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "50000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/healthcare-tiss-xml-validator",
+        "description": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer — Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.05",
+          "actorSlug": "healthcare-tiss-xml-validator",
+          "eventName": "tiss-lot-validated",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/healthcare-tiss-xml-validator"
+        }
+      }
+    ]
+  }
+}
