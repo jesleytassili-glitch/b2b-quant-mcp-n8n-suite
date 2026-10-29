@@ -8,6 +8,8 @@
 [![M8ven Score](https://m8ven.ai/badge/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?v=100fc11f1e45c5a2a3c83b4dc18d2b4f)](https://m8ven.ai/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?s=readme)
 [![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
 [![jesleytassili-glitch/b2b-quant-mcp-n8n-suite MCP server](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/badges/score.svg)](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)
+[![Agensi Marketplace](https://img.shields.io/badge/Agensi.io-6_Live_Skill_Packs_%26_Master_Bundle-10B981)](https://www.agensi.io/r/JEAGUILERA)
+[![x402 Solana USDC](https://img.shields.io/badge/x402_Solana-USDC_Pay_Per_Call-9945FF)](https://jesleytassili-glitch.github.io/openapi.json)
 
 Production-grade suite of **25 Stateless B2B Intelligence, KYB Compliance, GovCon, Healthcare, FinTech, Real Estate, Cybersecurity, and Tax Audit Engines** hosted on **[Apify Store (`@b2b-quant-apis`)](https://apify.com/b2b-quant-apis)**.
 
