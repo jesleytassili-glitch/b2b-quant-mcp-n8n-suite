@@ -5,7 +5,7 @@
 [![n8n Workflows](https://img.shields.io/badge/n8n-30_Ready_Workflows-FF6D5A?style=for-the-badge&logo=n8n)](./n8n_super_pipelines/)
 [![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1.0_Spec-85EA2D?style=for-the-badge&logo=openapiinitiative)](./openapi_rapidapi_3_1.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
-[![M8ven Score](https://m8ven.ai/badge/mcp/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)](https://m8ven.ai/mcp/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)
+[![M8ven Score](https://m8ven.ai/badge/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?v=100fc11f1e45c5a2a3c83b4dc18d2b4f)](https://m8ven.ai/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?s=readme)
 [![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
 [![jesleytassili-glitch/b2b-quant-mcp-n8n-suite MCP server](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/badges/score.svg)](https://glama.ai/mcp/servers/jesleytassili-glitch/b2b-quant-mcp-n8n-suite)
 
