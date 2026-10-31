@@ -32,6 +32,11 @@
     "brazil-pix-ispb-cvm-financial-kyb-auditor",
     "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
     "brazil-cep-geocoordinates-logistics-auditor",
-    "brazil-camara-legislative-regulatory-risk-radar"
+    "brazil-camara-legislative-regulatory-risk-radar",
+    "us-osha-workplace-safety-violation-auditor",
+    "eu-ted-public-tenders-procurement-radar",
+    "uk-fca-companies-house-kyb-compliance-auditor",
+    "global-sanctions-pep-interpol-watchlist-screener",
+    "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
   ]
 }

@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+  "slug": "global-sanctions-pep-interpol-watchlist-screener",
+  "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.03,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/global-sanctions-pep-interpol-watchlist-screener.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Input",
+    "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "entityName": {
+        "title": "Entity or Individual Name to Screen",
+        "type": "string",
+        "description": "Organization, vessel, or individual name to screen for AML/KYC compliance (e.g., 'Lazarus Group', 'Garantex', 'Rosneft', 'Wagner').",
+        "editor": "textfield",
+        "default": "Lazarus Group"
+      },
+      "entityType": {
+        "title": "Entity Type Filter",
+        "type": "string",
+        "description": "Filter by 'ANY', 'ORGANIZATION', 'INDIVIDUAL', or 'VESSEL'.",
+        "editor": "textfield",
+        "default": "ANY"
+      },
+      "maxResults": {
+        "title": "Maximum Screening Records",
+        "type": "integer",
+        "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "entityName"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "watchlistRecordId": {
+          "type": "string",
+          "title": "Watchlist Record ID",
+          "description": "Official OFAC/UN/EU/OpenSanctions identifier."
+        },
+        "entityQuery": {
+          "type": "string",
+          "title": "Screened Query Name",
+          "description": "Input name submitted for AML/KYC screening."
+        },
+        "matchedName": {
+          "type": "string",
+          "title": "Matched Watchlist Entity Name",
+          "description": "Official designated name on the sanctions or PEP list."
+        },
+        "entityType": {
+          "type": "string",
+          "title": "Entity Type",
+          "description": "ORGANIZATION, INDIVIDUAL, or VESSEL."
+        },
+        "listSource": {
+          "type": "string",
+          "title": "Sanctions Authority / List Source",
+          "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP."
+        },
+        "sanctionsProgram": {
+          "type": "string",
+          "title": "Sanctions Program / Designation",
+          "description": "Specific regulatory program (e.g., CYBER2, DPRK3, RUSSIA-EO14024)."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "title": "Jurisdiction / Country ISO",
+          "description": "2-letter ISO country code associated with the designated entity."
+        },
+        "matchSimilarityScore": {
+          "type": "integer",
+          "title": "Fuzzy Name Similarity (0-100)",
+          "description": "Token and Jaro-Winkler lexical similarity score (0-100)."
+        },
+        "amlRiskScore": {
+          "type": "integer",
+          "title": "AML Compliance Risk Score (0-100)",
+          "description": "Composite AML/CFT risk score (0-100)."
+        },
+        "screeningDecision": {
+          "type": "string",
+          "title": "Automated AML Decision",
+          "description": "BLOCK_SANCTIONED, ESCALATE_COMPLIANCE_REVIEW, or CLEAR_NO_HIT."
+        },
+        "markdownAmlBrief": {
+          "type": "string",
+          "title": "Markdown AML & Sanctions Compliance Dossier",
+          "description": "Executive Markdown AML/KYC audit trail for compliance officers and automated onboarding."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist Overview",
+        "transformation": {
+          "fields": [
+            "watchlistRecordId",
+            "entityQuery",
+            "matchedName",
+            "entityType",
+            "listSource",
+            "sanctionsProgram",
+            "jurisdiction",
+            "matchSimilarityScore",
+            "amlRiskScore",
+            "screeningDecision"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "watchlistRecordId": {
+              "label": "Record ID",
+              "format": "text"
+            },
+            "entityQuery": {
+              "label": "Screened Query",
+              "format": "text"
+            },
+            "matchedName": {
+              "label": "Matched Entity",
+              "format": "text"
+            },
+            "entityType": {
+              "label": "Type",
+              "format": "text"
+            },
+            "listSource": {
+              "label": "Watchlist Source",
+              "format": "text"
+            },
+            "sanctionsProgram": {
+              "label": "Program",
+              "format": "text"
+            },
+            "jurisdiction": {
+              "label": "Jurisdiction",
+              "format": "text"
+            },
+            "matchSimilarityScore": {
+              "label": "Similarity",
+              "format": "number"
+            },
+            "amlRiskScore": {
+              "label": "AML Risk Score",
+              "format": "number"
+            },
+            "screeningDecision": {
+              "label": "Decision",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "30000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-sanctions-pep-interpol-watchlist-screener",
+        "description": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.03",
+          "actorSlug": "global-sanctions-pep-interpol-watchlist-screener",
+          "eventName": "sanctions-entity-screened",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+        }
+      }
+    ]
+  }
+}

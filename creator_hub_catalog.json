@@ -1,8 +1,8 @@
 {
   "apify_username": "b2b-quant-apis",
-  "total_n8n_workflows": 30,
-  "single_actor_templates": 25,
-  "super_pipelines": 5,
+  "total_n8n_workflows": 36,
+  "single_actor_templates": 30,
+  "super_pipelines": 6,
   "entries": [
     {
       "type": "single_actor_template",
@@ -11,6 +11,20 @@
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\b2b-gov-procurement-pncp-radar.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items",
       "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "workflow_name": "Automated B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
       "n8n_categories": [
         "AI & LLMs",
         "Sales",
@@ -146,6 +160,20 @@
     },
     {
       "type": "single_actor_template",
+      "actor_slug": "eu-ted-public-tenders-procurement-radar",
+      "workflow_name": "Automated EU TED Public Tenders & B2G Procurement Intelligence Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\eu-ted-public-tenders-procurement-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-ted-public-tenders-procurement-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.035,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
       "actor_slug": "eu-vies-vat-tax-compliance-auditor",
       "workflow_name": "Automated EU VIES VAT Number Validator & Reverse Charge Tax Auditor — Daily B2B Data & Compliance Pipeline",
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\eu-vies-vat-tax-compliance-auditor.n8n.json",
@@ -188,6 +216,20 @@
     },
     {
       "type": "single_actor_template",
+      "actor_slug": "global-sanctions-pep-interpol-watchlist-screener",
+      "workflow_name": "Automated Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\global-sanctions-pep-interpol-watchlist-screener.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items",
+      "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
       "actor_slug": "healthcare-tiss-xml-validator",
       "workflow_name": "Automated Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer — Daily B2B Data & Compliance Pipeline",
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\healthcare-tiss-xml-validator.n8n.json",
@@ -221,6 +263,20 @@
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\multi-ats-tech-job-board-hiring-radar.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items",
       "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "uk-fca-companies-house-kyb-compliance-auditor",
+      "workflow_name": "Automated UK Companies House & FCA Corporate KYB Compliance Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\uk-fca-companies-house-kyb-compliance-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.025,
       "n8n_categories": [
         "AI & LLMs",
         "Sales",
@@ -328,6 +384,20 @@
     },
     {
       "type": "single_actor_template",
+      "actor_slug": "us-osha-workplace-safety-violation-auditor",
+      "workflow_name": "Automated US OSHA Workplace Safety & Violation Compliance Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-osha-workplace-safety-violation-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
       "actor_slug": "us-sam-gov-federal-procurement-auditor",
       "workflow_name": "Automated US Federal Contracts & SAM.gov Procurement B2G Radar — Daily B2B Data & Compliance Pipeline",
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-sam-gov-federal-procurement-auditor.n8n.json",
@@ -418,6 +488,20 @@
         "b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
       ],
       "combined_ppe_usd_per_cascade": 0.075
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "06_global_sanctions_uk_kyb_eu_ted_osha_ssl_easm_waterfall",
+      "workflow_name": "Global Sanctions OFAC/UN/EU, UK Companies House/FCA KYB, EU TED Procurement, US OSHA & SSL CT Attack Surface Waterfall (5-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\06_global_sanctions_uk_kyb_eu_ted_osha_ssl_easm_waterfall.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+        "b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+        "b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+        "b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+        "b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+      ],
+      "combined_ppe_usd_per_cascade": 0.14
     }
   ]
 }

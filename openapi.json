@@ -4933,6 +4933,1001 @@
           "maxAmountRequired": "25000"
         }
       }
+    },
+    "/v1/x402/us-osha-workplace-safety-violation-auditor": {
+      "post": {
+        "summary": "US OSHA Workplace Safety & Violation Compliance Auditor",
+        "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100). | Settled natively on Solana Mainnet in USDC (0.03 USDC per call) to wallet `DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T` via the x402 protocol.",
+        "operationId": "run_us_osha_workplace_safety_violation_auditor",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "parameters": [
+          {
+            "name": "X-PAYMENT",
+            "in": "header",
+            "required": false,
+            "description": "Signed Solana USDC transaction signature or Base64 x402 payment payload.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyOrEstablishment": {
+                    "title": "Company or Establishment Name",
+                    "type": "string",
+                    "description": "Employer or establishment keyword (e.g., 'Amazon', 'Tesla', 'Walmart', 'United Parcel Service', 'Tyson').",
+                    "editor": "textfield",
+                    "default": "Amazon"
+                  },
+                  "stateCode": {
+                    "title": "U.S. State Code (Optional)",
+                    "type": "string",
+                    "description": "Optional 2-letter U.S. state abbreviation (e.g., 'TX', 'CA', 'IL', 'OH', or leave empty for nationwide).",
+                    "editor": "textfield",
+                    "default": ""
+                  },
+                  "maxResults": {
+                    "title": "Maximum Inspections to Audit",
+                    "type": "integer",
+                    "description": "Maximum number of OSHA establishment inspection records to extract and score (1 to 100).",
+                    "editor": "number",
+                    "default": 15,
+                    "minimum": 1,
+                    "maximum": 100
+                  }
+                },
+                "required": [
+                  "companyOrEstablishment"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic JSON output from US OSHA Workplace Safety & Violation Compliance Auditor.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "succeeded"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-osha-workplace-safety-violation-auditor"
+                    },
+                    "payment": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "activityNumber": {
+                            "type": "string",
+                            "title": "OSHA Activity Number",
+                            "description": "Official OSHA inspection activity identifier."
+                          },
+                          "establishmentName": {
+                            "type": "string",
+                            "title": "Establishment Name",
+                            "description": "Inspected employer or facility name."
+                          },
+                          "siteCity": {
+                            "type": "string",
+                            "title": "Site City",
+                            "description": "City where the inspected facility is located."
+                          },
+                          "siteState": {
+                            "type": "string",
+                            "title": "Site State",
+                            "description": "2-letter U.S. state abbreviation."
+                          },
+                          "naicsCode": {
+                            "type": "string",
+                            "title": "NAICS Industry Code",
+                            "description": "6-digit North American Industry Classification System code."
+                          },
+                          "inspectionType": {
+                            "type": "string",
+                            "title": "Inspection Type",
+                            "description": "Complaint, Referral, Fatality/Catastrophe, or Planned inspection."
+                          },
+                          "openDate": {
+                            "type": "string",
+                            "title": "Inspection Open Date",
+                            "description": "ISO date when the OSHA inspection opened."
+                          },
+                          "totalViolations": {
+                            "type": "integer",
+                            "title": "Total Citations",
+                            "description": "Total number of OSHA standards cited."
+                          },
+                          "seriousWillfulRepeatCount": {
+                            "type": "integer",
+                            "title": "Serious / Willful / Repeat Citations",
+                            "description": "Count of high-severity (Serious, Willful, or Repeat) citations."
+                          },
+                          "currentPenaltyUsd": {
+                            "type": "number",
+                            "title": "Current Penalty (USD)",
+                            "description": "Assessed OSHA civil monetary penalty in USD."
+                          },
+                          "workplaceRiskScore": {
+                            "type": "integer",
+                            "title": "Workplace Safety Risk Score (0-100)",
+                            "description": "Quantitative EHS and supply-chain underwriting risk score (0-100)."
+                          },
+                          "markdownSafetyBrief": {
+                            "type": "string",
+                            "title": "Markdown EHS & Underwriting Audit Brief",
+                            "description": "Executive Markdown dossier for ESG auditors, insurance underwriters, and M&A due diligence."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required — Returns x402Version 1 challenge for Solana USDC.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "accepts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "protocols": [
+            {
+              "x402": {
+                "scheme": "exact",
+                "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                "asset": "USDC",
+                "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+                "maxAmountRequired": "30000"
+              }
+            }
+          ],
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.03"
+          }
+        },
+        "x-bazaar": {
+          "discoverable": true,
+          "category": "b2b-compliance-and-quant-intelligence",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "maxAmountRequired": "30000"
+        }
+      }
+    },
+    "/v1/x402/eu-ted-public-tenders-procurement-radar": {
+      "post": {
+        "summary": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+        "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores. | Settled natively on Solana Mainnet in USDC (0.035 USDC per call) to wallet `DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T` via the x402 protocol.",
+        "operationId": "run_eu_ted_public_tenders_procurement_radar",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "parameters": [
+          {
+            "name": "X-PAYMENT",
+            "in": "header",
+            "required": false,
+            "description": "Signed Solana USDC transaction signature or Base64 x402 payment payload.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "searchKeyword": {
+                    "title": "Procurement Keyword / Sector",
+                    "type": "string",
+                    "description": "Public tender topic, CPV keyword, or technology sector (e.g., 'Cloud Cybersecurity', 'Artificial Intelligence', 'Medical Devices', 'Solar Energy').",
+                    "editor": "textfield",
+                    "default": "Cloud Cybersecurity"
+                  },
+                  "countryIso3": {
+                    "title": "EU Country ISO-3 Code (Optional)",
+                    "type": "string",
+                    "description": "Optional 3-letter ISO country code (e.g., 'DEU', 'FRA', 'ESP', 'ITA', 'NLD', 'BEL', or leave empty for all EU/EEA member states).",
+                    "editor": "textfield",
+                    "default": ""
+                  },
+                  "maxResults": {
+                    "title": "Maximum Tenders to Extract",
+                    "type": "integer",
+                    "description": "Maximum number of European public procurement notices to extract and score (1 to 100).",
+                    "editor": "number",
+                    "default": 15,
+                    "minimum": 1,
+                    "maximum": 100
+                  }
+                },
+                "required": [
+                  "searchKeyword"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic JSON output from EU TED Public Tenders & B2G Procurement Intelligence Radar.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "succeeded"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "eu-ted-public-tenders-procurement-radar"
+                    },
+                    "payment": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "publicationNumber": {
+                            "type": "string",
+                            "title": "EU TED Publication Number",
+                            "description": "Official Supplement to the Official Journal of the EU (OJ S) notice ID."
+                          },
+                          "noticeTitle": {
+                            "type": "string",
+                            "title": "Tender / Contract Title",
+                            "description": "Official title of the public procurement notice."
+                          },
+                          "buyerName": {
+                            "type": "string",
+                            "title": "Contracting Authority (Buyer)",
+                            "description": "European ministry, agency, or public utility issuing the tender."
+                          },
+                          "buyerCountryIso3": {
+                            "type": "string",
+                            "title": "Buyer Country (ISO-3)",
+                            "description": "3-letter ISO code of the contracting authority country."
+                          },
+                          "cpvCode": {
+                            "type": "string",
+                            "title": "Primary CPV Code",
+                            "description": "8-digit EU Common Procurement Vocabulary classification code."
+                          },
+                          "procedureType": {
+                            "type": "string",
+                            "title": "Procurement Procedure Type",
+                            "description": "Open, Restricted, Competitive Dialogue, or Framework Agreement."
+                          },
+                          "publicationDate": {
+                            "type": "string",
+                            "title": "Publication Date",
+                            "description": "ISO date when the notice was published on EU TED."
+                          },
+                          "deadlineDate": {
+                            "type": "string",
+                            "title": "Submission Deadline Date",
+                            "description": "ISO deadline for submitting bids or requests to participate."
+                          },
+                          "estimatedValueEur": {
+                            "type": "number",
+                            "title": "Estimated Contract Value (EUR)",
+                            "description": "Estimated or awarded contract value in Euros (EUR)."
+                          },
+                          "bidOpportunityScore": {
+                            "type": "integer",
+                            "title": "Bid Opportunity Score (0-100)",
+                            "description": "Quantitative B2G capture score combining contract value, open procedure openness, and CPV match (0-100)."
+                          },
+                          "markdownProcurementBrief": {
+                            "type": "string",
+                            "title": "Markdown B2G Capture & Proposal Brief",
+                            "description": "Executive Markdown brief for European B2G capture teams and automated RFP pipelines."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required — Returns x402Version 1 challenge for Solana USDC.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "accepts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "protocols": [
+            {
+              "x402": {
+                "scheme": "exact",
+                "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                "asset": "USDC",
+                "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+                "maxAmountRequired": "35000"
+              }
+            }
+          ],
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.035"
+          }
+        },
+        "x-bazaar": {
+          "discoverable": true,
+          "category": "b2b-compliance-and-quant-intelligence",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "maxAmountRequired": "35000"
+        }
+      }
+    },
+    "/v1/x402/uk-fca-companies-house-kyb-compliance-auditor": {
+      "post": {
+        "summary": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+        "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding. | Settled natively on Solana Mainnet in USDC (0.025 USDC per call) to wallet `DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T` via the x402 protocol.",
+        "operationId": "run_uk_fca_companies_house_kyb_compliance_auditor",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "parameters": [
+          {
+            "name": "X-PAYMENT",
+            "in": "header",
+            "required": false,
+            "description": "Signed Solana USDC transaction signature or Base64 x402 payment payload.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyQuery": {
+                    "title": "UK Company Name or CRN Number",
+                    "type": "string",
+                    "description": "United Kingdom legal entity name or 8-character Companies House Registration Number (e.g., 'Revolut', 'Barclays', 'Wise', 'Monzo', '08804411').",
+                    "editor": "textfield",
+                    "default": "Revolut"
+                  },
+                  "includeInactive": {
+                    "title": "Include Dissolved / Inactive Entities",
+                    "type": "boolean",
+                    "description": "If true, includes dissolved, liquidated, or lapsed UK entities alongside active companies.",
+                    "editor": "checkbox",
+                    "default": false
+                  },
+                  "maxResults": {
+                    "title": "Maximum UK Entities to Audit",
+                    "type": "integer",
+                    "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+                    "editor": "number",
+                    "default": 15,
+                    "minimum": 1,
+                    "maximum": 100
+                  }
+                },
+                "required": [
+                  "companyQuery"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic JSON output from UK Companies House & FCA Corporate KYB Compliance Auditor.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "succeeded"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "uk-fca-companies-house-kyb-compliance-auditor"
+                    },
+                    "payment": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "companyNumberCrn": {
+                            "type": "string",
+                            "title": "UK Companies House CRN",
+                            "description": "8-character UK Company Registration Number."
+                          },
+                          "companyName": {
+                            "type": "string",
+                            "title": "Legal Entity Name",
+                            "description": "Official UK registered company name."
+                          },
+                          "leiCode": {
+                            "type": "string",
+                            "title": "GLEIF 20-Character LEI",
+                            "description": "ISO 17442 Legal Entity Identifier linked to the UK entity."
+                          },
+                          "companyStatus": {
+                            "type": "string",
+                            "title": "Companies House Status",
+                            "description": "Active, Dissolved, or In Liquidation."
+                          },
+                          "incorporationDate": {
+                            "type": "string",
+                            "title": "Incorporation / Registration Date",
+                            "description": "ISO date of UK registration."
+                          },
+                          "sicCodes": {
+                            "type": "string",
+                            "title": "UK SIC 2007 Classification",
+                            "description": "5-digit UK Standard Industrial Classification codes."
+                          },
+                          "registeredCity": {
+                            "type": "string",
+                            "title": "Registered Office City",
+                            "description": "UK city of the registered office address."
+                          },
+                          "fcaRegulatoryStatus": {
+                            "type": "string",
+                            "title": "FCA / Financial Standing Status",
+                            "description": "FCA Authorized, EMI Licensed, or Standard Commercial Entity."
+                          },
+                          "kybComplianceScore": {
+                            "type": "integer",
+                            "title": "KYB Compliance Score (0-100)",
+                            "description": "Quantitative UK KYB compliance score for B2B onboarding (0-100)."
+                          },
+                          "onboardingDecision": {
+                            "type": "string",
+                            "title": "Automated KYB Decision",
+                            "description": "APPROVED_FAST_TRACK, ENHANCED_DUE_DILIGENCE, or REJECT_INACTIVE."
+                          },
+                          "markdownKybBrief": {
+                            "type": "string",
+                            "title": "Markdown UK KYB & Compliance Dossier",
+                            "description": "Executive Markdown dossier for fintech KYB onboarding and vendor compliance."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required — Returns x402Version 1 challenge for Solana USDC.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "accepts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "protocols": [
+            {
+              "x402": {
+                "scheme": "exact",
+                "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                "asset": "USDC",
+                "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+                "maxAmountRequired": "25000"
+              }
+            }
+          ],
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.025"
+          }
+        },
+        "x-bazaar": {
+          "discoverable": true,
+          "category": "b2b-compliance-and-quant-intelligence",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "maxAmountRequired": "25000"
+        }
+      }
+    },
+    "/v1/x402/global-sanctions-pep-interpol-watchlist-screener": {
+      "post": {
+        "summary": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+        "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100). | Settled natively on Solana Mainnet in USDC (0.03 USDC per call) to wallet `DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T` via the x402 protocol.",
+        "operationId": "run_global_sanctions_pep_interpol_watchlist_screener",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "parameters": [
+          {
+            "name": "X-PAYMENT",
+            "in": "header",
+            "required": false,
+            "description": "Signed Solana USDC transaction signature or Base64 x402 payment payload.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "entityName": {
+                    "title": "Entity or Individual Name to Screen",
+                    "type": "string",
+                    "description": "Organization, vessel, or individual name to screen for AML/KYC compliance (e.g., 'Lazarus Group', 'Garantex', 'Rosneft', 'Wagner').",
+                    "editor": "textfield",
+                    "default": "Lazarus Group"
+                  },
+                  "entityType": {
+                    "title": "Entity Type Filter",
+                    "type": "string",
+                    "description": "Filter by 'ANY', 'ORGANIZATION', 'INDIVIDUAL', or 'VESSEL'.",
+                    "editor": "textfield",
+                    "default": "ANY"
+                  },
+                  "maxResults": {
+                    "title": "Maximum Screening Records",
+                    "type": "integer",
+                    "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+                    "editor": "number",
+                    "default": 15,
+                    "minimum": 1,
+                    "maximum": 100
+                  }
+                },
+                "required": [
+                  "entityName"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic JSON output from Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "succeeded"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "global-sanctions-pep-interpol-watchlist-screener"
+                    },
+                    "payment": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "watchlistRecordId": {
+                            "type": "string",
+                            "title": "Watchlist Record ID",
+                            "description": "Official OFAC/UN/EU/OpenSanctions identifier."
+                          },
+                          "entityQuery": {
+                            "type": "string",
+                            "title": "Screened Query Name",
+                            "description": "Input name submitted for AML/KYC screening."
+                          },
+                          "matchedName": {
+                            "type": "string",
+                            "title": "Matched Watchlist Entity Name",
+                            "description": "Official designated name on the sanctions or PEP list."
+                          },
+                          "entityType": {
+                            "type": "string",
+                            "title": "Entity Type",
+                            "description": "ORGANIZATION, INDIVIDUAL, or VESSEL."
+                          },
+                          "listSource": {
+                            "type": "string",
+                            "title": "Sanctions Authority / List Source",
+                            "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP."
+                          },
+                          "sanctionsProgram": {
+                            "type": "string",
+                            "title": "Sanctions Program / Designation",
+                            "description": "Specific regulatory program (e.g., CYBER2, DPRK3, RUSSIA-EO14024)."
+                          },
+                          "jurisdiction": {
+                            "type": "string",
+                            "title": "Jurisdiction / Country ISO",
+                            "description": "2-letter ISO country code associated with the designated entity."
+                          },
+                          "matchSimilarityScore": {
+                            "type": "integer",
+                            "title": "Fuzzy Name Similarity (0-100)",
+                            "description": "Token and Jaro-Winkler lexical similarity score (0-100)."
+                          },
+                          "amlRiskScore": {
+                            "type": "integer",
+                            "title": "AML Compliance Risk Score (0-100)",
+                            "description": "Composite AML/CFT risk score (0-100)."
+                          },
+                          "screeningDecision": {
+                            "type": "string",
+                            "title": "Automated AML Decision",
+                            "description": "BLOCK_SANCTIONED, ESCALATE_COMPLIANCE_REVIEW, or CLEAR_NO_HIT."
+                          },
+                          "markdownAmlBrief": {
+                            "type": "string",
+                            "title": "Markdown AML & Sanctions Compliance Dossier",
+                            "description": "Executive Markdown AML/KYC audit trail for compliance officers and automated onboarding."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required — Returns x402Version 1 challenge for Solana USDC.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "accepts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "protocols": [
+            {
+              "x402": {
+                "scheme": "exact",
+                "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                "asset": "USDC",
+                "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+                "maxAmountRequired": "30000"
+              }
+            }
+          ],
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.03"
+          }
+        },
+        "x-bazaar": {
+          "discoverable": true,
+          "category": "b2b-compliance-and-quant-intelligence",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "maxAmountRequired": "30000"
+        }
+      }
+    },
+    "/v1/x402/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor": {
+      "post": {
+        "summary": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+        "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100). | Settled natively on Solana Mainnet in USDC (0.02 USDC per call) to wallet `DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T` via the x402 protocol.",
+        "operationId": "run_b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor",
+        "tags": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "parameters": [
+          {
+            "name": "X-PAYMENT",
+            "in": "header",
+            "required": false,
+            "description": "Signed Solana USDC transaction signature or Base64 x402 payment payload.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "rootDomain": {
+                    "title": "Corporate Root Domain",
+                    "type": "string",
+                    "description": "Target corporate domain for External Attack Surface Management (EASM) reconnaissance (e.g., 'apify.com', 'stripe.com', 'cloudflare.com').",
+                    "editor": "textfield",
+                    "default": "apify.com"
+                  },
+                  "excludeExpired": {
+                    "title": "Exclude Expired Certificates",
+                    "type": "boolean",
+                    "description": "If true, filters strictly for active/non-expired SSL/TLS certificates in Certificate Transparency logs.",
+                    "editor": "checkbox",
+                    "default": true
+                  },
+                  "maxResults": {
+                    "title": "Maximum Subdomain Certificates",
+                    "type": "integer",
+                    "description": "Maximum number of CT log subdomain certificates to extract and score (1 to 100).",
+                    "editor": "number",
+                    "default": 15,
+                    "minimum": 1,
+                    "maximum": 100
+                  }
+                },
+                "required": [
+                  "rootDomain"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic JSON output from B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "succeeded"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+                    },
+                    "payment": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "certificateId": {
+                            "type": "string",
+                            "title": "CT Log Certificate ID",
+                            "description": "Official Certificate Transparency (crt.sh) log entry ID."
+                          },
+                          "rootDomain": {
+                            "type": "string",
+                            "title": "Corporate Root Domain",
+                            "description": "Audited parent domain."
+                          },
+                          "subdomain": {
+                            "type": "string",
+                            "title": "Discovered Subdomain / SAN",
+                            "description": "Subject Alternative Name (SAN) or subdomain discovered in CT logs."
+                          },
+                          "commonName": {
+                            "type": "string",
+                            "title": "Certificate Common Name (CN)",
+                            "description": "Primary X.509 Common Name."
+                          },
+                          "issuerName": {
+                            "type": "string",
+                            "title": "Certificate Authority (CA)",
+                            "description": "Issuing Certificate Authority organization."
+                          },
+                          "notBefore": {
+                            "type": "string",
+                            "title": "Valid Not Before",
+                            "description": "ISO date when certificate validity begins."
+                          },
+                          "notAfter": {
+                            "type": "string",
+                            "title": "Valid Not After (Expiry)",
+                            "description": "ISO date when certificate expires."
+                          },
+                          "isWildcard": {
+                            "type": "boolean",
+                            "title": "Is Wildcard Certificate",
+                            "description": "True if the certificate covers *.domain wildcard scope."
+                          },
+                          "shadowItExposure": {
+                            "type": "string",
+                            "title": "Shadow IT / Environment Classification",
+                            "description": "HIGH_RISK_DEV_STAGING_ADMIN, WILDCARD_BROAD_SCOPE, or STANDARD_PRODUCTION."
+                          },
+                          "attackSurfaceRiskScore": {
+                            "type": "integer",
+                            "title": "Attack Surface Risk Score (0-100)",
+                            "description": "Quantitative EASM & SecOps exposure score (0-100)."
+                          },
+                          "markdownSecOpsBrief": {
+                            "type": "string",
+                            "title": "Markdown EASM & SecOps Recon Brief",
+                            "description": "Executive Markdown advisory for SOC teams, MSSPs, and automated EASM workflows."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required — Returns x402Version 1 challenge for Solana USDC.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "accepts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "protocols": [
+            {
+              "x402": {
+                "scheme": "exact",
+                "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                "asset": "USDC",
+                "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+                "maxAmountRequired": "20000"
+              }
+            }
+          ],
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.02"
+          }
+        },
+        "x-bazaar": {
+          "discoverable": true,
+          "category": "b2b-compliance-and-quant-intelligence",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "maxAmountRequired": "20000"
+        }
+      }
     }
   }
 }

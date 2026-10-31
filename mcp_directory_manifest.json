@@ -2,7 +2,7 @@
   "manifestVersion": "2026.10",
   "publisher": "b2b-quant-apis",
   "storeProfileUrl": "https://apify.com/b2b-quant-apis",
-  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar",
+  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar,b2b-quant-apis/us-osha-workplace-safety-violation-auditor,b2b-quant-apis/eu-ted-public-tenders-procurement-radar,b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor,b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener,b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
   "targetDirectories": [
     "https://mcp.so",
     "https://smithery.ai",
@@ -10,7 +10,7 @@
     "https://www.pulsemcp.com/servers",
     "https://rapidapi.com/hub"
   ],
-  "totalServers": 25,
+  "totalServers": 30,
   "servers": [
     {
       "slug": "b2b-gov-procurement-pncp-radar",
@@ -1599,6 +1599,281 @@
         "billType": "PL",
         "keyword": "",
         "maxResults": 10
+      }
+    },
+    {
+      "slug": "us-osha-workplace-safety-violation-auditor",
+      "fullActorName": "b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+      "title": "US OSHA Workplace Safety & Violation Compliance Auditor",
+      "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "osha-establishment-audited",
+        "eventTitle": "US OSHA Establishment Safety & Penalty Audited",
+        "eventPriceUsd": 0.03
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "companyOrEstablishment": {
+            "type": "string",
+            "title": "Company or Establishment Name",
+            "description": "Employer or establishment keyword (e.g., 'Amazon', 'Tesla', 'Walmart', 'United Parcel Service', 'Tyson').",
+            "default": "Amazon"
+          },
+          "stateCode": {
+            "type": "string",
+            "title": "U.S. State Code (Optional)",
+            "description": "Optional 2-letter U.S. state abbreviation (e.g., 'TX', 'CA', 'IL', 'OH', or leave empty for nationwide).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Inspections to Audit",
+            "description": "Maximum number of OSHA establishment inspection records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyOrEstablishment"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "companyOrEstablishment": "Amazon",
+        "stateCode": "",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "eu-ted-public-tenders-procurement-radar",
+      "fullActorName": "b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+      "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+      "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "eu-tender-analyzed",
+        "eventTitle": "EU TED Public Procurement Notice Analyzed",
+        "eventPriceUsd": 0.035
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "searchKeyword": {
+            "type": "string",
+            "title": "Procurement Keyword / Sector",
+            "description": "Public tender topic, CPV keyword, or technology sector (e.g., 'Cloud Cybersecurity', 'Artificial Intelligence', 'Medical Devices', 'Solar Energy').",
+            "default": "Cloud Cybersecurity"
+          },
+          "countryIso3": {
+            "type": "string",
+            "title": "EU Country ISO-3 Code (Optional)",
+            "description": "Optional 3-letter ISO country code (e.g., 'DEU', 'FRA', 'ESP', 'ITA', 'NLD', 'BEL', or leave empty for all EU/EEA member states).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Tenders to Extract",
+            "description": "Maximum number of European public procurement notices to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "searchKeyword"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "searchKeyword": "Cloud Cybersecurity",
+        "countryIso3": "",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "uk-fca-companies-house-kyb-compliance-auditor",
+      "fullActorName": "b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+      "title": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+      "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "uk-corporate-kyb-audited",
+        "eventTitle": "UK Companies House CRN & FCA KYB Entity Audited",
+        "eventPriceUsd": 0.025
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "LEAD_GENERATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "companyQuery": {
+            "type": "string",
+            "title": "UK Company Name or CRN Number",
+            "description": "United Kingdom legal entity name or 8-character Companies House Registration Number (e.g., 'Revolut', 'Barclays', 'Wise', 'Monzo', '08804411').",
+            "default": "Revolut"
+          },
+          "includeInactive": {
+            "type": "boolean",
+            "title": "Include Dissolved / Inactive Entities",
+            "description": "If true, includes dissolved, liquidated, or lapsed UK entities alongside active companies.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum UK Entities to Audit",
+            "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyQuery"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "companyQuery": "Revolut",
+        "includeInactive": false,
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "global-sanctions-pep-interpol-watchlist-screener",
+      "fullActorName": "b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+      "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+      "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "sanctions-entity-screened",
+        "eventTitle": "Global OFAC / UN / EU Sanctions & PEP Entity Screened",
+        "eventPriceUsd": 0.03
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "entityName": {
+            "type": "string",
+            "title": "Entity or Individual Name to Screen",
+            "description": "Organization, vessel, or individual name to screen for AML/KYC compliance (e.g., 'Lazarus Group', 'Garantex', 'Rosneft', 'Wagner').",
+            "default": "Lazarus Group"
+          },
+          "entityType": {
+            "type": "string",
+            "title": "Entity Type Filter",
+            "description": "Filter by 'ANY', 'ORGANIZATION', 'INDIVIDUAL', or 'VESSEL'.",
+            "default": "ANY"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Screening Records",
+            "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "entityName"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "entityName": "Lazarus Group",
+        "entityType": "ANY",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "fullActorName": "b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "ssl-attack-surface-audited",
+        "eventTitle": "B2B SSL/TLS CT Log Subdomain & Attack Surface Audited",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "DEVELOPER_TOOLS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "rootDomain": {
+            "type": "string",
+            "title": "Corporate Root Domain",
+            "description": "Target corporate domain for External Attack Surface Management (EASM) reconnaissance (e.g., 'apify.com', 'stripe.com', 'cloudflare.com').",
+            "default": "apify.com"
+          },
+          "excludeExpired": {
+            "type": "boolean",
+            "title": "Exclude Expired Certificates",
+            "description": "If true, filters strictly for active/non-expired SSL/TLS certificates in Certificate Transparency logs.",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Subdomain Certificates",
+            "description": "Maximum number of CT log subdomain certificates to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "rootDomain"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "rootDomain": "apify.com",
+        "excludeExpired": true,
+        "maxResults": 15
       }
     }
   ]

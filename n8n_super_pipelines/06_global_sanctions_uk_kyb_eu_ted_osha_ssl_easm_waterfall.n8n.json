@@ -1,0 +1,255 @@
+{
+  "name": "Global Sanctions OFAC/UN/EU, UK Companies House/FCA KYB, EU TED Procurement, US OSHA & SSL CT Attack Surface Waterfall (5-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Global Sanctions OFAC/UN/EU, UK Companies House/FCA KYB, EU TED Procurement, US OSHA & SSL CT Attack Surface Waterfall (5-Actor Cascade)\n\nEnterprise cross-border AML/KYB, European public procurement, workplace safety & cybersecurity attack surface waterfall: screens entities against OFAC/UN/EU sanctions, verifies UK CRN/LEI/FCA standing, monitors EU TED tenders, audits US OSHA violations, and maps CT Log SSL subdomains.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener`](https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener)\n- [`b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor`](https://apify.com/b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor)\n- [`b2b-quant-apis/eu-ted-public-tenders-procurement-radar`](https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar)\n- [`b2b-quant-apis/us-osha-workplace-safety-violation-auditor`](https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor)\n- [`b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor`](https://apify.com/b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "3af95240-e70f-57c3-ab19-9d5ccf05cc3a",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 5 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "94329add-d07c-5a28-9edd-96207836f2a8",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"entityNames\": \"Gazprom,Rosneft\",\n  \"targetJurisdiction\": \"ALL\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "8d9e69e5-3a4f-513b-9ea8-25c53f9d6579",
+      "name": "Step 1: global-sanctions-pep-interpol-watchlist-screener",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyQuery\": \"Barclays,Revolut\",\n  \"includeFcaCheck\": true,\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "3065b62f-4850-5c80-88c6-55803e7eace2",
+      "name": "Step 2: uk-fca-companies-house-kyb-compliance-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-ted-public-tenders-procurement-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"keyword\": \"cybersecurity\",\n  \"countryCode\": \"DEU\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "f5a78d0a-000b-5994-83bf-64933702d727",
+      "name": "Step 3: eu-ted-public-tenders-procurement-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyQuery\": \"Amazon,Tesla\",\n  \"state\": \"TX\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "202a2344-fd8e-517b-82f0-34f33e9abf28",
+      "name": "Step 4: us-osha-workplace-safety-violation-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": \"cloudflare.com,stripe.com\",\n  \"includeExpired\": false,\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "333ea56a-2fbd-513a-8337-ed704219a3f8",
+      "name": "Step 5: b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1580,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '06_global_sanctions_uk_kyb_eu_ted_osha_ssl_easm_waterfall', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "371ead4c-2c27-50b1-a2bd-ba9fa56e99e1",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1860,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: global-sanctions-pep-interpol-watchlist-screener",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: global-sanctions-pep-interpol-watchlist-screener": {
+      "main": [
+        [
+          {
+            "node": "Step 2: uk-fca-companies-house-kyb-compliance-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: uk-fca-companies-house-kyb-compliance-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 3: eu-ted-public-tenders-procurement-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: eu-ted-public-tenders-procurement-radar": {
+      "main": [
+        [
+          {
+            "node": "Step 4: us-osha-workplace-safety-violation-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 4: us-osha-workplace-safety-violation-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 5: b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 5: b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
+      "b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+      "b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+      "b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+      "b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.14
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

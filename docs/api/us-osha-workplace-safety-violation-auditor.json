@@ -1,0 +1,211 @@
+{
+  "status": "succeeded",
+  "service": "US OSHA Workplace Safety & Violation Compliance Auditor",
+  "slug": "us-osha-workplace-safety-violation-auditor",
+  "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.03,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-osha-workplace-safety-violation-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US OSHA Workplace Safety & Violation Compliance Auditor Input",
+    "description": "Configure company/establishment keyword, optional 2-letter U.S. state filter, and maximum OSHA enforcement inspection records to audit.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "companyOrEstablishment": {
+        "title": "Company or Establishment Name",
+        "type": "string",
+        "description": "Employer or establishment keyword (e.g., 'Amazon', 'Tesla', 'Walmart', 'United Parcel Service', 'Tyson').",
+        "editor": "textfield",
+        "default": "Amazon"
+      },
+      "stateCode": {
+        "title": "U.S. State Code (Optional)",
+        "type": "string",
+        "description": "Optional 2-letter U.S. state abbreviation (e.g., 'TX', 'CA', 'IL', 'OH', or leave empty for nationwide).",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Maximum Inspections to Audit",
+        "type": "integer",
+        "description": "Maximum number of OSHA establishment inspection records to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "companyOrEstablishment"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "activityNumber": {
+          "type": "string",
+          "title": "OSHA Activity Number",
+          "description": "Official OSHA inspection activity identifier."
+        },
+        "establishmentName": {
+          "type": "string",
+          "title": "Establishment Name",
+          "description": "Inspected employer or facility name."
+        },
+        "siteCity": {
+          "type": "string",
+          "title": "Site City",
+          "description": "City where the inspected facility is located."
+        },
+        "siteState": {
+          "type": "string",
+          "title": "Site State",
+          "description": "2-letter U.S. state abbreviation."
+        },
+        "naicsCode": {
+          "type": "string",
+          "title": "NAICS Industry Code",
+          "description": "6-digit North American Industry Classification System code."
+        },
+        "inspectionType": {
+          "type": "string",
+          "title": "Inspection Type",
+          "description": "Complaint, Referral, Fatality/Catastrophe, or Planned inspection."
+        },
+        "openDate": {
+          "type": "string",
+          "title": "Inspection Open Date",
+          "description": "ISO date when the OSHA inspection opened."
+        },
+        "totalViolations": {
+          "type": "integer",
+          "title": "Total Citations",
+          "description": "Total number of OSHA standards cited."
+        },
+        "seriousWillfulRepeatCount": {
+          "type": "integer",
+          "title": "Serious / Willful / Repeat Citations",
+          "description": "Count of high-severity (Serious, Willful, or Repeat) citations."
+        },
+        "currentPenaltyUsd": {
+          "type": "number",
+          "title": "Current Penalty (USD)",
+          "description": "Assessed OSHA civil monetary penalty in USD."
+        },
+        "workplaceRiskScore": {
+          "type": "integer",
+          "title": "Workplace Safety Risk Score (0-100)",
+          "description": "Quantitative EHS and supply-chain underwriting risk score (0-100)."
+        },
+        "markdownSafetyBrief": {
+          "type": "string",
+          "title": "Markdown EHS & Underwriting Audit Brief",
+          "description": "Executive Markdown dossier for ESG auditors, insurance underwriters, and M&A due diligence."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US OSHA Workplace Safety & Violation Compliance Overview",
+        "transformation": {
+          "fields": [
+            "activityNumber",
+            "establishmentName",
+            "siteState",
+            "naicsCode",
+            "inspectionType",
+            "openDate",
+            "totalViolations",
+            "seriousWillfulRepeatCount",
+            "currentPenaltyUsd",
+            "workplaceRiskScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "activityNumber": {
+              "label": "Activity ID",
+              "format": "text"
+            },
+            "establishmentName": {
+              "label": "Establishment",
+              "format": "text"
+            },
+            "siteState": {
+              "label": "State",
+              "format": "text"
+            },
+            "naicsCode": {
+              "label": "NAICS",
+              "format": "text"
+            },
+            "inspectionType": {
+              "label": "Inspection Type",
+              "format": "text"
+            },
+            "openDate": {
+              "label": "Open Date",
+              "format": "text"
+            },
+            "totalViolations": {
+              "label": "Total Citations",
+              "format": "number"
+            },
+            "seriousWillfulRepeatCount": {
+              "label": "Serious/Willful/Repeat",
+              "format": "number"
+            },
+            "currentPenaltyUsd": {
+              "label": "Penalty (USD)",
+              "format": "number"
+            },
+            "workplaceRiskScore": {
+              "label": "Risk Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "30000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-osha-workplace-safety-violation-auditor",
+        "description": "US OSHA Workplace Safety & Violation Compliance Auditor — Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.03",
+          "actorSlug": "us-osha-workplace-safety-violation-auditor",
+          "eventName": "osha-establishment-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+        }
+      }
+    ]
+  }
+}

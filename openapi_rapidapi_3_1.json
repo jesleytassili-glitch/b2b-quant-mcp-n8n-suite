@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "B2B Quant & Regulatory Compliance APIs (@b2b-quant-apis)",
-    "version": "1.2.0",
-    "description": "Suite of 15 stateless B2B regulatory, tax, healthcare, environmental, financial, and government procurement intelligence APIs across the United States, European Union, and Brazil.",
+    "version": "2.0.0",
+    "description": "Suite of 30 stateless B2B regulatory, tax, healthcare, environmental, financial, cybersecurity, KYB sanctions, and government procurement intelligence APIs across the US, EU, UK, and Brazil.",
     "contact": {
       "name": "B2B Quant APIs",
       "url": "https://apify.com/b2b-quant-apis"
@@ -941,6 +941,191 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/brazil_camara_legislative_regulatory_risk_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_osha_workplace_safety_violation_auditor",
+        "summary": "US OSHA Workplace Safety & Violation Compliance Auditor",
+        "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100). | PPE Event: `osha-establishment-audited` ($0.03 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/us_osha_workplace_safety_violation_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/us_osha_workplace_safety_violation_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~eu-ted-public-tenders-procurement-radar/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_eu_ted_public_tenders_procurement_radar",
+        "summary": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+        "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores. | PPE Event: `eu-tender-analyzed` ($0.035 USD).",
+        "tags": [
+          "AI",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/eu_ted_public_tenders_procurement_radar_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/eu_ted_public_tenders_procurement_radar_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_uk_fca_companies_house_kyb_compliance_auditor",
+        "summary": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+        "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding. | PPE Event: `uk-corporate-kyb-audited` ($0.025 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/uk_fca_companies_house_kyb_compliance_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/uk_fca_companies_house_kyb_compliance_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_global_sanctions_pep_interpol_watchlist_screener",
+        "summary": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+        "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100). | PPE Event: `sanctions-entity-screened` ($0.03 USD).",
+        "tags": [
+          "AI",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/global_sanctions_pep_interpol_watchlist_screener_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/global_sanctions_pep_interpol_watchlist_screener_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor",
+        "summary": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+        "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100). | PPE Event: `ssl-attack-surface-audited` ($0.02 USD).",
+        "tags": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor_DatasetItem"
                   }
                 }
               }
@@ -3123,6 +3308,466 @@
             "type": "string",
             "title": "Markdown GovRel & Legal Brief",
             "description": "Executive report for law firms, tax advisors, and corporate GovRel teams."
+          }
+        }
+      },
+      "us_osha_workplace_safety_violation_auditor_Input": {
+        "type": "object",
+        "title": "US OSHA Workplace Safety & Violation Compliance Auditor Input",
+        "description": "Configure company/establishment keyword, optional 2-letter U.S. state filter, and maximum OSHA enforcement inspection records to audit.",
+        "properties": {
+          "companyOrEstablishment": {
+            "type": "string",
+            "title": "Company or Establishment Name",
+            "description": "Employer or establishment keyword (e.g., 'Amazon', 'Tesla', 'Walmart', 'United Parcel Service', 'Tyson').",
+            "default": "Amazon"
+          },
+          "stateCode": {
+            "type": "string",
+            "title": "U.S. State Code (Optional)",
+            "description": "Optional 2-letter U.S. state abbreviation (e.g., 'TX', 'CA', 'IL', 'OH', or leave empty for nationwide).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Inspections to Audit",
+            "description": "Maximum number of OSHA establishment inspection records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyOrEstablishment"
+        ]
+      },
+      "us_osha_workplace_safety_violation_auditor_DatasetItem": {
+        "type": "object",
+        "title": "US OSHA Workplace Safety & Violation Compliance Auditor Output Record",
+        "properties": {
+          "activityNumber": {
+            "type": "string",
+            "title": "OSHA Activity Number",
+            "description": "Official OSHA inspection activity identifier."
+          },
+          "establishmentName": {
+            "type": "string",
+            "title": "Establishment Name",
+            "description": "Inspected employer or facility name."
+          },
+          "siteCity": {
+            "type": "string",
+            "title": "Site City",
+            "description": "City where the inspected facility is located."
+          },
+          "siteState": {
+            "type": "string",
+            "title": "Site State",
+            "description": "2-letter U.S. state abbreviation."
+          },
+          "naicsCode": {
+            "type": "string",
+            "title": "NAICS Industry Code",
+            "description": "6-digit North American Industry Classification System code."
+          },
+          "inspectionType": {
+            "type": "string",
+            "title": "Inspection Type",
+            "description": "Complaint, Referral, Fatality/Catastrophe, or Planned inspection."
+          },
+          "openDate": {
+            "type": "string",
+            "title": "Inspection Open Date",
+            "description": "ISO date when the OSHA inspection opened."
+          },
+          "totalViolations": {
+            "type": "integer",
+            "title": "Total Citations",
+            "description": "Total number of OSHA standards cited."
+          },
+          "seriousWillfulRepeatCount": {
+            "type": "integer",
+            "title": "Serious / Willful / Repeat Citations",
+            "description": "Count of high-severity (Serious, Willful, or Repeat) citations."
+          },
+          "currentPenaltyUsd": {
+            "type": "number",
+            "title": "Current Penalty (USD)",
+            "description": "Assessed OSHA civil monetary penalty in USD."
+          },
+          "workplaceRiskScore": {
+            "type": "integer",
+            "title": "Workplace Safety Risk Score (0-100)",
+            "description": "Quantitative EHS and supply-chain underwriting risk score (0-100)."
+          },
+          "markdownSafetyBrief": {
+            "type": "string",
+            "title": "Markdown EHS & Underwriting Audit Brief",
+            "description": "Executive Markdown dossier for ESG auditors, insurance underwriters, and M&A due diligence."
+          }
+        }
+      },
+      "eu_ted_public_tenders_procurement_radar_Input": {
+        "type": "object",
+        "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Input",
+        "description": "Configure procurement keyword, optional 3-letter EU Member State ISO code (e.g., DEU, FRA, ESP, NLD), and maximum EU TED notices to extract and score.",
+        "properties": {
+          "searchKeyword": {
+            "type": "string",
+            "title": "Procurement Keyword / Sector",
+            "description": "Public tender topic, CPV keyword, or technology sector (e.g., 'Cloud Cybersecurity', 'Artificial Intelligence', 'Medical Devices', 'Solar Energy').",
+            "default": "Cloud Cybersecurity"
+          },
+          "countryIso3": {
+            "type": "string",
+            "title": "EU Country ISO-3 Code (Optional)",
+            "description": "Optional 3-letter ISO country code (e.g., 'DEU', 'FRA', 'ESP', 'ITA', 'NLD', 'BEL', or leave empty for all EU/EEA member states).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Tenders to Extract",
+            "description": "Maximum number of European public procurement notices to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "searchKeyword"
+        ]
+      },
+      "eu_ted_public_tenders_procurement_radar_DatasetItem": {
+        "type": "object",
+        "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Output Record",
+        "properties": {
+          "publicationNumber": {
+            "type": "string",
+            "title": "EU TED Publication Number",
+            "description": "Official Supplement to the Official Journal of the EU (OJ S) notice ID."
+          },
+          "noticeTitle": {
+            "type": "string",
+            "title": "Tender / Contract Title",
+            "description": "Official title of the public procurement notice."
+          },
+          "buyerName": {
+            "type": "string",
+            "title": "Contracting Authority (Buyer)",
+            "description": "European ministry, agency, or public utility issuing the tender."
+          },
+          "buyerCountryIso3": {
+            "type": "string",
+            "title": "Buyer Country (ISO-3)",
+            "description": "3-letter ISO code of the contracting authority country."
+          },
+          "cpvCode": {
+            "type": "string",
+            "title": "Primary CPV Code",
+            "description": "8-digit EU Common Procurement Vocabulary classification code."
+          },
+          "procedureType": {
+            "type": "string",
+            "title": "Procurement Procedure Type",
+            "description": "Open, Restricted, Competitive Dialogue, or Framework Agreement."
+          },
+          "publicationDate": {
+            "type": "string",
+            "title": "Publication Date",
+            "description": "ISO date when the notice was published on EU TED."
+          },
+          "deadlineDate": {
+            "type": "string",
+            "title": "Submission Deadline Date",
+            "description": "ISO deadline for submitting bids or requests to participate."
+          },
+          "estimatedValueEur": {
+            "type": "number",
+            "title": "Estimated Contract Value (EUR)",
+            "description": "Estimated or awarded contract value in Euros (EUR)."
+          },
+          "bidOpportunityScore": {
+            "type": "integer",
+            "title": "Bid Opportunity Score (0-100)",
+            "description": "Quantitative B2G capture score combining contract value, open procedure openness, and CPV match (0-100)."
+          },
+          "markdownProcurementBrief": {
+            "type": "string",
+            "title": "Markdown B2G Capture & Proposal Brief",
+            "description": "Executive Markdown brief for European B2G capture teams and automated RFP pipelines."
+          }
+        }
+      },
+      "uk_fca_companies_house_kyb_compliance_auditor_Input": {
+        "type": "object",
+        "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Input",
+        "description": "Configure UK company name or 8-digit CRN number, optional inactive company filter, and maximum UK corporate entities to audit.",
+        "properties": {
+          "companyQuery": {
+            "type": "string",
+            "title": "UK Company Name or CRN Number",
+            "description": "United Kingdom legal entity name or 8-character Companies House Registration Number (e.g., 'Revolut', 'Barclays', 'Wise', 'Monzo', '08804411').",
+            "default": "Revolut"
+          },
+          "includeInactive": {
+            "type": "boolean",
+            "title": "Include Dissolved / Inactive Entities",
+            "description": "If true, includes dissolved, liquidated, or lapsed UK entities alongside active companies.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum UK Entities to Audit",
+            "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyQuery"
+        ]
+      },
+      "uk_fca_companies_house_kyb_compliance_auditor_DatasetItem": {
+        "type": "object",
+        "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Output Record",
+        "properties": {
+          "companyNumberCrn": {
+            "type": "string",
+            "title": "UK Companies House CRN",
+            "description": "8-character UK Company Registration Number."
+          },
+          "companyName": {
+            "type": "string",
+            "title": "Legal Entity Name",
+            "description": "Official UK registered company name."
+          },
+          "leiCode": {
+            "type": "string",
+            "title": "GLEIF 20-Character LEI",
+            "description": "ISO 17442 Legal Entity Identifier linked to the UK entity."
+          },
+          "companyStatus": {
+            "type": "string",
+            "title": "Companies House Status",
+            "description": "Active, Dissolved, or In Liquidation."
+          },
+          "incorporationDate": {
+            "type": "string",
+            "title": "Incorporation / Registration Date",
+            "description": "ISO date of UK registration."
+          },
+          "sicCodes": {
+            "type": "string",
+            "title": "UK SIC 2007 Classification",
+            "description": "5-digit UK Standard Industrial Classification codes."
+          },
+          "registeredCity": {
+            "type": "string",
+            "title": "Registered Office City",
+            "description": "UK city of the registered office address."
+          },
+          "fcaRegulatoryStatus": {
+            "type": "string",
+            "title": "FCA / Financial Standing Status",
+            "description": "FCA Authorized, EMI Licensed, or Standard Commercial Entity."
+          },
+          "kybComplianceScore": {
+            "type": "integer",
+            "title": "KYB Compliance Score (0-100)",
+            "description": "Quantitative UK KYB compliance score for B2B onboarding (0-100)."
+          },
+          "onboardingDecision": {
+            "type": "string",
+            "title": "Automated KYB Decision",
+            "description": "APPROVED_FAST_TRACK, ENHANCED_DUE_DILIGENCE, or REJECT_INACTIVE."
+          },
+          "markdownKybBrief": {
+            "type": "string",
+            "title": "Markdown UK KYB & Compliance Dossier",
+            "description": "Executive Markdown dossier for fintech KYB onboarding and vendor compliance."
+          }
+        }
+      },
+      "global_sanctions_pep_interpol_watchlist_screener_Input": {
+        "type": "object",
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Input",
+        "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
+        "properties": {
+          "entityName": {
+            "type": "string",
+            "title": "Entity or Individual Name to Screen",
+            "description": "Organization, vessel, or individual name to screen for AML/KYC compliance (e.g., 'Lazarus Group', 'Garantex', 'Rosneft', 'Wagner').",
+            "default": "Lazarus Group"
+          },
+          "entityType": {
+            "type": "string",
+            "title": "Entity Type Filter",
+            "description": "Filter by 'ANY', 'ORGANIZATION', 'INDIVIDUAL', or 'VESSEL'.",
+            "default": "ANY"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Screening Records",
+            "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "entityName"
+        ]
+      },
+      "global_sanctions_pep_interpol_watchlist_screener_DatasetItem": {
+        "type": "object",
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Output Record",
+        "properties": {
+          "watchlistRecordId": {
+            "type": "string",
+            "title": "Watchlist Record ID",
+            "description": "Official OFAC/UN/EU/OpenSanctions identifier."
+          },
+          "entityQuery": {
+            "type": "string",
+            "title": "Screened Query Name",
+            "description": "Input name submitted for AML/KYC screening."
+          },
+          "matchedName": {
+            "type": "string",
+            "title": "Matched Watchlist Entity Name",
+            "description": "Official designated name on the sanctions or PEP list."
+          },
+          "entityType": {
+            "type": "string",
+            "title": "Entity Type",
+            "description": "ORGANIZATION, INDIVIDUAL, or VESSEL."
+          },
+          "listSource": {
+            "type": "string",
+            "title": "Sanctions Authority / List Source",
+            "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP."
+          },
+          "sanctionsProgram": {
+            "type": "string",
+            "title": "Sanctions Program / Designation",
+            "description": "Specific regulatory program (e.g., CYBER2, DPRK3, RUSSIA-EO14024)."
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction / Country ISO",
+            "description": "2-letter ISO country code associated with the designated entity."
+          },
+          "matchSimilarityScore": {
+            "type": "integer",
+            "title": "Fuzzy Name Similarity (0-100)",
+            "description": "Token and Jaro-Winkler lexical similarity score (0-100)."
+          },
+          "amlRiskScore": {
+            "type": "integer",
+            "title": "AML Compliance Risk Score (0-100)",
+            "description": "Composite AML/CFT risk score (0-100)."
+          },
+          "screeningDecision": {
+            "type": "string",
+            "title": "Automated AML Decision",
+            "description": "BLOCK_SANCTIONED, ESCALATE_COMPLIANCE_REVIEW, or CLEAR_NO_HIT."
+          },
+          "markdownAmlBrief": {
+            "type": "string",
+            "title": "Markdown AML & Sanctions Compliance Dossier",
+            "description": "Executive Markdown AML/KYC audit trail for compliance officers and automated onboarding."
+          }
+        }
+      },
+      "b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor_Input": {
+        "type": "object",
+        "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor Input",
+        "description": "Configure corporate root domain, optional expired certificate filter, and maximum Certificate Transparency subdomain records to audit.",
+        "properties": {
+          "rootDomain": {
+            "type": "string",
+            "title": "Corporate Root Domain",
+            "description": "Target corporate domain for External Attack Surface Management (EASM) reconnaissance (e.g., 'apify.com', 'stripe.com', 'cloudflare.com').",
+            "default": "apify.com"
+          },
+          "excludeExpired": {
+            "type": "boolean",
+            "title": "Exclude Expired Certificates",
+            "description": "If true, filters strictly for active/non-expired SSL/TLS certificates in Certificate Transparency logs.",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Subdomain Certificates",
+            "description": "Maximum number of CT log subdomain certificates to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "rootDomain"
+        ]
+      },
+      "b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor_DatasetItem": {
+        "type": "object",
+        "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor Output Record",
+        "properties": {
+          "certificateId": {
+            "type": "string",
+            "title": "CT Log Certificate ID",
+            "description": "Official Certificate Transparency (crt.sh) log entry ID."
+          },
+          "rootDomain": {
+            "type": "string",
+            "title": "Corporate Root Domain",
+            "description": "Audited parent domain."
+          },
+          "subdomain": {
+            "type": "string",
+            "title": "Discovered Subdomain / SAN",
+            "description": "Subject Alternative Name (SAN) or subdomain discovered in CT logs."
+          },
+          "commonName": {
+            "type": "string",
+            "title": "Certificate Common Name (CN)",
+            "description": "Primary X.509 Common Name."
+          },
+          "issuerName": {
+            "type": "string",
+            "title": "Certificate Authority (CA)",
+            "description": "Issuing Certificate Authority organization."
+          },
+          "notBefore": {
+            "type": "string",
+            "title": "Valid Not Before",
+            "description": "ISO date when certificate validity begins."
+          },
+          "notAfter": {
+            "type": "string",
+            "title": "Valid Not After (Expiry)",
+            "description": "ISO date when certificate expires."
+          },
+          "isWildcard": {
+            "type": "boolean",
+            "title": "Is Wildcard Certificate",
+            "description": "True if the certificate covers *.domain wildcard scope."
+          },
+          "shadowItExposure": {
+            "type": "string",
+            "title": "Shadow IT / Environment Classification",
+            "description": "HIGH_RISK_DEV_STAGING_ADMIN, WILDCARD_BROAD_SCOPE, or STANDARD_PRODUCTION."
+          },
+          "attackSurfaceRiskScore": {
+            "type": "integer",
+            "title": "Attack Surface Risk Score (0-100)",
+            "description": "Quantitative EASM & SecOps exposure score (0-100)."
+          },
+          "markdownSecOpsBrief": {
+            "type": "string",
+            "title": "Markdown EASM & SecOps Recon Brief",
+            "description": "Executive Markdown advisory for SOC teams, MSSPs, and automated EASM workflows."
           }
         }
       }

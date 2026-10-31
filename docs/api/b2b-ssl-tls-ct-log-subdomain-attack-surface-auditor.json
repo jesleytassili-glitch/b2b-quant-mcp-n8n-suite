@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+  "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+  "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor Input",
+    "description": "Configure corporate root domain, optional expired certificate filter, and maximum Certificate Transparency subdomain records to audit.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "rootDomain": {
+        "title": "Corporate Root Domain",
+        "type": "string",
+        "description": "Target corporate domain for External Attack Surface Management (EASM) reconnaissance (e.g., 'apify.com', 'stripe.com', 'cloudflare.com').",
+        "editor": "textfield",
+        "default": "apify.com"
+      },
+      "excludeExpired": {
+        "title": "Exclude Expired Certificates",
+        "type": "boolean",
+        "description": "If true, filters strictly for active/non-expired SSL/TLS certificates in Certificate Transparency logs.",
+        "editor": "checkbox",
+        "default": true
+      },
+      "maxResults": {
+        "title": "Maximum Subdomain Certificates",
+        "type": "integer",
+        "description": "Maximum number of CT log subdomain certificates to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "rootDomain"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "certificateId": {
+          "type": "string",
+          "title": "CT Log Certificate ID",
+          "description": "Official Certificate Transparency (crt.sh) log entry ID."
+        },
+        "rootDomain": {
+          "type": "string",
+          "title": "Corporate Root Domain",
+          "description": "Audited parent domain."
+        },
+        "subdomain": {
+          "type": "string",
+          "title": "Discovered Subdomain / SAN",
+          "description": "Subject Alternative Name (SAN) or subdomain discovered in CT logs."
+        },
+        "commonName": {
+          "type": "string",
+          "title": "Certificate Common Name (CN)",
+          "description": "Primary X.509 Common Name."
+        },
+        "issuerName": {
+          "type": "string",
+          "title": "Certificate Authority (CA)",
+          "description": "Issuing Certificate Authority organization."
+        },
+        "notBefore": {
+          "type": "string",
+          "title": "Valid Not Before",
+          "description": "ISO date when certificate validity begins."
+        },
+        "notAfter": {
+          "type": "string",
+          "title": "Valid Not After (Expiry)",
+          "description": "ISO date when certificate expires."
+        },
+        "isWildcard": {
+          "type": "boolean",
+          "title": "Is Wildcard Certificate",
+          "description": "True if the certificate covers *.domain wildcard scope."
+        },
+        "shadowItExposure": {
+          "type": "string",
+          "title": "Shadow IT / Environment Classification",
+          "description": "HIGH_RISK_DEV_STAGING_ADMIN, WILDCARD_BROAD_SCOPE, or STANDARD_PRODUCTION."
+        },
+        "attackSurfaceRiskScore": {
+          "type": "integer",
+          "title": "Attack Surface Risk Score (0-100)",
+          "description": "Quantitative EASM & SecOps exposure score (0-100)."
+        },
+        "markdownSecOpsBrief": {
+          "type": "string",
+          "title": "Markdown EASM & SecOps Recon Brief",
+          "description": "Executive Markdown advisory for SOC teams, MSSPs, and automated EASM workflows."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Overview",
+        "transformation": {
+          "fields": [
+            "certificateId",
+            "rootDomain",
+            "subdomain",
+            "commonName",
+            "issuerName",
+            "notBefore",
+            "notAfter",
+            "isWildcard",
+            "shadowItExposure",
+            "attackSurfaceRiskScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "certificateId": {
+              "label": "CT Cert ID",
+              "format": "text"
+            },
+            "rootDomain": {
+              "label": "Root Domain",
+              "format": "text"
+            },
+            "subdomain": {
+              "label": "Subdomain / SAN",
+              "format": "text"
+            },
+            "commonName": {
+              "label": "Common Name",
+              "format": "text"
+            },
+            "issuerName": {
+              "label": "Issuer CA",
+              "format": "text"
+            },
+            "notBefore": {
+              "label": "Valid From",
+              "format": "text"
+            },
+            "notAfter": {
+              "label": "Expires On",
+              "format": "text"
+            },
+            "isWildcard": {
+              "label": "Wildcard",
+              "format": "boolean"
+            },
+            "shadowItExposure": {
+              "label": "Exposure Class",
+              "format": "text"
+            },
+            "attackSurfaceRiskScore": {
+              "label": "Risk Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+        "description": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+          "eventName": "ssl-attack-surface-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        }
+      }
+    ]
+  }
+}

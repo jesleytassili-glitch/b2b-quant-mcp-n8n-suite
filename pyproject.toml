@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "b2b-quant-mcp-n8n-suite"
-version = "1.0.0"
-description = "25 Production B2B Regulatory, Financial, Healthcare, GovCon, Cyber & Brazilian Tax/Central Bank MCP Servers (@b2b-quant-apis)"
+version = "2.0.0"
+description = "30 Production B2B Regulatory, Financial, Healthcare, GovCon, Sanctions AML, Cyber & Brazilian Tax/Central Bank MCP Servers (@b2b-quant-apis)"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
