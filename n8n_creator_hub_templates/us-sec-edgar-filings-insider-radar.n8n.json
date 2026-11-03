@@ -1,0 +1,159 @@
+{
+  "name": "Automated US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nExtracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.\n\n**Powered by Apify Actor:** [b2b-quant-apis/us-sec-edgar-filings-insider-radar](https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: us-sec-edgar-filings-insider-radar** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "008d1893-bd9d-5a8c-a2fe-e53d8adefbaf",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "bd53398c-cbeb-52a5-83f3-43d097e90432",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "f62b04d7-3a35-5cf3-a4d6-c847712bbcb4",
+      "name": "Apify Engine: us-sec-edgar-filings-insider-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "2fc23e0c-14b0-5433-8feb-eb70ee15856c",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "329e1270-10d5-5b46-a062-47c9f207f5f5",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'us-sec-edgar-filings-insider-radar', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "1a99eaaf-f096-5df0-88d8-ad09b3c7aaf5",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: us-sec-edgar-filings-insider-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: us-sec-edgar-filings-insider-radar": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+    "estimatedPpeUsdPerEvent": 0.04
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

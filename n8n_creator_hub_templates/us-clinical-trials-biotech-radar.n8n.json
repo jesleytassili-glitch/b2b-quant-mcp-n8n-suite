@@ -1,0 +1,159 @@
+{
+  "name": "Automated US ClinicalTrials.gov Biotech & Pharma Study Radar — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated US ClinicalTrials.gov Biotech & Pharma Study Radar Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nB2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.\n\n**Powered by Apify Actor:** [b2b-quant-apis/us-clinical-trials-biotech-radar](https://apify.com/b2b-quant-apis/us-clinical-trials-biotech-radar)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: us-clinical-trials-biotech-radar** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "8b928586-d5ea-5fd9-b3bc-ac734d2e0946",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "ac9296b6-b3c4-5bb1-af01-4a4ef8f42d2f",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"conditions\": [\n    \"oncology\",\n    \"obesity\",\n    \"alzheimer\"\n  ],\n  \"phases\": [\n    \"PHASE2\",\n    \"PHASE3\"\n  ],\n  \"max_studies\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "88cc67a3-9c03-5a52-8168-a5a1342a0067",
+      "name": "Apify Engine: us-clinical-trials-biotech-radar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8ff3b4a4-2c34-5508-a73c-b674efe4af0a",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "67831527-27c3-5f97-89c2-bd8dee2a0f00",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'us-clinical-trials-biotech-radar', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "5cbb82e6-928e-5550-8624-9306be1d6b3f",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: us-clinical-trials-biotech-radar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: us-clinical-trials-biotech-radar": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/us-clinical-trials-biotech-radar",
+    "estimatedPpeUsdPerEvent": 0.04
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

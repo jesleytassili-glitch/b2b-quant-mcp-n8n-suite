@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nCalculates the mandatory Brazilian ANTT minimum road freight floor (Lei 13.703/2018 - CCD x km + CC) and audits CT-e 4.00 XML invoices in batch to prevent automatic ANTT/SEFAZ fines.\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-antt-freight-cte-auditor](https://apify.com/b2b-quant-apis/brazil-antt-freight-cte-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-antt-freight-cte-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "18855aeb-e41b-5726-bc6d-1260e72d6c88",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "fcd3d8e8-f96f-5c10-9c8e-1b3419453fa4",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-antt-freight-cte-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"routes\": [\n    {\n      \"origin_uf\": \"SP\",\n      \"dest_uf\": \"RJ\",\n      \"distance_km\": 430,\n      \"axles\": 6,\n      \"cargo_type\": \"geral\"\n    }\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "8246ae83-29a4-5f32-a697-473a6894568d",
+      "name": "Apify Engine: brazil-antt-freight-cte-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c69bd0d7-58d5-5bc6-971f-f3dbaa41ac91",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "c0f6737a-01b9-5c4d-baeb-aa7ac8f030bb",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-antt-freight-cte-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "9c8bbca7-7574-5b8c-992b-8fa0ed7848e0",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-antt-freight-cte-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-antt-freight-cte-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-antt-freight-cte-auditor",
+    "estimatedPpeUsdPerEvent": 0.02
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

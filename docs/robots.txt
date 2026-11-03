@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/sitemap.xml

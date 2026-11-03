@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nStateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).\n\n**Powered by Apify Actor:** [b2b-quant-apis/healthcare-tiss-xml-validator](https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: healthcare-tiss-xml-validator** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "e342ff56-4ead-53d7-b943-4f3e54d2afd8",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "ed24a1f1-e703-5beb-af3a-38da2540b871",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~healthcare-tiss-xml-validator/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"procedures\": [\n    {\n      \"tuss_code\": \"10101012\",\n      \"cid10\": \"J00\",\n      \"billed_amount\": 250.0,\n      \"guide_type\": \"consulta\"\n    }\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "a41661a0-5676-5f78-a655-fa297ad76393",
+      "name": "Apify Engine: healthcare-tiss-xml-validator",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "26c14ccc-f2c9-5a65-ad9f-85f32ebd2b04",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "accbb52e-e3f2-5772-af14-8c6e1dd7b558",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'healthcare-tiss-xml-validator', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "98953b38-7816-5223-8e22-52eef6092387",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: healthcare-tiss-xml-validator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: healthcare-tiss-xml-validator": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/healthcare-tiss-xml-validator",
+    "estimatedPpeUsdPerEvent": 0.05
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

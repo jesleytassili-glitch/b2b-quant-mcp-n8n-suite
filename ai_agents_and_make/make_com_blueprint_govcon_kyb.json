@@ -1,0 +1,57 @@
+{
+  "name": "Global B2B Compliance & GovCon Waterfall (Apify @b2b-quant-apis)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items",
+        "method": "post",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer <YOUR_APIFY_TOKEN_HERE>"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5}"
+      }
+    },
+    {
+      "id": 2,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+        "method": "post",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer <YOUR_APIFY_TOKEN_HERE>"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"tickers\": [\"AAPL\", \"MSFT\", \"NVDA\"], \"form_types\": [\"10-K\", \"10-Q\", \"8-K\", \"4\"], \"max_filings_per_company\": 5}"
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "sequential": true
+    }
+  }
+}

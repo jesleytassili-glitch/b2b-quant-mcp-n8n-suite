@@ -1,0 +1,159 @@
+{
+  "name": "Automated Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nMaps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.\n\n**Powered by Apify Actor:** [b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor](https://apify.com/b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: brazil-tax-reform-ncm-classtrib-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "da98efa3-d980-5dbd-8655-c2b74416db58",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "cb21bc4a-0a26-5807-8caf-392eff95a878",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"items\": [\n    {\n      \"ncm\": \"04011010\",\n      \"cClassTrib\": \"010001\",\n      \"valor_item\": 1500.0\n    },\n    {\n      \"ncm\": \"30049099\",\n      \"cClassTrib\": \"020001\",\n      \"valor_item\": 4200.0\n    }\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "af9f3c09-fa56-509d-bb30-f0e11bcba49d",
+      "name": "Apify Engine: brazil-tax-reform-ncm-classtrib-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "88a789cf-bfaa-537a-91c8-ce75cee3e5f0",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "f4949643-5d2b-565f-979f-dcf4f8100cd3",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'brazil-tax-reform-ncm-classtrib-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "54a5c6a6-6c0e-57e0-8a0a-a6cbae4e5ac1",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: brazil-tax-reform-ncm-classtrib-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: brazil-tax-reform-ncm-classtrib-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor",
+    "estimatedPpeUsdPerEvent": 0.01
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

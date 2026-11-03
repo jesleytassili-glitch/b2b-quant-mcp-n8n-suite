@@ -1,0 +1,339 @@
+{
+  "apify_username": "b2b-quant-apis",
+  "total_n8n_workflows": 24,
+  "single_actor_templates": 20,
+  "super_pipelines": 4,
+  "entries": [
+    {
+      "type": "single_actor_template",
+      "actor_slug": "b2b-gov-procurement-pncp-radar",
+      "workflow_name": "Automated Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\b2b-gov-procurement-pncp-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-antt-freight-cte-auditor",
+      "workflow_name": "Automated Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-antt-freight-cte-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-antt-freight-cte-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-b2b-cnpj-qsa-lead-enricher",
+      "workflow_name": "Automated Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-b2b-cnpj-qsa-lead-enricher.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+      "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "brazil-tax-reform-ncm-classtrib-auditor",
+      "workflow_name": "Automated Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\brazil-tax-reform-ncm-classtrib-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.01,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "cisa-kev-ransomware-vulnerability-auditor",
+      "workflow_name": "Automated US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\cisa-kev-ransomware-vulnerability-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~cisa-kev-ransomware-vulnerability-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "eu-vies-vat-tax-compliance-auditor",
+      "workflow_name": "Automated EU VIES VAT Number Validator & Reverse Charge Tax Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\eu-vies-vat-tax-compliance-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-vies-vat-tax-compliance-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "global-b2b-email-domain-security-auditor",
+      "workflow_name": "Automated Global B2B Email, MX, SPF & DMARC Deliverability Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\global-b2b-email-domain-security-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-b2b-email-domain-security-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.005,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "global-gleif-lei-corporate-ownership-kyb",
+      "workflow_name": "Automated Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\global-gleif-lei-corporate-ownership-kyb.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-gleif-lei-corporate-ownership-kyb/run-sync-get-dataset-items",
+      "ppe_usd": 0.025,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "healthcare-tiss-xml-validator",
+      "workflow_name": "Automated Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\healthcare-tiss-xml-validator.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~healthcare-tiss-xml-validator/run-sync-get-dataset-items",
+      "ppe_usd": 0.05,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "icann-rdap-domain-whois-brand-recon",
+      "workflow_name": "Automated ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\icann-rdap-domain-whois-brand-recon.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items",
+      "ppe_usd": 0.015,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "multi-ats-tech-job-board-hiring-radar",
+      "workflow_name": "Automated Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\multi-ats-tech-job-board-hiring-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-census-fcc-real-estate-geo-enricher",
+      "workflow_name": "Automated US Real Estate Census Tract, FIPS & PropTech Geo Enricher — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-census-fcc-real-estate-geo-enricher.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-clinical-trials-biotech-radar",
+      "workflow_name": "Automated US ClinicalTrials.gov Biotech & Pharma Study Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-clinical-trials-biotech-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.04,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-epa-echo-environmental-compliance-auditor",
+      "workflow_name": "Automated US EPA ECHO Environmental Compliance & ESG Penalty Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-epa-echo-environmental-compliance-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-fda-recalls-safety-monitor",
+      "workflow_name": "Automated US FDA Recalls & Safety Monitor (Food, Drug & Devices) — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-fda-recalls-safety-monitor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fda-recalls-safety-monitor/run-sync-get-dataset-items",
+      "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-fdic-bankfind-institution-financial-auditor",
+      "workflow_name": "Automated US FDIC BankFind Institution & Solvency Risk Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-fdic-bankfind-institution-financial-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fdic-bankfind-institution-financial-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.025,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-healthcare-npi-provider-lead-enricher",
+      "workflow_name": "Automated US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-healthcare-npi-provider-lead-enricher.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-healthcare-npi-provider-lead-enricher/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-nhtsa-vehicle-vin-recall-auditor",
+      "workflow_name": "Automated US NHTSA Vehicle VIN Decoder & Safety Recall Auditor — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-nhtsa-vehicle-vin-recall-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-nhtsa-vehicle-vin-recall-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.02,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-sam-gov-federal-procurement-auditor",
+      "workflow_name": "Automated US Federal Contracts & SAM.gov Procurement B2G Radar — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-sam-gov-federal-procurement-auditor.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items",
+      "ppe_usd": 0.035,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "us-sec-edgar-filings-insider-radar",
+      "workflow_name": "Automated US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\us-sec-edgar-filings-insider-radar.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+      "ppe_usd": 0.04,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "01_global_vendor_kyb_compliance_waterfall",
+      "workflow_name": "Global Vendor KYB, SEC EDGAR, FDIC BankFind, EU VAT, EPA & Brazil CNPJ Waterfall (5-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\01_global_vendor_kyb_compliance_waterfall.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+        "b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+        "b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+        "b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+        "b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+      ],
+      "combined_ppe_usd_per_cascade": 0.125
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "02_us_federal_govcon_lead_enrichment_daily",
+      "workflow_name": "US Federal GovCon (SAM.gov) Daily B2B Lead Scraper + SEC & EPA Due Diligence (3-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\02_us_federal_govcon_lead_enrichment_daily.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+        "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+        "b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+      ],
+      "combined_ppe_usd_per_cascade": 0.105
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "03_pharma_biotech_patent_clinical_radar",
+      "workflow_name": "Pharma & Biotech Clinical Trials, OpenFDA Recalls & NPI Provider Lead Radar (3-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\03_pharma_biotech_patent_clinical_radar.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/us-clinical-trials-biotech-radar",
+        "b2b-quant-apis/us-fda-recalls-safety-monitor",
+        "b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+      ],
+      "combined_ppe_usd_per_cascade": 0.09
+    },
+    {
+      "type": "multi_actor_super_pipeline",
+      "pipeline_slug": "04_b2b_outbound_hiring_intent_gleif_rdap_cyber_waterfall",
+      "workflow_name": "B2B Outbound Hiring Intent, GLEIF Corporate KYB, ICANN RDAP & CISA KEV Cyber Waterfall (4-Actor Cascade)",
+      "file_path": "m2m_trojan_horse_pack\\n8n_super_pipelines\\04_b2b_outbound_hiring_intent_gleif_rdap_cyber_waterfall.n8n.json",
+      "cascaded_actors": [
+        "b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+        "b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+        "b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+        "b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+      ],
+      "combined_ppe_usd_per_cascade": 0.08
+    }
+  ]
+}

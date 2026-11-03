@@ -1,0 +1,1337 @@
+{
+  "manifestVersion": "2026.10",
+  "publisher": "b2b-quant-apis",
+  "storeProfileUrl": "https://apify.com/b2b-quant-apis",
+  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+  "targetDirectories": [
+    "https://mcp.so",
+    "https://smithery.ai",
+    "https://glama.ai/mcp/servers",
+    "https://www.pulsemcp.com/servers",
+    "https://rapidapi.com/hub"
+  ],
+  "totalServers": 20,
+  "servers": [
+    {
+      "slug": "b2b-gov-procurement-pncp-radar",
+      "fullActorName": "b2b-quant-apis/b2b-gov-procurement-pncp-radar",
+      "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+      "description": "Extracts, filters, and enriches live Brazilian government public tenders (Pregão Eletrônico, Dispensa - Lei 14.133) from the official PNCP API with item-level pricing, ME/EPP flags, and LLM-ready RAG Markdown briefs.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/b2b-gov-procurement-pncp-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "tender-analyzed",
+        "eventTitle": "Public Tender Analyzed & Enriched",
+        "eventPriceUsd": 0.03
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "uf": {
+            "type": "string",
+            "title": "State (UF)",
+            "description": "Two-letter Brazilian state code (e.g., SP, RJ, MG, PR, RS, SC, BA). Leave empty to search nationwide.",
+            "default": "SP"
+          },
+          "keywords": {
+            "type": "array",
+            "title": "Target Keywords (Filter by Product/Service)",
+            "description": "Optional list of keywords to filter tenders by object or item description (case-insensitive, accent-insensitive). Leave empty to return all tenders.",
+            "default": []
+          },
+          "codigoModalidadeContratacao": {
+            "type": "string",
+            "title": "Procurement Modality Code (Lei 14.133)",
+            "description": "6 = Pregão Eletrônico (Most common), 8 = Dispensa de Licitação, 4 = Concorrência Eletrônica.",
+            "default": "6",
+            "enum": [
+              "6",
+              "8",
+              "4",
+              "1",
+              "5",
+              "7",
+              "9"
+            ]
+          },
+          "dataInicial": {
+            "type": "string",
+            "title": "Start Date (YYYYMMDD)",
+            "description": "Publication start date in YYYYMMDD format. If omitted, defaults to 15 days ago.",
+            "default": ""
+          },
+          "dataFinal": {
+            "type": "string",
+            "title": "End Date (YYYYMMDD)",
+            "description": "Publication end date in YYYYMMDD format. If omitted, defaults to today.",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Tenders to Extract",
+            "description": "Maximum number of matched tenders to output (Pay-Per-Event cap protection).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 500
+          },
+          "fetchItems": {
+            "type": "boolean",
+            "title": "Enrich with Detailed Item List & Unit Prices",
+            "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
+            "default": true
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "uf": "SP",
+        "keywords": [],
+        "codigoModalidadeContratacao": "6",
+        "dataInicial": "",
+        "dataFinal": "",
+        "maxResults": 20,
+        "fetchItems": true
+      }
+    },
+    {
+      "slug": "brazil-tax-reform-ncm-classtrib-auditor",
+      "fullActorName": "b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor",
+      "title": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+      "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "tax-item-audited",
+        "eventTitle": "NCM / NF-e Item Audited (LC 214/2025)",
+        "eventPriceUsd": 0.01
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "ECOMMERCE"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "catalogItems": {
+            "type": "array",
+            "title": "Product Catalog Items (NCM + Description)",
+            "description": "List of products with 'ncm' (8 digits) and optional 'description' or 'sku' to map to 2026 IBS/CBS cClassTrib and CST.",
+            "default": [
+              {
+                "sku": "ITEM-001",
+                "ncm": "10063021",
+                "description": "Arroz beneficiado parboilizado tipo 1"
+              },
+              {
+                "sku": "ITEM-002",
+                "ncm": "30049099",
+                "description": "Medicamento para uso humano em doses"
+              },
+              {
+                "sku": "ITEM-003",
+                "ncm": "22030000",
+                "description": "Cerveja de malte em lata 350ml"
+              },
+              {
+                "sku": "ITEM-004",
+                "ncm": "84713012",
+                "description": "Notebook portátil para processamento de dados"
+              },
+              {
+                "sku": "ITEM-005",
+                "ncm": "49019900",
+                "description": "Livro impresso didático"
+              }
+            ]
+          },
+          "nfeXmlList": {
+            "type": "array",
+            "title": "NF-e / NFC-e XML Payloads (Optional)",
+            "description": "Optional list of raw NF-e / NFC-e XML strings to extract <det> items, validate 2026 <IBSCBS> tags, and map NCM -> cClassTrib.",
+            "default": []
+          },
+          "uf": {
+            "type": "string",
+            "title": "Reference State (UF)",
+            "description": "Two-letter Brazilian state for transition simulations (2026 test rate: 0.9% CBS + 0.1% IBS).",
+            "default": "SP"
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "catalogItems": [
+          {
+            "sku": "ITEM-001",
+            "ncm": "10063021",
+            "description": "Arroz beneficiado parboilizado tipo 1"
+          },
+          {
+            "sku": "ITEM-002",
+            "ncm": "30049099",
+            "description": "Medicamento para uso humano em doses"
+          },
+          {
+            "sku": "ITEM-003",
+            "ncm": "22030000",
+            "description": "Cerveja de malte em lata 350ml"
+          },
+          {
+            "sku": "ITEM-004",
+            "ncm": "84713012",
+            "description": "Notebook portátil para processamento de dados"
+          },
+          {
+            "sku": "ITEM-005",
+            "ncm": "49019900",
+            "description": "Livro impresso didático"
+          }
+        ],
+        "nfeXmlList": [],
+        "uf": "SP"
+      }
+    },
+    {
+      "slug": "healthcare-tiss-xml-validator",
+      "fullActorName": "b2b-quant-apis/healthcare-tiss-xml-validator",
+      "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+      "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/healthcare-tiss-xml-validator",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/healthcare-tiss-xml-validator",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "tiss-lot-validated",
+        "eventTitle": "TISS 4.03.00 XML Lot Validated & Hash Repaired",
+        "eventPriceUsd": 0.05
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "tissXmlPayloads": {
+            "type": "array",
+            "title": "TISS XML Batch Payloads (Raw XML Strings)",
+            "description": "List of ANS TISS XML strings to validate structure, check 8-digit TUSS codes, and recalculate the mandatory <epilogo><hash> MD5 checksum.",
+            "default": [
+              "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+            ]
+          },
+          "autoFixHash": {
+            "type": "boolean",
+            "title": "Auto-Recalculate and Repair ANS MD5 Hash",
+            "description": "If true, recalculates the official ANS TISS MD5 hash over the XML body content and outputs the repaired XML ready for health insurer upload.",
+            "default": true
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "tissXmlPayloads": [
+          "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+        ],
+        "autoFixHash": true
+      }
+    },
+    {
+      "slug": "brazil-antt-freight-cte-auditor",
+      "fullActorName": "b2b-quant-apis/brazil-antt-freight-cte-auditor",
+      "title": "Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor",
+      "description": "Calculates the mandatory Brazilian ANTT minimum road freight floor (Lei 13.703/2018 - CCD x km + CC) and audits CT-e 4.00 XML invoices in batch to prevent automatic ANTT/SEFAZ fines.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-antt-freight-cte-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-antt-freight-cte-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-antt-freight-cte-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "freight-audit-completed",
+        "eventTitle": "ANTT Freight Route / CT-e Audited",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "title": "Route Simulations (Distance km, Axles, Cargo Type)",
+            "description": "List of freight operations to audit against the ANTT Minimum Freight Table (Tabela A - Lotação).",
+            "default": [
+              {
+                "routeId": "ROT-001",
+                "origin": "Campinas/SP",
+                "destination": "Goiânia/GO",
+                "distanceKm": 815,
+                "axles": 6,
+                "cargoType": "carga_geral",
+                "chargedFreightBRL": 6800.0
+              },
+              {
+                "routeId": "ROT-002",
+                "origin": "Rondonópolis/MT",
+                "destination": "Santos/SP",
+                "distanceKm": 1410,
+                "axles": 7,
+                "cargoType": "granel_solido",
+                "chargedFreightBRL": 9200.0
+              }
+            ]
+          },
+          "cteXmlList": {
+            "type": "array",
+            "title": "CT-e 4.00 XML Payloads (Optional)",
+            "description": "Optional list of raw CT-e XML strings to extract <vTPrest>, origin/destination, and audit ANTT compliance.",
+            "default": []
+          },
+          "defaultAxles": {
+            "type": "integer",
+            "title": "Default Fleet Axles (for CT-e XMLs without MDF-e axle count)",
+            "description": "Number of axles (2 to 9) to assume when auditing raw CT-e XML files.",
+            "default": 6,
+            "minimum": 2,
+            "maximum": 9
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "routes": [
+          {
+            "routeId": "ROT-001",
+            "origin": "Campinas/SP",
+            "destination": "Goiânia/GO",
+            "distanceKm": 815,
+            "axles": 6,
+            "cargoType": "carga_geral",
+            "chargedFreightBRL": 6800.0
+          },
+          {
+            "routeId": "ROT-002",
+            "origin": "Rondonópolis/MT",
+            "destination": "Santos/SP",
+            "distanceKm": 1410,
+            "axles": 7,
+            "cargoType": "granel_solido",
+            "chargedFreightBRL": 9200.0
+          }
+        ],
+        "cteXmlList": [],
+        "defaultAxles": 6
+      }
+    },
+    {
+      "slug": "us-healthcare-npi-provider-lead-enricher",
+      "fullActorName": "b2b-quant-apis/us-healthcare-npi-provider-lead-enricher",
+      "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+      "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "npi-lead-enriched",
+        "eventTitle": "US NPI Healthcare Provider Lead Enriched",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code",
+            "description": "Two-letter US State code (e.g., FL, NY, CA, TX).",
+            "default": "FL"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "Optional city filter (e.g., Miami, Orlando, Los Angeles).",
+            "default": "Miami"
+          },
+          "taxonomyDescription": {
+            "type": "string",
+            "title": "Specialty / Taxonomy Description",
+            "description": "Specialty/Taxonomy e.g. Dentist, Dermatology, Internal Medicine, Physical Therapist.",
+            "default": "Dentist"
+          },
+          "enumerationType": {
+            "type": "string",
+            "title": "Enumeration Type (NPI-1 / NPI-2)",
+            "description": "Filter by Individual Providers (NPI-1), Organizations/Clinics (NPI-2), or All.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "NPI-1",
+              "NPI-2"
+            ]
+          },
+          "postalCode": {
+            "type": "string",
+            "title": "Postal / ZIP Code",
+            "description": "Optional US ZIP code prefix (e.g., 331, 33131).",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Results",
+            "description": "Maximum number of healthcare provider leads to extract and enrich (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "state": "FL",
+        "city": "Miami",
+        "taxonomyDescription": "Dentist",
+        "enumerationType": "ALL",
+        "postalCode": "",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "us-fda-recalls-safety-monitor",
+      "fullActorName": "b2b-quant-apis/us-fda-recalls-safety-monitor",
+      "title": "US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+      "description": "Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-fda-recalls-safety-monitor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fda-recalls-safety-monitor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-fda-recalls-safety-monitor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "fda-recall-extracted",
+        "eventTitle": "US FDA Enforcement Recall Extracted",
+        "eventPriceUsd": 0.03
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "NEWS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "FDA Regulatory Domain",
+            "description": "Select the FDA enforcement category to monitor: food, drug, or device.",
+            "default": "food",
+            "enum": [
+              "food",
+              "drug",
+              "device"
+            ]
+          },
+          "classification": {
+            "type": "string",
+            "title": "Hazard Classification",
+            "description": "Filter recalls by FDA hazard severity class (Class I = highest life-threatening risk, Class II = moderate/reversible risk, Class III = low risk).",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "Class I",
+              "Class II",
+              "Class III"
+            ]
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Search Keyword (Optional)",
+            "description": "Optional search keyword in reason_for_recall or product_description (e.g., 'salmonella', 'listeria', 'undeclared', 'pacemaker').",
+            "default": ""
+          },
+          "state": {
+            "type": "string",
+            "title": "US State Code (Optional)",
+            "description": "Optional 2-letter US State of recalling firm (e.g., 'CA', 'NY', 'TX', 'FL').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Results",
+            "description": "Maximum number of recall enforcement records to fetch (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "domain"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "domain": "food",
+        "classification": "ALL",
+        "keyword": "",
+        "state": "",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "global-b2b-email-domain-security-auditor",
+      "fullActorName": "b2b-quant-apis/global-b2b-email-domain-security-auditor",
+      "title": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+      "description": "High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies.",
+      "version": "1.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/global-b2b-email-domain-security-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-b2b-email-domain-security-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/global-b2b-email-domain-security-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "domain-email-audited",
+        "eventTitle": "B2B Email / Corporate Domain Audited",
+        "eventPriceUsd": 0.005
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "DEVELOPER_TOOLS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "title": "Target Emails or Domains",
+            "description": "List of email addresses or domain names to audit",
+            "default": [
+              "contact@openai.com",
+              "sales@stripe.com",
+              "fake@mailinator.com"
+            ]
+          },
+          "checkDmarcAndSpf": {
+            "type": "boolean",
+            "title": "Audit SPF & DMARC Security Policies",
+            "description": "Query TXT records for SPF and _dmarc policies",
+            "default": true
+          }
+        },
+        "required": [
+          "targets"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "targets": [
+          "contact@openai.com",
+          "sales@stripe.com",
+          "fake@mailinator.com"
+        ],
+        "checkDmarcAndSpf": true
+      }
+    },
+    {
+      "slug": "us-clinical-trials-biotech-radar",
+      "fullActorName": "b2b-quant-apis/us-clinical-trials-biotech-radar",
+      "title": "US ClinicalTrials.gov Biotech & Pharma Study Radar",
+      "description": "B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.",
+      "version": "1.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-clinical-trials-biotech-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-clinical-trials-biotech-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-clinical-trials-biotech-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "clinical-trial-extracted",
+        "eventTitle": "Clinical Trial & Biotech Sponsor Extracted",
+        "eventPriceUsd": 0.04
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string",
+            "title": "Disease or Medical Condition",
+            "description": "Disease, medical condition, or therapeutic area query (e.g., Diabetes, Non-Small Cell Lung Cancer, Obesity, Alzheimer).",
+            "default": "Diabetes"
+          },
+          "overallStatus": {
+            "type": "string",
+            "title": "Study Recruitment Status",
+            "description": "Filter clinical studies by current recruitment status on ClinicalTrials.gov.",
+            "default": "RECRUITING",
+            "enum": [
+              "RECRUITING",
+              "NOT_YET_RECRUITING",
+              "ACTIVE_NOT_RECRUITING",
+              "COMPLETED",
+              "ALL"
+            ]
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Studies to Extract",
+            "description": "Maximum number of clinical trial records to fetch (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "condition": "Diabetes",
+        "overallStatus": "RECRUITING",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "us-nhtsa-vehicle-vin-recall-auditor",
+      "fullActorName": "b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+      "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+      "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.",
+      "version": "1.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "vin-decoded-audited",
+        "eventTitle": "Vehicle VIN Decoded & Recall Audited",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "vins": {
+            "type": "array",
+            "title": "Vehicle Identification Numbers (VINs)",
+            "description": "List of 17-character Vehicle Identification Numbers to decode and audit.",
+            "default": [
+              "5UXWX7C5*BA",
+              "1HGCM82633A004352"
+            ]
+          },
+          "checkRecalls": {
+            "type": "boolean",
+            "title": "Check NHTSA Safety Recalls",
+            "description": "Query official NHTSA Recall API by decoded Make, Model, and Model Year.",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max VINs to Process",
+            "description": "Maximum number of VINs to decode and audit per run.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 500
+          }
+        },
+        "required": [
+          "vins"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "vins": [
+          "5UXWX7C5*BA",
+          "1HGCM82633A004352"
+        ],
+        "checkRecalls": true,
+        "maxResults": 50
+      }
+    },
+    {
+      "slug": "brazil-b2b-cnpj-qsa-lead-enricher",
+      "fullActorName": "b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+      "title": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+      "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.",
+      "version": "1.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "cnpj-lead-enriched",
+        "eventTitle": "Brazilian CNPJ & Partners (QSA) Lead Enriched",
+        "eventPriceUsd": 0.015
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "cnpjs": {
+            "type": "array",
+            "title": "CNPJs List",
+            "description": "List of Brazilian CNPJ numbers to validate and enrich.",
+            "default": [
+              "00.000.000/0001-91",
+              "33.000.167/0001-01"
+            ]
+          },
+          "includeSecondaryCnaes": {
+            "type": "boolean",
+            "title": "Include Secondary CNAEs",
+            "description": "Include all secondary economic activities (CNAEs Secundários) in the output record and markdown dossier.",
+            "default": true
+          },
+          "timeoutSeconds": {
+            "type": "integer",
+            "title": "HTTP Timeout (Seconds)",
+            "description": "HTTP timeout in seconds for each API request to BrasilAPI and OpenCNPJA.",
+            "default": 15,
+            "minimum": 3,
+            "maximum": 60
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum CNPJs to Process",
+            "description": "Maximum number of CNPJ records to process in a single execution.",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 5000
+          }
+        },
+        "required": [
+          "cnpjs"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "cnpjs": [
+          "00.000.000/0001-91",
+          "33.000.167/0001-01"
+        ],
+        "includeSecondaryCnaes": true,
+        "timeoutSeconds": 15,
+        "maxResults": 100
+      }
+    },
+    {
+      "slug": "us-sec-edgar-filings-insider-radar",
+      "fullActorName": "b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+      "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "sec-filing-analyzed",
+        "eventTitle": "SEC EDGAR Filing & Governance Audited",
+        "eventPriceUsd": 0.04
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "tickerOrCik": {
+            "type": "string",
+            "title": "Stock Ticker or SEC CIK",
+            "description": "Public company stock ticker (e.g., 'AAPL', 'MSFT', 'NVDA', 'TSLA', 'JPM') or 10-digit SEC Central Index Key (e.g., '0000320193').",
+            "default": "AAPL"
+          },
+          "formType": {
+            "type": "string",
+            "title": "SEC Filing Form Type",
+            "description": "Filter by specific SEC regulatory form type or select ALL.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "10-K",
+              "10-Q",
+              "8-K",
+              "4"
+            ]
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Document Description / Item Keyword (Optional)",
+            "description": "Optional filter in primary document description or 8-K items (e.g., '5.02', '2.02', 'acquisition', 'restatement').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Results",
+            "description": "Maximum number of SEC EDGAR filings to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "tickerOrCik"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "tickerOrCik": "AAPL",
+        "formType": "ALL",
+        "keyword": "",
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "eu-vies-vat-tax-compliance-auditor",
+      "fullActorName": "b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+      "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+      "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "eu-vat-audited",
+        "eventTitle": "EU VIES VAT & Reverse Charge Audited",
+        "eventPriceUsd": 0.015
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "ECOMMERCE"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "vatNumbers": {
+            "type": "string",
+            "title": "EU VAT Numbers (Comma or Line Separated)",
+            "description": "Comma, space, or newline-separated EU VAT numbers including 2-letter country prefix (e.g., 'IE6388047V, DE811128135, FR40303265045').",
+            "default": "IE6388047V, DE811128135"
+          },
+          "requesterCountryCode": {
+            "type": "string",
+            "title": "Seller / Requester EU Country Code",
+            "description": "2-letter EU country code of the invoicing entity (e.g., 'DE', 'NL', 'FR', 'IE') to determine Cross-Border B2B Reverse Charge (0% VAT) vs. Domestic VAT.",
+            "default": "DE"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum VAT Numbers to Audit",
+            "description": "Maximum number of VAT records to audit in a single batch (1 to 200).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "vatNumbers"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "vatNumbers": "IE6388047V, DE811128135",
+        "requesterCountryCode": "DE",
+        "maxResults": 20
+      }
+    },
+    {
+      "slug": "us-epa-echo-environmental-compliance-auditor",
+      "fullActorName": "b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+      "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+      "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "epa-facility-audited",
+        "eventTitle": "EPA Industrial Facility ESG & Penalty Audited",
+        "eventPriceUsd": 0.03
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code (2-Letter)",
+            "description": "2-letter US State code where industrial facilities are located (e.g., 'TX', 'CA', 'LA', 'OH', 'PA').",
+            "default": "TX"
+          },
+          "facilityName": {
+            "type": "string",
+            "title": "Facility or Company Name (Optional)",
+            "description": "Optional facility or operator name keyword (e.g., 'Refinery', 'Chemical', 'Plant', 'Energy').",
+            "default": ""
+          },
+          "zipCode": {
+            "type": "string",
+            "title": "5-Digit US ZIP Code (Optional)",
+            "description": "Optional 5-digit US postal code to narrow environmental due diligence (e.g., '77506', '77002').",
+            "default": ""
+          },
+          "significantViolatorsOnly": {
+            "type": "boolean",
+            "title": "Significant Violators Only (SNC / HPV)",
+            "description": "Filter exclusively for facilities currently in Significant Non-Compliance (SNC) under CAA, CWA, or RCRA.",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Facilities to Audit",
+            "description": "Maximum number of EPA-regulated facilities to extract and score (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "state": "TX",
+        "facilityName": "",
+        "zipCode": "",
+        "significantViolatorsOnly": false,
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "us-fdic-bankfind-institution-financial-auditor",
+      "fullActorName": "b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+      "title": "US FDIC BankFind Institution & Solvency Risk Auditor",
+      "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "fdic-bank-audited",
+        "eventTitle": "FDIC Insured Bank Solvency & Treasury Audited",
+        "eventPriceUsd": 0.025
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "institutionName": {
+            "type": "string",
+            "title": "Bank / Institution Name (Optional)",
+            "description": "Optional bank name keyword (e.g., 'JPMorgan', 'Citibank', 'Morgan Stanley', 'Bank of America').",
+            "default": ""
+          },
+          "state": {
+            "type": "string",
+            "title": "US State Code (Optional)",
+            "description": "2-letter US State code of bank headquarters (e.g., 'NY', 'CA', 'TX', 'OH', 'NC', 'SD').",
+            "default": "NY"
+          },
+          "activeOnly": {
+            "type": "boolean",
+            "title": "Active FDIC Institutions Only",
+            "description": "Filter exclusively for currently active FDIC-insured banks (ACTIVE=1).",
+            "default": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Institutions to Audit",
+            "description": "Maximum number of FDIC institutions to extract and score (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200
+          }
+        },
+        "required": []
+      },
+      "sampleToolCallArguments": {
+        "institutionName": "",
+        "state": "NY",
+        "activeOnly": true,
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "us-sam-gov-federal-procurement-auditor",
+      "fullActorName": "b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+      "title": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+      "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "federal-contract-audited",
+        "eventTitle": "U.S. Federal Contract Award & B2G Audited",
+        "eventPriceUsd": 0.035
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "BUSINESS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "title": "Contract Scope / Technology Keyword",
+            "description": "Keyword searched in federal contract award descriptions (e.g., 'cybersecurity', 'cloud software', 'medical supplies', 'autonomous').",
+            "default": "cybersecurity"
+          },
+          "awardingAgency": {
+            "type": "string",
+            "title": "Federal Awarding Agency (Optional)",
+            "description": "Optional filter by top-tier U.S. Federal Agency name (e.g., 'Department of Defense', 'Department of Veterans Affairs').",
+            "default": ""
+          },
+          "minAwardAmount": {
+            "type": "integer",
+            "title": "Minimum Contract Value (USD)",
+            "description": "Minimum contract obligation amount in USD (0 to 1,000,000,000).",
+            "default": 50000,
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Contracts to Extract",
+            "description": "Maximum number of federal contract awards to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "keyword"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "keyword": "cybersecurity",
+        "awardingAgency": "",
+        "minAwardAmount": 50000,
+        "maxResults": 15
+      }
+    },
+    {
+      "slug": "multi-ats-tech-job-board-hiring-radar",
+      "fullActorName": "b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+      "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+      "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "job-signal-extracted",
+        "eventTitle": "Tech Job Requisition & B2B Hiring Signal Extracted",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "LEAD_GENERATION",
+        "JOBS"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "companyBoards": {
+            "type": "string",
+            "title": "Company ATS Board Tokens (Comma-Separated)",
+            "description": "Comma-separated Greenhouse board tokens (e.g., 'stripe,cloudflare,gitlab,airtable').",
+            "default": "stripe,cloudflare"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Role / Department Keyword Filter (Optional)",
+            "description": "Optional keyword to filter job titles or departments (e.g., 'engineer', 'security', 'sales', 'data').",
+            "default": "engineer"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Job Signals to Extract",
+            "description": "Maximum number of job openings to extract and score across boards (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyBoards"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "companyBoards": "stripe,cloudflare",
+        "keyword": "engineer",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "global-gleif-lei-corporate-ownership-kyb",
+      "fullActorName": "b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+      "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+      "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "corporate-entity-audited",
+        "eventTitle": "Global GLEIF LEI Corporate Entity Audited",
+        "eventPriceUsd": 0.025
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "LEAD_GENERATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "title": "Legal Entity Name or LEI Search Query",
+            "description": "Corporate legal name to search in the Global LEI Index (e.g., 'Microsoft', 'Siemens', 'JPMorgan', 'Petrobras').",
+            "default": "Microsoft"
+          },
+          "countryCode": {
+            "type": "string",
+            "title": "Country / Jurisdiction Filter (Optional ISO-2)",
+            "description": "Optional 2-letter ISO country filter (e.g., 'US', 'DE', 'GB', 'BR').",
+            "default": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Corporate Entities to Audit",
+            "description": "Maximum number of GLEIF LEI records to extract and score (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "companyName"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "companyName": "Microsoft",
+        "countryCode": "",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "us-census-fcc-real-estate-geo-enricher",
+      "fullActorName": "b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+      "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+      "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "property-geo-enriched",
+        "eventTitle": "U.S. Real Estate Census Tract & FIPS Enriched",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "BUSINESS",
+        "LEAD_GENERATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "coordinatesList": {
+            "type": "string",
+            "title": "U.S. Property Coordinates (lat,lon separated by ';')",
+            "description": "Semicolon-separated latitude,longitude pairs (e.g., '40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431').",
+            "default": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431"
+          },
+          "censusYear": {
+            "type": "string",
+            "title": "Census Vintage Year",
+            "description": "Decennial Census geography vintage ('2020' or '2010').",
+            "default": "2020"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Properties to Enrich",
+            "description": "Maximum number of U.S. property coordinate pairs to enrich (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "coordinatesList"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "coordinatesList": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431",
+        "censusYear": "2020",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "icann-rdap-domain-whois-brand-recon",
+      "fullActorName": "b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+      "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+      "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "domain-whois-audited",
+        "eventTitle": "ICANN RDAP Official Domain WHOIS Audited",
+        "eventPriceUsd": 0.015
+      },
+      "categories": [
+        "AI",
+        "DEVELOPER_TOOLS",
+        "ECOMMERCE"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "domains": {
+            "type": "string",
+            "title": "Domain Names (Comma-Separated)",
+            "description": "Comma-separated domain names to audit via official RDAP (e.g., 'stripe.com,cloudflare.com,shopify.com').",
+            "default": "stripe.com,cloudflare.com,shopify.com"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Domains to Audit",
+            "description": "Maximum number of domains to query and score in a single run (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "domains"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "domains": "stripe.com,cloudflare.com,shopify.com",
+        "maxResults": 10
+      }
+    },
+    {
+      "slug": "cisa-kev-ransomware-vulnerability-auditor",
+      "fullActorName": "b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+      "title": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar",
+      "description": "Audits IT vendors and software stacks against the official U.S. CISA Known Exploited Vulnerabilities (KEV) Catalog (Zero-Key). Flags active ransomware campaigns, BOD 22-01/26-04 patch deadlines, CWEs, and Threat Severity Scores (0-100).",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "cve-vulnerability-audited",
+        "eventTitle": "CISA KEV Exploited CVE & Ransomware Audited",
+        "eventPriceUsd": 0.02
+      },
+      "categories": [
+        "AI",
+        "DEVELOPER_TOOLS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "vendorKeyword": {
+            "type": "string",
+            "title": "Vendor / Product Keyword Filter",
+            "description": "Vendor or software product keyword (e.g., 'Microsoft', 'Cisco', 'Fortinet', 'Linux', 'VMware', or leave empty for latest KEV additions).",
+            "default": "Microsoft"
+          },
+          "onlyRansomware": {
+            "type": "boolean",
+            "title": "Only Known Ransomware Campaigns",
+            "description": "If true, filters strictly for CVEs with confirmed ransomware campaign exploitation ('Known').",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum CVEs to Extract",
+            "description": "Maximum number of exploited CVE records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "vendorKeyword"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "vendorKeyword": "Microsoft",
+        "onlyRansomware": false,
+        "maxResults": 15
+      }
+    }
+  ]
+}

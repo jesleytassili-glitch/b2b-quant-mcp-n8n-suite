@@ -1,0 +1,159 @@
+{
+  "name": "Automated US Real Estate Census Tract, FIPS & PropTech Geo Enricher — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated US Real Estate Census Tract, FIPS & PropTech Geo Enricher Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nEnriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n**Powered by Apify Actor:** [b2b-quant-apis/us-census-fcc-real-estate-geo-enricher](https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: us-census-fcc-real-estate-geo-enricher** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "1d923f83-66ca-52b8-8d63-e647d025be2a",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "1bd5f630-42d4-58d4-8f4e-fd03ff916f2a",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n  \"censusYear\": \"2020\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "59bb9abe-0ab8-5b3b-a5a1-08cfcc04499f",
+      "name": "Apify Engine: us-census-fcc-real-estate-geo-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8956ee1d-48cb-520b-b7fc-a307150b4acd",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "04504313-9ca6-5568-bf8e-40a49e4af323",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'us-census-fcc-real-estate-geo-enricher', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "930adc34-9de0-5e84-8ecb-7172c1c4ac90",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: us-census-fcc-real-estate-geo-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: us-census-fcc-real-estate-geo-enricher": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/us-census-fcc-real-estate-geo-enricher",
+    "estimatedPpeUsdPerEvent": 0.02
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

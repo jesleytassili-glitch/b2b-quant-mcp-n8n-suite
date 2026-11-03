@@ -1,0 +1,159 @@
+{
+  "name": "Automated US NHTSA Vehicle VIN Decoder & Safety Recall Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated US NHTSA Vehicle VIN Decoder & Safety Recall Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nBatch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.\n\n**Powered by Apify Actor:** [b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor](https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: us-nhtsa-vehicle-vin-recall-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "da7c9d1f-4a59-5831-8995-cf11d7339108",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "f0645059-640c-5380-bce1-ec769728d0ce",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-nhtsa-vehicle-vin-recall-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"vins\": [\n    \"5YJSA1E26MF123456\",\n    \"1FTEW1EP5MFA12345\"\n  ],\n  \"check_recalls\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "4788161f-8bb4-5717-aa30-0420351fb25e",
+      "name": "Apify Engine: us-nhtsa-vehicle-vin-recall-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "f3983fc5-ef4c-5935-8590-f78681f07607",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "4228a2a3-b3fa-5163-abdd-0ae677f419de",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'us-nhtsa-vehicle-vin-recall-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "cd3c58ce-03d3-5fd2-ad6f-0c6719e4cfaf",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: us-nhtsa-vehicle-vin-recall-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: us-nhtsa-vehicle-vin-recall-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor",
+    "estimatedPpeUsdPerEvent": 0.02
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}
