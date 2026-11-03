@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+  "slug": "multi-ats-tech-job-board-hiring-radar",
+  "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/multi-ats-tech-job-board-hiring-radar",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/multi-ats-tech-job-board-hiring-radar.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Input",
+    "description": "Configure target company Greenhouse ATS board tokens, optional role/department keyword filter, and maximum job signals to extract.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "companyBoards": {
+        "title": "Company ATS Board Tokens (Comma-Separated)",
+        "type": "string",
+        "description": "Comma-separated Greenhouse board tokens (e.g., 'stripe,cloudflare,gitlab,airtable').",
+        "editor": "textfield",
+        "default": "stripe,cloudflare"
+      },
+      "keyword": {
+        "title": "Role / Department Keyword Filter (Optional)",
+        "type": "string",
+        "description": "Optional keyword to filter job titles or departments (e.g., 'engineer', 'security', 'sales', 'data').",
+        "editor": "textfield",
+        "default": "engineer"
+      },
+      "maxResults": {
+        "title": "Maximum Job Signals to Extract",
+        "type": "integer",
+        "description": "Maximum number of job openings to extract and score across boards (1 to 100).",
+        "editor": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "companyBoards"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "jobId": {
+          "type": "string",
+          "title": "ATS Job ID",
+          "description": "Unique job requisition identifier on the ATS board."
+        },
+        "companyBoard": {
+          "type": "string",
+          "title": "Company Board Token",
+          "description": "Company slug on Greenhouse ATS."
+        },
+        "jobTitle": {
+          "type": "string",
+          "title": "Job Title",
+          "description": "Published title of the open position."
+        },
+        "department": {
+          "type": "string",
+          "title": "Department",
+          "description": "Primary organizational department."
+        },
+        "location": {
+          "type": "string",
+          "title": "Office / Location",
+          "description": "Geographic location or remote region."
+        },
+        "workplaceType": {
+          "type": "string",
+          "title": "Workplace Type",
+          "description": "Remote, Hybrid, or Onsite classification."
+        },
+        "updatedAt": {
+          "type": "string",
+          "title": "Last Updated Timestamp",
+          "description": "ISO timestamp when the job requisition was updated."
+        },
+        "hiringIntentScore": {
+          "type": "integer",
+          "title": "B2B Hiring Intent Score (0-100)",
+          "description": "Score measuring B2B budget expansion and technical buying intent (0-100)."
+        },
+        "jobUrl": {
+          "type": "string",
+          "title": "Direct Job Application URL",
+          "description": "Public URL to the job posting."
+        },
+        "techSignals": {
+          "type": "string",
+          "title": "Detected Tech / Budget Signals",
+          "description": "Key technical and strategic hiring signals."
+        },
+        "markdownHiringBrief": {
+          "type": "string",
+          "title": "Markdown Hiring Intent Brief",
+          "description": "Executive Markdown dossier for B2B sales and technical recruiters."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Overview",
+        "transformation": {
+          "fields": [
+            "jobId",
+            "companyBoard",
+            "jobTitle",
+            "department",
+            "location",
+            "workplaceType",
+            "updatedAt",
+            "hiringIntentScore",
+            "jobUrl",
+            "techSignals"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "jobId": {
+              "label": "Job ID",
+              "format": "text"
+            },
+            "companyBoard": {
+              "label": "Company",
+              "format": "text"
+            },
+            "jobTitle": {
+              "label": "Job Title",
+              "format": "text"
+            },
+            "department": {
+              "label": "Department",
+              "format": "text"
+            },
+            "location": {
+              "label": "Location",
+              "format": "text"
+            },
+            "workplaceType": {
+              "label": "Workplace",
+              "format": "text"
+            },
+            "updatedAt": {
+              "label": "Updated At",
+              "format": "text"
+            },
+            "hiringIntentScore": {
+              "label": "Intent Score",
+              "format": "number"
+            },
+            "jobUrl": {
+              "label": "Job URL",
+              "format": "link"
+            },
+            "techSignals": {
+              "label": "Buying Signals",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/multi-ats-tech-job-board-hiring-radar",
+        "description": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar — Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "multi-ats-tech-job-board-hiring-radar",
+          "eventName": "job-signal-extracted",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+        }
+      }
+    ]
+  }
+}

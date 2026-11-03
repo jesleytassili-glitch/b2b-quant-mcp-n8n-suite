@@ -1,0 +1,199 @@
+{
+  "status": "succeeded",
+  "service": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+  "slug": "icann-rdap-domain-whois-brand-recon",
+  "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.015,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/icann-rdap-domain-whois-brand-recon",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/icann-rdap-domain-whois-brand-recon.n8n.json"
+  },
+  "inputSchema": {
+    "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Input",
+    "description": "Configure comma-separated domain names and maximum domains to audit against official ICANN/Verisign RDAP registries.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "domains": {
+        "title": "Domain Names (Comma-Separated)",
+        "type": "string",
+        "description": "Comma-separated domain names to audit via official RDAP (e.g., 'stripe.com,cloudflare.com,shopify.com').",
+        "editor": "textfield",
+        "default": "stripe.com,cloudflare.com,shopify.com"
+      },
+      "maxResults": {
+        "title": "Maximum Domains to Audit",
+        "type": "integer",
+        "description": "Maximum number of domains to query and score in a single run (1 to 100).",
+        "editor": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "domains"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "domainName": {
+          "type": "string",
+          "title": "Domain Name",
+          "description": "ASCII LDH domain name audited."
+        },
+        "registryHandle": {
+          "type": "string",
+          "title": "Registry Handle ID",
+          "description": "Official registry ROID / Handle."
+        },
+        "registrarName": {
+          "type": "string",
+          "title": "Accredited Registrar",
+          "description": "ICANN-accredited registrar legal name."
+        },
+        "registrationDate": {
+          "type": "string",
+          "title": "Creation / Registration Date",
+          "description": "Original domain registration timestamp (ISO-8601)."
+        },
+        "expirationDate": {
+          "type": "string",
+          "title": "Registry Expiration Date",
+          "description": "Upcoming domain expiration timestamp (ISO-8601)."
+        },
+        "domainAgeYears": {
+          "type": "number",
+          "title": "Estimated Domain Age (Years)",
+          "description": "Domain longevity in years since creation."
+        },
+        "transferLocked": {
+          "type": "boolean",
+          "title": "Transfer Lock Active",
+          "description": "True if clientTransferProhibited or serverTransferProhibited is active."
+        },
+        "dnssecSigned": {
+          "type": "boolean",
+          "title": "DNSSEC Delegation Signed",
+          "description": "True if DNSSEC cryptographic signing is enabled."
+        },
+        "nameserversCount": {
+          "type": "integer",
+          "title": "Nameservers Count",
+          "description": "Number of authoritative DNS nameservers."
+        },
+        "domainTrustScore": {
+          "type": "integer",
+          "title": "Domain Trust Score (0-100)",
+          "description": "Quantitative brand security and antifraud longevity score (0-100)."
+        },
+        "markdownWhoisBrief": {
+          "type": "string",
+          "title": "Markdown RDAP & Brand Security Dossier",
+          "description": "Executive Markdown dossier for KYB antifraud, brand protection, and M&A due diligence."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "ICANN RDAP Domain WHOIS & Antifraud Overview",
+        "transformation": {
+          "fields": [
+            "domainName",
+            "registryHandle",
+            "registrarName",
+            "registrationDate",
+            "expirationDate",
+            "domainAgeYears",
+            "transferLocked",
+            "dnssecSigned",
+            "nameserversCount",
+            "domainTrustScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "domainName": {
+              "label": "Domain",
+              "format": "text"
+            },
+            "registryHandle": {
+              "label": "Handle",
+              "format": "text"
+            },
+            "registrarName": {
+              "label": "Registrar",
+              "format": "text"
+            },
+            "registrationDate": {
+              "label": "Registered At",
+              "format": "text"
+            },
+            "expirationDate": {
+              "label": "Expires At",
+              "format": "text"
+            },
+            "domainAgeYears": {
+              "label": "Age (Yrs)",
+              "format": "number"
+            },
+            "transferLocked": {
+              "label": "Transfer Lock",
+              "format": "boolean"
+            },
+            "dnssecSigned": {
+              "label": "DNSSEC",
+              "format": "boolean"
+            },
+            "nameserversCount": {
+              "label": "NS Count",
+              "format": "number"
+            },
+            "domainTrustScore": {
+              "label": "Trust Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "15000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/icann-rdap-domain-whois-brand-recon",
+        "description": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor — Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.015",
+          "actorSlug": "icann-rdap-domain-whois-brand-recon",
+          "eventName": "domain-whois-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+        }
+      }
+    ]
+  }
+}

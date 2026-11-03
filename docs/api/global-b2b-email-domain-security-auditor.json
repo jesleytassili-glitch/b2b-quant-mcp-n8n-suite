@@ -1,0 +1,215 @@
+{
+  "status": "succeeded",
+  "service": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+  "slug": "global-b2b-email-domain-security-auditor",
+  "description": "High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.005,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/global-b2b-email-domain-security-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~global-b2b-email-domain-security-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/global-b2b-email-domain-security-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Global B2B Email & Domain Deliverability, MX, SPF & DMARC Security Auditor Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "targets": {
+        "title": "Target Emails or Domains",
+        "type": "array",
+        "description": "List of email addresses or domain names to audit",
+        "editor": "stringList",
+        "default": [
+          "contact@openai.com",
+          "sales@stripe.com",
+          "fake@mailinator.com"
+        ],
+        "prefill": [
+          "contact@openai.com",
+          "sales@stripe.com",
+          "fake@mailinator.com"
+        ]
+      },
+      "checkDmarcAndSpf": {
+        "title": "Audit SPF & DMARC Security Policies",
+        "type": "boolean",
+        "description": "Query TXT records for SPF and _dmarc policies",
+        "editor": "checkbox",
+        "default": true
+      }
+    },
+    "required": [
+      "targets"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "inputTarget": {
+          "type": "string",
+          "title": "Input Target",
+          "description": "Original email address or domain submitted for audit"
+        },
+        "domain": {
+          "type": "string",
+          "title": "Normalized Domain",
+          "description": "Extracted and normalized domain name"
+        },
+        "isValidSyntax": {
+          "type": "boolean",
+          "title": "Valid Syntax",
+          "description": "Whether the input satisfies RFC 5322 email or DNS hostname syntax"
+        },
+        "isDisposable": {
+          "type": "boolean",
+          "title": "Disposable Domain",
+          "description": "Whether the domain belongs to a known temporary/disposable email provider"
+        },
+        "isRoleAccount": {
+          "type": "boolean",
+          "title": "Role Account",
+          "description": "Whether the email local-part is a generic role address (sales@, admin@, support@, etc.)"
+        },
+        "hasMxRecords": {
+          "type": "boolean",
+          "title": "Has MX Records",
+          "description": "Whether the domain has active Mail Exchange (MX) DNS records"
+        },
+        "emailProvider": {
+          "type": "string",
+          "title": "Email Provider",
+          "description": "Detected B2B email provider or gateway from MX records"
+        },
+        "hasSpf": {
+          "type": "boolean",
+          "title": "Has SPF",
+          "description": "Whether the domain publishes a valid v=spf1 TXT policy"
+        },
+        "hasDmarc": {
+          "type": "boolean",
+          "title": "Has DMARC",
+          "description": "Whether _dmarc.<domain> publishes a valid v=DMARC1 TXT policy"
+        },
+        "dmarcPolicy": {
+          "type": "string",
+          "title": "DMARC Policy",
+          "description": "Extracted DMARC enforcement policy (reject, quarantine, none, missing, or skipped)"
+        },
+        "deliverabilityScore": {
+          "type": "integer",
+          "title": "Deliverability Score",
+          "description": "Composite B2B deliverability and domain security score (0-100)"
+        },
+        "statusVerdict": {
+          "type": "string",
+          "title": "Status Verdict",
+          "description": "Final audit verdict classification"
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Overview",
+        "transformation": {
+          "fields": [
+            "inputTarget",
+            "domain",
+            "isValidSyntax",
+            "isDisposable",
+            "hasMxRecords",
+            "emailProvider",
+            "hasSpf",
+            "hasDmarc",
+            "dmarcPolicy",
+            "deliverabilityScore",
+            "statusVerdict"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "inputTarget": {
+              "label": "Input Target",
+              "format": "text"
+            },
+            "domain": {
+              "label": "Domain",
+              "format": "text"
+            },
+            "isValidSyntax": {
+              "label": "Valid Syntax",
+              "format": "boolean"
+            },
+            "isDisposable": {
+              "label": "Disposable",
+              "format": "boolean"
+            },
+            "hasMxRecords": {
+              "label": "Has MX",
+              "format": "boolean"
+            },
+            "emailProvider": {
+              "label": "Email Provider",
+              "format": "text"
+            },
+            "hasSpf": {
+              "label": "Has SPF",
+              "format": "boolean"
+            },
+            "hasDmarc": {
+              "label": "Has DMARC",
+              "format": "boolean"
+            },
+            "dmarcPolicy": {
+              "label": "DMARC Policy",
+              "format": "text"
+            },
+            "deliverabilityScore": {
+              "label": "Deliverability Score",
+              "format": "number"
+            },
+            "statusVerdict": {
+              "label": "Status Verdict",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "5000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-b2b-email-domain-security-auditor",
+        "description": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor — High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.005",
+          "actorSlug": "global-b2b-email-domain-security-auditor",
+          "eventName": "domain-email-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-b2b-email-domain-security-auditor"
+        }
+      }
+    ]
+  }
+}

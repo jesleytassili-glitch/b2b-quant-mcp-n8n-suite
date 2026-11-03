@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+  "slug": "eu-vies-vat-tax-compliance-auditor",
+  "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.015,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-vies-vat-tax-compliance-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-vies-vat-tax-compliance-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/eu-vies-vat-tax-compliance-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "EU VIES VAT Number Validator & Reverse Charge Auditor Input",
+    "description": "Provide one or more European Union (27 Member States + XI Northern Ireland) VAT identification numbers to validate syntax, active VIES registration, trader legal name/address, and Intra-EU Reverse Charge eligibility.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "vatNumbers": {
+        "title": "EU VAT Numbers (Comma or Line Separated)",
+        "type": "string",
+        "description": "Comma, space, or newline-separated EU VAT numbers including 2-letter country prefix (e.g., 'IE6388047V, DE811128135, FR40303265045').",
+        "editor": "textarea",
+        "default": "IE6388047V, DE811128135"
+      },
+      "requesterCountryCode": {
+        "title": "Seller / Requester EU Country Code",
+        "type": "string",
+        "description": "2-letter EU country code of the invoicing entity (e.g., 'DE', 'NL', 'FR', 'IE') to determine Cross-Border B2B Reverse Charge (0% VAT) vs. Domestic VAT.",
+        "editor": "textfield",
+        "default": "DE"
+      },
+      "maxResults": {
+        "title": "Maximum VAT Numbers to Audit",
+        "type": "integer",
+        "description": "Maximum number of VAT records to audit in a single batch (1 to 200).",
+        "editor": "number",
+        "default": 20,
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "required": [
+      "vatNumbers"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "fullVatNumber": {
+          "type": "string",
+          "title": "Full VAT Number",
+          "description": "Normalized EU VAT identifier including Member State prefix."
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "Member State Code",
+          "description": "2-letter EU VIES jurisdiction code (AT, BE, DE, EL, ES, FR, IE, IT, NL, XI, etc.)."
+        },
+        "vatNumber": {
+          "type": "string",
+          "title": "National VAT Number",
+          "description": "National numeric/alphanumeric VAT digits without country prefix."
+        },
+        "syntaxValid": {
+          "type": "boolean",
+          "title": "Syntax Valid",
+          "description": "Whether the VAT number matches the official Member State structural regex."
+        },
+        "viesActive": {
+          "type": "boolean",
+          "title": "VIES Active Registration",
+          "description": "Whether the VAT number is actively registered for Intra-EU cross-border transactions."
+        },
+        "traderName": {
+          "type": "string",
+          "title": "Registered Trader Name",
+          "description": "Legal company name returned by the European Commission VIES registry."
+        },
+        "traderAddress": {
+          "type": "string",
+          "title": "Registered Address",
+          "description": "Official corporate address on file in the Member State tax registry."
+        },
+        "reverseChargeStatus": {
+          "type": "string",
+          "title": "Reverse Charge Eligibility",
+          "description": "Tax invoicing determination (ELIGIBLE_INTRA_EU_0_VAT, DOMESTIC_STANDARD_VAT, or DO_NOT_ZERO_RATE)."
+        },
+        "complianceRiskScore": {
+          "type": "integer",
+          "title": "Compliance Risk Score (0-100)",
+          "description": "Quantitative tax audit risk score (0 = lowest risk/verified active, 100 = invalid/high risk)."
+        },
+        "verificationSource": {
+          "type": "string",
+          "title": "Verification Source",
+          "description": "Indicates EU_VIES_LIVE_API or ALGORITHMIC_FALLBACK_MS_MAINTENANCE."
+        },
+        "markdownVatCertificate": {
+          "type": "string",
+          "title": "Markdown Tax Compliance Certificate",
+          "description": "Audit-ready Markdown VAT compliance certificate for ERP/Finance attachment."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "EU VIES VAT & Reverse Charge Audit Overview",
+        "transformation": {
+          "fields": [
+            "fullVatNumber",
+            "countryCode",
+            "vatNumber",
+            "syntaxValid",
+            "viesActive",
+            "traderName",
+            "traderAddress",
+            "reverseChargeStatus",
+            "complianceRiskScore",
+            "verificationSource"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "fullVatNumber": {
+              "label": "Full VAT Number",
+              "format": "text"
+            },
+            "countryCode": {
+              "label": "Country",
+              "format": "text"
+            },
+            "vatNumber": {
+              "label": "VAT Digits",
+              "format": "text"
+            },
+            "syntaxValid": {
+              "label": "Syntax OK",
+              "format": "boolean"
+            },
+            "viesActive": {
+              "label": "VIES Active",
+              "format": "boolean"
+            },
+            "traderName": {
+              "label": "Trader Name",
+              "format": "text"
+            },
+            "traderAddress": {
+              "label": "Registered Address",
+              "format": "text"
+            },
+            "reverseChargeStatus": {
+              "label": "Reverse Charge Status",
+              "format": "text"
+            },
+            "complianceRiskScore": {
+              "label": "Risk Score",
+              "format": "number"
+            },
+            "verificationSource": {
+              "label": "Verification Source",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "15000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/eu-vies-vat-tax-compliance-auditor",
+        "description": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor — Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.015",
+          "actorSlug": "eu-vies-vat-tax-compliance-auditor",
+          "eventName": "eu-vat-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "status": "succeeded",
+  "service": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+  "slug": "brazil-cep-geocoordinates-logistics-auditor",
+  "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.01,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/brazil-cep-geocoordinates-logistics-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "ceps": {
+        "title": "Brazilian 8-Digit CEPs (CSV)",
+        "type": "string",
+        "description": "Comma-separated Brazilian postal codes (e.g., '01310100, 20040002, 30140071').",
+        "editor": "textfield",
+        "default": "01310100,20040002,30140071"
+      },
+      "maxResults": {
+        "title": "Max CEPs to Audit",
+        "type": "integer",
+        "description": "Maximum number of CEP records to return (1 to 100).",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "ceps"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "cep": {
+          "type": "string",
+          "title": "CEP (8 Digits)",
+          "description": "Standardized 8-digit Brazilian postal code."
+        },
+        "stateUf": {
+          "type": "string",
+          "title": "State UF",
+          "description": "Two-letter Brazilian state code."
+        },
+        "cityName": {
+          "type": "string",
+          "title": "City / Municipality",
+          "description": "Official municipality name."
+        },
+        "neighborhood": {
+          "type": "string",
+          "title": "Neighborhood / Bairro",
+          "description": "District or neighborhood."
+        },
+        "street": {
+          "type": "string",
+          "title": "Street / Logradouro",
+          "description": "Street address."
+        },
+        "ibgeCityCode": {
+          "type": "string",
+          "title": "IBGE 7-Digit City Code",
+          "description": "Official 7-digit IBGE municipality code for NF-e/CT-e."
+        },
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+          "description": "WGS84 Latitude coordinate."
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+          "description": "WGS84 Longitude coordinate."
+        },
+        "logisticsReadinessScore": {
+          "type": "integer",
+          "title": "Logistics & NF-e Readiness Score (0-100)",
+          "description": "Quantitative score for last-mile routing and tax invoice completeness (0-100)."
+        },
+        "markdownLogisticsDossier": {
+          "type": "string",
+          "title": "Markdown Logistics & NF-e Dossier",
+          "description": "Executive report for e-commerce, TMS/WMS, and ERP tax engines."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Brazil CEP Geocoordinates & IBGE Logistics Overview",
+        "transformation": {
+          "fields": [
+            "cep",
+            "stateUf",
+            "cityName",
+            "neighborhood",
+            "street",
+            "ibgeCityCode",
+            "latitude",
+            "longitude",
+            "logisticsReadinessScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "cep": {
+              "label": "CEP",
+              "format": "text"
+            },
+            "stateUf": {
+              "label": "UF",
+              "format": "text"
+            },
+            "cityName": {
+              "label": "City",
+              "format": "text"
+            },
+            "neighborhood": {
+              "label": "Neighborhood",
+              "format": "text"
+            },
+            "street": {
+              "label": "Street",
+              "format": "text"
+            },
+            "ibgeCityCode": {
+              "label": "IBGE Code",
+              "format": "text"
+            },
+            "latitude": {
+              "label": "Latitude",
+              "format": "number"
+            },
+            "longitude": {
+              "label": "Longitude",
+              "format": "number"
+            },
+            "logisticsReadinessScore": {
+              "label": "Logistics Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "10000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/brazil-cep-geocoordinates-logistics-auditor",
+        "description": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor — Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.01",
+          "actorSlug": "brazil-cep-geocoordinates-logistics-auditor",
+          "eventName": "cep-geo-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+        }
+      }
+    ]
+  }
+}

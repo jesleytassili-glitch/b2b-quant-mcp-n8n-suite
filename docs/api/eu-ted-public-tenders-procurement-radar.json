@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+  "slug": "eu-ted-public-tenders-procurement-radar",
+  "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.035,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-ted-public-tenders-procurement-radar",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-ted-public-tenders-procurement-radar/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/eu-ted-public-tenders-procurement-radar.n8n.json"
+  },
+  "inputSchema": {
+    "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Input",
+    "description": "Configure procurement keyword, optional 3-letter EU Member State ISO code (e.g., DEU, FRA, ESP, NLD), and maximum EU TED notices to extract and score.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "searchKeyword": {
+        "title": "Procurement Keyword / Sector",
+        "type": "string",
+        "description": "Public tender topic, CPV keyword, or technology sector (e.g., 'Cloud Cybersecurity', 'Artificial Intelligence', 'Medical Devices', 'Solar Energy').",
+        "editor": "textfield",
+        "default": "Cloud Cybersecurity"
+      },
+      "countryIso3": {
+        "title": "EU Country ISO-3 Code (Optional)",
+        "type": "string",
+        "description": "Optional 3-letter ISO country code (e.g., 'DEU', 'FRA', 'ESP', 'ITA', 'NLD', 'BEL', or leave empty for all EU/EEA member states).",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Maximum Tenders to Extract",
+        "type": "integer",
+        "description": "Maximum number of European public procurement notices to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "searchKeyword"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "publicationNumber": {
+          "type": "string",
+          "title": "EU TED Publication Number",
+          "description": "Official Supplement to the Official Journal of the EU (OJ S) notice ID."
+        },
+        "noticeTitle": {
+          "type": "string",
+          "title": "Tender / Contract Title",
+          "description": "Official title of the public procurement notice."
+        },
+        "buyerName": {
+          "type": "string",
+          "title": "Contracting Authority (Buyer)",
+          "description": "European ministry, agency, or public utility issuing the tender."
+        },
+        "buyerCountryIso3": {
+          "type": "string",
+          "title": "Buyer Country (ISO-3)",
+          "description": "3-letter ISO code of the contracting authority country."
+        },
+        "cpvCode": {
+          "type": "string",
+          "title": "Primary CPV Code",
+          "description": "8-digit EU Common Procurement Vocabulary classification code."
+        },
+        "procedureType": {
+          "type": "string",
+          "title": "Procurement Procedure Type",
+          "description": "Open, Restricted, Competitive Dialogue, or Framework Agreement."
+        },
+        "publicationDate": {
+          "type": "string",
+          "title": "Publication Date",
+          "description": "ISO date when the notice was published on EU TED."
+        },
+        "deadlineDate": {
+          "type": "string",
+          "title": "Submission Deadline Date",
+          "description": "ISO deadline for submitting bids or requests to participate."
+        },
+        "estimatedValueEur": {
+          "type": "number",
+          "title": "Estimated Contract Value (EUR)",
+          "description": "Estimated or awarded contract value in Euros (EUR)."
+        },
+        "bidOpportunityScore": {
+          "type": "integer",
+          "title": "Bid Opportunity Score (0-100)",
+          "description": "Quantitative B2G capture score combining contract value, open procedure openness, and CPV match (0-100)."
+        },
+        "markdownProcurementBrief": {
+          "type": "string",
+          "title": "Markdown B2G Capture & Proposal Brief",
+          "description": "Executive Markdown brief for European B2G capture teams and automated RFP pipelines."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "EU TED Public Tenders & B2G Procurement Overview",
+        "transformation": {
+          "fields": [
+            "publicationNumber",
+            "noticeTitle",
+            "buyerName",
+            "buyerCountryIso3",
+            "cpvCode",
+            "procedureType",
+            "publicationDate",
+            "deadlineDate",
+            "estimatedValueEur",
+            "bidOpportunityScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "publicationNumber": {
+              "label": "TED Notice ID",
+              "format": "text"
+            },
+            "noticeTitle": {
+              "label": "Tender Title",
+              "format": "text"
+            },
+            "buyerName": {
+              "label": "Contracting Authority",
+              "format": "text"
+            },
+            "buyerCountryIso3": {
+              "label": "Country",
+              "format": "text"
+            },
+            "cpvCode": {
+              "label": "CPV Code",
+              "format": "text"
+            },
+            "procedureType": {
+              "label": "Procedure",
+              "format": "text"
+            },
+            "publicationDate": {
+              "label": "Published",
+              "format": "text"
+            },
+            "deadlineDate": {
+              "label": "Deadline",
+              "format": "text"
+            },
+            "estimatedValueEur": {
+              "label": "Value (EUR)",
+              "format": "number"
+            },
+            "bidOpportunityScore": {
+              "label": "Bid Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "35000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/eu-ted-public-tenders-procurement-radar",
+        "description": "EU TED Public Tenders & B2G Procurement Intelligence Radar — Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.035",
+          "actorSlug": "eu-ted-public-tenders-procurement-radar",
+          "eventName": "eu-tender-analyzed",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+        }
+      }
+    ]
+  }
+}

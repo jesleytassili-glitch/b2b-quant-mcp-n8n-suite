@@ -1,0 +1,220 @@
+{
+  "status": "succeeded",
+  "service": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+  "slug": "us-epa-echo-environmental-compliance-auditor",
+  "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.03,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-epa-echo-environmental-compliance-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-epa-echo-environmental-compliance-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Input",
+    "description": "Configure US State, facility name, ZIP code, and Significant Non-Complier (SNC) filters to audit industrial environmental compliance via U.S. EPA ECHO.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "state": {
+        "title": "US State Code (2-Letter)",
+        "type": "string",
+        "description": "2-letter US State code where industrial facilities are located (e.g., 'TX', 'CA', 'LA', 'OH', 'PA').",
+        "editor": "textfield",
+        "default": "TX"
+      },
+      "facilityName": {
+        "title": "Facility or Company Name (Optional)",
+        "type": "string",
+        "description": "Optional facility or operator name keyword (e.g., 'Refinery', 'Chemical', 'Plant', 'Energy').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "zipCode": {
+        "title": "5-Digit US ZIP Code (Optional)",
+        "type": "string",
+        "description": "Optional 5-digit US postal code to narrow environmental due diligence (e.g., '77506', '77002').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "significantViolatorsOnly": {
+        "title": "Significant Violators Only (SNC / HPV)",
+        "type": "boolean",
+        "description": "Filter exclusively for facilities currently in Significant Non-Compliance (SNC) under CAA, CWA, or RCRA.",
+        "editor": "checkbox",
+        "default": false
+      },
+      "maxResults": {
+        "title": "Maximum Facilities to Audit",
+        "type": "integer",
+        "description": "Maximum number of EPA-regulated facilities to extract and score (1 to 200).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "required": [
+      "state"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "registryId": {
+          "type": "string",
+          "title": "EPA Registry ID",
+          "description": "Official U.S. EPA Facility Registry Service (FRS) identifier."
+        },
+        "facilityName": {
+          "type": "string",
+          "title": "Facility Name",
+          "description": "Regulated industrial plant or facility name."
+        },
+        "city": {
+          "type": "string",
+          "title": "City",
+          "description": "City where the facility is located."
+        },
+        "state": {
+          "type": "string",
+          "title": "State",
+          "description": "2-letter US State code."
+        },
+        "complianceStatus": {
+          "type": "string",
+          "title": "EPA Compliance Status",
+          "description": "Current compliance status across Clean Air, Clean Water, and RCRA statutes."
+        },
+        "sncFlag": {
+          "type": "boolean",
+          "title": "Significant Non-Complier (SNC)",
+          "description": "True if flagged as Significant Non-Complier or High Priority Violator."
+        },
+        "quartersInNonCompliance": {
+          "type": "integer",
+          "title": "Quarters in Non-Compliance (3-Yr)",
+          "description": "Number of quarters (0 to 12) in non-compliance over the last 3 years."
+        },
+        "totalPenaltiesUsd": {
+          "type": "number",
+          "title": "Total Penalties (USD)",
+          "description": "Cumulative formal enforcement monetary penalties assessed in USD."
+        },
+        "environmentalLiabilityScore": {
+          "type": "integer",
+          "title": "Environmental Liability Score (0-100)",
+          "description": "Quantitative ESG and environmental liability risk score (0-100)."
+        },
+        "inspectionCount5Yr": {
+          "type": "integer",
+          "title": "Inspections (5-Yr)",
+          "description": "Total federal and state regulatory inspections conducted."
+        },
+        "markdownEsgDueDiligenceBrief": {
+          "type": "string",
+          "title": "Markdown ESG & M&A Due Diligence Brief",
+          "description": "Executive environmental liability dossier for commercial real estate, M&A, and ESG risk teams."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US EPA ECHO Environmental Compliance Overview",
+        "transformation": {
+          "fields": [
+            "registryId",
+            "facilityName",
+            "city",
+            "state",
+            "complianceStatus",
+            "sncFlag",
+            "quartersInNonCompliance",
+            "totalPenaltiesUsd",
+            "environmentalLiabilityScore",
+            "inspectionCount5Yr"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "registryId": {
+              "label": "EPA Registry ID",
+              "format": "text"
+            },
+            "facilityName": {
+              "label": "Facility Name",
+              "format": "text"
+            },
+            "city": {
+              "label": "City",
+              "format": "text"
+            },
+            "state": {
+              "label": "State",
+              "format": "text"
+            },
+            "complianceStatus": {
+              "label": "Compliance Status",
+              "format": "text"
+            },
+            "sncFlag": {
+              "label": "SNC Violator",
+              "format": "boolean"
+            },
+            "quartersInNonCompliance": {
+              "label": "Qtrs Non-Compliance",
+              "format": "number"
+            },
+            "totalPenaltiesUsd": {
+              "label": "Total Penalties (USD)",
+              "format": "number"
+            },
+            "environmentalLiabilityScore": {
+              "label": "Liability Score",
+              "format": "number"
+            },
+            "inspectionCount5Yr": {
+              "label": "Inspections",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "30000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-epa-echo-environmental-compliance-auditor",
+        "description": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor — Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.03",
+          "actorSlug": "us-epa-echo-environmental-compliance-auditor",
+          "eventName": "epa-facility-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+        }
+      }
+    ]
+  }
+}

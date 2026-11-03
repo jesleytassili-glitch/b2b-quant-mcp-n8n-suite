@@ -1,0 +1,211 @@
+{
+  "status": "succeeded",
+  "service": "US FDIC BankFind Institution & Solvency Risk Auditor",
+  "slug": "us-fdic-bankfind-institution-financial-auditor",
+  "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.025,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fdic-bankfind-institution-financial-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/us-fdic-bankfind-institution-financial-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "US FDIC BankFind Institution & Solvency Risk Auditor Input",
+    "description": "Configure bank name, US state filter, active status, and maximum results to audit FDIC-insured financial institutions and counterparty treasury risk.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "institutionName": {
+        "title": "Bank / Institution Name (Optional)",
+        "type": "string",
+        "description": "Optional bank name keyword (e.g., 'JPMorgan', 'Citibank', 'Morgan Stanley', 'Bank of America').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "state": {
+        "title": "US State Code (Optional)",
+        "type": "string",
+        "description": "2-letter US State code of bank headquarters (e.g., 'NY', 'CA', 'TX', 'OH', 'NC', 'SD').",
+        "editor": "textfield",
+        "default": "NY"
+      },
+      "activeOnly": {
+        "title": "Active FDIC Institutions Only",
+        "type": "boolean",
+        "description": "Filter exclusively for currently active FDIC-insured banks (ACTIVE=1).",
+        "editor": "checkbox",
+        "default": true
+      },
+      "maxResults": {
+        "title": "Maximum Institutions to Audit",
+        "type": "integer",
+        "description": "Maximum number of FDIC institutions to extract and score (1 to 200).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "required": []
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "certNumber": {
+          "type": "string",
+          "title": "FDIC Certificate #",
+          "description": "Official unique FDIC Certificate Number."
+        },
+        "institutionName": {
+          "type": "string",
+          "title": "Institution Name",
+          "description": "Official legal name of the banking institution."
+        },
+        "city": {
+          "type": "string",
+          "title": "Headquarters City",
+          "description": "City of headquarters."
+        },
+        "state": {
+          "type": "string",
+          "title": "State",
+          "description": "2-letter US State abbreviation."
+        },
+        "activeStatus": {
+          "type": "boolean",
+          "title": "Active Status",
+          "description": "True if currently active and insured by the FDIC."
+        },
+        "totalAssetsMillionsUsd": {
+          "type": "number",
+          "title": "Total Assets ($ Millions)",
+          "description": "Total consolidated assets reported in millions of USD."
+        },
+        "totalDepositsMillionsUsd": {
+          "type": "number",
+          "title": "Total Deposits ($ Millions)",
+          "description": "Total domestic and foreign deposits in millions of USD."
+        },
+        "equityRatioPct": {
+          "type": "number",
+          "title": "Equity-to-Assets Ratio (%)",
+          "description": "Tier/Book Equity capital as a percentage of total assets."
+        },
+        "roaPct": {
+          "type": "number",
+          "title": "Return on Assets — ROA (%)",
+          "description": "Net income as a percentage of average total assets."
+        },
+        "counterpartyHealthScore": {
+          "type": "integer",
+          "title": "Counterparty Health Score (0-100)",
+          "description": "Quantitative treasury solvency & capital adequacy score (0-100)."
+        },
+        "markdownTreasuryRiskBrief": {
+          "type": "string",
+          "title": "Markdown Treasury Counterparty Risk Brief",
+          "description": "Executive Markdown dossier for CFOs, Corporate Treasurers, and Fintech Risk Teams."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "US FDIC BankFind Institution & Solvency Risk Overview",
+        "transformation": {
+          "fields": [
+            "certNumber",
+            "institutionName",
+            "city",
+            "state",
+            "activeStatus",
+            "totalAssetsMillionsUsd",
+            "totalDepositsMillionsUsd",
+            "equityRatioPct",
+            "roaPct",
+            "counterpartyHealthScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "certNumber": {
+              "label": "FDIC Cert #",
+              "format": "text"
+            },
+            "institutionName": {
+              "label": "Institution Name",
+              "format": "text"
+            },
+            "city": {
+              "label": "City",
+              "format": "text"
+            },
+            "state": {
+              "label": "State",
+              "format": "text"
+            },
+            "activeStatus": {
+              "label": "Active",
+              "format": "boolean"
+            },
+            "totalAssetsMillionsUsd": {
+              "label": "Total Assets ($M)",
+              "format": "number"
+            },
+            "totalDepositsMillionsUsd": {
+              "label": "Total Deposits ($M)",
+              "format": "number"
+            },
+            "equityRatioPct": {
+              "label": "Equity Ratio (%)",
+              "format": "number"
+            },
+            "roaPct": {
+              "label": "ROA (%)",
+              "format": "number"
+            },
+            "counterpartyHealthScore": {
+              "label": "Health Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "25000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-fdic-bankfind-institution-financial-auditor",
+        "description": "US FDIC BankFind Institution & Solvency Risk Auditor — Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.025",
+          "actorSlug": "us-fdic-bankfind-institution-financial-auditor",
+          "eventName": "fdic-bank-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor"
+        }
+      }
+    ]
+  }
+}

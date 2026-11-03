@@ -1,0 +1,159 @@
+{
+  "name": "Automated US OSHA Workplace Safety & Violation Compliance Auditor — Daily B2B Data & Compliance Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated US OSHA Workplace Safety & Violation Compliance Auditor Pipeline (Daily B2B M2M Workflow)\n\n**Overview:**\nAudits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).\n\n**Powered by Apify Actor:** [b2b-quant-apis/us-osha-workplace-safety-violation-auditor](https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor)\n\n### Quick Setup (2 Minutes):\n1. Create a free Apify account and copy your personal token from **Settings -> Integrations**.\n2. Open the **Apify Engine: us-osha-workplace-safety-violation-auditor** HTTP Request node and configure a **Header Auth** credential with:\n   - **Name:** `Authorization`\n   - **Value:** `Bearer <YOUR_APIFY_TOKEN_HERE>`\n3. Customize the JSON input payload in the HTTP Request node and set your destination Webhook/Slack URL.\n4. Toggle the workflow **Active** to run automatically every morning at 07:00 AM!",
+        "height": 380,
+        "width": 520,
+        "color": 4
+      },
+      "id": "9072a1f5-fbcd-512d-9ec7-721720a38df3",
+      "name": "Setup Instructions & Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "d1de261f-e40c-58e6-b1d7-4bcc76ba8028",
+      "name": "Daily 07:00 AM Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyQuery\": \"Amazon,Tesla\",\n  \"state\": \"TX\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "f8621182-6aac-5146-8421-48f770008d80",
+      "name": "Apify Engine: us-osha-workplace-safety-violation-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8c511474-09f1-5801-878a-a3bbc02e3391",
+              "leftValue": "={{ Object.keys($json).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "591daa3b-9718-5bf1-b28e-0a51e464037e",
+      "name": "Validate Structured Dataset Output",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        780,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/b2b-compliance-webhook-receiver",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ actor: 'us-osha-workplace-safety-violation-auditor', timestamp: $now, record: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "00df505d-0916-53c7-9341-3ceb2c067358",
+      "name": "Dispatch to Enterprise CRM / Slack Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 07:00 AM Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Apify Engine: us-osha-workplace-safety-violation-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Engine: us-osha-workplace-safety-violation-auditor": {
+      "main": [
+        [
+          {
+            "node": "Validate Structured Dataset Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Structured Dataset Output": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to Enterprise CRM / Slack Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyStoreActor": "b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
+    "estimatedPpeUsdPerEvent": 0.03
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

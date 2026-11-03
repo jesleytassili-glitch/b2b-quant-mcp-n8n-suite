@@ -10,16 +10,25 @@ import httpx
 APIFY_USERNAME = "b2b-quant-apis"
 AVAILABLE_ACTORS: List[str] = [
     "b2b-gov-procurement-pncp-radar",
+    "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
     "brazil-antt-freight-cte-auditor",
     "brazil-b2b-cnpj-qsa-lead-enricher",
+    "brazil-bcb-ptax-sgs-financial-contract-indexer",
+    "brazil-camara-legislative-regulatory-risk-radar",
+    "brazil-cep-geocoordinates-logistics-auditor",
+    "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+    "brazil-pix-ispb-cvm-financial-kyb-auditor",
     "brazil-tax-reform-ncm-classtrib-auditor",
     "cisa-kev-ransomware-vulnerability-auditor",
+    "eu-ted-public-tenders-procurement-radar",
     "eu-vies-vat-tax-compliance-auditor",
     "global-b2b-email-domain-security-auditor",
     "global-gleif-lei-corporate-ownership-kyb",
+    "global-sanctions-pep-interpol-watchlist-screener",
     "healthcare-tiss-xml-validator",
     "icann-rdap-domain-whois-brand-recon",
     "multi-ats-tech-job-board-hiring-radar",
+    "uk-fca-companies-house-kyb-compliance-auditor",
     "us-census-fcc-real-estate-geo-enricher",
     "us-clinical-trials-biotech-radar",
     "us-epa-echo-environmental-compliance-auditor",
@@ -27,6 +36,7 @@ AVAILABLE_ACTORS: List[str] = [
     "us-fdic-bankfind-institution-financial-auditor",
     "us-healthcare-npi-provider-lead-enricher",
     "us-nhtsa-vehicle-vin-recall-auditor",
+    "us-osha-workplace-safety-violation-auditor",
     "us-sam-gov-federal-procurement-auditor",
     "us-sec-edgar-filings-insider-radar"
 ]

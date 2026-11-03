@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+  "slug": "global-gleif-lei-corporate-ownership-kyb",
+  "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.025,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~global-gleif-lei-corporate-ownership-kyb/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/global-gleif-lei-corporate-ownership-kyb.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Input",
+    "description": "Configure legal entity search query or 20-character LEI codes, optional jurisdiction filter, and maximum entities to audit.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "companyName": {
+        "title": "Legal Entity Name or LEI Search Query",
+        "type": "string",
+        "description": "Corporate legal name to search in the Global LEI Index (e.g., 'Microsoft', 'Siemens', 'JPMorgan', 'Petrobras').",
+        "editor": "textfield",
+        "default": "Microsoft"
+      },
+      "countryCode": {
+        "title": "Country / Jurisdiction Filter (Optional ISO-2)",
+        "type": "string",
+        "description": "Optional 2-letter ISO country filter (e.g., 'US', 'DE', 'GB', 'BR').",
+        "editor": "textfield",
+        "default": ""
+      },
+      "maxResults": {
+        "title": "Maximum Corporate Entities to Audit",
+        "type": "integer",
+        "description": "Maximum number of GLEIF LEI records to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "companyName"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "leiCode": {
+          "type": "string",
+          "title": "20-Char LEI Code",
+          "description": "ISO 17442 Global Legal Entity Identifier."
+        },
+        "legalName": {
+          "type": "string",
+          "title": "Official Legal Name",
+          "description": "Registered legal name of the entity."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "title": "Legal Jurisdiction",
+          "description": "ISO country/subdivision of legal formation."
+        },
+        "entityStatus": {
+          "type": "string",
+          "title": "Entity Operational Status",
+          "description": "ACTIVE or INACTIVE legal entity status."
+        },
+        "registrationStatus": {
+          "type": "string",
+          "title": "LEI Registration Status",
+          "description": "ISSUED, LAPSED, RETIRED, or ANNULLED."
+        },
+        "registeredAs": {
+          "type": "string",
+          "title": "Local Business Registry ID",
+          "description": "Local commercial register number."
+        },
+        "headquartersCity": {
+          "type": "string",
+          "title": "Headquarters City",
+          "description": "City of corporate headquarters."
+        },
+        "headquartersCountry": {
+          "type": "string",
+          "title": "Headquarters Country",
+          "description": "ISO country code of headquarters."
+        },
+        "nextRenewalDate": {
+          "type": "string",
+          "title": "Next LEI Renewal Date",
+          "description": "Scheduled annual LEI renewal timestamp."
+        },
+        "kybTrustScore": {
+          "type": "integer",
+          "title": "KYB Trust Score (0-100)",
+          "description": "Quantitative KYB compliance and registration validity score (0-100)."
+        },
+        "markdownKybBrief": {
+          "type": "string",
+          "title": "Markdown KYB Compliance Brief",
+          "description": "Executive KYB audit dossier for banking, M&A, and vendor onboarding."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Global GLEIF LEI Corporate KYB Overview",
+        "transformation": {
+          "fields": [
+            "leiCode",
+            "legalName",
+            "jurisdiction",
+            "entityStatus",
+            "registrationStatus",
+            "registeredAs",
+            "headquartersCity",
+            "headquartersCountry",
+            "nextRenewalDate",
+            "kybTrustScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "leiCode": {
+              "label": "LEI Code",
+              "format": "text"
+            },
+            "legalName": {
+              "label": "Legal Name",
+              "format": "text"
+            },
+            "jurisdiction": {
+              "label": "Jurisdiction",
+              "format": "text"
+            },
+            "entityStatus": {
+              "label": "Entity Status",
+              "format": "text"
+            },
+            "registrationStatus": {
+              "label": "LEI Status",
+              "format": "text"
+            },
+            "registeredAs": {
+              "label": "Registry ID",
+              "format": "text"
+            },
+            "headquartersCity": {
+              "label": "HQ City",
+              "format": "text"
+            },
+            "headquartersCountry": {
+              "label": "HQ Country",
+              "format": "text"
+            },
+            "nextRenewalDate": {
+              "label": "Next Renewal",
+              "format": "text"
+            },
+            "kybTrustScore": {
+              "label": "KYB Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "25000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-gleif-lei-corporate-ownership-kyb",
+        "description": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor — Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.025",
+          "actorSlug": "global-gleif-lei-corporate-ownership-kyb",
+          "eventName": "corporate-entity-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+        }
+      }
+    ]
+  }
+}

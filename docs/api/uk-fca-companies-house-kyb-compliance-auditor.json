@@ -1,0 +1,206 @@
+{
+  "status": "succeeded",
+  "service": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+  "slug": "uk-fca-companies-house-kyb-compliance-auditor",
+  "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.025,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/uk-fca-companies-house-kyb-compliance-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Input",
+    "description": "Configure UK company name or 8-digit CRN number, optional inactive company filter, and maximum UK corporate entities to audit.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "companyQuery": {
+        "title": "UK Company Name or CRN Number",
+        "type": "string",
+        "description": "United Kingdom legal entity name or 8-character Companies House Registration Number (e.g., 'Revolut', 'Barclays', 'Wise', 'Monzo', '08804411').",
+        "editor": "textfield",
+        "default": "Revolut"
+      },
+      "includeInactive": {
+        "title": "Include Dissolved / Inactive Entities",
+        "type": "boolean",
+        "description": "If true, includes dissolved, liquidated, or lapsed UK entities alongside active companies.",
+        "editor": "checkbox",
+        "default": false
+      },
+      "maxResults": {
+        "title": "Maximum UK Entities to Audit",
+        "type": "integer",
+        "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+        "editor": "number",
+        "default": 15,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "companyQuery"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "companyNumberCrn": {
+          "type": "string",
+          "title": "UK Companies House CRN",
+          "description": "8-character UK Company Registration Number."
+        },
+        "companyName": {
+          "type": "string",
+          "title": "Legal Entity Name",
+          "description": "Official UK registered company name."
+        },
+        "leiCode": {
+          "type": "string",
+          "title": "GLEIF 20-Character LEI",
+          "description": "ISO 17442 Legal Entity Identifier linked to the UK entity."
+        },
+        "companyStatus": {
+          "type": "string",
+          "title": "Companies House Status",
+          "description": "Active, Dissolved, or In Liquidation."
+        },
+        "incorporationDate": {
+          "type": "string",
+          "title": "Incorporation / Registration Date",
+          "description": "ISO date of UK registration."
+        },
+        "sicCodes": {
+          "type": "string",
+          "title": "UK SIC 2007 Classification",
+          "description": "5-digit UK Standard Industrial Classification codes."
+        },
+        "registeredCity": {
+          "type": "string",
+          "title": "Registered Office City",
+          "description": "UK city of the registered office address."
+        },
+        "fcaRegulatoryStatus": {
+          "type": "string",
+          "title": "FCA / Financial Standing Status",
+          "description": "FCA Authorized, EMI Licensed, or Standard Commercial Entity."
+        },
+        "kybComplianceScore": {
+          "type": "integer",
+          "title": "KYB Compliance Score (0-100)",
+          "description": "Quantitative UK KYB compliance score for B2B onboarding (0-100)."
+        },
+        "onboardingDecision": {
+          "type": "string",
+          "title": "Automated KYB Decision",
+          "description": "APPROVED_FAST_TRACK, ENHANCED_DUE_DILIGENCE, or REJECT_INACTIVE."
+        },
+        "markdownKybBrief": {
+          "type": "string",
+          "title": "Markdown UK KYB & Compliance Dossier",
+          "description": "Executive Markdown dossier for fintech KYB onboarding and vendor compliance."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "UK Companies House & FCA Corporate KYB Overview",
+        "transformation": {
+          "fields": [
+            "companyNumberCrn",
+            "companyName",
+            "leiCode",
+            "companyStatus",
+            "incorporationDate",
+            "sicCodes",
+            "registeredCity",
+            "fcaRegulatoryStatus",
+            "kybComplianceScore",
+            "onboardingDecision"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "companyNumberCrn": {
+              "label": "UK CRN",
+              "format": "text"
+            },
+            "companyName": {
+              "label": "Company Name",
+              "format": "text"
+            },
+            "leiCode": {
+              "label": "GLEIF LEI",
+              "format": "text"
+            },
+            "companyStatus": {
+              "label": "Status",
+              "format": "text"
+            },
+            "incorporationDate": {
+              "label": "Incorporated",
+              "format": "text"
+            },
+            "sicCodes": {
+              "label": "UK SIC",
+              "format": "text"
+            },
+            "registeredCity": {
+              "label": "City",
+              "format": "text"
+            },
+            "fcaRegulatoryStatus": {
+              "label": "FCA / Regulatory",
+              "format": "text"
+            },
+            "kybComplianceScore": {
+              "label": "KYB Score",
+              "format": "number"
+            },
+            "onboardingDecision": {
+              "label": "KYB Decision",
+              "format": "text"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "25000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/uk-fca-companies-house-kyb-compliance-auditor",
+        "description": "UK Companies House & FCA Corporate KYB Compliance Auditor — Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.025",
+          "actorSlug": "uk-fca-companies-house-kyb-compliance-auditor",
+          "eventName": "uk-corporate-kyb-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor"
+        }
+      }
+    ]
+  }
+}

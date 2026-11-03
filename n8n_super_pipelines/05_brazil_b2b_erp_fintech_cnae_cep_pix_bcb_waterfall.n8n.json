@@ -1,0 +1,255 @@
+{
+  "name": "Brazil B2B ERP, FinTech KYB, IBGE CNAE, CEP Geo-Logistics & BCB PTAX/Selic Waterfall (5-Actor Cascade)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Brazil B2B ERP, FinTech KYB, IBGE CNAE, CEP Geo-Logistics & BCB PTAX/Selic Waterfall (5-Actor Cascade)\n\nComplete Brazilian B2B onboarding, tax ERP & FinTech waterfall: enriches CNPJ & partners (QSA), validates IBGE CNAE 2.3 tax permissions, geocodes postal CEPs with 7-digit IBGE city codes, audits Pix ISPB clearing status, and calculates BCB Selic/IPCA/PTAX contract indexing.\n\n### Multi-Actor Cascade Powered by Apify Store (`@b2b-quant-apis`):\n- [`b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher`](https://apify.com/b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher)\n- [`b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher`](https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher)\n- [`b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor`](https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor)\n- [`b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor`](https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor)\n- [`b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer`](https://apify.com/b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer)\n\n**Setup:** Configure a single `httpHeaderAuth` credential (`Authorization: Bearer <YOUR_APIFY_TOKEN_HERE>`) across the Apify HTTP Request nodes and activate the Schedule Trigger.",
+        "height": 420,
+        "width": 580,
+        "color": 5
+      },
+      "id": "43cf622e-b29a-5e60-af51-19894a3ef26f",
+      "name": "Enterprise Multi-Actor Waterfall Architecture",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 6 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "16e5050f-d03c-517f-b383-b5ab77b7e661",
+      "name": "Scheduled Enterprise Batch Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"cnpjs\": [\n    \"00000000000191\",\n    \"33000167000101\"\n  ],\n  \"include_qsa\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "daff28f1-4d70-57f9-a7c5-a7f83bce74a9",
+      "name": "Step 1: brazil-b2b-cnpj-qsa-lead-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"cnaeCodes\": \"6201501,4711302,8630503\",\n  \"targetUf\": \"SP\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "1d561edb-022a-5019-80ef-497b6d76e5af",
+      "name": "Step 2: brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"ceps\": \"01310100,20040002,30140071\",\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "ba2e48bc-2381-5e2a-b56a-40b924f1e80d",
+      "name": "Step 3: brazil-cep-geocoordinates-logistics-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"institutionQuery\": \"Banco\",\n  \"onlyDirectPix\": true,\n  \"maxResults\": 10\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "c2183a8b-1aec-5cfc-ac5a-360d86ffd1e5",
+      "name": "Step 4: brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-bcb-ptax-sgs-financial-contract-indexer/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"indicators\": \"SELIC,IPCA,IGP-M,PTAX_USD\",\n  \"contractBaseValueBrl\": 10000,\n  \"maxResults\": 5\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "376268be-d581-55da-928c-920bede13b51",
+      "name": "Step 5: brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1580,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/v1/enterprise-intelligence-ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ pipeline: '05_brazil_b2b_erp_fintech_cnae_cep_pix_bcb_waterfall', executedAt: $now, payload: $json }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "7fb59cd4-fd79-5c17-aed2-708b18597358",
+      "name": "Unified Risk & Lead Intelligence Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1860,
+        540
+      ]
+    }
+  ],
+  "connections": {
+    "Scheduled Enterprise Batch Trigger": {
+      "main": [
+        [
+          {
+            "node": "Step 1: brazil-b2b-cnpj-qsa-lead-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 1: brazil-b2b-cnpj-qsa-lead-enricher": {
+      "main": [
+        [
+          {
+            "node": "Step 2: brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 2: brazil-ibge-cnae-municipal-b2b-expansion-enricher": {
+      "main": [
+        [
+          {
+            "node": "Step 3: brazil-cep-geocoordinates-logistics-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 3: brazil-cep-geocoordinates-logistics-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 4: brazil-pix-ispb-cvm-financial-kyb-auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 4: brazil-pix-ispb-cvm-financial-kyb-auditor": {
+      "main": [
+        [
+          {
+            "node": "Step 5: brazil-bcb-ptax-sgs-financial-contract-indexer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Step 5: brazil-bcb-ptax-sgs-financial-contract-indexer": {
+      "main": [
+        [
+          {
+            "node": "Unified Risk & Lead Intelligence Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "cascadedActors": [
+      "b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher",
+      "b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor",
+      "b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
+    ],
+    "combinedPpeUsdPerCascadeRun": 0.075
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

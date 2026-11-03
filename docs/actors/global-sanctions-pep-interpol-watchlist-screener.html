@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — MCP Server, n8n Workflow &amp; B2B API (@b2b-quant-apis)</title>
+  <meta name="description" content="Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100)." />
+  <link rel="canonical" href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-sanctions-pep-interpol-watchlist-screener.html" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener \u2014 MCP Server, n8n Workflow & REST API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Cloud, Linux, Windows, macOS", "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).", "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-sanctions-pep-interpol-watchlist-screener.html", "sameAs": ["https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener", "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite"], "offers": {"@type": "Offer", "price": "0.03", "priceCurrency": "USD", "description": "Pay-Per-Event (sanctions-entity-screened)"}}</script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b0f19; color: #f3f4f6; line-height: 1.6; padding: 2rem 1rem; margin: 0; }
+    .wrap { max-width: 920px; margin: 0 auto; background: #111827; border: 1px solid #1f2937; border-radius: 0.75rem; padding: 2rem; }
+    h1 { font-size: 1.85rem; margin-bottom: 0.5rem; color: #10b981; }
+    .meta { color: #9ca3af; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    pre { background: #030712; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; border: 1px solid #1f2937; color: #a5b4fc; }
+    .btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .btn { text-decoration: none; padding: 0.65rem 1.2rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.92rem; }
+    .btn-green { background: #10b981; color: #052e16; }
+    .btn-purple { background: #7c3aed; color: #ffffff; }
+    .btn-dark { background: #1f2937; color: #f3f4f6; border: 1px solid #374151; }
+    .badges { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/" style="color:#6ee7b7;text-decoration:none;">&larr; Back to Full 25-Actor B2B Suite</a></p>
+    <h1>Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener</h1>
+    <div class="badges">
+      <a href="https://m8ven.ai/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?s=readme" target="_blank" rel="noopener"><img src="https://m8ven.ai/badge/mcp/jesleytassili-glitch-b2b-quant-mcp-n8n-suite-1o8cma?v=100fc11f1e45c5a2a3c83b4dc18d2b4f" alt="M8ven Verified Publisher" /></a>
+      <a href="https://merx.help/shield" target="_blank" rel="noopener"><img src="https://merx.help/badge/A+.svg" alt="AgentShield Grade A+" height="20" /></a>
+    </div>
+    <p class="meta">Actor ID: <code>b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener</code> | Pricing: <strong>$0.03 USD / sanctions-entity-screened</strong> (Apify PPE &amp; x402 Solana USDC) | MCP Server Ready</p>
+    <p>Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).</p>
+    <div class="btns">
+      <a class="btn btn-green" href="https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener" target="_blank" rel="noopener">Run on Apify Store &rarr;</a>
+      <a class="btn btn-purple" href="https://www.agensi.io/r/JEAGUILERA" target="_blank" rel="noopener">Get Skill Pack on Agensi.io (-20% Launch Deal) &rarr;</a>
+      <a class="btn btn-dark" href="https://www.skillmarket.space" target="_blank" rel="noopener">Pay via x402 USDC Solana (SkillMarket)</a>
+      <a class="btn btn-dark" href="https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/global-sanctions-pep-interpol-watchlist-screener.n8n.json" target="_blank" rel="noopener">Download n8n Workflow (.json)</a>
+      <a class="btn btn-dark" href="https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener" target="_blank" rel="noopener">Connect Streamable MCP</a>
+    </div>
+    <h2>Sample JSON Input Payload</h2>
+    <pre>{
+  "entityNames": "Gazprom,Rosneft",
+  "targetJurisdiction": "ALL",
+  "maxResults": 5
+}</pre>
+    <h2>1-Click Claude Desktop / Cursor MCP Config</h2>
+    <pre>{
+  "mcpServers": {
+    "global-sanctions-pep-interpol-watchlist-screener": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server", "--actors", "b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"],
+      "env": { "APIFY_TOKEN": "&lt;YOUR_APIFY_TOKEN&gt;" }
+    }
+  }
+}</pre>
+  </div>
+</body>
+</html>

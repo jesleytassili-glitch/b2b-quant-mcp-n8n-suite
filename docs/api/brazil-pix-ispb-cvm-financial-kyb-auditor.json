@@ -1,0 +1,173 @@
+{
+  "status": "succeeded",
+  "service": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+  "slug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+  "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.02,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/brazil-pix-ispb-cvm-financial-kyb-auditor.n8n.json"
+  },
+  "inputSchema": {
+    "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "institutionQuery": {
+        "title": "Bank / FinTech Name or ISPB Code",
+        "type": "string",
+        "description": "Institution name keyword or 8-digit ISPB code (e.g., 'Itau', 'Nu Pagamentos', 'Banco do Brasil', '00000000').",
+        "editor": "textfield",
+        "default": "Banco"
+      },
+      "onlyDirectPix": {
+        "title": "Only Direct SPI Pix Settlement Participants",
+        "type": "boolean",
+        "description": "When enabled, filters only institutions with direct settlement accounts in the Central Bank SPI.",
+        "default": false
+      },
+      "maxResults": {
+        "title": "Max Institutions to Audit",
+        "type": "integer",
+        "description": "Maximum number of audited financial institutions to return (1 to 100).",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "required": [
+      "institutionQuery"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "ispbCode": {
+          "type": "string",
+          "title": "ISPB Code (8 Digits)",
+          "description": "Official Central Bank of Brazil ISPB identifier."
+        },
+        "institutionName": {
+          "type": "string",
+          "title": "Legal Institution Name",
+          "description": "Full corporate name registered in the SPI."
+        },
+        "shortName": {
+          "type": "string",
+          "title": "Short Trading Name",
+          "description": "Abbreviated clearing name."
+        },
+        "participationModality": {
+          "type": "string",
+          "title": "Pix Participation Modality",
+          "description": "Role in the Pix ecosystem."
+        },
+        "participationType": {
+          "type": "string",
+          "title": "SPI Settlement Type",
+          "description": "Direct (Direta) or Indirect (Indireta) settlement."
+        },
+        "operationStartDate": {
+          "type": "string",
+          "title": "Operation Start Date",
+          "description": "Official Pix SPI activation timestamp."
+        },
+        "kybTrustScore": {
+          "type": "integer",
+          "title": "KYB & Clearing Trust Score (0-100)",
+          "description": "Quantitative AML/KYB clearing reliability score (0-100)."
+        },
+        "markdownKybDossier": {
+          "type": "string",
+          "title": "Markdown Financial KYB Dossier",
+          "description": "Executive report for FinTech BaaS, treasury, and AML compliance teams."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "Brazil Pix ISPB & Financial Institution KYB Overview",
+        "transformation": {
+          "fields": [
+            "ispbCode",
+            "institutionName",
+            "shortName",
+            "participationModality",
+            "participationType",
+            "operationStartDate",
+            "kybTrustScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "ispbCode": {
+              "label": "ISPB",
+              "format": "text"
+            },
+            "institutionName": {
+              "label": "Institution Name",
+              "format": "text"
+            },
+            "shortName": {
+              "label": "Short Name",
+              "format": "text"
+            },
+            "participationModality": {
+              "label": "Modality",
+              "format": "text"
+            },
+            "participationType": {
+              "label": "Settlement Type",
+              "format": "text"
+            },
+            "operationStartDate": {
+              "label": "Start Date",
+              "format": "text"
+            },
+            "kybTrustScore": {
+              "label": "KYB Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "20000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/brazil-pix-ispb-cvm-financial-kyb-auditor",
+        "description": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor — Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.02",
+          "actorSlug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+          "eventName": "financial-institution-audited",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        }
+      }
+    ]
+  }
+}
