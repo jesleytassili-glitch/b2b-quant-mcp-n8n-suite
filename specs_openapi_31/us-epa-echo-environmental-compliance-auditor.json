@@ -1,0 +1,595 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+    "version": "3.0.0",
+    "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).\n\n### Enterprise B2B Value Proposition (US EPA ECHO Environmental Compliance & ESG Penalty Auditor)\n- **Target B2B Buyers:** ESG Rating Agencies, Institutional Investors, Environmental Law Firms, and Supply Chain Risk Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EPA Industrial Facility ESG & Penalty Audited`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** epa-echo, esg-compliance, environmental-risk, clean-air-water-act, rcra-hazmat, industrial-due-diligence, supply-chain-esg.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+    },
+    "x-category": "Data",
+    "x-rapidapi-category": "Data",
+    "x-zyla-category": "Government & Legal",
+    "x-seo-tags": [
+      "epa-echo",
+      "esg-compliance",
+      "environmental-risk",
+      "clean-air-water-act",
+      "rcra-hazmat",
+      "industrial-due-diligence",
+      "supply-chain-esg"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\"\npayload = {\n    \"state\": \"TX\",\n    \"facilityName\": \"\",\n    \"zipCode\": \"\",\n    \"significantViolatorsOnly\": false,\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-epa-echo-environmental-compliance-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Data",
+      "description": "RapidAPI Hub primary category: Data (Zyla Hub: Government & Legal)"
+    },
+    {
+      "name": "epa-echo",
+      "description": "B2B SEO Search Tag: epa-echo"
+    },
+    {
+      "name": "esg-compliance",
+      "description": "B2B SEO Search Tag: esg-compliance"
+    },
+    {
+      "name": "environmental-risk",
+      "description": "B2B SEO Search Tag: environmental-risk"
+    },
+    {
+      "name": "clean-air-water-act",
+      "description": "B2B SEO Search Tag: clean-air-water-act"
+    },
+    {
+      "name": "rcra-hazmat",
+      "description": "B2B SEO Search Tag: rcra-hazmat"
+    },
+    {
+      "name": "industrial-due-diligence",
+      "description": "B2B SEO Search Tag: industrial-due-diligence"
+    },
+    {
+      "name": "supply-chain-esg",
+      "description": "B2B SEO Search Tag: supply-chain-esg"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-epa-echo-environmental-compliance-auditor": {
+      "post": {
+        "operationId": "execute_us_epa_echo_environmental_compliance_auditor",
+        "summary": "Execute US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+        "description": "Synchronous stateless execution of **US EPA ECHO Environmental Compliance & ESG Penalty Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Data",
+          "epa-echo",
+          "esg-compliance",
+          "environmental-risk",
+          "clean-air-water-act",
+          "rcra-hazmat"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\"\npayload = {\n    \"state\": \"TX\",\n    \"facilityName\": \"\",\n    \"zipCode\": \"\",\n    \"significantViolatorsOnly\": false,\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\"\npayload = {\n    \"state\": \"TX\",\n    \"facilityName\": \"\",\n    \"zipCode\": \"\",\n    \"significantViolatorsOnly\": false,\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-epa-echo-environmental-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"TX\", \"facilityName\": \"\", \"zipCode\": \"\", \"significantViolatorsOnly\": false, \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-epa-echo-environmental-compliance-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsEpaEchoEnvironmentalComplianceAuditorRequest"
+              },
+              "example": {
+                "state": "TX",
+                "facilityName": "",
+                "zipCode": "",
+                "significantViolatorsOnly": false,
+                "maxResults": 15
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-epa-echo-environmental-compliance-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsEpaEchoEnvironmentalComplianceAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-epa-echo-environmental-compliance-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
+                      "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
+                      "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
+                      "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
+                      "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+                      "sncFlag": true,
+                      "quartersInNonCompliance": 88,
+                      "totalPenaltiesUsd": 94.5,
+                      "environmentalLiabilityScore": 88,
+                      "inspectionCount5Yr": 88,
+                      "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-epa-echo-environmental-compliance-auditor/health": {
+      "get": {
+        "operationId": "health_us_epa_echo_environmental_compliance_auditor",
+        "summary": "Health & SLA Check for US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+        "description": "Lightweight health and schema readiness check for `us-epa-echo-environmental-compliance-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Data"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-epa-echo-environmental-compliance-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Data"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-epa-echo-environmental-compliance-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Data"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsEpaEchoEnvironmentalComplianceAuditorRequest": {
+        "type": "object",
+        "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Request Schema",
+        "description": "Configure US State, facility name, ZIP code, and Significant Non-Complier (SNC) filters to audit industrial environmental compliance via U.S. EPA ECHO.",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code (2-Letter)",
+            "description": "2-letter US State code where industrial facilities are located (e.g., 'TX', 'CA', 'LA', 'OH', 'PA').",
+            "default": "TX",
+            "example": "TX"
+          },
+          "facilityName": {
+            "type": "string",
+            "title": "Facility or Company Name (Optional)",
+            "description": "Optional facility or operator name keyword (e.g., 'Refinery', 'Chemical', 'Plant', 'Energy').",
+            "default": "",
+            "example": ""
+          },
+          "zipCode": {
+            "type": "string",
+            "title": "5-Digit US ZIP Code (Optional)",
+            "description": "Optional 5-digit US postal code to narrow environmental due diligence (e.g., '77506', '77002').",
+            "default": "",
+            "example": ""
+          },
+          "significantViolatorsOnly": {
+            "type": "boolean",
+            "title": "Significant Violators Only (SNC / HPV)",
+            "description": "Filter exclusively for facilities currently in Significant Non-Compliance (SNC) under CAA, CWA, or RCRA.",
+            "default": false,
+            "example": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Facilities to Audit",
+            "description": "Maximum number of EPA-regulated facilities to extract and score (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200,
+            "example": 15
+          }
+        },
+        "required": [
+          "state"
+        ],
+        "example": {
+          "state": "TX",
+          "facilityName": "",
+          "zipCode": "",
+          "significantViolatorsOnly": false,
+          "maxResults": 15
+        }
+      },
+      "UsEpaEchoEnvironmentalComplianceAuditorRecord": {
+        "type": "object",
+        "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `us-epa-echo-environmental-compliance-auditor`.",
+        "properties": {
+          "registryId": {
+            "type": "string",
+            "title": "EPA Registry ID",
+            "description": "Official U.S. EPA Facility Registry Service (FRS) identifier.",
+            "example": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "facilityName": {
+            "type": "string",
+            "title": "Facility Name",
+            "description": "Regulated industrial plant or facility name.",
+            "example": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "City where the facility is located.",
+            "example": "Verified City (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "2-letter US State code.",
+            "example": "Verified State (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "complianceStatus": {
+            "type": "string",
+            "title": "EPA Compliance Status",
+            "description": "Current compliance status across Clean Air, Clean Water, and RCRA statutes.",
+            "example": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "sncFlag": {
+            "type": "boolean",
+            "title": "Significant Non-Complier (SNC)",
+            "description": "True if flagged as Significant Non-Complier or High Priority Violator.",
+            "example": true
+          },
+          "quartersInNonCompliance": {
+            "type": "integer",
+            "title": "Quarters in Non-Compliance (3-Yr)",
+            "description": "Number of quarters (0 to 12) in non-compliance over the last 3 years.",
+            "example": 88
+          },
+          "totalPenaltiesUsd": {
+            "type": "number",
+            "title": "Total Penalties (USD)",
+            "description": "Cumulative formal enforcement monetary penalties assessed in USD.",
+            "example": 94.5
+          },
+          "environmentalLiabilityScore": {
+            "type": "integer",
+            "title": "Environmental Liability Score (0-100)",
+            "description": "Quantitative ESG and environmental liability risk score (0-100).",
+            "example": 88
+          },
+          "inspectionCount5Yr": {
+            "type": "integer",
+            "title": "Inspections (5-Yr)",
+            "description": "Total federal and state regulatory inspections conducted.",
+            "example": 88
+          },
+          "markdownEsgDueDiligenceBrief": {
+            "type": "string",
+            "title": "Markdown ESG & M&A Due Diligence Brief",
+            "description": "Executive environmental liability dossier for commercial real estate, M&A, and ESG risk teams.",
+            "example": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
+          "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
+          "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
+          "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
+          "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+          "sncFlag": true,
+          "quartersInNonCompliance": 88,
+          "totalPenaltiesUsd": 94.5,
+          "environmentalLiabilityScore": 88,
+          "inspectionCount5Yr": 88,
+          "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsEpaEchoEnvironmentalComplianceAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-epa-echo-environmental-compliance-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsEpaEchoEnvironmentalComplianceAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-epa-echo-environmental-compliance-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
+              "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
+              "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
+              "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
+              "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+              "sncFlag": true,
+              "quartersInNonCompliance": 88,
+              "totalPenaltiesUsd": 94.5,
+              "environmentalLiabilityScore": 88,
+              "inspectionCount5Yr": 88,
+              "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

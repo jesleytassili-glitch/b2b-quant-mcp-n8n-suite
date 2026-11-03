@@ -1,0 +1,616 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+    "version": "3.0.0",
+    "description": "Extracts, filters, and enriches live Brazilian government public tenders (Pregão Eletrônico, Dispensa - Lei 14.133) from the official PNCP API with item-level pricing, ME/EPP flags, and LLM-ready RAG Markdown briefs.\n\n### Enterprise B2B Value Proposition (Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server))\n- **Target B2B Buyers:** GovCon Capture Teams, B2B Sales Intelligence Platforms, and ERP Tender Modules.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Public Tender Analyzed & Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-procurement, pncp, public-tenders, b2g-leads, government-contracts, lei-14133, bidding-radar.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Government & Legal",
+    "x-seo-tags": [
+      "brazil-procurement",
+      "pncp",
+      "public-tenders",
+      "b2g-leads",
+      "government-contracts",
+      "lei-14133",
+      "bidding-radar"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: b2b-gov-procurement-pncp-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\"\npayload = {\n    \"uf\": \"SP\",\n    \"keywords\": [\n        \"software\",\n        \"cloud\",\n        \"licenciamento\"\n    ],\n    \"codigoModalidadeContratacao\": \"6\",\n    \"dataInicial\": \"\",\n    \"dataFinal\": \"\",\n    \"maxResults\": 20,\n    \"fetchItems\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-gov-procurement-pncp-radar.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-gov-procurement-pncp-radar.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Government & Legal)"
+    },
+    {
+      "name": "brazil-procurement",
+      "description": "B2B SEO Search Tag: brazil-procurement"
+    },
+    {
+      "name": "pncp",
+      "description": "B2B SEO Search Tag: pncp"
+    },
+    {
+      "name": "public-tenders",
+      "description": "B2B SEO Search Tag: public-tenders"
+    },
+    {
+      "name": "b2g-leads",
+      "description": "B2B SEO Search Tag: b2g-leads"
+    },
+    {
+      "name": "government-contracts",
+      "description": "B2B SEO Search Tag: government-contracts"
+    },
+    {
+      "name": "lei-14133",
+      "description": "B2B SEO Search Tag: lei-14133"
+    },
+    {
+      "name": "bidding-radar",
+      "description": "B2B SEO Search Tag: bidding-radar"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/b2b-gov-procurement-pncp-radar": {
+      "post": {
+        "operationId": "execute_b2b_gov_procurement_pncp_radar",
+        "summary": "Execute Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+        "description": "Synchronous stateless execution of **Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "brazil-procurement",
+          "pncp",
+          "public-tenders",
+          "b2g-leads",
+          "government-contracts"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: b2b-gov-procurement-pncp-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\"\npayload = {\n    \"uf\": \"SP\",\n    \"keywords\": [\n        \"software\",\n        \"cloud\",\n        \"licenciamento\"\n    ],\n    \"codigoModalidadeContratacao\": \"6\",\n    \"dataInicial\": \"\",\n    \"dataFinal\": \"\",\n    \"maxResults\": 20,\n    \"fetchItems\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: b2b-gov-procurement-pncp-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\"\npayload = {\n    \"uf\": \"SP\",\n    \"keywords\": [\n        \"software\",\n        \"cloud\",\n        \"licenciamento\"\n    ],\n    \"codigoModalidadeContratacao\": \"6\",\n    \"dataInicial\": \"\",\n    \"dataFinal\": \"\",\n    \"maxResults\": 20,\n    \"fetchItems\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"b2b-gov-procurement-pncp-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"uf\": \"SP\", \"keywords\": [\"software\", \"cloud\", \"licenciamento\"], \"codigoModalidadeContratacao\": \"6\", \"dataInicial\": \"\", \"dataFinal\": \"\", \"maxResults\": 20, \"fetchItems\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `b2b-gov-procurement-pncp-radar`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/B2bGovProcurementPncpRadarRequest"
+              },
+              "example": {
+                "uf": "SP",
+                "keywords": [
+                  "software",
+                  "cloud",
+                  "licenciamento"
+                ],
+                "codigoModalidadeContratacao": "6",
+                "dataInicial": "",
+                "dataFinal": "",
+                "maxResults": 20,
+                "fetchItems": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `b2b-gov-procurement-pncp-radar` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/B2bGovProcurementPncpRadarResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "b2b-gov-procurement-pncp-radar",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "numeroControlePNCP": "Verified PNCP ID",
+                      "uf": "Verified UF",
+                      "municipio": "Verified City",
+                      "orgaoNome": "Verified Buyer Organ",
+                      "modalidadeNome": "Verified Modality",
+                      "valorTotalEstimadoBRL": 1250.0,
+                      "viabilityScore": 92.0,
+                      "dataEncerramentoProposta": "Verified Closing Date",
+                      "objetoCompra": "Verified Purchase Object",
+                      "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/b2b-gov-procurement-pncp-radar/health": {
+      "get": {
+        "operationId": "health_b2b_gov_procurement_pncp_radar",
+        "summary": "Health & SLA Check for Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+        "description": "Lightweight health and schema readiness check for `b2b-gov-procurement-pncp-radar` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "b2b-gov-procurement-pncp-radar"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "b2b-gov-procurement-pncp-radar",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "B2bGovProcurementPncpRadarRequest": {
+        "type": "object",
+        "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) Request Schema",
+        "description": "Input parameters for Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+        "properties": {
+          "uf": {
+            "type": "string",
+            "title": "State (UF)",
+            "description": "Two-letter Brazilian state code (e.g., SP, RJ, MG, PR, RS, SC, BA). Leave empty to search nationwide.",
+            "default": "SP",
+            "example": "SP"
+          },
+          "keywords": {
+            "type": "array",
+            "title": "Target Keywords (Filter by Product/Service)",
+            "description": "Optional list of keywords to filter tenders by object or item description (case-insensitive, accent-insensitive). Leave empty to return all tenders.",
+            "items": {
+              "type": "string"
+            },
+            "default": [],
+            "example": [
+              "software",
+              "cloud",
+              "licenciamento"
+            ]
+          },
+          "codigoModalidadeContratacao": {
+            "type": "string",
+            "title": "Procurement Modality Code (Lei 14.133)",
+            "description": "6 = Pregão Eletrônico (Most common), 8 = Dispensa de Licitação, 4 = Concorrência Eletrônica.",
+            "default": "6",
+            "enum": [
+              "6",
+              "8",
+              "4",
+              "1",
+              "5",
+              "7",
+              "9"
+            ],
+            "example": "6"
+          },
+          "dataInicial": {
+            "type": "string",
+            "title": "Start Date (YYYYMMDD)",
+            "description": "Publication start date in YYYYMMDD format. If omitted, defaults to 15 days ago.",
+            "default": "",
+            "example": ""
+          },
+          "dataFinal": {
+            "type": "string",
+            "title": "End Date (YYYYMMDD)",
+            "description": "Publication end date in YYYYMMDD format. If omitted, defaults to today.",
+            "default": "",
+            "example": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Tenders to Extract",
+            "description": "Maximum number of matched tenders to output (Pay-Per-Event cap protection).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 500,
+            "example": 20
+          },
+          "fetchItems": {
+            "type": "boolean",
+            "title": "Enrich with Detailed Item List & Unit Prices",
+            "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
+            "default": true,
+            "example": true
+          }
+        },
+        "example": {
+          "uf": "SP",
+          "keywords": [
+            "software",
+            "cloud",
+            "licenciamento"
+          ],
+          "codigoModalidadeContratacao": "6",
+          "dataInicial": "",
+          "dataFinal": "",
+          "maxResults": 20,
+          "fetchItems": true
+        }
+      },
+      "B2bGovProcurementPncpRadarRecord": {
+        "type": "object",
+        "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) Output Record",
+        "description": "Enriched B2B dataset item returned by `b2b-gov-procurement-pncp-radar`.",
+        "properties": {
+          "numeroControlePNCP": {
+            "type": "string",
+            "title": "PNCP ID",
+            "description": "PNCP ID extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified PNCP ID"
+          },
+          "uf": {
+            "type": "string",
+            "title": "UF",
+            "description": "UF extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified UF"
+          },
+          "municipio": {
+            "type": "string",
+            "title": "City",
+            "description": "City extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified City"
+          },
+          "orgaoNome": {
+            "type": "string",
+            "title": "Buyer Organ",
+            "description": "Buyer Organ extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified Buyer Organ"
+          },
+          "modalidadeNome": {
+            "type": "string",
+            "title": "Modality",
+            "description": "Modality extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified Modality"
+          },
+          "valorTotalEstimadoBRL": {
+            "type": "number",
+            "title": "Estimated Value (BRL)",
+            "description": "Estimated Value (BRL) extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": 1250.0
+          },
+          "viabilityScore": {
+            "type": "number",
+            "title": "Viability Score (0-100)",
+            "description": "Viability Score (0-100) extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": 92.0
+          },
+          "dataEncerramentoProposta": {
+            "type": "string",
+            "title": "Closing Date",
+            "description": "Closing Date extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified Closing Date"
+          },
+          "objetoCompra": {
+            "type": "string",
+            "title": "Purchase Object",
+            "description": "Purchase Object extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Verified Purchase Object"
+          },
+          "linkSistemaOrigem": {
+            "type": "string",
+            "title": "Portal Link",
+            "description": "Portal Link extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "https://registry.gov.br/b2b-gov-procurement-pncp-radar"
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "numeroControlePNCP": "Verified PNCP ID",
+          "uf": "Verified UF",
+          "municipio": "Verified City",
+          "orgaoNome": "Verified Buyer Organ",
+          "modalidadeNome": "Verified Modality",
+          "valorTotalEstimadoBRL": 1250.0,
+          "viabilityScore": 92.0,
+          "dataEncerramentoProposta": "Verified Closing Date",
+          "objetoCompra": "Verified Purchase Object",
+          "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
+          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "B2bGovProcurementPncpRadarResponseEnvelope": {
+        "type": "object",
+        "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "b2b-gov-procurement-pncp-radar"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/B2bGovProcurementPncpRadarRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "b2b-gov-procurement-pncp-radar",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "numeroControlePNCP": "Verified PNCP ID",
+              "uf": "Verified UF",
+              "municipio": "Verified City",
+              "orgaoNome": "Verified Buyer Organ",
+              "modalidadeNome": "Verified Modality",
+              "valorTotalEstimadoBRL": 1250.0,
+              "viabilityScore": 92.0,
+              "dataEncerramentoProposta": "Verified Closing Date",
+              "objetoCompra": "Verified Purchase Object",
+              "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
+              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

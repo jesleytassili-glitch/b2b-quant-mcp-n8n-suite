@@ -1,0 +1,556 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+    "version": "3.0.0",
+    "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).\n\n### Enterprise B2B Value Proposition (Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer)\n- **Target B2B Buyers:** Hospital Revenue Cycle Management (RCM) Systems, HealthTech Insurers, and Medical Billing Platforms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`TISS 4.03.00 XML Lot Validated & Hash Repaired`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** healthcare-billing, ans-tiss-xml, medical-claims, glosa-prevention, tuss-validator, epilogo-hash, hospital-rcm.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator"
+    },
+    "x-category": "Medical",
+    "x-rapidapi-category": "Medical",
+    "x-zyla-category": "Healthcare",
+    "x-seo-tags": [
+      "healthcare-billing",
+      "ans-tiss-xml",
+      "medical-claims",
+      "glosa-prevention",
+      "tuss-validator",
+      "epilogo-hash",
+      "hospital-rcm"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: healthcare-tiss-xml-validator.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\"\npayload = {\n    \"tissXmlPayloads\": [\n        \"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"\n    ],\n    \"autoFixHash\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/healthcare-tiss-xml-validator.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/healthcare-tiss-xml-validator.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Medical",
+      "description": "RapidAPI Hub primary category: Medical (Zyla Hub: Healthcare)"
+    },
+    {
+      "name": "healthcare-billing",
+      "description": "B2B SEO Search Tag: healthcare-billing"
+    },
+    {
+      "name": "ans-tiss-xml",
+      "description": "B2B SEO Search Tag: ans-tiss-xml"
+    },
+    {
+      "name": "medical-claims",
+      "description": "B2B SEO Search Tag: medical-claims"
+    },
+    {
+      "name": "glosa-prevention",
+      "description": "B2B SEO Search Tag: glosa-prevention"
+    },
+    {
+      "name": "tuss-validator",
+      "description": "B2B SEO Search Tag: tuss-validator"
+    },
+    {
+      "name": "epilogo-hash",
+      "description": "B2B SEO Search Tag: epilogo-hash"
+    },
+    {
+      "name": "hospital-rcm",
+      "description": "B2B SEO Search Tag: hospital-rcm"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/healthcare-tiss-xml-validator": {
+      "post": {
+        "operationId": "execute_healthcare_tiss_xml_validator",
+        "summary": "Execute Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+        "description": "Synchronous stateless execution of **Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Medical",
+          "healthcare-billing",
+          "ans-tiss-xml",
+          "medical-claims",
+          "glosa-prevention",
+          "tuss-validator"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: healthcare-tiss-xml-validator.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\"\npayload = {\n    \"tissXmlPayloads\": [\n        \"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"\n    ],\n    \"autoFixHash\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: healthcare-tiss-xml-validator.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\"\npayload = {\n    \"tissXmlPayloads\": [\n        \"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"\n    ],\n    \"autoFixHash\": true\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"healthcare-tiss-xml-validator.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tissXmlPayloads\": [\"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"], \"autoFixHash\": true})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `healthcare-tiss-xml-validator`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HealthcareTissXmlValidatorRequest"
+              },
+              "example": {
+                "tissXmlPayloads": [
+                  "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+                ],
+                "autoFixHash": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `healthcare-tiss-xml-validator` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthcareTissXmlValidatorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "healthcare-tiss-xml-validator",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "loteNumero": "Verified Batch #",
+                      "registroANS": "Verified ANS Insurer ID",
+                      "tissVersion": "Verified TISS Version",
+                      "guiasCount": 1250.0,
+                      "valorTotalLoteBRL": 1250.0,
+                      "statusConformidade": "Verified Compliance Status",
+                      "originalHash": "Verified Original Hash",
+                      "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
+                      "errorsFoundCount": 1250.0,
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/healthcare-tiss-xml-validator/health": {
+      "get": {
+        "operationId": "health_healthcare_tiss_xml_validator",
+        "summary": "Health & SLA Check for Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+        "description": "Lightweight health and schema readiness check for `healthcare-tiss-xml-validator` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Medical"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "healthcare-tiss-xml-validator"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Medical"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "healthcare-tiss-xml-validator",
+                  "engineVersion": "3.0.0",
+                  "category": "Medical"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "HealthcareTissXmlValidatorRequest": {
+        "type": "object",
+        "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer Request Schema",
+        "description": "Input parameters for Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+        "properties": {
+          "tissXmlPayloads": {
+            "type": "array",
+            "title": "TISS XML Batch Payloads (Raw XML Strings)",
+            "description": "List of ANS TISS XML strings to validate structure, check 8-digit TUSS codes, and recalculate the mandatory <epilogo><hash> MD5 checksum.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+            ],
+            "example": [
+              "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+            ]
+          },
+          "autoFixHash": {
+            "type": "boolean",
+            "title": "Auto-Recalculate and Repair ANS MD5 Hash",
+            "description": "If true, recalculates the official ANS TISS MD5 hash over the XML body content and outputs the repaired XML ready for health insurer upload.",
+            "default": true,
+            "example": true
+          }
+        },
+        "example": {
+          "tissXmlPayloads": [
+            "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+          ],
+          "autoFixHash": true
+        }
+      },
+      "HealthcareTissXmlValidatorRecord": {
+        "type": "object",
+        "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer Output Record",
+        "description": "Enriched B2B dataset item returned by `healthcare-tiss-xml-validator`.",
+        "properties": {
+          "loteNumero": {
+            "type": "string",
+            "title": "Batch #",
+            "description": "Batch # extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified Batch #"
+          },
+          "registroANS": {
+            "type": "string",
+            "title": "ANS Insurer ID",
+            "description": "ANS Insurer ID extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified ANS Insurer ID"
+          },
+          "tissVersion": {
+            "type": "string",
+            "title": "TISS Version",
+            "description": "TISS Version extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified TISS Version"
+          },
+          "guiasCount": {
+            "type": "number",
+            "title": "Guides Count",
+            "description": "Guides Count extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": 1250.0
+          },
+          "valorTotalLoteBRL": {
+            "type": "number",
+            "title": "Batch Total (BRL)",
+            "description": "Batch Total (BRL) extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": 1250.0
+          },
+          "statusConformidade": {
+            "type": "string",
+            "title": "Compliance Status",
+            "description": "Compliance Status extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified Compliance Status"
+          },
+          "originalHash": {
+            "type": "string",
+            "title": "Original Hash",
+            "description": "Original Hash extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified Original Hash"
+          },
+          "calculatedAnsMd5Hash": {
+            "type": "string",
+            "title": "Valid ANS MD5 Hash",
+            "description": "Valid ANS MD5 Hash extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "Verified Valid ANS MD5 Hash"
+          },
+          "errorsFoundCount": {
+            "type": "number",
+            "title": "Glosa Risks Found",
+            "description": "Glosa Risks Found extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": 1250.0
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "loteNumero": "Verified Batch #",
+          "registroANS": "Verified ANS Insurer ID",
+          "tissVersion": "Verified TISS Version",
+          "guiasCount": 1250.0,
+          "valorTotalLoteBRL": 1250.0,
+          "statusConformidade": "Verified Compliance Status",
+          "originalHash": "Verified Original Hash",
+          "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
+          "errorsFoundCount": 1250.0,
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "HealthcareTissXmlValidatorResponseEnvelope": {
+        "type": "object",
+        "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "healthcare-tiss-xml-validator"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HealthcareTissXmlValidatorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "healthcare-tiss-xml-validator",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "loteNumero": "Verified Batch #",
+              "registroANS": "Verified ANS Insurer ID",
+              "tissVersion": "Verified TISS Version",
+              "guiasCount": 1250.0,
+              "valorTotalLoteBRL": 1250.0,
+              "statusConformidade": "Verified Compliance Status",
+              "originalHash": "Verified Original Hash",
+              "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
+              "errorsFoundCount": 1250.0,
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

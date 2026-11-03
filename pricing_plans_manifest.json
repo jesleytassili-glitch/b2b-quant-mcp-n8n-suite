@@ -1,0 +1,2168 @@
+{
+  "manifestVersion": "3.0.0",
+  "githubReleaseTag": "v2.2.0",
+  "generatedAtUtc": "2026-11-01T22:02:44.267161+00:00",
+  "publicDiscovery": {
+    "specsBaseUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31",
+    "suiteSpecsBaseUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31",
+    "apisJsonCatalogUrl": "https://jesleytassili-glitch.github.io/apis.json",
+    "wellKnownApisJsonUrl": "https://jesleytassili-glitch.github.io/.well-known/apis.json",
+    "postmanCollectionFile": "postman_public_network_collection.json"
+  },
+  "payoutConfiguration": {
+    "accountHolder": "Jesley Aguileira",
+    "wiseAccountNumber": "890361113",
+    "payoutDestination": "Wise #890361113",
+    "payoutEmail": "jesleytassili@gmail.com",
+    "currency": "USD",
+    "marketplaces": [
+      "RapidAPI Hub (Nokia Rapid)",
+      "Zyla API Hub",
+      "Postman Public API Network",
+      "APIs.guru (apis.json v0.16)"
+    ]
+  },
+  "antiBypassSecurity": {
+    "validationAlgorithm": "hmac.compare_digest (constant-time)",
+    "rapidapiSecretHeader": "X-RapidAPI-Proxy-Secret",
+    "zylaSecretHeader": "X-Zyla-Proxy-Secret",
+    "rejectedHttpStatus": 403,
+    "quotaExceededHttpStatus": 429,
+    "injectedTelemetryHeaders": [
+      "X-RateLimit-Remaining",
+      "X-Engine-Version",
+      "X-RateLimit-Limit",
+      "X-Subscription-Tier",
+      "X-Marketplace-Provider",
+      "X-Payout-Destination"
+    ]
+  },
+  "pricingPlans": {
+    "BASIC": {
+      "tier": "BASIC",
+      "planType": "FREEMIUM",
+      "monthlyPriceUsd": 0.0,
+      "monthlyQuotaRequests": 15,
+      "overagePricePerRequestUsd": 0.0,
+      "hardLimit": true,
+      "rateLimitPerMinute": 5,
+      "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+    },
+    "PRO": {
+      "tier": "PRO",
+      "planType": "RECURRING_PLUS_OVERAGE",
+      "monthlyPriceUsd": 19.0,
+      "monthlyQuotaRequests": 1000,
+      "overagePricePerRequestUsd": 0.02,
+      "hardLimit": false,
+      "rateLimitPerMinute": 60,
+      "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+    },
+    "ULTRA": {
+      "tier": "ULTRA",
+      "planType": "RECURRING_PLUS_OVERAGE",
+      "monthlyPriceUsd": 49.0,
+      "monthlyQuotaRequests": 5000,
+      "overagePricePerRequestUsd": 0.015,
+      "hardLimit": false,
+      "rateLimitPerMinute": 180,
+      "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+    },
+    "MEGA": {
+      "tier": "MEGA",
+      "planType": "RECURRING_PLUS_OVERAGE",
+      "monthlyPriceUsd": 149.0,
+      "monthlyQuotaRequests": 25000,
+      "overagePricePerRequestUsd": 0.01,
+      "hardLimit": false,
+      "rateLimitPerMinute": 600,
+      "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+    }
+  },
+  "totalApis": 31,
+  "apis": [
+    {
+      "index": 1,
+      "slug": "b2b-gov-procurement-pncp-radar",
+      "title": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "brazil-procurement",
+        "pncp",
+        "public-tenders",
+        "b2g-leads",
+        "government-contracts",
+        "lei-14133",
+        "bidding-radar"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/b2b-gov-procurement-pncp-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-gov-procurement-pncp-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.03,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "slug": "brazil-tax-reform-ncm-classtrib-auditor",
+      "title": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Taxes & Compliance",
+      "seoTags": [
+        "brazil-tax-reform",
+        "ncm-auditor",
+        "ibs-cbs",
+        "classtrib",
+        "nfe-compliance",
+        "lc-214-2025",
+        "erp-tax-engine"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.01,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "slug": "healthcare-tiss-xml-validator",
+      "title": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+      "rapidapiCategory": "Medical",
+      "zylaCategory": "Healthcare",
+      "seoTags": [
+        "healthcare-billing",
+        "ans-tiss-xml",
+        "medical-claims",
+        "glosa-prevention",
+        "tuss-validator",
+        "epilogo-hash",
+        "hospital-rcm"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/healthcare-tiss-xml-validator.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/healthcare-tiss-xml-validator.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~healthcare-tiss-xml-validator/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.05,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "slug": "brazil-antt-freight-cte-auditor",
+      "title": "Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor",
+      "rapidapiCategory": "Logistics",
+      "zylaCategory": "Logistics & Shipping",
+      "seoTags": [
+        "freight-audit",
+        "antt-minimum-floor",
+        "cte-xml",
+        "logistics-compliance",
+        "road-transport",
+        "tms-integration",
+        "shipping-cost"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-antt-freight-cte-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-antt-freight-cte-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-antt-freight-cte-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-antt-freight-cte-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-antt-freight-cte-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "slug": "us-healthcare-npi-provider-lead-enricher",
+      "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+      "rapidapiCategory": "Medical",
+      "zylaCategory": "Healthcare",
+      "seoTags": [
+        "npi-registry",
+        "nppes-cms",
+        "healthcare-leads",
+        "medical-providers",
+        "doctor-lookup",
+        "hipaa-kyb",
+        "pharma-crm"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-healthcare-npi-provider-lead-enricher/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "slug": "us-fda-recalls-safety-monitor",
+      "title": "US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+      "rapidapiCategory": "Medical",
+      "zylaCategory": "Healthcare",
+      "seoTags": [
+        "fda-recalls",
+        "openfda",
+        "drug-safety",
+        "medical-device-recalls",
+        "food-safety",
+        "supply-chain-risk",
+        "pharmacovigilance"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-fda-recalls-safety-monitor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fda-recalls-safety-monitor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-fda-recalls-safety-monitor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fda-recalls-safety-monitor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fda-recalls-safety-monitor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.03,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "slug": "global-b2b-email-domain-security-auditor",
+      "title": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+      "rapidapiCategory": "Cybersecurity",
+      "zylaCategory": "Security",
+      "seoTags": [
+        "email-verification",
+        "dmarc-spf-mx",
+        "domain-security",
+        "disposable-email",
+        "kyb-fraud-prevention",
+        "b2b-lead-hygiene",
+        "secops"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/global-b2b-email-domain-security-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-b2b-email-domain-security-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-b2b-email-domain-security-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-b2b-email-domain-security-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-b2b-email-domain-security-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.005,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "slug": "us-clinical-trials-biotech-radar",
+      "title": "US ClinicalTrials.gov Biotech & Pharma Study Radar",
+      "rapidapiCategory": "Medical",
+      "zylaCategory": "Healthcare",
+      "seoTags": [
+        "clinical-trials",
+        "biotech-intelligence",
+        "nih-clinicaltrials",
+        "pharma-pipeline",
+        "cro-leads",
+        "phase2-phase3",
+        "life-sciences"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-clinical-trials-biotech-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-clinical-trials-biotech-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-clinical-trials-biotech-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-clinical-trials-biotech-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-clinical-trials-biotech-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.04,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "slug": "us-nhtsa-vehicle-vin-recall-auditor",
+      "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+      "rapidapiCategory": "Logistics",
+      "zylaCategory": "Logistics & Shipping",
+      "seoTags": [
+        "vin-decoder",
+        "nhtsa-recalls",
+        "vehicle-safety",
+        "fleet-management",
+        "auto-insurance",
+        "automotive-kyb",
+        "vpic-api"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-nhtsa-vehicle-vin-recall-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "slug": "brazil-b2b-cnpj-qsa-lead-enricher",
+      "title": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "cnpj-lookup",
+        "receita-federal",
+        "qsa-ubo-partners",
+        "brazil-kyb",
+        "company-enrichment",
+        "cnae-lookup",
+        "b2b-credit-risk"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.015,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "slug": "us-sec-edgar-filings-insider-radar",
+      "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Finance",
+      "seoTags": [
+        "sec-edgar",
+        "10k-10q-8k",
+        "form-4-insider",
+        "quantitative-finance",
+        "corporate-governance",
+        "cik-lookup",
+        "equity-research"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-sec-edgar-filings-insider-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sec-edgar-filings-insider-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sec-edgar-filings-insider-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.04,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "slug": "eu-vies-vat-tax-compliance-auditor",
+      "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Taxes & Compliance",
+      "seoTags": [
+        "eu-vat-validation",
+        "vies-api",
+        "reverse-charge",
+        "cross-border-tax",
+        "european-kyb",
+        "vat-compliance",
+        "b2b-invoicing"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-vies-vat-tax-compliance-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.015,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "slug": "us-epa-echo-environmental-compliance-auditor",
+      "title": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+      "rapidapiCategory": "Data",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "epa-echo",
+        "esg-compliance",
+        "environmental-risk",
+        "clean-air-water-act",
+        "rcra-hazmat",
+        "industrial-due-diligence",
+        "supply-chain-esg"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-epa-echo-environmental-compliance-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.03,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "slug": "us-fdic-bankfind-institution-financial-auditor",
+      "title": "US FDIC BankFind Institution & Solvency Risk Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Finance",
+      "seoTags": [
+        "fdic-bankfind",
+        "bank-solvency",
+        "treasury-risk",
+        "tier1-capital",
+        "banking-kyb",
+        "counterparty-risk",
+        "us-banks"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fdic-bankfind-institution-financial-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-fdic-bankfind-institution-financial-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.025,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "slug": "us-sam-gov-federal-procurement-auditor",
+      "title": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "sam-gov",
+        "usaspending",
+        "federal-contracts",
+        "govcon-intelligence",
+        "naics-psc",
+        "b2g-procurement",
+        "defense-contracts"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-sam-gov-federal-procurement-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-sam-gov-federal-procurement-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.035,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "slug": "multi-ats-tech-job-board-hiring-radar",
+      "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "hiring-signals",
+        "greenhouse-ats",
+        "tech-jobs-api",
+        "b2b-buying-intent",
+        "recruiting-intelligence",
+        "sales-triggers",
+        "revops"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-board-hiring-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "slug": "global-gleif-lei-corporate-ownership-kyb",
+      "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "gleif-lei",
+        "legal-entity-identifier",
+        "global-kyb",
+        "corporate-ownership",
+        "mifid-ii-emir",
+        "parent-subsidiary",
+        "aml-onboarding"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-gleif-lei-corporate-ownership-kyb/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.025,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "slug": "us-census-fcc-real-estate-geo-enricher",
+      "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+      "rapidapiCategory": "Data",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "us-census-fips",
+        "fcc-area-api",
+        "real-estate-analytics",
+        "geospatial-enrichment",
+        "census-tract",
+        "proptech",
+        "mortgage-hmda"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "slug": "icann-rdap-domain-whois-brand-recon",
+      "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+      "rapidapiCategory": "Cybersecurity",
+      "zylaCategory": "Security",
+      "seoTags": [
+        "icann-rdap",
+        "whois-lookup",
+        "domain-age",
+        "brand-protection",
+        "dnssec-audit",
+        "anti-phishing",
+        "threat-intelligence"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/icann-rdap-domain-whois-brand-recon.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.015,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "slug": "cisa-kev-ransomware-vulnerability-auditor",
+      "title": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar",
+      "rapidapiCategory": "Cybersecurity",
+      "zylaCategory": "Security",
+      "seoTags": [
+        "cisa-kev",
+        "cve-vulnerability",
+        "ransomware-audit",
+        "patch-management",
+        "bod-22-01",
+        "secops-threat-intel",
+        "exploit-catalog"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/cisa-kev-ransomware-vulnerability-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~cisa-kev-ransomware-vulnerability-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "slug": "brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "title": "Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Finance",
+      "seoTags": [
+        "banco-central-brasil",
+        "ptax-usd-brl",
+        "selic-cdi-ipca",
+        "igpm-indexer",
+        "contract-readjustment",
+        "brazil-macro-api",
+        "fintech-rates"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-bcb-ptax-sgs-financial-contract-indexer/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.015,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "slug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Finance",
+      "seoTags": [
+        "brazil-pix-ispb",
+        "str-spi-participants",
+        "bank-routing-kyb",
+        "bacen-institutions",
+        "payment-clearing",
+        "fintech-compliance",
+        "compe-ispb"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-pix-ispb-cvm-financial-kyb-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "slug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "ibge-cnae",
+        "concla-subclass",
+        "brazil-tax-activities",
+        "municipal-expansion",
+        "b2b-market-sizing",
+        "company-classification",
+        "simples-nacional"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-ibge-cnae-municipal-b2b-expansion-enricher/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.015,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "slug": "brazil-cep-geocoordinates-logistics-auditor",
+      "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+      "rapidapiCategory": "Logistics",
+      "zylaCategory": "Logistics & Shipping",
+      "seoTags": [
+        "brazil-cep-lookup",
+        "postal-geocoding",
+        "ibge-municipality-code",
+        "nfe-address-validator",
+        "last-mile-logistics",
+        "ddd-lookup",
+        "ecommerce-checkout"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.01,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 25,
+      "slug": "brazil-camara-legislative-regulatory-risk-radar",
+      "title": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar",
+      "rapidapiCategory": "Data",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "brazil-congress-api",
+        "camara-deputados",
+        "legislative-radar",
+        "regulatory-risk",
+        "public-policy-tracker",
+        "gov-relations",
+        "pec-pl-plp"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-camara-legislative-regulatory-risk-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-camara-legislative-regulatory-risk-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.025,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "slug": "us-osha-workplace-safety-violation-auditor",
+      "title": "US OSHA Workplace Safety & Violation Compliance Auditor",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "osha-violations",
+        "workplace-safety",
+        "ehs-compliance",
+        "industrial-inspections",
+        "workers-comp-underwriting",
+        "supply-chain-audit",
+        "dol-osha"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/us-osha-workplace-safety-violation-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-osha-workplace-safety-violation-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.03,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "slug": "eu-ted-public-tenders-procurement-radar",
+      "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+      "rapidapiCategory": "Business",
+      "zylaCategory": "Government & Legal",
+      "seoTags": [
+        "eu-ted-tenders",
+        "european-procurement",
+        "cpv-codes",
+        "public-sector-bids",
+        "b2g-europe",
+        "official-journal-ojs",
+        "government-rfp"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/eu-ted-public-tenders-procurement-radar.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~eu-ted-public-tenders-procurement-radar/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.035,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 28,
+      "slug": "uk-fca-companies-house-kyb-compliance-auditor",
+      "title": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+      "rapidapiCategory": "Finance",
+      "zylaCategory": "Company Data",
+      "seoTags": [
+        "uk-companies-house",
+        "crn-lookup",
+        "uk-kyb-verification",
+        "fca-compliance",
+        "british-corporate-registry",
+        "gleif-uk",
+        "aml-due-diligence"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/uk-fca-companies-house-kyb-compliance-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.025,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 29,
+      "slug": "global-sanctions-pep-interpol-watchlist-screener",
+      "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+      "rapidapiCategory": "Cybersecurity",
+      "zylaCategory": "Security",
+      "seoTags": [
+        "ofac-sdn-sanctions",
+        "aml-kyc-screening",
+        "pep-watchlist",
+        "eu-un-sanctions",
+        "financial-crime-compliance",
+        "entity-screening",
+        "regtech-aml"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.03,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 30,
+      "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+      "rapidapiCategory": "Cybersecurity",
+      "zylaCategory": "Security",
+      "seoTags": [
+        "certificate-transparency",
+        "subdomain-discovery",
+        "attack-surface-management",
+        "easm-recon",
+        "shadow-it-audit",
+        "ssl-tls-monitor",
+        "secops-api"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.02,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    },
+    {
+      "index": 31,
+      "slug": "b2b-quant-mcp-server",
+      "title": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+      "rapidapiCategory": "Artificial Intelligence/Machine Learning",
+      "zylaCategory": "AI & Machine Learning",
+      "seoTags": [
+        "mcp-server",
+        "model-context-protocol",
+        "ai-agent-tools",
+        "b2b-compliance-suite",
+        "claude-cursor-tools",
+        "langchain-b2b",
+        "autonomous-agents"
+      ],
+      "openapiVersion": "3.0.3",
+      "openapiSpecFile": "specs_openapi_31/b2b-quant-mcp-server.json",
+      "openapiSpecPublicUrl": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-quant-mcp-server.json",
+      "openapiSpecSuiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-quant-mcp-server.json",
+      "openapiSpecExists": true,
+      "gatewayEndpoint": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-quant-mcp-server",
+      "apifyCloudSyncEndpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-quant-mcp-server/run-sync-get-dataset-items",
+      "baseUnitCostUsd": 0.01,
+      "payoutDestination": "Wise #890361113",
+      "pricingPlans": {
+        "BASIC": {
+          "tier": "BASIC",
+          "planType": "FREEMIUM",
+          "monthlyPriceUsd": 0.0,
+          "monthlyQuotaRequests": 15,
+          "overagePricePerRequestUsd": 0.0,
+          "hardLimit": true,
+          "rateLimitPerMinute": 5,
+          "description": "US$ 0.00/mês | Hard Limit de 15 req/mês (zero risco de custo)"
+        },
+        "PRO": {
+          "tier": "PRO",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 19.0,
+          "monthlyQuotaRequests": 1000,
+          "overagePricePerRequestUsd": 0.02,
+          "hardLimit": false,
+          "rateLimitPerMinute": 60,
+          "description": "US$ 19.00/mês | 1.000 req/mês (+ US$ 0.02/req extra)"
+        },
+        "ULTRA": {
+          "tier": "ULTRA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 49.0,
+          "monthlyQuotaRequests": 5000,
+          "overagePricePerRequestUsd": 0.015,
+          "hardLimit": false,
+          "rateLimitPerMinute": 180,
+          "description": "US$ 49.00/mês | 5.000 req/mês (+ US$ 0.015/req extra)"
+        },
+        "MEGA": {
+          "tier": "MEGA",
+          "planType": "RECURRING_PLUS_OVERAGE",
+          "monthlyPriceUsd": 149.0,
+          "monthlyQuotaRequests": 25000,
+          "overagePricePerRequestUsd": 0.01,
+          "hardLimit": false,
+          "rateLimitPerMinute": 600,
+          "description": "US$ 149.00/mês | 25.000 req/mês (+ US$ 0.010/req extra)"
+        }
+      }
+    }
+  ],
+  "quickActivationSteps": [
+    "1. Gerar/atualizar as 31 specs OpenAPI 3.0.3 e apis.json: python rapidapi_zyla_hub_suite/generate_rapidapi_zyla_specs.py",
+    "2. Sindicar URLs públicas no GitHub Pages + Release v2.2.0: python rapidapi_zyla_hub_suite/openapi_syndicator_2026.py",
+    "3. Se RAPIDAPI_API_KEY estiver no .env, executar: python rapidapi_zyla_hub_suite/rapidapi_provider_deployer.py --deploy",
+    "4. Ou importar em 1 clique por URL (https://jesleytassili-glitch.github.io/specs_openapi_31/<slug>.json) no RapidAPI Studio, Zyla Hub e Postman apontando payout para Wise #890361113"
+  ]
+}

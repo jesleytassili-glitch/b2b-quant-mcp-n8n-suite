@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+    "version": "3.0.0",
+    "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.\n\n### Enterprise B2B Value Proposition (EU VIES VAT Number Validator & Reverse Charge Tax Auditor)\n- **Target B2B Buyers:** European B2B SaaS Billing Engines, Cross-Border Marketplaces, and ERP Tax Compliance Modules.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EU VIES VAT & Reverse Charge Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Taxes & Compliance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** eu-vat-validation, vies-api, reverse-charge, cross-border-tax, european-kyb, vat-compliance, b2b-invoicing.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+    },
+    "x-category": "Finance",
+    "x-rapidapi-category": "Finance",
+    "x-zyla-category": "Taxes & Compliance",
+    "x-seo-tags": [
+      "eu-vat-validation",
+      "vies-api",
+      "reverse-charge",
+      "cross-border-tax",
+      "european-kyb",
+      "vat-compliance",
+      "b2b-invoicing"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\"\npayload = {\n    \"vatNumbers\": \"IE6388047V, DE811128135\",\n    \"requesterCountryCode\": \"DE\",\n    \"maxResults\": 20\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-vies-vat-tax-compliance-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Finance",
+      "description": "RapidAPI Hub primary category: Finance (Zyla Hub: Taxes & Compliance)"
+    },
+    {
+      "name": "eu-vat-validation",
+      "description": "B2B SEO Search Tag: eu-vat-validation"
+    },
+    {
+      "name": "vies-api",
+      "description": "B2B SEO Search Tag: vies-api"
+    },
+    {
+      "name": "reverse-charge",
+      "description": "B2B SEO Search Tag: reverse-charge"
+    },
+    {
+      "name": "cross-border-tax",
+      "description": "B2B SEO Search Tag: cross-border-tax"
+    },
+    {
+      "name": "european-kyb",
+      "description": "B2B SEO Search Tag: european-kyb"
+    },
+    {
+      "name": "vat-compliance",
+      "description": "B2B SEO Search Tag: vat-compliance"
+    },
+    {
+      "name": "b2b-invoicing",
+      "description": "B2B SEO Search Tag: b2b-invoicing"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/eu-vies-vat-tax-compliance-auditor": {
+      "post": {
+        "operationId": "execute_eu_vies_vat_tax_compliance_auditor",
+        "summary": "Execute EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+        "description": "Synchronous stateless execution of **EU VIES VAT Number Validator & Reverse Charge Tax Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Finance",
+          "eu-vat-validation",
+          "vies-api",
+          "reverse-charge",
+          "cross-border-tax",
+          "european-kyb"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\"\npayload = {\n    \"vatNumbers\": \"IE6388047V, DE811128135\",\n    \"requesterCountryCode\": \"DE\",\n    \"maxResults\": 20\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\"\npayload = {\n    \"vatNumbers\": \"IE6388047V, DE811128135\",\n    \"requesterCountryCode\": \"DE\",\n    \"maxResults\": 20\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-vies-vat-tax-compliance-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vatNumbers\": \"IE6388047V, DE811128135\", \"requesterCountryCode\": \"DE\", \"maxResults\": 20})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `eu-vies-vat-tax-compliance-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EuViesVatTaxComplianceAuditorRequest"
+              },
+              "example": {
+                "vatNumbers": "IE6388047V, DE811128135",
+                "requesterCountryCode": "DE",
+                "maxResults": 20
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `eu-vies-vat-tax-compliance-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EuViesVatTaxComplianceAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "eu-vies-vat-tax-compliance-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
+                      "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "syntaxValid": true,
+                      "viesActive": true,
+                      "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
+                      "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
+                      "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
+                      "complianceRiskScore": 88,
+                      "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
+                      "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/eu-vies-vat-tax-compliance-auditor/health": {
+      "get": {
+        "operationId": "health_eu_vies_vat_tax_compliance_auditor",
+        "summary": "Health & SLA Check for EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+        "description": "Lightweight health and schema readiness check for `eu-vies-vat-tax-compliance-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Finance"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "eu-vies-vat-tax-compliance-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Finance"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "eu-vies-vat-tax-compliance-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Finance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "EuViesVatTaxComplianceAuditorRequest": {
+        "type": "object",
+        "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor Request Schema",
+        "description": "Provide one or more European Union (27 Member States + XI Northern Ireland) VAT identification numbers to validate syntax, active VIES registration, trader legal name/address, and Intra-EU Reverse Charge eligibility.",
+        "properties": {
+          "vatNumbers": {
+            "type": "string",
+            "title": "EU VAT Numbers (Comma or Line Separated)",
+            "description": "Comma, space, or newline-separated EU VAT numbers including 2-letter country prefix (e.g., 'IE6388047V, DE811128135, FR40303265045').",
+            "default": "IE6388047V, DE811128135",
+            "example": "IE6388047V, DE811128135"
+          },
+          "requesterCountryCode": {
+            "type": "string",
+            "title": "Seller / Requester EU Country Code",
+            "description": "2-letter EU country code of the invoicing entity (e.g., 'DE', 'NL', 'FR', 'IE') to determine Cross-Border B2B Reverse Charge (0% VAT) vs. Domestic VAT.",
+            "default": "DE",
+            "example": "DE"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum VAT Numbers to Audit",
+            "description": "Maximum number of VAT records to audit in a single batch (1 to 200).",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 200,
+            "example": 20
+          }
+        },
+        "required": [
+          "vatNumbers"
+        ],
+        "example": {
+          "vatNumbers": "IE6388047V, DE811128135",
+          "requesterCountryCode": "DE",
+          "maxResults": 20
+        }
+      },
+      "EuViesVatTaxComplianceAuditorRecord": {
+        "type": "object",
+        "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `eu-vies-vat-tax-compliance-auditor`.",
+        "properties": {
+          "fullVatNumber": {
+            "type": "string",
+            "title": "Full VAT Number",
+            "description": "Normalized EU VAT identifier including Member State prefix.",
+            "example": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "countryCode": {
+            "type": "string",
+            "title": "Member State Code",
+            "description": "2-letter EU VIES jurisdiction code (AT, BE, DE, EL, ES, FR, IE, IT, NL, XI, etc.).",
+            "example": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "vatNumber": {
+            "type": "string",
+            "title": "National VAT Number",
+            "description": "National numeric/alphanumeric VAT digits without country prefix.",
+            "example": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "syntaxValid": {
+            "type": "boolean",
+            "title": "Syntax Valid",
+            "description": "Whether the VAT number matches the official Member State structural regex.",
+            "example": true
+          },
+          "viesActive": {
+            "type": "boolean",
+            "title": "VIES Active Registration",
+            "description": "Whether the VAT number is actively registered for Intra-EU cross-border transactions.",
+            "example": true
+          },
+          "traderName": {
+            "type": "string",
+            "title": "Registered Trader Name",
+            "description": "Legal company name returned by the European Commission VIES registry.",
+            "example": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "traderAddress": {
+            "type": "string",
+            "title": "Registered Address",
+            "description": "Official corporate address on file in the Member State tax registry.",
+            "example": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "reverseChargeStatus": {
+            "type": "string",
+            "title": "Reverse Charge Eligibility",
+            "description": "Tax invoicing determination (ELIGIBLE_INTRA_EU_0_VAT, DOMESTIC_STANDARD_VAT, or DO_NOT_ZERO_RATE).",
+            "example": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "complianceRiskScore": {
+            "type": "integer",
+            "title": "Compliance Risk Score (0-100)",
+            "description": "Quantitative tax audit risk score (0 = lowest risk/verified active, 100 = invalid/high risk).",
+            "example": 88
+          },
+          "verificationSource": {
+            "type": "string",
+            "title": "Verification Source",
+            "description": "Indicates EU_VIES_LIVE_API or ALGORITHMIC_FALLBACK_MS_MAINTENANCE.",
+            "example": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "markdownVatCertificate": {
+            "type": "string",
+            "title": "Markdown Tax Compliance Certificate",
+            "description": "Audit-ready Markdown VAT compliance certificate for ERP/Finance attachment.",
+            "example": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
+          "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
+          "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+          "syntaxValid": true,
+          "viesActive": true,
+          "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
+          "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
+          "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
+          "complianceRiskScore": 88,
+          "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
+          "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "EuViesVatTaxComplianceAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "eu-vies-vat-tax-compliance-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EuViesVatTaxComplianceAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "eu-vies-vat-tax-compliance-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
+              "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
+              "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+              "syntaxValid": true,
+              "viesActive": true,
+              "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
+              "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
+              "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
+              "complianceRiskScore": 88,
+              "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
+              "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

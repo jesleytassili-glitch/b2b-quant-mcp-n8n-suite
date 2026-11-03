@@ -1,0 +1,550 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+    "version": "3.0.0",
+    "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor)\n- **Target B2B Buyers:** Payment Service Providers (PSPs), Banking-as-a-Service (BaaS) Platforms, and Treasury Reconciliation Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil Pix ISPB & SPI Financial Institution Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-pix-ispb, str-spi-participants, bank-routing-kyb, bacen-institutions, payment-clearing, fintech-compliance, compe-ispb.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+    },
+    "x-category": "Finance",
+    "x-rapidapi-category": "Finance",
+    "x-zyla-category": "Finance",
+    "x-seo-tags": [
+      "brazil-pix-ispb",
+      "str-spi-participants",
+      "bank-routing-kyb",
+      "bacen-institutions",
+      "payment-clearing",
+      "fintech-compliance",
+      "compe-ispb"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\"\npayload = {\n    \"institutionQuery\": \"Banco\",\n    \"onlyDirectPix\": true,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-pix-ispb-cvm-financial-kyb-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Finance",
+      "description": "RapidAPI Hub primary category: Finance (Zyla Hub: Finance)"
+    },
+    {
+      "name": "brazil-pix-ispb",
+      "description": "B2B SEO Search Tag: brazil-pix-ispb"
+    },
+    {
+      "name": "str-spi-participants",
+      "description": "B2B SEO Search Tag: str-spi-participants"
+    },
+    {
+      "name": "bank-routing-kyb",
+      "description": "B2B SEO Search Tag: bank-routing-kyb"
+    },
+    {
+      "name": "bacen-institutions",
+      "description": "B2B SEO Search Tag: bacen-institutions"
+    },
+    {
+      "name": "payment-clearing",
+      "description": "B2B SEO Search Tag: payment-clearing"
+    },
+    {
+      "name": "fintech-compliance",
+      "description": "B2B SEO Search Tag: fintech-compliance"
+    },
+    {
+      "name": "compe-ispb",
+      "description": "B2B SEO Search Tag: compe-ispb"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/brazil-pix-ispb-cvm-financial-kyb-auditor": {
+      "post": {
+        "operationId": "execute_brazil_pix_ispb_cvm_financial_kyb_auditor",
+        "summary": "Execute Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+        "description": "Synchronous stateless execution of **Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Finance",
+          "brazil-pix-ispb",
+          "str-spi-participants",
+          "bank-routing-kyb",
+          "bacen-institutions",
+          "payment-clearing"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\"\npayload = {\n    \"institutionQuery\": \"Banco\",\n    \"onlyDirectPix\": true,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\"\npayload = {\n    \"institutionQuery\": \"Banco\",\n    \"onlyDirectPix\": true,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"institutionQuery\": \"Banco\", \"onlyDirectPix\": true, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-pix-ispb-cvm-financial-kyb-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilPixIspbCvmFinancialKybAuditorRequest"
+              },
+              "example": {
+                "institutionQuery": "Banco",
+                "onlyDirectPix": true,
+                "maxResults": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-pix-ispb-cvm-financial-kyb-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilPixIspbCvmFinancialKybAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "kybTrustScore": 88,
+                      "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-pix-ispb-cvm-financial-kyb-auditor/health": {
+      "get": {
+        "operationId": "health_brazil_pix_ispb_cvm_financial_kyb_auditor",
+        "summary": "Health & SLA Check for Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+        "description": "Lightweight health and schema readiness check for `brazil-pix-ispb-cvm-financial-kyb-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Finance"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-pix-ispb-cvm-financial-kyb-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Finance"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Finance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "BrazilPixIspbCvmFinancialKybAuditorRequest": {
+        "type": "object",
+        "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Request Schema",
+        "description": "Input parameters for Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor.",
+        "properties": {
+          "institutionQuery": {
+            "type": "string",
+            "title": "Bank / FinTech Name or ISPB Code",
+            "description": "Institution name keyword or 8-digit ISPB code (e.g., 'Itau', 'Nu Pagamentos', 'Banco do Brasil', '00000000').",
+            "default": "Banco",
+            "example": "Banco"
+          },
+          "onlyDirectPix": {
+            "type": "boolean",
+            "title": "Only Direct SPI Pix Settlement Participants",
+            "description": "When enabled, filters only institutions with direct settlement accounts in the Central Bank SPI.",
+            "default": false,
+            "example": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Institutions to Audit",
+            "description": "Maximum number of audited financial institutions to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 10
+          }
+        },
+        "required": [
+          "institutionQuery"
+        ],
+        "example": {
+          "institutionQuery": "Banco",
+          "onlyDirectPix": true,
+          "maxResults": 10
+        }
+      },
+      "BrazilPixIspbCvmFinancialKybAuditorRecord": {
+        "type": "object",
+        "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `brazil-pix-ispb-cvm-financial-kyb-auditor`.",
+        "properties": {
+          "ispbCode": {
+            "type": "string",
+            "title": "ISPB Code (8 Digits)",
+            "description": "Official Central Bank of Brazil ISPB identifier.",
+            "example": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "institutionName": {
+            "type": "string",
+            "title": "Legal Institution Name",
+            "description": "Full corporate name registered in the SPI.",
+            "example": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "shortName": {
+            "type": "string",
+            "title": "Short Trading Name",
+            "description": "Abbreviated clearing name.",
+            "example": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "participationModality": {
+            "type": "string",
+            "title": "Pix Participation Modality",
+            "description": "Role in the Pix ecosystem.",
+            "example": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "participationType": {
+            "type": "string",
+            "title": "SPI Settlement Type",
+            "description": "Direct (Direta) or Indirect (Indireta) settlement.",
+            "example": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "operationStartDate": {
+            "type": "string",
+            "title": "Operation Start Date",
+            "description": "Official Pix SPI activation timestamp.",
+            "example": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "kybTrustScore": {
+            "type": "integer",
+            "title": "KYB & Clearing Trust Score (0-100)",
+            "description": "Quantitative AML/KYB clearing reliability score (0-100).",
+            "example": 88
+          },
+          "markdownKybDossier": {
+            "type": "string",
+            "title": "Markdown Financial KYB Dossier",
+            "description": "Executive report for FinTech BaaS, treasury, and AML compliance teams.",
+            "example": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "kybTrustScore": 88,
+          "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "BrazilPixIspbCvmFinancialKybAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "brazil-pix-ispb-cvm-financial-kyb-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrazilPixIspbCvmFinancialKybAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "kybTrustScore": 88,
+              "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

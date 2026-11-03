@@ -1,0 +1,593 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+    "version": "3.0.0",
+    "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.\n\n### Enterprise B2B Value Proposition (US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4))\n- **Target B2B Buyers:** Quantitative Hedge Funds, Equity Research Platforms, WealthTech Apps, and M&A Advisory Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`SEC EDGAR Filing & Governance Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** sec-edgar, 10k-10q-8k, form-4-insider, quantitative-finance, corporate-governance, cik-lookup, equity-research.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+    },
+    "x-category": "Finance",
+    "x-rapidapi-category": "Finance",
+    "x-zyla-category": "Finance",
+    "x-seo-tags": [
+      "sec-edgar",
+      "10k-10q-8k",
+      "form-4-insider",
+      "quantitative-finance",
+      "corporate-governance",
+      "cik-lookup",
+      "equity-research"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sec-edgar-filings-insider-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\"\npayload = {\n    \"tickerOrCik\": \"AAPL\",\n    \"formType\": \"ALL\",\n    \"keyword\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sec-edgar-filings-insider-radar.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sec-edgar-filings-insider-radar.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Finance",
+      "description": "RapidAPI Hub primary category: Finance (Zyla Hub: Finance)"
+    },
+    {
+      "name": "sec-edgar",
+      "description": "B2B SEO Search Tag: sec-edgar"
+    },
+    {
+      "name": "10k-10q-8k",
+      "description": "B2B SEO Search Tag: 10k-10q-8k"
+    },
+    {
+      "name": "form-4-insider",
+      "description": "B2B SEO Search Tag: form-4-insider"
+    },
+    {
+      "name": "quantitative-finance",
+      "description": "B2B SEO Search Tag: quantitative-finance"
+    },
+    {
+      "name": "corporate-governance",
+      "description": "B2B SEO Search Tag: corporate-governance"
+    },
+    {
+      "name": "cik-lookup",
+      "description": "B2B SEO Search Tag: cik-lookup"
+    },
+    {
+      "name": "equity-research",
+      "description": "B2B SEO Search Tag: equity-research"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-sec-edgar-filings-insider-radar": {
+      "post": {
+        "operationId": "execute_us_sec_edgar_filings_insider_radar",
+        "summary": "Execute US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+        "description": "Synchronous stateless execution of **US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Finance",
+          "sec-edgar",
+          "10k-10q-8k",
+          "form-4-insider",
+          "quantitative-finance",
+          "corporate-governance"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sec-edgar-filings-insider-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\"\npayload = {\n    \"tickerOrCik\": \"AAPL\",\n    \"formType\": \"ALL\",\n    \"keyword\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sec-edgar-filings-insider-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\"\npayload = {\n    \"tickerOrCik\": \"AAPL\",\n    \"formType\": \"ALL\",\n    \"keyword\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sec-edgar-filings-insider-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"tickerOrCik\": \"AAPL\", \"formType\": \"ALL\", \"keyword\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-sec-edgar-filings-insider-radar`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsSecEdgarFilingsInsiderRadarRequest"
+              },
+              "example": {
+                "tickerOrCik": "AAPL",
+                "formType": "ALL",
+                "keyword": "",
+                "maxResults": 15
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-sec-edgar-filings-insider-radar` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsSecEdgarFilingsInsiderRadarResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-sec-edgar-filings-insider-radar",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
+                      "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
+                      "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
+                      "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
+                      "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
+                      "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
+                      "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
+                      "governanceAlertScore": 88,
+                      "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
+                      "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
+                      "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-sec-edgar-filings-insider-radar/health": {
+      "get": {
+        "operationId": "health_us_sec_edgar_filings_insider_radar",
+        "summary": "Health & SLA Check for US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+        "description": "Lightweight health and schema readiness check for `us-sec-edgar-filings-insider-radar` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Finance"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-sec-edgar-filings-insider-radar"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Finance"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-sec-edgar-filings-insider-radar",
+                  "engineVersion": "3.0.0",
+                  "category": "Finance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsSecEdgarFilingsInsiderRadarRequest": {
+        "type": "object",
+        "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) Request Schema",
+        "description": "Configure the Ticker or 10-digit CIK, SEC Form Type filter, and maximum filings to extract and score from the official U.S. SEC EDGAR Submissions API.",
+        "properties": {
+          "tickerOrCik": {
+            "type": "string",
+            "title": "Stock Ticker or SEC CIK",
+            "description": "Public company stock ticker (e.g., 'AAPL', 'MSFT', 'NVDA', 'TSLA', 'JPM') or 10-digit SEC Central Index Key (e.g., '0000320193').",
+            "default": "AAPL",
+            "example": "AAPL"
+          },
+          "formType": {
+            "type": "string",
+            "title": "SEC Filing Form Type",
+            "description": "Filter by specific SEC regulatory form type or select ALL.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "10-K",
+              "10-Q",
+              "8-K",
+              "4"
+            ],
+            "example": "ALL"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Document Description / Item Keyword (Optional)",
+            "description": "Optional filter in primary document description or 8-K items (e.g., '5.02', '2.02', 'acquisition', 'restatement').",
+            "default": "",
+            "example": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Results",
+            "description": "Maximum number of SEC EDGAR filings to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 15
+          }
+        },
+        "required": [
+          "tickerOrCik"
+        ],
+        "example": {
+          "tickerOrCik": "AAPL",
+          "formType": "ALL",
+          "keyword": "",
+          "maxResults": 15
+        }
+      },
+      "UsSecEdgarFilingsInsiderRadarRecord": {
+        "type": "object",
+        "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) Output Record",
+        "description": "Enriched B2B dataset item returned by `us-sec-edgar-filings-insider-radar`.",
+        "properties": {
+          "accessionNumber": {
+            "type": "string",
+            "title": "Accession Number",
+            "description": "Unique SEC EDGAR filing accession identifier.",
+            "example": "Verified Accession Number (us-sec-edgar-filings-insider-radar)"
+          },
+          "cik": {
+            "type": "string",
+            "title": "CIK (10-Digit)",
+            "description": "Official 10-digit SEC Central Index Key.",
+            "example": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)"
+          },
+          "ticker": {
+            "type": "string",
+            "title": "Ticker",
+            "description": "Primary exchange stock ticker symbol.",
+            "example": "Verified Ticker (us-sec-edgar-filings-insider-radar)"
+          },
+          "companyName": {
+            "type": "string",
+            "title": "Company Name",
+            "description": "Official registrant entity name on file with the SEC.",
+            "example": "Verified Company Name (us-sec-edgar-filings-insider-radar)"
+          },
+          "formType": {
+            "type": "string",
+            "title": "Form Type",
+            "description": "SEC regulatory filing form code (10-K, 10-Q, 8-K, 4, etc.).",
+            "example": "Verified Form Type (us-sec-edgar-filings-insider-radar)"
+          },
+          "filingDate": {
+            "type": "string",
+            "title": "Filing Date",
+            "description": "Date the filing was accepted by SEC EDGAR (YYYY-MM-DD).",
+            "example": "Verified Filing Date (us-sec-edgar-filings-insider-radar)"
+          },
+          "reportDate": {
+            "type": "string",
+            "title": "Period Report Date",
+            "description": "Period of report covered by the filing (YYYY-MM-DD).",
+            "example": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)"
+          },
+          "governanceAlertScore": {
+            "type": "integer",
+            "title": "Governance Alert Score (0-100)",
+            "description": "Quantitative materiality & governance attention score (0-100).",
+            "example": 88
+          },
+          "itemsSummary": {
+            "type": "string",
+            "title": "Material Items / Description",
+            "description": "Reported 8-K item codes or primary filing description.",
+            "example": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)"
+          },
+          "edgarDocumentUrl": {
+            "type": "string",
+            "title": "SEC Archive URL",
+            "description": "Direct URL to the official filing document on sec.gov/Archives.",
+            "example": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)"
+          },
+          "markdownGovernanceBrief": {
+            "type": "string",
+            "title": "Markdown Governance & RAG Brief",
+            "description": "Executive Markdown dossier ready for financial due diligence and LLM RAG ingestion.",
+            "example": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
+          "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
+          "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
+          "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
+          "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
+          "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
+          "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
+          "governanceAlertScore": 88,
+          "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
+          "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
+          "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsSecEdgarFilingsInsiderRadarResponseEnvelope": {
+        "type": "object",
+        "title": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-sec-edgar-filings-insider-radar"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsSecEdgarFilingsInsiderRadarRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-sec-edgar-filings-insider-radar",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
+              "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
+              "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
+              "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
+              "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
+              "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
+              "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
+              "governanceAlertScore": 88,
+              "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
+              "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
+              "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+    "version": "3.0.0",
+    "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor)\n- **Target B2B Buyers:** Brand Protection Agencies, SOC Threat Hunters, Fraud Prevention Engines, and Domain Registrars.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`ICANN RDAP Official Domain WHOIS Audited`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** icann-rdap, whois-lookup, domain-age, brand-protection, dnssec-audit, anti-phishing, threat-intelligence.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+    },
+    "x-category": "Cybersecurity",
+    "x-rapidapi-category": "Cybersecurity",
+    "x-zyla-category": "Security",
+    "x-seo-tags": [
+      "icann-rdap",
+      "whois-lookup",
+      "domain-age",
+      "brand-protection",
+      "dnssec-audit",
+      "anti-phishing",
+      "threat-intelligence"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: icann-rdap-domain-whois-brand-recon.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\"\npayload = {\n    \"domains\": \"stripe.com,cloudflare.com,shopify.com\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/icann-rdap-domain-whois-brand-recon.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Cybersecurity",
+      "description": "RapidAPI Hub primary category: Cybersecurity (Zyla Hub: Security)"
+    },
+    {
+      "name": "icann-rdap",
+      "description": "B2B SEO Search Tag: icann-rdap"
+    },
+    {
+      "name": "whois-lookup",
+      "description": "B2B SEO Search Tag: whois-lookup"
+    },
+    {
+      "name": "domain-age",
+      "description": "B2B SEO Search Tag: domain-age"
+    },
+    {
+      "name": "brand-protection",
+      "description": "B2B SEO Search Tag: brand-protection"
+    },
+    {
+      "name": "dnssec-audit",
+      "description": "B2B SEO Search Tag: dnssec-audit"
+    },
+    {
+      "name": "anti-phishing",
+      "description": "B2B SEO Search Tag: anti-phishing"
+    },
+    {
+      "name": "threat-intelligence",
+      "description": "B2B SEO Search Tag: threat-intelligence"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/icann-rdap-domain-whois-brand-recon": {
+      "post": {
+        "operationId": "execute_icann_rdap_domain_whois_brand_recon",
+        "summary": "Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+        "description": "Synchronous stateless execution of **ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Cybersecurity",
+          "icann-rdap",
+          "whois-lookup",
+          "domain-age",
+          "brand-protection",
+          "dnssec-audit"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: icann-rdap-domain-whois-brand-recon.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\"\npayload = {\n    \"domains\": \"stripe.com,cloudflare.com,shopify.com\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: icann-rdap-domain-whois-brand-recon.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\"\npayload = {\n    \"domains\": \"stripe.com,cloudflare.com,shopify.com\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"icann-rdap-domain-whois-brand-recon.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"domains\": \"stripe.com,cloudflare.com,shopify.com\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `icann-rdap-domain-whois-brand-recon`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IcannRdapDomainWhoisBrandReconRequest"
+              },
+              "example": {
+                "domains": "stripe.com,cloudflare.com,shopify.com",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `icann-rdap-domain-whois-brand-recon` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IcannRdapDomainWhoisBrandReconResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "icann-rdap-domain-whois-brand-recon",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
+                      "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
+                      "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
+                      "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
+                      "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
+                      "domainAgeYears": 94.5,
+                      "transferLocked": true,
+                      "dnssecSigned": true,
+                      "nameserversCount": 88,
+                      "domainTrustScore": 88,
+                      "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/icann-rdap-domain-whois-brand-recon/health": {
+      "get": {
+        "operationId": "health_icann_rdap_domain_whois_brand_recon",
+        "summary": "Health & SLA Check for ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+        "description": "Lightweight health and schema readiness check for `icann-rdap-domain-whois-brand-recon` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Cybersecurity"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "icann-rdap-domain-whois-brand-recon"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Cybersecurity"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "icann-rdap-domain-whois-brand-recon",
+                  "engineVersion": "3.0.0",
+                  "category": "Cybersecurity"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "IcannRdapDomainWhoisBrandReconRequest": {
+        "type": "object",
+        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Request Schema",
+        "description": "Configure comma-separated domain names and maximum domains to audit against official ICANN/Verisign RDAP registries.",
+        "properties": {
+          "domains": {
+            "type": "string",
+            "title": "Domain Names (Comma-Separated)",
+            "description": "Comma-separated domain names to audit via official RDAP (e.g., 'stripe.com,cloudflare.com,shopify.com').",
+            "default": "stripe.com,cloudflare.com,shopify.com",
+            "example": "stripe.com,cloudflare.com,shopify.com"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Domains to Audit",
+            "description": "Maximum number of domains to query and score in a single run (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "domains"
+        ],
+        "example": {
+          "domains": "stripe.com,cloudflare.com,shopify.com",
+          "maxResults": 5
+        }
+      },
+      "IcannRdapDomainWhoisBrandReconRecord": {
+        "type": "object",
+        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `icann-rdap-domain-whois-brand-recon`.",
+        "properties": {
+          "domainName": {
+            "type": "string",
+            "title": "Domain Name",
+            "description": "ASCII LDH domain name audited.",
+            "example": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)"
+          },
+          "registryHandle": {
+            "type": "string",
+            "title": "Registry Handle ID",
+            "description": "Official registry ROID / Handle.",
+            "example": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)"
+          },
+          "registrarName": {
+            "type": "string",
+            "title": "Accredited Registrar",
+            "description": "ICANN-accredited registrar legal name.",
+            "example": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)"
+          },
+          "registrationDate": {
+            "type": "string",
+            "title": "Creation / Registration Date",
+            "description": "Original domain registration timestamp (ISO-8601).",
+            "example": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)"
+          },
+          "expirationDate": {
+            "type": "string",
+            "title": "Registry Expiration Date",
+            "description": "Upcoming domain expiration timestamp (ISO-8601).",
+            "example": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)"
+          },
+          "domainAgeYears": {
+            "type": "number",
+            "title": "Estimated Domain Age (Years)",
+            "description": "Domain longevity in years since creation.",
+            "example": 94.5
+          },
+          "transferLocked": {
+            "type": "boolean",
+            "title": "Transfer Lock Active",
+            "description": "True if clientTransferProhibited or serverTransferProhibited is active.",
+            "example": true
+          },
+          "dnssecSigned": {
+            "type": "boolean",
+            "title": "DNSSEC Delegation Signed",
+            "description": "True if DNSSEC cryptographic signing is enabled.",
+            "example": true
+          },
+          "nameserversCount": {
+            "type": "integer",
+            "title": "Nameservers Count",
+            "description": "Number of authoritative DNS nameservers.",
+            "example": 88
+          },
+          "domainTrustScore": {
+            "type": "integer",
+            "title": "Domain Trust Score (0-100)",
+            "description": "Quantitative brand security and antifraud longevity score (0-100).",
+            "example": 88
+          },
+          "markdownWhoisBrief": {
+            "type": "string",
+            "title": "Markdown RDAP & Brand Security Dossier",
+            "description": "Executive Markdown dossier for KYB antifraud, brand protection, and M&A due diligence.",
+            "example": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
+          "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
+          "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
+          "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
+          "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
+          "domainAgeYears": 94.5,
+          "transferLocked": true,
+          "dnssecSigned": true,
+          "nameserversCount": 88,
+          "domainTrustScore": 88,
+          "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "IcannRdapDomainWhoisBrandReconResponseEnvelope": {
+        "type": "object",
+        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "icann-rdap-domain-whois-brand-recon"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IcannRdapDomainWhoisBrandReconRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "icann-rdap-domain-whois-brand-recon",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
+              "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
+              "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
+              "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
+              "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
+              "domainAgeYears": 94.5,
+              "transferLocked": true,
+              "dnssecSigned": true,
+              "nameserversCount": 88,
+              "domainTrustScore": 88,
+              "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

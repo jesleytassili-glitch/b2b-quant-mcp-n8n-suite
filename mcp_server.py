@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Official Stdio MCP Server (JSON-RPC 2.0) for B2B Quant & Regulatory Compliance Suite (30 Tools)."""
+"""Official Stdio MCP Server (JSON-RPC 2.0) for B2B Quant & Regulatory Compliance Suite (31 Tools)."""
 import json
 import os
 import sys
@@ -37,7 +37,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "b2b-quant-mcp-n8n-suite", "version": "2.0.0"},
+                    "serverInfo": {"name": "b2b-quant-mcp-n8n-suite", "version": "2.1.0"},
                 },
             }
             print(json.dumps(res), flush=True)

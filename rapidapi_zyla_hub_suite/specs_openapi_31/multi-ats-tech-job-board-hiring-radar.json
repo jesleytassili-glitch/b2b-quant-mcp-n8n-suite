@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+    "version": "3.0.0",
+    "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.\n\n### Enterprise B2B Value Proposition (Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar)\n- **Target B2B Buyers:** B2B Outbound Sales Teams, Executive Search Firms, Venture Capitalists, and RevOps Data Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Tech Job Requisition & B2B Hiring Signal Extracted`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** hiring-signals, greenhouse-ats, tech-jobs-api, b2b-buying-intent, recruiting-intelligence, sales-triggers, revops.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Company Data",
+    "x-seo-tags": [
+      "hiring-signals",
+      "greenhouse-ats",
+      "tech-jobs-api",
+      "b2b-buying-intent",
+      "recruiting-intelligence",
+      "sales-triggers",
+      "revops"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\"\npayload = {\n    \"companyBoards\": \"stripe,cloudflare\",\n    \"keyword\": \"engineer\",\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/multi-ats-tech-job-board-hiring-radar.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Company Data)"
+    },
+    {
+      "name": "hiring-signals",
+      "description": "B2B SEO Search Tag: hiring-signals"
+    },
+    {
+      "name": "greenhouse-ats",
+      "description": "B2B SEO Search Tag: greenhouse-ats"
+    },
+    {
+      "name": "tech-jobs-api",
+      "description": "B2B SEO Search Tag: tech-jobs-api"
+    },
+    {
+      "name": "b2b-buying-intent",
+      "description": "B2B SEO Search Tag: b2b-buying-intent"
+    },
+    {
+      "name": "recruiting-intelligence",
+      "description": "B2B SEO Search Tag: recruiting-intelligence"
+    },
+    {
+      "name": "sales-triggers",
+      "description": "B2B SEO Search Tag: sales-triggers"
+    },
+    {
+      "name": "revops",
+      "description": "B2B SEO Search Tag: revops"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/multi-ats-tech-job-board-hiring-radar": {
+      "post": {
+        "operationId": "execute_multi_ats_tech_job_board_hiring_radar",
+        "summary": "Execute Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+        "description": "Synchronous stateless execution of **Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "hiring-signals",
+          "greenhouse-ats",
+          "tech-jobs-api",
+          "b2b-buying-intent",
+          "recruiting-intelligence"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\"\npayload = {\n    \"companyBoards\": \"stripe,cloudflare\",\n    \"keyword\": \"engineer\",\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\"\npayload = {\n    \"companyBoards\": \"stripe,cloudflare\",\n    \"keyword\": \"engineer\",\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"multi-ats-tech-job-board-hiring-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyBoards\": \"stripe,cloudflare\", \"keyword\": \"engineer\", \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `multi-ats-tech-job-board-hiring-radar`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MultiAtsTechJobBoardHiringRadarRequest"
+              },
+              "example": {
+                "companyBoards": "stripe,cloudflare",
+                "keyword": "engineer",
+                "maxResults": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `multi-ats-tech-job-board-hiring-radar` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MultiAtsTechJobBoardHiringRadarResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "multi-ats-tech-job-board-hiring-radar",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
+                      "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
+                      "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
+                      "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
+                      "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
+                      "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
+                      "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
+                      "hiringIntentScore": 88,
+                      "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
+                      "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
+                      "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/multi-ats-tech-job-board-hiring-radar/health": {
+      "get": {
+        "operationId": "health_multi_ats_tech_job_board_hiring_radar",
+        "summary": "Health & SLA Check for Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+        "description": "Lightweight health and schema readiness check for `multi-ats-tech-job-board-hiring-radar` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "multi-ats-tech-job-board-hiring-radar"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "multi-ats-tech-job-board-hiring-radar",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "MultiAtsTechJobBoardHiringRadarRequest": {
+        "type": "object",
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Request Schema",
+        "description": "Configure target company Greenhouse ATS board tokens, optional role/department keyword filter, and maximum job signals to extract.",
+        "properties": {
+          "companyBoards": {
+            "type": "string",
+            "title": "Company ATS Board Tokens (Comma-Separated)",
+            "description": "Comma-separated Greenhouse board tokens (e.g., 'stripe,cloudflare,gitlab,airtable').",
+            "default": "stripe,cloudflare",
+            "example": "stripe,cloudflare"
+          },
+          "keyword": {
+            "type": "string",
+            "title": "Role / Department Keyword Filter (Optional)",
+            "description": "Optional keyword to filter job titles or departments (e.g., 'engineer', 'security', 'sales', 'data').",
+            "default": "engineer",
+            "example": "engineer"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Job Signals to Extract",
+            "description": "Maximum number of job openings to extract and score across boards (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 10
+          }
+        },
+        "required": [
+          "companyBoards"
+        ],
+        "example": {
+          "companyBoards": "stripe,cloudflare",
+          "keyword": "engineer",
+          "maxResults": 10
+        }
+      },
+      "MultiAtsTechJobBoardHiringRadarRecord": {
+        "type": "object",
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Output Record",
+        "description": "Enriched B2B dataset item returned by `multi-ats-tech-job-board-hiring-radar`.",
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "title": "ATS Job ID",
+            "description": "Unique job requisition identifier on the ATS board.",
+            "example": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "companyBoard": {
+            "type": "string",
+            "title": "Company Board Token",
+            "description": "Company slug on Greenhouse ATS.",
+            "example": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "jobTitle": {
+            "type": "string",
+            "title": "Job Title",
+            "description": "Published title of the open position.",
+            "example": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "department": {
+            "type": "string",
+            "title": "Department",
+            "description": "Primary organizational department.",
+            "example": "Verified Department (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "location": {
+            "type": "string",
+            "title": "Office / Location",
+            "description": "Geographic location or remote region.",
+            "example": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "workplaceType": {
+            "type": "string",
+            "title": "Workplace Type",
+            "description": "Remote, Hybrid, or Onsite classification.",
+            "example": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "updatedAt": {
+            "type": "string",
+            "title": "Last Updated Timestamp",
+            "description": "ISO timestamp when the job requisition was updated.",
+            "example": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "hiringIntentScore": {
+            "type": "integer",
+            "title": "B2B Hiring Intent Score (0-100)",
+            "description": "Score measuring B2B budget expansion and technical buying intent (0-100).",
+            "example": 88
+          },
+          "jobUrl": {
+            "type": "string",
+            "title": "Direct Job Application URL",
+            "description": "Public URL to the job posting.",
+            "example": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "techSignals": {
+            "type": "string",
+            "title": "Detected Tech / Budget Signals",
+            "description": "Key technical and strategic hiring signals.",
+            "example": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "markdownHiringBrief": {
+            "type": "string",
+            "title": "Markdown Hiring Intent Brief",
+            "description": "Executive Markdown dossier for B2B sales and technical recruiters.",
+            "example": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
+          "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
+          "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
+          "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
+          "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
+          "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
+          "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
+          "hiringIntentScore": 88,
+          "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
+          "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
+          "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "MultiAtsTechJobBoardHiringRadarResponseEnvelope": {
+        "type": "object",
+        "title": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "multi-ats-tech-job-board-hiring-radar"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MultiAtsTechJobBoardHiringRadarRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "multi-ats-tech-job-board-hiring-radar",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
+              "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
+              "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
+              "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
+              "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
+              "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
+              "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
+              "hiringIntentScore": 88,
+              "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
+              "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
+              "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

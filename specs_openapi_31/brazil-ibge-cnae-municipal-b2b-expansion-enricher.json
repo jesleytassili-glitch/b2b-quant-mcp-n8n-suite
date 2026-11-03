@@ -1,0 +1,559 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+    "version": "3.0.0",
+    "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.\n\n### Enterprise B2B Value Proposition (Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher)\n- **Target B2B Buyers:** Accounting Automation Platforms, B2B Lead Scoring Engines, and Franchise Expansion Analysts.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil IBGE CNAE 2.3 Subclass & Tax Activity Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** ibge-cnae, concla-subclass, brazil-tax-activities, municipal-expansion, b2b-market-sizing, company-classification, simples-nacional.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Company Data",
+    "x-seo-tags": [
+      "ibge-cnae",
+      "concla-subclass",
+      "brazil-tax-activities",
+      "municipal-expansion",
+      "b2b-market-sizing",
+      "company-classification",
+      "simples-nacional"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\"\npayload = {\n    \"cnaeCodes\": \"6201501,4711302,8630503\",\n    \"targetUf\": \"SP\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-ibge-cnae-municipal-b2b-expansion-enricher.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Company Data)"
+    },
+    {
+      "name": "ibge-cnae",
+      "description": "B2B SEO Search Tag: ibge-cnae"
+    },
+    {
+      "name": "concla-subclass",
+      "description": "B2B SEO Search Tag: concla-subclass"
+    },
+    {
+      "name": "brazil-tax-activities",
+      "description": "B2B SEO Search Tag: brazil-tax-activities"
+    },
+    {
+      "name": "municipal-expansion",
+      "description": "B2B SEO Search Tag: municipal-expansion"
+    },
+    {
+      "name": "b2b-market-sizing",
+      "description": "B2B SEO Search Tag: b2b-market-sizing"
+    },
+    {
+      "name": "company-classification",
+      "description": "B2B SEO Search Tag: company-classification"
+    },
+    {
+      "name": "simples-nacional",
+      "description": "B2B SEO Search Tag: simples-nacional"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher": {
+      "post": {
+        "operationId": "execute_brazil_ibge_cnae_municipal_b2b_expansion_enricher",
+        "summary": "Execute Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+        "description": "Synchronous stateless execution of **Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "ibge-cnae",
+          "concla-subclass",
+          "brazil-tax-activities",
+          "municipal-expansion",
+          "b2b-market-sizing"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\"\npayload = {\n    \"cnaeCodes\": \"6201501,4711302,8630503\",\n    \"targetUf\": \"SP\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\"\npayload = {\n    \"cnaeCodes\": \"6201501,4711302,8630503\",\n    \"targetUf\": \"SP\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnaeCodes\": \"6201501,4711302,8630503\", \"targetUf\": \"SP\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-ibge-cnae-municipal-b2b-expansion-enricher`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilIbgeCnaeMunicipalB2bExpansionEnricherRequest"
+              },
+              "example": {
+                "cnaeCodes": "6201501,4711302,8630503",
+                "targetUf": "SP",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-ibge-cnae-municipal-b2b-expansion-enricher` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilIbgeCnaeMunicipalB2bExpansionEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "permittedActivitiesCount": 88,
+                      "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "b2bFitScore": 88,
+                      "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher/health": {
+      "get": {
+        "operationId": "health_brazil_ibge_cnae_municipal_b2b_expansion_enricher",
+        "summary": "Health & SLA Check for Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+        "description": "Lightweight health and schema readiness check for `brazil-ibge-cnae-municipal-b2b-expansion-enricher` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "BrazilIbgeCnaeMunicipalB2bExpansionEnricherRequest": {
+        "type": "object",
+        "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Request Schema",
+        "description": "Input parameters for Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher.",
+        "properties": {
+          "cnaeCodes": {
+            "type": "string",
+            "title": "CNAE 2.3 Subclass Codes (CSV)",
+            "description": "Comma-separated 7-digit Brazilian CNAE codes (e.g., '6201501, 4711302, 8630503').",
+            "default": "6201501,4711302,8630503",
+            "example": "6201501,4711302,8630503"
+          },
+          "targetUf": {
+            "type": "string",
+            "title": "Target State UF (for IBGE Capital/Municipal Lookup)",
+            "description": "Two-letter Brazilian state UF code (e.g., SP, RJ, MG, PR).",
+            "default": "SP",
+            "example": "SP"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CNAE Codes to Enrich",
+            "description": "Maximum number of CNAE subclass records to return (1 to 50).",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 50,
+            "example": 5
+          }
+        },
+        "required": [
+          "cnaeCodes"
+        ],
+        "example": {
+          "cnaeCodes": "6201501,4711302,8630503",
+          "targetUf": "SP",
+          "maxResults": 5
+        }
+      },
+      "BrazilIbgeCnaeMunicipalB2bExpansionEnricherRecord": {
+        "type": "object",
+        "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Output Record",
+        "description": "Enriched B2B dataset item returned by `brazil-ibge-cnae-municipal-b2b-expansion-enricher`.",
+        "properties": {
+          "cnaeSubclassId": {
+            "type": "string",
+            "title": "CNAE 7-Digit Code",
+            "description": "Official 7-digit CNAE 2.3 subclass identifier.",
+            "example": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "cnaeDescription": {
+            "type": "string",
+            "title": "Official CNAE Description",
+            "description": "Official IBGE CONCLA subclass description.",
+            "example": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "sectionCode": {
+            "type": "string",
+            "title": "Macro Section",
+            "description": "IBGE macro economic section.",
+            "example": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "divisionDescription": {
+            "type": "string",
+            "title": "Economic Division",
+            "description": "IBGE 2-digit division description.",
+            "example": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "permittedActivitiesCount": {
+            "type": "integer",
+            "title": "Permitted Activities Count",
+            "description": "Total specific activities covered by this CNAE.",
+            "example": 88
+          },
+          "sampleActivities": {
+            "type": "string",
+            "title": "Sample Covered Activities",
+            "description": "Top activities included in this CNAE.",
+            "example": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "targetUf": {
+            "type": "string",
+            "title": "Target State UF",
+            "description": "Queried Brazilian state UF.",
+            "example": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "b2bFitScore": {
+            "type": "integer",
+            "title": "B2B Tax & Expansion Fit Score (0-100)",
+            "description": "Quantitative score for B2B segmentation and fiscal clarity (0-100).",
+            "example": 88
+          },
+          "markdownCnaeDossier": {
+            "type": "string",
+            "title": "Markdown Fiscal & B2B Segmentation Dossier",
+            "description": "Executive report for accountants, ERPs, and B2B lead segmentation.",
+            "example": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "permittedActivitiesCount": 88,
+          "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "b2bFitScore": 88,
+          "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "BrazilIbgeCnaeMunicipalB2bExpansionEnricherResponseEnvelope": {
+        "type": "object",
+        "title": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrazilIbgeCnaeMunicipalB2bExpansionEnricherRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "permittedActivitiesCount": 88,
+              "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "b2bFitScore": 88,
+              "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+    "version": "3.0.0",
+    "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).\n\n### Enterprise B2B Value Proposition (Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener)\n- **Target B2B Buyers:** Crypto Exchanges, Cross-Border Payment Gateways, Neobanks, and AML/KYC Compliance Officers.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Global OFAC / UN / EU Sanctions & PEP Entity Screened`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** ofac-sdn-sanctions, aml-kyc-screening, pep-watchlist, eu-un-sanctions, financial-crime-compliance, entity-screening, regtech-aml.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+    },
+    "x-category": "Cybersecurity",
+    "x-rapidapi-category": "Cybersecurity",
+    "x-zyla-category": "Security",
+    "x-seo-tags": [
+      "ofac-sdn-sanctions",
+      "aml-kyc-screening",
+      "pep-watchlist",
+      "eu-un-sanctions",
+      "financial-crime-compliance",
+      "entity-screening",
+      "regtech-aml"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\"\npayload = {\n    \"entityName\": \"Lazarus Group\",\n    \"entityType\": \"ANY\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-sanctions-pep-interpol-watchlist-screener.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Cybersecurity",
+      "description": "RapidAPI Hub primary category: Cybersecurity (Zyla Hub: Security)"
+    },
+    {
+      "name": "ofac-sdn-sanctions",
+      "description": "B2B SEO Search Tag: ofac-sdn-sanctions"
+    },
+    {
+      "name": "aml-kyc-screening",
+      "description": "B2B SEO Search Tag: aml-kyc-screening"
+    },
+    {
+      "name": "pep-watchlist",
+      "description": "B2B SEO Search Tag: pep-watchlist"
+    },
+    {
+      "name": "eu-un-sanctions",
+      "description": "B2B SEO Search Tag: eu-un-sanctions"
+    },
+    {
+      "name": "financial-crime-compliance",
+      "description": "B2B SEO Search Tag: financial-crime-compliance"
+    },
+    {
+      "name": "entity-screening",
+      "description": "B2B SEO Search Tag: entity-screening"
+    },
+    {
+      "name": "regtech-aml",
+      "description": "B2B SEO Search Tag: regtech-aml"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/global-sanctions-pep-interpol-watchlist-screener": {
+      "post": {
+        "operationId": "execute_global_sanctions_pep_interpol_watchlist_screener",
+        "summary": "Execute Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+        "description": "Synchronous stateless execution of **Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Cybersecurity",
+          "ofac-sdn-sanctions",
+          "aml-kyc-screening",
+          "pep-watchlist",
+          "eu-un-sanctions",
+          "financial-crime-compliance"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\"\npayload = {\n    \"entityName\": \"Lazarus Group\",\n    \"entityType\": \"ANY\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\"\npayload = {\n    \"entityName\": \"Lazarus Group\",\n    \"entityType\": \"ANY\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"entityName\": \"Lazarus Group\", \"entityType\": \"ANY\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `global-sanctions-pep-interpol-watchlist-screener`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalSanctionsPepInterpolWatchlistScreenerRequest"
+              },
+              "example": {
+                "entityName": "Lazarus Group",
+                "entityType": "ANY",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `global-sanctions-pep-interpol-watchlist-screener` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalSanctionsPepInterpolWatchlistScreenerResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "global-sanctions-pep-interpol-watchlist-screener",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "watchlistRecordId": "Verified Watchlist Record ID (global-sanctions-pep-interpol-watchlist-screener)",
+                      "entityQuery": "Verified Screened Query Name (global-sanctions-pep-interpol-watchlist-screener)",
+                      "matchedName": "Verified Matched Watchlist Entity Name (global-sanctions-pep-interpol-watchlist-screener)",
+                      "entityType": "Verified Entity Type (global-sanctions-pep-interpol-watchlist-screener)",
+                      "listSource": "Verified Sanctions Authority / List Source (global-sanctions-pep-interpol-watchlist-screener)",
+                      "sanctionsProgram": "Verified Sanctions Program / Designation (global-sanctions-pep-interpol-watchlist-screener)",
+                      "jurisdiction": "Verified Jurisdiction / Country ISO (global-sanctions-pep-interpol-watchlist-screener)",
+                      "matchSimilarityScore": 88,
+                      "amlRiskScore": 88,
+                      "screeningDecision": "Verified Automated AML Decision (global-sanctions-pep-interpol-watchlist-screener)",
+                      "markdownAmlBrief": "Verified Markdown AML & Sanctions Compliance Dossier (global-sanctions-pep-interpol-watchlist-screener)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/global-sanctions-pep-interpol-watchlist-screener/health": {
+      "get": {
+        "operationId": "health_global_sanctions_pep_interpol_watchlist_screener",
+        "summary": "Health & SLA Check for Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+        "description": "Lightweight health and schema readiness check for `global-sanctions-pep-interpol-watchlist-screener` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Cybersecurity"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "global-sanctions-pep-interpol-watchlist-screener"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Cybersecurity"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "global-sanctions-pep-interpol-watchlist-screener",
+                  "engineVersion": "3.0.0",
+                  "category": "Cybersecurity"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "GlobalSanctionsPepInterpolWatchlistScreenerRequest": {
+        "type": "object",
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Request Schema",
+        "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
+        "properties": {
+          "entityName": {
+            "type": "string",
+            "title": "Entity or Individual Name to Screen",
+            "description": "Organization, vessel, or individual name to screen for AML/KYC compliance (e.g., 'Lazarus Group', 'Garantex', 'Rosneft', 'Wagner').",
+            "default": "Lazarus Group",
+            "example": "Lazarus Group"
+          },
+          "entityType": {
+            "type": "string",
+            "title": "Entity Type Filter",
+            "description": "Filter by 'ANY', 'ORGANIZATION', 'INDIVIDUAL', or 'VESSEL'.",
+            "default": "ANY",
+            "example": "ANY"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Screening Records",
+            "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "entityName"
+        ],
+        "example": {
+          "entityName": "Lazarus Group",
+          "entityType": "ANY",
+          "maxResults": 5
+        }
+      },
+      "GlobalSanctionsPepInterpolWatchlistScreenerRecord": {
+        "type": "object",
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Output Record",
+        "description": "Enriched B2B dataset item returned by `global-sanctions-pep-interpol-watchlist-screener`.",
+        "properties": {
+          "watchlistRecordId": {
+            "type": "string",
+            "title": "Watchlist Record ID",
+            "description": "Official OFAC/UN/EU/OpenSanctions identifier.",
+            "example": "Verified Watchlist Record ID (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "entityQuery": {
+            "type": "string",
+            "title": "Screened Query Name",
+            "description": "Input name submitted for AML/KYC screening.",
+            "example": "Verified Screened Query Name (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "matchedName": {
+            "type": "string",
+            "title": "Matched Watchlist Entity Name",
+            "description": "Official designated name on the sanctions or PEP list.",
+            "example": "Verified Matched Watchlist Entity Name (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "entityType": {
+            "type": "string",
+            "title": "Entity Type",
+            "description": "ORGANIZATION, INDIVIDUAL, or VESSEL.",
+            "example": "Verified Entity Type (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "listSource": {
+            "type": "string",
+            "title": "Sanctions Authority / List Source",
+            "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP.",
+            "example": "Verified Sanctions Authority / List Source (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "sanctionsProgram": {
+            "type": "string",
+            "title": "Sanctions Program / Designation",
+            "description": "Specific regulatory program (e.g., CYBER2, DPRK3, RUSSIA-EO14024).",
+            "example": "Verified Sanctions Program / Designation (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction / Country ISO",
+            "description": "2-letter ISO country code associated with the designated entity.",
+            "example": "Verified Jurisdiction / Country ISO (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "matchSimilarityScore": {
+            "type": "integer",
+            "title": "Fuzzy Name Similarity (0-100)",
+            "description": "Token and Jaro-Winkler lexical similarity score (0-100).",
+            "example": 88
+          },
+          "amlRiskScore": {
+            "type": "integer",
+            "title": "AML Compliance Risk Score (0-100)",
+            "description": "Composite AML/CFT risk score (0-100).",
+            "example": 88
+          },
+          "screeningDecision": {
+            "type": "string",
+            "title": "Automated AML Decision",
+            "description": "BLOCK_SANCTIONED, ESCALATE_COMPLIANCE_REVIEW, or CLEAR_NO_HIT.",
+            "example": "Verified Automated AML Decision (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "markdownAmlBrief": {
+            "type": "string",
+            "title": "Markdown AML & Sanctions Compliance Dossier",
+            "description": "Executive Markdown AML/KYC audit trail for compliance officers and automated onboarding.",
+            "example": "Verified Markdown AML & Sanctions Compliance Dossier (global-sanctions-pep-interpol-watchlist-screener)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "watchlistRecordId": "Verified Watchlist Record ID (global-sanctions-pep-interpol-watchlist-screener)",
+          "entityQuery": "Verified Screened Query Name (global-sanctions-pep-interpol-watchlist-screener)",
+          "matchedName": "Verified Matched Watchlist Entity Name (global-sanctions-pep-interpol-watchlist-screener)",
+          "entityType": "Verified Entity Type (global-sanctions-pep-interpol-watchlist-screener)",
+          "listSource": "Verified Sanctions Authority / List Source (global-sanctions-pep-interpol-watchlist-screener)",
+          "sanctionsProgram": "Verified Sanctions Program / Designation (global-sanctions-pep-interpol-watchlist-screener)",
+          "jurisdiction": "Verified Jurisdiction / Country ISO (global-sanctions-pep-interpol-watchlist-screener)",
+          "matchSimilarityScore": 88,
+          "amlRiskScore": 88,
+          "screeningDecision": "Verified Automated AML Decision (global-sanctions-pep-interpol-watchlist-screener)",
+          "markdownAmlBrief": "Verified Markdown AML & Sanctions Compliance Dossier (global-sanctions-pep-interpol-watchlist-screener)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "GlobalSanctionsPepInterpolWatchlistScreenerResponseEnvelope": {
+        "type": "object",
+        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "global-sanctions-pep-interpol-watchlist-screener"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GlobalSanctionsPepInterpolWatchlistScreenerRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "global-sanctions-pep-interpol-watchlist-screener",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "watchlistRecordId": "Verified Watchlist Record ID (global-sanctions-pep-interpol-watchlist-screener)",
+              "entityQuery": "Verified Screened Query Name (global-sanctions-pep-interpol-watchlist-screener)",
+              "matchedName": "Verified Matched Watchlist Entity Name (global-sanctions-pep-interpol-watchlist-screener)",
+              "entityType": "Verified Entity Type (global-sanctions-pep-interpol-watchlist-screener)",
+              "listSource": "Verified Sanctions Authority / List Source (global-sanctions-pep-interpol-watchlist-screener)",
+              "sanctionsProgram": "Verified Sanctions Program / Designation (global-sanctions-pep-interpol-watchlist-screener)",
+              "jurisdiction": "Verified Jurisdiction / Country ISO (global-sanctions-pep-interpol-watchlist-screener)",
+              "matchSimilarityScore": 88,
+              "amlRiskScore": 88,
+              "screeningDecision": "Verified Automated AML Decision (global-sanctions-pep-interpol-watchlist-screener)",
+              "markdownAmlBrief": "Verified Markdown AML & Sanctions Compliance Dossier (global-sanctions-pep-interpol-watchlist-screener)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

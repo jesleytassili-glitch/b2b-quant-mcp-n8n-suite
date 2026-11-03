@@ -1,0 +1,1992 @@
+{
+  "name": "B2B Quant, Regulatory Compliance, FinTech & SecOps API Suite (@b2b-quant-apis)",
+  "description": "Production suite of 31 Stateless B2B Regulatory Compliance, KYB, Sanctions AML, GovCon (SAM.gov / EU TED / Brazil PNCP), SEC EDGAR, UK Companies House/FCA, US OSHA, SSL/TLS CT Attack Surface, Healthcare (ClinicalTrials.gov / OpenFDA / NPI / TISS), and Brazil Central Bank (BCB / PIX / CNPJ / IBGE / Tax Reform) OpenAPI 3.0.3 Engines settled in USD via RapidAPI Hub, Zyla API Hub, Postman Public API Network, and Wise #890361113.",
+  "url": "https://jesleytassili-glitch.github.io/apis.json",
+  "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+  "specificationVersion": "0.16",
+  "created": "2026-01-15",
+  "modified": "2026-11-01",
+  "tags": [
+    "b2b-api",
+    "openapi",
+    "openapi3",
+    "rapidapi",
+    "zyla-hub",
+    "postman",
+    "apis-guru",
+    "kyb",
+    "compliance",
+    "fintech",
+    "secops",
+    "healthcare",
+    "govcon",
+    "mcp",
+    "x402"
+  ],
+  "maintainers": [
+    {
+      "FN": "Jesley Aguileira (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis",
+      "github": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+      "payoutDestination": "Wise #890361113"
+    }
+  ],
+  "totalApis": 31,
+  "apis": [
+    {
+      "name": "Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+      "slug": "b2b-gov-procurement-pncp-radar",
+      "description": "Extracts, filters, and enriches live Brazilian government public tenders (Pregão Eletrônico, Dispensa - Lei 14.133) from the official PNCP API with item-level pricing, ME/EPP flags, and LLM-ready RAG Markdown briefs.\n\n### Enterprise B2B Value Proposition (Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server))\n- **Target B2B Buyers:** GovCon Capture Teams, B2B Sales Intelligence Platforms, and ERP Tender Modules.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Public Tender Analyzed & Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-procurement, pncp, public-tenders, b2g-leads, government-contracts, lei-14133, bidding-radar.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-gov-procurement-pncp-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar",
+      "version": "3.0.0",
+      "tags": [
+        "brazil-procurement",
+        "pncp",
+        "public-tenders",
+        "b2g-leads",
+        "government-contracts",
+        "lei-14133",
+        "bidding-radar"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-gov-procurement-pncp-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-gov-procurement-pncp-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/b2b-gov-procurement-pncp-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/b2b-gov-procurement-pncp-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+        }
+      ]
+    },
+    {
+      "name": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+      "slug": "brazil-tax-reform-ncm-classtrib-auditor",
+      "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.\n\n### Enterprise B2B Value Proposition (Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor)\n- **Target B2B Buyers:** Tax Automation ERPs, Accounting SaaS, eCommerce Checkout Engines, and Big4 Tax Auditors.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`NCM / NF-e Item Audited (LC 214/2025)`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Taxes & Compliance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-tax-reform, ncm-auditor, ibs-cbs, classtrib, nfe-compliance, lc-214-2025, erp-tax-engine.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-tax-reform-ncm-classtrib-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "brazil-tax-reform",
+        "ncm-auditor",
+        "ibs-cbs",
+        "classtrib",
+        "nfe-compliance",
+        "lc-214-2025",
+        "erp-tax-engine"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-tax-reform-ncm-classtrib-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-tax-reform-ncm-classtrib-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-tax-reform-ncm-classtrib-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+      "slug": "healthcare-tiss-xml-validator",
+      "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).\n\n### Enterprise B2B Value Proposition (Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer)\n- **Target B2B Buyers:** Hospital Revenue Cycle Management (RCM) Systems, HealthTech Insurers, and Medical Billing Platforms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`TISS 4.03.00 XML Lot Validated & Hash Repaired`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** healthcare-billing, ans-tiss-xml, medical-claims, glosa-prevention, tuss-validator, epilogo-hash, hospital-rcm.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/healthcare-tiss-xml-validator.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator",
+      "version": "3.0.0",
+      "tags": [
+        "healthcare-billing",
+        "ans-tiss-xml",
+        "medical-claims",
+        "glosa-prevention",
+        "tuss-validator",
+        "epilogo-hash",
+        "hospital-rcm"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/healthcare-tiss-xml-validator.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/healthcare-tiss-xml-validator.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/healthcare-tiss-xml-validator"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/healthcare-tiss-xml-validator"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/healthcare-tiss-xml-validator"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/healthcare-tiss-xml-validator"
+        }
+      ]
+    },
+    {
+      "name": "Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor",
+      "slug": "brazil-antt-freight-cte-auditor",
+      "description": "Calculates the mandatory Brazilian ANTT minimum road freight floor (Lei 13.703/2018 - CCD x km + CC) and audits CT-e 4.00 XML invoices in batch to prevent automatic ANTT/SEFAZ fines.\n\n### Enterprise B2B Value Proposition (Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor)\n- **Target B2B Buyers:** Transportation Management Systems (TMS), 3PL Logistics Operators, and Supply Chain Controllers.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`ANTT Freight Route / CT-e Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** freight-audit, antt-minimum-floor, cte-xml, logistics-compliance, road-transport, tms-integration, shipping-cost.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-antt-freight-cte-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-antt-freight-cte-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "freight-audit",
+        "antt-minimum-floor",
+        "cte-xml",
+        "logistics-compliance",
+        "road-transport",
+        "tms-integration",
+        "shipping-cost"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-antt-freight-cte-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-antt-freight-cte-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-antt-freight-cte-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-antt-freight-cte-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-antt-freight-cte-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-antt-freight-cte-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-antt-freight-cte-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-antt-freight-cte-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-antt-freight-cte-auditor"
+        }
+      ]
+    },
+    {
+      "name": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+      "slug": "us-healthcare-npi-provider-lead-enricher",
+      "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.\n\n### Enterprise B2B Value Proposition (US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API))\n- **Target B2B Buyers:** MedTech Sales Teams, Healthcare CRMs, Credentialing Platforms, and Digital Health Directories.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`US NPI Healthcare Provider Lead Enriched`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** npi-registry, nppes-cms, healthcare-leads, medical-providers, doctor-lookup, hipaa-kyb, pharma-crm.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-healthcare-npi-provider-lead-enricher.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher",
+      "version": "3.0.0",
+      "tags": [
+        "npi-registry",
+        "nppes-cms",
+        "healthcare-leads",
+        "medical-providers",
+        "doctor-lookup",
+        "hipaa-kyb",
+        "pharma-crm"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-healthcare-npi-provider-lead-enricher.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-healthcare-npi-provider-lead-enricher"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-healthcare-npi-provider-lead-enricher"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+        }
+      ]
+    },
+    {
+      "name": "US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+      "slug": "us-fda-recalls-safety-monitor",
+      "description": "Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance.\n\n### Enterprise B2B Value Proposition (US FDA Recalls & Safety Monitor (Food, Drug & Devices))\n- **Target B2B Buyers:** Pharmaceutical Compliance Teams, Hospital Pharmacies, Retail Supply Chains, and InsurTech Underwriters.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`US FDA Enforcement Recall Extracted`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** fda-recalls, openfda, drug-safety, medical-device-recalls, food-safety, supply-chain-risk, pharmacovigilance.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fda-recalls-safety-monitor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fda-recalls-safety-monitor",
+      "version": "3.0.0",
+      "tags": [
+        "fda-recalls",
+        "openfda",
+        "drug-safety",
+        "medical-device-recalls",
+        "food-safety",
+        "supply-chain-risk",
+        "pharmacovigilance"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fda-recalls-safety-monitor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fda-recalls-safety-monitor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-fda-recalls-safety-monitor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fda-recalls-safety-monitor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-fda-recalls-safety-monitor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-fda-recalls-safety-monitor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-fda-recalls-safety-monitor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fda-recalls-safety-monitor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-fda-recalls-safety-monitor"
+        }
+      ]
+    },
+    {
+      "name": "Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+      "slug": "global-b2b-email-domain-security-auditor",
+      "description": "High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies.\n\n### Enterprise B2B Value Proposition (Global B2B Email, MX, SPF & DMARC Deliverability Auditor)\n- **Target B2B Buyers:** B2B Outbound Platforms, FinTech Onboarding Anti-Fraud Engines, and SOC Security Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`B2B Email / Corporate Domain Audited`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** email-verification, dmarc-spf-mx, domain-security, disposable-email, kyb-fraud-prevention, b2b-lead-hygiene, secops.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-b2b-email-domain-security-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-b2b-email-domain-security-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "email-verification",
+        "dmarc-spf-mx",
+        "domain-security",
+        "disposable-email",
+        "kyb-fraud-prevention",
+        "b2b-lead-hygiene",
+        "secops"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-b2b-email-domain-security-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-b2b-email-domain-security-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-b2b-email-domain-security-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-b2b-email-domain-security-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/global-b2b-email-domain-security-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/global-b2b-email-domain-security-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/global-b2b-email-domain-security-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/global-b2b-email-domain-security-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/global-b2b-email-domain-security-auditor"
+        }
+      ]
+    },
+    {
+      "name": "US ClinicalTrials.gov Biotech & Pharma Study Radar",
+      "slug": "us-clinical-trials-biotech-radar",
+      "description": "B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.\n\n### Enterprise B2B Value Proposition (US ClinicalTrials.gov Biotech & Pharma Study Radar)\n- **Target B2B Buyers:** Contract Research Organizations (CROs), Biotech Venture Capitalists, and Pharma BD&L Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Clinical Trial & Biotech Sponsor Extracted`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** clinical-trials, biotech-intelligence, nih-clinicaltrials, pharma-pipeline, cro-leads, phase2-phase3, life-sciences.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-clinical-trials-biotech-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-clinical-trials-biotech-radar",
+      "version": "3.0.0",
+      "tags": [
+        "clinical-trials",
+        "biotech-intelligence",
+        "nih-clinicaltrials",
+        "pharma-pipeline",
+        "cro-leads",
+        "phase2-phase3",
+        "life-sciences"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-clinical-trials-biotech-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-clinical-trials-biotech-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-clinical-trials-biotech-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-clinical-trials-biotech-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-clinical-trials-biotech-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-clinical-trials-biotech-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-clinical-trials-biotech-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-clinical-trials-biotech-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-clinical-trials-biotech-radar"
+        }
+      ]
+    },
+    {
+      "name": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+      "slug": "us-nhtsa-vehicle-vin-recall-auditor",
+      "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.\n\n### Enterprise B2B Value Proposition (US NHTSA Vehicle VIN Decoder & Safety Recall Auditor)\n- **Target B2B Buyers:** Auto InsurTechs, Commercial Fleet Managers, Automotive Marketplaces, and Lending Underwriters.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Vehicle VIN Decoded & Recall Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** vin-decoder, nhtsa-recalls, vehicle-safety, fleet-management, auto-insurance, automotive-kyb, vpic-api.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-nhtsa-vehicle-vin-recall-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "vin-decoder",
+        "nhtsa-recalls",
+        "vehicle-safety",
+        "fleet-management",
+        "auto-insurance",
+        "automotive-kyb",
+        "vpic-api"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-nhtsa-vehicle-vin-recall-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-nhtsa-vehicle-vin-recall-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-nhtsa-vehicle-vin-recall-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+      "slug": "brazil-b2b-cnpj-qsa-lead-enricher",
+      "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n### Enterprise B2B Value Proposition (Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher)\n- **Target B2B Buyers:** FinTech KYB Onboarding Flows, B2B Credit Bureaus, and Enterprise CRM Enrichment Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazilian CNPJ & Partners (QSA) Lead Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cnpj-lookup, receita-federal, qsa-ubo-partners, brazil-kyb, company-enrichment, cnae-lookup, b2b-credit-risk.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-b2b-cnpj-qsa-lead-enricher.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher",
+      "version": "3.0.0",
+      "tags": [
+        "cnpj-lookup",
+        "receita-federal",
+        "qsa-ubo-partners",
+        "brazil-kyb",
+        "company-enrichment",
+        "cnae-lookup",
+        "b2b-credit-risk"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-b2b-cnpj-qsa-lead-enricher.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-b2b-cnpj-qsa-lead-enricher"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-b2b-cnpj-qsa-lead-enricher"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher"
+        }
+      ]
+    },
+    {
+      "name": "US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+      "slug": "us-sec-edgar-filings-insider-radar",
+      "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.\n\n### Enterprise B2B Value Proposition (US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4))\n- **Target B2B Buyers:** Quantitative Hedge Funds, Equity Research Platforms, WealthTech Apps, and M&A Advisory Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`SEC EDGAR Filing & Governance Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** sec-edgar, 10k-10q-8k, form-4-insider, quantitative-finance, corporate-governance, cik-lookup, equity-research.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sec-edgar-filings-insider-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar",
+      "version": "3.0.0",
+      "tags": [
+        "sec-edgar",
+        "10k-10q-8k",
+        "form-4-insider",
+        "quantitative-finance",
+        "corporate-governance",
+        "cik-lookup",
+        "equity-research"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sec-edgar-filings-insider-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sec-edgar-filings-insider-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-sec-edgar-filings-insider-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-sec-edgar-filings-insider-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-sec-edgar-filings-insider-radar"
+        }
+      ]
+    },
+    {
+      "name": "EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+      "slug": "eu-vies-vat-tax-compliance-auditor",
+      "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.\n\n### Enterprise B2B Value Proposition (EU VIES VAT Number Validator & Reverse Charge Tax Auditor)\n- **Target B2B Buyers:** European B2B SaaS Billing Engines, Cross-Border Marketplaces, and ERP Tax Compliance Modules.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EU VIES VAT & Reverse Charge Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Taxes & Compliance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** eu-vat-validation, vies-api, reverse-charge, cross-border-tax, european-kyb, vat-compliance, b2b-invoicing.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-vies-vat-tax-compliance-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "eu-vat-validation",
+        "vies-api",
+        "reverse-charge",
+        "cross-border-tax",
+        "european-kyb",
+        "vat-compliance",
+        "b2b-invoicing"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-vies-vat-tax-compliance-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/eu-vies-vat-tax-compliance-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/eu-vies-vat-tax-compliance-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/eu-vies-vat-tax-compliance-auditor"
+        }
+      ]
+    },
+    {
+      "name": "US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+      "slug": "us-epa-echo-environmental-compliance-auditor",
+      "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).\n\n### Enterprise B2B Value Proposition (US EPA ECHO Environmental Compliance & ESG Penalty Auditor)\n- **Target B2B Buyers:** ESG Rating Agencies, Institutional Investors, Environmental Law Firms, and Supply Chain Risk Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EPA Industrial Facility ESG & Penalty Audited`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** epa-echo, esg-compliance, environmental-risk, clean-air-water-act, rcra-hazmat, industrial-due-diligence, supply-chain-esg.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-epa-echo-environmental-compliance-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "epa-echo",
+        "esg-compliance",
+        "environmental-risk",
+        "clean-air-water-act",
+        "rcra-hazmat",
+        "industrial-due-diligence",
+        "supply-chain-esg"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-epa-echo-environmental-compliance-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-epa-echo-environmental-compliance-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-epa-echo-environmental-compliance-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-epa-echo-environmental-compliance-auditor"
+        }
+      ]
+    },
+    {
+      "name": "US FDIC BankFind Institution & Solvency Risk Auditor",
+      "slug": "us-fdic-bankfind-institution-financial-auditor",
+      "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.\n\n### Enterprise B2B Value Proposition (US FDIC BankFind Institution & Solvency Risk Auditor)\n- **Target B2B Buyers:** Corporate Treasurers, CFOs, Institutional Counterparty Risk Teams, and FinTech Payment Routers.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`FDIC Insured Bank Solvency & Treasury Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** fdic-bankfind, bank-solvency, treasury-risk, tier1-capital, banking-kyb, counterparty-risk, us-banks.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fdic-bankfind-institution-financial-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fdic-bankfind-institution-financial-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "fdic-bankfind",
+        "bank-solvency",
+        "treasury-risk",
+        "tier1-capital",
+        "banking-kyb",
+        "counterparty-risk",
+        "us-banks"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-fdic-bankfind-institution-financial-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-fdic-bankfind-institution-financial-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-fdic-bankfind-institution-financial-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor"
+        }
+      ]
+    },
+    {
+      "name": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+      "slug": "us-sam-gov-federal-procurement-auditor",
+      "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.\n\n### Enterprise B2B Value Proposition (US Federal Contracts & SAM.gov Procurement B2G Radar)\n- **Target B2B Buyers:** U.S. Federal Defense Contractors, GovCon BD Teams, and Public Sector Market Intelligence Platforms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Federal Contract Award & B2G Audited`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** sam-gov, usaspending, federal-contracts, govcon-intelligence, naics-psc, b2g-procurement, defense-contracts.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sam-gov-federal-procurement-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "sam-gov",
+        "usaspending",
+        "federal-contracts",
+        "govcon-intelligence",
+        "naics-psc",
+        "b2g-procurement",
+        "defense-contracts"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sam-gov-federal-procurement-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-sam-gov-federal-procurement-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-sam-gov-federal-procurement-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+      "slug": "multi-ats-tech-job-board-hiring-radar",
+      "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.\n\n### Enterprise B2B Value Proposition (Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar)\n- **Target B2B Buyers:** B2B Outbound Sales Teams, Executive Search Firms, Venture Capitalists, and RevOps Data Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Tech Job Requisition & B2B Hiring Signal Extracted`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** hiring-signals, greenhouse-ats, tech-jobs-api, b2b-buying-intent, recruiting-intelligence, sales-triggers, revops.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/multi-ats-tech-job-board-hiring-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar",
+      "version": "3.0.0",
+      "tags": [
+        "hiring-signals",
+        "greenhouse-ats",
+        "tech-jobs-api",
+        "b2b-buying-intent",
+        "recruiting-intelligence",
+        "sales-triggers",
+        "revops"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/multi-ats-tech-job-board-hiring-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/multi-ats-tech-job-board-hiring-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/multi-ats-tech-job-board-hiring-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/multi-ats-tech-job-board-hiring-radar"
+        }
+      ]
+    },
+    {
+      "name": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+      "slug": "global-gleif-lei-corporate-ownership-kyb",
+      "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor)\n- **Target B2B Buyers:** Global Investment Banks, RegTech KYB Platforms, Crypto Institutional Desks, and Trade Finance Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Global GLEIF LEI Corporate Entity Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** gleif-lei, legal-entity-identifier, global-kyb, corporate-ownership, mifid-ii-emir, parent-subsidiary, aml-onboarding.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-gleif-lei-corporate-ownership-kyb.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb",
+      "version": "3.0.0",
+      "tags": [
+        "gleif-lei",
+        "legal-entity-identifier",
+        "global-kyb",
+        "corporate-ownership",
+        "mifid-ii-emir",
+        "parent-subsidiary",
+        "aml-onboarding"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-gleif-lei-corporate-ownership-kyb.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/global-gleif-lei-corporate-ownership-kyb"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/global-gleif-lei-corporate-ownership-kyb"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+        }
+      ]
+    },
+    {
+      "name": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+      "slug": "us-census-fcc-real-estate-geo-enricher",
+      "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n### Enterprise B2B Value Proposition (US Real Estate Census Tract, FIPS & PropTech Geo Enricher)\n- **Target B2B Buyers:** PropTech Platforms, Mortgage Lenders (HMDA/CRA Compliance), Real Estate REITs, and Site Selection Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Real Estate Census Tract & FIPS Enriched`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** us-census-fips, fcc-area-api, real-estate-analytics, geospatial-enrichment, census-tract, proptech, mortgage-hmda.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-census-fcc-real-estate-geo-enricher.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher",
+      "version": "3.0.0",
+      "tags": [
+        "us-census-fips",
+        "fcc-area-api",
+        "real-estate-analytics",
+        "geospatial-enrichment",
+        "census-tract",
+        "proptech",
+        "mortgage-hmda"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-census-fcc-real-estate-geo-enricher.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-census-fcc-real-estate-geo-enricher"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-census-fcc-real-estate-geo-enricher"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+        }
+      ]
+    },
+    {
+      "name": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+      "slug": "icann-rdap-domain-whois-brand-recon",
+      "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor)\n- **Target B2B Buyers:** Brand Protection Agencies, SOC Threat Hunters, Fraud Prevention Engines, and Domain Registrars.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`ICANN RDAP Official Domain WHOIS Audited`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** icann-rdap, whois-lookup, domain-age, brand-protection, dnssec-audit, anti-phishing, threat-intelligence.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/icann-rdap-domain-whois-brand-recon.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon",
+      "version": "3.0.0",
+      "tags": [
+        "icann-rdap",
+        "whois-lookup",
+        "domain-age",
+        "brand-protection",
+        "dnssec-audit",
+        "anti-phishing",
+        "threat-intelligence"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/icann-rdap-domain-whois-brand-recon.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/icann-rdap-domain-whois-brand-recon"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/icann-rdap-domain-whois-brand-recon"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/icann-rdap-domain-whois-brand-recon"
+        }
+      ]
+    },
+    {
+      "name": "US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar",
+      "slug": "cisa-kev-ransomware-vulnerability-auditor",
+      "description": "Audits IT vendors and software stacks against the official U.S. CISA Known Exploited Vulnerabilities (KEV) Catalog (Zero-Key). Flags active ransomware campaigns, BOD 22-01/26-04 patch deadlines, CWEs, and Threat Severity Scores (0-100).\n\n### Enterprise B2B Value Proposition (US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar)\n- **Target B2B Buyers:** CISOs, Vulnerability Management Platforms, MSSPs, and Cyber Insurance Underwriters.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`CISA KEV Exploited CVE & Ransomware Audited`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cisa-kev, cve-vulnerability, ransomware-audit, patch-management, bod-22-01, secops-threat-intel, exploit-catalog.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/cisa-kev-ransomware-vulnerability-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/cisa-kev-ransomware-vulnerability-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "cisa-kev",
+        "cve-vulnerability",
+        "ransomware-audit",
+        "patch-management",
+        "bod-22-01",
+        "secops-threat-intel",
+        "exploit-catalog"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/cisa-kev-ransomware-vulnerability-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/cisa-kev-ransomware-vulnerability-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/cisa-kev-ransomware-vulnerability-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer",
+      "slug": "brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "description": "Fetches official Central Bank of Brazil (BCB SGS & Olinda) macroeconomic series (Selic, CDI, IPCA, IGP-M, PTAX USD/EUR) and calculates automated B2B contract, lease, and treasury monetary adjustments.\n\n### Enterprise B2B Value Proposition (Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer)\n- **Target B2B Buyers:** Real Estate ERPs, LegalTech Contract Management Systems, FX Desks, and Brazilian FinTechs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`BCB PTAX, Selic, CDI or IPCA Contract Index Calculated`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** banco-central-brasil, ptax-usd-brl, selic-cdi-ipca, igpm-indexer, contract-readjustment, brazil-macro-api, fintech-rates.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-bcb-ptax-sgs-financial-contract-indexer.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-bcb-ptax-sgs-financial-contract-indexer",
+      "version": "3.0.0",
+      "tags": [
+        "banco-central-brasil",
+        "ptax-usd-brl",
+        "selic-cdi-ipca",
+        "igpm-indexer",
+        "contract-readjustment",
+        "brazil-macro-api",
+        "fintech-rates"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-bcb-ptax-sgs-financial-contract-indexer.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-bcb-ptax-sgs-financial-contract-indexer"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-bcb-ptax-sgs-financial-contract-indexer"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer"
+        }
+      ]
+    },
+    {
+      "name": "Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+      "slug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor)\n- **Target B2B Buyers:** Payment Service Providers (PSPs), Banking-as-a-Service (BaaS) Platforms, and Treasury Reconciliation Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil Pix ISPB & SPI Financial Institution Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Finance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-pix-ispb, str-spi-participants, bank-routing-kyb, bacen-institutions, payment-clearing, fintech-compliance, compe-ispb.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-pix-ispb-cvm-financial-kyb-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "brazil-pix-ispb",
+        "str-spi-participants",
+        "bank-routing-kyb",
+        "bacen-institutions",
+        "payment-clearing",
+        "fintech-compliance",
+        "compe-ispb"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-pix-ispb-cvm-financial-kyb-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+      "slug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.\n\n### Enterprise B2B Value Proposition (Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher)\n- **Target B2B Buyers:** Accounting Automation Platforms, B2B Lead Scoring Engines, and Franchise Expansion Analysts.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil IBGE CNAE 2.3 Subclass & Tax Activity Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** ibge-cnae, concla-subclass, brazil-tax-activities, municipal-expansion, b2b-market-sizing, company-classification, simples-nacional.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-ibge-cnae-municipal-b2b-expansion-enricher.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+      "version": "3.0.0",
+      "tags": [
+        "ibge-cnae",
+        "concla-subclass",
+        "brazil-tax-activities",
+        "municipal-expansion",
+        "b2b-market-sizing",
+        "company-classification",
+        "simples-nacional"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-ibge-cnae-municipal-b2b-expansion-enricher.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+        }
+      ]
+    },
+    {
+      "name": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+      "slug": "brazil-cep-geocoordinates-logistics-auditor",
+      "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor)\n- **Target B2B Buyers:** eCommerce Checkout Flows, Last-Mile Delivery Routers, NF-e Issuers, and Retail Omni-Channel ERPs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil CEP Geocoordinates & IBGE City Code Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-cep-lookup, postal-geocoding, ibge-municipality-code, nfe-address-validator, last-mile-logistics, ddd-lookup, ecommerce-checkout.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-cep-geocoordinates-logistics-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "brazil-cep-lookup",
+        "postal-geocoding",
+        "ibge-municipality-code",
+        "nfe-address-validator",
+        "last-mile-logistics",
+        "ddd-lookup",
+        "ecommerce-checkout"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-cep-geocoordinates-logistics-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-cep-geocoordinates-logistics-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-cep-geocoordinates-logistics-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Brazil Congress Legislative Bills & Tax Regulatory Risk Radar",
+      "slug": "brazil-camara-legislative-regulatory-risk-radar",
+      "description": "Monitors Brazilian Chamber of Deputies (Camara dos Deputados API v2) legislative bills (PL, PLP, PEC, MPV). Filters by sector/tax keyword, extracts official summary (ementa), presentation date, and Regulatory Risk Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil Congress Legislative Bills & Tax Regulatory Risk Radar)\n- **Target B2B Buyers:** Government Relations (RIG) Teams, Corporate Legal Departments, Institutional Funds, and Law Firms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil Congress Legislative Bill & Tax Risk Analyzed`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-congress-api, camara-deputados, legislative-radar, regulatory-risk, public-policy-tracker, gov-relations, pec-pl-plp.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-camara-legislative-regulatory-risk-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-camara-legislative-regulatory-risk-radar",
+      "version": "3.0.0",
+      "tags": [
+        "brazil-congress-api",
+        "camara-deputados",
+        "legislative-radar",
+        "regulatory-risk",
+        "public-policy-tracker",
+        "gov-relations",
+        "pec-pl-plp"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-camara-legislative-regulatory-risk-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/brazil-camara-legislative-regulatory-risk-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/brazil-camara-legislative-regulatory-risk-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar"
+        }
+      ]
+    },
+    {
+      "name": "US OSHA Workplace Safety & Violation Compliance Auditor",
+      "slug": "us-osha-workplace-safety-violation-auditor",
+      "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).\n\n### Enterprise B2B Value Proposition (US OSHA Workplace Safety & Violation Compliance Auditor)\n- **Target B2B Buyers:** Commercial Insurance Underwriters (Workers' Comp), EHS Compliance Platforms, and M&A Due Diligence Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`US OSHA Establishment Safety & Penalty Audited`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** osha-violations, workplace-safety, ehs-compliance, industrial-inspections, workers-comp-underwriting, supply-chain-audit, dol-osha.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-osha-workplace-safety-violation-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "osha-violations",
+        "workplace-safety",
+        "ehs-compliance",
+        "industrial-inspections",
+        "workers-comp-underwriting",
+        "supply-chain-audit",
+        "dol-osha"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-osha-workplace-safety-violation-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/us-osha-workplace-safety-violation-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/us-osha-workplace-safety-violation-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+        }
+      ]
+    },
+    {
+      "name": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+      "slug": "eu-ted-public-tenders-procurement-radar",
+      "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.\n\n### Enterprise B2B Value Proposition (EU TED Public Tenders & B2G Procurement Intelligence Radar)\n- **Target B2B Buyers:** European B2G Bid Teams, Multinational IT Integrators, and Global Public Procurement Aggregators.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EU TED Public Procurement Notice Analyzed`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** eu-ted-tenders, european-procurement, cpv-codes, public-sector-bids, b2g-europe, official-journal-ojs, government-rfp.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-ted-public-tenders-procurement-radar.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar",
+      "version": "3.0.0",
+      "tags": [
+        "eu-ted-tenders",
+        "european-procurement",
+        "cpv-codes",
+        "public-sector-bids",
+        "b2g-europe",
+        "official-journal-ojs",
+        "government-rfp"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-ted-public-tenders-procurement-radar.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/eu-ted-public-tenders-procurement-radar"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/eu-ted-public-tenders-procurement-radar"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+        }
+      ]
+    },
+    {
+      "name": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+      "slug": "uk-fca-companies-house-kyb-compliance-auditor",
+      "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.\n\n### Enterprise B2B Value Proposition (UK Companies House & FCA Corporate KYB Compliance Auditor)\n- **Target B2B Buyers:** UK/EU FinTechs, Commercial Banks, Legal Conveyancing Platforms, and Vendor Onboarding Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`UK Companies House CRN & FCA KYB Entity Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** uk-companies-house, crn-lookup, uk-kyb-verification, fca-compliance, british-corporate-registry, gleif-uk, aml-due-diligence.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/uk-fca-companies-house-kyb-compliance-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/uk-fca-companies-house-kyb-compliance-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "uk-companies-house",
+        "crn-lookup",
+        "uk-kyb-verification",
+        "fca-compliance",
+        "british-corporate-registry",
+        "gleif-uk",
+        "aml-due-diligence"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/uk-fca-companies-house-kyb-compliance-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/uk-fca-companies-house-kyb-compliance-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/uk-fca-companies-house-kyb-compliance-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor"
+        }
+      ]
+    },
+    {
+      "name": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+      "slug": "global-sanctions-pep-interpol-watchlist-screener",
+      "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).\n\n### Enterprise B2B Value Proposition (Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener)\n- **Target B2B Buyers:** Crypto Exchanges, Cross-Border Payment Gateways, Neobanks, and AML/KYC Compliance Officers.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Global OFAC / UN / EU Sanctions & PEP Entity Screened`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** ofac-sdn-sanctions, aml-kyc-screening, pep-watchlist, eu-un-sanctions, financial-crime-compliance, entity-screening, regtech-aml.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-sanctions-pep-interpol-watchlist-screener.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener",
+      "version": "3.0.0",
+      "tags": [
+        "ofac-sdn-sanctions",
+        "aml-kyc-screening",
+        "pep-watchlist",
+        "eu-un-sanctions",
+        "financial-crime-compliance",
+        "entity-screening",
+        "regtech-aml"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-sanctions-pep-interpol-watchlist-screener.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/global-sanctions-pep-interpol-watchlist-screener"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/global-sanctions-pep-interpol-watchlist-screener"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener"
+        }
+      ]
+    },
+    {
+      "name": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+      "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).\n\n### Enterprise B2B Value Proposition (B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor)\n- **Target B2B Buyers:** External Attack Surface Management (EASM) Platforms, Penetration Testers, Bug Bounty Automation, and SOCs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`B2B SSL/TLS CT Log Subdomain & Attack Surface Audited`).\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** certificate-transparency, subdomain-discovery, attack-surface-management, easm-recon, shadow-it-audit, ssl-tls-monitor, secops-api.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+      "version": "3.0.0",
+      "tags": [
+        "certificate-transparency",
+        "subdomain-discovery",
+        "attack-surface-management",
+        "easm-recon",
+        "shadow-it-audit",
+        "ssl-tls-monitor",
+        "secops-api"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+        }
+      ]
+    },
+    {
+      "name": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+      "slug": "b2b-quant-mcp-server",
+      "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.\n\n### Enterprise B2B Value Proposition (B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools))\n- **Target B2B Buyers:** AI Agent Builders, Enterprise LLM Orchestration Teams, and Multi-Agent FinTech/SecOps Platforms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`MCP Master Router Tool Discovery or Dispatch Executed`).\n- **Marketplace Categories:** RapidAPI `Artificial Intelligence/Machine Learning` | Zyla API Hub `AI & Machine Learning`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** mcp-server, model-context-protocol, ai-agent-tools, b2b-compliance-suite, claude-cursor-tools, langchain-b2b, autonomous-agents.",
+      "image": "https://jesleytassili-glitch.github.io/favicon.ico",
+      "humanURL": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-quant-mcp-server.html",
+      "baseURL": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-quant-mcp-server",
+      "version": "3.0.0",
+      "tags": [
+        "mcp-server",
+        "model-context-protocol",
+        "ai-agent-tools",
+        "b2b-compliance-suite",
+        "claude-cursor-tools",
+        "langchain-b2b",
+        "autonomous-agents"
+      ],
+      "properties": [
+        {
+          "type": "OpenAPI",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-quant-mcp-server.json"
+        },
+        {
+          "type": "Swagger",
+          "url": "https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-quant-mcp-server.json"
+        },
+        {
+          "type": "OpenAPI-Mirror",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/b2b-quant-mcp-server.json"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/b2b-quant-mcp-server.html"
+        },
+        {
+          "type": "Pricing",
+          "url": "https://jesleytassili-glitch.github.io/pricing_plans_manifest.json"
+        },
+        {
+          "type": "X-RapidAPI-Category",
+          "url": "https://rapidapi.com/search/b2b-quant-mcp-server"
+        },
+        {
+          "type": "X-Zyla-Category",
+          "url": "https://zylalabs.com/api-marketplace/b2b-quant-mcp-server"
+        },
+        {
+          "type": "X-Apify-Actor",
+          "url": "https://apify.com/b2b-quant-apis/b2b-quant-mcp-server"
+        },
+        {
+          "type": "X-MCP-Server",
+          "url": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "B2B Quant APIs (@b2b-quant-apis)",
+          "email": "jesleytassili@gmail.com",
+          "url": "https://apify.com/b2b-quant-apis/b2b-quant-mcp-server"
+        }
+      ]
+    }
+  ],
+  "include": []
+}

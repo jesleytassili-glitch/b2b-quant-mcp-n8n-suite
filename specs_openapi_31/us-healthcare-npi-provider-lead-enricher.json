@@ -1,0 +1,606 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+    "version": "3.0.0",
+    "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.\n\n### Enterprise B2B Value Proposition (US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API))\n- **Target B2B Buyers:** MedTech Sales Teams, Healthcare CRMs, Credentialing Platforms, and Digital Health Directories.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`US NPI Healthcare Provider Lead Enriched`).\n- **Marketplace Categories:** RapidAPI `Medical` | Zyla API Hub `Healthcare`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** npi-registry, nppes-cms, healthcare-leads, medical-providers, doctor-lookup, hipaa-kyb, pharma-crm.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-healthcare-npi-provider-lead-enricher"
+    },
+    "x-category": "Medical",
+    "x-rapidapi-category": "Medical",
+    "x-zyla-category": "Healthcare",
+    "x-seo-tags": [
+      "npi-registry",
+      "nppes-cms",
+      "healthcare-leads",
+      "medical-providers",
+      "doctor-lookup",
+      "hipaa-kyb",
+      "pharma-crm"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\"\npayload = {\n    \"state\": \"FL\",\n    \"city\": \"Miami\",\n    \"taxonomyDescription\": \"Dentist\",\n    \"enumerationType\": \"ALL\",\n    \"postalCode\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-healthcare-npi-provider-lead-enricher.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Medical",
+      "description": "RapidAPI Hub primary category: Medical (Zyla Hub: Healthcare)"
+    },
+    {
+      "name": "npi-registry",
+      "description": "B2B SEO Search Tag: npi-registry"
+    },
+    {
+      "name": "nppes-cms",
+      "description": "B2B SEO Search Tag: nppes-cms"
+    },
+    {
+      "name": "healthcare-leads",
+      "description": "B2B SEO Search Tag: healthcare-leads"
+    },
+    {
+      "name": "medical-providers",
+      "description": "B2B SEO Search Tag: medical-providers"
+    },
+    {
+      "name": "doctor-lookup",
+      "description": "B2B SEO Search Tag: doctor-lookup"
+    },
+    {
+      "name": "hipaa-kyb",
+      "description": "B2B SEO Search Tag: hipaa-kyb"
+    },
+    {
+      "name": "pharma-crm",
+      "description": "B2B SEO Search Tag: pharma-crm"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-healthcare-npi-provider-lead-enricher": {
+      "post": {
+        "operationId": "execute_us_healthcare_npi_provider_lead_enricher",
+        "summary": "Execute US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+        "description": "Synchronous stateless execution of **US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Medical",
+          "npi-registry",
+          "nppes-cms",
+          "healthcare-leads",
+          "medical-providers",
+          "doctor-lookup"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\"\npayload = {\n    \"state\": \"FL\",\n    \"city\": \"Miami\",\n    \"taxonomyDescription\": \"Dentist\",\n    \"enumerationType\": \"ALL\",\n    \"postalCode\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\"\npayload = {\n    \"state\": \"FL\",\n    \"city\": \"Miami\",\n    \"taxonomyDescription\": \"Dentist\",\n    \"enumerationType\": \"ALL\",\n    \"postalCode\": \"\",\n    \"maxResults\": 15\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-healthcare-npi-provider-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"state\": \"FL\", \"city\": \"Miami\", \"taxonomyDescription\": \"Dentist\", \"enumerationType\": \"ALL\", \"postalCode\": \"\", \"maxResults\": 15})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-healthcare-npi-provider-lead-enricher`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsHealthcareNpiProviderLeadEnricherRequest"
+              },
+              "example": {
+                "state": "FL",
+                "city": "Miami",
+                "taxonomyDescription": "Dentist",
+                "enumerationType": "ALL",
+                "postalCode": "",
+                "maxResults": 15
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-healthcare-npi-provider-lead-enricher` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsHealthcareNpiProviderLeadEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-healthcare-npi-provider-lead-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
+                      "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
+                      "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
+                      "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
+                      "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
+                      "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
+                      "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
+                      "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
+                      "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
+                      "leadQualityScore": 88,
+                      "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-healthcare-npi-provider-lead-enricher/health": {
+      "get": {
+        "operationId": "health_us_healthcare_npi_provider_lead_enricher",
+        "summary": "Health & SLA Check for US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+        "description": "Lightweight health and schema readiness check for `us-healthcare-npi-provider-lead-enricher` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Medical"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-healthcare-npi-provider-lead-enricher"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Medical"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-healthcare-npi-provider-lead-enricher",
+                  "engineVersion": "3.0.0",
+                  "category": "Medical"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsHealthcareNpiProviderLeadEnricherRequest": {
+        "type": "object",
+        "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) Request Schema",
+        "description": "Input parameters for US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "US State Code",
+            "description": "Two-letter US State code (e.g., FL, NY, CA, TX).",
+            "default": "FL",
+            "example": "FL"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "Optional city filter (e.g., Miami, Orlando, Los Angeles).",
+            "default": "Miami",
+            "example": "Miami"
+          },
+          "taxonomyDescription": {
+            "type": "string",
+            "title": "Specialty / Taxonomy Description",
+            "description": "Specialty/Taxonomy e.g. Dentist, Dermatology, Internal Medicine, Physical Therapist.",
+            "default": "Dentist",
+            "example": "Dentist"
+          },
+          "enumerationType": {
+            "type": "string",
+            "title": "Enumeration Type (NPI-1 / NPI-2)",
+            "description": "Filter by Individual Providers (NPI-1), Organizations/Clinics (NPI-2), or All.",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "NPI-1",
+              "NPI-2"
+            ],
+            "example": "ALL"
+          },
+          "postalCode": {
+            "type": "string",
+            "title": "Postal / ZIP Code",
+            "description": "Optional US ZIP code prefix (e.g., 331, 33131).",
+            "default": "",
+            "example": ""
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max Results",
+            "description": "Maximum number of healthcare provider leads to extract and enrich (1 to 200).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 200,
+            "example": 15
+          }
+        },
+        "example": {
+          "state": "FL",
+          "city": "Miami",
+          "taxonomyDescription": "Dentist",
+          "enumerationType": "ALL",
+          "postalCode": "",
+          "maxResults": 15
+        }
+      },
+      "UsHealthcareNpiProviderLeadEnricherRecord": {
+        "type": "object",
+        "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) Output Record",
+        "description": "Enriched B2B dataset item returned by `us-healthcare-npi-provider-lead-enricher`.",
+        "properties": {
+          "npiNumber": {
+            "type": "string",
+            "title": "NPI Number",
+            "description": "NPI Number",
+            "example": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "providerType": {
+            "type": "string",
+            "title": "Provider Type",
+            "description": "Provider Type",
+            "example": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "fullNameOrOrgName": {
+            "type": "string",
+            "title": "Full Name / Organization",
+            "description": "Full Name / Organization",
+            "example": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "primarySpecialty": {
+            "type": "string",
+            "title": "Primary Specialty",
+            "description": "Primary Specialty",
+            "example": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "LicenseNumber": {
+            "type": "string",
+            "title": "State License Number",
+            "description": "State License Number",
+            "example": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "City",
+            "example": "Verified City (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "State",
+            "example": "Verified State (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "phone": {
+            "type": "string",
+            "title": "Direct Phone",
+            "description": "Direct Phone",
+            "example": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "addressLine": {
+            "type": "string",
+            "title": "Practice Address",
+            "description": "Practice Address",
+            "example": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "leadQualityScore": {
+            "type": "integer",
+            "title": "Lead Quality Score (0-100)",
+            "description": "Lead Quality Score (0-100)",
+            "example": 88
+          },
+          "markdownLeadCard": {
+            "type": "string",
+            "title": "Markdown Lead Dossier",
+            "description": "Markdown Lead Dossier",
+            "example": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
+          "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
+          "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
+          "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
+          "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
+          "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
+          "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
+          "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
+          "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
+          "leadQualityScore": 88,
+          "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsHealthcareNpiProviderLeadEnricherResponseEnvelope": {
+        "type": "object",
+        "title": "US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-healthcare-npi-provider-lead-enricher"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsHealthcareNpiProviderLeadEnricherRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-healthcare-npi-provider-lead-enricher",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
+              "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
+              "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
+              "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
+              "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
+              "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
+              "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
+              "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
+              "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
+              "leadQualityScore": 88,
+              "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

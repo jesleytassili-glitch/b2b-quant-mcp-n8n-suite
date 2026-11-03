@@ -1,0 +1,559 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+    "version": "3.0.0",
+    "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor)\n- **Target B2B Buyers:** eCommerce Checkout Flows, Last-Mile Delivery Routers, NF-e Issuers, and Retail Omni-Channel ERPs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil CEP Geocoordinates & IBGE City Code Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-cep-lookup, postal-geocoding, ibge-municipality-code, nfe-address-validator, last-mile-logistics, ddd-lookup, ecommerce-checkout.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor"
+    },
+    "x-category": "Logistics",
+    "x-rapidapi-category": "Logistics",
+    "x-zyla-category": "Logistics & Shipping",
+    "x-seo-tags": [
+      "brazil-cep-lookup",
+      "postal-geocoding",
+      "ibge-municipality-code",
+      "nfe-address-validator",
+      "last-mile-logistics",
+      "ddd-lookup",
+      "ecommerce-checkout"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-cep-geocoordinates-logistics-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Logistics",
+      "description": "RapidAPI Hub primary category: Logistics (Zyla Hub: Logistics & Shipping)"
+    },
+    {
+      "name": "brazil-cep-lookup",
+      "description": "B2B SEO Search Tag: brazil-cep-lookup"
+    },
+    {
+      "name": "postal-geocoding",
+      "description": "B2B SEO Search Tag: postal-geocoding"
+    },
+    {
+      "name": "ibge-municipality-code",
+      "description": "B2B SEO Search Tag: ibge-municipality-code"
+    },
+    {
+      "name": "nfe-address-validator",
+      "description": "B2B SEO Search Tag: nfe-address-validator"
+    },
+    {
+      "name": "last-mile-logistics",
+      "description": "B2B SEO Search Tag: last-mile-logistics"
+    },
+    {
+      "name": "ddd-lookup",
+      "description": "B2B SEO Search Tag: ddd-lookup"
+    },
+    {
+      "name": "ecommerce-checkout",
+      "description": "B2B SEO Search Tag: ecommerce-checkout"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/brazil-cep-geocoordinates-logistics-auditor": {
+      "post": {
+        "operationId": "execute_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+        "description": "Synchronous stateless execution of **Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Logistics",
+          "brazil-cep-lookup",
+          "postal-geocoding",
+          "ibge-municipality-code",
+          "nfe-address-validator",
+          "last-mile-logistics"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-cep-geocoordinates-logistics-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorRequest"
+              },
+              "example": {
+                "ceps": "01310100,20040002,30140071",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-cep-geocoordinates-logistics-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "logisticsReadinessScore": 88,
+                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-cep-geocoordinates-logistics-auditor/health": {
+      "get": {
+        "operationId": "health_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Health & SLA Check for Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+        "description": "Lightweight health and schema readiness check for `brazil-cep-geocoordinates-logistics-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Logistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-cep-geocoordinates-logistics-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Logistics"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Logistics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "BrazilCepGeocoordinatesLogisticsAuditorRequest": {
+        "type": "object",
+        "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Request Schema",
+        "description": "Input parameters for Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor.",
+        "properties": {
+          "ceps": {
+            "type": "string",
+            "title": "Brazilian 8-Digit CEPs (CSV)",
+            "description": "Comma-separated Brazilian postal codes (e.g., '01310100, 20040002, 30140071').",
+            "default": "01310100,20040002,30140071",
+            "example": "01310100,20040002,30140071"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max CEPs to Audit",
+            "description": "Maximum number of CEP records to return (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "ceps"
+        ],
+        "example": {
+          "ceps": "01310100,20040002,30140071",
+          "maxResults": 5
+        }
+      },
+      "BrazilCepGeocoordinatesLogisticsAuditorRecord": {
+        "type": "object",
+        "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `brazil-cep-geocoordinates-logistics-auditor`.",
+        "properties": {
+          "cep": {
+            "type": "string",
+            "title": "CEP (8 Digits)",
+            "description": "Standardized 8-digit Brazilian postal code.",
+            "example": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "stateUf": {
+            "type": "string",
+            "title": "State UF",
+            "description": "Two-letter Brazilian state code.",
+            "example": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "cityName": {
+            "type": "string",
+            "title": "City / Municipality",
+            "description": "Official municipality name.",
+            "example": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "neighborhood": {
+            "type": "string",
+            "title": "Neighborhood / Bairro",
+            "description": "District or neighborhood.",
+            "example": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "street": {
+            "type": "string",
+            "title": "Street / Logradouro",
+            "description": "Street address.",
+            "example": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "ibgeCityCode": {
+            "type": "string",
+            "title": "IBGE 7-Digit City Code",
+            "description": "Official 7-digit IBGE municipality code for NF-e/CT-e.",
+            "example": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude",
+            "description": "WGS84 Latitude coordinate.",
+            "example": 94.5
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude",
+            "description": "WGS84 Longitude coordinate.",
+            "example": 94.5
+          },
+          "logisticsReadinessScore": {
+            "type": "integer",
+            "title": "Logistics & NF-e Readiness Score (0-100)",
+            "description": "Quantitative score for last-mile routing and tax invoice completeness (0-100).",
+            "example": 88
+          },
+          "markdownLogisticsDossier": {
+            "type": "string",
+            "title": "Markdown Logistics & NF-e Dossier",
+            "description": "Executive report for e-commerce, TMS/WMS, and ERP tax engines.",
+            "example": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+          "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+          "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+          "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+          "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+          "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+          "latitude": 94.5,
+          "longitude": 94.5,
+          "logisticsReadinessScore": 88,
+          "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "brazil-cep-geocoordinates-logistics-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "brazil-cep-geocoordinates-logistics-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+              "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+              "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+              "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+              "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+              "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+              "latitude": 94.5,
+              "longitude": 94.5,
+              "logisticsReadinessScore": 88,
+              "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

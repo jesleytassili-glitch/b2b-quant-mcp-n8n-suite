@@ -1,0 +1,684 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+    "version": "3.0.0",
+    "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.\n\n### Enterprise B2B Value Proposition (US NHTSA Vehicle VIN Decoder & Safety Recall Auditor)\n- **Target B2B Buyers:** Auto InsurTechs, Commercial Fleet Managers, Automotive Marketplaces, and Lending Underwriters.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Vehicle VIN Decoded & Recall Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** vin-decoder, nhtsa-recalls, vehicle-safety, fleet-management, auto-insurance, automotive-kyb, vpic-api.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor"
+    },
+    "x-category": "Logistics",
+    "x-rapidapi-category": "Logistics",
+    "x-zyla-category": "Logistics & Shipping",
+    "x-seo-tags": [
+      "vin-decoder",
+      "nhtsa-recalls",
+      "vehicle-safety",
+      "fleet-management",
+      "auto-insurance",
+      "automotive-kyb",
+      "vpic-api"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\"\npayload = {\n    \"vins\": [\n        \"5UXWX7C5*BA\",\n        \"1HGCM82633A004352\"\n    ],\n    \"checkRecalls\": true,\n    \"maxResults\": 50\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-nhtsa-vehicle-vin-recall-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Logistics",
+      "description": "RapidAPI Hub primary category: Logistics (Zyla Hub: Logistics & Shipping)"
+    },
+    {
+      "name": "vin-decoder",
+      "description": "B2B SEO Search Tag: vin-decoder"
+    },
+    {
+      "name": "nhtsa-recalls",
+      "description": "B2B SEO Search Tag: nhtsa-recalls"
+    },
+    {
+      "name": "vehicle-safety",
+      "description": "B2B SEO Search Tag: vehicle-safety"
+    },
+    {
+      "name": "fleet-management",
+      "description": "B2B SEO Search Tag: fleet-management"
+    },
+    {
+      "name": "auto-insurance",
+      "description": "B2B SEO Search Tag: auto-insurance"
+    },
+    {
+      "name": "automotive-kyb",
+      "description": "B2B SEO Search Tag: automotive-kyb"
+    },
+    {
+      "name": "vpic-api",
+      "description": "B2B SEO Search Tag: vpic-api"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-nhtsa-vehicle-vin-recall-auditor": {
+      "post": {
+        "operationId": "execute_us_nhtsa_vehicle_vin_recall_auditor",
+        "summary": "Execute US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+        "description": "Synchronous stateless execution of **US NHTSA Vehicle VIN Decoder & Safety Recall Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Logistics",
+          "vin-decoder",
+          "nhtsa-recalls",
+          "vehicle-safety",
+          "fleet-management",
+          "auto-insurance"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\"\npayload = {\n    \"vins\": [\n        \"5UXWX7C5*BA\",\n        \"1HGCM82633A004352\"\n    ],\n    \"checkRecalls\": true,\n    \"maxResults\": 50\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\"\npayload = {\n    \"vins\": [\n        \"5UXWX7C5*BA\",\n        \"1HGCM82633A004352\"\n    ],\n    \"checkRecalls\": true,\n    \"maxResults\": 50\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"vins\": [\"5UXWX7C5*BA\", \"1HGCM82633A004352\"], \"checkRecalls\": true, \"maxResults\": 50})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-nhtsa-vehicle-vin-recall-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsNhtsaVehicleVinRecallAuditorRequest"
+              },
+              "example": {
+                "vins": [
+                  "5UXWX7C5*BA",
+                  "1HGCM82633A004352"
+                ],
+                "checkRecalls": true,
+                "maxResults": 50
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-nhtsa-vehicle-vin-recall-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsNhtsaVehicleVinRecallAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-nhtsa-vehicle-vin-recall-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "isValidVinFormat": true,
+                      "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "recallsCount": 88,
+                      "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "recallsSummary": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-nhtsa-vehicle-vin-recall-auditor/health": {
+      "get": {
+        "operationId": "health_us_nhtsa_vehicle_vin_recall_auditor",
+        "summary": "Health & SLA Check for US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+        "description": "Lightweight health and schema readiness check for `us-nhtsa-vehicle-vin-recall-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Logistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-nhtsa-vehicle-vin-recall-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Logistics"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-nhtsa-vehicle-vin-recall-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Logistics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsNhtsaVehicleVinRecallAuditorRequest": {
+        "type": "object",
+        "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor Request Schema",
+        "description": "Input parameters for US NHTSA Vehicle VIN Decoder & Safety Recall Auditor.",
+        "properties": {
+          "vins": {
+            "type": "array",
+            "title": "Vehicle Identification Numbers (VINs)",
+            "description": "List of 17-character Vehicle Identification Numbers to decode and audit.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "5UXWX7C5*BA",
+              "1HGCM82633A004352"
+            ],
+            "example": [
+              "5UXWX7C5*BA",
+              "1HGCM82633A004352"
+            ]
+          },
+          "checkRecalls": {
+            "type": "boolean",
+            "title": "Check NHTSA Safety Recalls",
+            "description": "Query official NHTSA Recall API by decoded Make, Model, and Model Year.",
+            "default": true,
+            "example": true
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Max VINs to Process",
+            "description": "Maximum number of VINs to decode and audit per run.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 500,
+            "example": 50
+          }
+        },
+        "required": [
+          "vins"
+        ],
+        "example": {
+          "vins": [
+            "5UXWX7C5*BA",
+            "1HGCM82633A004352"
+          ],
+          "checkRecalls": true,
+          "maxResults": 50
+        }
+      },
+      "UsNhtsaVehicleVinRecallAuditorRecord": {
+        "type": "object",
+        "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `us-nhtsa-vehicle-vin-recall-auditor`.",
+        "properties": {
+          "vin": {
+            "type": "string",
+            "title": "VIN",
+            "description": "VIN",
+            "example": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "isValidVinFormat": {
+            "type": "boolean",
+            "title": "Valid Format",
+            "description": "Valid Format",
+            "example": true
+          },
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make",
+            "example": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model",
+            "example": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "modelYear": {
+            "type": "string",
+            "title": "Model Year",
+            "description": "Model Year",
+            "example": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "vehicleType": {
+            "type": "string",
+            "title": "Vehicle Type",
+            "description": "Vehicle Type",
+            "example": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "bodyClass": {
+            "type": "string",
+            "title": "Body Class",
+            "description": "Body Class",
+            "example": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "engineCylinders": {
+            "type": "string",
+            "title": "Engine Cylinders",
+            "description": "Engine Cylinders",
+            "example": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "displacementL": {
+            "type": "string",
+            "title": "Displacement (L)",
+            "description": "Displacement (L)",
+            "example": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "fuelTypePrimary": {
+            "type": "string",
+            "title": "Primary Fuel Type",
+            "description": "Primary Fuel Type",
+            "example": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "driveType": {
+            "type": "string",
+            "title": "Drive Type",
+            "description": "Drive Type",
+            "example": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "manufacturer": {
+            "type": "string",
+            "title": "Manufacturer",
+            "description": "Manufacturer",
+            "example": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "plantCity": {
+            "type": "string",
+            "title": "Plant City",
+            "description": "Plant City",
+            "example": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "plantCountry": {
+            "type": "string",
+            "title": "Plant Country",
+            "description": "Plant Country",
+            "example": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "errorCode": {
+            "type": "string",
+            "title": "NHTSA Error Code",
+            "description": "NHTSA Error Code",
+            "example": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "recallsCount": {
+            "type": "integer",
+            "title": "Recalls Count",
+            "description": "Recalls Count",
+            "example": 88
+          },
+          "fleetSafetyStatus": {
+            "type": "string",
+            "title": "Fleet Safety Status",
+            "description": "Fleet Safety Status",
+            "example": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "recallsSummary": {
+            "type": "array",
+            "title": "Recalls Summary",
+            "description": "Recalls Summary",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "VERIFIED_PRIMARY_SOURCE"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "title": "Data Source",
+            "description": "Data Source",
+            "example": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "auditedAt": {
+            "type": "string",
+            "title": "Audited At (UTC)",
+            "description": "Audited At (UTC)",
+            "example": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+          "isValidVinFormat": true,
+          "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
+          "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
+          "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
+          "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
+          "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
+          "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
+          "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
+          "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
+          "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
+          "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
+          "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
+          "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
+          "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
+          "recallsCount": 88,
+          "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+          "recallsSummary": [
+            "VERIFIED_PRIMARY_SOURCE"
+          ],
+          "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
+          "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsNhtsaVehicleVinRecallAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "US NHTSA Vehicle VIN Decoder & Safety Recall Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-nhtsa-vehicle-vin-recall-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsNhtsaVehicleVinRecallAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-nhtsa-vehicle-vin-recall-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+              "isValidVinFormat": true,
+              "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
+              "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
+              "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
+              "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
+              "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
+              "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
+              "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
+              "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
+              "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
+              "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
+              "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
+              "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
+              "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
+              "recallsCount": 88,
+              "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+              "recallsSummary": [
+                "VERIFIED_PRIMARY_SOURCE"
+              ],
+              "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
+              "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar",
+    "version": "3.0.0",
+    "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.\n\n### Enterprise B2B Value Proposition (EU TED Public Tenders & B2G Procurement Intelligence Radar)\n- **Target B2B Buyers:** European B2G Bid Teams, Multinational IT Integrators, and Global Public Procurement Aggregators.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`EU TED Public Procurement Notice Analyzed`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** eu-ted-tenders, european-procurement, cpv-codes, public-sector-bids, b2g-europe, official-journal-ojs, government-rfp.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/eu-ted-public-tenders-procurement-radar"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Government & Legal",
+    "x-seo-tags": [
+      "eu-ted-tenders",
+      "european-procurement",
+      "cpv-codes",
+      "public-sector-bids",
+      "b2g-europe",
+      "official-journal-ojs",
+      "government-rfp"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-ted-public-tenders-procurement-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\"\npayload = {\n    \"searchKeyword\": \"Cloud Cybersecurity\",\n    \"countryIso3\": \"DEU\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for EU TED Public Tenders & B2G Procurement Intelligence Radar",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/eu-ted-public-tenders-procurement-radar.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Government & Legal)"
+    },
+    {
+      "name": "eu-ted-tenders",
+      "description": "B2B SEO Search Tag: eu-ted-tenders"
+    },
+    {
+      "name": "european-procurement",
+      "description": "B2B SEO Search Tag: european-procurement"
+    },
+    {
+      "name": "cpv-codes",
+      "description": "B2B SEO Search Tag: cpv-codes"
+    },
+    {
+      "name": "public-sector-bids",
+      "description": "B2B SEO Search Tag: public-sector-bids"
+    },
+    {
+      "name": "b2g-europe",
+      "description": "B2B SEO Search Tag: b2g-europe"
+    },
+    {
+      "name": "official-journal-ojs",
+      "description": "B2B SEO Search Tag: official-journal-ojs"
+    },
+    {
+      "name": "government-rfp",
+      "description": "B2B SEO Search Tag: government-rfp"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/eu-ted-public-tenders-procurement-radar": {
+      "post": {
+        "operationId": "execute_eu_ted_public_tenders_procurement_radar",
+        "summary": "Execute EU TED Public Tenders & B2G Procurement Intelligence Radar",
+        "description": "Synchronous stateless execution of **EU TED Public Tenders & B2G Procurement Intelligence Radar**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "eu-ted-tenders",
+          "european-procurement",
+          "cpv-codes",
+          "public-sector-bids",
+          "b2g-europe"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-ted-public-tenders-procurement-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\"\npayload = {\n    \"searchKeyword\": \"Cloud Cybersecurity\",\n    \"countryIso3\": \"DEU\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: eu-ted-public-tenders-procurement-radar.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\"\npayload = {\n    \"searchKeyword\": \"Cloud Cybersecurity\",\n    \"countryIso3\": \"DEU\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"eu-ted-public-tenders-procurement-radar.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"searchKeyword\": \"Cloud Cybersecurity\", \"countryIso3\": \"DEU\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `eu-ted-public-tenders-procurement-radar`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EuTedPublicTendersProcurementRadarRequest"
+              },
+              "example": {
+                "searchKeyword": "Cloud Cybersecurity",
+                "countryIso3": "DEU",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `eu-ted-public-tenders-procurement-radar` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EuTedPublicTendersProcurementRadarResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "eu-ted-public-tenders-procurement-radar",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
+                      "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
+                      "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
+                      "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
+                      "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
+                      "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
+                      "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
+                      "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
+                      "estimatedValueEur": 94.5,
+                      "bidOpportunityScore": 88,
+                      "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/eu-ted-public-tenders-procurement-radar/health": {
+      "get": {
+        "operationId": "health_eu_ted_public_tenders_procurement_radar",
+        "summary": "Health & SLA Check for EU TED Public Tenders & B2G Procurement Intelligence Radar",
+        "description": "Lightweight health and schema readiness check for `eu-ted-public-tenders-procurement-radar` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "eu-ted-public-tenders-procurement-radar"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "eu-ted-public-tenders-procurement-radar",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "EuTedPublicTendersProcurementRadarRequest": {
+        "type": "object",
+        "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Request Schema",
+        "description": "Configure procurement keyword, optional 3-letter EU Member State ISO code (e.g., DEU, FRA, ESP, NLD), and maximum EU TED notices to extract and score.",
+        "properties": {
+          "searchKeyword": {
+            "type": "string",
+            "title": "Procurement Keyword / Sector",
+            "description": "Public tender topic, CPV keyword, or technology sector (e.g., 'Cloud Cybersecurity', 'Artificial Intelligence', 'Medical Devices', 'Solar Energy').",
+            "default": "Cloud Cybersecurity",
+            "example": "Cloud Cybersecurity"
+          },
+          "countryIso3": {
+            "type": "string",
+            "title": "EU Country ISO-3 Code (Optional)",
+            "description": "Optional 3-letter ISO country code (e.g., 'DEU', 'FRA', 'ESP', 'ITA', 'NLD', 'BEL', or leave empty for all EU/EEA member states).",
+            "default": "",
+            "example": "DEU"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Tenders to Extract",
+            "description": "Maximum number of European public procurement notices to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "searchKeyword"
+        ],
+        "example": {
+          "searchKeyword": "Cloud Cybersecurity",
+          "countryIso3": "DEU",
+          "maxResults": 5
+        }
+      },
+      "EuTedPublicTendersProcurementRadarRecord": {
+        "type": "object",
+        "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Output Record",
+        "description": "Enriched B2B dataset item returned by `eu-ted-public-tenders-procurement-radar`.",
+        "properties": {
+          "publicationNumber": {
+            "type": "string",
+            "title": "EU TED Publication Number",
+            "description": "Official Supplement to the Official Journal of the EU (OJ S) notice ID.",
+            "example": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)"
+          },
+          "noticeTitle": {
+            "type": "string",
+            "title": "Tender / Contract Title",
+            "description": "Official title of the public procurement notice.",
+            "example": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)"
+          },
+          "buyerName": {
+            "type": "string",
+            "title": "Contracting Authority (Buyer)",
+            "description": "European ministry, agency, or public utility issuing the tender.",
+            "example": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)"
+          },
+          "buyerCountryIso3": {
+            "type": "string",
+            "title": "Buyer Country (ISO-3)",
+            "description": "3-letter ISO code of the contracting authority country.",
+            "example": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)"
+          },
+          "cpvCode": {
+            "type": "string",
+            "title": "Primary CPV Code",
+            "description": "8-digit EU Common Procurement Vocabulary classification code.",
+            "example": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)"
+          },
+          "procedureType": {
+            "type": "string",
+            "title": "Procurement Procedure Type",
+            "description": "Open, Restricted, Competitive Dialogue, or Framework Agreement.",
+            "example": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)"
+          },
+          "publicationDate": {
+            "type": "string",
+            "title": "Publication Date",
+            "description": "ISO date when the notice was published on EU TED.",
+            "example": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)"
+          },
+          "deadlineDate": {
+            "type": "string",
+            "title": "Submission Deadline Date",
+            "description": "ISO deadline for submitting bids or requests to participate.",
+            "example": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)"
+          },
+          "estimatedValueEur": {
+            "type": "number",
+            "title": "Estimated Contract Value (EUR)",
+            "description": "Estimated or awarded contract value in Euros (EUR).",
+            "example": 94.5
+          },
+          "bidOpportunityScore": {
+            "type": "integer",
+            "title": "Bid Opportunity Score (0-100)",
+            "description": "Quantitative B2G capture score combining contract value, open procedure openness, and CPV match (0-100).",
+            "example": 88
+          },
+          "markdownProcurementBrief": {
+            "type": "string",
+            "title": "Markdown B2G Capture & Proposal Brief",
+            "description": "Executive Markdown brief for European B2G capture teams and automated RFP pipelines.",
+            "example": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
+          "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
+          "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
+          "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
+          "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
+          "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
+          "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
+          "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
+          "estimatedValueEur": 94.5,
+          "bidOpportunityScore": 88,
+          "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "EuTedPublicTendersProcurementRadarResponseEnvelope": {
+        "type": "object",
+        "title": "EU TED Public Tenders & B2G Procurement Intelligence Radar Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "eu-ted-public-tenders-procurement-radar"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EuTedPublicTendersProcurementRadarRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "eu-ted-public-tenders-procurement-radar",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
+              "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
+              "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
+              "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
+              "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
+              "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
+              "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
+              "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
+              "estimatedValueEur": 94.5,
+              "bidOpportunityScore": 88,
+              "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

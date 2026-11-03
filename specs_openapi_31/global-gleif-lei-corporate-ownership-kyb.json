@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+    "version": "3.0.0",
+    "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor)\n- **Target B2B Buyers:** Global Investment Banks, RegTech KYB Platforms, Crypto Institutional Desks, and Trade Finance Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Global GLEIF LEI Corporate Entity Audited`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** gleif-lei, legal-entity-identifier, global-kyb, corporate-ownership, mifid-ii-emir, parent-subsidiary, aml-onboarding.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb"
+    },
+    "x-category": "Finance",
+    "x-rapidapi-category": "Finance",
+    "x-zyla-category": "Company Data",
+    "x-seo-tags": [
+      "gleif-lei",
+      "legal-entity-identifier",
+      "global-kyb",
+      "corporate-ownership",
+      "mifid-ii-emir",
+      "parent-subsidiary",
+      "aml-onboarding"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\"\npayload = {\n    \"companyName\": \"Microsoft\",\n    \"countryCode\": \"US\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/global-gleif-lei-corporate-ownership-kyb.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Finance",
+      "description": "RapidAPI Hub primary category: Finance (Zyla Hub: Company Data)"
+    },
+    {
+      "name": "gleif-lei",
+      "description": "B2B SEO Search Tag: gleif-lei"
+    },
+    {
+      "name": "legal-entity-identifier",
+      "description": "B2B SEO Search Tag: legal-entity-identifier"
+    },
+    {
+      "name": "global-kyb",
+      "description": "B2B SEO Search Tag: global-kyb"
+    },
+    {
+      "name": "corporate-ownership",
+      "description": "B2B SEO Search Tag: corporate-ownership"
+    },
+    {
+      "name": "mifid-ii-emir",
+      "description": "B2B SEO Search Tag: mifid-ii-emir"
+    },
+    {
+      "name": "parent-subsidiary",
+      "description": "B2B SEO Search Tag: parent-subsidiary"
+    },
+    {
+      "name": "aml-onboarding",
+      "description": "B2B SEO Search Tag: aml-onboarding"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/global-gleif-lei-corporate-ownership-kyb": {
+      "post": {
+        "operationId": "execute_global_gleif_lei_corporate_ownership_kyb",
+        "summary": "Execute Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+        "description": "Synchronous stateless execution of **Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Finance",
+          "gleif-lei",
+          "legal-entity-identifier",
+          "global-kyb",
+          "corporate-ownership",
+          "mifid-ii-emir"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\"\npayload = {\n    \"companyName\": \"Microsoft\",\n    \"countryCode\": \"US\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\"\npayload = {\n    \"companyName\": \"Microsoft\",\n    \"countryCode\": \"US\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyName\": \"Microsoft\", \"countryCode\": \"US\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `global-gleif-lei-corporate-ownership-kyb`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalGleifLeiCorporateOwnershipKybRequest"
+              },
+              "example": {
+                "companyName": "Microsoft",
+                "countryCode": "US",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `global-gleif-lei-corporate-ownership-kyb` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalGleifLeiCorporateOwnershipKybResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "global-gleif-lei-corporate-ownership-kyb",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
+                      "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
+                      "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
+                      "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
+                      "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
+                      "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
+                      "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
+                      "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
+                      "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
+                      "kybTrustScore": 88,
+                      "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/global-gleif-lei-corporate-ownership-kyb/health": {
+      "get": {
+        "operationId": "health_global_gleif_lei_corporate_ownership_kyb",
+        "summary": "Health & SLA Check for Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+        "description": "Lightweight health and schema readiness check for `global-gleif-lei-corporate-ownership-kyb` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Finance"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "global-gleif-lei-corporate-ownership-kyb"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Finance"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "global-gleif-lei-corporate-ownership-kyb",
+                  "engineVersion": "3.0.0",
+                  "category": "Finance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "GlobalGleifLeiCorporateOwnershipKybRequest": {
+        "type": "object",
+        "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Request Schema",
+        "description": "Configure legal entity search query or 20-character LEI codes, optional jurisdiction filter, and maximum entities to audit.",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "title": "Legal Entity Name or LEI Search Query",
+            "description": "Corporate legal name to search in the Global LEI Index (e.g., 'Microsoft', 'Siemens', 'JPMorgan', 'Petrobras').",
+            "default": "Microsoft",
+            "example": "Microsoft"
+          },
+          "countryCode": {
+            "type": "string",
+            "title": "Country / Jurisdiction Filter (Optional ISO-2)",
+            "description": "Optional 2-letter ISO country filter (e.g., 'US', 'DE', 'GB', 'BR').",
+            "default": "",
+            "example": "US"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Corporate Entities to Audit",
+            "description": "Maximum number of GLEIF LEI records to extract and score (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "companyName"
+        ],
+        "example": {
+          "companyName": "Microsoft",
+          "countryCode": "US",
+          "maxResults": 5
+        }
+      },
+      "GlobalGleifLeiCorporateOwnershipKybRecord": {
+        "type": "object",
+        "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `global-gleif-lei-corporate-ownership-kyb`.",
+        "properties": {
+          "leiCode": {
+            "type": "string",
+            "title": "20-Char LEI Code",
+            "description": "ISO 17442 Global Legal Entity Identifier.",
+            "example": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "legalName": {
+            "type": "string",
+            "title": "Official Legal Name",
+            "description": "Registered legal name of the entity.",
+            "example": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Legal Jurisdiction",
+            "description": "ISO country/subdivision of legal formation.",
+            "example": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "entityStatus": {
+            "type": "string",
+            "title": "Entity Operational Status",
+            "description": "ACTIVE or INACTIVE legal entity status.",
+            "example": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "registrationStatus": {
+            "type": "string",
+            "title": "LEI Registration Status",
+            "description": "ISSUED, LAPSED, RETIRED, or ANNULLED.",
+            "example": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "registeredAs": {
+            "type": "string",
+            "title": "Local Business Registry ID",
+            "description": "Local commercial register number.",
+            "example": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "headquartersCity": {
+            "type": "string",
+            "title": "Headquarters City",
+            "description": "City of corporate headquarters.",
+            "example": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "headquartersCountry": {
+            "type": "string",
+            "title": "Headquarters Country",
+            "description": "ISO country code of headquarters.",
+            "example": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "nextRenewalDate": {
+            "type": "string",
+            "title": "Next LEI Renewal Date",
+            "description": "Scheduled annual LEI renewal timestamp.",
+            "example": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "kybTrustScore": {
+            "type": "integer",
+            "title": "KYB Trust Score (0-100)",
+            "description": "Quantitative KYB compliance and registration validity score (0-100).",
+            "example": 88
+          },
+          "markdownKybBrief": {
+            "type": "string",
+            "title": "Markdown KYB Compliance Brief",
+            "description": "Executive KYB audit dossier for banking, M&A, and vendor onboarding.",
+            "example": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
+          "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
+          "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
+          "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
+          "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
+          "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
+          "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
+          "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
+          "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
+          "kybTrustScore": 88,
+          "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "GlobalGleifLeiCorporateOwnershipKybResponseEnvelope": {
+        "type": "object",
+        "title": "Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "global-gleif-lei-corporate-ownership-kyb"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GlobalGleifLeiCorporateOwnershipKybRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "global-gleif-lei-corporate-ownership-kyb",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
+              "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
+              "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
+              "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
+              "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
+              "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
+              "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
+              "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
+              "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
+              "kybTrustScore": 88,
+              "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

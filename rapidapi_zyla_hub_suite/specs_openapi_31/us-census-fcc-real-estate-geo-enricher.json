@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+    "version": "3.0.0",
+    "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n### Enterprise B2B Value Proposition (US Real Estate Census Tract, FIPS & PropTech Geo Enricher)\n- **Target B2B Buyers:** PropTech Platforms, Mortgage Lenders (HMDA/CRA Compliance), Real Estate REITs, and Site Selection Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Real Estate Census Tract & FIPS Enriched`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** us-census-fips, fcc-area-api, real-estate-analytics, geospatial-enrichment, census-tract, proptech, mortgage-hmda.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-census-fcc-real-estate-geo-enricher"
+    },
+    "x-category": "Data",
+    "x-rapidapi-category": "Data",
+    "x-zyla-category": "Company Data",
+    "x-seo-tags": [
+      "us-census-fips",
+      "fcc-area-api",
+      "real-estate-analytics",
+      "geospatial-enrichment",
+      "census-tract",
+      "proptech",
+      "mortgage-hmda"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-census-fcc-real-estate-geo-enricher.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Data",
+      "description": "RapidAPI Hub primary category: Data (Zyla Hub: Company Data)"
+    },
+    {
+      "name": "us-census-fips",
+      "description": "B2B SEO Search Tag: us-census-fips"
+    },
+    {
+      "name": "fcc-area-api",
+      "description": "B2B SEO Search Tag: fcc-area-api"
+    },
+    {
+      "name": "real-estate-analytics",
+      "description": "B2B SEO Search Tag: real-estate-analytics"
+    },
+    {
+      "name": "geospatial-enrichment",
+      "description": "B2B SEO Search Tag: geospatial-enrichment"
+    },
+    {
+      "name": "census-tract",
+      "description": "B2B SEO Search Tag: census-tract"
+    },
+    {
+      "name": "proptech",
+      "description": "B2B SEO Search Tag: proptech"
+    },
+    {
+      "name": "mortgage-hmda",
+      "description": "B2B SEO Search Tag: mortgage-hmda"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-census-fcc-real-estate-geo-enricher": {
+      "post": {
+        "operationId": "execute_us_census_fcc_real_estate_geo_enricher",
+        "summary": "Execute US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+        "description": "Synchronous stateless execution of **US Real Estate Census Tract, FIPS & PropTech Geo Enricher**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Data",
+          "us-census-fips",
+          "fcc-area-api",
+          "real-estate-analytics",
+          "geospatial-enrichment",
+          "census-tract"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-census-fcc-real-estate-geo-enricher`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherRequest"
+              },
+              "example": {
+                "coordinatesList": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431",
+                "censusYear": "2020",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-census-fcc-real-estate-geo-enricher` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "realEstateInvestmentScore": 88,
+                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-census-fcc-real-estate-geo-enricher/health": {
+      "get": {
+        "operationId": "health_us_census_fcc_real_estate_geo_enricher",
+        "summary": "Health & SLA Check for US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+        "description": "Lightweight health and schema readiness check for `us-census-fcc-real-estate-geo-enricher` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Data"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-census-fcc-real-estate-geo-enricher"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Data"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "engineVersion": "3.0.0",
+                  "category": "Data"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsCensusFccRealEstateGeoEnricherRequest": {
+        "type": "object",
+        "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Request Schema",
+        "description": "Configure semicolon-separated U.S. property coordinates (latitude,longitude) and census year to extract official FIPS, Census Tract, County, and PropTech underwriting scores.",
+        "properties": {
+          "coordinatesList": {
+            "type": "string",
+            "title": "U.S. Property Coordinates (lat,lon separated by ';')",
+            "description": "Semicolon-separated latitude,longitude pairs (e.g., '40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431').",
+            "default": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431",
+            "example": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431"
+          },
+          "censusYear": {
+            "type": "string",
+            "title": "Census Vintage Year",
+            "description": "Decennial Census geography vintage ('2020' or '2010').",
+            "default": "2020",
+            "example": "2020"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Properties to Enrich",
+            "description": "Maximum number of U.S. property coordinate pairs to enrich (1 to 100).",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "coordinatesList"
+        ],
+        "example": {
+          "coordinatesList": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431",
+          "censusYear": "2020",
+          "maxResults": 5
+        }
+      },
+      "UsCensusFccRealEstateGeoEnricherRecord": {
+        "type": "object",
+        "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Output Record",
+        "description": "Enriched B2B dataset item returned by `us-census-fcc-real-estate-geo-enricher`.",
+        "properties": {
+          "censusBlockFips": {
+            "type": "string",
+            "title": "15-Digit Census Block FIPS",
+            "description": "Official 15-digit U.S. Census Block FIPS identifier.",
+            "example": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "censusTractFips": {
+            "type": "string",
+            "title": "11-Digit Census Tract FIPS",
+            "description": "11-digit Census Tract code used for HUD, Fannie Mae, and Opportunity Zone underwriting.",
+            "example": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "countyFips": {
+            "type": "string",
+            "title": "5-Digit County FIPS",
+            "description": "Official 5-digit U.S. County FIPS code.",
+            "example": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "countyName": {
+            "type": "string",
+            "title": "County Name",
+            "description": "Official County or Parish name.",
+            "example": "Verified County Name (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "stateCode": {
+            "type": "string",
+            "title": "State USPS Code",
+            "description": "Two-letter U.S. State or Territory code.",
+            "example": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "stateName": {
+            "type": "string",
+            "title": "State Name",
+            "description": "Full U.S. State name.",
+            "example": "Verified State Name (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude",
+            "description": "Property latitude coordinate.",
+            "example": 94.5
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude",
+            "description": "Property longitude coordinate.",
+            "example": 94.5
+          },
+          "realEstateInvestmentScore": {
+            "type": "integer",
+            "title": "PropTech Investment Score (0-100)",
+            "description": "Quantitative commercial corridor and metro tier score (0-100).",
+            "example": 88
+          },
+          "bboxSummary": {
+            "type": "string",
+            "title": "Census Block Bounding Box",
+            "description": "Geographic bounding box coordinates [minLon, minLat, maxLon, maxLat].",
+            "example": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "markdownPropertyBrief": {
+            "type": "string",
+            "title": "Markdown PropTech & FIPS Dossier",
+            "description": "Executive Markdown brief for real estate underwriting, insurance, and franchise siting.",
+            "example": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+          "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+          "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+          "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+          "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+          "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+          "latitude": 94.5,
+          "longitude": 94.5,
+          "realEstateInvestmentScore": 88,
+          "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+          "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsCensusFccRealEstateGeoEnricherResponseEnvelope": {
+        "type": "object",
+        "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-census-fcc-real-estate-geo-enricher"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-census-fcc-real-estate-geo-enricher",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+              "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+              "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+              "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+              "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+              "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+              "latitude": 94.5,
+              "longitude": 94.5,
+              "realEstateInvestmentScore": 88,
+              "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+              "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

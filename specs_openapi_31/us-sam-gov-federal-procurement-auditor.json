@@ -1,0 +1,588 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US Federal Contracts & SAM.gov Procurement B2G Radar",
+    "version": "3.0.0",
+    "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.\n\n### Enterprise B2B Value Proposition (US Federal Contracts & SAM.gov Procurement B2G Radar)\n- **Target B2B Buyers:** U.S. Federal Defense Contractors, GovCon BD Teams, and Public Sector Market Intelligence Platforms.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Federal Contract Award & B2G Audited`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** sam-gov, usaspending, federal-contracts, govcon-intelligence, naics-psc, b2g-procurement, defense-contracts.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-sam-gov-federal-procurement-auditor"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Government & Legal",
+    "x-seo-tags": [
+      "sam-gov",
+      "usaspending",
+      "federal-contracts",
+      "govcon-intelligence",
+      "naics-psc",
+      "b2g-procurement",
+      "defense-contracts"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sam-gov-federal-procurement-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\"\npayload = {\n    \"keyword\": \"cybersecurity\",\n    \"awardingAgency\": \"\",\n    \"minAwardAmount\": 50000,\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US Federal Contracts & SAM.gov Procurement B2G Radar",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sam-gov-federal-procurement-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Government & Legal)"
+    },
+    {
+      "name": "sam-gov",
+      "description": "B2B SEO Search Tag: sam-gov"
+    },
+    {
+      "name": "usaspending",
+      "description": "B2B SEO Search Tag: usaspending"
+    },
+    {
+      "name": "federal-contracts",
+      "description": "B2B SEO Search Tag: federal-contracts"
+    },
+    {
+      "name": "govcon-intelligence",
+      "description": "B2B SEO Search Tag: govcon-intelligence"
+    },
+    {
+      "name": "naics-psc",
+      "description": "B2B SEO Search Tag: naics-psc"
+    },
+    {
+      "name": "b2g-procurement",
+      "description": "B2B SEO Search Tag: b2g-procurement"
+    },
+    {
+      "name": "defense-contracts",
+      "description": "B2B SEO Search Tag: defense-contracts"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-sam-gov-federal-procurement-auditor": {
+      "post": {
+        "operationId": "execute_us_sam_gov_federal_procurement_auditor",
+        "summary": "Execute US Federal Contracts & SAM.gov Procurement B2G Radar",
+        "description": "Synchronous stateless execution of **US Federal Contracts & SAM.gov Procurement B2G Radar**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "sam-gov",
+          "usaspending",
+          "federal-contracts",
+          "govcon-intelligence",
+          "naics-psc"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sam-gov-federal-procurement-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\"\npayload = {\n    \"keyword\": \"cybersecurity\",\n    \"awardingAgency\": \"\",\n    \"minAwardAmount\": 50000,\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-sam-gov-federal-procurement-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\"\npayload = {\n    \"keyword\": \"cybersecurity\",\n    \"awardingAgency\": \"\",\n    \"minAwardAmount\": 50000,\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-sam-gov-federal-procurement-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"keyword\": \"cybersecurity\", \"awardingAgency\": \"\", \"minAwardAmount\": 50000, \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-sam-gov-federal-procurement-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsSamGovFederalProcurementAuditorRequest"
+              },
+              "example": {
+                "keyword": "cybersecurity",
+                "awardingAgency": "",
+                "minAwardAmount": 50000,
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-sam-gov-federal-procurement-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsSamGovFederalProcurementAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-sam-gov-federal-procurement-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
+                      "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
+                      "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
+                      "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
+                      "awardAmountUsd": 94.5,
+                      "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
+                      "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
+                      "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
+                      "b2gOpportunityScore": 88,
+                      "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
+                      "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-sam-gov-federal-procurement-auditor/health": {
+      "get": {
+        "operationId": "health_us_sam_gov_federal_procurement_auditor",
+        "summary": "Health & SLA Check for US Federal Contracts & SAM.gov Procurement B2G Radar",
+        "description": "Lightweight health and schema readiness check for `us-sam-gov-federal-procurement-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-sam-gov-federal-procurement-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-sam-gov-federal-procurement-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsSamGovFederalProcurementAuditorRequest": {
+        "type": "object",
+        "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Request Schema",
+        "description": "Configure contract scope keyword, federal awarding agency filter, minimum award value in USD, and maximum results to extract and score U.S. Federal Government B2G contracts.",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "title": "Contract Scope / Technology Keyword",
+            "description": "Keyword searched in federal contract award descriptions (e.g., 'cybersecurity', 'cloud software', 'medical supplies', 'autonomous').",
+            "default": "cybersecurity",
+            "example": "cybersecurity"
+          },
+          "awardingAgency": {
+            "type": "string",
+            "title": "Federal Awarding Agency (Optional)",
+            "description": "Optional filter by top-tier U.S. Federal Agency name (e.g., 'Department of Defense', 'Department of Veterans Affairs').",
+            "default": "",
+            "example": ""
+          },
+          "minAwardAmount": {
+            "type": "integer",
+            "title": "Minimum Contract Value (USD)",
+            "description": "Minimum contract obligation amount in USD (0 to 1,000,000,000).",
+            "default": 50000,
+            "minimum": 0,
+            "maximum": 1000000000,
+            "example": 50000
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Contracts to Extract",
+            "description": "Maximum number of federal contract awards to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "keyword"
+        ],
+        "example": {
+          "keyword": "cybersecurity",
+          "awardingAgency": "",
+          "minAwardAmount": 50000,
+          "maxResults": 5
+        }
+      },
+      "UsSamGovFederalProcurementAuditorRecord": {
+        "type": "object",
+        "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Output Record",
+        "description": "Enriched B2B dataset item returned by `us-sam-gov-federal-procurement-auditor`.",
+        "properties": {
+          "awardId": {
+            "type": "string",
+            "title": "Federal Award ID (PIID)",
+            "description": "Official Procurement Instrument Identifier (PIID).",
+            "example": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)"
+          },
+          "recipientName": {
+            "type": "string",
+            "title": "Contractor / Recipient Name",
+            "description": "Legal entity awarded the federal contract.",
+            "example": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)"
+          },
+          "awardingAgency": {
+            "type": "string",
+            "title": "Awarding Agency",
+            "description": "Top-tier U.S. Federal Department or Agency.",
+            "example": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)"
+          },
+          "awardingSubAgency": {
+            "type": "string",
+            "title": "Awarding Sub-Agency",
+            "description": "Specific bureau, command, or sub-agency.",
+            "example": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)"
+          },
+          "awardAmountUsd": {
+            "type": "number",
+            "title": "Award Amount (USD)",
+            "description": "Total federal contract award amount in USD.",
+            "example": 94.5
+          },
+          "startDate": {
+            "type": "string",
+            "title": "Start Date",
+            "description": "Contract period of performance start date (YYYY-MM-DD).",
+            "example": "Verified Start Date (us-sam-gov-federal-procurement-auditor)"
+          },
+          "endDate": {
+            "type": "string",
+            "title": "End Date",
+            "description": "Contract period of performance end/renewal date (YYYY-MM-DD).",
+            "example": "Verified End Date (us-sam-gov-federal-procurement-auditor)"
+          },
+          "contractAwardType": {
+            "type": "string",
+            "title": "Contract Award Type",
+            "description": "Federal procurement instrument type (Definitive Contract, Delivery Order, BPA Call, Purchase Order).",
+            "example": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)"
+          },
+          "b2gOpportunityScore": {
+            "type": "integer",
+            "title": "B2G Opportunity Score (0-100)",
+            "description": "Quantitative score evaluating contract value, recompete window, and B2G subcontracting potential (0-100).",
+            "example": 88
+          },
+          "description": {
+            "type": "string",
+            "title": "Contract Scope Description",
+            "description": "Official summary of goods or services procured.",
+            "example": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)"
+          },
+          "markdownProcurementBrief": {
+            "type": "string",
+            "title": "Markdown B2G Procurement Intelligence Brief",
+            "description": "Executive Markdown dossier for GovCon capture teams, B2B sales, and AI RAG agents.",
+            "example": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
+          "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
+          "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
+          "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
+          "awardAmountUsd": 94.5,
+          "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
+          "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
+          "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
+          "b2gOpportunityScore": 88,
+          "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
+          "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsSamGovFederalProcurementAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "US Federal Contracts & SAM.gov Procurement B2G Radar Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-sam-gov-federal-procurement-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsSamGovFederalProcurementAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-sam-gov-federal-procurement-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
+              "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
+              "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
+              "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
+              "awardAmountUsd": 94.5,
+              "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
+              "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
+              "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
+              "b2gOpportunityScore": 88,
+              "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
+              "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

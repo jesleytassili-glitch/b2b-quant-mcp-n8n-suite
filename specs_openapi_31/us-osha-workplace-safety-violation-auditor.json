@@ -1,0 +1,586 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "US OSHA Workplace Safety & Violation Compliance Auditor",
+    "version": "3.0.0",
+    "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).\n\n### Enterprise B2B Value Proposition (US OSHA Workplace Safety & Violation Compliance Auditor)\n- **Target B2B Buyers:** Commercial Insurance Underwriters (Workers' Comp), EHS Compliance Platforms, and M&A Due Diligence Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`US OSHA Establishment Safety & Penalty Audited`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Government & Legal`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** osha-violations, workplace-safety, ehs-compliance, industrial-inspections, workers-comp-underwriting, supply-chain-audit, dol-osha.",
+    "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+    "contact": {
+      "name": "B2B Quant APIs (@b2b-quant-apis)",
+      "email": "jesleytassili@gmail.com",
+      "url": "https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+    },
+    "license": {
+      "name": "Commercial B2B API Subscription (RapidAPI & Zyla Hub)",
+      "url": "https://apify.com/b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+    },
+    "x-category": "Business",
+    "x-rapidapi-category": "Business",
+    "x-zyla-category": "Government & Legal",
+    "x-seo-tags": [
+      "osha-violations",
+      "workplace-safety",
+      "ehs-compliance",
+      "industrial-inspections",
+      "workers-comp-underwriting",
+      "supply-chain-audit",
+      "dol-osha"
+    ],
+    "x-payout-destination": "Wise #890361113",
+    "x-pricing-plans": {
+      "BASIC": {
+        "tier": "BASIC",
+        "label": "Freemium Developer Trial",
+        "monthlyPriceUsd": 0.0,
+        "monthlyQuotaRequests": 15,
+        "overagePricePerRequestUsd": 0.0,
+        "hardLimit": true
+      },
+      "PRO": {
+        "tier": "PRO",
+        "label": "Startup & RevOps Pipeline",
+        "monthlyPriceUsd": 19.0,
+        "monthlyQuotaRequests": 1000,
+        "overagePricePerRequestUsd": 0.02,
+        "hardLimit": false
+      },
+      "ULTRA": {
+        "tier": "ULTRA",
+        "label": "Mid-Market Automation Cluster",
+        "monthlyPriceUsd": 49.0,
+        "monthlyQuotaRequests": 5000,
+        "overagePricePerRequestUsd": 0.015,
+        "hardLimit": false
+      },
+      "MEGA": {
+        "tier": "MEGA",
+        "label": "Enterprise High-Throughput SLA",
+        "monthlyPriceUsd": 149.0,
+        "monthlyQuotaRequests": 25000,
+        "overagePricePerRequestUsd": 0.01,
+        "hardLimit": false
+      }
+    },
+    "x-code-snippets": {
+      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-osha-workplace-safety-violation-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\"\npayload = {\n    \"companyOrEstablishment\": \"Amazon\",\n    \"stateCode\": \"TX\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json",
+    "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json",
+    "x-apis-json-url": "https://jesleytassili-glitch.github.io/apis.json",
+    "x-github-release-tag": "v2.2.0"
+  },
+  "externalDocs": {
+    "description": "Official B2B Documentation & Schema Reference for US OSHA Workplace Safety & Violation Compliance Auditor",
+    "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-osha-workplace-safety-violation-auditor.html"
+  },
+  "servers": [
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+    },
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business",
+      "description": "RapidAPI Hub primary category: Business (Zyla Hub: Government & Legal)"
+    },
+    {
+      "name": "osha-violations",
+      "description": "B2B SEO Search Tag: osha-violations"
+    },
+    {
+      "name": "workplace-safety",
+      "description": "B2B SEO Search Tag: workplace-safety"
+    },
+    {
+      "name": "ehs-compliance",
+      "description": "B2B SEO Search Tag: ehs-compliance"
+    },
+    {
+      "name": "industrial-inspections",
+      "description": "B2B SEO Search Tag: industrial-inspections"
+    },
+    {
+      "name": "workers-comp-underwriting",
+      "description": "B2B SEO Search Tag: workers-comp-underwriting"
+    },
+    {
+      "name": "supply-chain-audit",
+      "description": "B2B SEO Search Tag: supply-chain-audit"
+    },
+    {
+      "name": "dol-osha",
+      "description": "B2B SEO Search Tag: dol-osha"
+    }
+  ],
+  "security": [
+    {
+      "RapidAPIProxySecret": []
+    },
+    {
+      "ZylaProxySecret": []
+    },
+    {
+      "RapidAPISubscriberKey": []
+    }
+  ],
+  "paths": {
+    "/v1/us-osha-workplace-safety-violation-auditor": {
+      "post": {
+        "operationId": "execute_us_osha_workplace_safety_violation_auditor",
+        "summary": "Execute US OSHA Workplace Safety & Violation Compliance Auditor",
+        "description": "Synchronous stateless execution of **US OSHA Workplace Safety & Violation Compliance Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "tags": [
+          "Business",
+          "osha-violations",
+          "workplace-safety",
+          "ehs-compliance",
+          "industrial-inspections",
+          "workers-comp-underwriting"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-osha-workplace-safety-violation-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\"\npayload = {\n    \"companyOrEstablishment\": \"Amazon\",\n    \"stateCode\": \"TX\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-osha-workplace-safety-violation-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\"\npayload = {\n    \"companyOrEstablishment\": \"Amazon\",\n    \"stateCode\": \"TX\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-osha-workplace-safety-violation-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"companyOrEstablishment\": \"Amazon\", \"stateCode\": \"TX\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-osha-workplace-safety-violation-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsOshaWorkplaceSafetyViolationAuditorRequest"
+              },
+              "example": {
+                "companyOrEstablishment": "Amazon",
+                "stateCode": "TX",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-osha-workplace-safety-violation-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsOshaWorkplaceSafetyViolationAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-osha-workplace-safety-violation-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "activityNumber": "Verified OSHA Activity Number (us-osha-workplace-safety-violation-auditor)",
+                      "establishmentName": "Verified Establishment Name (us-osha-workplace-safety-violation-auditor)",
+                      "siteCity": "Verified Site City (us-osha-workplace-safety-violation-auditor)",
+                      "siteState": "Verified Site State (us-osha-workplace-safety-violation-auditor)",
+                      "naicsCode": "Verified NAICS Industry Code (us-osha-workplace-safety-violation-auditor)",
+                      "inspectionType": "Verified Inspection Type (us-osha-workplace-safety-violation-auditor)",
+                      "openDate": "Verified Inspection Open Date (us-osha-workplace-safety-violation-auditor)",
+                      "totalViolations": 88,
+                      "seriousWillfulRepeatCount": 88,
+                      "currentPenaltyUsd": 94.5,
+                      "workplaceRiskScore": 88,
+                      "markdownSafetyBrief": "Verified Markdown EHS & Underwriting Audit Brief (us-osha-workplace-safety-violation-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US OSHA Workplace Safety & Violation Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-osha-workplace-safety-violation-auditor/health": {
+      "get": {
+        "operationId": "health_us_osha_workplace_safety_violation_auditor",
+        "summary": "Health & SLA Check for US OSHA Workplace Safety & Violation Compliance Auditor",
+        "description": "Lightweight health and schema readiness check for `us-osha-workplace-safety-violation-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-osha-workplace-safety-violation-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-osha-workplace-safety-violation-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Business"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "RapidAPIProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Proxy-Secret",
+        "description": "RapidAPI Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "ZylaProxySecret": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Zyla-Proxy-Secret",
+        "description": "Zyla API Hub shared proxy secret verified in constant time via hmac.compare_digest."
+      },
+      "RapidAPISubscriberKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key",
+        "description": "Subscriber API Key injected by RapidAPI Hub or Zyla API Hub."
+      }
+    },
+    "schemas": {
+      "UsOshaWorkplaceSafetyViolationAuditorRequest": {
+        "type": "object",
+        "title": "US OSHA Workplace Safety & Violation Compliance Auditor Request Schema",
+        "description": "Configure company/establishment keyword, optional 2-letter U.S. state filter, and maximum OSHA enforcement inspection records to audit.",
+        "properties": {
+          "companyOrEstablishment": {
+            "type": "string",
+            "title": "Company or Establishment Name",
+            "description": "Employer or establishment keyword (e.g., 'Amazon', 'Tesla', 'Walmart', 'United Parcel Service', 'Tyson').",
+            "default": "Amazon",
+            "example": "Amazon"
+          },
+          "stateCode": {
+            "type": "string",
+            "title": "U.S. State Code (Optional)",
+            "description": "Optional 2-letter U.S. state abbreviation (e.g., 'TX', 'CA', 'IL', 'OH', or leave empty for nationwide).",
+            "default": "",
+            "example": "TX"
+          },
+          "maxResults": {
+            "type": "integer",
+            "title": "Maximum Inspections to Audit",
+            "description": "Maximum number of OSHA establishment inspection records to extract and score (1 to 100).",
+            "default": 15,
+            "minimum": 1,
+            "maximum": 100,
+            "example": 5
+          }
+        },
+        "required": [
+          "companyOrEstablishment"
+        ],
+        "example": {
+          "companyOrEstablishment": "Amazon",
+          "stateCode": "TX",
+          "maxResults": 5
+        }
+      },
+      "UsOshaWorkplaceSafetyViolationAuditorRecord": {
+        "type": "object",
+        "title": "US OSHA Workplace Safety & Violation Compliance Auditor Output Record",
+        "description": "Enriched B2B dataset item returned by `us-osha-workplace-safety-violation-auditor`.",
+        "properties": {
+          "activityNumber": {
+            "type": "string",
+            "title": "OSHA Activity Number",
+            "description": "Official OSHA inspection activity identifier.",
+            "example": "Verified OSHA Activity Number (us-osha-workplace-safety-violation-auditor)"
+          },
+          "establishmentName": {
+            "type": "string",
+            "title": "Establishment Name",
+            "description": "Inspected employer or facility name.",
+            "example": "Verified Establishment Name (us-osha-workplace-safety-violation-auditor)"
+          },
+          "siteCity": {
+            "type": "string",
+            "title": "Site City",
+            "description": "City where the inspected facility is located.",
+            "example": "Verified Site City (us-osha-workplace-safety-violation-auditor)"
+          },
+          "siteState": {
+            "type": "string",
+            "title": "Site State",
+            "description": "2-letter U.S. state abbreviation.",
+            "example": "Verified Site State (us-osha-workplace-safety-violation-auditor)"
+          },
+          "naicsCode": {
+            "type": "string",
+            "title": "NAICS Industry Code",
+            "description": "6-digit North American Industry Classification System code.",
+            "example": "Verified NAICS Industry Code (us-osha-workplace-safety-violation-auditor)"
+          },
+          "inspectionType": {
+            "type": "string",
+            "title": "Inspection Type",
+            "description": "Complaint, Referral, Fatality/Catastrophe, or Planned inspection.",
+            "example": "Verified Inspection Type (us-osha-workplace-safety-violation-auditor)"
+          },
+          "openDate": {
+            "type": "string",
+            "title": "Inspection Open Date",
+            "description": "ISO date when the OSHA inspection opened.",
+            "example": "Verified Inspection Open Date (us-osha-workplace-safety-violation-auditor)"
+          },
+          "totalViolations": {
+            "type": "integer",
+            "title": "Total Citations",
+            "description": "Total number of OSHA standards cited.",
+            "example": 88
+          },
+          "seriousWillfulRepeatCount": {
+            "type": "integer",
+            "title": "Serious / Willful / Repeat Citations",
+            "description": "Count of high-severity (Serious, Willful, or Repeat) citations.",
+            "example": 88
+          },
+          "currentPenaltyUsd": {
+            "type": "number",
+            "title": "Current Penalty (USD)",
+            "description": "Assessed OSHA civil monetary penalty in USD.",
+            "example": 94.5
+          },
+          "workplaceRiskScore": {
+            "type": "integer",
+            "title": "Workplace Safety Risk Score (0-100)",
+            "description": "Quantitative EHS and supply-chain underwriting risk score (0-100).",
+            "example": 88
+          },
+          "markdownSafetyBrief": {
+            "type": "string",
+            "title": "Markdown EHS & Underwriting Audit Brief",
+            "description": "Executive Markdown dossier for ESG auditors, insurance underwriters, and M&A due diligence.",
+            "example": "Verified Markdown EHS & Underwriting Audit Brief (us-osha-workplace-safety-violation-auditor)"
+          },
+          "quantScore": {
+            "type": "number",
+            "title": "Quantitative Compliance & Opportunity Score (0-100)",
+            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
+            "example": 91.5
+          },
+          "ragMarkdownBrief": {
+            "type": "string",
+            "title": "Executive RAG Markdown Brief",
+            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
+            "example": "### Executive Audit Brief — US OSHA Workplace Safety & Violation Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          }
+        },
+        "example": {
+          "activityNumber": "Verified OSHA Activity Number (us-osha-workplace-safety-violation-auditor)",
+          "establishmentName": "Verified Establishment Name (us-osha-workplace-safety-violation-auditor)",
+          "siteCity": "Verified Site City (us-osha-workplace-safety-violation-auditor)",
+          "siteState": "Verified Site State (us-osha-workplace-safety-violation-auditor)",
+          "naicsCode": "Verified NAICS Industry Code (us-osha-workplace-safety-violation-auditor)",
+          "inspectionType": "Verified Inspection Type (us-osha-workplace-safety-violation-auditor)",
+          "openDate": "Verified Inspection Open Date (us-osha-workplace-safety-violation-auditor)",
+          "totalViolations": 88,
+          "seriousWillfulRepeatCount": 88,
+          "currentPenaltyUsd": 94.5,
+          "workplaceRiskScore": 88,
+          "markdownSafetyBrief": "Verified Markdown EHS & Underwriting Audit Brief (us-osha-workplace-safety-violation-auditor)",
+          "quantScore": 91.5,
+          "ragMarkdownBrief": "### Executive Audit Brief — US OSHA Workplace Safety & Violation Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+        }
+      },
+      "UsOshaWorkplaceSafetyViolationAuditorResponseEnvelope": {
+        "type": "object",
+        "title": "US OSHA Workplace Safety & Violation Compliance Auditor Synchronous Response Envelope",
+        "required": [
+          "status",
+          "actor",
+          "count",
+          "data"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "succeeded"
+          },
+          "actor": {
+            "type": "string",
+            "example": "us-osha-workplace-safety-violation-auditor"
+          },
+          "marketplace": {
+            "type": "string",
+            "example": "rapidapi_zyla_hub"
+          },
+          "engineVersion": {
+            "type": "string",
+            "example": "3.0.0"
+          },
+          "count": {
+            "type": "integer",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsOshaWorkplaceSafetyViolationAuditorRecord"
+            }
+          }
+        },
+        "example": {
+          "status": "succeeded",
+          "actor": "us-osha-workplace-safety-violation-auditor",
+          "marketplace": "rapidapi_zyla_hub",
+          "engineVersion": "3.0.0",
+          "count": 1,
+          "data": [
+            {
+              "activityNumber": "Verified OSHA Activity Number (us-osha-workplace-safety-violation-auditor)",
+              "establishmentName": "Verified Establishment Name (us-osha-workplace-safety-violation-auditor)",
+              "siteCity": "Verified Site City (us-osha-workplace-safety-violation-auditor)",
+              "siteState": "Verified Site State (us-osha-workplace-safety-violation-auditor)",
+              "naicsCode": "Verified NAICS Industry Code (us-osha-workplace-safety-violation-auditor)",
+              "inspectionType": "Verified Inspection Type (us-osha-workplace-safety-violation-auditor)",
+              "openDate": "Verified Inspection Open Date (us-osha-workplace-safety-violation-auditor)",
+              "totalViolations": 88,
+              "seriousWillfulRepeatCount": 88,
+              "currentPenaltyUsd": 94.5,
+              "workplaceRiskScore": 88,
+              "markdownSafetyBrief": "Verified Markdown EHS & Underwriting Audit Brief (us-osha-workplace-safety-violation-auditor)",
+              "quantScore": 91.5,
+              "ragMarkdownBrief": "### Executive Audit Brief — US OSHA Workplace Safety & Violation Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            }
+          ]
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 403
+          },
+          "message": {
+            "type": "string",
+            "example": "Direct access denied."
+          }
+        }
+      }
+    }
+  }
+}

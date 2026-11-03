@@ -15,8 +15,8 @@ import mcp_server
 
 
 def test_tools_declaration_complete() -> None:
-    """Verify all 30 B2B tools are declared with valid JSON schemas."""
-    assert len(mcp_server.TOOLS) >= 30
+    """Verify all 31 B2B tools are declared with valid JSON schemas."""
+    assert len(mcp_server.TOOLS) >= 31
     for tool in mcp_server.TOOLS:
         assert "name" in tool and tool["name"]
         assert "description" in tool and len(tool["description"]) > 10
@@ -45,4 +45,4 @@ def test_stdio_initialize_and_tools_list() -> None:
     init_resp = json.loads(lines[0])
     assert init_resp["result"]["serverInfo"]["name"] == "b2b-quant-mcp-n8n-suite"
     tools_resp = json.loads(lines[1])
-    assert len(tools_resp["result"]["tools"]) >= 30
+    assert len(tools_resp["result"]["tools"]) >= 31

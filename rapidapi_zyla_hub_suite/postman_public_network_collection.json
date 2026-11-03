@@ -1,0 +1,2291 @@
+{
+  "info": {
+    "_postman_id": "b2b-quant-31-openapi-303-suite-v3",
+    "name": "B2B Quant, Regulatory Compliance & FinTech Suite (31 OpenAPI 3.0.3 APIs)",
+    "version": "3.0.0",
+    "description": "Official Postman Public API Network Collection for 31 Stateless B2B Regulatory Compliance, KYB, FinTech, SecOps, GovCon, and Healthcare APIs (@b2b-quant-apis). All 31 individual OpenAPI 3.0.3 specifications are hosted at `https://jesleytassili-glitch.github.io/specs_openapi_31/<slug>.json` and indexed in `https://jesleytassili-glitch.github.io/apis.json`.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "GATEWAY_BASE_URL",
+      "value": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "type": "string"
+    },
+    {
+      "key": "RAPIDAPI_OR_ZYLA_KEY",
+      "value": "<YOUR_RAPIDAPI_OR_ZYLA_SUBSCRIBER_KEY>",
+      "type": "string"
+    },
+    {
+      "key": "OPENAPI_SPECS_ORIGIN",
+      "value": "https://jesleytassili-glitch.github.io/specs_openapi_31",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01. Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server) (b2b-gov-procurement-pncp-radar)",
+      "description": "Extracts, filters, and enriches live Brazilian government public tenders (Pregão Eletrônico, Dispensa - Lei 14.133) from the official PNCP API with item-level pricing, ME/EPP flags, and LLM-ready RAG Markdown briefs.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/b2b-gov-procurement-pncp-radar — Execute Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "b2b-gov-procurement-pncp-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uf\": \"SP\",\n  \"keywords\": [\n    \"software\",\n    \"cloud\",\n    \"licenciamento\"\n  ],\n  \"codigoModalidadeContratacao\": \"6\",\n  \"dataInicial\": \"\",\n  \"dataFinal\": \"\",\n  \"maxResults\": 20,\n  \"fetchItems\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-gov-procurement-pncp-radar"
+              ]
+            },
+            "description": "Synchronous execution of `b2b-gov-procurement-pncp-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-gov-procurement-pncp-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/b2b-gov-procurement-pncp-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-gov-procurement-pncp-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-gov-procurement-pncp-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `b2b-gov-procurement-pncp-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "02. Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor (brazil-tax-reform-ncm-classtrib-auditor)",
+      "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Taxes & Compliance`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-tax-reform-ncm-classtrib-auditor — Execute Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"catalogItems\": [\n    {\n      \"sku\": \"ITEM-001\",\n      \"ncm\": \"10063021\",\n      \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n    },\n    {\n      \"sku\": \"ITEM-002\",\n      \"ncm\": \"30049099\",\n      \"description\": \"Medicamento para uso humano em doses\"\n    },\n    {\n      \"sku\": \"ITEM-003\",\n      \"ncm\": \"22030000\",\n      \"description\": \"Cerveja de malte em lata 350ml\"\n    },\n    {\n      \"sku\": \"ITEM-004\",\n      \"ncm\": \"84713012\",\n      \"description\": \"Notebook portátil para processamento de dados\"\n    }\n  ],\n  \"nfeXmlList\": [],\n  \"uf\": \"SP\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-tax-reform-ncm-classtrib-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-tax-reform-ncm-classtrib-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-tax-reform-ncm-classtrib-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-tax-reform-ncm-classtrib-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-tax-reform-ncm-classtrib-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "03. Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer (healthcare-tiss-xml-validator)",
+      "description": "Stateless (100% LGPD compliant) ANS TISS 4.03.00 XML medical billing validator, automatic MD5 hash recalculator, and TUSS 8-digit procedure code auditor to prevent health insurance billing rejections (Glosas).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json`\n- **RapidAPI Category:** `Medical`\n- **Zyla Hub Category:** `Healthcare`",
+      "item": [
+        {
+          "name": "POST /v1/healthcare-tiss-xml-validator — Execute Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "healthcare-tiss-xml-validator.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tissXmlPayloads\": [\n    \"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"\n  ],\n  \"autoFixHash\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "healthcare-tiss-xml-validator"
+              ]
+            },
+            "description": "Synchronous execution of `healthcare-tiss-xml-validator` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/healthcare-tiss-xml-validator.json)."
+          }
+        },
+        {
+          "name": "GET /v1/healthcare-tiss-xml-validator/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/healthcare-tiss-xml-validator/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "healthcare-tiss-xml-validator",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `healthcare-tiss-xml-validator`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "04. Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor (brazil-antt-freight-cte-auditor)",
+      "description": "Calculates the mandatory Brazilian ANTT minimum road freight floor (Lei 13.703/2018 - CCD x km + CC) and audits CT-e 4.00 XML invoices in batch to prevent automatic ANTT/SEFAZ fines.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-antt-freight-cte-auditor.json`\n- **RapidAPI Category:** `Logistics`\n- **Zyla Hub Category:** `Logistics & Shipping`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-antt-freight-cte-auditor — Execute Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-antt-freight-cte-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"routes\": [\n    {\n      \"origin_uf\": \"SP\",\n      \"dest_uf\": \"RJ\",\n      \"distance_km\": 430,\n      \"axles\": 6,\n      \"cargo_type\": \"geral\"\n    }\n  ],\n  \"cteXmlList\": [],\n  \"defaultAxles\": 6\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-antt-freight-cte-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-antt-freight-cte-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-antt-freight-cte-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-antt-freight-cte-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-antt-freight-cte-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-antt-freight-cte-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-antt-freight-cte-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-antt-freight-cte-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "05. US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API) (us-healthcare-npi-provider-lead-enricher)",
+      "description": "B2B healthcare lead extractor and enricher for US doctors, dentists, clinics, and hospitals using the official CMS NPPES NPI Registry API v2.1. Extracts NPI-1 and NPI-2 records, practice addresses, phone numbers, primary taxonomy, state licenses, and AI-ready lead dossiers.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json`\n- **RapidAPI Category:** `Medical`\n- **Zyla Hub Category:** `Healthcare`",
+      "item": [
+        {
+          "name": "POST /v1/us-healthcare-npi-provider-lead-enricher — Execute US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-healthcare-npi-provider-lead-enricher.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"state\": \"FL\",\n  \"city\": \"Miami\",\n  \"taxonomyDescription\": \"Dentist\",\n  \"enumerationType\": \"ALL\",\n  \"postalCode\": \"\",\n  \"maxResults\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-healthcare-npi-provider-lead-enricher"
+              ]
+            },
+            "description": "Synchronous execution of `us-healthcare-npi-provider-lead-enricher` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-healthcare-npi-provider-lead-enricher.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-healthcare-npi-provider-lead-enricher/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-healthcare-npi-provider-lead-enricher/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-healthcare-npi-provider-lead-enricher",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-healthcare-npi-provider-lead-enricher`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "06. US FDA Recalls & Safety Monitor (Food, Drug & Devices) (us-fda-recalls-safety-monitor)",
+      "description": "Monitors and enriches official U.S. FDA enforcement recall reports across Food, Drugs, and Medical Devices via openFDA. Calculates hazard severity scores (0-100) and generates Markdown legal briefs for Product Liability law firms and retail compliance.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-fda-recalls-safety-monitor.json`\n- **RapidAPI Category:** `Medical`\n- **Zyla Hub Category:** `Healthcare`",
+      "item": [
+        {
+          "name": "POST /v1/us-fda-recalls-safety-monitor — Execute US FDA Recalls & Safety Monitor (Food, Drug & Devices)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-fda-recalls-safety-monitor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"domain\": \"food\",\n  \"classification\": \"ALL\",\n  \"keyword\": \"\",\n  \"state\": \"\",\n  \"maxResults\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fda-recalls-safety-monitor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-fda-recalls-safety-monitor"
+              ]
+            },
+            "description": "Synchronous execution of `us-fda-recalls-safety-monitor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-fda-recalls-safety-monitor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-fda-recalls-safety-monitor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fda-recalls-safety-monitor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-fda-recalls-safety-monitor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-fda-recalls-safety-monitor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "07. Global B2B Email, MX, SPF & DMARC Deliverability Auditor (global-b2b-email-domain-security-auditor)",
+      "description": "High-speed asynchronous B2B email and corporate domain auditor via DNS-over-HTTPS (Cloudflare & Google DNS). Validates RFC 5322 syntax, disposable domains, MX records, email provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast), SPF, and DMARC policies.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/global-b2b-email-domain-security-auditor.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "item": [
+        {
+          "name": "POST /v1/global-b2b-email-domain-security-auditor — Execute Global B2B Email, MX, SPF & DMARC Deliverability Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "global-b2b-email-domain-security-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"targets\": [\n    \"contact@openai.com\",\n    \"sales@stripe.com\",\n    \"fake@mailinator.com\"\n  ],\n  \"checkDmarcAndSpf\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-b2b-email-domain-security-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-b2b-email-domain-security-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `global-b2b-email-domain-security-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/global-b2b-email-domain-security-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/global-b2b-email-domain-security-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-b2b-email-domain-security-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-b2b-email-domain-security-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `global-b2b-email-domain-security-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "08. US ClinicalTrials.gov Biotech & Pharma Study Radar (us-clinical-trials-biotech-radar)",
+      "description": "B2B clinical trials intelligence and biotech sponsor lead generator powered by the official U.S. NIH ClinicalTrials.gov API v2. Extracts recruiting studies, pharma sponsors, phases, drug interventions, enrollment counts, and site contacts with LLM-ready Markdown briefs.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-clinical-trials-biotech-radar.json`\n- **RapidAPI Category:** `Medical`\n- **Zyla Hub Category:** `Healthcare`",
+      "item": [
+        {
+          "name": "POST /v1/us-clinical-trials-biotech-radar — Execute US ClinicalTrials.gov Biotech & Pharma Study Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-clinical-trials-biotech-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"condition\": \"Diabetes\",\n  \"overallStatus\": \"RECRUITING\",\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-clinical-trials-biotech-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-clinical-trials-biotech-radar"
+              ]
+            },
+            "description": "Synchronous execution of `us-clinical-trials-biotech-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-clinical-trials-biotech-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-clinical-trials-biotech-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-clinical-trials-biotech-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-clinical-trials-biotech-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-clinical-trials-biotech-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "09. US NHTSA Vehicle VIN Decoder & Safety Recall Auditor (us-nhtsa-vehicle-vin-recall-auditor)",
+      "description": "Batch decode 17-character and partial Vehicle Identification Numbers (VINs), extract official technical specifications, and audit active safety recalls directly from U.S. NHTSA / Department of Transportation APIs.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json`\n- **RapidAPI Category:** `Logistics`\n- **Zyla Hub Category:** `Logistics & Shipping`",
+      "item": [
+        {
+          "name": "POST /v1/us-nhtsa-vehicle-vin-recall-auditor — Execute US NHTSA Vehicle VIN Decoder & Safety Recall Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-nhtsa-vehicle-vin-recall-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vins\": [\n    \"5UXWX7C5*BA\",\n    \"1HGCM82633A004352\"\n  ],\n  \"checkRecalls\": true,\n  \"maxResults\": 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-nhtsa-vehicle-vin-recall-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `us-nhtsa-vehicle-vin-recall-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-nhtsa-vehicle-vin-recall-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-nhtsa-vehicle-vin-recall-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-nhtsa-vehicle-vin-recall-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-nhtsa-vehicle-vin-recall-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-nhtsa-vehicle-vin-recall-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "10. Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher (brazil-b2b-cnpj-qsa-lead-enricher)",
+      "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-b2b-cnpj-qsa-lead-enricher — Execute Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cnpjs\": [\n    \"00.000.000/0001-91\",\n    \"33.000.167/0001-01\"\n  ],\n  \"includeSecondaryCnaes\": true,\n  \"timeoutSeconds\": 15,\n  \"maxResults\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-b2b-cnpj-qsa-lead-enricher"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-b2b-cnpj-qsa-lead-enricher` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-b2b-cnpj-qsa-lead-enricher/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-b2b-cnpj-qsa-lead-enricher",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-b2b-cnpj-qsa-lead-enricher`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "11. US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4) (us-sec-edgar-filings-insider-radar)",
+      "description": "Extracts and audits official U.S. SEC EDGAR corporate filings (10-K, 10-Q, 8-K, Form 4 Insider Trading) via data.sec.gov. Calculates governance risk scores (0-100) and generates Markdown legal/financial briefs for M&A, hedge funds, and AI RAG agents.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Finance`",
+      "item": [
+        {
+          "name": "POST /v1/us-sec-edgar-filings-insider-radar — Execute US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-sec-edgar-filings-insider-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tickerOrCik\": \"AAPL\",\n  \"formType\": \"ALL\",\n  \"keyword\": \"\",\n  \"maxResults\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-sec-edgar-filings-insider-radar"
+              ]
+            },
+            "description": "Synchronous execution of `us-sec-edgar-filings-insider-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-sec-edgar-filings-insider-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-sec-edgar-filings-insider-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sec-edgar-filings-insider-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-sec-edgar-filings-insider-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-sec-edgar-filings-insider-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "12. EU VIES VAT Number Validator & Reverse Charge Tax Auditor (eu-vies-vat-tax-compliance-auditor)",
+      "description": "Validates European Union & Northern Ireland (XI) corporate VAT numbers in real time via the official EU Commission VIES REST API and local regex checksums. Audits Intra-EU Reverse Charge eligibility and generates Markdown compliance certificates.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Taxes & Compliance`",
+      "item": [
+        {
+          "name": "POST /v1/eu-vies-vat-tax-compliance-auditor — Execute EU VIES VAT Number Validator & Reverse Charge Tax Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "eu-vies-vat-tax-compliance-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vatNumbers\": \"IE6388047V, DE811128135\",\n  \"requesterCountryCode\": \"DE\",\n  \"maxResults\": 20\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "eu-vies-vat-tax-compliance-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `eu-vies-vat-tax-compliance-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/eu-vies-vat-tax-compliance-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/eu-vies-vat-tax-compliance-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-vies-vat-tax-compliance-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "eu-vies-vat-tax-compliance-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `eu-vies-vat-tax-compliance-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "13. US EPA ECHO Environmental Compliance & ESG Penalty Auditor (us-epa-echo-environmental-compliance-auditor)",
+      "description": "Audits industrial facilities across the United States via the official U.S. EPA ECHO REST API. Extracts Clean Air/Water/RCRA non-compliance quarters, Significant Non-Complier (SNC) flags, and federal penalties to calculate ESG liability scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json`\n- **RapidAPI Category:** `Data`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/us-epa-echo-environmental-compliance-auditor — Execute US EPA ECHO Environmental Compliance & ESG Penalty Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-epa-echo-environmental-compliance-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"state\": \"TX\",\n  \"facilityName\": \"\",\n  \"zipCode\": \"\",\n  \"significantViolatorsOnly\": false,\n  \"maxResults\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-epa-echo-environmental-compliance-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `us-epa-echo-environmental-compliance-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-epa-echo-environmental-compliance-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-epa-echo-environmental-compliance-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-epa-echo-environmental-compliance-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-epa-echo-environmental-compliance-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-epa-echo-environmental-compliance-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "14. US FDIC BankFind Institution & Solvency Risk Auditor (us-fdic-bankfind-institution-financial-auditor)",
+      "description": "Audits U.S. FDIC-insured commercial banks and savings institutions via the official FDIC BankFind Suite API. Extracts total assets, deposits, equity capital, ROA, ROE, and calculates counterparty solvency health scores (0-100) for corporate treasury teams.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Finance`",
+      "item": [
+        {
+          "name": "POST /v1/us-fdic-bankfind-institution-financial-auditor — Execute US FDIC BankFind Institution & Solvency Risk Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-fdic-bankfind-institution-financial-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"institutionName\": \"\",\n  \"state\": \"NY\",\n  \"activeOnly\": true,\n  \"maxResults\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fdic-bankfind-institution-financial-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-fdic-bankfind-institution-financial-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `us-fdic-bankfind-institution-financial-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-fdic-bankfind-institution-financial-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-fdic-bankfind-institution-financial-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-fdic-bankfind-institution-financial-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-fdic-bankfind-institution-financial-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-fdic-bankfind-institution-financial-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "15. US Federal Contracts & SAM.gov Procurement B2G Radar (us-sam-gov-federal-procurement-auditor)",
+      "description": "Extracts and audits official U.S. Federal Government contract awards via USAspending.gov v2 and SAM.gov APIs (Zero-Key required). Scores B2G vendor competitiveness (0-100), tracks DoD/HHS/VA awards, and generates Markdown procurement briefs.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/us-sam-gov-federal-procurement-auditor — Execute US Federal Contracts & SAM.gov Procurement B2G Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-sam-gov-federal-procurement-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cybersecurity\",\n  \"awardingAgency\": \"\",\n  \"minAwardAmount\": 50000,\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-sam-gov-federal-procurement-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `us-sam-gov-federal-procurement-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-sam-gov-federal-procurement-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-sam-gov-federal-procurement-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-sam-gov-federal-procurement-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-sam-gov-federal-procurement-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-sam-gov-federal-procurement-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "16. Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar (multi-ats-tech-job-board-hiring-radar)",
+      "description": "Extracts live tech job openings from public Greenhouse ATS boards (Zero-Proxy, Zero-Key). Detects B2B buying intent signals, remote status, department expansion, and scores hiring velocity (0-100) for sales and recruiting teams.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/multi-ats-tech-job-board-hiring-radar — Execute Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "multi-ats-tech-job-board-hiring-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyBoards\": \"stripe,cloudflare\",\n  \"keyword\": \"engineer\",\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "multi-ats-tech-job-board-hiring-radar"
+              ]
+            },
+            "description": "Synchronous execution of `multi-ats-tech-job-board-hiring-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/multi-ats-tech-job-board-hiring-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/multi-ats-tech-job-board-hiring-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/multi-ats-tech-job-board-hiring-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "multi-ats-tech-job-board-hiring-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `multi-ats-tech-job-board-hiring-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "17. Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor (global-gleif-lei-corporate-ownership-kyb)",
+      "description": "Audits multinational corporate entities via the official GLEIF LEI API v1 (Zero-Key, 2.5M+ companies). Extracts 20-char LEI codes, legal jurisdiction, registration status, headquarters, and calculates KYB Trust Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/global-gleif-lei-corporate-ownership-kyb — Execute Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "global-gleif-lei-corporate-ownership-kyb.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyName\": \"Microsoft\",\n  \"countryCode\": \"US\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-gleif-lei-corporate-ownership-kyb"
+              ]
+            },
+            "description": "Synchronous execution of `global-gleif-lei-corporate-ownership-kyb` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/global-gleif-lei-corporate-ownership-kyb.json)."
+          }
+        },
+        {
+          "name": "GET /v1/global-gleif-lei-corporate-ownership-kyb/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-gleif-lei-corporate-ownership-kyb/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-gleif-lei-corporate-ownership-kyb",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `global-gleif-lei-corporate-ownership-kyb`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "18. US Real Estate Census Tract, FIPS & PropTech Geo Enricher (us-census-fcc-real-estate-geo-enricher)",
+      "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json`\n- **RapidAPI Category:** `Data`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/us-census-fcc-real-estate-geo-enricher — Execute US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-census-fcc-real-estate-geo-enricher.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n  \"censusYear\": \"2020\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-census-fcc-real-estate-geo-enricher"
+              ]
+            },
+            "description": "Synchronous execution of `us-census-fcc-real-estate-geo-enricher` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-census-fcc-real-estate-geo-enricher/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-census-fcc-real-estate-geo-enricher",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-census-fcc-real-estate-geo-enricher`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "19. ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor (icann-rdap-domain-whois-brand-recon)",
+      "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "item": [
+        {
+          "name": "POST /v1/icann-rdap-domain-whois-brand-recon — Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "icann-rdap-domain-whois-brand-recon.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"domains\": \"stripe.com,cloudflare.com,shopify.com\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "icann-rdap-domain-whois-brand-recon"
+              ]
+            },
+            "description": "Synchronous execution of `icann-rdap-domain-whois-brand-recon` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json)."
+          }
+        },
+        {
+          "name": "GET /v1/icann-rdap-domain-whois-brand-recon/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/icann-rdap-domain-whois-brand-recon/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "icann-rdap-domain-whois-brand-recon",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `icann-rdap-domain-whois-brand-recon`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "20. US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar (cisa-kev-ransomware-vulnerability-auditor)",
+      "description": "Audits IT vendors and software stacks against the official U.S. CISA Known Exploited Vulnerabilities (KEV) Catalog (Zero-Key). Flags active ransomware campaigns, BOD 22-01/26-04 patch deadlines, CWEs, and Threat Severity Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "item": [
+        {
+          "name": "POST /v1/cisa-kev-ransomware-vulnerability-auditor — Execute US CISA KEV Exploited Vulnerabilities & Ransomware Threat Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "cisa-kev-ransomware-vulnerability-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vendorKeyword\": \"Microsoft\",\n  \"onlyRansomware\": false,\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/cisa-kev-ransomware-vulnerability-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "cisa-kev-ransomware-vulnerability-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `cisa-kev-ransomware-vulnerability-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/cisa-kev-ransomware-vulnerability-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/cisa-kev-ransomware-vulnerability-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/cisa-kev-ransomware-vulnerability-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "cisa-kev-ransomware-vulnerability-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `cisa-kev-ransomware-vulnerability-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "21. Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer (brazil-bcb-ptax-sgs-financial-contract-indexer)",
+      "description": "Fetches official Central Bank of Brazil (BCB SGS & Olinda) macroeconomic series (Selic, CDI, IPCA, IGP-M, PTAX USD/EUR) and calculates automated B2B contract, lease, and treasury monetary adjustments.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Finance`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-bcb-ptax-sgs-financial-contract-indexer — Execute Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-bcb-ptax-sgs-financial-contract-indexer.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"indicators\": \"SELIC,IPCA,IGP-M,PTAX_USD\",\n  \"contractBaseValueBrl\": 10000,\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-bcb-ptax-sgs-financial-contract-indexer",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-bcb-ptax-sgs-financial-contract-indexer"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-bcb-ptax-sgs-financial-contract-indexer` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-bcb-ptax-sgs-financial-contract-indexer.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-bcb-ptax-sgs-financial-contract-indexer/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-bcb-ptax-sgs-financial-contract-indexer/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-bcb-ptax-sgs-financial-contract-indexer",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-bcb-ptax-sgs-financial-contract-indexer`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "22. Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor (brazil-pix-ispb-cvm-financial-kyb-auditor)",
+      "description": "Audits Brazilian banks, payment institutions, and FinTechs against official Central Bank SPI Pix (ISPB) and COMPE directories. Verifies direct vs. indirect settlement participation, operational status, and AML/KYB Risk Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Finance`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-pix-ispb-cvm-financial-kyb-auditor — Execute Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-pix-ispb-cvm-financial-kyb-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"institutionQuery\": \"Banco\",\n  \"onlyDirectPix\": true,\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-pix-ispb-cvm-financial-kyb-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-pix-ispb-cvm-financial-kyb-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-pix-ispb-cvm-financial-kyb-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-pix-ispb-cvm-financial-kyb-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-pix-ispb-cvm-financial-kyb-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-pix-ispb-cvm-financial-kyb-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-pix-ispb-cvm-financial-kyb-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "23. Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
+      "description": "Enriches Brazilian CNAE 2.3 industry codes via official IBGE CONCLA APIs. Extracts permitted activities, tax exclusions, hierarchy (Section/Division/Class), and official 7-digit IBGE municipal codes for NF-e/NFS-e compliance.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher — Execute Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-ibge-cnae-municipal-b2b-expansion-enricher.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cnaeCodes\": \"6201501,4711302,8630503\",\n  \"targetUf\": \"SP\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-ibge-cnae-municipal-b2b-expansion-enricher"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-ibge-cnae-municipal-b2b-expansion-enricher` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-ibge-cnae-municipal-b2b-expansion-enricher.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-ibge-cnae-municipal-b2b-expansion-enricher/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-ibge-cnae-municipal-b2b-expansion-enricher`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "24. Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor (brazil-cep-geocoordinates-logistics-auditor)",
+      "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json`\n- **RapidAPI Category:** `Logistics`\n- **Zyla Hub Category:** `Logistics & Shipping`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-cep-geocoordinates-logistics-auditor — Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ceps\": \"01310100,20040002,30140071\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-cep-geocoordinates-logistics-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-cep-geocoordinates-logistics-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-cep-geocoordinates-logistics-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-cep-geocoordinates-logistics-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-cep-geocoordinates-logistics-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "25. Brazil Congress Legislative Bills & Tax Regulatory Risk Radar (brazil-camara-legislative-regulatory-risk-radar)",
+      "description": "Monitors Brazilian Chamber of Deputies (Camara dos Deputados API v2) legislative bills (PL, PLP, PEC, MPV). Filters by sector/tax keyword, extracts official summary (ementa), presentation date, and Regulatory Risk Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json`\n- **RapidAPI Category:** `Data`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/brazil-camara-legislative-regulatory-risk-radar — Execute Brazil Congress Legislative Bills & Tax Regulatory Risk Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "brazil-camara-legislative-regulatory-risk-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"billType\": \"PL\",\n  \"keyword\": \"\",\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-camara-legislative-regulatory-risk-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-camara-legislative-regulatory-risk-radar"
+              ]
+            },
+            "description": "Synchronous execution of `brazil-camara-legislative-regulatory-risk-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-camara-legislative-regulatory-risk-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/brazil-camara-legislative-regulatory-risk-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-camara-legislative-regulatory-risk-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "brazil-camara-legislative-regulatory-risk-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `brazil-camara-legislative-regulatory-risk-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "26. US OSHA Workplace Safety & Violation Compliance Auditor (us-osha-workplace-safety-violation-auditor)",
+      "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/us-osha-workplace-safety-violation-auditor — Execute US OSHA Workplace Safety & Violation Compliance Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "us-osha-workplace-safety-violation-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyOrEstablishment\": \"Amazon\",\n  \"stateCode\": \"TX\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-osha-workplace-safety-violation-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `us-osha-workplace-safety-violation-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/us-osha-workplace-safety-violation-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/us-osha-workplace-safety-violation-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-osha-workplace-safety-violation-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "us-osha-workplace-safety-violation-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `us-osha-workplace-safety-violation-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "27. EU TED Public Tenders & B2G Procurement Intelligence Radar (eu-ted-public-tenders-procurement-radar)",
+      "description": "Extracts and scores European Union public procurement notices and contract awards from the official EU TED (Tenders Electronic Daily) portal. Enriches CPV codes, contracting authorities, EUR contract values, deadlines, and Bid Opportunity Scores.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Government & Legal`",
+      "item": [
+        {
+          "name": "POST /v1/eu-ted-public-tenders-procurement-radar — Execute EU TED Public Tenders & B2G Procurement Intelligence Radar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "eu-ted-public-tenders-procurement-radar.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"searchKeyword\": \"Cloud Cybersecurity\",\n  \"countryIso3\": \"DEU\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "eu-ted-public-tenders-procurement-radar"
+              ]
+            },
+            "description": "Synchronous execution of `eu-ted-public-tenders-procurement-radar` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/eu-ted-public-tenders-procurement-radar.json)."
+          }
+        },
+        {
+          "name": "GET /v1/eu-ted-public-tenders-procurement-radar/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/eu-ted-public-tenders-procurement-radar/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "eu-ted-public-tenders-procurement-radar",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `eu-ted-public-tenders-procurement-radar`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "28. UK Companies House & FCA Corporate KYB Compliance Auditor (uk-fca-companies-house-kyb-compliance-auditor)",
+      "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json`\n- **RapidAPI Category:** `Finance`\n- **Zyla Hub Category:** `Company Data`",
+      "item": [
+        {
+          "name": "POST /v1/uk-fca-companies-house-kyb-compliance-auditor — Execute UK Companies House & FCA Corporate KYB Compliance Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "uk-fca-companies-house-kyb-compliance-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyQuery\": \"Revolut\",\n  \"includeInactive\": false,\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/uk-fca-companies-house-kyb-compliance-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "uk-fca-companies-house-kyb-compliance-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `uk-fca-companies-house-kyb-compliance-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/uk-fca-companies-house-kyb-compliance-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/uk-fca-companies-house-kyb-compliance-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/uk-fca-companies-house-kyb-compliance-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "uk-fca-companies-house-kyb-compliance-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `uk-fca-companies-house-kyb-compliance-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "29. Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener (global-sanctions-pep-interpol-watchlist-screener)",
+      "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "item": [
+        {
+          "name": "POST /v1/global-sanctions-pep-interpol-watchlist-screener — Execute Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "global-sanctions-pep-interpol-watchlist-screener.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityName\": \"Lazarus Group\",\n  \"entityType\": \"ANY\",\n  \"maxResults\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-sanctions-pep-interpol-watchlist-screener"
+              ]
+            },
+            "description": "Synchronous execution of `global-sanctions-pep-interpol-watchlist-screener` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/global-sanctions-pep-interpol-watchlist-screener.json)."
+          }
+        },
+        {
+          "name": "GET /v1/global-sanctions-pep-interpol-watchlist-screener/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/global-sanctions-pep-interpol-watchlist-screener/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "global-sanctions-pep-interpol-watchlist-screener",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `global-sanctions-pep-interpol-watchlist-screener`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "30. B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
+      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "item": [
+        {
+          "name": "POST /v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor — Execute B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rootDomain\": \"cloudflare.com\",\n  \"excludeExpired\": true,\n  \"maxResults\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+              ]
+            },
+            "description": "Synchronous execution of `b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json)."
+          }
+        },
+        {
+          "name": "GET /v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "31. B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools) (b2b-quant-mcp-server)",
+      "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.\n\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-quant-mcp-server.json`\n- **RapidAPI Category:** `Artificial Intelligence/Machine Learning`\n- **Zyla Hub Category:** `AI & Machine Learning`",
+      "item": [
+        {
+          "name": "POST /v1/b2b-quant-mcp-server — Execute B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-RapidAPI-Host",
+                "value": "b2b-quant-mcp-server.p.rapidapi.com"
+              },
+              {
+                "key": "X-RapidAPI-Key",
+                "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"operationMode\": \"list_catalog\",\n  \"toolName\": \"us-sec-edgar-filings-insider-radar\",\n  \"toolArguments\": {\n    \"tickers\": [\n      \"AAPL\",\n      \"NVDA\"\n    ],\n    \"form_types\": [\n      \"10-K\",\n      \"8-K\"\n    ],\n    \"max_filings_per_company\": 3\n  },\n  \"categoryFilter\": \"ALL\",\n  \"maxTools\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-quant-mcp-server",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-quant-mcp-server"
+              ]
+            },
+            "description": "Synchronous execution of `b2b-quant-mcp-server` (OpenAPI 3.0.3: https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-quant-mcp-server.json)."
+          }
+        },
+        {
+          "name": "GET /v1/b2b-quant-mcp-server/health — SLA Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/b2b-quant-mcp-server/health",
+              "protocol": "https",
+              "host": [
+                "b2b-quant-rapidapi-gateway",
+                "jesleytassili",
+                "workers",
+                "dev"
+              ],
+              "path": [
+                "v1",
+                "b2b-quant-mcp-server",
+                "health"
+              ]
+            },
+            "description": "Health and readiness probe for `b2b-quant-mcp-server`."
+          }
+        }
+      ]
+    }
+  ]
+}
