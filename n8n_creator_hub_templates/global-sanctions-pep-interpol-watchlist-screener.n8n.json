@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"entityNames\": \"Gazprom,Rosneft\",\n  \"targetJurisdiction\": \"ALL\",\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"entityName\": \"Lazarus Group\",\n  \"entityType\": \"ANY\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }

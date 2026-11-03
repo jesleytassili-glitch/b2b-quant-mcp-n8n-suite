@@ -10,6 +10,7 @@ import httpx
 APIFY_USERNAME = "b2b-quant-apis"
 AVAILABLE_ACTORS: List[str] = [
     "b2b-gov-procurement-pncp-radar",
+    "b2b-quant-mcp-server",
     "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
     "brazil-antt-freight-cte-auditor",
     "brazil-b2b-cnpj-qsa-lead-enricher",

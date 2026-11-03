@@ -390,6 +390,7 @@ async def execute_local_actor_engine(slug: str, payload: dict[str, Any]) -> list
 
     candidate_names = (
         "process_input",
+        "run_pipeline",
         "run_tax_audit",
         "run_pncp_radar",
         "run_tiss_validation",
@@ -418,15 +419,97 @@ async def execute_local_actor_engine(slug: str, payload: dict[str, Any]) -> list
     return []
 
 
+def build_free_catalog_status_payload(base_url: str = PUBLIC_BASE_URL) -> dict[str, Any]:
+    """
+    Constrói o payload Freemium ($0.00 USD) de descoberta e status (`GET /v1/free-catalog-status`)
+    para que crawlers x402, diretórios MCP e agentes autônomos consultem a suíte gratuitamente.
+    """
+    clean_base = base_url.rstrip("/")
+    return {
+        "status": "online",
+        "service": "b2b-quant-mcp-n8n-suite",
+        "version": "2.1.0",
+        "freeTier": True,
+        "priceUsd": 0.0,
+        "protocol": "x402",
+        "x402Version": 1,
+        "network": SOLANA_CAIP2_NETWORK,
+        "asset": "USDC",
+        "mint": SOLANA_USDC_MINT,
+        "payTo": SOLANA_USDC_WALLET,
+        "masterMcpActor": f"{APIFY_USERNAME}/b2b-quant-mcp-server",
+        "totalActors": len(ACTOR_SLUGS),
+        "totalTools": len(ACTOR_SLUGS),
+        "discoveryManifests": {
+            "openapi": f"{clean_base}/openapi.json",
+            "llmsTxt": f"{clean_base}/llms.txt",
+            "llmsFullTxt": f"{clean_base}/llms-full.txt",
+            "wellKnownMcp": f"{clean_base}/.well-known/mcp.json",
+            "wellKnownX402": f"{clean_base}/.well-known/x402.json",
+            "wellKnownAgent": f"{clean_base}/.well-known/agent.json",
+        },
+        "actors": list(ACTOR_SLUGS),
+    }
+
+
 def build_agentcash_openapi_spec(base_url: str = PUBLIC_BASE_URL) -> dict[str, Any]:
     """
-    Gera a especificação OpenAPI 3.1.0 completa para os 25 Motores B2B com:
+    Gera a especificação OpenAPI 3.1.0 completa para os 31 Motores B2B + 1 rota Freemium ($0.00):
+    - `GET /v1/free-catalog-status` com `x-price-usd: 0.0` e `x-402-free-tier: true`;
     - `info.x-guidance` exigido pelo indexador `AgentCash.dev` (`@agentcash/discovery`);
     - `x-payment-info` em cada operação `POST /v1/x402/{slug}` declarando `x402` (USDC Solana) e preço em USD;
     - `x-bazaar` (`extensions.bazaar`) para indexação automática no `x402 Bazaar`.
     """
     paths: dict[str, Any] = {}
     clean_base = base_url.rstrip("/")
+
+    paths["/v1/free-catalog-status"] = {
+        "get": {
+            "summary": "Freemium $0.00 B2B MCP & x402 Catalog Discovery & Health Status",
+            "description": (
+                "Free ($0.00 USD) instant discovery and health endpoint for autonomous AI agents, "
+                "MCP clients, and x402 crawlers. Returns the full catalog of 31 B2B tools, schemas, "
+                "and Solana USDC payment coordinates without requiring an X-PAYMENT header."
+            ),
+            "operationId": "get_free_catalog_status",
+            "tags": ["FREE_DISCOVERY", "AI", "DEVELOPER_TOOLS"],
+            "x-price-usd": 0.0,
+            "x-402-free-tier": True,
+            "x-payment-info": {
+                "protocols": [],
+                "price": {
+                    "mode": "free",
+                    "currency": "USD",
+                    "amount": "0",
+                },
+            },
+            "x-bazaar": {
+                "discoverable": True,
+                "freeTier": True,
+                "category": "b2b-compliance-and-quant-intelligence",
+            },
+            "responses": {
+                "200": {
+                    "description": "Free catalog status and 31-tool index ($0.00 USD).",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {"type": "string", "example": "online"},
+                                    "freeTier": {"type": "boolean", "example": True},
+                                    "priceUsd": {"type": "number", "example": 0.0},
+                                    "totalActors": {"type": "integer", "example": 31},
+                                    "payTo": {"type": "string", "example": SOLANA_USDC_WALLET},
+                                    "actors": {"type": "array", "items": {"type": "string"}},
+                                },
+                            }
+                        }
+                    },
+                }
+            },
+        }
+    }
 
     for slug in ACTOR_SLUGS:
         meta = load_actor_metadata(slug)
@@ -455,6 +538,8 @@ def build_agentcash_openapi_spec(base_url: str = PUBLIC_BASE_URL) -> dict[str, A
                 ),
                 "operationId": op_id,
                 "tags": [str(c) for c in mon.get("categories", ["AI", "BUSINESS"])],
+                "x-price-usd": float(price_usd),
+                "x-402-free-tier": False,
                 "parameters": [
                     {
                         "name": "X-PAYMENT",
@@ -548,13 +633,15 @@ def build_agentcash_openapi_spec(base_url: str = PUBLIC_BASE_URL) -> dict[str, A
         "openapi": "3.1.0",
         "info": {
             "title": "B2B Quant, Regulatory Compliance & KYB Suite (x402 Solana USDC Edition)",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "description": (
-                "25 Deterministic B2B Regulatory Compliance, SEC EDGAR, SAM.gov, GLEIF LEI, Brazil BCB/PIX/CNPJ, "
+                "31 Deterministic B2B Regulatory Compliance, Master MCP Server, SEC EDGAR, SAM.gov, EU TED, "
+                "UK Companies House/FCA, Sanctions AML, OSHA, SSL CT, GLEIF LEI, Brazil BCB/PIX/CNPJ, "
                 "CISA KEV, and Lead Intelligence APIs powered by native x402 Solana USDC micropayments."
             ),
             "x-guidance": (
-                "Send a POST request to any /v1/x402/{actor_slug} endpoint with a JSON body matching its input schema. "
+                "Ping GET /v1/free-catalog-status for free ($0.00) discovery. To invoke any paid tool, send a POST "
+                "request to /v1/x402/{actor_slug} with a JSON body matching its input schema. "
                 "If no X-PAYMENT header is provided, the gateway responds with HTTP 402 containing x402Version 1 "
                 f"payment instructions for USDC on Solana Mainnet ({SOLANA_CAIP2_NETWORK}) payable to "
                 f"{SOLANA_USDC_WALLET}. Settle the transfer and retry with the X-PAYMENT header."
@@ -612,10 +699,15 @@ def build_well_known_x402_manifest(base_url: str = PUBLIC_BASE_URL) -> dict[str,
             "network": SOLANA_CAIP2_NETWORK,
             "asset": "USDC",
             "mint": SOLANA_USDC_MINT,
+            "freeTierStatusEndpoint": f"{clean_base}/v1/free-catalog-status",
             "openapi": f"{clean_base}/openapi.json",
+            "llmsTxt": f"{clean_base}/llms.txt",
+            "wellKnownMcp": f"{clean_base}/.well-known/mcp.json",
+            "wellKnownAgent": f"{clean_base}/.well-known/agent.json",
             "repository": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
         },
         "totalResources": len(resources),
+        "freeTierDiscoveryEndpoint": f"{clean_base}/v1/free-catalog-status",
         "resources": resources,
     }
 
@@ -636,6 +728,9 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
                 "totalActors": len(ACTOR_SLUGS),
             }
         )
+
+    async def get_free_catalog_status(request: Request) -> JSONResponse:
+        return JSONResponse(content=build_free_catalog_status_payload())
 
     async def get_openapi_spec(request: Request) -> JSONResponse:
         return JSONResponse(content=build_agentcash_openapi_spec())
@@ -724,6 +819,7 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
 
     routes = [
         Route("/health", endpoint=health_check, methods=["GET"]),
+        Route("/v1/free-catalog-status", endpoint=get_free_catalog_status, methods=["GET"]),
         Route("/openapi.json", endpoint=get_openapi_spec, methods=["GET"]),
         Route("/.well-known/x402.json", endpoint=get_well_known_x402, methods=["GET"]),
         Route("/v1/x402/catalog", endpoint=get_catalog, methods=["GET"]),
@@ -734,3 +830,4 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
 
 
 app = create_x402_app()
+

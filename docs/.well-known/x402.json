@@ -7,10 +7,15 @@
     "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
     "asset": "USDC",
     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "freeTierStatusEndpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/free-catalog-status",
     "openapi": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "llmsTxt": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/llms.txt",
+    "wellKnownMcp": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/.well-known/mcp.json",
+    "wellKnownAgent": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/.well-known/agent.json",
     "repository": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite"
   },
-  "totalResources": 30,
+  "totalResources": 31,
+  "freeTierDiscoveryEndpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/free-catalog-status",
   "resources": [
     {
       "slug": "b2b-gov-procurement-pncp-radar",
@@ -2205,6 +2210,117 @@
         },
         "required": [
           "rootDomain"
+        ]
+      }
+    },
+    {
+      "slug": "b2b-quant-mcp-server",
+      "title": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+      "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.",
+      "endpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-quant-mcp-server",
+      "method": "POST",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server",
+      "openapiUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+      "x402Version": 1,
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "maxAmountRequired": "10000",
+          "asset": "USDC",
+          "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+          "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-quant-mcp-server",
+          "description": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools) — Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.",
+          "mimeType": "application/json",
+          "maxTimeoutSeconds": 120,
+          "extra": {
+            "networkShorthand": "solana-mainnet",
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "decimals": 6,
+            "priceUsd": "0.01",
+            "actorSlug": "b2b-quant-mcp-server",
+            "eventName": "mcp-operation-executed",
+            "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server"
+          }
+        }
+      ],
+      "inputSchema": {
+        "title": "B2B Regulatory, KYB, FinTech & SecOps Master MCP Server (30 Tools) Input",
+        "description": "Configure the Master MCP Server operationMode ('list_catalog', 'invoke_tool', or 'export_mcp_config'), target B2B tool name, JSON tool arguments, optional category filter, and optional Apify API token.",
+        "type": "object",
+        "schemaVersion": 1,
+        "properties": {
+          "operationMode": {
+            "title": "MCP Operation Mode",
+            "type": "string",
+            "description": "Select 'list_catalog' for free instant JSON-RPC 2.0 tools/list discovery of all 30 B2B tools, 'invoke_tool' to dispatch/validate a specific B2B tool call, or 'export_mcp_config' to generate ready-to-paste Claude Desktop, Cursor, Windsurf, and x402 configs.",
+            "editor": "select",
+            "default": "list_catalog",
+            "enum": [
+              "list_catalog",
+              "invoke_tool",
+              "export_mcp_config"
+            ]
+          },
+          "toolName": {
+            "title": "Target B2B Tool / Actor Slug",
+            "type": "string",
+            "description": "Slug or MCP tool name of any of the 30 underlying @b2b-quant-apis engines (e.g., 'us-sec-edgar-filings-insider-radar', 'global-sanctions-pep-interpol-watchlist-screener', 'brazil-b2b-cnpj-qsa-lead-enricher').",
+            "editor": "textfield",
+            "default": "us-sec-edgar-filings-insider-radar"
+          },
+          "toolArguments": {
+            "title": "Tool Call JSON Arguments",
+            "type": "object",
+            "description": "Structured JSON arguments passed to the target B2B tool when operationMode is 'invoke_tool'.",
+            "editor": "json",
+            "default": {
+              "tickers": [
+                "AAPL",
+                "NVDA"
+              ],
+              "form_types": [
+                "10-K",
+                "8-K"
+              ],
+              "max_filings_per_company": 3
+            }
+          },
+          "categoryFilter": {
+            "title": "Catalog Category Filter",
+            "type": "string",
+            "description": "Filter the 30 B2B tools by domain category in 'list_catalog' mode ('ALL', 'FINANCE_KYB', 'GOVCON_PROCUREMENT', 'SECOPS_CYBER', 'HEALTHCARE_BIOTECH', 'BRAZIL_B2B_TAX', or 'ESG_LOGISTICS_GEO').",
+            "editor": "select",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "FINANCE_KYB",
+              "GOVCON_PROCUREMENT",
+              "SECOPS_CYBER",
+              "HEALTHCARE_BIOTECH",
+              "BRAZIL_B2B_TAX",
+              "ESG_LOGISTICS_GEO"
+            ]
+          },
+          "apifyApiToken": {
+            "title": "Apify API Token (Optional for Live Dispatch)",
+            "type": "string",
+            "description": "Optional Apify API Token to execute a live synchronous REST call against the target @b2b-quant-apis Actor during 'invoke_tool'. If omitted, returns a deterministic validated MCP execution envelope.",
+            "editor": "textfield",
+            "isSecret": true
+          },
+          "maxTools": {
+            "title": "Maximum Tools Returned",
+            "type": "integer",
+            "description": "Maximum number of B2B tool definitions to return in 'list_catalog' mode (1 to 30).",
+            "editor": "number",
+            "default": 30,
+            "minimum": 1,
+            "maximum": 30
+          }
+        },
+        "required": [
+          "operationMode"
         ]
       }
     }

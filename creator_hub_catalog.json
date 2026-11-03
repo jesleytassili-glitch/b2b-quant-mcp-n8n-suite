@@ -1,7 +1,7 @@
 {
   "apify_username": "b2b-quant-apis",
-  "total_n8n_workflows": 36,
-  "single_actor_templates": 30,
+  "total_n8n_workflows": 37,
+  "single_actor_templates": 31,
   "super_pipelines": 6,
   "entries": [
     {
@@ -11,6 +11,20 @@
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\b2b-gov-procurement-pncp-radar.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items",
       "ppe_usd": 0.03,
+      "n8n_categories": [
+        "AI & LLMs",
+        "Sales",
+        "Finance & Accounting",
+        "Developer Tools"
+      ]
+    },
+    {
+      "type": "single_actor_template",
+      "actor_slug": "b2b-quant-mcp-server",
+      "workflow_name": "Automated B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools) — Daily B2B Data & Compliance Pipeline",
+      "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\b2b-quant-mcp-server.n8n.json",
+      "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-quant-mcp-server/run-sync-get-dataset-items",
+      "ppe_usd": 0.01,
       "n8n_categories": [
         "AI & LLMs",
         "Sales",

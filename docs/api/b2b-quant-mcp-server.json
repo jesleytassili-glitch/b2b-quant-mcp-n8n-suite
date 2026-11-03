@@ -1,0 +1,246 @@
+{
+  "status": "succeeded",
+  "service": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+  "slug": "b2b-quant-mcp-server",
+  "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.",
+  "protocol": "x402",
+  "x402Version": 1,
+  "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+  "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "asset": "USDC",
+  "priceUsd": 0.01,
+  "endpoints": {
+    "mcpStreamableHttp": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server",
+    "apifySyncRestApi": "https://api.apify.com/v2/acts/b2b-quant-apis~b2b-quant-mcp-server/run-sync-get-dataset-items",
+    "openapiSpec": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/openapi.json",
+    "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/b2b-quant-mcp-server.n8n.json"
+  },
+  "inputSchema": {
+    "title": "B2B Regulatory, KYB, FinTech & SecOps Master MCP Server (30 Tools) Input",
+    "description": "Configure the Master MCP Server operationMode ('list_catalog', 'invoke_tool', or 'export_mcp_config'), target B2B tool name, JSON tool arguments, optional category filter, and optional Apify API token.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "operationMode": {
+        "title": "MCP Operation Mode",
+        "type": "string",
+        "description": "Select 'list_catalog' for free instant JSON-RPC 2.0 tools/list discovery of all 30 B2B tools, 'invoke_tool' to dispatch/validate a specific B2B tool call, or 'export_mcp_config' to generate ready-to-paste Claude Desktop, Cursor, Windsurf, and x402 configs.",
+        "editor": "select",
+        "default": "list_catalog",
+        "enum": [
+          "list_catalog",
+          "invoke_tool",
+          "export_mcp_config"
+        ]
+      },
+      "toolName": {
+        "title": "Target B2B Tool / Actor Slug",
+        "type": "string",
+        "description": "Slug or MCP tool name of any of the 30 underlying @b2b-quant-apis engines (e.g., 'us-sec-edgar-filings-insider-radar', 'global-sanctions-pep-interpol-watchlist-screener', 'brazil-b2b-cnpj-qsa-lead-enricher').",
+        "editor": "textfield",
+        "default": "us-sec-edgar-filings-insider-radar"
+      },
+      "toolArguments": {
+        "title": "Tool Call JSON Arguments",
+        "type": "object",
+        "description": "Structured JSON arguments passed to the target B2B tool when operationMode is 'invoke_tool'.",
+        "editor": "json",
+        "default": {
+          "tickers": [
+            "AAPL",
+            "NVDA"
+          ],
+          "form_types": [
+            "10-K",
+            "8-K"
+          ],
+          "max_filings_per_company": 3
+        }
+      },
+      "categoryFilter": {
+        "title": "Catalog Category Filter",
+        "type": "string",
+        "description": "Filter the 30 B2B tools by domain category in 'list_catalog' mode ('ALL', 'FINANCE_KYB', 'GOVCON_PROCUREMENT', 'SECOPS_CYBER', 'HEALTHCARE_BIOTECH', 'BRAZIL_B2B_TAX', or 'ESG_LOGISTICS_GEO').",
+        "editor": "select",
+        "default": "ALL",
+        "enum": [
+          "ALL",
+          "FINANCE_KYB",
+          "GOVCON_PROCUREMENT",
+          "SECOPS_CYBER",
+          "HEALTHCARE_BIOTECH",
+          "BRAZIL_B2B_TAX",
+          "ESG_LOGISTICS_GEO"
+        ]
+      },
+      "apifyApiToken": {
+        "title": "Apify API Token (Optional for Live Dispatch)",
+        "type": "string",
+        "description": "Optional Apify API Token to execute a live synchronous REST call against the target @b2b-quant-apis Actor during 'invoke_tool'. If omitted, returns a deterministic validated MCP execution envelope.",
+        "editor": "textfield",
+        "isSecret": true
+      },
+      "maxTools": {
+        "title": "Maximum Tools Returned",
+        "type": "integer",
+        "description": "Maximum number of B2B tool definitions to return in 'list_catalog' mode (1 to 30).",
+        "editor": "number",
+        "default": 30,
+        "minimum": 1,
+        "maximum": 30
+      }
+    },
+    "required": [
+      "operationMode"
+    ]
+  },
+  "datasetSchema": {
+    "actorSpecification": 1,
+    "fields": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "operationMode": {
+          "type": "string",
+          "title": "MCP Operation Mode",
+          "description": "Executed router mode: list_catalog, invoke_tool, or export_mcp_config."
+        },
+        "toolName": {
+          "type": "string",
+          "title": "MCP Tool Name",
+          "description": "Canonical MCP tool identifier (underscore format)."
+        },
+        "actorSlug": {
+          "type": "string",
+          "title": "Apify Actor Slug",
+          "description": "Full @b2b-quant-apis Actor slug on Apify Store."
+        },
+        "domainCategory": {
+          "type": "string",
+          "title": "B2B Domain Category",
+          "description": "Classified vertical category (FINANCE_KYB, GOVCON_PROCUREMENT, SECOPS_CYBER, etc.)."
+        },
+        "pricePerEventUsd": {
+          "type": "number",
+          "title": "PPE Price (USD)",
+          "description": "Pay-Per-Event price in USD on Apify Store and x402 Solana USDC gateway."
+        },
+        "mcpStreamableHttpUrl": {
+          "type": "string",
+          "title": "Streamable HTTP MCP Endpoint",
+          "description": "Direct Hosted Apify MCP Server URL for this tool."
+        },
+        "x402SolanaEndpoint": {
+          "type": "string",
+          "title": "x402 Solana USDC Endpoint",
+          "description": "Stateless x402 endpoint settling in USDC on Solana Mainnet."
+        },
+        "executionStatus": {
+          "type": "string",
+          "title": "Execution / Validation Status",
+          "description": "READY_IN_CATALOG, LIVE_DISPATCH_SUCCEEDED, DETERMINISTIC_VALIDATED_ENVELOPE, or CONFIG_EXPORTED."
+        },
+        "readinessScore": {
+          "type": "integer",
+          "title": "M2M & Agent Readiness Score (0-100)",
+          "description": "Quantitative schema, MCP, and x402 readiness score (0-100)."
+        },
+        "mcpJsonRpcEnvelope": {
+          "type": "object",
+          "title": "JSON-RPC 2.0 MCP Envelope",
+          "description": "Complete JSON-RPC 2.0 tools/list, tools/call, or configuration payload."
+        },
+        "markdownMcpBrief": {
+          "type": "string",
+          "title": "Markdown MCP & x402 Integration Brief",
+          "description": "Executive Markdown documentation and 1-Click setup snippet for AI Agents."
+        }
+      }
+    },
+    "views": {
+      "overview": {
+        "title": "B2B Master MCP Server (30 Tools) Catalog & Router Overview",
+        "transformation": {
+          "fields": [
+            "operationMode",
+            "toolName",
+            "actorSlug",
+            "domainCategory",
+            "pricePerEventUsd",
+            "mcpStreamableHttpUrl",
+            "x402SolanaEndpoint",
+            "executionStatus",
+            "readinessScore"
+          ]
+        },
+        "display": {
+          "component": "table",
+          "properties": {
+            "operationMode": {
+              "label": "Mode",
+              "format": "text"
+            },
+            "toolName": {
+              "label": "MCP Tool Name",
+              "format": "text"
+            },
+            "actorSlug": {
+              "label": "Apify Actor",
+              "format": "text"
+            },
+            "domainCategory": {
+              "label": "Category",
+              "format": "text"
+            },
+            "pricePerEventUsd": {
+              "label": "Price (USD)",
+              "format": "number"
+            },
+            "mcpStreamableHttpUrl": {
+              "label": "MCP Streamable URL",
+              "format": "link"
+            },
+            "x402SolanaEndpoint": {
+              "label": "x402 USDC Endpoint",
+              "format": "link"
+            },
+            "executionStatus": {
+              "label": "Status",
+              "format": "text"
+            },
+            "readinessScore": {
+              "label": "Readiness Score",
+              "format": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402Challenge": {
+    "x402Version": 1,
+    "error": "Payment Required: Submit a valid Solana USDC transfer proof in the X-PAYMENT header.",
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "maxAmountRequired": "10000",
+        "asset": "USDC",
+        "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
+        "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-quant-mcp-server",
+        "description": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools) — Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.",
+        "mimeType": "application/json",
+        "maxTimeoutSeconds": 120,
+        "extra": {
+          "networkShorthand": "solana-mainnet",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "priceUsd": "0.01",
+          "actorSlug": "b2b-quant-mcp-server",
+          "eventName": "mcp-operation-executed",
+          "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server"
+        }
+      }
+    ]
+  }
+}

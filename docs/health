@@ -2,11 +2,12 @@
   "ok": true,
   "service": "b2b-quant-mcp-n8n-suite",
   "status": "online",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "protocol": "x402",
   "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
   "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
   "asset": "USDC",
+  "freeTierDiscoveryEndpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/free-catalog-status",
   "skills": [
     "b2b-gov-procurement-pncp-radar",
     "brazil-tax-reform-ncm-classtrib-auditor",
@@ -37,6 +38,7 @@
     "eu-ted-public-tenders-procurement-radar",
     "uk-fca-companies-house-kyb-compliance-auditor",
     "global-sanctions-pep-interpol-watchlist-screener",
-    "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor"
+    "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+    "b2b-quant-mcp-server"
   ]
 }

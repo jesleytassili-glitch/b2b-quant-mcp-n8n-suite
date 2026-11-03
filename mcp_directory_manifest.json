@@ -2,7 +2,7 @@
   "manifestVersion": "2026.10",
   "publisher": "b2b-quant-apis",
   "storeProfileUrl": "https://apify.com/b2b-quant-apis",
-  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar,b2b-quant-apis/us-osha-workplace-safety-violation-auditor,b2b-quant-apis/eu-ted-public-tenders-procurement-radar,b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor,b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener,b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
+  "unifiedMcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-gov-procurement-pncp-radar,b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor,b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/global-b2b-email-domain-security-auditor,b2b-quant-apis/us-clinical-trials-biotech-radar,b2b-quant-apis/us-nhtsa-vehicle-vin-recall-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/eu-vies-vat-tax-compliance-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/multi-ats-tech-job-board-hiring-radar,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-census-fcc-real-estate-geo-enricher,b2b-quant-apis/icann-rdap-domain-whois-brand-recon,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/brazil-ibge-cnae-municipal-b2b-expansion-enricher,b2b-quant-apis/brazil-cep-geocoordinates-logistics-auditor,b2b-quant-apis/brazil-camara-legislative-regulatory-risk-radar,b2b-quant-apis/us-osha-workplace-safety-violation-auditor,b2b-quant-apis/eu-ted-public-tenders-procurement-radar,b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor,b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener,b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor,b2b-quant-apis/b2b-quant-mcp-server",
   "targetDirectories": [
     "https://mcp.so",
     "https://smithery.ai",
@@ -10,7 +10,7 @@
     "https://www.pulsemcp.com/servers",
     "https://rapidapi.com/hub"
   ],
-  "totalServers": 30,
+  "totalServers": 31,
   "servers": [
     {
       "slug": "b2b-gov-procurement-pncp-radar",
@@ -1874,6 +1874,114 @@
         "rootDomain": "apify.com",
         "excludeExpired": true,
         "maxResults": 15
+      }
+    },
+    {
+      "slug": "b2b-quant-mcp-server",
+      "fullActorName": "b2b-quant-apis/b2b-quant-mcp-server",
+      "title": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+      "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration.",
+      "version": "1.0.0",
+      "mcpServerEnabled": true,
+      "storeUrl": "https://apify.com/b2b-quant-apis/b2b-quant-mcp-server",
+      "mcpStreamableHttpUrl": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server",
+      "mcpSseUrl": "https://mcp.apify.com/sse?actors=b2b-quant-apis/b2b-quant-mcp-server",
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "eventName": "mcp-operation-executed",
+        "eventTitle": "MCP Master Router Tool Discovery or Dispatch Executed",
+        "eventPriceUsd": 0.01
+      },
+      "categories": [
+        "AI",
+        "DEVELOPER_TOOLS",
+        "AUTOMATION"
+      ],
+      "toolInputSchema": {
+        "type": "object",
+        "properties": {
+          "operationMode": {
+            "type": "string",
+            "title": "MCP Operation Mode",
+            "description": "Select 'list_catalog' for free instant JSON-RPC 2.0 tools/list discovery of all 30 B2B tools, 'invoke_tool' to dispatch/validate a specific B2B tool call, or 'export_mcp_config' to generate ready-to-paste Claude Desktop, Cursor, Windsurf, and x402 configs.",
+            "default": "list_catalog",
+            "enum": [
+              "list_catalog",
+              "invoke_tool",
+              "export_mcp_config"
+            ]
+          },
+          "toolName": {
+            "type": "string",
+            "title": "Target B2B Tool / Actor Slug",
+            "description": "Slug or MCP tool name of any of the 30 underlying @b2b-quant-apis engines (e.g., 'us-sec-edgar-filings-insider-radar', 'global-sanctions-pep-interpol-watchlist-screener', 'brazil-b2b-cnpj-qsa-lead-enricher').",
+            "default": "us-sec-edgar-filings-insider-radar"
+          },
+          "toolArguments": {
+            "type": "object",
+            "title": "Tool Call JSON Arguments",
+            "description": "Structured JSON arguments passed to the target B2B tool when operationMode is 'invoke_tool'.",
+            "default": {
+              "tickers": [
+                "AAPL",
+                "NVDA"
+              ],
+              "form_types": [
+                "10-K",
+                "8-K"
+              ],
+              "max_filings_per_company": 3
+            }
+          },
+          "categoryFilter": {
+            "type": "string",
+            "title": "Catalog Category Filter",
+            "description": "Filter the 30 B2B tools by domain category in 'list_catalog' mode ('ALL', 'FINANCE_KYB', 'GOVCON_PROCUREMENT', 'SECOPS_CYBER', 'HEALTHCARE_BIOTECH', 'BRAZIL_B2B_TAX', or 'ESG_LOGISTICS_GEO').",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "FINANCE_KYB",
+              "GOVCON_PROCUREMENT",
+              "SECOPS_CYBER",
+              "HEALTHCARE_BIOTECH",
+              "BRAZIL_B2B_TAX",
+              "ESG_LOGISTICS_GEO"
+            ]
+          },
+          "apifyApiToken": {
+            "type": "string",
+            "title": "Apify API Token (Optional for Live Dispatch)",
+            "description": "Optional Apify API Token to execute a live synchronous REST call against the target @b2b-quant-apis Actor during 'invoke_tool'. If omitted, returns a deterministic validated MCP execution envelope."
+          },
+          "maxTools": {
+            "type": "integer",
+            "title": "Maximum Tools Returned",
+            "description": "Maximum number of B2B tool definitions to return in 'list_catalog' mode (1 to 30).",
+            "default": 30,
+            "minimum": 1,
+            "maximum": 30
+          }
+        },
+        "required": [
+          "operationMode"
+        ]
+      },
+      "sampleToolCallArguments": {
+        "operationMode": "list_catalog",
+        "toolName": "us-sec-edgar-filings-insider-radar",
+        "toolArguments": {
+          "tickers": [
+            "AAPL",
+            "NVDA"
+          ],
+          "form_types": [
+            "10-K",
+            "8-K"
+          ],
+          "max_filings_per_company": 3
+        },
+        "categoryFilter": "ALL",
+        "maxTools": 30
       }
     }
   ]

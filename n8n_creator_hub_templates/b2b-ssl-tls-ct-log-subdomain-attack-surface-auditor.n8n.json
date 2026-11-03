@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"domains\": \"cloudflare.com,stripe.com\",\n  \"includeExpired\": false,\n  \"maxResults\": 10\n}",
+        "jsonBody": "{\n  \"rootDomain\": \"cloudflare.com\",\n  \"excludeExpired\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

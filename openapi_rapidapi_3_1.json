@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "B2B Quant & Regulatory Compliance APIs (@b2b-quant-apis)",
-    "version": "2.0.0",
-    "description": "Suite of 30 stateless B2B regulatory, tax, healthcare, environmental, financial, cybersecurity, KYB sanctions, and government procurement intelligence APIs across the US, EU, UK, and Brazil.",
+    "version": "2.1.0",
+    "description": "Suite of 31 stateless B2B regulatory, Master MCP Server, tax, healthcare, environmental, financial, cybersecurity, KYB sanctions, and government procurement intelligence APIs across the US, EU, UK, and Brazil.",
     "contact": {
       "name": "B2B Quant APIs",
       "url": "https://apify.com/b2b-quant-apis"
@@ -24,6 +24,50 @@
     }
   ],
   "paths": {
+    "/v1/free-catalog-status": {
+      "get": {
+        "operationId": "get_free_catalog_status",
+        "summary": "Freemium $0.00 B2B MCP & x402 Catalog Discovery & Health Status",
+        "description": "Free ($0.00 USD) instant discovery and health endpoint for autonomous AI agents, MCP clients, and x402 crawlers. Returns the full catalog of 31 B2B tools, schemas, and Solana USDC payment coordinates.",
+        "tags": [
+          "FREE_DISCOVERY",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "x-price-usd": 0.0,
+        "x-402-free-tier": true,
+        "responses": {
+          "200": {
+            "description": "Free catalog status and 31-tool index ($0.00 USD).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "online"
+                    },
+                    "freeTier": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "priceUsd": {
+                      "type": "number",
+                      "example": 0.0
+                    },
+                    "totalActors": {
+                      "type": "integer",
+                      "example": 31
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/acts/b2b-quant-apis~b2b-gov-procurement-pncp-radar/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_b2b_gov_procurement_pncp_radar",
@@ -34,6 +78,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.03,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -71,6 +117,8 @@
           "BUSINESS",
           "ECOMMERCE"
         ],
+        "x-price-usd": 0.01,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -108,6 +156,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.05,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -145,6 +195,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -182,6 +234,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -219,6 +273,8 @@
           "BUSINESS",
           "NEWS"
         ],
+        "x-price-usd": 0.03,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -256,6 +312,8 @@
           "LEAD_GENERATION",
           "DEVELOPER_TOOLS"
         ],
+        "x-price-usd": 0.005,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -293,6 +351,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.04,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -330,6 +390,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -367,6 +429,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.015,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -404,6 +468,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.04,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -441,6 +507,8 @@
           "BUSINESS",
           "ECOMMERCE"
         ],
+        "x-price-usd": 0.015,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -478,6 +546,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.03,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -515,6 +585,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.025,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -552,6 +624,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.035,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -589,6 +663,8 @@
           "LEAD_GENERATION",
           "JOBS"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -626,6 +702,8 @@
           "BUSINESS",
           "LEAD_GENERATION"
         ],
+        "x-price-usd": 0.025,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -663,6 +741,8 @@
           "BUSINESS",
           "LEAD_GENERATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -700,6 +780,8 @@
           "DEVELOPER_TOOLS",
           "ECOMMERCE"
         ],
+        "x-price-usd": 0.015,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -737,6 +819,8 @@
           "DEVELOPER_TOOLS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -774,6 +858,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.015,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -811,6 +897,8 @@
           "BUSINESS",
           "LEAD_GENERATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -848,6 +936,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.015,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -885,6 +975,8 @@
           "ECOMMERCE",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.01,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -922,6 +1014,8 @@
           "BUSINESS",
           "NEWS"
         ],
+        "x-price-usd": 0.025,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -959,6 +1053,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.03,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -996,6 +1092,8 @@
           "LEAD_GENERATION",
           "BUSINESS"
         ],
+        "x-price-usd": 0.035,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -1033,6 +1131,8 @@
           "BUSINESS",
           "LEAD_GENERATION"
         ],
+        "x-price-usd": 0.025,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -1070,6 +1170,8 @@
           "BUSINESS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.03,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -1107,6 +1209,8 @@
           "DEVELOPER_TOOLS",
           "AUTOMATION"
         ],
+        "x-price-usd": 0.02,
+        "x-402-free-tier": false,
         "requestBody": {
           "required": true,
           "content": {
@@ -1126,6 +1230,45 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor_DatasetItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/b2b-quant-apis~b2b-quant-mcp-server/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_b2b_quant_mcp_server",
+        "summary": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)",
+        "description": "Official Master Model Context Protocol (MCP) Server & Tool Router for all 30 B2B Regulatory, KYB, Sanctions AML, SEC EDGAR, SAM.gov, EU TED, UK FCA, Brazil BCB/PIX/Tax, Healthcare & SecOps engines (@b2b-quant-apis) with Freemium Catalog Discovery and x402 Solana USDC integration. | PPE Event: `mcp-operation-executed` ($0.01 USD).",
+        "tags": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "x-price-usd": 0.01,
+        "x-402-free-tier": false,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/b2b_quant_mcp_server_Input"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution returning enriched JSON dataset items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/b2b_quant_mcp_server_DatasetItem"
                   }
                 }
               }
@@ -3768,6 +3911,138 @@
             "type": "string",
             "title": "Markdown EASM & SecOps Recon Brief",
             "description": "Executive Markdown advisory for SOC teams, MSSPs, and automated EASM workflows."
+          }
+        }
+      },
+      "b2b_quant_mcp_server_Input": {
+        "type": "object",
+        "title": "B2B Regulatory, KYB, FinTech & SecOps Master MCP Server (30 Tools) Input",
+        "description": "Configure the Master MCP Server operationMode ('list_catalog', 'invoke_tool', or 'export_mcp_config'), target B2B tool name, JSON tool arguments, optional category filter, and optional Apify API token.",
+        "properties": {
+          "operationMode": {
+            "type": "string",
+            "title": "MCP Operation Mode",
+            "description": "Select 'list_catalog' for free instant JSON-RPC 2.0 tools/list discovery of all 30 B2B tools, 'invoke_tool' to dispatch/validate a specific B2B tool call, or 'export_mcp_config' to generate ready-to-paste Claude Desktop, Cursor, Windsurf, and x402 configs.",
+            "default": "list_catalog",
+            "enum": [
+              "list_catalog",
+              "invoke_tool",
+              "export_mcp_config"
+            ]
+          },
+          "toolName": {
+            "type": "string",
+            "title": "Target B2B Tool / Actor Slug",
+            "description": "Slug or MCP tool name of any of the 30 underlying @b2b-quant-apis engines (e.g., 'us-sec-edgar-filings-insider-radar', 'global-sanctions-pep-interpol-watchlist-screener', 'brazil-b2b-cnpj-qsa-lead-enricher').",
+            "default": "us-sec-edgar-filings-insider-radar"
+          },
+          "toolArguments": {
+            "type": "object",
+            "title": "Tool Call JSON Arguments",
+            "description": "Structured JSON arguments passed to the target B2B tool when operationMode is 'invoke_tool'.",
+            "default": {
+              "tickers": [
+                "AAPL",
+                "NVDA"
+              ],
+              "form_types": [
+                "10-K",
+                "8-K"
+              ],
+              "max_filings_per_company": 3
+            }
+          },
+          "categoryFilter": {
+            "type": "string",
+            "title": "Catalog Category Filter",
+            "description": "Filter the 30 B2B tools by domain category in 'list_catalog' mode ('ALL', 'FINANCE_KYB', 'GOVCON_PROCUREMENT', 'SECOPS_CYBER', 'HEALTHCARE_BIOTECH', 'BRAZIL_B2B_TAX', or 'ESG_LOGISTICS_GEO').",
+            "default": "ALL",
+            "enum": [
+              "ALL",
+              "FINANCE_KYB",
+              "GOVCON_PROCUREMENT",
+              "SECOPS_CYBER",
+              "HEALTHCARE_BIOTECH",
+              "BRAZIL_B2B_TAX",
+              "ESG_LOGISTICS_GEO"
+            ]
+          },
+          "apifyApiToken": {
+            "type": "string",
+            "title": "Apify API Token (Optional for Live Dispatch)",
+            "description": "Optional Apify API Token to execute a live synchronous REST call against the target @b2b-quant-apis Actor during 'invoke_tool'. If omitted, returns a deterministic validated MCP execution envelope."
+          },
+          "maxTools": {
+            "type": "integer",
+            "title": "Maximum Tools Returned",
+            "description": "Maximum number of B2B tool definitions to return in 'list_catalog' mode (1 to 30).",
+            "default": 30,
+            "minimum": 1,
+            "maximum": 30
+          }
+        },
+        "required": [
+          "operationMode"
+        ]
+      },
+      "b2b_quant_mcp_server_DatasetItem": {
+        "type": "object",
+        "title": "B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools) Output Record",
+        "properties": {
+          "operationMode": {
+            "type": "string",
+            "title": "MCP Operation Mode",
+            "description": "Executed router mode: list_catalog, invoke_tool, or export_mcp_config."
+          },
+          "toolName": {
+            "type": "string",
+            "title": "MCP Tool Name",
+            "description": "Canonical MCP tool identifier (underscore format)."
+          },
+          "actorSlug": {
+            "type": "string",
+            "title": "Apify Actor Slug",
+            "description": "Full @b2b-quant-apis Actor slug on Apify Store."
+          },
+          "domainCategory": {
+            "type": "string",
+            "title": "B2B Domain Category",
+            "description": "Classified vertical category (FINANCE_KYB, GOVCON_PROCUREMENT, SECOPS_CYBER, etc.)."
+          },
+          "pricePerEventUsd": {
+            "type": "number",
+            "title": "PPE Price (USD)",
+            "description": "Pay-Per-Event price in USD on Apify Store and x402 Solana USDC gateway."
+          },
+          "mcpStreamableHttpUrl": {
+            "type": "string",
+            "title": "Streamable HTTP MCP Endpoint",
+            "description": "Direct Hosted Apify MCP Server URL for this tool."
+          },
+          "x402SolanaEndpoint": {
+            "type": "string",
+            "title": "x402 Solana USDC Endpoint",
+            "description": "Stateless x402 endpoint settling in USDC on Solana Mainnet."
+          },
+          "executionStatus": {
+            "type": "string",
+            "title": "Execution / Validation Status",
+            "description": "READY_IN_CATALOG, LIVE_DISPATCH_SUCCEEDED, DETERMINISTIC_VALIDATED_ENVELOPE, or CONFIG_EXPORTED."
+          },
+          "readinessScore": {
+            "type": "integer",
+            "title": "M2M & Agent Readiness Score (0-100)",
+            "description": "Quantitative schema, MCP, and x402 readiness score (0-100)."
+          },
+          "mcpJsonRpcEnvelope": {
+            "type": "object",
+            "title": "JSON-RPC 2.0 MCP Envelope",
+            "description": "Complete JSON-RPC 2.0 tools/list, tools/call, or configuration payload."
+          },
+          "markdownMcpBrief": {
+            "type": "string",
+            "title": "Markdown MCP & x402 Integration Brief",
+            "description": "Executive Markdown documentation and 1-Click setup snippet for AI Agents."
           }
         }
       }

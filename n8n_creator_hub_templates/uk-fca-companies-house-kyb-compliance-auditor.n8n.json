@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"companyQuery\": \"Barclays,Revolut\",\n  \"includeFcaCheck\": true,\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"companyQuery\": \"Revolut\",\n  \"includeInactive\": false,\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }

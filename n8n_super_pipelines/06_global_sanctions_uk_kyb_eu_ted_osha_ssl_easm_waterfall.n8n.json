@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"entityNames\": \"Gazprom,Rosneft\",\n  \"targetJurisdiction\": \"ALL\",\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"entityName\": \"Lazarus Group\",\n  \"entityType\": \"ANY\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -67,7 +67,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"companyQuery\": \"Barclays,Revolut\",\n  \"includeFcaCheck\": true,\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"companyQuery\": \"Revolut\",\n  \"includeInactive\": false,\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -89,7 +89,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"keyword\": \"cybersecurity\",\n  \"countryCode\": \"DEU\",\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"searchKeyword\": \"Cloud Cybersecurity\",\n  \"countryIso3\": \"DEU\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -111,7 +111,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"companyQuery\": \"Amazon,Tesla\",\n  \"state\": \"TX\",\n  \"maxResults\": 5\n}",
+        "jsonBody": "{\n  \"companyOrEstablishment\": \"Amazon\",\n  \"stateCode\": \"TX\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -133,7 +133,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"domains\": \"cloudflare.com,stripe.com\",\n  \"includeExpired\": false,\n  \"maxResults\": 10\n}",
+        "jsonBody": "{\n  \"rootDomain\": \"cloudflare.com\",\n  \"excludeExpired\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
