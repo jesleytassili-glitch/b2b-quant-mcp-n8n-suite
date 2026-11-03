@@ -194,6 +194,7 @@
         "extra": {
           "networkShorthand": "solana-mainnet",
           "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
           "decimals": 6,
           "priceUsd": "0.03",
           "actorSlug": "global-sanctions-pep-interpol-watchlist-screener",

@@ -3,7 +3,7 @@
   "info": {
     "title": "US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
     "version": "3.0.0",
-    "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n### Enterprise B2B Value Proposition (US Real Estate Census Tract, FIPS & PropTech Geo Enricher)\n- **Target B2B Buyers:** PropTech Platforms, Mortgage Lenders (HMDA/CRA Compliance), Real Estate REITs, and Site Selection Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Real Estate Census Tract & FIPS Enriched`).\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** us-census-fips, fcc-area-api, real-estate-analytics, geospatial-enrichment, census-tract, proptech, mortgage-hmda.",
+    "description": "Enriches U.S. commercial and residential real estate coordinates via official FCC & U.S. Census Bureau APIs (Zero-Key). Extracts 15-digit Block FIPS, 11-digit Census Tract, County FIPS, bounding boxes, and Property Underwriting Scores.\n\n### Enterprise B2B Value Proposition (US Real Estate Census Tract, FIPS & PropTech Geo Enricher)\n- **Target B2B Buyers:** PropTech Platforms, Mortgage Lenders (HMDA/CRA Compliance), Real Estate REITs, and Site Selection Teams.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`U.S. Real Estate Census Tract & FIPS Enriched`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Data` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** us-census-fips, fcc-area-api, real-estate-analytics, geospatial-enrichment, census-tract, proptech, mortgage-hmda.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -62,9 +62,22 @@
       }
     },
     "x-code-snippets": {
-      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
-      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+      "cURL": "# Primary Synchronous Endpoint: https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\ncurl --request POST \\\n  --url \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nurl = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nconst url = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-primary-backend-url": "https://api.apify.com",
+    "x-primary-backend-base-url": "https://api.apify.com",
+    "x-apify-sync-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+    "x-apify-health-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher",
+    "x-backend-secret-header": {
+      "name": "Authorization",
+      "valueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "headerName": "Authorization",
+      "headerValueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "injectedByProxy": true,
+      "hiddenFromSubscriber": true,
+      "description": "Secret Header injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
     },
     "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
     "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/us-census-fcc-real-estate-geo-enricher.json",
@@ -77,12 +90,16 @@
   },
   "servers": [
     {
-      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
-      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+      "url": "https://api.apify.com",
+      "description": "Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)"
     },
     {
-      "url": "https://api.apify.com/v2",
-      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+      "url": "https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items",
+      "description": "Direct Apify Actor Synchronous Execution Endpoint (us-census-fcc-real-estate-geo-enricher)"
+    },
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
     }
   ],
   "tags": [
@@ -121,6 +138,9 @@
   ],
   "security": [
     {
+      "ApifyCloudBearerAuth": []
+    },
+    {
       "RapidAPIProxySecret": []
     },
     {
@@ -131,11 +151,11 @@
     }
   ],
   "paths": {
-    "/v1/us-census-fcc-real-estate-geo-enricher": {
+    "/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "execute_us_census_fcc_real_estate_geo_enricher",
-        "summary": "Execute US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
-        "description": "Synchronous stateless execution of **US Real Estate Census Tract, FIPS & PropTech Geo Enricher**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "operationId": "run_sync_us_census_fcc_real_estate_geo_enricher",
+        "summary": "Execute US Real Estate Census Tract, FIPS & PropTech Geo Enricher (Apify Cloud Synchronous POST)",
+        "description": "Synchronous stateless execution of **US Real Estate Census Tract, FIPS & PropTech Geo Enricher**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Data",
           "us-census-fips",
@@ -148,23 +168,28 @@
           {
             "lang": "cURL",
             "label": "cURL",
-            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'"
+            "source": "# Primary Synchronous Endpoint: https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\ncurl --request POST \\\n  --url \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'"
           },
           {
             "lang": "Python",
             "label": "Python (httpx)",
-            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nurl = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
           },
           {
             "lang": "Node.js",
             "label": "Node.js (fetch)",
-            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nconst url = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
           }
         ],
         "x-snippets": {
-          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
-          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          "cURL": "# Primary Synchronous Endpoint: https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\ncurl --request POST \\\n  --url \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nurl = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nconst url = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
         },
         "requestBody": {
           "required": true,
@@ -201,6 +226,289 @@
                 }
               }
             },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "realEstateInvestmentScore": 88,
+                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `us-census-fcc-real-estate-geo-enricher` on Apify Cloud (`HTTP 201`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "realEstateInvestmentScore": 88,
+                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher": {
+      "get": {
+        "operationId": "status_us_census_fcc_real_estate_geo_enricher",
+        "summary": "Actor Metadata & Live Connectivity Check for US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+        "description": "Immediate `HTTP 200` status and metadata health check for `us-census-fcc-real-estate-geo-enricher` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher` and `GET /v1/us-census-fcc-real-estate-geo-enricher/health`) without starting a container build or run.",
+        "tags": [
+          "Data"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "us-census-fcc-real-estate-geo-enricher"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Data"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "us-census-fcc-real-estate-geo-enricher",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "engineVersion": "3.0.0",
+                  "category": "Data",
+                  "data": {
+                    "name": "us-census-fcc-real-estate-geo-enricher",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/us-census-fcc-real-estate-geo-enricher": {
+      "post": {
+        "operationId": "execute_us_census_fcc_real_estate_geo_enricher",
+        "summary": "Execute US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
+        "description": "Synchronous stateless execution of **US Real Estate Census Tract, FIPS & PropTech Geo Enricher**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "tags": [
+          "Data",
+          "us-census-fips",
+          "fcc-area-api",
+          "real-estate-analytics",
+          "geospatial-enrichment",
+          "census-tract"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "# Primary Synchronous Endpoint: https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\ncurl --request POST \\\n  --url \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nurl = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nconst url = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "# Primary Synchronous Endpoint: https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\ncurl --request POST \\\n  --url \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nurl = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\",\n    \"censusYear\": \"2020\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/us-census-fcc-real-estate-geo-enricher)\nconst url = \"https://us-census-fcc-real-estate-geo-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"us-census-fcc-real-estate-geo-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"coordinatesList\": \"40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431\", \"censusYear\": \"2020\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `us-census-fcc-real-estate-geo-enricher`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherRequest"
+              },
+              "example": {
+                "coordinatesList": "40.7128,-74.0060; 25.7617,-80.1918; 30.2672,-97.7431",
+                "censusYear": "2020",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `us-census-fcc-real-estate-geo-enricher` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsCensusFccRealEstateGeoEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "us-census-fcc-real-estate-geo-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
+                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
+                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
+                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "realEstateInvestmentScore": 88,
+                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
+                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `us-census-fcc-real-estate-geo-enricher` on Apify Cloud (`HTTP 201`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -285,13 +593,13 @@
       "get": {
         "operationId": "health_us_census_fcc_real_estate_geo_enricher",
         "summary": "Health & SLA Check for US Real Estate Census Tract, FIPS & PropTech Geo Enricher",
-        "description": "Lightweight health and schema readiness check for `us-census-fcc-real-estate-geo-enricher` on RapidAPI Hub and Zyla API Hub.",
+        "description": "Immediate `HTTP 200` status and metadata health check for `us-census-fcc-real-estate-geo-enricher` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~us-census-fcc-real-estate-geo-enricher` and `GET /v1/us-census-fcc-real-estate-geo-enricher/health`) without starting a container build or run.",
         "tags": [
           "Data"
         ],
         "responses": {
           "200": {
-            "description": "Engine online and ready.",
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -312,6 +620,15 @@
                     "category": {
                       "type": "string",
                       "example": "Data"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "us-census-fcc-real-estate-geo-enricher",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
                     }
                   }
                 },
@@ -319,7 +636,12 @@
                   "status": "ok",
                   "actor": "us-census-fcc-real-estate-geo-enricher",
                   "engineVersion": "3.0.0",
-                  "category": "Data"
+                  "category": "Data",
+                  "data": {
+                    "name": "us-census-fcc-real-estate-geo-enricher",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
                 }
               }
             }
@@ -330,6 +652,12 @@
   },
   "components": {
     "securitySchemes": {
+      "ApifyCloudBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "APIFY_API_TOKEN",
+        "description": "Backend Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
+      },
       "RapidAPIProxySecret": {
         "type": "apiKey",
         "in": "header",

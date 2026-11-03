@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"procedures\": [\n    {\n      \"tuss_code\": \"10101012\",\n      \"cid10\": \"J00\",\n      \"billed_amount\": 250.0,\n      \"guide_type\": \"consulta\"\n    }\n  ]\n}",
+        "jsonBody": "{\n  \"tissXmlPayloads\": [\n    \"<ans:mensagemTISS xmlns:ans=\\\"http://www.ans.gov.br/padroes/tiss/schemas\\\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>\"\n  ],\n  \"autoFixHash\": true\n}",
         "options": {
           "timeout": 300000
         }

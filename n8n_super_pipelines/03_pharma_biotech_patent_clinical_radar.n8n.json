@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"conditions\": [\n    \"oncology\",\n    \"obesity\",\n    \"alzheimer\"\n  ],\n  \"phases\": [\n    \"PHASE2\",\n    \"PHASE3\"\n  ],\n  \"max_studies\": 10\n}",
+        "jsonBody": "{\n  \"condition\": \"Oncology\",\n  \"overallStatus\": \"RECRUITING\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
@@ -67,7 +67,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"drug_names\": [\n    \"ozempic\",\n    \"semaglutide\",\n    \"eliquis\"\n  ],\n  \"include_recalls\": true,\n  \"max_results\": 10\n}",
+        "jsonBody": "{\n  \"domain\": \"drug\",\n  \"classification\": \"ALL\",\n  \"keyword\": \"semaglutide\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
@@ -89,7 +89,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"taxonomies\": [\n    \"Cardiology\",\n    \"Dermatology\"\n  ],\n  \"state\": \"NY\",\n  \"max_results\": 10\n}",
+        "jsonBody": "{\n  \"state\": \"NY\",\n  \"city\": \"New York\",\n  \"taxonomyDescription\": \"Cardiology\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

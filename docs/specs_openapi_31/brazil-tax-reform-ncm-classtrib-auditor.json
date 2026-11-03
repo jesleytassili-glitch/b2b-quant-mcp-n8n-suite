@@ -3,7 +3,7 @@
   "info": {
     "title": "Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
     "version": "3.0.0",
-    "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.\n\n### Enterprise B2B Value Proposition (Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor)\n- **Target B2B Buyers:** Tax Automation ERPs, Accounting SaaS, eCommerce Checkout Engines, and Big4 Tax Auditors.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`NCM / NF-e Item Audited (LC 214/2025)`).\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Taxes & Compliance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-tax-reform, ncm-auditor, ibs-cbs, classtrib, nfe-compliance, lc-214-2025, erp-tax-engine.",
+    "description": "Maps Brazilian NCM product catalogs and audits NF-e XML invoices for the 2026 Tax Reform (LC 214/2025 - IBS, CBS, and Imposto Seletivo). Returns cClassTrib, CST, reduction percentages, legal annexes, and compliance alerts.\n\n### Enterprise B2B Value Proposition (Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor)\n- **Target B2B Buyers:** Tax Automation ERPs, Accounting SaaS, eCommerce Checkout Engines, and Big4 Tax Auditors.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`NCM / NF-e Item Audited (LC 214/2025)`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Taxes & Compliance`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-tax-reform, ncm-auditor, ibs-cbs, classtrib, nfe-compliance, lc-214-2025, erp-tax-engine.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -62,9 +62,22 @@
       }
     },
     "x-code-snippets": {
-      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'",
-      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+      "cURL": "# Primary Synchronous Endpoint: https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\ncurl --request POST \\\n  --url \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'",
+      "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nurl = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nconst url = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-primary-backend-url": "https://api.apify.com",
+    "x-primary-backend-base-url": "https://api.apify.com",
+    "x-apify-sync-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items",
+    "x-apify-health-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor",
+    "x-backend-secret-header": {
+      "name": "Authorization",
+      "valueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "headerName": "Authorization",
+      "headerValueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "injectedByProxy": true,
+      "hiddenFromSubscriber": true,
+      "description": "Secret Header injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
     },
     "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json",
     "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-tax-reform-ncm-classtrib-auditor.json",
@@ -77,12 +90,16 @@
   },
   "servers": [
     {
-      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
-      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+      "url": "https://api.apify.com",
+      "description": "Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)"
     },
     {
-      "url": "https://api.apify.com/v2",
-      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+      "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items",
+      "description": "Direct Apify Actor Synchronous Execution Endpoint (brazil-tax-reform-ncm-classtrib-auditor)"
+    },
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
     }
   ],
   "tags": [
@@ -121,6 +138,9 @@
   ],
   "security": [
     {
+      "ApifyCloudBearerAuth": []
+    },
+    {
       "RapidAPIProxySecret": []
     },
     {
@@ -131,11 +151,11 @@
     }
   ],
   "paths": {
-    "/v1/brazil-tax-reform-ncm-classtrib-auditor": {
+    "/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "execute_brazil_tax_reform_ncm_classtrib_auditor",
-        "summary": "Execute Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
-        "description": "Synchronous stateless execution of **Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "operationId": "run_sync_brazil_tax_reform_ncm_classtrib_auditor",
+        "summary": "Execute Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor (Apify Cloud Synchronous POST)",
+        "description": "Synchronous stateless execution of **Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Finance",
           "brazil-tax-reform",
@@ -148,23 +168,28 @@
           {
             "lang": "cURL",
             "label": "cURL",
-            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'"
+            "source": "# Primary Synchronous Endpoint: https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\ncurl --request POST \\\n  --url \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'"
           },
           {
             "lang": "Python",
             "label": "Python (httpx)",
-            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nurl = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
           },
           {
             "lang": "Node.js",
             "label": "Node.js (fetch)",
-            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nconst url = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
           }
         ],
         "x-snippets": {
-          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'",
-          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\ncurl --request POST \\\n  --url \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nurl = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nconst url = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
         },
         "requestBody": {
           "required": true,
@@ -253,6 +278,307 @@
               }
             }
           },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-tax-reform-ncm-classtrib-auditor` on Apify Cloud (`HTTP 201`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilTaxReformNcmClasstribAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-tax-reform-ncm-classtrib-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "sku": "Verified SKU / Item",
+                      "ncmFormatted": "Verified NCM",
+                      "description": "Verified Description",
+                      "cstIbsCbs": "Verified CST (IBS/CBS)",
+                      "cClassTrib": "Verified cClassTrib (6 digits)",
+                      "regimeName": "Verified Tax Regime (2026)",
+                      "aliquotaReductionPct": 92.0,
+                      "impostoSeletivo": true,
+                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
+                      "confidenceScore": 92.0,
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor": {
+      "get": {
+        "operationId": "status_brazil_tax_reform_ncm_classtrib_auditor",
+        "summary": "Actor Metadata & Live Connectivity Check for Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-tax-reform-ncm-classtrib-auditor` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor` and `GET /v1/brazil-tax-reform-ncm-classtrib-auditor/health`) without starting a container build or run.",
+        "tags": [
+          "Finance"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-tax-reform-ncm-classtrib-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Finance"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-tax-reform-ncm-classtrib-auditor",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-tax-reform-ncm-classtrib-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Finance",
+                  "data": {
+                    "name": "brazil-tax-reform-ncm-classtrib-auditor",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-tax-reform-ncm-classtrib-auditor": {
+      "post": {
+        "operationId": "execute_brazil_tax_reform_ncm_classtrib_auditor",
+        "summary": "Execute Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
+        "description": "Synchronous stateless execution of **Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "tags": [
+          "Finance",
+          "brazil-tax-reform",
+          "ncm-auditor",
+          "ibs-cbs",
+          "classtrib",
+          "nfe-compliance"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "# Primary Synchronous Endpoint: https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\ncurl --request POST \\\n  --url \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nurl = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nconst url = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\ncurl --request POST \\\n  --url \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nurl = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"catalogItems\": [\n        {\n            \"sku\": \"ITEM-001\",\n            \"ncm\": \"10063021\",\n            \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n        },\n        {\n            \"sku\": \"ITEM-002\",\n            \"ncm\": \"30049099\",\n            \"description\": \"Medicamento para uso humano em doses\"\n        },\n        {\n            \"sku\": \"ITEM-003\",\n            \"ncm\": \"22030000\",\n            \"description\": \"Cerveja de malte em lata 350ml\"\n        },\n        {\n            \"sku\": \"ITEM-004\",\n            \"ncm\": \"84713012\",\n            \"description\": \"Notebook portátil para processamento de dados\"\n        }\n    ],\n    \"nfeXmlList\": [],\n    \"uf\": \"SP\"\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-tax-reform-ncm-classtrib-auditor)\nconst url = \"https://brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-tax-reform-ncm-classtrib-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"catalogItems\": [{\"sku\": \"ITEM-001\", \"ncm\": \"10063021\", \"description\": \"Arroz beneficiado parboilizado tipo 1\"}, {\"sku\": \"ITEM-002\", \"ncm\": \"30049099\", \"description\": \"Medicamento para uso humano em doses\"}, {\"sku\": \"ITEM-003\", \"ncm\": \"22030000\", \"description\": \"Cerveja de malte em lata 350ml\"}, {\"sku\": \"ITEM-004\", \"ncm\": \"84713012\", \"description\": \"Notebook portátil para processamento de dados\"}], \"nfeXmlList\": [], \"uf\": \"SP\"})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-tax-reform-ncm-classtrib-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilTaxReformNcmClasstribAuditorRequest"
+              },
+              "example": {
+                "catalogItems": [
+                  {
+                    "sku": "ITEM-001",
+                    "ncm": "10063021",
+                    "description": "Arroz beneficiado parboilizado tipo 1"
+                  },
+                  {
+                    "sku": "ITEM-002",
+                    "ncm": "30049099",
+                    "description": "Medicamento para uso humano em doses"
+                  },
+                  {
+                    "sku": "ITEM-003",
+                    "ncm": "22030000",
+                    "description": "Cerveja de malte em lata 350ml"
+                  },
+                  {
+                    "sku": "ITEM-004",
+                    "ncm": "84713012",
+                    "description": "Notebook portátil para processamento de dados"
+                  }
+                ],
+                "nfeXmlList": [],
+                "uf": "SP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-tax-reform-ncm-classtrib-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilTaxReformNcmClasstribAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-tax-reform-ncm-classtrib-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "sku": "Verified SKU / Item",
+                      "ncmFormatted": "Verified NCM",
+                      "description": "Verified Description",
+                      "cstIbsCbs": "Verified CST (IBS/CBS)",
+                      "cClassTrib": "Verified cClassTrib (6 digits)",
+                      "regimeName": "Verified Tax Regime (2026)",
+                      "aliquotaReductionPct": 92.0,
+                      "impostoSeletivo": true,
+                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
+                      "confidenceScore": 92.0,
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-tax-reform-ncm-classtrib-auditor` on Apify Cloud (`HTTP 201`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilTaxReformNcmClasstribAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-tax-reform-ncm-classtrib-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "sku": "Verified SKU / Item",
+                      "ncmFormatted": "Verified NCM",
+                      "description": "Verified Description",
+                      "cstIbsCbs": "Verified CST (IBS/CBS)",
+                      "cClassTrib": "Verified cClassTrib (6 digits)",
+                      "regimeName": "Verified Tax Regime (2026)",
+                      "aliquotaReductionPct": 92.0,
+                      "impostoSeletivo": true,
+                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
+                      "confidenceScore": 92.0,
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request — Invalid JSON payload or schema validation error.",
             "content": {
@@ -305,13 +631,13 @@
       "get": {
         "operationId": "health_brazil_tax_reform_ncm_classtrib_auditor",
         "summary": "Health & SLA Check for Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor",
-        "description": "Lightweight health and schema readiness check for `brazil-tax-reform-ncm-classtrib-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-tax-reform-ncm-classtrib-auditor` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-tax-reform-ncm-classtrib-auditor` and `GET /v1/brazil-tax-reform-ncm-classtrib-auditor/health`) without starting a container build or run.",
         "tags": [
           "Finance"
         ],
         "responses": {
           "200": {
-            "description": "Engine online and ready.",
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -332,6 +658,15 @@
                     "category": {
                       "type": "string",
                       "example": "Finance"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-tax-reform-ncm-classtrib-auditor",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
                     }
                   }
                 },
@@ -339,7 +674,12 @@
                   "status": "ok",
                   "actor": "brazil-tax-reform-ncm-classtrib-auditor",
                   "engineVersion": "3.0.0",
-                  "category": "Finance"
+                  "category": "Finance",
+                  "data": {
+                    "name": "brazil-tax-reform-ncm-classtrib-auditor",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
                 }
               }
             }
@@ -350,6 +690,12 @@
   },
   "components": {
     "securitySchemes": {
+      "ApifyCloudBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "APIFY_API_TOKEN",
+        "description": "Backend Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
+      },
       "RapidAPIProxySecret": {
         "type": "apiKey",
         "in": "header",

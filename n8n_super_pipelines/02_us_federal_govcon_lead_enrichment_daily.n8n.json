@@ -67,7 +67,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "jsonBody": "{\n  \"tickerOrCik\": \"AAPL\",\n  \"formType\": \"10-K\",\n  \"keyword\": \"\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -89,7 +89,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"queries\": [\n    {\n      \"facility_name\": \"ExxonMobil\",\n      \"state\": \"TX\"\n    },\n    {\n      \"facility_name\": \"Chevron\",\n      \"state\": \"CA\"\n    }\n  ],\n  \"max_results_per_query\": 5\n}",
+        "jsonBody": "{\n  \"state\": \"TX\",\n  \"facilityName\": \"ExxonMobil\",\n  \"significantViolatorsOnly\": false,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

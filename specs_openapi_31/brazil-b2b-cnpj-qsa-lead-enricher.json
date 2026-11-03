@@ -3,7 +3,7 @@
   "info": {
     "title": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
     "version": "3.0.0",
-    "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n### Enterprise B2B Value Proposition (Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher)\n- **Target B2B Buyers:** FinTech KYB Onboarding Flows, B2B Credit Bureaus, and Enterprise CRM Enrichment Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazilian CNPJ & Partners (QSA) Lead Enriched`).\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cnpj-lookup, receita-federal, qsa-ubo-partners, brazil-kyb, company-enrichment, cnae-lookup, b2b-credit-risk.",
+    "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n### Enterprise B2B Value Proposition (Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher)\n- **Target B2B Buyers:** FinTech KYB Onboarding Flows, B2B Credit Bureaus, and Enterprise CRM Enrichment Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazilian CNPJ & Partners (QSA) Lead Enriched`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cnpj-lookup, receita-federal, qsa-ubo-partners, brazil-kyb, company-enrichment, cnae-lookup, b2b-credit-risk.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -62,9 +62,22 @@
       }
     },
     "x-code-snippets": {
-      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100}'",
-      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 100\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+      "cURL": "# Primary Synchronous Endpoint: https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\ncurl --request POST \\\n  --url \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10}'",
+      "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nurl = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nconst url = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-primary-backend-url": "https://api.apify.com",
+    "x-primary-backend-base-url": "https://api.apify.com",
+    "x-apify-sync-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+    "x-apify-health-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher",
+    "x-backend-secret-header": {
+      "name": "Authorization",
+      "valueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "headerName": "Authorization",
+      "headerValueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "injectedByProxy": true,
+      "hiddenFromSubscriber": true,
+      "description": "Secret Header injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
     },
     "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json",
     "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json",
@@ -77,12 +90,16 @@
   },
   "servers": [
     {
-      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
-      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+      "url": "https://api.apify.com",
+      "description": "Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)"
     },
     {
-      "url": "https://api.apify.com/v2",
-      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+      "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items",
+      "description": "Direct Apify Actor Synchronous Execution Endpoint (brazil-b2b-cnpj-qsa-lead-enricher)"
+    },
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
     }
   ],
   "tags": [
@@ -121,6 +138,9 @@
   ],
   "security": [
     {
+      "ApifyCloudBearerAuth": []
+    },
+    {
       "RapidAPIProxySecret": []
     },
     {
@@ -131,11 +151,11 @@
     }
   ],
   "paths": {
-    "/v1/brazil-b2b-cnpj-qsa-lead-enricher": {
+    "/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "execute_brazil_b2b_cnpj_qsa_lead_enricher",
-        "summary": "Execute Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
-        "description": "Synchronous stateless execution of **Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "operationId": "run_sync_brazil_b2b_cnpj_qsa_lead_enricher",
+        "summary": "Execute Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher (Apify Cloud Synchronous POST)",
+        "description": "Synchronous stateless execution of **Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Business",
           "cnpj-lookup",
@@ -148,23 +168,28 @@
           {
             "lang": "cURL",
             "label": "cURL",
-            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100}'"
+            "source": "# Primary Synchronous Endpoint: https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\ncurl --request POST \\\n  --url \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10}'"
           },
           {
             "lang": "Python",
             "label": "Python (httpx)",
-            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 100\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nurl = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
           },
           {
             "lang": "Node.js",
             "label": "Node.js (fetch)",
-            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nconst url = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
           }
         ],
         "x-snippets": {
-          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100}'",
-          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 100\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 100})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\ncurl --request POST \\\n  --url \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nurl = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nconst url = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
         },
         "requestBody": {
           "required": true,
@@ -181,7 +206,7 @@
                 ],
                 "includeSecondaryCnaes": true,
                 "timeoutSeconds": 15,
-                "maxResults": 100
+                "maxResults": 10
               }
             }
           }
@@ -205,6 +230,329 @@
                 }
               }
             },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilB2bCnpjQsaLeadEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-b2b-cnpj-qsa-lead-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cnpj": "Verified cnpj (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnpjFormatted": "Verified cnpjFormatted (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "isValidMod11": true,
+                      "status": "Verified status (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "dataSource": "Verified dataSource (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "razaoSocial": "Verified razaoSocial (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "nomeFantasia": "Verified nomeFantasia (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "situacaoCadastral": "Verified situacaoCadastral (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalCodigo": "Verified cnaePrincipalCodigo (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalDescricao": "Verified cnaePrincipalDescricao (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "capitalSocialBRL": 94.5,
+                      "opcaoPeloSimples": true,
+                      "opcaoPeloMei": true,
+                      "uf": "Verified uf (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "municipio": "Verified municipio (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "sociosCount": 88,
+                      "qsa": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "cnaesSecundarios": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "markdownCompanyDossier": "Verified markdownCompanyDossier (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-b2b-cnpj-qsa-lead-enricher` on Apify Cloud (`HTTP 201`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilB2bCnpjQsaLeadEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-b2b-cnpj-qsa-lead-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cnpj": "Verified cnpj (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnpjFormatted": "Verified cnpjFormatted (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "isValidMod11": true,
+                      "status": "Verified status (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "dataSource": "Verified dataSource (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "razaoSocial": "Verified razaoSocial (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "nomeFantasia": "Verified nomeFantasia (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "situacaoCadastral": "Verified situacaoCadastral (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalCodigo": "Verified cnaePrincipalCodigo (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalDescricao": "Verified cnaePrincipalDescricao (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "capitalSocialBRL": 94.5,
+                      "opcaoPeloSimples": true,
+                      "opcaoPeloMei": true,
+                      "uf": "Verified uf (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "municipio": "Verified municipio (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "sociosCount": 88,
+                      "qsa": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "cnaesSecundarios": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "markdownCompanyDossier": "Verified markdownCompanyDossier (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher": {
+      "get": {
+        "operationId": "status_brazil_b2b_cnpj_qsa_lead_enricher",
+        "summary": "Actor Metadata & Live Connectivity Check for Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-b2b-cnpj-qsa-lead-enricher` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher` and `GET /v1/brazil-b2b-cnpj-qsa-lead-enricher/health`) without starting a container build or run.",
+        "tags": [
+          "Business"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-b2b-cnpj-qsa-lead-enricher"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Business"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-b2b-cnpj-qsa-lead-enricher",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-b2b-cnpj-qsa-lead-enricher",
+                  "engineVersion": "3.0.0",
+                  "category": "Business",
+                  "data": {
+                    "name": "brazil-b2b-cnpj-qsa-lead-enricher",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-b2b-cnpj-qsa-lead-enricher": {
+      "post": {
+        "operationId": "execute_brazil_b2b_cnpj_qsa_lead_enricher",
+        "summary": "Execute Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
+        "description": "Synchronous stateless execution of **Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "tags": [
+          "Business",
+          "cnpj-lookup",
+          "receita-federal",
+          "qsa-ubo-partners",
+          "brazil-kyb",
+          "company-enrichment"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "# Primary Synchronous Endpoint: https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\ncurl --request POST \\\n  --url \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nurl = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nconst url = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\ncurl --request POST \\\n  --url \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nurl = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\"\npayload = {\n    \"cnpjs\": [\n        \"00.000.000/0001-91\",\n        \"33.000.167/0001-01\"\n    ],\n    \"includeSecondaryCnaes\": true,\n    \"timeoutSeconds\": 15,\n    \"maxResults\": 10\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-b2b-cnpj-qsa-lead-enricher)\nconst url = \"https://brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-b2b-cnpj-qsa-lead-enricher.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"cnpjs\": [\"00.000.000/0001-91\", \"33.000.167/0001-01\"], \"includeSecondaryCnaes\": true, \"timeoutSeconds\": 15, \"maxResults\": 10})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-b2b-cnpj-qsa-lead-enricher`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilB2bCnpjQsaLeadEnricherRequest"
+              },
+              "example": {
+                "cnpjs": [
+                  "00.000.000/0001-91",
+                  "33.000.167/0001-01"
+                ],
+                "includeSecondaryCnaes": true,
+                "timeoutSeconds": 15,
+                "maxResults": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-b2b-cnpj-qsa-lead-enricher` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilB2bCnpjQsaLeadEnricherResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-b2b-cnpj-qsa-lead-enricher",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cnpj": "Verified cnpj (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnpjFormatted": "Verified cnpjFormatted (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "isValidMod11": true,
+                      "status": "Verified status (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "dataSource": "Verified dataSource (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "razaoSocial": "Verified razaoSocial (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "nomeFantasia": "Verified nomeFantasia (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "situacaoCadastral": "Verified situacaoCadastral (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalCodigo": "Verified cnaePrincipalCodigo (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "cnaePrincipalDescricao": "Verified cnaePrincipalDescricao (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "capitalSocialBRL": 94.5,
+                      "opcaoPeloSimples": true,
+                      "opcaoPeloMei": true,
+                      "uf": "Verified uf (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "municipio": "Verified municipio (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "sociosCount": 88,
+                      "qsa": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "cnaesSecundarios": [
+                        "VERIFIED_PRIMARY_SOURCE"
+                      ],
+                      "markdownCompanyDossier": "Verified markdownCompanyDossier (brazil-b2b-cnpj-qsa-lead-enricher)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-b2b-cnpj-qsa-lead-enricher` on Apify Cloud (`HTTP 201`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -301,13 +649,13 @@
       "get": {
         "operationId": "health_brazil_b2b_cnpj_qsa_lead_enricher",
         "summary": "Health & SLA Check for Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
-        "description": "Lightweight health and schema readiness check for `brazil-b2b-cnpj-qsa-lead-enricher` on RapidAPI Hub and Zyla API Hub.",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-b2b-cnpj-qsa-lead-enricher` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher` and `GET /v1/brazil-b2b-cnpj-qsa-lead-enricher/health`) without starting a container build or run.",
         "tags": [
           "Business"
         ],
         "responses": {
           "200": {
-            "description": "Engine online and ready.",
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -328,6 +676,15 @@
                     "category": {
                       "type": "string",
                       "example": "Business"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-b2b-cnpj-qsa-lead-enricher",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
                     }
                   }
                 },
@@ -335,7 +692,12 @@
                   "status": "ok",
                   "actor": "brazil-b2b-cnpj-qsa-lead-enricher",
                   "engineVersion": "3.0.0",
-                  "category": "Business"
+                  "category": "Business",
+                  "data": {
+                    "name": "brazil-b2b-cnpj-qsa-lead-enricher",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
                 }
               }
             }
@@ -346,6 +708,12 @@
   },
   "components": {
     "securitySchemes": {
+      "ApifyCloudBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "APIFY_API_TOKEN",
+        "description": "Backend Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
+      },
       "RapidAPIProxySecret": {
         "type": "apiKey",
         "in": "header",
@@ -410,7 +778,7 @@
             "default": 100,
             "minimum": 1,
             "maximum": 5000,
-            "example": 100
+            "example": 10
           }
         },
         "required": [
@@ -423,7 +791,7 @@
           ],
           "includeSecondaryCnaes": true,
           "timeoutSeconds": 15,
-          "maxResults": 100
+          "maxResults": 10
         }
       },
       "BrazilB2bCnpjQsaLeadEnricherRecord": {

@@ -1,0 +1,56 @@
+name: Publish Official MCP Registry Servers (OIDC)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mcp_registry_servers/**'
+      - '.github/workflows/publish-official-mcp-registry.yml'
+
+jobs:
+  publish-mcp-registry:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Official mcp-publisher (v1.8.7)
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.7/mcp-publisher_linux_amd64.tar.gz" -o /tmp/mcp-publisher.tar.gz
+          tar -xzf /tmp/mcp-publisher.tar.gz -C /tmp mcp-publisher
+          chmod +x /tmp/mcp-publisher
+          /tmp/mcp-publisher --help || true
+
+      - name: Authenticate via GitHub OIDC (Zero-Secret Namespace Auth)
+        run: |
+          /tmp/mcp-publisher login github-oidc
+
+      - name: Publish all 7 B2B MCP Servers to registry.modelcontextprotocol.io
+        run: |
+          set -euo pipefail
+          PUBLISHED=0
+          for dir in mcp_registry_servers/*/; do
+            echo "=== Publishing $dir ==="
+            (
+              cd "$dir"
+              if /tmp/mcp-publisher publish; then
+                echo "[OK] Published $dir"
+              else
+                echo "[INFO] Entry may already exist at current version in $dir"
+              fi
+            )
+            PUBLISHED=$((PUBLISHED + 1))
+          done
+          echo "Processed $PUBLISHED server manifests."
+
+      - name: Verify Live Indexing on Official MCP Registry API
+        run: |
+          sleep 4
+          curl -fsSL "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.jesleytassili-glitch&limit=30" | python3 -m json.tool | head -n 80

@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"domains\": [\n    \"stripe.com\",\n    \"shopify.com\",\n    \"cloudflare.com\"\n  ],\n  \"check_dmarc\": true\n}",
+        "jsonBody": "{\n  \"targets\": [\n    \"contact@stripe.com\",\n    \"security@shopify.com\",\n    \"ops@cloudflare.com\"\n  ],\n  \"checkDmarcAndSpf\": true\n}",
         "options": {
           "timeout": 300000
         }

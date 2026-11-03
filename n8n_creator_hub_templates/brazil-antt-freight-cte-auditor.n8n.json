@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"routes\": [\n    {\n      \"origin_uf\": \"SP\",\n      \"dest_uf\": \"RJ\",\n      \"distance_km\": 430,\n      \"axles\": 6,\n      \"cargo_type\": \"geral\"\n    }\n  ]\n}",
+        "jsonBody": "{\n  \"routes\": [\n    {\n      \"routeId\": \"ROT-001\",\n      \"origin\": \"Campinas/SP\",\n      \"destination\": \"Goi\\u00e2nia/GO\",\n      \"distanceKm\": 815,\n      \"axles\": 6,\n      \"cargoType\": \"carga_geral\",\n      \"chargedFreightBRL\": 6800.0\n    }\n  ],\n  \"defaultAxles\": 6\n}",
         "options": {
           "timeout": 300000
         }

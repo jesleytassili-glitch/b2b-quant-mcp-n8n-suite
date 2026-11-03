@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"vins\": [\n    \"5YJSA1E26MF123456\",\n    \"1FTEW1EP5MFA12345\"\n  ],\n  \"check_recalls\": true\n}",
+        "jsonBody": "{\n  \"vins\": [\n    \"5UXWX7C5*BA\",\n    \"1HGCM82633A004352\"\n  ],\n  \"checkRecalls\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

@@ -40,7 +40,7 @@
         ],
         "bodyType": "raw",
         "contentType": "application/json",
-        "data": "{\"tickers\": [\"AAPL\", \"MSFT\", \"NVDA\"], \"form_types\": [\"10-K\", \"10-Q\", \"8-K\", \"4\"], \"max_filings_per_company\": 5}"
+        "data": "{\"tickerOrCik\": \"AAPL\", \"formType\": \"10-K\", \"keyword\": \"\", \"maxResults\": 5}"
       }
     }
   ],

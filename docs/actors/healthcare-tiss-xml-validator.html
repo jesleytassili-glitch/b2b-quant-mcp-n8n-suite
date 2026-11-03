@@ -40,14 +40,10 @@
     </div>
     <h2>Sample JSON Input Payload</h2>
     <pre>{
-  "procedures": [
-    {
-      "tuss_code": "10101012",
-      "cid10": "J00",
-      "billed_amount": 250.0,
-      "guide_type": "consulta"
-    }
-  ]
+  "tissXmlPayloads": [
+    "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+  ],
+  "autoFixHash": true
 }</pre>
     <h2>1-Click Claude Desktop / Cursor MCP Config</h2>
     <pre>{

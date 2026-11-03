@@ -17,16 +17,19 @@ Inclui:
 
 from __future__ import annotations
 
+import asyncio
 import base64
 import importlib.util
 import json
 import logging
+import os
 import re
 import sys
+import tempfile
 import time
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import httpx
 from starlette.applications import Starlette
@@ -50,6 +53,7 @@ logger = logging.getLogger("x402_solana_gateway")
 
 # Constantes Oficiais On-Chain (Solana Mainnet + USDC SPL)
 SOLANA_USDC_WALLET = "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T"
+SOLANA_USDC_PAY_TO_ATA = "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9"
 SOLANA_CAIP2_NETWORK = "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
 SOLANA_NETWORK_SHORTHAND = "solana-mainnet"
 SOLANA_USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
@@ -57,6 +61,10 @@ SOLANA_USDC_DECIMALS = 6
 SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com"
 PUBLIC_BASE_URL = "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite"
 APIFY_USERNAME = "b2b-quant-apis"
+DEFAULT_REPLAY_STORE_PATH = Path(__file__).resolve().parent / ".x402_used_signatures.json"
+MAX_X402_BODY_BYTES = 65_536
+MAX_X402_BATCH_ITEMS = 50
+_ACTOR_FN_CACHE: dict[str, tuple[Callable[..., Any], dict[str, Any]]] = {}
 
 BASE58_SIGNATURE_REGEX = re.compile(r"^[1-9A-HJ-NP-Za-km-z]{43,90}$")
 
@@ -113,6 +121,7 @@ def build_x402_challenge(slug: str, base_url: str = PUBLIC_BASE_URL) -> dict[str
                 "extra": {
                     "networkShorthand": SOLANA_NETWORK_SHORTHAND,
                     "mint": SOLANA_USDC_MINT,
+                    "payToAta": SOLANA_USDC_PAY_TO_ATA,
                     "decimals": SOLANA_USDC_DECIMALS,
                     "priceUsd": format_usd_amount(price_usd),
                     "actorSlug": slug,
@@ -204,12 +213,18 @@ class SolanaX402Verifier:
         recipient_wallet: str = SOLANA_USDC_WALLET,
         usdc_mint: str = SOLANA_USDC_MINT,
         replay_store_path: Path | None = None,
+        max_age_seconds: int | None = None,
+        commitment: str = "confirmed",
     ) -> None:
         self.rpc_url = rpc_url
         self.recipient_wallet = recipient_wallet
         self.usdc_mint = usdc_mint
         self.replay_store_path = replay_store_path
+        self.max_age_seconds = max_age_seconds
+        self.commitment = commitment
         self._used_signatures: set[str] = set()
+        self._in_flight_signatures: set[str] = set()
+        self._lock = asyncio.Lock()
         if self.replay_store_path and self.replay_store_path.exists():
             try:
                 loaded = json.loads(self.replay_store_path.read_text(encoding="utf-8"))
@@ -223,18 +238,26 @@ class SolanaX402Verifier:
         return tx_signature in self._used_signatures
 
     def mark_signature_used(self, tx_signature: str) -> None:
-        """Registra a assinatura como consumida e persiste em disco se configurado."""
+        """Registra a assinatura como consumida e persiste atomicamente em disco se configurado."""
         self._used_signatures.add(tx_signature)
         if self.replay_store_path:
+            tmp_path: Path | None = None
             try:
                 self.replay_store_path.parent.mkdir(parents=True, exist_ok=True)
-                self.replay_store_path.write_text(
-                    json.dumps(sorted(self._used_signatures), indent=2),
-                    encoding="utf-8",
-                    newline="\n",
+                fd, tmp_name = tempfile.mkstemp(
+                    dir=str(self.replay_store_path.parent),
+                    prefix=".x402_replay_",
+                    suffix=".tmp",
                 )
+                tmp_path = Path(tmp_name)
+                with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as fh:
+                    json.dump(sorted(self._used_signatures), fh, indent=2)
+                    fh.write("\n")
+                os.replace(tmp_path, self.replay_store_path)
             except Exception as exc:
                 logger.error("Erro ao persistir cache anti-replay: %s", exc)
+                if tmp_path and tmp_path.exists():
+                    tmp_path.unlink(missing_ok=True)
 
     async def fetch_solana_transaction(self, tx_signature: str) -> dict[str, Any] | None:
         """Consulta `getTransaction` no RPC da Solana Mainnet com timeout seguro."""
@@ -246,7 +269,7 @@ class SolanaX402Verifier:
                 tx_signature,
                 {
                     "encoding": "jsonParsed",
-                    "commitment": "confirmed",
+                    "commitment": self.commitment,
                     "maxSupportedTransactionVersion": 0,
                 },
             ],
@@ -265,7 +288,8 @@ class SolanaX402Verifier:
         """
         Inspeciona o retorno do RPC `getTransaction` para confirmar que:
         1. A transação existe e não falhou (`meta.err is None`);
-        2. Houve crédito líquido de `>= required_atomic_amount` do Mint USDC SPL
+        2. Opcionalmente respeita `max_age_seconds` via `blockTime`;
+        3. Houve crédito líquido de `>= required_atomic_amount` do Mint USDC SPL (6 decimais)
            para `self.recipient_wallet`.
         """
         if not tx_result or not isinstance(tx_result, dict):
@@ -277,6 +301,11 @@ class SolanaX402Verifier:
 
         if meta.get("err") is not None:
             return False, "transaction_failed_on_chain", 0
+
+        if self.max_age_seconds is not None and "blockTime" in tx_result and tx_result["blockTime"] is not None:
+            tx_age = int(time.time()) - int(tx_result["blockTime"])
+            if tx_age > self.max_age_seconds:
+                return False, f"stale_transaction_blocktime: age={tx_age}s max={self.max_age_seconds}s", 0
 
         # Calcula delta de saldo USDC (postTokenBalances - preTokenBalances) para a carteira recebedora
         pre_balances = meta.get("preTokenBalances") or []
@@ -290,6 +319,8 @@ class SolanaX402Verifier:
                 and item.get("owner") == self.recipient_wallet
             ):
                 ui_token = item.get("uiTokenAmount") or {}
+                if int(ui_token.get("decimals", SOLANA_USDC_DECIMALS)) != SOLANA_USDC_DECIMALS:
+                    return False, "unexpected_token_decimals", 0
                 pre_amount += int(ui_token.get("amount") or 0)
 
         post_amount = 0
@@ -300,6 +331,8 @@ class SolanaX402Verifier:
                 and item.get("owner") == self.recipient_wallet
             ):
                 ui_token = item.get("uiTokenAmount") or {}
+                if int(ui_token.get("decimals", SOLANA_USDC_DECIMALS)) != SOLANA_USDC_DECIMALS:
+                    return False, "unexpected_token_decimals", 0
                 post_amount += int(ui_token.get("amount") or 0)
 
         received_atomic = post_amount - pre_amount
@@ -318,64 +351,80 @@ class SolanaX402Verifier:
         required_atomic_amount: int,
     ) -> dict[str, Any]:
         """
-        Fluxo completo de validação do cabeçalho `X-PAYMENT`:
+        Fluxo completo de validação do cabeçalho `X-PAYMENT` com trava assíncrona anti-TOCTOU:
         1. Parseia o cabeçalho;
-        2. Verifica se a assinatura já foi consumida (Anti-Replay);
+        2. Reserva a assinatura em `_in_flight_signatures` sob `asyncio.Lock` (evitando Double-Spend concorrente);
         3. Consulta a transação na Solana Mainnet e valida destinatário, Mint USDC e valor;
-        4. Marca a assinatura como consumida se aprovada.
+        4. Marca a assinatura como consumida se aprovada, liberando a trava em `finally`.
         """
         parsed = parse_x402_payment_header(header_value)
         tx_sig = parsed["txSignature"]
 
-        if self.is_signature_used(tx_sig):
-            return {
-                "valid": False,
-                "reason": "replay_attack_detected",
-                "txSignature": tx_sig,
-                "receivedAtomic": 0,
-            }
+        async with self._lock:
+            if self.is_signature_used(tx_sig) or tx_sig in self._in_flight_signatures:
+                return {
+                    "valid": False,
+                    "reason": "replay_attack_detected",
+                    "txSignature": tx_sig,
+                    "receivedAtomic": 0,
+                }
+            self._in_flight_signatures.add(tx_sig)
 
         try:
-            tx_result = await self.fetch_solana_transaction(tx_sig)
-        except Exception as exc:
-            logger.error("Falha de rede ao consultar Solana RPC para %s: %s", tx_sig, exc)
-            return {
-                "valid": False,
-                "reason": f"rpc_verification_error: {exc}",
-                "txSignature": tx_sig,
-                "receivedAtomic": 0,
-            }
+            try:
+                tx_result = await self.fetch_solana_transaction(tx_sig)
+            except Exception as exc:
+                logger.error("Falha de rede ao consultar Solana RPC para %s: %s", tx_sig, exc)
+                return {
+                    "valid": False,
+                    "reason": f"rpc_verification_error: {exc}",
+                    "txSignature": tx_sig,
+                    "receivedAtomic": 0,
+                }
 
-        is_ok, reason, received_atomic = self.verify_parsed_transaction_result(
-            tx_result=tx_result,
-            required_atomic_amount=required_atomic_amount,
-        )
-        if not is_ok:
+            is_ok, reason, received_atomic = self.verify_parsed_transaction_result(
+                tx_result=tx_result,
+                required_atomic_amount=required_atomic_amount,
+            )
+            if not is_ok:
+                return {
+                    "valid": False,
+                    "reason": reason,
+                    "txSignature": tx_sig,
+                    "receivedAtomic": received_atomic,
+                }
+
+            async with self._lock:
+                if self.is_signature_used(tx_sig):
+                    return {
+                        "valid": False,
+                        "reason": "replay_attack_detected",
+                        "txSignature": tx_sig,
+                        "receivedAtomic": 0,
+                    }
+                self.mark_signature_used(tx_sig)
+
             return {
-                "valid": False,
-                "reason": reason,
+                "valid": True,
+                "reason": "verified_on_chain",
                 "txSignature": tx_sig,
                 "receivedAtomic": received_atomic,
+                "recipientWallet": self.recipient_wallet,
+                "asset": "USDC",
+                "network": SOLANA_CAIP2_NETWORK,
+                "verifiedAt": int(time.time()),
             }
-
-        self.mark_signature_used(tx_sig)
-        return {
-            "valid": True,
-            "reason": "verified_on_chain",
-            "txSignature": tx_sig,
-            "receivedAtomic": received_atomic,
-            "recipientWallet": self.recipient_wallet,
-            "asset": "USDC",
-            "network": SOLANA_CAIP2_NETWORK,
-            "verifiedAt": int(time.time()),
-        }
+        finally:
+            async with self._lock:
+                self._in_flight_signatures.discard(tx_sig)
 
 
-async def execute_local_actor_engine(slug: str, payload: dict[str, Any]) -> list[dict[str, Any]]:
-    """
-    Executa localmente o motor determinístico `process_input` do Ator solicitado.
-    Garante resposta em milissegundos sem custo de servidor intermediário.
-    """
+def _load_cached_x402_actor_fn(slug: str) -> tuple[Callable[..., Any], dict[str, Any]]:
+    """Carrega e armazena em cache a função assíncrona e o input default de um Ator."""
+    cached = _ACTOR_FN_CACHE.get(slug)
+    if cached is not None:
+        return cached
+
     main_py = ACTORS_DIR / slug / "src" / "main.py"
     if not main_py.exists():
         raise FileNotFoundError(f"Motor do ator {slug} não encontrado em {main_py}")
@@ -407,7 +456,28 @@ async def execute_local_actor_engine(slug: str, payload: dict[str, Any]) -> list
     if process_fn is None:
         raise RuntimeError(f"Função de execução ausente em {slug}")
 
-    effective_payload = payload if payload else getattr(mod, "DEFAULT_ACTOR_INPUT", {})
+    default_input = getattr(mod, "DEFAULT_ACTOR_INPUT", {})
+    default_dict = dict(default_input) if isinstance(default_input, dict) else {}
+    _ACTOR_FN_CACHE[slug] = (process_fn, default_dict)
+    return process_fn, default_dict
+
+
+def _estimate_batch_units(payload: dict[str, Any]) -> int:
+    """Estima o número de unidades faturáveis no payload para evitar arbitragem de lote."""
+    max_units = 1
+    for val in payload.values():
+        if isinstance(val, list):
+            max_units = max(max_units, len(val))
+    return max_units
+
+
+async def execute_local_actor_engine(slug: str, payload: dict[str, Any]) -> list[dict[str, Any]]:
+    """
+    Executa localmente o motor determinístico `process_input` do Ator solicitado (com cache em memória).
+    Garante resposta em milissegundos sem custo de servidor intermediário.
+    """
+    process_fn, default_dict = _load_cached_x402_actor_fn(slug)
+    effective_payload = payload if payload else default_dict
     result = await process_fn(effective_payload)
     if isinstance(result, tuple) and len(result) >= 1:
         items = result[0]
@@ -714,7 +784,11 @@ def build_well_known_x402_manifest(base_url: str = PUBLIC_BASE_URL) -> dict[str,
 
 def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
     """Cria a instância ASGI (Starlette) de alta performance do Gateway x402 Solana USDC."""
-    active_verifier = verifier or SolanaX402Verifier()
+    if verifier is not None:
+        active_verifier = verifier
+    else:
+        default_store = None if os.environ.get("PYTEST_CURRENT_TEST") else DEFAULT_REPLAY_STORE_PATH
+        active_verifier = SolanaX402Verifier(replay_store_path=default_store)
 
     async def health_check(request: Request) -> JSONResponse:
         return JSONResponse(
@@ -725,6 +799,7 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
                 "network": SOLANA_CAIP2_NETWORK,
                 "asset": "USDC",
                 "payTo": SOLANA_USDC_WALLET,
+                "payToAta": SOLANA_USDC_PAY_TO_ATA,
                 "totalActors": len(ACTOR_SLUGS),
             }
         )
@@ -750,9 +825,38 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
                 content={"error": f"Actor '{slug}' not found."},
             )
 
+        body_bytes = await request.body()
+        if len(body_bytes) > MAX_X402_BODY_BYTES:
+            return JSONResponse(
+                status_code=413,
+                content={"error": f"Request body exceeds limit ({MAX_X402_BODY_BYTES} bytes)."},
+            )
+
         payment_header = request.headers.get("X-PAYMENT") or request.headers.get("PAYMENT-SIGNATURE")
         challenge = build_x402_challenge(slug)
-        required_atomic = int(challenge["accepts"][0]["maxAmountRequired"])
+        unit_atomic = int(challenge["accepts"][0]["maxAmountRequired"])
+
+        parsed_payload: dict[str, Any] = {}
+        if body_bytes:
+            try:
+                raw_json = json.loads(body_bytes.decode("utf-8"))
+                if isinstance(raw_json, dict):
+                    parsed_payload = raw_json
+            except Exception as exc:
+                if payment_header:
+                    return JSONResponse(
+                        status_code=400,
+                        content={"error": f"Invalid JSON request body: {exc}"},
+                    )
+
+        batch_units = _estimate_batch_units(parsed_payload)
+        if batch_units > MAX_X402_BATCH_ITEMS:
+            return JSONResponse(
+                status_code=400,
+                content={"error": f"Batch size {batch_units} exceeds max_items_per_request ({MAX_X402_BATCH_ITEMS})."},
+            )
+        required_atomic = unit_atomic * max(1, batch_units)
+        challenge["accepts"][0]["maxAmountRequired"] = str(required_atomic)
 
         if not payment_header:
             return JSONResponse(
@@ -794,18 +898,7 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
                 },
             )
 
-        try:
-            body_bytes = await request.body()
-            payload = json.loads(body_bytes.decode("utf-8")) if body_bytes else {}
-            if not isinstance(payload, dict):
-                payload = {}
-        except Exception as exc:
-            return JSONResponse(
-                status_code=400,
-                content={"error": f"Invalid JSON request body: {exc}"},
-            )
-
-        items = await execute_local_actor_engine(slug, payload)
+        items = await execute_local_actor_engine(slug, parsed_payload)
         return JSONResponse(
             status_code=200,
             content={
@@ -819,7 +912,9 @@ def create_x402_app(verifier: SolanaX402Verifier | None = None) -> Starlette:
 
     routes = [
         Route("/health", endpoint=health_check, methods=["GET"]),
+        Route("/health.json", endpoint=health_check, methods=["GET"]),
         Route("/v1/free-catalog-status", endpoint=get_free_catalog_status, methods=["GET"]),
+        Route("/v1/free-catalog-status.json", endpoint=get_free_catalog_status, methods=["GET"]),
         Route("/openapi.json", endpoint=get_openapi_spec, methods=["GET"]),
         Route("/.well-known/x402.json", endpoint=get_well_known_x402, methods=["GET"]),
         Route("/v1/x402/catalog", endpoint=get_catalog, methods=["GET"]),

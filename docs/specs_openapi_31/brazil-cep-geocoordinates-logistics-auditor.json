@@ -3,7 +3,7 @@
   "info": {
     "title": "Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
     "version": "3.0.0",
-    "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor)\n- **Target B2B Buyers:** eCommerce Checkout Flows, Last-Mile Delivery Routers, NF-e Issuers, and Retail Omni-Channel ERPs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil CEP Geocoordinates & IBGE City Code Audited`).\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-cep-lookup, postal-geocoding, ibge-municipality-code, nfe-address-validator, last-mile-logistics, ddd-lookup, ecommerce-checkout.",
+    "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n### Enterprise B2B Value Proposition (Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor)\n- **Target B2B Buyers:** eCommerce Checkout Flows, Last-Mile Delivery Routers, NF-e Issuers, and Retail Omni-Channel ERPs.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazil CEP Geocoordinates & IBGE City Code Audited`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Logistics` | Zyla API Hub `Logistics & Shipping`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** brazil-cep-lookup, postal-geocoding, ibge-municipality-code, nfe-address-validator, last-mile-logistics, ddd-lookup, ecommerce-checkout.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -62,9 +62,22 @@
       }
     },
     "x-code-snippets": {
-      "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
-      "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-      "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+      "cURL": "# Primary Synchronous Endpoint: https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\ncurl --request POST \\\n  --url \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
+      "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nurl = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+      "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nconst url = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+    },
+    "x-primary-backend-url": "https://api.apify.com",
+    "x-primary-backend-base-url": "https://api.apify.com",
+    "x-apify-sync-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+    "x-apify-health-endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor",
+    "x-backend-secret-header": {
+      "name": "Authorization",
+      "valueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "headerName": "Authorization",
+      "headerValueTemplate": "Bearer <APIFY_API_TOKEN>",
+      "injectedByProxy": true,
+      "hiddenFromSubscriber": true,
+      "description": "Secret Header injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
     },
     "x-openapi-spec-url": "https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
     "x-openapi-suite-spec-url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json",
@@ -77,12 +90,16 @@
   },
   "servers": [
     {
-      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
-      "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
+      "url": "https://api.apify.com",
+      "description": "Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)"
     },
     {
-      "url": "https://api.apify.com/v2",
-      "description": "Direct Apify Cloud Synchronous Execution Cluster"
+      "url": "https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items",
+      "description": "Direct Apify Actor Synchronous Execution Endpoint (brazil-cep-geocoordinates-logistics-auditor)"
+    },
+    {
+      "url": "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev",
+      "description": "Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)"
     }
   ],
   "tags": [
@@ -121,6 +138,9 @@
   ],
   "security": [
     {
+      "ApifyCloudBearerAuth": []
+    },
+    {
       "RapidAPIProxySecret": []
     },
     {
@@ -131,11 +151,11 @@
     }
   ],
   "paths": {
-    "/v1/brazil-cep-geocoordinates-logistics-auditor": {
+    "/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "execute_brazil_cep_geocoordinates_logistics_auditor",
-        "summary": "Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
-        "description": "Synchronous stateless execution of **Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor**. Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records.",
+        "operationId": "run_sync_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor (Apify Cloud Synchronous POST)",
+        "description": "Synchronous stateless execution of **Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Logistics",
           "brazil-cep-lookup",
@@ -148,23 +168,28 @@
           {
             "lang": "cURL",
             "label": "cURL",
-            "source": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'"
+            "source": "# Primary Synchronous Endpoint: https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\ncurl --request POST \\\n  --url \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'"
           },
           {
             "lang": "Python",
             "label": "Python (httpx)",
-            "source": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nurl = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
           },
           {
             "lang": "Node.js",
             "label": "Node.js (fetch)",
-            "source": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nconst url = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
           }
         ],
         "x-snippets": {
-          "cURL": "curl --request POST \\\n  --url \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
-          "Python": "import httpx\n\nurl = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
-          "Node.js": "const url = \"https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\ncurl --request POST \\\n  --url \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nurl = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nconst url = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
         },
         "requestBody": {
           "required": true,
@@ -200,6 +225,285 @@
                 }
               }
             },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "logisticsReadinessScore": 88,
+                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-cep-geocoordinates-logistics-auditor` on Apify Cloud (`HTTP 201`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "logisticsReadinessScore": 88,
+                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — Invalid JSON payload or schema validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": 400,
+                  "message": "Invalid JSON request body."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "forbidden",
+                  "code": 403,
+                  "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret."
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "quota_exceeded",
+                  "code": 429,
+                  "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor": {
+      "get": {
+        "operationId": "status_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Actor Metadata & Live Connectivity Check for Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-cep-geocoordinates-logistics-auditor` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor` and `GET /v1/brazil-cep-geocoordinates-logistics-auditor/health`) without starting a container build or run.",
+        "tags": [
+          "Logistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "actor": {
+                      "type": "string",
+                      "example": "brazil-cep-geocoordinates-logistics-auditor"
+                    },
+                    "engineVersion": {
+                      "type": "string",
+                      "example": "3.0.0"
+                    },
+                    "category": {
+                      "type": "string",
+                      "example": "Logistics"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-cep-geocoordinates-logistics-auditor",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "ok",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "engineVersion": "3.0.0",
+                  "category": "Logistics",
+                  "data": {
+                    "name": "brazil-cep-geocoordinates-logistics-auditor",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/brazil-cep-geocoordinates-logistics-auditor": {
+      "post": {
+        "operationId": "execute_brazil_cep_geocoordinates_logistics_auditor",
+        "summary": "Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
+        "description": "Synchronous stateless execution of **Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "tags": [
+          "Logistics",
+          "brazil-cep-lookup",
+          "postal-geocoding",
+          "ibge-municipality-code",
+          "nfe-address-validator",
+          "last-mile-logistics"
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "cURL",
+            "label": "cURL",
+            "source": "# Primary Synchronous Endpoint: https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\ncurl --request POST \\\n  --url \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'"
+          },
+          {
+            "lang": "Python",
+            "label": "Python (httpx)",
+            "source": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nurl = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n"
+          },
+          {
+            "lang": "Node.js",
+            "label": "Node.js (fetch)",
+            "source": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nconst url = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+          }
+        ],
+        "x-snippets": {
+          "cURL": "# Primary Synchronous Endpoint: https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\ncurl --request POST \\\n  --url \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-RapidAPI-Host: brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\" \\\n  --header \"X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>\" \\\n  --data '{\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5}'",
+          "Python": "import httpx\n\n# Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nurl = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\"\npayload = {\n    \"ceps\": \"01310100,20040002,30140071\",\n    \"maxResults\": 5\n}\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\",\n}\n\nwith httpx.Client(timeout=30.0) as client:\n    response = client.post(url, json=payload, headers=headers)\n    response.raise_for_status()\n    print(response.json())\n",
+          "Node.js": "// Primary Synchronous Endpoint (Gateway Route: https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev/v1/brazil-cep-geocoordinates-logistics-auditor)\nconst url = \"https://brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items\";\nconst options = {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-RapidAPI-Host\": \"brazil-cep-geocoordinates-logistics-auditor.p.rapidapi.com\",\n    \"X-RapidAPI-Key\": \"<YOUR_RAPIDAPI_OR_ZYLA_KEY>\"\n  },\n  body: JSON.stringify({\"ceps\": \"01310100,20040002,30140071\", \"maxResults\": 5})\n};\n\nconst response = await fetch(url, options);\nconst data = await response.json();\nconsole.log(data);\n"
+        },
+        "x-backend-secret-header": {
+          "name": "Authorization",
+          "value": "Bearer <APIFY_API_TOKEN>",
+          "visibleToSubscriber": false
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Structured JSON parameters for `brazil-cep-geocoordinates-logistics-auditor`.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorRequest"
+              },
+              "example": {
+                "ceps": "01310100,20040002,30140071",
+                "maxResults": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful synchronous execution of `brazil-cep-geocoordinates-logistics-auditor` returning enriched B2B JSON records.",
+            "headers": {
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                "schema": {
+                  "type": "integer",
+                  "example": 999
+                }
+              },
+              "X-Engine-Version": {
+                "description": "Deterministic B2B engine release version.",
+                "schema": {
+                  "type": "string",
+                  "example": "3.0.0"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope"
+                },
+                "example": {
+                  "status": "succeeded",
+                  "actor": "brazil-cep-geocoordinates-logistics-auditor",
+                  "marketplace": "rapidapi_zyla_hub",
+                  "engineVersion": "3.0.0",
+                  "count": 1,
+                  "data": [
+                    {
+                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
+                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
+                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
+                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
+                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
+                      "latitude": 94.5,
+                      "longitude": 94.5,
+                      "logisticsReadinessScore": 88,
+                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
+                      "quantScore": 91.5,
+                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Synchronous dataset created and returned for `brazil-cep-geocoordinates-logistics-auditor` on Apify Cloud (`HTTP 201`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -283,13 +587,13 @@
       "get": {
         "operationId": "health_brazil_cep_geocoordinates_logistics_auditor",
         "summary": "Health & SLA Check for Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor",
-        "description": "Lightweight health and schema readiness check for `brazil-cep-geocoordinates-logistics-auditor` on RapidAPI Hub and Zyla API Hub.",
+        "description": "Immediate `HTTP 200` status and metadata health check for `brazil-cep-geocoordinates-logistics-auditor` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor` and `GET /v1/brazil-cep-geocoordinates-logistics-auditor/health`) without starting a container build or run.",
         "tags": [
           "Logistics"
         ],
         "responses": {
           "200": {
-            "description": "Engine online and ready.",
+            "description": "Engine online and ready (`HTTP 200 JSON`).",
             "content": {
               "application/json": {
                 "schema": {
@@ -310,6 +614,15 @@
                     "category": {
                       "type": "string",
                       "example": "Logistics"
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "brazil-cep-geocoordinates-logistics-auditor",
+                        "username": "b2b-quant-apis",
+                        "isPublic": true
+                      }
                     }
                   }
                 },
@@ -317,7 +630,12 @@
                   "status": "ok",
                   "actor": "brazil-cep-geocoordinates-logistics-auditor",
                   "engineVersion": "3.0.0",
-                  "category": "Logistics"
+                  "category": "Logistics",
+                  "data": {
+                    "name": "brazil-cep-geocoordinates-logistics-auditor",
+                    "username": "b2b-quant-apis",
+                    "isPublic": true
+                  }
                 }
               }
             }
@@ -328,6 +646,12 @@
   },
   "components": {
     "securitySchemes": {
+      "ApifyCloudBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "APIFY_API_TOKEN",
+        "description": "Backend Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com."
+      },
       "RapidAPIProxySecret": {
         "type": "apiKey",
         "in": "header",

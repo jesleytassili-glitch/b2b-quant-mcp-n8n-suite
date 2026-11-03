@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "jsonBody": "{\n  \"tickerOrCik\": \"AAPL\",\n  \"formType\": \"10-K\",\n  \"keyword\": \"\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }
@@ -67,7 +67,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"queries\": [\n    {\n      \"facility_name\": \"ExxonMobil\",\n      \"state\": \"TX\"\n    },\n    {\n      \"facility_name\": \"Chevron\",\n      \"state\": \"CA\"\n    }\n  ],\n  \"max_results_per_query\": 5\n}",
+        "jsonBody": "{\n  \"state\": \"TX\",\n  \"facilityName\": \"ExxonMobil\",\n  \"significantViolatorsOnly\": false,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
@@ -89,7 +89,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"bank_names\": [\n    \"JPMorgan Chase Bank\",\n    \"Bank of America\",\n    \"Citibank\"\n  ],\n  \"state\": \"\",\n  \"only_active\": true\n}",
+        "jsonBody": "{\n  \"institutionName\": \"JPMorgan Chase Bank\",\n  \"state\": \"NY\",\n  \"activeOnly\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
@@ -111,7 +111,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"vat_numbers\": [\n    \"IE6388047V\",\n    \"DE118607914\",\n    \"FR40303265045\"\n  ],\n  \"requester_vat\": \"\"\n}",
+        "jsonBody": "{\n  \"vatNumbers\": \"IE6388047V, DE811128135, FR40303265045\",\n  \"requesterCountryCode\": \"DE\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }
@@ -133,7 +133,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"cnpjs\": [\n    \"00000000000191\",\n    \"33000167000101\"\n  ],\n  \"include_qsa\": true\n}",
+        "jsonBody": "{\n  \"cnpjs\": [\n    \"00.000.000/0001-91\",\n    \"33.000.167/0001-01\"\n  ],\n  \"includeSecondaryCnaes\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

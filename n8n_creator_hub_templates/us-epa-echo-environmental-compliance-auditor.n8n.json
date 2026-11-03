@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"queries\": [\n    {\n      \"facility_name\": \"ExxonMobil\",\n      \"state\": \"TX\"\n    },\n    {\n      \"facility_name\": \"Chevron\",\n      \"state\": \"CA\"\n    }\n  ],\n  \"max_results_per_query\": 5\n}",
+        "jsonBody": "{\n  \"state\": \"TX\",\n  \"facilityName\": \"ExxonMobil\",\n  \"significantViolatorsOnly\": false,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

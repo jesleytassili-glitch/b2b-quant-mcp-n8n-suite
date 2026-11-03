@@ -55,13 +55,13 @@
 
 ## Agensi.io AI Agent Skill Packs & $29.99 Master Bundle (90% Direct Referral)
 
-- [Enterprise Master Bundle (All 6 Packs — $29.99 USDC)](https://www.agensi.io/r/JEAGUILERA)
-- [B2B Regulatory & Financial KYB MCP Connector (Free Lead Magnet)](https://www.agensi.io/r/JEAGUILERA): Standard `$0.00` / Launch Deal `$0.00 USDC`
-- [US SEC EDGAR, SAM.gov GovCon & FDIC Financial Intelligence Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Global KYB, GLEIF LEI, EU VIES, UK FCA & Sanctions AML Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Brazil B2B Tax Reform (LC 214), BCB PTAX/Selic, Pix & CNPJ Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Cybersecurity CISA KEV, SSL/TLS CT Log & RDAP SecOps Recon Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Healthcare NIH Clinical Trials, OpenFDA Recalls & NPI Lead Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Enterprise Master Bundle (All 6 Packs — $29.99 USDC)](https://www.agensi.io/r/JEAGUILERA?to=/bundles/b2b-regulatory-kyb-fintech-secops-master-suite)
+- [B2B Regulatory & Financial KYB MCP Connector (Free Lead Magnet)](https://www.agensi.io/r/JEAGUILERA?to=/skills/b2b-regulatory-financial-compliance-analyst): Standard `$0.00` / Launch Deal `$0.00 USDC`
+- [US SEC EDGAR, SAM.gov GovCon & GLEIF KYB Intelligence Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/us-sec-edgar-sam-gov-gleif-kyb-compliance-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Brazil B2B Tax Reform (LC 214), BCB PTAX/Selic, Pix & CNPJ Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/brazil-b2b-fintech-central-bank-tax-compliance): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Cybersecurity CISA KEV, SSL/TLS CT Log & RDAP SecOps Recon Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/cybersecurity-cisa-kev-rdap-email-secops-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Healthcare NIH Clinical Trials, OpenFDA Recalls & NPI Lead Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/healthcare-fda-recalls-clinical-trials-npi-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [B2B Hiring Intent, Real Estate FIPS & Logistics Compliance Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/b2b-hiring-intent-real-estate-logistics-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
 
 ---
 
@@ -108,7 +108,8 @@
     "licenciamento"
   ],
   "uf": "SP",
-  "max_results": 10
+  "maxResults": 10,
+  "fetchItems": false
 }
 ```
 
@@ -124,18 +125,19 @@
 - **Sample JSON Input:**
 ```json
 {
-  "items": [
+  "catalogItems": [
     {
-      "ncm": "04011010",
-      "cClassTrib": "010001",
-      "valor_item": 1500.0
+      "sku": "ITEM-001",
+      "ncm": "10063021",
+      "description": "Arroz beneficiado parboilizado tipo 1"
     },
     {
+      "sku": "ITEM-002",
       "ncm": "30049099",
-      "cClassTrib": "020001",
-      "valor_item": 4200.0
+      "description": "Medicamento para uso humano em doses"
     }
-  ]
+  ],
+  "uf": "SP"
 }
 ```
 
@@ -151,14 +153,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "procedures": [
-    {
-      "tuss_code": "10101012",
-      "cid10": "J00",
-      "billed_amount": 250.0,
-      "guide_type": "consulta"
-    }
-  ]
+  "tissXmlPayloads": [
+    "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans:guiasTISS></ans:loteGuias></ans:prestadorParaOperadora><ans:epilogo><ans:hash>INVALID_HASH_000</ans:hash></ans:epilogo></ans:mensagemTISS>"
+  ],
+  "autoFixHash": true
 }
 ```
 
@@ -176,13 +174,16 @@
 {
   "routes": [
     {
-      "origin_uf": "SP",
-      "dest_uf": "RJ",
-      "distance_km": 430,
+      "routeId": "ROT-001",
+      "origin": "Campinas/SP",
+      "destination": "Goiânia/GO",
+      "distanceKm": 815,
       "axles": 6,
-      "cargo_type": "geral"
+      "cargoType": "carga_geral",
+      "chargedFreightBRL": 6800.0
     }
-  ]
+  ],
+  "defaultAxles": 6
 }
 ```
 
@@ -198,12 +199,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "taxonomies": [
-    "Cardiology",
-    "Dermatology"
-  ],
   "state": "NY",
-  "max_results": 10
+  "city": "New York",
+  "taxonomyDescription": "Cardiology",
+  "maxResults": 10
 }
 ```
 
@@ -219,13 +218,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "drug_names": [
-    "ozempic",
-    "semaglutide",
-    "eliquis"
-  ],
-  "include_recalls": true,
-  "max_results": 10
+  "domain": "drug",
+  "classification": "ALL",
+  "keyword": "semaglutide",
+  "maxResults": 10
 }
 ```
 
@@ -241,12 +237,12 @@
 - **Sample JSON Input:**
 ```json
 {
-  "domains": [
-    "stripe.com",
-    "shopify.com",
-    "cloudflare.com"
+  "targets": [
+    "contact@stripe.com",
+    "security@shopify.com",
+    "ops@cloudflare.com"
   ],
-  "check_dmarc": true
+  "checkDmarcAndSpf": true
 }
 ```
 
@@ -262,16 +258,9 @@
 - **Sample JSON Input:**
 ```json
 {
-  "conditions": [
-    "oncology",
-    "obesity",
-    "alzheimer"
-  ],
-  "phases": [
-    "PHASE2",
-    "PHASE3"
-  ],
-  "max_studies": 10
+  "condition": "Oncology",
+  "overallStatus": "RECRUITING",
+  "maxResults": 10
 }
 ```
 
@@ -288,10 +277,11 @@
 ```json
 {
   "vins": [
-    "5YJSA1E26MF123456",
-    "1FTEW1EP5MFA12345"
+    "5UXWX7C5*BA",
+    "1HGCM82633A004352"
   ],
-  "check_recalls": true
+  "checkRecalls": true,
+  "maxResults": 10
 }
 ```
 
@@ -308,10 +298,11 @@
 ```json
 {
   "cnpjs": [
-    "00000000000191",
-    "33000167000101"
+    "00.000.000/0001-91",
+    "33.000.167/0001-01"
   ],
-  "include_qsa": true
+  "includeSecondaryCnaes": true,
+  "maxResults": 10
 }
 ```
 
@@ -327,18 +318,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "tickers": [
-    "AAPL",
-    "MSFT",
-    "NVDA"
-  ],
-  "form_types": [
-    "10-K",
-    "10-Q",
-    "8-K",
-    "4"
-  ],
-  "max_filings_per_company": 5
+  "tickerOrCik": "AAPL",
+  "formType": "10-K",
+  "keyword": "",
+  "maxResults": 5
 }
 ```
 
@@ -354,12 +337,9 @@
 - **Sample JSON Input:**
 ```json
 {
-  "vat_numbers": [
-    "IE6388047V",
-    "DE118607914",
-    "FR40303265045"
-  ],
-  "requester_vat": ""
+  "vatNumbers": "IE6388047V, DE811128135, FR40303265045",
+  "requesterCountryCode": "DE",
+  "maxResults": 10
 }
 ```
 
@@ -375,17 +355,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "queries": [
-    {
-      "facility_name": "ExxonMobil",
-      "state": "TX"
-    },
-    {
-      "facility_name": "Chevron",
-      "state": "CA"
-    }
-  ],
-  "max_results_per_query": 5
+  "state": "TX",
+  "facilityName": "ExxonMobil",
+  "significantViolatorsOnly": false,
+  "maxResults": 10
 }
 ```
 
@@ -401,13 +374,10 @@
 - **Sample JSON Input:**
 ```json
 {
-  "bank_names": [
-    "JPMorgan Chase Bank",
-    "Bank of America",
-    "Citibank"
-  ],
-  "state": "",
-  "only_active": true
+  "institutionName": "JPMorgan Chase Bank",
+  "state": "NY",
+  "activeOnly": true,
+  "maxResults": 10
 }
 ```
 

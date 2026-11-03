@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jesleytassili-glitch/healthcare-fda-clinical-mcp",
+  "title": "US Healthcare NPI Leads, FDA Recalls & ClinicalTrials",
+  "description": "Extract CMS NPPES healthcare provider leads, FDA safety recalls & NIH ClinicalTrials.gov sponsors.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-clinical-trials-biotech-radar.html",
+  "repository": {
+    "url": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+    "source": "github",
+    "subfolder": "mcp_registry_servers/healthcare-fda-clinical-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-healthcare-npi-provider-lead-enricher,b2b-quant-apis/us-fda-recalls-safety-monitor,b2b-quant-apis/us-clinical-trials-biotech-radar"
+    }
+  ]
+}

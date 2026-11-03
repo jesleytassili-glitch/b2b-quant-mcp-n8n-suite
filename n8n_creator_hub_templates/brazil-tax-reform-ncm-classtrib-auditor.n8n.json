@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"items\": [\n    {\n      \"ncm\": \"04011010\",\n      \"cClassTrib\": \"010001\",\n      \"valor_item\": 1500.0\n    },\n    {\n      \"ncm\": \"30049099\",\n      \"cClassTrib\": \"020001\",\n      \"valor_item\": 4200.0\n    }\n  ]\n}",
+        "jsonBody": "{\n  \"catalogItems\": [\n    {\n      \"sku\": \"ITEM-001\",\n      \"ncm\": \"10063021\",\n      \"description\": \"Arroz beneficiado parboilizado tipo 1\"\n    },\n    {\n      \"sku\": \"ITEM-002\",\n      \"ncm\": \"30049099\",\n      \"description\": \"Medicamento para uso humano em doses\"\n    }\n  ],\n  \"uf\": \"SP\"\n}",
         "options": {
           "timeout": 300000
         }

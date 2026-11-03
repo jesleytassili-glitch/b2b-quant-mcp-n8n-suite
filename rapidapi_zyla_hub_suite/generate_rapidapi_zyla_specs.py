@@ -51,6 +51,7 @@ APIFY_USERNAME = "b2b-quant-apis"
 WISE_ACCOUNT_NUMBER = "890361113"
 ENGINE_VERSION = "3.0.0"
 GITHUB_RELEASE_TAG = "v2.2.0"
+PRIMARY_BACKEND_BASE_URL = "https://api.apify.com"
 DEFAULT_GATEWAY_BASE_URL = "https://b2b-quant-rapidapi-gateway.jesleytassili.workers.dev"
 PUBLIC_GITHUB_PAGES_ORIGIN = "https://jesleytassili-glitch.github.io"
 PUBLIC_SPECS_BASE_URL = f"{PUBLIC_GITHUB_PAGES_ORIGIN}/specs_openapi_31"
@@ -497,16 +498,21 @@ def _extract_output_properties_and_example(
 def build_code_snippets(slug: str, sample_input: dict[str, Any], gateway_url: str = DEFAULT_GATEWAY_BASE_URL) -> dict[str, str]:
     """
     Gera os 3 snippets prontos de integração comercial (`cURL`, `Python`, `Node.js`) para
-    consumidores do RapidAPI Hub e do Zyla API Hub.
+    consumidores do RapidAPI Hub e do Zyla API Hub, expondo o endpoint `POST` síncrono real
+    na Apify Cloud (`/v2/acts/b2b-quant-apis~{slug}/run-sync-get-dataset-items`) e a rota
+    canônica do gateway (`/v1/{slug}`).
     """
-    endpoint_url = f"{gateway_url.rstrip('/')}/v1/{slug}"
+    apify_sync_path = f"/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items"
     rapidapi_host = f"{slug}.p.rapidapi.com"
+    primary_url = f"https://{rapidapi_host}{apify_sync_path}"
+    endpoint_url = f"{gateway_url.rstrip('/')}/v1/{slug}"
     payload_compact = json.dumps(sample_input, ensure_ascii=False)
     payload_pretty = json.dumps(sample_input, indent=4, ensure_ascii=False)
 
     curl_snippet = (
+        f'# Primary Synchronous Endpoint: {primary_url} (Gateway Route: {endpoint_url})\n'
         f'curl --request POST \\\n'
-        f'  --url "{endpoint_url}" \\\n'
+        f'  --url "{primary_url}" \\\n'
         f'  --header "Content-Type: application/json" \\\n'
         f'  --header "X-RapidAPI-Host: {rapidapi_host}" \\\n'
         f'  --header "X-RapidAPI-Key: <YOUR_RAPIDAPI_OR_ZYLA_KEY>" \\\n'
@@ -515,7 +521,8 @@ def build_code_snippets(slug: str, sample_input: dict[str, Any], gateway_url: st
 
     python_snippet = (
         "import httpx\n\n"
-        f'url = "{endpoint_url}"\n'
+        f"# Primary Synchronous Endpoint (Gateway Route: {endpoint_url})\n"
+        f'url = "{primary_url}"\n'
         f"payload = {payload_pretty}\n"
         "headers = {\n"
         '    "Content-Type": "application/json",\n'
@@ -529,7 +536,8 @@ def build_code_snippets(slug: str, sample_input: dict[str, Any], gateway_url: st
     )
 
     nodejs_snippet = (
-        f'const url = "{endpoint_url}";\n'
+        f"// Primary Synchronous Endpoint (Gateway Route: {endpoint_url})\n"
+        f'const url = "{primary_url}";\n'
         "const options = {\n"
         '  method: "POST",\n'
         "  headers: {\n"
@@ -573,11 +581,190 @@ def build_Commercial_b2b_description(
         f"and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n"
         f"- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability "
         f"score and an LLM-ready Markdown executive brief (`{event_title}`).\n"
+        f"- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` "
+        f"invisibly at the proxy layer when forwarding synchronous calls to `{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items`.\n"
         f"- **Marketplace Categories:** RapidAPI `{rapid_cat}` | Zyla API Hub `{zyla_cat}`.\n"
         f"- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), "
         f"`ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n"
         f"- **SEO Keywords:** {seo_tags_str}."
     )
+
+
+def _build_post_operation_dict(
+    slug: str,
+    title: str,
+    operation_id: str,
+    summary_text: str,
+    rapid_category: str,
+    seo_tags: list[str],
+    code_samples_list: list[dict[str, str]],
+    snippets: dict[str, str],
+    input_schema_name: str,
+    default_payload: dict[str, Any],
+    response_envelope_name: str,
+    response_example: dict[str, Any],
+) -> dict[str, Any]:
+    """Constrói o bloco `post` padronizado para `/v2/acts/b2b-quant-apis~{slug}/run-sync-get-dataset-items` e `/v1/{slug}`."""
+    return {
+        "operationId": operation_id,
+        "summary": summary_text,
+        "description": (
+            f"Synchronous stateless execution of **{title}**. "
+            f"RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` "
+            f"invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), "
+            f"inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records."
+        ),
+        "tags": [rapid_category, *seo_tags[:5]],
+        "x-codeSamples": code_samples_list,
+        "x-snippets": snippets,
+        "x-backend-secret-header": {
+            "name": "Authorization",
+            "value": "Bearer <APIFY_API_TOKEN>",
+            "visibleToSubscriber": False,
+        },
+        "requestBody": {
+            "required": True,
+            "description": f"Structured JSON parameters for `{slug}`.",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": f"#/components/schemas/{input_schema_name}",
+                    },
+                    "example": default_payload,
+                }
+            },
+        },
+        "responses": {
+            "200": {
+                "description": f"Successful synchronous execution of `{slug}` returning enriched B2B JSON records.",
+                "headers": {
+                    "X-RateLimit-Remaining": {
+                        "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
+                        "schema": {"type": "integer", "example": 999},
+                    },
+                    "X-Engine-Version": {
+                        "description": "Deterministic B2B engine release version.",
+                        "schema": {"type": "string", "example": ENGINE_VERSION},
+                    },
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": f"#/components/schemas/{response_envelope_name}",
+                        },
+                        "example": response_example,
+                    }
+                },
+            },
+            "201": {
+                "description": f"Synchronous dataset created and returned for `{slug}` on Apify Cloud (`HTTP 201`).",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": f"#/components/schemas/{response_envelope_name}",
+                        },
+                        "example": response_example,
+                    }
+                },
+            },
+            "400": {
+                "description": "Bad Request — Invalid JSON payload or schema validation error.",
+                "content": {
+                    "application/json": {
+                        "schema": {"$ref": "#/components/schemas/ErrorResponse"},
+                        "example": {
+                            "status": "error",
+                            "code": 400,
+                            "message": "Invalid JSON request body.",
+                        },
+                    }
+                },
+            },
+            "403": {
+                "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
+                "content": {
+                    "application/json": {
+                        "schema": {"$ref": "#/components/schemas/ErrorResponse"},
+                        "example": {
+                            "status": "forbidden",
+                            "code": 403,
+                            "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret.",
+                        },
+                    }
+                },
+            },
+            "429": {
+                "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
+                "content": {
+                    "application/json": {
+                        "schema": {"$ref": "#/components/schemas/ErrorResponse"},
+                        "example": {
+                            "status": "quota_exceeded",
+                            "code": 429,
+                            "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo).",
+                        },
+                    }
+                },
+            },
+        },
+    }
+
+
+def _build_health_get_operation_dict(
+    slug: str,
+    title: str,
+    operation_id: str,
+    summary_text: str,
+    rapid_category: str,
+) -> dict[str, Any]:
+    """Constrói o bloco `get` de status/health imediato (`HTTP 200`) para `/v2/acts/b2b-quant-apis~{slug}` e `/v1/{slug}/health`."""
+    return {
+        "operationId": operation_id,
+        "summary": summary_text,
+        "description": (
+            f"Immediate `HTTP 200` status and metadata health check for `{slug}` on RapidAPI Studio and Zyla API Hub "
+            f"(`GET {PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}` and `GET /v1/{slug}/health`) without starting a container build or run."
+        ),
+        "tags": [rapid_category],
+        "responses": {
+            "200": {
+                "description": "Engine online and ready (`HTTP 200 JSON`).",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {"type": "string", "example": "ok"},
+                                "actor": {"type": "string", "example": slug},
+                                "engineVersion": {"type": "string", "example": ENGINE_VERSION},
+                                "category": {"type": "string", "example": rapid_category},
+                                "data": {
+                                    "type": "object",
+                                    "additionalProperties": True,
+                                    "example": {
+                                        "name": slug,
+                                        "username": APIFY_USERNAME,
+                                        "isPublic": True,
+                                    },
+                                },
+                            },
+                        },
+                        "example": {
+                            "status": "ok",
+                            "actor": slug,
+                            "engineVersion": ENGINE_VERSION,
+                            "category": rapid_category,
+                            "data": {
+                                "name": slug,
+                                "username": APIFY_USERNAME,
+                                "isPublic": True,
+                            },
+                        },
+                    }
+                },
+            }
+        },
+    }
 
 
 def build_single_openapi_303_spec(
@@ -587,7 +774,11 @@ def build_single_openapi_303_spec(
 ) -> dict[str, Any]:
     """
     Constrói a especificação OpenAPI 3.0.3 individual para um único motor B2B, 100% compatível
-    com o importador 1-Clique do RapidAPI Studio e do Zyla API Hub.
+    com o importador 1-Clique do RapidAPI Studio e do Zyla API Hub:
+    - `servers[0].url` = `https://api.apify.com` ("Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)")
+    - `paths` expõe `POST /v2/acts/b2b-quant-apis~{slug}/run-sync-get-dataset-items`, `GET /v2/acts/b2b-quant-apis~{slug}`,
+      `POST /v1/{slug}` e `GET /v1/{slug}/health`;
+    - Documenta e configura a injeção de Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) invisível ao usuário final.
     """
     if slug not in ACTOR_SLUGS:
         raise KeyError(f"Slug B2B desconhecido: {slug}")
@@ -646,6 +837,9 @@ def build_single_openapi_303_spec(
         {"lang": "Node.js", "label": "Node.js (fetch)", "source": snippets["Node.js"]},
     ]
 
+    apify_sync_path = f"/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items"
+    apify_health_path = f"/v2/acts/{APIFY_USERNAME}~{slug}"
+
     spec: dict[str, Any] = {
         "openapi": "3.0.3",
         "info": {
@@ -669,6 +863,19 @@ def build_single_openapi_303_spec(
             "x-payout-destination": f"Wise #{WISE_ACCOUNT_NUMBER}",
             "x-pricing-plans": STANDARD_PRICING_TIERS,
             "x-code-snippets": snippets,
+            "x-primary-backend-url": PRIMARY_BACKEND_BASE_URL,
+            "x-primary-backend-base-url": PRIMARY_BACKEND_BASE_URL,
+            "x-apify-sync-endpoint": f"{PRIMARY_BACKEND_BASE_URL}{apify_sync_path}",
+            "x-apify-health-endpoint": f"{PRIMARY_BACKEND_BASE_URL}{apify_health_path}",
+            "x-backend-secret-header": {
+                "name": "Authorization",
+                "valueTemplate": "Bearer <APIFY_API_TOKEN>",
+                "headerName": "Authorization",
+                "headerValueTemplate": "Bearer <APIFY_API_TOKEN>",
+                "injectedByProxy": True,
+                "hiddenFromSubscriber": True,
+                "description": "Secret Header injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com.",
+            },
             "x-openapi-spec-url": f"{PUBLIC_SPECS_BASE_URL}/{slug}.json",
             "x-openapi-suite-spec-url": f"{PUBLIC_SUITE_SPECS_BASE_URL}/{slug}.json",
             "x-apis-json-url": PUBLIC_APIS_JSON_URL,
@@ -680,12 +887,16 @@ def build_single_openapi_303_spec(
         },
         "servers": [
             {
-                "url": gateway_url.rstrip("/"),
-                "description": "Primary Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)",
+                "url": PRIMARY_BACKEND_BASE_URL,
+                "description": "Primary Apify Cloud Synchronous Execution Cluster (Real HTTP 200/201 POST & GET)",
             },
             {
-                "url": "https://api.apify.com/v2",
-                "description": "Direct Apify Cloud Synchronous Execution Cluster",
+                "url": f"{PRIMARY_BACKEND_BASE_URL}{apify_sync_path}",
+                "description": f"Direct Apify Actor Synchronous Execution Endpoint ({slug})",
+            },
+            {
+                "url": gateway_url.rstrip("/"),
+                "description": "Anti-Bypass Stateless B2B Gateway (RapidAPI & Zyla Hub Proxy)",
             },
         ],
         "tags": [
@@ -699,134 +910,71 @@ def build_single_openapi_303_spec(
             ],
         ],
         "security": [
+            {"ApifyCloudBearerAuth": []},
             {"RapidAPIProxySecret": []},
             {"ZylaProxySecret": []},
             {"RapidAPISubscriberKey": []},
         ],
         "paths": {
+            apify_sync_path: {
+                "post": _build_post_operation_dict(
+                    slug=slug,
+                    title=title,
+                    operation_id=f"run_sync_{slug.replace('-', '_')}",
+                    summary_text=f"Execute {title} (Apify Cloud Synchronous POST)",
+                    rapid_category=rapid_category,
+                    seo_tags=seo_tags,
+                    code_samples_list=code_samples_list,
+                    snippets=snippets,
+                    input_schema_name=input_schema_name,
+                    default_payload=default_payload,
+                    response_envelope_name=response_envelope_name,
+                    response_example=response_example,
+                )
+            },
+            apify_health_path: {
+                "get": _build_health_get_operation_dict(
+                    slug=slug,
+                    title=title,
+                    operation_id=f"status_{slug.replace('-', '_')}",
+                    summary_text=f"Actor Metadata & Live Connectivity Check for {title}",
+                    rapid_category=rapid_category,
+                )
+            },
             f"/v1/{slug}": {
-                "post": {
-                    "operationId": f"execute_{slug.replace('-', '_')}",
-                    "summary": f"Execute {title}",
-                    "description": (
-                        f"Synchronous stateless execution of **{title}**. "
-                        f"Validates `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), "
-                        f"injects quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and returns deterministic JSON records."
-                    ),
-                    "tags": [rapid_category, *seo_tags[:5]],
-                    "x-codeSamples": code_samples_list,
-                    "x-snippets": snippets,
-                    "requestBody": {
-                        "required": True,
-                        "description": f"Structured JSON parameters for `{slug}`.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": f"#/components/schemas/{input_schema_name}",
-                                },
-                                "example": default_payload,
-                            }
-                        },
-                    },
-                    "responses": {
-                        "200": {
-                            "description": f"Successful synchronous execution of `{slug}` returning enriched B2B JSON records.",
-                            "headers": {
-                                "X-RateLimit-Remaining": {
-                                    "description": "Remaining requests in the subscriber's monthly plan quota (BASIC=15, PRO=1000, ULTRA=5000, MEGA=25000).",
-                                    "schema": {"type": "integer", "example": 999},
-                                },
-                                "X-Engine-Version": {
-                                    "description": "Deterministic B2B engine release version.",
-                                    "schema": {"type": "string", "example": ENGINE_VERSION},
-                                },
-                            },
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "$ref": f"#/components/schemas/{response_envelope_name}",
-                                    },
-                                    "example": response_example,
-                                }
-                            },
-                        },
-                        "400": {
-                            "description": "Bad Request — Invalid JSON payload or schema validation error.",
-                            "content": {
-                                "application/json": {
-                                    "schema": {"$ref": "#/components/schemas/ErrorResponse"},
-                                    "example": {
-                                        "status": "error",
-                                        "code": 400,
-                                        "message": "Invalid JSON request body.",
-                                    },
-                                }
-                            },
-                        },
-                        "403": {
-                            "description": "Forbidden — Missing or invalid `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` header (Anti-Bypass Protection).",
-                            "content": {
-                                "application/json": {
-                                    "schema": {"$ref": "#/components/schemas/ErrorResponse"},
-                                    "example": {
-                                        "status": "forbidden",
-                                        "code": 403,
-                                        "message": "Direct access denied. Requests must originate from RapidAPI Hub or Zyla API Hub with a valid Proxy-Secret.",
-                                    },
-                                }
-                            },
-                        },
-                        "429": {
-                            "description": "Too Many Requests — Monthly plan quota exceeded (e.g., BASIC Freemium 15 req/month hard limit).",
-                            "content": {
-                                "application/json": {
-                                    "schema": {"$ref": "#/components/schemas/ErrorResponse"},
-                                    "example": {
-                                        "status": "quota_exceeded",
-                                        "code": 429,
-                                        "message": "Monthly request quota exceeded for BASIC plan (15 req/month hard limit). Upgrade to PRO ($19/mo), ULTRA ($49/mo), or MEGA ($149/mo).",
-                                    },
-                                }
-                            },
-                        },
-                    },
-                }
+                "post": _build_post_operation_dict(
+                    slug=slug,
+                    title=title,
+                    operation_id=f"execute_{slug.replace('-', '_')}",
+                    summary_text=f"Execute {title}",
+                    rapid_category=rapid_category,
+                    seo_tags=seo_tags,
+                    code_samples_list=code_samples_list,
+                    snippets=snippets,
+                    input_schema_name=input_schema_name,
+                    default_payload=default_payload,
+                    response_envelope_name=response_envelope_name,
+                    response_example=response_example,
+                )
             },
             f"/v1/{slug}/health": {
-                "get": {
-                    "operationId": f"health_{slug.replace('-', '_')}",
-                    "summary": f"Health & SLA Check for {title}",
-                    "description": f"Lightweight health and schema readiness check for `{slug}` on RapidAPI Hub and Zyla API Hub.",
-                    "tags": [rapid_category],
-                    "responses": {
-                        "200": {
-                            "description": "Engine online and ready.",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "status": {"type": "string", "example": "ok"},
-                                            "actor": {"type": "string", "example": slug},
-                                            "engineVersion": {"type": "string", "example": ENGINE_VERSION},
-                                            "category": {"type": "string", "example": rapid_category},
-                                        },
-                                    },
-                                    "example": {
-                                        "status": "ok",
-                                        "actor": slug,
-                                        "engineVersion": ENGINE_VERSION,
-                                        "category": rapid_category,
-                                    },
-                                }
-                            },
-                        }
-                    },
-                }
+                "get": _build_health_get_operation_dict(
+                    slug=slug,
+                    title=title,
+                    operation_id=f"health_{slug.replace('-', '_')}",
+                    summary_text=f"Health & SLA Check for {title}",
+                    rapid_category=rapid_category,
+                )
             },
         },
         "components": {
             "securitySchemes": {
+                "ApifyCloudBearerAuth": {
+                    "type": "http",
+                    "scheme": "bearer",
+                    "bearerFormat": "APIFY_API_TOKEN",
+                    "description": "Backend Secret Header (`Authorization: Bearer <APIFY_API_TOKEN>`) injected invisibly by RapidAPI Studio and Zyla API Hub proxy when calling https://api.apify.com.",
+                },
                 "RapidAPIProxySecret": {
                     "type": "apiKey",
                     "in": "header",
@@ -901,11 +1049,26 @@ def build_apis_json_catalog(
 ) -> dict[str, Any]:
     """
     Constrói o catálogo padrão `apis.json` (`API Commons / APIs.guru specification`, `specificationVersion: "0.16"`)
-    contendo todas as 31 APIs B2B com suas URLs públicas `OpenAPI 3.0.3` (`https://jesleytassili-glitch.github.io/specs_openapi_31/<slug>.json`).
+    contendo todas as 31 APIs B2B com suas URLs públicas `OpenAPI 3.0.3` (`https://jesleytassili-glitch.github.io/specs_openapi_31/<slug>.json`)
+    e endpoints síncronos reais em `https://api.apify.com`.
     """
     clean_origin = origin_url.rstrip("/")
     clean_gw = gateway_url.rstrip("/")
     apis_entries: list[dict[str, Any]] = []
+
+    live_rapid_visibility: dict[str, str] = {}
+    live_zyla_urls: dict[str, str] = {}
+    try:
+        from rapidapi_zyla_hub_suite.rapidapi_zyla_playwright_importer import load_live_marketplace_deployments
+
+        live_dep = load_live_marketplace_deployments()
+        for s_k, r_v in (live_dep.get("rapidapiBySlug") or {}).items():
+            live_rapid_visibility[s_k] = str(r_v.get("visibility") or "PUBLIC").upper()
+        for s_k, z_v in (live_dep.get("zylaEndpointsBySlug") or {}).items():
+            if z_v.get("publicMarketplaceUrl"):
+                live_zyla_urls[s_k] = str(z_v["publicMarketplaceUrl"])
+    except Exception:
+        pass
 
     for slug in ACTOR_SLUGS:
         meta = load_actor_metadata(slug, actors_dir=actors_dir)
@@ -918,6 +1081,14 @@ def build_apis_json_catalog(
         spec_public_url = f"{clean_origin}/specs_openapi_31/{slug}.json"
         spec_suite_url = f"{clean_origin}/b2b-quant-mcp-n8n-suite/specs_openapi_31/{slug}.json"
         human_doc_url = f"{clean_origin}/b2b-quant-mcp-n8n-suite/actors/{slug}.html"
+        apify_sync_url = f"{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items"
+        apify_health_url = f"{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}"
+        rapidapi_public_url = (
+            f"https://rapidapi.com/b2bquantapis/api/{slug}"
+            if live_rapid_visibility.get(slug, "PUBLIC") == "PUBLIC"
+            else "https://rapidapi.com/b2bquantapis/api/b2b-quant-mcp-server"
+        )
+        zyla_public_url = live_zyla_urls.get(slug, f"https://zylalabs.com/api-marketplace/{slug}")
 
         apis_entries.append(
             {
@@ -926,17 +1097,23 @@ def build_apis_json_catalog(
                 "description": build_Commercial_b2b_description(slug, title, base_desc, tax, mon),
                 "image": f"{clean_origin}/favicon.ico",
                 "humanURL": human_doc_url,
-                "baseURL": f"{clean_gw}/v1/{slug}",
+                "baseURL": apify_sync_url,
+                "gatewayURL": f"{clean_gw}/v1/{slug}",
+                "healthURL": apify_health_url,
                 "version": ENGINE_VERSION,
                 "tags": seo_tags,
                 "properties": [
                     {"type": "OpenAPI", "url": spec_public_url},
                     {"type": "Swagger", "url": spec_public_url},
                     {"type": "OpenAPI-Mirror", "url": spec_suite_url},
+                    {"type": "Apify-Cloud-Sync", "url": apify_sync_url},
+                    {"type": "X-Apify-Sync-POST", "url": apify_sync_url},
+                    {"type": "X-Apify-Health-GET", "url": apify_health_url},
+                    {"type": "X-Stateless-Gateway", "url": f"{clean_gw}/v1/{slug}"},
                     {"type": "Documentation", "url": human_doc_url},
                     {"type": "Pricing", "url": f"{clean_origin}/pricing_plans_manifest.json"},
-                    {"type": "X-RapidAPI-Category", "url": f"https://rapidapi.com/search/{slug}"},
-                    {"type": "X-Zyla-Category", "url": f"https://zylalabs.com/api-marketplace/{slug}"},
+                    {"type": "X-RapidAPI-Category", "url": rapidapi_public_url},
+                    {"type": "X-Zyla-Category", "url": zyla_public_url},
                     {"type": "X-Apify-Actor", "url": f"https://apify.com/{APIFY_USERNAME}/{slug}"},
                     {"type": "X-MCP-Server", "url": f"https://mcp.apify.com/?actors={APIFY_USERNAME}/{slug}"},
                 ],
@@ -961,8 +1138,9 @@ def build_apis_json_catalog(
         "url": f"{clean_origin}/apis.json",
         "image": f"{clean_origin}/favicon.ico",
         "specificationVersion": "0.16",
+        "primaryBackendUrl": PRIMARY_BACKEND_BASE_URL,
         "created": "2026-01-15",
-        "modified": "2026-11-01",
+        "modified": "2026-11-02",
         "tags": [
             "b2b-api",
             "openapi",
@@ -1033,19 +1211,60 @@ def build_postman_public_collection(
         title = str(actor_info.get("title") or slug)
         tax = MARKETPLACE_TAXONOMY.get(slug, {})
         spec_url = f"{clean_origin}/specs_openapi_31/{slug}.json"
+        apify_sync_raw = f"{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items"
+        apify_health_raw = f"{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}"
 
         folders.append(
             {
                 "name": f"{idx:02d}. {title} ({slug})",
                 "description": (
                     f"{actor_info.get('description', title)}\n\n"
+                    f"- **Primary Backend Base URL:** `{PRIMARY_BACKEND_BASE_URL}`\n"
                     f"- **Canonical OpenAPI 3.0.3 Spec URL:** `{spec_url}`\n"
                     f"- **RapidAPI Category:** `{tax.get('rapidapi_category', 'Business')}`\n"
                     f"- **Zyla Hub Category:** `{tax.get('zyla_category', 'Company Data')}`"
                 ),
                 "item": [
                     {
-                        "name": f"POST /v1/{slug} — Execute {title}",
+                        "name": f"POST /v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items — Execute {title} (Apify Cloud Sync)",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {"key": "Content-Type", "value": "application/json"},
+                                {"key": "Authorization", "value": "Bearer {{APIFY_API_TOKEN}}"},
+                                {"key": "X-RapidAPI-Host", "value": f"{slug}.p.rapidapi.com"},
+                                {"key": "X-RapidAPI-Key", "value": "{{RAPIDAPI_OR_ZYLA_KEY}}"},
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": json.dumps(sample_payload, indent=2, ensure_ascii=False),
+                                "options": {"raw": {"language": "json"}},
+                            },
+                            "url": {
+                                "raw": apify_sync_raw,
+                                "protocol": "https",
+                                "host": ["api", "apify", "com"],
+                                "path": ["v2", "acts", f"{APIFY_USERNAME}~{slug}", "run-sync-get-dataset-items"],
+                            },
+                            "description": f"Synchronous execution of `{slug}` on Apify Cloud (`{apify_sync_raw}`).",
+                        },
+                    },
+                    {
+                        "name": f"GET /v2/acts/{APIFY_USERNAME}~{slug} — Actor Metadata & Live Connectivity Check",
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": apify_health_raw,
+                                "protocol": "https",
+                                "host": ["api", "apify", "com"],
+                                "path": ["v2", "acts", f"{APIFY_USERNAME}~{slug}"],
+                            },
+                            "description": f"Immediate HTTP 200 metadata and health probe for `{slug}` without starting a container run.",
+                        },
+                    },
+                    {
+                        "name": f"POST /v1/{slug} — Execute {title} (Gateway Route)",
                         "request": {
                             "method": "POST",
                             "header": [
@@ -1064,7 +1283,7 @@ def build_postman_public_collection(
                                 "host": clean_gw.replace("https://", "").replace("http://", "").split("/")[0].split("."),
                                 "path": ["v1", slug],
                             },
-                            "description": f"Synchronous execution of `{slug}` (OpenAPI 3.0.3: {spec_url}).",
+                            "description": f"Synchronous execution of `{slug}` via Stateless Gateway (OpenAPI 3.0.3: {spec_url}).",
                         },
                     },
                     {
@@ -1093,13 +1312,16 @@ def build_postman_public_collection(
             "description": (
                 "Official Postman Public API Network Collection for 31 Stateless B2B Regulatory Compliance, "
                 "KYB, FinTech, SecOps, GovCon, and Healthcare APIs (@b2b-quant-apis). "
+                f"Primary Backend: `{PRIMARY_BACKEND_BASE_URL}`. "
                 f"All 31 individual OpenAPI 3.0.3 specifications are hosted at `{clean_origin}/specs_openapi_31/<slug>.json` "
                 f"and indexed in `{clean_origin}/apis.json`."
             ),
             "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         },
         "variable": [
+            {"key": "PRIMARY_BACKEND_BASE_URL", "value": PRIMARY_BACKEND_BASE_URL, "type": "string"},
             {"key": "GATEWAY_BASE_URL", "value": clean_gw, "type": "string"},
+            {"key": "APIFY_API_TOKEN", "value": "<YOUR_APIFY_API_TOKEN>", "type": "string"},
             {"key": "RAPIDAPI_OR_ZYLA_KEY", "value": "<YOUR_RAPIDAPI_OR_ZYLA_SUBSCRIBER_KEY>", "type": "string"},
             {"key": "OPENAPI_SPECS_ORIGIN", "value": f"{clean_origin}/specs_openapi_31", "type": "string"},
         ],
@@ -1162,4 +1384,5 @@ def generate_all_31_openapi_specs(
 
 if __name__ == "__main__":
     generate_all_31_openapi_specs()
+
 

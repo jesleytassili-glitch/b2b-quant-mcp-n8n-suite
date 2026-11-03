@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"bank_names\": [\n    \"JPMorgan Chase Bank\",\n    \"Bank of America\",\n    \"Citibank\"\n  ],\n  \"state\": \"\",\n  \"only_active\": true\n}",
+        "jsonBody": "{\n  \"institutionName\": \"JPMorgan Chase Bank\",\n  \"state\": \"NY\",\n  \"activeOnly\": true,\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

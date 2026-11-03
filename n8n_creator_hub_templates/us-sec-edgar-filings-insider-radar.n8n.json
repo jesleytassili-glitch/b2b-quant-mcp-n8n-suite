@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"tickers\": [\n    \"AAPL\",\n    \"MSFT\",\n    \"NVDA\"\n  ],\n  \"form_types\": [\n    \"10-K\",\n    \"10-Q\",\n    \"8-K\",\n    \"4\"\n  ],\n  \"max_filings_per_company\": 5\n}",
+        "jsonBody": "{\n  \"tickerOrCik\": \"AAPL\",\n  \"formType\": \"10-K\",\n  \"keyword\": \"\",\n  \"maxResults\": 5\n}",
         "options": {
           "timeout": 300000
         }

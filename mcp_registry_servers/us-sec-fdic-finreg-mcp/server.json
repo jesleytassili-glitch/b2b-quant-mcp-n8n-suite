@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jesleytassili-glitch/us-sec-fdic-finreg-mcp",
+  "title": "US SEC EDGAR Filings, FDIC Bank Solvency & EPA/OSHA",
+  "description": "Analyze SEC EDGAR 10-K/8-K/Form 4 filings, FDIC bank solvency ratios, EPA ECHO & OSHA violations.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sec-edgar-filings-insider-radar.html",
+  "repository": {
+    "url": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+    "source": "github",
+    "subfolder": "mcp_registry_servers/us-sec-fdic-finreg-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/us-fdic-bankfind-institution-financial-auditor,b2b-quant-apis/us-epa-echo-environmental-compliance-auditor,b2b-quant-apis/us-osha-workplace-safety-violation-auditor"
+    }
+  ]
+}

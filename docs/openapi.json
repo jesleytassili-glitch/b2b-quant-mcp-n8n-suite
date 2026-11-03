@@ -178,6 +178,7 @@
                     "type": "integer",
                     "description": "Maximum number of matched tenders to output (Pay-Per-Event cap protection).",
                     "default": 20,
+                    "prefill": 10,
                     "minimum": 1,
                     "maximum": 500,
                     "editor": "number"
@@ -186,7 +187,8 @@
                     "title": "Enrich with Detailed Item List & Unit Prices",
                     "type": "boolean",
                     "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
-                    "default": true,
+                    "default": false,
+                    "prefill": false,
                     "editor": "checkbox"
                   }
                 }

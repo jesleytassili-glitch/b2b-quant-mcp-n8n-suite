@@ -122,6 +122,10 @@ curl -X POST "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-bo
 
 ## Repository Structure
 
+- [`specs_openapi_31/`](./specs_openapi_31/) — 31 Individual `OpenAPI 3.0.3` specifications (`https://jesleytassili-glitch.github.io/specs_openapi_31/<slug>.json`) for 1-Click URL Import in **RapidAPI Studio**, **Zyla API Hub**, and **Postman**.
+- [`apis.json`](./apis.json) & [`.well-known/apis.json`](./.well-known/apis.json) — Official `API Commons / APIs.guru` (`v0.16`) discovery catalog.
+- [`pricing_plans_manifest.json`](./pricing_plans_manifest.json) & [`postman_public_network_collection.json`](./postman_public_network_collection.json) — 4-Tier USD Pricing Matrix (`BASIC $0/15 req`, `PRO $19/1k`, `ULTRA $49/5k`, `MEGA $149/25k` -> `Wise #890361113`) and Postman Collection v2.1.0.
+- [`rapidapi_zyla_hub_suite/`](./rapidapi_zyla_hub_suite/) — Stateless Anti-Bypass Gateway (`rapidapi_zyla_gateway.py` + `cloudflare_worker_proxy.js`), OpenAPI 2026 Syndicator, and Playwright + Gmail IMAP OTP Batch Importer.
 - [`n8n_super_pipelines/`](./n8n_super_pipelines/) — 6 Multi-Actor enterprise waterfall workflows for n8n.
 - [`n8n_creator_hub_templates/`](./n8n_creator_hub_templates/) — 31 Single-Actor scheduled daily n8n workflows.
 - [`ai_agents_and_make/`](./ai_agents_and_make/) — 1-Click configs for Claude Desktop, Cursor IDE, Make.com Blueprint, and Python LangChain/CrewAI SDK.

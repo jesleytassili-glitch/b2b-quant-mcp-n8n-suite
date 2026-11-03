@@ -87,7 +87,7 @@
             "type": "boolean",
             "title": "Enrich with Detailed Item List & Unit Prices",
             "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
-            "default": true
+            "default": false
           }
         },
         "required": []
@@ -99,7 +99,7 @@
         "dataInicial": "",
         "dataFinal": "",
         "maxResults": 20,
-        "fetchItems": true
+        "fetchItems": false
       }
     },
     {

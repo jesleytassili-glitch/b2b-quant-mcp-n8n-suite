@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jesleytassili-glitch/b2b-compliance-quant-mcp",
+  "title": "B2B Compliance, KYB, Cyber & GovCon Suite (31 Tools)",
+  "description": "31 stateless B2B tools for KYB, OFAC sanctions, SEC EDGAR, CISA CVEs, FDA, tenders & tax audits.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
+  "repository": {
+    "url": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+    "source": "github",
+    "subfolder": "mcp_registry_servers/b2b-compliance-quant-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-quant-mcp-server,b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener,b2b-quant-apis/global-gleif-lei-corporate-ownership-kyb,b2b-quant-apis/us-sec-edgar-filings-insider-radar,b2b-quant-apis/cisa-kev-ransomware-vulnerability-auditor"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jesleytassili-glitch/global-procurement-tenders-mcp",
+  "title": "US SAM.gov, EU TED & Brazil PNCP Public Tenders Radar",
+  "description": "Monitor live government contracts and tenders across US Federal awards, EU TED OJ S & Brazil PNCP.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/us-sam-gov-federal-procurement-auditor.html",
+  "repository": {
+    "url": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+    "source": "github",
+    "subfolder": "mcp_registry_servers/global-procurement-tenders-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=b2b-quant-apis/us-sam-gov-federal-procurement-auditor,b2b-quant-apis/eu-ted-public-tenders-procurement-radar,b2b-quant-apis/b2b-gov-procurement-pncp-radar"
+    }
+  ]
+}

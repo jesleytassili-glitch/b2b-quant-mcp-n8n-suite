@@ -1,4 +1,11 @@
 __pycache__/
 *.pyc
+*.pyo
 .env
+.env.*
 *.zip
+*dump*.json
+batch_import_status_report.json
+*receipt*.json
+*.key
+*.pem

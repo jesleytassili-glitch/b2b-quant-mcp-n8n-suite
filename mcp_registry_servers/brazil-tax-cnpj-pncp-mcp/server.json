@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jesleytassili-glitch/brazil-tax-cnpj-pncp-mcp",
+  "title": "Brazil Tax Reform IBS/CBS, CNPJ QSA, BCB PTAX & Pix KYB",
+  "description": "Audit Brazil LC 214 NCM tax reform, CNPJ QSA partners, BCB PTAX/Selic, Pix ISPB, TISS XML & ANTT.",
+  "version": "1.0.0",
+  "websiteUrl": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/brazil-tax-reform-ncm-classtrib-auditor.html",
+  "repository": {
+    "url": "https://github.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite",
+    "source": "github",
+    "subfolder": "mcp_registry_servers/brazil-tax-cnpj-pncp-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=b2b-quant-apis/brazil-tax-reform-ncm-classtrib-auditor,b2b-quant-apis/brazil-b2b-cnpj-qsa-lead-enricher,b2b-quant-apis/brazil-bcb-ptax-sgs-financial-contract-indexer,b2b-quant-apis/brazil-pix-ispb-cvm-financial-kyb-auditor,b2b-quant-apis/healthcare-tiss-xml-validator,b2b-quant-apis/brazil-antt-freight-cte-auditor"
+    }
+  ]
+}

@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"keywords\": [\n    \"software\",\n    \"cloud\",\n    \"licenciamento\"\n  ],\n  \"uf\": \"SP\",\n  \"max_results\": 10\n}",
+        "jsonBody": "{\n  \"keywords\": [\n    \"software\",\n    \"cloud\",\n    \"licenciamento\"\n  ],\n  \"uf\": \"SP\",\n  \"maxResults\": 10,\n  \"fetchItems\": false\n}",
         "options": {
           "timeout": 300000
         }

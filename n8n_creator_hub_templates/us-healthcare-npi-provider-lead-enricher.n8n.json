@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"taxonomies\": [\n    \"Cardiology\",\n    \"Dermatology\"\n  ],\n  \"state\": \"NY\",\n  \"max_results\": 10\n}",
+        "jsonBody": "{\n  \"state\": \"NY\",\n  \"city\": \"New York\",\n  \"taxonomyDescription\": \"Cardiology\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

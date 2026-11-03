@@ -45,7 +45,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"vat_numbers\": [\n    \"IE6388047V\",\n    \"DE118607914\",\n    \"FR40303265045\"\n  ],\n  \"requester_vat\": \"\"\n}",
+        "jsonBody": "{\n  \"vatNumbers\": \"IE6388047V, DE811128135, FR40303265045\",\n  \"requesterCountryCode\": \"DE\",\n  \"maxResults\": 10\n}",
         "options": {
           "timeout": 300000
         }

@@ -40,6 +40,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.03",
             "actorSlug": "b2b-gov-procurement-pncp-radar",
@@ -113,6 +114,7 @@
             "type": "integer",
             "description": "Maximum number of matched tenders to output (Pay-Per-Event cap protection).",
             "default": 20,
+            "prefill": 10,
             "minimum": 1,
             "maximum": 500,
             "editor": "number"
@@ -121,7 +123,8 @@
             "title": "Enrich with Detailed Item List & Unit Prices",
             "type": "boolean",
             "description": "If enabled, queries the PNCP Items API for each matched tender to extract individual items, quantities, unit reference prices, and ME/EPP exclusivity.",
-            "default": true,
+            "default": false,
+            "prefill": false,
             "editor": "checkbox"
           }
         },
@@ -151,6 +154,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.01",
             "actorSlug": "brazil-tax-reform-ncm-classtrib-auditor",
@@ -260,6 +264,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.05",
             "actorSlug": "healthcare-tiss-xml-validator",
@@ -316,6 +321,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "brazil-antt-freight-cte-auditor",
@@ -398,6 +404,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "us-healthcare-npi-provider-lead-enricher",
@@ -495,6 +502,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.03",
             "actorSlug": "us-fda-recalls-safety-monitor",
@@ -597,6 +605,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.005",
             "actorSlug": "global-b2b-email-domain-security-auditor",
@@ -662,6 +671,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.04",
             "actorSlug": "us-clinical-trials-biotech-radar",
@@ -740,6 +750,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "us-nhtsa-vehicle-vin-recall-auditor",
@@ -812,6 +823,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.015",
             "actorSlug": "brazil-b2b-cnpj-qsa-lead-enricher",
@@ -893,6 +905,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.04",
             "actorSlug": "us-sec-edgar-filings-insider-radar",
@@ -980,6 +993,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.015",
             "actorSlug": "eu-vies-vat-tax-compliance-auditor",
@@ -1046,6 +1060,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.03",
             "actorSlug": "us-epa-echo-environmental-compliance-auditor",
@@ -1126,6 +1141,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.025",
             "actorSlug": "us-fdic-bankfind-institution-financial-auditor",
@@ -1197,6 +1213,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.035",
             "actorSlug": "us-sam-gov-federal-procurement-auditor",
@@ -1272,6 +1289,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "multi-ats-tech-job-board-hiring-radar",
@@ -1338,6 +1356,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.025",
             "actorSlug": "global-gleif-lei-corporate-ownership-kyb",
@@ -1404,6 +1423,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "us-census-fcc-real-estate-geo-enricher",
@@ -1470,6 +1490,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.015",
             "actorSlug": "icann-rdap-domain-whois-brand-recon",
@@ -1529,6 +1550,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "cisa-kev-ransomware-vulnerability-auditor",
@@ -1595,6 +1617,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.015",
             "actorSlug": "brazil-bcb-ptax-sgs-financial-contract-indexer",
@@ -1658,6 +1681,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "brazil-pix-ispb-cvm-financial-kyb-auditor",
@@ -1721,6 +1745,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.015",
             "actorSlug": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
@@ -1785,6 +1810,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.01",
             "actorSlug": "brazil-cep-geocoordinates-logistics-auditor",
@@ -1842,6 +1868,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.025",
             "actorSlug": "brazil-camara-legislative-regulatory-risk-radar",
@@ -1906,6 +1933,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.03",
             "actorSlug": "us-osha-workplace-safety-violation-auditor",
@@ -1972,6 +2000,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.035",
             "actorSlug": "eu-ted-public-tenders-procurement-radar",
@@ -2038,6 +2067,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.025",
             "actorSlug": "uk-fca-companies-house-kyb-compliance-auditor",
@@ -2104,6 +2134,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.03",
             "actorSlug": "global-sanctions-pep-interpol-watchlist-screener",
@@ -2170,6 +2201,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.02",
             "actorSlug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
@@ -2236,6 +2268,7 @@
           "extra": {
             "networkShorthand": "solana-mainnet",
             "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "payToAta": "A2t3qcFiKAjVYZ2KHDAieLAVXYmTPhGv659QAMZjNbP9",
             "decimals": 6,
             "priceUsd": "0.01",
             "actorSlug": "b2b-quant-mcp-server",

@@ -55,10 +55,10 @@
 
 ## Agensi.io AI Agent Skill Packs & $29.99 Master Bundle (90% Direct Referral)
 
-- [Enterprise Master Bundle (All 6 Packs — $29.99 USDC)](https://www.agensi.io/r/JEAGUILERA)
-- [B2B Regulatory & Financial KYB MCP Connector (Free Lead Magnet)](https://www.agensi.io/r/JEAGUILERA): Standard `$0.00` / Launch Deal `$0.00 USDC`
-- [US SEC EDGAR, SAM.gov GovCon & FDIC Financial Intelligence Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Global KYB, GLEIF LEI, EU VIES, UK FCA & Sanctions AML Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Brazil B2B Tax Reform (LC 214), BCB PTAX/Selic, Pix & CNPJ Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Cybersecurity CISA KEV, SSL/TLS CT Log & RDAP SecOps Recon Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
-- [Healthcare NIH Clinical Trials, OpenFDA Recalls & NPI Lead Pack](https://www.agensi.io/r/JEAGUILERA): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Enterprise Master Bundle (All 6 Packs — $29.99 USDC)](https://www.agensi.io/r/JEAGUILERA?to=/bundles/b2b-regulatory-kyb-fintech-secops-master-suite)
+- [B2B Regulatory & Financial KYB MCP Connector (Free Lead Magnet)](https://www.agensi.io/r/JEAGUILERA?to=/skills/b2b-regulatory-financial-compliance-analyst): Standard `$0.00` / Launch Deal `$0.00 USDC`
+- [US SEC EDGAR, SAM.gov GovCon & GLEIF KYB Intelligence Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/us-sec-edgar-sam-gov-gleif-kyb-compliance-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Brazil B2B Tax Reform (LC 214), BCB PTAX/Selic, Pix & CNPJ Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/brazil-b2b-fintech-central-bank-tax-compliance): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Cybersecurity CISA KEV, SSL/TLS CT Log & RDAP SecOps Recon Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/cybersecurity-cisa-kev-rdap-email-secops-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [Healthcare NIH Clinical Trials, OpenFDA Recalls & NPI Lead Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/healthcare-fda-recalls-clinical-trials-npi-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
+- [B2B Hiring Intent, Real Estate FIPS & Logistics Compliance Pack](https://www.agensi.io/r/JEAGUILERA?to=/skills/b2b-hiring-intent-real-estate-logistics-pack): Standard `$9.99` / Launch Deal `$7.99 USDC`
