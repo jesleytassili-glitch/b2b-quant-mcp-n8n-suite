@@ -25,6 +25,7 @@ import argparse
 import datetime as dt
 import json
 import logging
+import os
 import shutil
 import subprocess
 import sys
@@ -418,14 +419,16 @@ def publish_github_release_v2_2_0(
     commit_sha = "local_dry_run"
 
     if push_git and http_client is None and (repo_dir / ".git").exists():
-        remote_url = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
-        subprocess.run(["git", "add", "-A"], cwd=str(repo_dir), check=True)
+        remote_url = f"https://x-access-token:{gh_token}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
+        git_env = {**os.environ, "GIT_TERMINAL_PROMPT": "0"}
+        subprocess.run(["git", "add", "-A"], cwd=str(repo_dir), check=True, env=git_env)
         status = subprocess.run(
             ["git", "status", "--porcelain"],
             cwd=str(repo_dir),
             capture_output=True,
             text=True,
             check=True,
+            env=git_env,
         )
         if status.stdout.strip():
             subprocess.run(
@@ -437,8 +440,9 @@ def publish_github_release_v2_2_0(
                 ],
                 cwd=str(repo_dir),
                 check=True,
+                env=git_env,
             )
-        subprocess.run(["git", "push", remote_url, "HEAD:main"], cwd=str(repo_dir), check=True)
+        subprocess.run(["git", "push", remote_url, "HEAD:main"], cwd=str(repo_dir), check=True, env=git_env)
         rev = subprocess.run(
             ["git", "rev-parse", "--short", "HEAD"],
             cwd=str(repo_dir),
