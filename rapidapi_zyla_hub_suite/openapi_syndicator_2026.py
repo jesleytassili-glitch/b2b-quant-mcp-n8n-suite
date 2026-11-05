@@ -442,7 +442,7 @@ def publish_github_release_v2_2_0(
                 check=True,
                 env=git_env,
             )
-        subprocess.run(["git", "push", remote_url, "HEAD:main"], cwd=str(repo_dir), check=True, env=git_env)
+        subprocess.run(["git", "push", remote_url, "HEAD:main", "--force"], cwd=str(repo_dir), check=True, env=git_env)
         rev = subprocess.run(
             ["git", "rev-parse", "--short", "HEAD"],
             cwd=str(repo_dir),
