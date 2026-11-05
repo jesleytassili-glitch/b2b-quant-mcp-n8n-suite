@@ -1,8 +1,8 @@
 {
   "status": "succeeded",
-  "service": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+  "service": "Global OFAC & UN Sanctions Watchlist AML Screener",
   "slug": "global-sanctions-pep-interpol-watchlist-screener",
-  "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+  "description": "Screens individuals, companies, vessels and crypto counterparties against the official US OFAC SDN, OFAC Consolidated (Non-SDN) and UN Security Council lists, downloaded live. Fuzzy match + AML Risk Score (0-100). EU, UK and PEP lists are not covered.",
   "protocol": "x402",
   "x402Version": 1,
   "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
@@ -16,7 +16,7 @@
     "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/global-sanctions-pep-interpol-watchlist-screener.n8n.json"
   },
   "inputSchema": {
-    "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Input",
+    "title": "Global OFAC & UN Sanctions Watchlist AML Screener Input",
     "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
     "type": "object",
     "schemaVersion": 1,
@@ -38,7 +38,7 @@
       "maxResults": {
         "title": "Maximum Screening Records",
         "type": "integer",
-        "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+        "description": "Maximum number of sanctions watchlist hits to return and score (1 to 100).",
         "editor": "number",
         "default": 15,
         "minimum": 1,
@@ -58,7 +58,7 @@
         "watchlistRecordId": {
           "type": "string",
           "title": "Watchlist Record ID",
-          "description": "Official OFAC/UN/EU/OpenSanctions identifier."
+          "description": "Official OFAC / UN list identifier."
         },
         "entityQuery": {
           "type": "string",
@@ -68,7 +68,7 @@
         "matchedName": {
           "type": "string",
           "title": "Matched Watchlist Entity Name",
-          "description": "Official designated name on the sanctions or PEP list."
+          "description": "Official designated name on the OFAC or UN sanctions list."
         },
         "entityType": {
           "type": "string",
@@ -78,7 +78,7 @@
         "listSource": {
           "type": "string",
           "title": "Sanctions Authority / List Source",
-          "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP."
+          "description": "US OFAC SDN, US OFAC Consolidated (Non-SDN) or UN Security Council."
         },
         "sanctionsProgram": {
           "type": "string",
@@ -114,7 +114,7 @@
     },
     "views": {
       "overview": {
-        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist Overview",
+        "title": "Global OFAC & UN Sanctions Watchlist Overview",
         "transformation": {
           "fields": [
             "watchlistRecordId",
@@ -188,7 +188,7 @@
         "asset": "USDC",
         "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
         "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-sanctions-pep-interpol-watchlist-screener",
-        "description": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+        "description": "Global OFAC & UN Sanctions Watchlist AML Screener — Screens individuals, companies, vessels and crypto counterparties against the official US OFAC SDN, OFAC Consolidated (Non-SDN) and UN Security Council lists, downloaded live. Fuzzy match + AML Risk Score (0-100). EU, UK and PEP lists are not covered.",
         "mimeType": "application/json",
         "maxTimeoutSeconds": 120,
         "extra": {

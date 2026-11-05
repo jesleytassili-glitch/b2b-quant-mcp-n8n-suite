@@ -1,8 +1,8 @@
 {
   "status": "succeeded",
-  "service": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+  "service": "UK Corporate Entity GLEIF LEI & Company Number Verifier",
   "slug": "uk-fca-companies-house-kyb-compliance-auditor",
-  "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+  "description": "Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.",
   "protocol": "x402",
   "x402Version": 1,
   "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
@@ -16,7 +16,7 @@
     "n8nWorkflowTemplate": "https://raw.githubusercontent.com/jesleytassili-glitch/b2b-quant-mcp-n8n-suite/main/n8n_creator_hub_templates/uk-fca-companies-house-kyb-compliance-auditor.n8n.json"
   },
   "inputSchema": {
-    "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Input",
+    "title": "UK Corporate Entity GLEIF Verifier Input",
     "description": "Configure UK company name or 8-digit CRN number, optional inactive company filter, and maximum UK corporate entities to audit.",
     "type": "object",
     "schemaVersion": 1,
@@ -38,7 +38,7 @@
       "maxResults": {
         "title": "Maximum UK Entities to Audit",
         "type": "integer",
-        "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+        "description": "Maximum number of UK corporate entity records to extract (1 to 100).",
         "editor": "number",
         "default": 15,
         "minimum": 1,
@@ -57,64 +57,64 @@
       "properties": {
         "companyNumberCrn": {
           "type": "string",
-          "title": "UK Companies House CRN",
-          "description": "8-character UK Company Registration Number."
+          "title": "Registration Number (Companies House)",
+          "description": "Company registration number reported in the GLEIF registry (8 characters for Companies House)."
         },
         "companyName": {
           "type": "string",
           "title": "Legal Entity Name",
-          "description": "Official UK registered company name."
+          "description": "Official legal name registered in GLEIF."
         },
         "leiCode": {
           "type": "string",
           "title": "GLEIF 20-Character LEI",
-          "description": "ISO 17442 Legal Entity Identifier linked to the UK entity."
+          "description": "ISO 17442 Legal Entity Identifier."
         },
         "companyStatus": {
           "type": "string",
-          "title": "Companies House Status",
-          "description": "Active, Dissolved, or In Liquidation."
+          "title": "Entity Status",
+          "description": "GLEIF entity status (ACTIVE or INACTIVE)."
         },
         "incorporationDate": {
           "type": "string",
-          "title": "Incorporation / Registration Date",
-          "description": "ISO date of UK registration."
-        },
-        "sicCodes": {
-          "type": "string",
-          "title": "UK SIC 2007 Classification",
-          "description": "5-digit UK Standard Industrial Classification codes."
+          "title": "Incorporation / Creation Date",
+          "description": "ISO date of entity creation reported by GLEIF."
         },
         "registeredCity": {
           "type": "string",
           "title": "Registered Office City",
-          "description": "UK city of the registered office address."
+          "description": "City of the legal address."
         },
-        "fcaRegulatoryStatus": {
+        "registeredPostalCode": {
           "type": "string",
-          "title": "FCA / Financial Standing Status",
-          "description": "FCA Authorized, EMI Licensed, or Standard Commercial Entity."
+          "title": "Registered Office Postcode",
+          "description": "Postcode of the legal address."
         },
-        "kybComplianceScore": {
-          "type": "integer",
-          "title": "KYB Compliance Score (0-100)",
-          "description": "Quantitative UK KYB compliance score for B2B onboarding (0-100)."
-        },
-        "onboardingDecision": {
+        "leiRegistrationStatus": {
           "type": "string",
-          "title": "Automated KYB Decision",
-          "description": "APPROVED_FAST_TRACK, ENHANCED_DUE_DILIGENCE, or REJECT_INACTIVE."
+          "title": "LEI Registration Status",
+          "description": "ISSUED, LAPSED, RETIRED, etc."
+        },
+        "leiNextRenewalDate": {
+          "type": "string",
+          "title": "LEI Next Renewal Date",
+          "description": "ISO date when the LEI must next be renewed."
+        },
+        "registrationAuthorityId": {
+          "type": "string",
+          "title": "Registration Authority ID",
+          "description": "GLEIF registration authority code (RA000585 = Companies House)."
         },
         "markdownKybBrief": {
           "type": "string",
-          "title": "Markdown UK KYB & Compliance Dossier",
-          "description": "Executive Markdown dossier for fintech KYB onboarding and vendor compliance."
+          "title": "Markdown UK Entity Verification Dossier",
+          "description": "Executive Markdown dossier built only from GLEIF registry fields."
         }
       }
     },
     "views": {
       "overview": {
-        "title": "UK Companies House & FCA Corporate KYB Overview",
+        "title": "UK Corporate Entity GLEIF Verification Overview",
         "transformation": {
           "fields": [
             "companyNumberCrn",
@@ -122,54 +122,54 @@
             "leiCode",
             "companyStatus",
             "incorporationDate",
-            "sicCodes",
             "registeredCity",
-            "fcaRegulatoryStatus",
-            "kybComplianceScore",
-            "onboardingDecision"
+            "registeredPostalCode",
+            "leiRegistrationStatus",
+            "leiNextRenewalDate",
+            "registrationAuthorityId"
           ]
         },
         "display": {
           "component": "table",
           "properties": {
             "companyNumberCrn": {
-              "label": "UK CRN",
+              "label": "Registration Number (Companies House)",
               "format": "text"
             },
             "companyName": {
-              "label": "Company Name",
+              "label": "Legal Entity Name",
               "format": "text"
             },
             "leiCode": {
-              "label": "GLEIF LEI",
+              "label": "GLEIF 20-Character LEI",
               "format": "text"
             },
             "companyStatus": {
-              "label": "Status",
+              "label": "Entity Status",
               "format": "text"
             },
             "incorporationDate": {
-              "label": "Incorporated",
-              "format": "text"
-            },
-            "sicCodes": {
-              "label": "UK SIC",
+              "label": "Incorporation / Creation Date",
               "format": "text"
             },
             "registeredCity": {
-              "label": "City",
+              "label": "Registered Office City",
               "format": "text"
             },
-            "fcaRegulatoryStatus": {
-              "label": "FCA / Regulatory",
+            "registeredPostalCode": {
+              "label": "Registered Office Postcode",
               "format": "text"
             },
-            "kybComplianceScore": {
-              "label": "KYB Score",
-              "format": "number"
+            "leiRegistrationStatus": {
+              "label": "LEI Registration Status",
+              "format": "text"
             },
-            "onboardingDecision": {
-              "label": "KYB Decision",
+            "leiNextRenewalDate": {
+              "label": "LEI Next Renewal Date",
+              "format": "text"
+            },
+            "registrationAuthorityId": {
+              "label": "Registration Authority ID",
               "format": "text"
             }
           }
@@ -188,7 +188,7 @@
         "asset": "USDC",
         "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
         "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/uk-fca-companies-house-kyb-compliance-auditor",
-        "description": "UK Companies House & FCA Corporate KYB Compliance Auditor — Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+        "description": "UK Corporate Entity GLEIF LEI & Company Number Verifier — Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.",
         "mimeType": "application/json",
         "maxTimeoutSeconds": 120,
         "extra": {

@@ -226,7 +226,7 @@ MARKETPLACE_TAXONOMY: dict[str, dict[str, Any]] = {
     "uk-fca-companies-house-kyb-compliance-auditor": {
         "rapidapi_category": "Finance",
         "zyla_category": "Company Data",
-        "seo_tags": ["uk-companies-house", "crn-lookup", "uk-kyb-verification", "fca-compliance", "british-corporate-registry", "gleif-uk", "aml-due-diligence"],
+        "seo_tags": ["uk-companies-house", "crn-lookup", "uk-kyb-verification", "lei-entity-status", "british-corporate-registry", "gleif-uk", "aml-due-diligence"],
         "buyer_persona": "UK/EU FinTechs, Commercial Banks, Legal Conveyancing Platforms, and Vendor Onboarding Systems",
     },
     "global-sanctions-pep-interpol-watchlist-screener": {
@@ -639,14 +639,25 @@ def build_Commercial_b2b_description(
     seo_tags_str = ", ".join(taxonomy.get("seo_tags", [slug]))
     event_title = monetization.get("event_title", "Validated B2B Record")
 
+    if slug == "uk-fca-companies-house-kyb-compliance-auditor":
+        scoring_bullet = (
+            "- **Official Registry Attributes & RAG Briefs:** Every record provides verified GLEIF LEI status, "
+            "Companies House CRN, incorporation date, registered city/postcode, and an LLM-ready Markdown KYB dossier "
+            "(no FCA licensing data, SIC codes, or synthetic scoring).\n"
+        )
+    else:
+        scoring_bullet = (
+            f"- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability "
+            f"score and an LLM-ready Markdown executive brief (`{event_title}`).\n"
+        )
+
     return (
         f"{base_description}\n\n"
         f"### Enterprise B2B Value Proposition ({title})\n"
         f"- **Target B2B Buyers:** {buyer_persona}.\n"
         f"- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, "
         f"and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n"
-        f"- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability "
-        f"score and an LLM-ready Markdown executive brief (`{event_title}`).\n"
+        f"{scoring_bullet}"
         f"- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` "
         f"invisibly at the proxy layer when forwarding synchronous calls to `{PRIMARY_BACKEND_BASE_URL}/v2/acts/{APIFY_USERNAME}~{slug}/run-sync-get-dataset-items`.\n"
         f"- **Marketplace Categories:** RapidAPI `{rapid_cat}` | Zyla API Hub `{zyla_cat}`.\n"
@@ -831,6 +842,30 @@ def _build_health_get_operation_dict(
             }
         },
     }
+
+
+def _sanitize_vendor_strings(value: Any) -> Any:
+    """Remove menções residuais a provedores intermediários de terceiros em descrições públicas."""
+    if isinstance(value, str):
+        cleaned = value
+        replacements = (
+            ("BrasilAPI v2 & ViaCEP fallback", "official Brazilian postal & IBGE registries"),
+            ("BrasilAPI and OpenCNPJA", "Brazilian federal corporate registries"),
+            ("BrasilAPI", "Brazilian federal corporate registry"),
+            ("ViaCEP", "Brazilian postal registry"),
+            ("OpenCNPJA", "Brazilian corporate registry"),
+            ("ReceitaWS", "Brazilian federal tax registry"),
+            ("(crt.sh)", "(CT)"),
+            ("crt.sh", "Certificate Transparency logs"),
+        )
+        for old, new in replacements:
+            cleaned = cleaned.replace(old, new)
+        return cleaned
+    if isinstance(value, list):
+        return [_sanitize_vendor_strings(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _sanitize_vendor_strings(v) for k, v in value.items()}
+    return value
 
 
 def build_single_openapi_303_spec(
@@ -1104,7 +1139,7 @@ def build_single_openapi_303_spec(
             },
         },
     }
-    return spec
+    return _sanitize_vendor_strings(spec)
 
 
 def build_apis_json_catalog(

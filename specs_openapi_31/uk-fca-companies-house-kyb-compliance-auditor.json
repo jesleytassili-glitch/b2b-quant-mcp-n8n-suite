@@ -3,7 +3,7 @@
   "info": {
     "title": "UK Corporate Entity GLEIF LEI & Company Number Verifier",
     "version": "3.0.0",
-    "description": "Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.\n\n### Enterprise B2B Value Proposition (UK Corporate Entity GLEIF LEI & Company Number Verifier)\n- **Target B2B Buyers:** UK/EU FinTechs, Commercial Banks, Legal Conveyancing Platforms, and Vendor Onboarding Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`UK Companies House CRN & FCA KYB Entity Audited`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** uk-companies-house, crn-lookup, uk-kyb-verification, fca-compliance, british-corporate-registry, gleif-uk, aml-due-diligence.",
+    "description": "Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.\n\n### Enterprise B2B Value Proposition (UK Corporate Entity GLEIF LEI & Company Number Verifier)\n- **Target B2B Buyers:** UK/EU FinTechs, Commercial Banks, Legal Conveyancing Platforms, and Vendor Onboarding Systems.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Official Registry Attributes & RAG Briefs:** Every record provides verified GLEIF LEI status, Companies House CRN, incorporation date, registered city/postcode, and an LLM-ready Markdown KYB dossier (no FCA licensing data, SIC codes, or synthetic scoring).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Finance` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** uk-companies-house, crn-lookup, uk-kyb-verification, lei-entity-status, british-corporate-registry, gleif-uk, aml-due-diligence.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -21,7 +21,7 @@
       "uk-companies-house",
       "crn-lookup",
       "uk-kyb-verification",
-      "fca-compliance",
+      "lei-entity-status",
       "british-corporate-registry",
       "gleif-uk",
       "aml-due-diligence"
@@ -120,8 +120,8 @@
       "description": "B2B SEO Search Tag: uk-kyb-verification"
     },
     {
-      "name": "fca-compliance",
-      "description": "B2B SEO Search Tag: fca-compliance"
+      "name": "lei-entity-status",
+      "description": "B2B SEO Search Tag: lei-entity-status"
     },
     {
       "name": "british-corporate-registry",
@@ -161,7 +161,7 @@
           "uk-companies-house",
           "crn-lookup",
           "uk-kyb-verification",
-          "fca-compliance",
+          "lei-entity-status",
           "british-corporate-registry"
         ],
         "x-codeSamples": [
@@ -243,13 +243,12 @@
                       "leiCode": "2138003LXONKR247S255",
                       "companyStatus": "ACTIVE",
                       "incorporationDate": "2020-09-10",
-                      "sicCodes": "64999 - Financial & Commercial Services",
                       "registeredCity": "LONDON",
-                      "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-                      "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-                      "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-                      "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-                      "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+                      "registeredPostalCode": "E14 5AB",
+                      "leiRegistrationStatus": "ISSUED",
+                      "leiNextRenewalDate": "2026-12-08",
+                      "registrationAuthorityId": "RA000585",
+                      "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
                     }
                   ]
                 }
@@ -275,13 +274,12 @@
                       "leiCode": "2138003LXONKR247S255",
                       "companyStatus": "ACTIVE",
                       "incorporationDate": "2020-09-10",
-                      "sicCodes": "64999 - Financial & Commercial Services",
                       "registeredCity": "LONDON",
-                      "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-                      "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-                      "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-                      "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-                      "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+                      "registeredPostalCode": "E14 5AB",
+                      "leiRegistrationStatus": "ISSUED",
+                      "leiNextRenewalDate": "2026-12-08",
+                      "registrationAuthorityId": "RA000585",
+                      "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
                     }
                   ]
                 }
@@ -406,7 +404,7 @@
           "uk-companies-house",
           "crn-lookup",
           "uk-kyb-verification",
-          "fca-compliance",
+          "lei-entity-status",
           "british-corporate-registry"
         ],
         "x-codeSamples": [
@@ -488,13 +486,12 @@
                       "leiCode": "2138003LXONKR247S255",
                       "companyStatus": "ACTIVE",
                       "incorporationDate": "2020-09-10",
-                      "sicCodes": "64999 - Financial & Commercial Services",
                       "registeredCity": "LONDON",
-                      "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-                      "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-                      "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-                      "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-                      "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+                      "registeredPostalCode": "E14 5AB",
+                      "leiRegistrationStatus": "ISSUED",
+                      "leiNextRenewalDate": "2026-12-08",
+                      "registrationAuthorityId": "RA000585",
+                      "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
                     }
                   ]
                 }
@@ -520,13 +517,12 @@
                       "leiCode": "2138003LXONKR247S255",
                       "companyStatus": "ACTIVE",
                       "incorporationDate": "2020-09-10",
-                      "sicCodes": "64999 - Financial & Commercial Services",
                       "registeredCity": "LONDON",
-                      "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-                      "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-                      "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-                      "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-                      "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+                      "registeredPostalCode": "E14 5AB",
+                      "leiRegistrationStatus": "ISSUED",
+                      "leiNextRenewalDate": "2026-12-08",
+                      "registrationAuthorityId": "RA000585",
+                      "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
                     }
                   ]
                 }
@@ -753,37 +749,31 @@
             "type": "string",
             "title": "Registered Office Postcode",
             "description": "Postcode of the legal address.",
-            "example": "REG-UK-FCA-COMPA-2026"
+            "example": "E14 5AB"
           },
           "leiRegistrationStatus": {
             "type": "string",
             "title": "LEI Registration Status",
             "description": "ISSUED, LAPSED, RETIRED, etc.",
-            "example": "REG-UK-FCA-COMPA-2026"
+            "example": "ISSUED"
           },
           "leiNextRenewalDate": {
             "type": "string",
             "title": "LEI Next Renewal Date",
             "description": "ISO date when the LEI must next be renewed.",
-            "example": "REG-UK-FCA-COMPA-2026"
+            "example": "2026-12-08"
           },
           "registrationAuthorityId": {
             "type": "string",
             "title": "Registration Authority ID",
             "description": "GLEIF registration authority code (RA000585 = Companies House).",
-            "example": "REG-UK-FCA-COMPA-2026"
+            "example": "RA000585"
           },
           "markdownKybBrief": {
             "type": "string",
             "title": "Markdown UK Entity Verification Dossier",
             "description": "Executive Markdown dossier built only from GLEIF registry fields.",
-            "example": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`"
-          },
-          "sicCodes": {
-            "type": "string",
-            "title": "sicCodes",
-            "description": "sicCodes returned by UK Corporate Entity GLEIF LEI & Company Number Verifier.",
-            "example": "64999 - Financial & Commercial Services"
+            "example": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
           }
         },
         "example": {
@@ -792,13 +782,12 @@
           "leiCode": "2138003LXONKR247S255",
           "companyStatus": "ACTIVE",
           "incorporationDate": "2020-09-10",
-          "sicCodes": "64999 - Financial & Commercial Services",
           "registeredCity": "LONDON",
-          "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-          "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-          "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-          "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-          "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+          "registeredPostalCode": "E14 5AB",
+          "leiRegistrationStatus": "ISSUED",
+          "leiNextRenewalDate": "2026-12-08",
+          "registrationAuthorityId": "RA000585",
+          "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
         }
       },
       "UkFcaCompaniesHouseKybComplianceAuditorResponseEnvelope": {
@@ -850,13 +839,12 @@
               "leiCode": "2138003LXONKR247S255",
               "companyStatus": "ACTIVE",
               "incorporationDate": "2020-09-10",
-              "sicCodes": "64999 - Financial & Commercial Services",
               "registeredCity": "LONDON",
-              "markdownKybBrief": "# UK COMPANIES HOUSE KYB DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Companies House Status:** `ACTIVE`\n- **Incorporation / Registration Date:** `2020-09-10`\n\n## 2. Classification\n- **UK SIC Classification:** `64999 - Financial & Commercial Services`\n- **Registered Office City:** `LONDON`",
-              "registeredPostalCode": "REG-UK-FCA-COMPA-2026",
-              "leiRegistrationStatus": "REG-UK-FCA-COMPA-2026",
-              "leiNextRenewalDate": "REG-UK-FCA-COMPA-2026",
-              "registrationAuthorityId": "REG-UK-FCA-COMPA-2026"
+              "registeredPostalCode": "E14 5AB",
+              "leiRegistrationStatus": "ISSUED",
+              "leiNextRenewalDate": "2026-12-08",
+              "registrationAuthorityId": "RA000585",
+              "markdownKybBrief": "# UK CORPORATE ENTITY GLEIF LEI DOSSIER: 12871051\n\n## 1. Corporate Registry & Legal Identity\n- **Legal Entity Name:** **REVOLUT BANK UK LTD**\n- **UK Companies House CRN:** `12871051`\n- **GLEIF 20-Character LEI:** `2138003LXONKR247S255`\n- **Registration Authority ID:** `RA000585`\n- **Entity Operational Status:** `ACTIVE`\n- **Incorporation Date:** `2020-09-10`\n\n## 2. Registered Office & LEI Lifecycle\n- **Registered City / Postcode:** `LONDON, E14 5AB`\n- **LEI Registration Status:** `ISSUED`\n- **LEI Next Renewal Date:** `2026-12-08`"
             }
           ]
         }

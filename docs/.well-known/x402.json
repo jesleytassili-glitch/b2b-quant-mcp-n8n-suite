@@ -1913,7 +1913,7 @@
     {
       "slug": "us-osha-workplace-safety-violation-auditor",
       "title": "US OSHA Workplace Safety & Violation Compliance Auditor",
-      "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+      "description": "Queries official US DOL/OSHA inspection records (requires a free DOL_API_KEY set as an Actor environment variable) and scores workplace-safety risk. Returns no data, and charges nothing, when the key is missing or the source is unavailable.",
       "endpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-osha-workplace-safety-violation-auditor",
       "method": "POST",
       "mcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/us-osha-workplace-safety-violation-auditor",
@@ -1927,7 +1927,7 @@
           "asset": "USDC",
           "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
           "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-osha-workplace-safety-violation-auditor",
-          "description": "US OSHA Workplace Safety & Violation Compliance Auditor — Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+          "description": "US OSHA Workplace Safety & Violation Compliance Auditor — Queries official US DOL/OSHA inspection records (requires a free DOL_API_KEY set as an Actor environment variable) and scores workplace-safety risk. Returns no data, and charges nothing, when the key is missing or the source is unavailable.",
           "mimeType": "application/json",
           "maxTimeoutSeconds": 120,
           "extra": {
@@ -2046,8 +2046,8 @@
     },
     {
       "slug": "uk-fca-companies-house-kyb-compliance-auditor",
-      "title": "UK Companies House & FCA Corporate KYB Compliance Auditor",
-      "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+      "title": "UK Corporate Entity GLEIF LEI & Company Number Verifier",
+      "description": "Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.",
       "endpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/uk-fca-companies-house-kyb-compliance-auditor",
       "method": "POST",
       "mcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/uk-fca-companies-house-kyb-compliance-auditor",
@@ -2061,7 +2061,7 @@
           "asset": "USDC",
           "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
           "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/uk-fca-companies-house-kyb-compliance-auditor",
-          "description": "UK Companies House & FCA Corporate KYB Compliance Auditor — Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding.",
+          "description": "UK Corporate Entity GLEIF LEI & Company Number Verifier — Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring.",
           "mimeType": "application/json",
           "maxTimeoutSeconds": 120,
           "extra": {
@@ -2077,7 +2077,7 @@
         }
       ],
       "inputSchema": {
-        "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Input",
+        "title": "UK Corporate Entity GLEIF Verifier Input",
         "description": "Configure UK company name or 8-digit CRN number, optional inactive company filter, and maximum UK corporate entities to audit.",
         "type": "object",
         "schemaVersion": 1,
@@ -2099,7 +2099,7 @@
           "maxResults": {
             "title": "Maximum UK Entities to Audit",
             "type": "integer",
-            "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+            "description": "Maximum number of UK corporate entity records to extract (1 to 100).",
             "editor": "number",
             "default": 15,
             "minimum": 1,
@@ -2113,8 +2113,8 @@
     },
     {
       "slug": "global-sanctions-pep-interpol-watchlist-screener",
-      "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
-      "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+      "title": "Global OFAC & UN Sanctions Watchlist AML Screener",
+      "description": "Screens individuals, companies, vessels and crypto counterparties against the official US OFAC SDN, OFAC Consolidated (Non-SDN) and UN Security Council lists, downloaded live. Fuzzy match + AML Risk Score (0-100). EU, UK and PEP lists are not covered.",
       "endpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-sanctions-pep-interpol-watchlist-screener",
       "method": "POST",
       "mcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/global-sanctions-pep-interpol-watchlist-screener",
@@ -2128,7 +2128,7 @@
           "asset": "USDC",
           "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
           "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/global-sanctions-pep-interpol-watchlist-screener",
-          "description": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100).",
+          "description": "Global OFAC & UN Sanctions Watchlist AML Screener — Screens individuals, companies, vessels and crypto counterparties against the official US OFAC SDN, OFAC Consolidated (Non-SDN) and UN Security Council lists, downloaded live. Fuzzy match + AML Risk Score (0-100). EU, UK and PEP lists are not covered.",
           "mimeType": "application/json",
           "maxTimeoutSeconds": 120,
           "extra": {
@@ -2144,7 +2144,7 @@
         }
       ],
       "inputSchema": {
-        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Input",
+        "title": "Global OFAC & UN Sanctions Watchlist AML Screener Input",
         "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
         "type": "object",
         "schemaVersion": 1,
@@ -2166,7 +2166,7 @@
           "maxResults": {
             "title": "Maximum Screening Records",
             "type": "integer",
-            "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+            "description": "Maximum number of sanctions watchlist hits to return and score (1 to 100).",
             "editor": "number",
             "default": 15,
             "minimum": 1,
@@ -2181,7 +2181,7 @@
     {
       "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
       "title": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
-      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
       "endpoint": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
       "method": "POST",
       "mcpEndpoint": "https://mcp.apify.com/?actors=b2b-quant-apis/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
@@ -2195,7 +2195,7 @@
           "asset": "USDC",
           "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
           "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-          "description": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+          "description": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
           "mimeType": "application/json",
           "maxTimeoutSeconds": 120,
           "extra": {

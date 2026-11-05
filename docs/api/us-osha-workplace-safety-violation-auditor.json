@@ -2,7 +2,7 @@
   "status": "succeeded",
   "service": "US OSHA Workplace Safety & Violation Compliance Auditor",
   "slug": "us-osha-workplace-safety-violation-auditor",
-  "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+  "description": "Queries official US DOL/OSHA inspection records (requires a free DOL_API_KEY set as an Actor environment variable) and scores workplace-safety risk. Returns no data, and charges nothing, when the key is missing or the source is unavailable.",
   "protocol": "x402",
   "x402Version": 1,
   "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
@@ -193,7 +193,7 @@
         "asset": "USDC",
         "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
         "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/us-osha-workplace-safety-violation-auditor",
-        "description": "US OSHA Workplace Safety & Violation Compliance Auditor — Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100).",
+        "description": "US OSHA Workplace Safety & Violation Compliance Auditor — Queries official US DOL/OSHA inspection records (requires a free DOL_API_KEY set as an Actor environment variable) and scores workplace-safety risk. Returns no data, and charges nothing, when the key is missing or the source is unavailable.",
         "mimeType": "application/json",
         "maxTimeoutSeconds": 120,
         "extra": {

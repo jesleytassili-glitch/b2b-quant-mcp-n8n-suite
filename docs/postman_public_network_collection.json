@@ -4212,7 +4212,7 @@
     },
     {
       "name": "30. B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
       "item": [
         {
           "name": "POST /v2/acts/b2b-quant-apis~b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor/run-sync-get-dataset-items — Execute B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor (Apify Cloud Sync)",

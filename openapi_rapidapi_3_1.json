@@ -1047,7 +1047,7 @@
       "post": {
         "operationId": "run_us_osha_workplace_safety_violation_auditor",
         "summary": "US OSHA Workplace Safety & Violation Compliance Auditor",
-        "description": "Audits U.S. industrial, construction, and logistics establishments against OSHA enforcement inspections, citations (Willful, Repeat, Serious), financial penalties in USD, NAICS codes, and computes a Workplace Safety Risk Score (0-100). | PPE Event: `osha-establishment-audited` ($0.03 USD).",
+        "description": "Queries official US DOL/OSHA inspection records (requires a free DOL_API_KEY set as an Actor environment variable) and scores workplace-safety risk. Returns no data, and charges nothing, when the key is missing or the source is unavailable. | PPE Event: `osha-establishment-audited` ($0.03 USD).",
         "tags": [
           "AI",
           "BUSINESS",
@@ -1124,8 +1124,8 @@
     "/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_uk_fca_companies_house_kyb_compliance_auditor",
-        "summary": "UK Companies House & FCA Corporate KYB Compliance Auditor",
-        "description": "Audits United Kingdom corporate entities against UK Companies House CRN records, GLEIF UK LEI registrations, SIC codes, registered office addresses, and FCA regulatory status. Computes a deterministic KYB Compliance Score (0-100) for onboarding. | PPE Event: `uk-corporate-kyb-audited` ($0.025 USD).",
+        "summary": "UK Corporate Entity GLEIF LEI & Company Number Verifier",
+        "description": "Verifies UK legal entities in the official GLEIF LEI registry: legal name, Companies House registration number, LEI, entity status, creation date, registered city/postcode and LEI renewal. No FCA or SIC data. No scoring. | PPE Event: `uk-corporate-kyb-audited` ($0.025 USD).",
         "tags": [
           "AI",
           "BUSINESS",
@@ -1163,8 +1163,8 @@
     "/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_global_sanctions_pep_interpol_watchlist_screener",
-        "summary": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
-        "description": "Screens individuals, companies, and crypto/banking counterparties against consolidated OFAC SDN, UN Security Council, EU Financial Sanctions, and Politically Exposed Persons (PEP) watchlists. Computes fuzzy similarity and AML Risk Scores (0-100). | PPE Event: `sanctions-entity-screened` ($0.03 USD).",
+        "summary": "Global OFAC & UN Sanctions Watchlist AML Screener",
+        "description": "Screens individuals, companies, vessels and crypto counterparties against the official US OFAC SDN, OFAC Consolidated (Non-SDN) and UN Security Council lists, downloaded live. Fuzzy match + AML Risk Score (0-100). EU, UK and PEP lists are not covered. | PPE Event: `sanctions-entity-screened` ($0.03 USD).",
         "tags": [
           "AI",
           "BUSINESS",
@@ -1203,7 +1203,7 @@
       "post": {
         "operationId": "run_b2b_ssl_tls_ct_log_subdomain_attack_surface_auditor",
         "summary": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
-        "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100). | PPE Event: `ssl-attack-surface-audited` ($0.02 USD).",
+        "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100). | PPE Event: `ssl-attack-surface-audited` ($0.02 USD).",
         "tags": [
           "AI",
           "DEVELOPER_TOOLS",
@@ -3643,7 +3643,7 @@
       },
       "uk_fca_companies_house_kyb_compliance_auditor_Input": {
         "type": "object",
-        "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Input",
+        "title": "UK Corporate Entity GLEIF Verifier Input",
         "description": "Configure UK company name or 8-digit CRN number, optional inactive company filter, and maximum UK corporate entities to audit.",
         "properties": {
           "companyQuery": {
@@ -3661,7 +3661,7 @@
           "maxResults": {
             "type": "integer",
             "title": "Maximum UK Entities to Audit",
-            "description": "Maximum number of UK corporate KYB records to extract and score (1 to 100).",
+            "description": "Maximum number of UK corporate entity records to extract (1 to 100).",
             "default": 15,
             "minimum": 1,
             "maximum": 100
@@ -3673,68 +3673,68 @@
       },
       "uk_fca_companies_house_kyb_compliance_auditor_DatasetItem": {
         "type": "object",
-        "title": "UK Companies House & FCA Corporate KYB Compliance Auditor Output Record",
+        "title": "UK Corporate Entity GLEIF LEI & Company Number Verifier Output Record",
         "properties": {
           "companyNumberCrn": {
             "type": "string",
-            "title": "UK Companies House CRN",
-            "description": "8-character UK Company Registration Number."
+            "title": "Registration Number (Companies House)",
+            "description": "Company registration number reported in the GLEIF registry (8 characters for Companies House)."
           },
           "companyName": {
             "type": "string",
             "title": "Legal Entity Name",
-            "description": "Official UK registered company name."
+            "description": "Official legal name registered in GLEIF."
           },
           "leiCode": {
             "type": "string",
             "title": "GLEIF 20-Character LEI",
-            "description": "ISO 17442 Legal Entity Identifier linked to the UK entity."
+            "description": "ISO 17442 Legal Entity Identifier."
           },
           "companyStatus": {
             "type": "string",
-            "title": "Companies House Status",
-            "description": "Active, Dissolved, or In Liquidation."
+            "title": "Entity Status",
+            "description": "GLEIF entity status (ACTIVE or INACTIVE)."
           },
           "incorporationDate": {
             "type": "string",
-            "title": "Incorporation / Registration Date",
-            "description": "ISO date of UK registration."
-          },
-          "sicCodes": {
-            "type": "string",
-            "title": "UK SIC 2007 Classification",
-            "description": "5-digit UK Standard Industrial Classification codes."
+            "title": "Incorporation / Creation Date",
+            "description": "ISO date of entity creation reported by GLEIF."
           },
           "registeredCity": {
             "type": "string",
             "title": "Registered Office City",
-            "description": "UK city of the registered office address."
+            "description": "City of the legal address."
           },
-          "fcaRegulatoryStatus": {
+          "registeredPostalCode": {
             "type": "string",
-            "title": "FCA / Financial Standing Status",
-            "description": "FCA Authorized, EMI Licensed, or Standard Commercial Entity."
+            "title": "Registered Office Postcode",
+            "description": "Postcode of the legal address."
           },
-          "kybComplianceScore": {
-            "type": "integer",
-            "title": "KYB Compliance Score (0-100)",
-            "description": "Quantitative UK KYB compliance score for B2B onboarding (0-100)."
-          },
-          "onboardingDecision": {
+          "leiRegistrationStatus": {
             "type": "string",
-            "title": "Automated KYB Decision",
-            "description": "APPROVED_FAST_TRACK, ENHANCED_DUE_DILIGENCE, or REJECT_INACTIVE."
+            "title": "LEI Registration Status",
+            "description": "ISSUED, LAPSED, RETIRED, etc."
+          },
+          "leiNextRenewalDate": {
+            "type": "string",
+            "title": "LEI Next Renewal Date",
+            "description": "ISO date when the LEI must next be renewed."
+          },
+          "registrationAuthorityId": {
+            "type": "string",
+            "title": "Registration Authority ID",
+            "description": "GLEIF registration authority code (RA000585 = Companies House)."
           },
           "markdownKybBrief": {
             "type": "string",
-            "title": "Markdown UK KYB & Compliance Dossier",
-            "description": "Executive Markdown dossier for fintech KYB onboarding and vendor compliance."
+            "title": "Markdown UK Entity Verification Dossier",
+            "description": "Executive Markdown dossier built only from GLEIF registry fields."
           }
         }
       },
       "global_sanctions_pep_interpol_watchlist_screener_Input": {
         "type": "object",
-        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Input",
+        "title": "Global OFAC & UN Sanctions Watchlist AML Screener Input",
         "description": "Configure target individual or organization name, optional entity type filter, and maximum watchlist screening records to return.",
         "properties": {
           "entityName": {
@@ -3752,7 +3752,7 @@
           "maxResults": {
             "type": "integer",
             "title": "Maximum Screening Records",
-            "description": "Maximum number of sanctions & PEP watchlist hits to return and score (1 to 100).",
+            "description": "Maximum number of sanctions watchlist hits to return and score (1 to 100).",
             "default": 15,
             "minimum": 1,
             "maximum": 100
@@ -3764,12 +3764,12 @@
       },
       "global_sanctions_pep_interpol_watchlist_screener_DatasetItem": {
         "type": "object",
-        "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener Output Record",
+        "title": "Global OFAC & UN Sanctions Watchlist AML Screener Output Record",
         "properties": {
           "watchlistRecordId": {
             "type": "string",
             "title": "Watchlist Record ID",
-            "description": "Official OFAC/UN/EU/OpenSanctions identifier."
+            "description": "Official OFAC / UN list identifier."
           },
           "entityQuery": {
             "type": "string",
@@ -3779,7 +3779,7 @@
           "matchedName": {
             "type": "string",
             "title": "Matched Watchlist Entity Name",
-            "description": "Official designated name on the sanctions or PEP list."
+            "description": "Official designated name on the OFAC or UN sanctions list."
           },
           "entityType": {
             "type": "string",
@@ -3789,7 +3789,7 @@
           "listSource": {
             "type": "string",
             "title": "Sanctions Authority / List Source",
-            "description": "US OFAC SDN, UN Security Council, EU FSF, UK OFSI, or Global PEP."
+            "description": "US OFAC SDN, US OFAC Consolidated (Non-SDN) or UN Security Council."
           },
           "sanctionsProgram": {
             "type": "string",
@@ -3860,7 +3860,7 @@
           "certificateId": {
             "type": "string",
             "title": "CT Log Certificate ID",
-            "description": "Official Certificate Transparency (crt.sh) log entry ID."
+            "description": "Public Certificate Transparency (CT) log entry ID."
           },
           "rootDomain": {
             "type": "string",

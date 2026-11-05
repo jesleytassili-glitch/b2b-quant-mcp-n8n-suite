@@ -231,7 +231,7 @@
     {
       "type": "single_actor_template",
       "actor_slug": "global-sanctions-pep-interpol-watchlist-screener",
-      "workflow_name": "Automated Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener — Daily B2B Data & Compliance Pipeline",
+      "workflow_name": "Automated Global OFAC & UN Sanctions Watchlist AML Screener — Daily B2B Data & Compliance Pipeline",
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\global-sanctions-pep-interpol-watchlist-screener.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~global-sanctions-pep-interpol-watchlist-screener/run-sync-get-dataset-items",
       "ppe_usd": 0.03,
@@ -287,7 +287,7 @@
     {
       "type": "single_actor_template",
       "actor_slug": "uk-fca-companies-house-kyb-compliance-auditor",
-      "workflow_name": "Automated UK Companies House & FCA Corporate KYB Compliance Auditor — Daily B2B Data & Compliance Pipeline",
+      "workflow_name": "Automated UK Corporate Entity GLEIF LEI & Company Number Verifier — Daily B2B Data & Compliance Pipeline",
       "file_path": "m2m_trojan_horse_pack\\n8n_creator_hub_templates\\uk-fca-companies-house-kyb-compliance-auditor.n8n.json",
       "apify_endpoint": "https://api.apify.com/v2/acts/b2b-quant-apis~uk-fca-companies-house-kyb-compliance-auditor/run-sync-get-dataset-items",
       "ppe_usd": 0.025,

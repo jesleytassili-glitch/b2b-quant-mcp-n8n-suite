@@ -3,7 +3,7 @@
   "info": {
     "title": "Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher",
     "version": "3.0.0",
-    "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n### Enterprise B2B Value Proposition (Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher)\n- **Target B2B Buyers:** FinTech KYB Onboarding Flows, B2B Credit Bureaus, and Enterprise CRM Enrichment Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazilian CNPJ & Partners (QSA) Lead Enriched`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cnpj-lookup, receita-federal, qsa-ubo-partners, brazil-kyb, company-enrichment, cnae-lookup, b2b-credit-risk.",
+    "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via Brazilian federal corporate registries. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n### Enterprise B2B Value Proposition (Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher)\n- **Target B2B Buyers:** FinTech KYB Onboarding Flows, B2B Credit Bureaus, and Enterprise CRM Enrichment Pipelines.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Brazilian CNPJ & Partners (QSA) Lead Enriched`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Business` | Zyla API Hub `Company Data`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** cnpj-lookup, receita-federal, qsa-ubo-partners, brazil-kyb, company-enrichment, cnae-lookup, b2b-credit-risk.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -905,7 +905,7 @@
           "timeoutSeconds": {
             "type": "integer",
             "title": "HTTP Timeout (Seconds)",
-            "description": "HTTP timeout in seconds for each API request to BrasilAPI and OpenCNPJA.",
+            "description": "HTTP timeout in seconds for each API request to Brazilian federal corporate registries.",
             "default": 15,
             "minimum": 3,
             "maximum": 60,
@@ -966,7 +966,7 @@
           "dataSource": {
             "type": "string",
             "title": "dataSource",
-            "description": "Primary source of enrichment (BrasilAPI, OpenCNPJA, FallbackCache, LOCAL_MOD11_VALIDATOR).",
+            "description": "Primary source of enrichment (Brazilian federal corporate registry, Brazilian corporate registry, FallbackCache, LOCAL_MOD11_VALIDATOR).",
             "example": "Brazilian federal CNPJ public registry"
           },
           "razaoSocial": {
