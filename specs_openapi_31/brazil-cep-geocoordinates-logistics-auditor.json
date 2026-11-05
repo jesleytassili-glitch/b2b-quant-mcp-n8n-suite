@@ -233,23 +233,20 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-cep-geocoordinates-logistics-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "logisticsReadinessScore": 88,
-                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cep": "01310100",
+                      "stateUf": "SP",
+                      "cityName": "São Paulo",
+                      "neighborhood": "Bela Vista",
+                      "street": "Avenida Paulista",
+                      "ibgeCityCode": "3550308",
+                      "latitude": -23.5475,
+                      "longitude": -46.63611,
+                      "logisticsReadinessScore": 100,
+                      "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
                     }
                   ]
                 }
@@ -266,23 +263,20 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-cep-geocoordinates-logistics-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "logisticsReadinessScore": 88,
-                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cep": "01310100",
+                      "stateUf": "SP",
+                      "cityName": "São Paulo",
+                      "neighborhood": "Bela Vista",
+                      "street": "Avenida Paulista",
+                      "ibgeCityCode": "3550308",
+                      "latitude": -23.5475,
+                      "longitude": -46.63611,
+                      "logisticsReadinessScore": 100,
+                      "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
                     }
                   ]
                 }
@@ -479,23 +473,20 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-cep-geocoordinates-logistics-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "logisticsReadinessScore": 88,
-                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cep": "01310100",
+                      "stateUf": "SP",
+                      "cityName": "São Paulo",
+                      "neighborhood": "Bela Vista",
+                      "street": "Avenida Paulista",
+                      "ibgeCityCode": "3550308",
+                      "latitude": -23.5475,
+                      "longitude": -46.63611,
+                      "logisticsReadinessScore": 100,
+                      "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
                     }
                   ]
                 }
@@ -512,23 +503,20 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-cep-geocoordinates-logistics-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-                      "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-                      "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-                      "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-                      "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "logisticsReadinessScore": 88,
-                      "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cep": "01310100",
+                      "stateUf": "SP",
+                      "cityName": "São Paulo",
+                      "neighborhood": "Bela Vista",
+                      "street": "Avenida Paulista",
+                      "ibgeCityCode": "3550308",
+                      "latitude": -23.5475,
+                      "longitude": -46.63611,
+                      "logisticsReadinessScore": 100,
+                      "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
                     }
                   ]
                 }
@@ -711,88 +699,74 @@
             "type": "string",
             "title": "CEP (8 Digits)",
             "description": "Standardized 8-digit Brazilian postal code.",
-            "example": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "01310100"
           },
           "stateUf": {
             "type": "string",
             "title": "State UF",
             "description": "Two-letter Brazilian state code.",
-            "example": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "SP"
           },
           "cityName": {
             "type": "string",
             "title": "City / Municipality",
             "description": "Official municipality name.",
-            "example": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "São Paulo"
           },
           "neighborhood": {
             "type": "string",
             "title": "Neighborhood / Bairro",
             "description": "District or neighborhood.",
-            "example": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "Bela Vista"
           },
           "street": {
             "type": "string",
             "title": "Street / Logradouro",
             "description": "Street address.",
-            "example": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "Avenida Paulista"
           },
           "ibgeCityCode": {
             "type": "string",
             "title": "IBGE 7-Digit City Code",
             "description": "Official 7-digit IBGE municipality code for NF-e/CT-e.",
-            "example": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)"
+            "example": "3550308"
           },
           "latitude": {
             "type": "number",
             "title": "Latitude",
             "description": "WGS84 Latitude coordinate.",
-            "example": 94.5
+            "example": -23.5475
           },
           "longitude": {
             "type": "number",
             "title": "Longitude",
             "description": "WGS84 Longitude coordinate.",
-            "example": 94.5
+            "example": -46.63611
           },
           "logisticsReadinessScore": {
             "type": "integer",
             "title": "Logistics & NF-e Readiness Score (0-100)",
             "description": "Quantitative score for last-mile routing and tax invoice completeness (0-100).",
-            "example": 88
+            "example": 100
           },
           "markdownLogisticsDossier": {
             "type": "string",
             "title": "Markdown Logistics & NF-e Dossier",
             "description": "Executive report for e-commerce, TMS/WMS, and ERP tax engines.",
-            "example": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
           }
         },
         "example": {
-          "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-          "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-          "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-          "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-          "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-          "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-          "latitude": 94.5,
-          "longitude": 94.5,
-          "logisticsReadinessScore": 88,
-          "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "cep": "01310100",
+          "stateUf": "SP",
+          "cityName": "São Paulo",
+          "neighborhood": "Bela Vista",
+          "street": "Avenida Paulista",
+          "ibgeCityCode": "3550308",
+          "latitude": -23.5475,
+          "longitude": -46.63611,
+          "logisticsReadinessScore": 100,
+          "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
         }
       },
       "BrazilCepGeocoordinatesLogisticsAuditorResponseEnvelope": {
@@ -835,23 +809,20 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-cep-geocoordinates-logistics-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "cep": "Verified CEP (8 Digits) (brazil-cep-geocoordinates-logistics-auditor)",
-              "stateUf": "Verified State UF (brazil-cep-geocoordinates-logistics-auditor)",
-              "cityName": "Verified City / Municipality (brazil-cep-geocoordinates-logistics-auditor)",
-              "neighborhood": "Verified Neighborhood / Bairro (brazil-cep-geocoordinates-logistics-auditor)",
-              "street": "Verified Street / Logradouro (brazil-cep-geocoordinates-logistics-auditor)",
-              "ibgeCityCode": "Verified IBGE 7-Digit City Code (brazil-cep-geocoordinates-logistics-auditor)",
-              "latitude": 94.5,
-              "longitude": 94.5,
-              "logisticsReadinessScore": 88,
-              "markdownLogisticsDossier": "Verified Markdown Logistics & NF-e Dossier (brazil-cep-geocoordinates-logistics-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "cep": "01310100",
+              "stateUf": "SP",
+              "cityName": "São Paulo",
+              "neighborhood": "Bela Vista",
+              "street": "Avenida Paulista",
+              "ibgeCityCode": "3550308",
+              "latitude": -23.5475,
+              "longitude": -46.63611,
+              "logisticsReadinessScore": 100,
+              "markdownLogisticsDossier": "# BRAZIL CEP GEOCOORDINATES & NF-e LOGISTICS DOSSIER: 01310100\n\n## 1. Standardized Address & Tax Jurisdiction\n- **CEP (8 Digits):** `01310100`\n- **Municipality / State UF:** **São Paulo - SP**\n- **IBGE 7-Digit City Code (NF-e/CT-e):** `3550308`\n- **Neighborhood:** `Bela Vista`\n- **Street / Logradouro:** Avenida Paulista\n\n## 2. Last-Mile Geocoordinates & Readiness\n- **Logistics & NF-e Readiness Score:** **100/100**\n- **WGS84 Coordinates:** `(-23.5475, -46.63611)`"
             }
           ]
         }

@@ -237,25 +237,31 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-b2b-email-domain-security-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-                      "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+                      "inputTarget": "contact@openai.com",
+                      "domain": "openai.com",
                       "isValidSyntax": true,
-                      "isDisposable": true,
+                      "isDisposable": false,
                       "isRoleAccount": true,
+                      "roleAccount": true,
                       "hasMxRecords": true,
-                      "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+                      "emailProvider": "Google Workspace",
+                      "mxRecords": [
+                        "aspmx.l.google.com",
+                        "alt1.aspmx.l.google.com",
+                        "alt2.aspmx.l.google.com"
+                      ],
                       "hasSpf": true,
+                      "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
                       "hasDmarc": true,
-                      "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-                      "deliverabilityScore": 88,
-                      "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dmarcPolicy": "reject",
+                      "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+                      "deliverabilityScore": 95,
+                      "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+                      "auditedAt": "2026-11-03T21:16:49.682059+00:00"
                     }
                   ]
                 }
@@ -272,25 +278,31 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-b2b-email-domain-security-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-                      "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+                      "inputTarget": "contact@openai.com",
+                      "domain": "openai.com",
                       "isValidSyntax": true,
-                      "isDisposable": true,
+                      "isDisposable": false,
                       "isRoleAccount": true,
+                      "roleAccount": true,
                       "hasMxRecords": true,
-                      "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+                      "emailProvider": "Google Workspace",
+                      "mxRecords": [
+                        "aspmx.l.google.com",
+                        "alt1.aspmx.l.google.com",
+                        "alt2.aspmx.l.google.com"
+                      ],
                       "hasSpf": true,
+                      "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
                       "hasDmarc": true,
-                      "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-                      "deliverabilityScore": 88,
-                      "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dmarcPolicy": "reject",
+                      "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+                      "deliverabilityScore": 95,
+                      "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+                      "auditedAt": "2026-11-03T21:16:49.682059+00:00"
                     }
                   ]
                 }
@@ -491,25 +503,31 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-b2b-email-domain-security-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-                      "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+                      "inputTarget": "contact@openai.com",
+                      "domain": "openai.com",
                       "isValidSyntax": true,
-                      "isDisposable": true,
+                      "isDisposable": false,
                       "isRoleAccount": true,
+                      "roleAccount": true,
                       "hasMxRecords": true,
-                      "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+                      "emailProvider": "Google Workspace",
+                      "mxRecords": [
+                        "aspmx.l.google.com",
+                        "alt1.aspmx.l.google.com",
+                        "alt2.aspmx.l.google.com"
+                      ],
                       "hasSpf": true,
+                      "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
                       "hasDmarc": true,
-                      "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-                      "deliverabilityScore": 88,
-                      "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dmarcPolicy": "reject",
+                      "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+                      "deliverabilityScore": 95,
+                      "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+                      "auditedAt": "2026-11-03T21:16:49.682059+00:00"
                     }
                   ]
                 }
@@ -526,25 +544,31 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-b2b-email-domain-security-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-                      "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+                      "inputTarget": "contact@openai.com",
+                      "domain": "openai.com",
                       "isValidSyntax": true,
-                      "isDisposable": true,
+                      "isDisposable": false,
                       "isRoleAccount": true,
+                      "roleAccount": true,
                       "hasMxRecords": true,
-                      "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+                      "emailProvider": "Google Workspace",
+                      "mxRecords": [
+                        "aspmx.l.google.com",
+                        "alt1.aspmx.l.google.com",
+                        "alt2.aspmx.l.google.com"
+                      ],
                       "hasSpf": true,
+                      "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
                       "hasDmarc": true,
-                      "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-                      "deliverabilityScore": 88,
-                      "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dmarcPolicy": "reject",
+                      "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+                      "deliverabilityScore": 95,
+                      "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+                      "auditedAt": "2026-11-03T21:16:49.682059+00:00"
                     }
                   ]
                 }
@@ -740,13 +764,13 @@
             "type": "string",
             "title": "Input Target",
             "description": "Original email address or domain submitted for audit",
-            "example": "Verified Input Target (global-b2b-email-domain-security-auditor)"
+            "example": "contact@openai.com"
           },
           "domain": {
             "type": "string",
             "title": "Normalized Domain",
             "description": "Extracted and normalized domain name",
-            "example": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)"
+            "example": "openai.com"
           },
           "isValidSyntax": {
             "type": "boolean",
@@ -758,7 +782,7 @@
             "type": "boolean",
             "title": "Disposable Domain",
             "description": "Whether the domain belongs to a known temporary/disposable email provider",
-            "example": true
+            "example": false
           },
           "isRoleAccount": {
             "type": "boolean",
@@ -776,7 +800,7 @@
             "type": "string",
             "title": "Email Provider",
             "description": "Detected B2B email provider or gateway from MX records",
-            "example": "Verified Email Provider (global-b2b-email-domain-security-auditor)"
+            "example": "Google Workspace"
           },
           "hasSpf": {
             "type": "boolean",
@@ -794,48 +818,80 @@
             "type": "string",
             "title": "DMARC Policy",
             "description": "Extracted DMARC enforcement policy (reject, quarantine, none, missing, or skipped)",
-            "example": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)"
+            "example": "reject"
           },
           "deliverabilityScore": {
             "type": "integer",
             "title": "Deliverability Score",
             "description": "Composite B2B deliverability and domain security score (0-100)",
-            "example": 88
+            "example": 95
           },
           "statusVerdict": {
             "type": "string",
             "title": "Status Verdict",
             "description": "Final audit verdict classification",
-            "example": "Verified Status Verdict (global-b2b-email-domain-security-auditor)"
+            "example": "DELIVERABLE_HIGH_TRUST"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
+          "roleAccount": {
+            "type": "boolean",
+            "title": "roleAccount",
+            "description": "roleAccount validated by Global B2B Email, MX, SPF & DMARC Deliverability Auditor.",
+            "example": true
           },
-          "ragMarkdownBrief": {
+          "mxRecords": {
+            "type": "array",
+            "title": "mxRecords",
+            "description": "mxRecords array returned by Global B2B Email, MX, SPF & DMARC Deliverability Auditor.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "aspmx.l.google.com",
+              "alt1.aspmx.l.google.com",
+              "alt2.aspmx.l.google.com"
+            ]
+          },
+          "spfRecord": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "spfRecord",
+            "description": "spfRecord returned by Global B2B Email, MX, SPF & DMARC Deliverability Auditor.",
+            "example": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all"
+          },
+          "dmarcRecord": {
+            "type": "string",
+            "title": "dmarcRecord",
+            "description": "dmarcRecord returned by Global B2B Email, MX, SPF & DMARC Deliverability Auditor.",
+            "example": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r"
+          },
+          "auditedAt": {
+            "type": "string",
+            "title": "auditedAt",
+            "description": "auditedAt returned by Global B2B Email, MX, SPF & DMARC Deliverability Auditor.",
+            "example": "2026-11-03T21:16:49.682059+00:00"
           }
         },
         "example": {
-          "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-          "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+          "inputTarget": "contact@openai.com",
+          "domain": "openai.com",
           "isValidSyntax": true,
-          "isDisposable": true,
+          "isDisposable": false,
           "isRoleAccount": true,
+          "roleAccount": true,
           "hasMxRecords": true,
-          "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+          "emailProvider": "Google Workspace",
+          "mxRecords": [
+            "aspmx.l.google.com",
+            "alt1.aspmx.l.google.com",
+            "alt2.aspmx.l.google.com"
+          ],
           "hasSpf": true,
+          "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
           "hasDmarc": true,
-          "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-          "deliverabilityScore": 88,
-          "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "dmarcPolicy": "reject",
+          "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+          "deliverabilityScore": 95,
+          "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+          "auditedAt": "2026-11-03T21:16:49.682059+00:00"
         }
       },
       "GlobalB2bEmailDomainSecurityAuditorResponseEnvelope": {
@@ -878,25 +934,31 @@
         "example": {
           "status": "succeeded",
           "actor": "global-b2b-email-domain-security-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "inputTarget": "Verified Input Target (global-b2b-email-domain-security-auditor)",
-              "domain": "Verified Normalized Domain (global-b2b-email-domain-security-auditor)",
+              "inputTarget": "contact@openai.com",
+              "domain": "openai.com",
               "isValidSyntax": true,
-              "isDisposable": true,
+              "isDisposable": false,
               "isRoleAccount": true,
+              "roleAccount": true,
               "hasMxRecords": true,
-              "emailProvider": "Verified Email Provider (global-b2b-email-domain-security-auditor)",
+              "emailProvider": "Google Workspace",
+              "mxRecords": [
+                "aspmx.l.google.com",
+                "alt1.aspmx.l.google.com",
+                "alt2.aspmx.l.google.com"
+              ],
               "hasSpf": true,
+              "spfRecord": "v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:8050860.spf04.hubspotemail.net include:mktomail.com include:spf_c.oraclecloud.com -all",
               "hasDmarc": true,
-              "dmarcPolicy": "Verified DMARC Policy (global-b2b-email-domain-security-auditor)",
-              "deliverabilityScore": 88,
-              "statusVerdict": "Verified Status Verdict (global-b2b-email-domain-security-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Global B2B Email, MX, SPF & DMARC Deliverability Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "dmarcPolicy": "reject",
+              "dmarcRecord": "v=DMARC1; p=reject; rua=mailto:tdfyvl0n@ag.dmarcian.com; ruf=mailto:tdfyvl0n@fr.dmarcian.com; fo=1; aspf=r",
+              "deliverabilityScore": 95,
+              "statusVerdict": "DELIVERABLE_HIGH_TRUST",
+              "auditedAt": "2026-11-03T21:16:49.682059+00:00"
             }
           ]
         }

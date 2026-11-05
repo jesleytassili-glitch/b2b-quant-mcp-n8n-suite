@@ -242,22 +242,36 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-gov-procurement-pncp-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "numeroControlePNCP": "Verified PNCP ID",
-                      "uf": "Verified UF",
-                      "municipio": "Verified City",
-                      "orgaoNome": "Verified Buyer Organ",
-                      "modalidadeNome": "Verified Modality",
-                      "valorTotalEstimadoBRL": 1250.0,
-                      "viabilityScore": 92.0,
-                      "dataEncerramentoProposta": "Verified Closing Date",
-                      "objetoCompra": "Verified Purchase Object",
-                      "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "numeroControlePNCP": "45138088000140-1-000010/2026",
+                      "cnpjOrgao": "45138088000140",
+                      "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+                      "uf": "SP",
+                      "municipio": "Santana da Ponte Pensa",
+                      "modalidadeId": 6,
+                      "modalidadeNome": "Pregão - Eletrônico",
+                      "modoDisputaNome": "Aberto",
+                      "srp": false,
+                      "valorTotalEstimadoBRL": 286843.24,
+                      "dataPublicacaoPncp": "2026-10-18T22:11:33",
+                      "dataAberturaProposta": "2026-10-19T08:00:00",
+                      "dataEncerramentoProposta": "2026-11-04T08:00:00",
+                      "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+                      "informacaoComplementar": null,
+                      "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+                      "viabilityScore": 85,
+                      "opportunities": [
+                        "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+                      ],
+                      "redFlags": [
+                        "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+                      ],
+                      "itemsCount": 0,
+                      "items": [],
+                      "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
                     }
                   ]
                 }
@@ -274,22 +288,36 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-gov-procurement-pncp-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "numeroControlePNCP": "Verified PNCP ID",
-                      "uf": "Verified UF",
-                      "municipio": "Verified City",
-                      "orgaoNome": "Verified Buyer Organ",
-                      "modalidadeNome": "Verified Modality",
-                      "valorTotalEstimadoBRL": 1250.0,
-                      "viabilityScore": 92.0,
-                      "dataEncerramentoProposta": "Verified Closing Date",
-                      "objetoCompra": "Verified Purchase Object",
-                      "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "numeroControlePNCP": "45138088000140-1-000010/2026",
+                      "cnpjOrgao": "45138088000140",
+                      "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+                      "uf": "SP",
+                      "municipio": "Santana da Ponte Pensa",
+                      "modalidadeId": 6,
+                      "modalidadeNome": "Pregão - Eletrônico",
+                      "modoDisputaNome": "Aberto",
+                      "srp": false,
+                      "valorTotalEstimadoBRL": 286843.24,
+                      "dataPublicacaoPncp": "2026-10-18T22:11:33",
+                      "dataAberturaProposta": "2026-10-19T08:00:00",
+                      "dataEncerramentoProposta": "2026-11-04T08:00:00",
+                      "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+                      "informacaoComplementar": null,
+                      "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+                      "viabilityScore": 85,
+                      "opportunities": [
+                        "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+                      ],
+                      "redFlags": [
+                        "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+                      ],
+                      "itemsCount": 0,
+                      "items": [],
+                      "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
                     }
                   ]
                 }
@@ -495,22 +523,36 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-gov-procurement-pncp-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "numeroControlePNCP": "Verified PNCP ID",
-                      "uf": "Verified UF",
-                      "municipio": "Verified City",
-                      "orgaoNome": "Verified Buyer Organ",
-                      "modalidadeNome": "Verified Modality",
-                      "valorTotalEstimadoBRL": 1250.0,
-                      "viabilityScore": 92.0,
-                      "dataEncerramentoProposta": "Verified Closing Date",
-                      "objetoCompra": "Verified Purchase Object",
-                      "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "numeroControlePNCP": "45138088000140-1-000010/2026",
+                      "cnpjOrgao": "45138088000140",
+                      "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+                      "uf": "SP",
+                      "municipio": "Santana da Ponte Pensa",
+                      "modalidadeId": 6,
+                      "modalidadeNome": "Pregão - Eletrônico",
+                      "modoDisputaNome": "Aberto",
+                      "srp": false,
+                      "valorTotalEstimadoBRL": 286843.24,
+                      "dataPublicacaoPncp": "2026-10-18T22:11:33",
+                      "dataAberturaProposta": "2026-10-19T08:00:00",
+                      "dataEncerramentoProposta": "2026-11-04T08:00:00",
+                      "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+                      "informacaoComplementar": null,
+                      "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+                      "viabilityScore": 85,
+                      "opportunities": [
+                        "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+                      ],
+                      "redFlags": [
+                        "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+                      ],
+                      "itemsCount": 0,
+                      "items": [],
+                      "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
                     }
                   ]
                 }
@@ -527,22 +569,36 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-gov-procurement-pncp-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "numeroControlePNCP": "Verified PNCP ID",
-                      "uf": "Verified UF",
-                      "municipio": "Verified City",
-                      "orgaoNome": "Verified Buyer Organ",
-                      "modalidadeNome": "Verified Modality",
-                      "valorTotalEstimadoBRL": 1250.0,
-                      "viabilityScore": 92.0,
-                      "dataEncerramentoProposta": "Verified Closing Date",
-                      "objetoCompra": "Verified Purchase Object",
-                      "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "numeroControlePNCP": "45138088000140-1-000010/2026",
+                      "cnpjOrgao": "45138088000140",
+                      "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+                      "uf": "SP",
+                      "municipio": "Santana da Ponte Pensa",
+                      "modalidadeId": 6,
+                      "modalidadeNome": "Pregão - Eletrônico",
+                      "modoDisputaNome": "Aberto",
+                      "srp": false,
+                      "valorTotalEstimadoBRL": 286843.24,
+                      "dataPublicacaoPncp": "2026-10-18T22:11:33",
+                      "dataAberturaProposta": "2026-10-19T08:00:00",
+                      "dataEncerramentoProposta": "2026-11-04T08:00:00",
+                      "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+                      "informacaoComplementar": null,
+                      "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+                      "viabilityScore": 85,
+                      "opportunities": [
+                        "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+                      ],
+                      "redFlags": [
+                        "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+                      ],
+                      "itemsCount": 0,
+                      "items": [],
+                      "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
                     }
                   ]
                 }
@@ -782,81 +838,175 @@
             "type": "string",
             "title": "PNCP ID",
             "description": "PNCP ID extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified PNCP ID"
+            "example": "45138088000140-1-000010/2026"
           },
           "uf": {
             "type": "string",
             "title": "UF",
             "description": "UF extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified UF"
+            "example": "SP"
           },
           "municipio": {
             "type": "string",
             "title": "City",
             "description": "City extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified City"
+            "example": "Santana da Ponte Pensa"
           },
           "orgaoNome": {
             "type": "string",
             "title": "Buyer Organ",
             "description": "Buyer Organ extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified Buyer Organ"
+            "example": "MUNICIPIO DE SANTANA DA PONTE PENSA"
           },
           "modalidadeNome": {
             "type": "string",
             "title": "Modality",
             "description": "Modality extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified Modality"
+            "example": "Pregão - Eletrônico"
           },
           "valorTotalEstimadoBRL": {
             "type": "number",
             "title": "Estimated Value (BRL)",
             "description": "Estimated Value (BRL) extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": 1250.0
+            "example": 286843.24
           },
           "viabilityScore": {
-            "type": "number",
+            "type": "integer",
             "title": "Viability Score (0-100)",
             "description": "Viability Score (0-100) extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": 92.0
+            "example": 85
           },
           "dataEncerramentoProposta": {
             "type": "string",
             "title": "Closing Date",
             "description": "Closing Date extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified Closing Date"
+            "example": "2026-11-04T08:00:00"
           },
           "objetoCompra": {
             "type": "string",
             "title": "Purchase Object",
             "description": "Purchase Object extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "Verified Purchase Object"
+            "example": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE."
           },
           "linkSistemaOrigem": {
             "type": "string",
             "title": "Portal Link",
             "description": "Portal Link extracted and validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
-            "example": "https://registry.gov.br/b2b-gov-procurement-pncp-radar"
+            "example": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM="
           },
-          "ragMarkdownBrief": {
+          "cnpjOrgao": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "cnpjOrgao",
+            "description": "cnpjOrgao returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "45138088000140"
+          },
+          "modalidadeId": {
+            "type": "integer",
+            "title": "modalidadeId",
+            "description": "modalidadeId validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": 6
+          },
+          "modoDisputaNome": {
+            "type": "string",
+            "title": "modoDisputaNome",
+            "description": "modoDisputaNome returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "Aberto"
+          },
+          "srp": {
+            "type": "boolean",
+            "title": "srp",
+            "description": "srp validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": false
+          },
+          "dataPublicacaoPncp": {
+            "type": "string",
+            "title": "dataPublicacaoPncp",
+            "description": "dataPublicacaoPncp returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "2026-10-18T22:11:33"
+          },
+          "dataAberturaProposta": {
+            "type": "string",
+            "title": "dataAberturaProposta",
+            "description": "dataAberturaProposta returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "2026-10-19T08:00:00"
+          },
+          "informacaoComplementar": {
+            "type": "string",
+            "title": "informacaoComplementar",
+            "description": "informacaoComplementar returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "None"
+          },
+          "opportunities": {
+            "type": "array",
+            "title": "opportunities",
+            "description": "opportunities array returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+            ]
+          },
+          "redFlags": {
+            "type": "array",
+            "title": "redFlags",
+            "description": "redFlags array returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+            ]
+          },
+          "itemsCount": {
+            "type": "integer",
+            "title": "itemsCount",
+            "description": "itemsCount validated by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": 0
+          },
+          "items": {
+            "type": "array",
+            "title": "items",
+            "description": "items array returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          },
+          "markdownRagBrief": {
+            "type": "string",
+            "title": "markdownRagBrief",
+            "description": "markdownRagBrief returned by Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server).",
+            "example": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
           }
         },
         "example": {
-          "numeroControlePNCP": "Verified PNCP ID",
-          "uf": "Verified UF",
-          "municipio": "Verified City",
-          "orgaoNome": "Verified Buyer Organ",
-          "modalidadeNome": "Verified Modality",
-          "valorTotalEstimadoBRL": 1250.0,
-          "viabilityScore": 92.0,
-          "dataEncerramentoProposta": "Verified Closing Date",
-          "objetoCompra": "Verified Purchase Object",
-          "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "numeroControlePNCP": "45138088000140-1-000010/2026",
+          "cnpjOrgao": "45138088000140",
+          "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+          "uf": "SP",
+          "municipio": "Santana da Ponte Pensa",
+          "modalidadeId": 6,
+          "modalidadeNome": "Pregão - Eletrônico",
+          "modoDisputaNome": "Aberto",
+          "srp": false,
+          "valorTotalEstimadoBRL": 286843.24,
+          "dataPublicacaoPncp": "2026-10-18T22:11:33",
+          "dataAberturaProposta": "2026-10-19T08:00:00",
+          "dataEncerramentoProposta": "2026-11-04T08:00:00",
+          "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+          "informacaoComplementar": null,
+          "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+          "viabilityScore": 85,
+          "opportunities": [
+            "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+          ],
+          "redFlags": [
+            "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+          ],
+          "itemsCount": 0,
+          "items": [],
+          "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
         }
       },
       "B2bGovProcurementPncpRadarResponseEnvelope": {
@@ -899,22 +1049,36 @@
         "example": {
           "status": "succeeded",
           "actor": "b2b-gov-procurement-pncp-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "numeroControlePNCP": "Verified PNCP ID",
-              "uf": "Verified UF",
-              "municipio": "Verified City",
-              "orgaoNome": "Verified Buyer Organ",
-              "modalidadeNome": "Verified Modality",
-              "valorTotalEstimadoBRL": 1250.0,
-              "viabilityScore": 92.0,
-              "dataEncerramentoProposta": "Verified Closing Date",
-              "objetoCompra": "Verified Purchase Object",
-              "linkSistemaOrigem": "https://registry.gov.br/b2b-gov-procurement-pncp-radar",
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Gov Procurement & Bidding Radar (PNCP API + MCP Server)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "numeroControlePNCP": "45138088000140-1-000010/2026",
+              "cnpjOrgao": "45138088000140",
+              "orgaoNome": "MUNICIPIO DE SANTANA DA PONTE PENSA",
+              "uf": "SP",
+              "municipio": "Santana da Ponte Pensa",
+              "modalidadeId": 6,
+              "modalidadeNome": "Pregão - Eletrônico",
+              "modoDisputaNome": "Aberto",
+              "srp": false,
+              "valorTotalEstimadoBRL": 286843.24,
+              "dataPublicacaoPncp": "2026-10-18T22:11:33",
+              "dataAberturaProposta": "2026-10-19T08:00:00",
+              "dataEncerramentoProposta": "2026-11-04T08:00:00",
+              "objetoCompra": "AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.",
+              "informacaoComplementar": null,
+              "linkSistemaOrigem": "https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=",
+              "viabilityScore": 85,
+              "opportunities": [
+                "Faixa de ticket ideal B2B (R$ 286,843.24) com menor concorrência de gigantes."
+              ],
+              "redFlags": [
+                "URGENTE: Encerramento de propostas em menos de 72h (2026-11-04T08:00:00)."
+              ],
+              "itemsCount": 0,
+              "items": [],
+              "markdownRagBrief": "# 📋 Raio-X de Licitação PNCP: 45138088000140-1-000010/2026\n- **Órgão Comprador:** MUNICIPIO DE SANTANA DA PONTE PENSA (CNPJ: `45138088000140`)\n- **Localidade:** Santana da Ponte Pensa / SP\n- **Modalidade:** Pregão - Eletrônico | **SRP:** Não\n- **Valor Total Estimado:** R$ 286,843.24\n- **Abertura:** 2026-10-19T08:00:00 | **Encerramento:** 2026-11-04T08:00:00\n- **Score de Viabilidade CRO:** **85/100**\n- **Link Direto:** https://bllcompras.com/Process/ProcessView?param1=[gkz]aI23irKXi8sVBvvGmSdJAcJO9NRjhxFmLuW_Z9mnuAUs9g7pr/3X1ypt4QUIRC2Goe15g9XtyyyZ26pHrUQy17qPgjRPf_GhMJKrwO13McM=\n\n## 🎯 Objeto da Compra\n> AQUISIÇÃO DE 01 (UM) VEÍCULO TIPO MINIVAN/VAN, ZERO QUILÔMETRO,\r\nCOM CAPACIDADE PARA 10 (DEZ) PASSAGEIROS E 01 (UM) MOTORISTA,\r\nTOTALIZANDO 11 (ONZE) OCUPANTES, DESTINADO AO TRANSPORTE DE PACIENTES,\r\nACOMPANHANTES E PROFISSIONAIS VINCULADOS À SECRETARIA MUNICIPAL DE\r\nSAÚDE.\n\n## 🟢 Vanta..."
             }
           ]
         }

@@ -235,24 +235,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sec-edgar-filings-insider-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-                      "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-                      "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-                      "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-                      "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-                      "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-                      "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-                      "governanceAlertScore": 88,
-                      "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-                      "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-                      "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "accessionNumber": "0000320193-26-000026",
+                      "cik": "0000320193",
+                      "ticker": "AAPL",
+                      "companyName": "Apple Inc.",
+                      "formType": "10-K",
+                      "filingDate": "2026-11-03",
+                      "reportDate": "2026-09-26",
+                      "governanceAlertScore": 84,
+                      "itemsSummary": "10-K",
+                      "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                      "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
                     }
                   ]
                 }
@@ -269,24 +266,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sec-edgar-filings-insider-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-                      "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-                      "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-                      "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-                      "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-                      "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-                      "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-                      "governanceAlertScore": 88,
-                      "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-                      "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-                      "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "accessionNumber": "0000320193-26-000026",
+                      "cik": "0000320193",
+                      "ticker": "AAPL",
+                      "companyName": "Apple Inc.",
+                      "formType": "10-K",
+                      "filingDate": "2026-11-03",
+                      "reportDate": "2026-09-26",
+                      "governanceAlertScore": 84,
+                      "itemsSummary": "10-K",
+                      "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                      "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
                     }
                   ]
                 }
@@ -485,24 +479,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sec-edgar-filings-insider-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-                      "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-                      "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-                      "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-                      "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-                      "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-                      "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-                      "governanceAlertScore": 88,
-                      "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-                      "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-                      "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "accessionNumber": "0000320193-26-000026",
+                      "cik": "0000320193",
+                      "ticker": "AAPL",
+                      "companyName": "Apple Inc.",
+                      "formType": "10-K",
+                      "filingDate": "2026-11-03",
+                      "reportDate": "2026-09-26",
+                      "governanceAlertScore": 84,
+                      "itemsSummary": "10-K",
+                      "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                      "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
                     }
                   ]
                 }
@@ -519,24 +510,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sec-edgar-filings-insider-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-                      "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-                      "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-                      "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-                      "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-                      "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-                      "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-                      "governanceAlertScore": 88,
-                      "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-                      "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-                      "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "accessionNumber": "0000320193-26-000026",
+                      "cik": "0000320193",
+                      "ticker": "AAPL",
+                      "companyName": "Apple Inc.",
+                      "formType": "10-K",
+                      "filingDate": "2026-11-03",
+                      "reportDate": "2026-09-26",
+                      "governanceAlertScore": 84,
+                      "itemsSummary": "10-K",
+                      "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                      "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
                     }
                   ]
                 }
@@ -742,95 +730,81 @@
             "type": "string",
             "title": "Accession Number",
             "description": "Unique SEC EDGAR filing accession identifier.",
-            "example": "Verified Accession Number (us-sec-edgar-filings-insider-radar)"
+            "example": "0000320193-26-000026"
           },
           "cik": {
             "type": "string",
             "title": "CIK (10-Digit)",
             "description": "Official 10-digit SEC Central Index Key.",
-            "example": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)"
+            "example": "0000320193"
           },
           "ticker": {
             "type": "string",
             "title": "Ticker",
             "description": "Primary exchange stock ticker symbol.",
-            "example": "Verified Ticker (us-sec-edgar-filings-insider-radar)"
+            "example": "AAPL"
           },
           "companyName": {
             "type": "string",
             "title": "Company Name",
             "description": "Official registrant entity name on file with the SEC.",
-            "example": "Verified Company Name (us-sec-edgar-filings-insider-radar)"
+            "example": "Apple Inc."
           },
           "formType": {
             "type": "string",
             "title": "Form Type",
             "description": "SEC regulatory filing form code (10-K, 10-Q, 8-K, 4, etc.).",
-            "example": "Verified Form Type (us-sec-edgar-filings-insider-radar)"
+            "example": "10-K"
           },
           "filingDate": {
             "type": "string",
             "title": "Filing Date",
             "description": "Date the filing was accepted by SEC EDGAR (YYYY-MM-DD).",
-            "example": "Verified Filing Date (us-sec-edgar-filings-insider-radar)"
+            "example": "2026-11-03"
           },
           "reportDate": {
             "type": "string",
             "title": "Period Report Date",
             "description": "Period of report covered by the filing (YYYY-MM-DD).",
-            "example": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)"
+            "example": "2026-09-26"
           },
           "governanceAlertScore": {
             "type": "integer",
             "title": "Governance Alert Score (0-100)",
             "description": "Quantitative materiality & governance attention score (0-100).",
-            "example": 88
+            "example": 84
           },
           "itemsSummary": {
             "type": "string",
             "title": "Material Items / Description",
             "description": "Reported 8-K item codes or primary filing description.",
-            "example": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)"
+            "example": "10-K"
           },
           "edgarDocumentUrl": {
             "type": "string",
             "title": "SEC Archive URL",
             "description": "Direct URL to the official filing document on sec.gov/Archives.",
-            "example": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)"
+            "example": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
           },
           "markdownGovernanceBrief": {
             "type": "string",
             "title": "Markdown Governance & RAG Brief",
             "description": "Executive Markdown dossier ready for financial due diligence and LLM RAG ingestion.",
-            "example": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
           }
         },
         "example": {
-          "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-          "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-          "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-          "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-          "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-          "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-          "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-          "governanceAlertScore": 88,
-          "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-          "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-          "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "accessionNumber": "0000320193-26-000026",
+          "cik": "0000320193",
+          "ticker": "AAPL",
+          "companyName": "Apple Inc.",
+          "formType": "10-K",
+          "filingDate": "2026-11-03",
+          "reportDate": "2026-09-26",
+          "governanceAlertScore": 84,
+          "itemsSummary": "10-K",
+          "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+          "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
         }
       },
       "UsSecEdgarFilingsInsiderRadarResponseEnvelope": {
@@ -873,24 +847,21 @@
         "example": {
           "status": "succeeded",
           "actor": "us-sec-edgar-filings-insider-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "accessionNumber": "Verified Accession Number (us-sec-edgar-filings-insider-radar)",
-              "cik": "Verified CIK (10-Digit) (us-sec-edgar-filings-insider-radar)",
-              "ticker": "Verified Ticker (us-sec-edgar-filings-insider-radar)",
-              "companyName": "Verified Company Name (us-sec-edgar-filings-insider-radar)",
-              "formType": "Verified Form Type (us-sec-edgar-filings-insider-radar)",
-              "filingDate": "Verified Filing Date (us-sec-edgar-filings-insider-radar)",
-              "reportDate": "Verified Period Report Date (us-sec-edgar-filings-insider-radar)",
-              "governanceAlertScore": 88,
-              "itemsSummary": "Verified Material Items / Description (us-sec-edgar-filings-insider-radar)",
-              "edgarDocumentUrl": "Verified SEC Archive URL (us-sec-edgar-filings-insider-radar)",
-              "markdownGovernanceBrief": "Verified Markdown Governance & RAG Brief (us-sec-edgar-filings-insider-radar)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US SEC EDGAR Filings & Insider Trading Radar (10-K/8-K/Form 4)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "accessionNumber": "0000320193-26-000026",
+              "cik": "0000320193",
+              "ticker": "AAPL",
+              "companyName": "Apple Inc.",
+              "formType": "10-K",
+              "filingDate": "2026-11-03",
+              "reportDate": "2026-09-26",
+              "governanceAlertScore": 84,
+              "itemsSummary": "10-K",
+              "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+              "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
             }
           ]
         }

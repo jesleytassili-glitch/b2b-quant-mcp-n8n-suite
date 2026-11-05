@@ -1949,7 +1949,7 @@
     {
       "index": 28,
       "slug": "uk-fca-companies-house-kyb-compliance-auditor",
-      "title": "UK Companies House & FCA Corporate KYB Compliance Auditor",
+      "title": "UK Corporate Entity GLEIF LEI & Company Number Verifier",
       "rapidapiCategory": "Finance",
       "zylaCategory": "Company Data",
       "seoTags": [
@@ -2018,7 +2018,7 @@
     {
       "index": 29,
       "slug": "global-sanctions-pep-interpol-watchlist-screener",
-      "title": "Global OFAC, UN, EU Sanctions & PEP Watchlist AML Screener",
+      "title": "Global OFAC & UN Sanctions Watchlist AML Screener",
       "rapidapiCategory": "Cybersecurity",
       "zylaCategory": "Security",
       "seoTags": [

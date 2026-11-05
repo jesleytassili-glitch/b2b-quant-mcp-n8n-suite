@@ -234,24 +234,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "multi-ats-tech-job-board-hiring-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-                      "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-                      "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-                      "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-                      "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-                      "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-                      "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-                      "hiringIntentScore": 88,
-                      "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-                      "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-                      "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "jobId": "8172487",
+                      "companyBoard": "stripe",
+                      "jobTitle": "Abuse Investigator",
+                      "department": "Engineering & Operations",
+                      "location": "Dublin",
+                      "workplaceType": "Onsite / Office",
+                      "updatedAt": "2026-10-29T10:42:09-04:00",
+                      "hiringIntentScore": 55,
+                      "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+                      "techSignals": "Active Departmental Headcount Growth",
+                      "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
                     }
                   ]
                 }
@@ -268,24 +265,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "multi-ats-tech-job-board-hiring-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-                      "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-                      "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-                      "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-                      "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-                      "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-                      "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-                      "hiringIntentScore": 88,
-                      "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-                      "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-                      "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "jobId": "8172487",
+                      "companyBoard": "stripe",
+                      "jobTitle": "Abuse Investigator",
+                      "department": "Engineering & Operations",
+                      "location": "Dublin",
+                      "workplaceType": "Onsite / Office",
+                      "updatedAt": "2026-10-29T10:42:09-04:00",
+                      "hiringIntentScore": 55,
+                      "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+                      "techSignals": "Active Departmental Headcount Growth",
+                      "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
                     }
                   ]
                 }
@@ -483,24 +477,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "multi-ats-tech-job-board-hiring-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-                      "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-                      "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-                      "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-                      "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-                      "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-                      "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-                      "hiringIntentScore": 88,
-                      "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-                      "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-                      "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "jobId": "8172487",
+                      "companyBoard": "stripe",
+                      "jobTitle": "Abuse Investigator",
+                      "department": "Engineering & Operations",
+                      "location": "Dublin",
+                      "workplaceType": "Onsite / Office",
+                      "updatedAt": "2026-10-29T10:42:09-04:00",
+                      "hiringIntentScore": 55,
+                      "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+                      "techSignals": "Active Departmental Headcount Growth",
+                      "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
                     }
                   ]
                 }
@@ -517,24 +508,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "multi-ats-tech-job-board-hiring-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-                      "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-                      "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-                      "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-                      "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-                      "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-                      "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-                      "hiringIntentScore": 88,
-                      "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-                      "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-                      "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "jobId": "8172487",
+                      "companyBoard": "stripe",
+                      "jobTitle": "Abuse Investigator",
+                      "department": "Engineering & Operations",
+                      "location": "Dublin",
+                      "workplaceType": "Onsite / Office",
+                      "updatedAt": "2026-10-29T10:42:09-04:00",
+                      "hiringIntentScore": 55,
+                      "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+                      "techSignals": "Active Departmental Headcount Growth",
+                      "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
                     }
                   ]
                 }
@@ -725,95 +713,81 @@
             "type": "string",
             "title": "ATS Job ID",
             "description": "Unique job requisition identifier on the ATS board.",
-            "example": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)"
+            "example": "8172487"
           },
           "companyBoard": {
             "type": "string",
             "title": "Company Board Token",
             "description": "Company slug on Greenhouse ATS.",
-            "example": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)"
+            "example": "stripe"
           },
           "jobTitle": {
             "type": "string",
             "title": "Job Title",
             "description": "Published title of the open position.",
-            "example": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)"
+            "example": "Abuse Investigator"
           },
           "department": {
             "type": "string",
             "title": "Department",
             "description": "Primary organizational department.",
-            "example": "Verified Department (multi-ats-tech-job-board-hiring-radar)"
+            "example": "Engineering & Operations"
           },
           "location": {
             "type": "string",
             "title": "Office / Location",
             "description": "Geographic location or remote region.",
-            "example": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)"
+            "example": "Dublin"
           },
           "workplaceType": {
             "type": "string",
             "title": "Workplace Type",
             "description": "Remote, Hybrid, or Onsite classification.",
-            "example": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)"
+            "example": "Onsite / Office"
           },
           "updatedAt": {
             "type": "string",
             "title": "Last Updated Timestamp",
             "description": "ISO timestamp when the job requisition was updated.",
-            "example": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)"
+            "example": "2026-10-29T10:42:09-04:00"
           },
           "hiringIntentScore": {
             "type": "integer",
             "title": "B2B Hiring Intent Score (0-100)",
             "description": "Score measuring B2B budget expansion and technical buying intent (0-100).",
-            "example": 88
+            "example": 55
           },
           "jobUrl": {
             "type": "string",
             "title": "Direct Job Application URL",
             "description": "Public URL to the job posting.",
-            "example": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)"
+            "example": "https://stripe.com/jobs/search?gh_jid=8172487"
           },
           "techSignals": {
             "type": "string",
             "title": "Detected Tech / Budget Signals",
             "description": "Key technical and strategic hiring signals.",
-            "example": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)"
+            "example": "Active Departmental Headcount Growth"
           },
           "markdownHiringBrief": {
             "type": "string",
             "title": "Markdown Hiring Intent Brief",
             "description": "Executive Markdown dossier for B2B sales and technical recruiters.",
-            "example": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
           }
         },
         "example": {
-          "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-          "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-          "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-          "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-          "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-          "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-          "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-          "hiringIntentScore": 88,
-          "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-          "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-          "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "jobId": "8172487",
+          "companyBoard": "stripe",
+          "jobTitle": "Abuse Investigator",
+          "department": "Engineering & Operations",
+          "location": "Dublin",
+          "workplaceType": "Onsite / Office",
+          "updatedAt": "2026-10-29T10:42:09-04:00",
+          "hiringIntentScore": 55,
+          "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+          "techSignals": "Active Departmental Headcount Growth",
+          "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
         }
       },
       "MultiAtsTechJobBoardHiringRadarResponseEnvelope": {
@@ -856,24 +830,21 @@
         "example": {
           "status": "succeeded",
           "actor": "multi-ats-tech-job-board-hiring-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "jobId": "Verified ATS Job ID (multi-ats-tech-job-board-hiring-radar)",
-              "companyBoard": "Verified Company Board Token (multi-ats-tech-job-board-hiring-radar)",
-              "jobTitle": "Verified Job Title (multi-ats-tech-job-board-hiring-radar)",
-              "department": "Verified Department (multi-ats-tech-job-board-hiring-radar)",
-              "location": "Verified Office / Location (multi-ats-tech-job-board-hiring-radar)",
-              "workplaceType": "Verified Workplace Type (multi-ats-tech-job-board-hiring-radar)",
-              "updatedAt": "Verified Last Updated Timestamp (multi-ats-tech-job-board-hiring-radar)",
-              "hiringIntentScore": 88,
-              "jobUrl": "Verified Direct Job Application URL (multi-ats-tech-job-board-hiring-radar)",
-              "techSignals": "Verified Detected Tech / Budget Signals (multi-ats-tech-job-board-hiring-radar)",
-              "markdownHiringBrief": "Verified Markdown Hiring Intent Brief (multi-ats-tech-job-board-hiring-radar)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Multi-ATS Tech Job Board & B2B Hiring Intent Signal Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "jobId": "8172487",
+              "companyBoard": "stripe",
+              "jobTitle": "Abuse Investigator",
+              "department": "Engineering & Operations",
+              "location": "Dublin",
+              "workplaceType": "Onsite / Office",
+              "updatedAt": "2026-10-29T10:42:09-04:00",
+              "hiringIntentScore": 55,
+              "jobUrl": "https://stripe.com/jobs/search?gh_jid=8172487",
+              "techSignals": "Active Departmental Headcount Growth",
+              "markdownHiringBrief": "# B2B HIRING INTENT & ATS SIGNAL BRIEF: STRIPE — Abuse Investigator\n\n## 1. Position & Organization Summary\n- **Company ATS Board:** `stripe`\n- **Requisition ID:** `8172487`\n- **Job Title:** **Abuse Investigator**\n- **Department:** Engineering & Operations\n- **Location / Workplace:** Dublin (Onsite / Office)\n\n## 2. B2B Buying Intent & Budget Intelligence\n- **B2B Hiring Intent Score:** **55/100**\n- **Detected Budget Signals:** Active Departmental Headcount Growth\n- **Last Updated:** 2026-10-29T10:42:09-04:00\n- **Direct Application / Requisition URL:** https://stripe.com/jobs/search?gh_jid=8172487"
             }
           ]
         }

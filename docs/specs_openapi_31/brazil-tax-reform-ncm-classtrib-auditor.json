@@ -255,23 +255,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-tax-reform-ncm-classtrib-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "sku": "Verified SKU / Item",
-                      "ncmFormatted": "Verified NCM",
-                      "description": "Verified Description",
-                      "cstIbsCbs": "Verified CST (IBS/CBS)",
-                      "cClassTrib": "Verified cClassTrib (6 digits)",
-                      "regimeName": "Verified Tax Regime (2026)",
-                      "aliquotaReductionPct": 92.0,
-                      "impostoSeletivo": true,
-                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-                      "confidenceScore": 92.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "sku": "ITEM-001",
+                      "ncm": "10063021",
+                      "ncmFormatted": "1006.30.21",
+                      "description": "Arroz beneficiado parboilizado tipo 1",
+                      "cstIbsCbs": "200",
+                      "cClassTrib": "200003",
+                      "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+                      "aliquotaReductionPct": 100.0,
+                      "cbsTestRate2026Pct": 0.0,
+                      "ibsTestRate2026Pct": 0.0,
+                      "impostoSeletivo": false,
+                      "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+                      "confidenceScore": 96,
+                      "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+                      "sourceType": "CATALOG_JSON"
                     }
                   ]
                 }
@@ -288,23 +290,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-tax-reform-ncm-classtrib-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "sku": "Verified SKU / Item",
-                      "ncmFormatted": "Verified NCM",
-                      "description": "Verified Description",
-                      "cstIbsCbs": "Verified CST (IBS/CBS)",
-                      "cClassTrib": "Verified cClassTrib (6 digits)",
-                      "regimeName": "Verified Tax Regime (2026)",
-                      "aliquotaReductionPct": 92.0,
-                      "impostoSeletivo": true,
-                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-                      "confidenceScore": 92.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "sku": "ITEM-001",
+                      "ncm": "10063021",
+                      "ncmFormatted": "1006.30.21",
+                      "description": "Arroz beneficiado parboilizado tipo 1",
+                      "cstIbsCbs": "200",
+                      "cClassTrib": "200003",
+                      "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+                      "aliquotaReductionPct": 100.0,
+                      "cbsTestRate2026Pct": 0.0,
+                      "ibsTestRate2026Pct": 0.0,
+                      "impostoSeletivo": false,
+                      "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+                      "confidenceScore": 96,
+                      "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+                      "sourceType": "CATALOG_JSON"
                     }
                   ]
                 }
@@ -523,23 +527,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-tax-reform-ncm-classtrib-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "sku": "Verified SKU / Item",
-                      "ncmFormatted": "Verified NCM",
-                      "description": "Verified Description",
-                      "cstIbsCbs": "Verified CST (IBS/CBS)",
-                      "cClassTrib": "Verified cClassTrib (6 digits)",
-                      "regimeName": "Verified Tax Regime (2026)",
-                      "aliquotaReductionPct": 92.0,
-                      "impostoSeletivo": true,
-                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-                      "confidenceScore": 92.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "sku": "ITEM-001",
+                      "ncm": "10063021",
+                      "ncmFormatted": "1006.30.21",
+                      "description": "Arroz beneficiado parboilizado tipo 1",
+                      "cstIbsCbs": "200",
+                      "cClassTrib": "200003",
+                      "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+                      "aliquotaReductionPct": 100.0,
+                      "cbsTestRate2026Pct": 0.0,
+                      "ibsTestRate2026Pct": 0.0,
+                      "impostoSeletivo": false,
+                      "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+                      "confidenceScore": 96,
+                      "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+                      "sourceType": "CATALOG_JSON"
                     }
                   ]
                 }
@@ -556,23 +562,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-tax-reform-ncm-classtrib-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "sku": "Verified SKU / Item",
-                      "ncmFormatted": "Verified NCM",
-                      "description": "Verified Description",
-                      "cstIbsCbs": "Verified CST (IBS/CBS)",
-                      "cClassTrib": "Verified cClassTrib (6 digits)",
-                      "regimeName": "Verified Tax Regime (2026)",
-                      "aliquotaReductionPct": 92.0,
-                      "impostoSeletivo": true,
-                      "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-                      "confidenceScore": 92.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "sku": "ITEM-001",
+                      "ncm": "10063021",
+                      "ncmFormatted": "1006.30.21",
+                      "description": "Arroz beneficiado parboilizado tipo 1",
+                      "cstIbsCbs": "200",
+                      "cClassTrib": "200003",
+                      "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+                      "aliquotaReductionPct": 100.0,
+                      "cbsTestRate2026Pct": 0.0,
+                      "ibsTestRate2026Pct": 0.0,
+                      "impostoSeletivo": false,
+                      "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+                      "confidenceScore": 96,
+                      "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+                      "sourceType": "CATALOG_JSON"
                     }
                   ]
                 }
@@ -833,88 +841,109 @@
             "type": "string",
             "title": "SKU / Item",
             "description": "SKU / Item extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified SKU / Item"
+            "example": "ITEM-001"
           },
           "ncmFormatted": {
             "type": "string",
             "title": "NCM",
             "description": "NCM extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified NCM"
+            "example": "1006.30.21"
           },
           "description": {
             "type": "string",
             "title": "Description",
             "description": "Description extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified Description"
+            "example": "Arroz beneficiado parboilizado tipo 1"
           },
           "cstIbsCbs": {
             "type": "string",
             "title": "CST (IBS/CBS)",
             "description": "CST (IBS/CBS) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified CST (IBS/CBS)"
+            "example": "200"
           },
           "cClassTrib": {
             "type": "string",
             "title": "cClassTrib (6 digits)",
             "description": "cClassTrib (6 digits) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified cClassTrib (6 digits)"
+            "example": "200003"
           },
           "regimeName": {
             "type": "string",
             "title": "Tax Regime (2026)",
             "description": "Tax Regime (2026) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified Tax Regime (2026)"
+            "example": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)"
           },
           "aliquotaReductionPct": {
             "type": "number",
             "title": "Reduction (%)",
             "description": "Reduction (%) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": 92.0
+            "example": 100.0
           },
           "impostoSeletivo": {
             "type": "boolean",
             "title": "Imposto Seletivo (IS)",
             "description": "Imposto Seletivo (IS) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": true
+            "example": false
           },
           "legalBasisLC214": {
             "type": "string",
             "title": "Legal Basis (LC 214/2025)",
             "description": "Legal Basis (LC 214/2025) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": "Verified Legal Basis (LC 214/2025)"
+            "example": "Art. 125 e Anexo I da LC nº 214/2025"
           },
           "confidenceScore": {
-            "type": "number",
+            "type": "integer",
             "title": "Confidence (%)",
             "description": "Confidence (%) extracted and validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
-            "example": 92.0
+            "example": 96
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "ncm": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "ncm",
+            "description": "ncm returned by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
+            "example": "10063021"
+          },
+          "cbsTestRate2026Pct": {
+            "type": "number",
+            "title": "cbsTestRate2026Pct",
+            "description": "cbsTestRate2026Pct validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
+            "example": 0.0
+          },
+          "ibsTestRate2026Pct": {
+            "type": "number",
+            "title": "ibsTestRate2026Pct",
+            "description": "ibsTestRate2026Pct validated by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
+            "example": 0.0
+          },
+          "auditNotes": {
+            "type": "string",
+            "title": "auditNotes",
+            "description": "auditNotes returned by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
+            "example": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I."
+          },
+          "sourceType": {
+            "type": "string",
+            "title": "sourceType",
+            "description": "sourceType returned by Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor.",
+            "example": "CATALOG_JSON"
           }
         },
         "example": {
-          "sku": "Verified SKU / Item",
-          "ncmFormatted": "Verified NCM",
-          "description": "Verified Description",
-          "cstIbsCbs": "Verified CST (IBS/CBS)",
-          "cClassTrib": "Verified cClassTrib (6 digits)",
-          "regimeName": "Verified Tax Regime (2026)",
-          "aliquotaReductionPct": 92.0,
-          "impostoSeletivo": true,
-          "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-          "confidenceScore": 92.0,
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "sku": "ITEM-001",
+          "ncm": "10063021",
+          "ncmFormatted": "1006.30.21",
+          "description": "Arroz beneficiado parboilizado tipo 1",
+          "cstIbsCbs": "200",
+          "cClassTrib": "200003",
+          "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+          "aliquotaReductionPct": 100.0,
+          "cbsTestRate2026Pct": 0.0,
+          "ibsTestRate2026Pct": 0.0,
+          "impostoSeletivo": false,
+          "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+          "confidenceScore": 96,
+          "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+          "sourceType": "CATALOG_JSON"
         }
       },
       "BrazilTaxReformNcmClasstribAuditorResponseEnvelope": {
@@ -957,23 +986,25 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-tax-reform-ncm-classtrib-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "sku": "Verified SKU / Item",
-              "ncmFormatted": "Verified NCM",
-              "description": "Verified Description",
-              "cstIbsCbs": "Verified CST (IBS/CBS)",
-              "cClassTrib": "Verified cClassTrib (6 digits)",
-              "regimeName": "Verified Tax Regime (2026)",
-              "aliquotaReductionPct": 92.0,
-              "impostoSeletivo": true,
-              "legalBasisLC214": "Verified Legal Basis (LC 214/2025)",
-              "confidenceScore": 92.0,
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Tax Reform 2026: NCM to cClassTrib & NF-e Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "sku": "ITEM-001",
+              "ncm": "10063021",
+              "ncmFormatted": "1006.30.21",
+              "description": "Arroz beneficiado parboilizado tipo 1",
+              "cstIbsCbs": "200",
+              "cClassTrib": "200003",
+              "regimeName": "Cesta Básica Nacional de Alimentos (Alíquota Zero — Redução de 100%)",
+              "aliquotaReductionPct": 100.0,
+              "cbsTestRate2026Pct": 0.0,
+              "ibsTestRate2026Pct": 0.0,
+              "impostoSeletivo": false,
+              "legalBasisLC214": "Art. 125 e Anexo I da LC nº 214/2025",
+              "confidenceScore": 96,
+              "auditNotes": "Alíquota reduzida em 100% (Zero IBS/CBS). Conferir especificação exata do item no Anexo I.",
+              "sourceType": "CATALOG_JSON"
             }
           ]
         }

@@ -234,24 +234,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-gleif-lei-corporate-ownership-kyb",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-                      "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-                      "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-                      "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-                      "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-                      "kybTrustScore": 88,
-                      "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "leiCode": "INR2EJN1ERAN0W5ZP974",
+                      "legalName": "MICROSOFT CORPORATION",
+                      "jurisdiction": "US-WA",
+                      "entityStatus": "ACTIVE",
+                      "registrationStatus": "ISSUED",
+                      "registeredAs": "600 413 485",
+                      "headquartersCity": "REDMOND",
+                      "headquartersCountry": "US",
+                      "nextRenewalDate": "2027-05-04T00:00:00Z",
+                      "kybTrustScore": 100,
+                      "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
                     }
                   ]
                 }
@@ -268,24 +265,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-gleif-lei-corporate-ownership-kyb",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-                      "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-                      "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-                      "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-                      "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-                      "kybTrustScore": 88,
-                      "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "leiCode": "INR2EJN1ERAN0W5ZP974",
+                      "legalName": "MICROSOFT CORPORATION",
+                      "jurisdiction": "US-WA",
+                      "entityStatus": "ACTIVE",
+                      "registrationStatus": "ISSUED",
+                      "registeredAs": "600 413 485",
+                      "headquartersCity": "REDMOND",
+                      "headquartersCountry": "US",
+                      "nextRenewalDate": "2027-05-04T00:00:00Z",
+                      "kybTrustScore": 100,
+                      "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
                     }
                   ]
                 }
@@ -483,24 +477,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-gleif-lei-corporate-ownership-kyb",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-                      "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-                      "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-                      "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-                      "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-                      "kybTrustScore": 88,
-                      "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "leiCode": "INR2EJN1ERAN0W5ZP974",
+                      "legalName": "MICROSOFT CORPORATION",
+                      "jurisdiction": "US-WA",
+                      "entityStatus": "ACTIVE",
+                      "registrationStatus": "ISSUED",
+                      "registeredAs": "600 413 485",
+                      "headquartersCity": "REDMOND",
+                      "headquartersCountry": "US",
+                      "nextRenewalDate": "2027-05-04T00:00:00Z",
+                      "kybTrustScore": 100,
+                      "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
                     }
                   ]
                 }
@@ -517,24 +508,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "global-gleif-lei-corporate-ownership-kyb",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-                      "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-                      "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-                      "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-                      "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-                      "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-                      "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-                      "kybTrustScore": 88,
-                      "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "leiCode": "INR2EJN1ERAN0W5ZP974",
+                      "legalName": "MICROSOFT CORPORATION",
+                      "jurisdiction": "US-WA",
+                      "entityStatus": "ACTIVE",
+                      "registrationStatus": "ISSUED",
+                      "registeredAs": "600 413 485",
+                      "headquartersCity": "REDMOND",
+                      "headquartersCountry": "US",
+                      "nextRenewalDate": "2027-05-04T00:00:00Z",
+                      "kybTrustScore": 100,
+                      "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
                     }
                   ]
                 }
@@ -725,95 +713,81 @@
             "type": "string",
             "title": "20-Char LEI Code",
             "description": "ISO 17442 Global Legal Entity Identifier.",
-            "example": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "INR2EJN1ERAN0W5ZP974"
           },
           "legalName": {
             "type": "string",
             "title": "Official Legal Name",
             "description": "Registered legal name of the entity.",
-            "example": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "MICROSOFT CORPORATION"
           },
           "jurisdiction": {
             "type": "string",
             "title": "Legal Jurisdiction",
             "description": "ISO country/subdivision of legal formation.",
-            "example": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "US-WA"
           },
           "entityStatus": {
             "type": "string",
             "title": "Entity Operational Status",
             "description": "ACTIVE or INACTIVE legal entity status.",
-            "example": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "ACTIVE"
           },
           "registrationStatus": {
             "type": "string",
             "title": "LEI Registration Status",
             "description": "ISSUED, LAPSED, RETIRED, or ANNULLED.",
-            "example": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "ISSUED"
           },
           "registeredAs": {
             "type": "string",
             "title": "Local Business Registry ID",
             "description": "Local commercial register number.",
-            "example": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "600 413 485"
           },
           "headquartersCity": {
             "type": "string",
             "title": "Headquarters City",
             "description": "City of corporate headquarters.",
-            "example": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "REDMOND"
           },
           "headquartersCountry": {
             "type": "string",
             "title": "Headquarters Country",
             "description": "ISO country code of headquarters.",
-            "example": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "US"
           },
           "nextRenewalDate": {
             "type": "string",
             "title": "Next LEI Renewal Date",
             "description": "Scheduled annual LEI renewal timestamp.",
-            "example": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)"
+            "example": "2027-05-04T00:00:00Z"
           },
           "kybTrustScore": {
             "type": "integer",
             "title": "KYB Trust Score (0-100)",
             "description": "Quantitative KYB compliance and registration validity score (0-100).",
-            "example": 88
+            "example": 100
           },
           "markdownKybBrief": {
             "type": "string",
             "title": "Markdown KYB Compliance Brief",
             "description": "Executive KYB audit dossier for banking, M&A, and vendor onboarding.",
-            "example": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
           }
         },
         "example": {
-          "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-          "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-          "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-          "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-          "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-          "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-          "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-          "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-          "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-          "kybTrustScore": 88,
-          "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "leiCode": "INR2EJN1ERAN0W5ZP974",
+          "legalName": "MICROSOFT CORPORATION",
+          "jurisdiction": "US-WA",
+          "entityStatus": "ACTIVE",
+          "registrationStatus": "ISSUED",
+          "registeredAs": "600 413 485",
+          "headquartersCity": "REDMOND",
+          "headquartersCountry": "US",
+          "nextRenewalDate": "2027-05-04T00:00:00Z",
+          "kybTrustScore": 100,
+          "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
         }
       },
       "GlobalGleifLeiCorporateOwnershipKybResponseEnvelope": {
@@ -856,24 +830,21 @@
         "example": {
           "status": "succeeded",
           "actor": "global-gleif-lei-corporate-ownership-kyb",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "leiCode": "Verified 20-Char LEI Code (global-gleif-lei-corporate-ownership-kyb)",
-              "legalName": "Verified Official Legal Name (global-gleif-lei-corporate-ownership-kyb)",
-              "jurisdiction": "Verified Legal Jurisdiction (global-gleif-lei-corporate-ownership-kyb)",
-              "entityStatus": "Verified Entity Operational Status (global-gleif-lei-corporate-ownership-kyb)",
-              "registrationStatus": "Verified LEI Registration Status (global-gleif-lei-corporate-ownership-kyb)",
-              "registeredAs": "Verified Local Business Registry ID (global-gleif-lei-corporate-ownership-kyb)",
-              "headquartersCity": "Verified Headquarters City (global-gleif-lei-corporate-ownership-kyb)",
-              "headquartersCountry": "Verified Headquarters Country (global-gleif-lei-corporate-ownership-kyb)",
-              "nextRenewalDate": "Verified Next LEI Renewal Date (global-gleif-lei-corporate-ownership-kyb)",
-              "kybTrustScore": 88,
-              "markdownKybBrief": "Verified Markdown KYB Compliance Brief (global-gleif-lei-corporate-ownership-kyb)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Global GLEIF LEI Corporate Ownership & KYB Compliance Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "leiCode": "INR2EJN1ERAN0W5ZP974",
+              "legalName": "MICROSOFT CORPORATION",
+              "jurisdiction": "US-WA",
+              "entityStatus": "ACTIVE",
+              "registrationStatus": "ISSUED",
+              "registeredAs": "600 413 485",
+              "headquartersCity": "REDMOND",
+              "headquartersCountry": "US",
+              "nextRenewalDate": "2027-05-04T00:00:00Z",
+              "kybTrustScore": 100,
+              "markdownKybBrief": "# GLOBAL GLEIF LEI CORPORATE KYB AUDIT: MICROSOFT CORPORATION\n\n## 1. ISO 17442 LEI & Legal Identity\n- **20-Character LEI Code:** `INR2EJN1ERAN0W5ZP974`\n- **Official Legal Name:** **MICROSOFT CORPORATION**\n- **Legal Jurisdiction:** `US-WA`\n- **Local Commercial Registry ID:** `600 413 485`\n\n## 2. Regulatory Status & Headquarters\n- **Entity Operational Status:** `ACTIVE`\n- **LEI Registration Status:** `ISSUED`\n- **Headquarters Location:** REDMOND, US\n- **Next Annual Renewal Date:** 2027-05-04T00:00:00Z\n- **KYB Compliance Trust Score:** **100/100**"
             }
           ]
         }

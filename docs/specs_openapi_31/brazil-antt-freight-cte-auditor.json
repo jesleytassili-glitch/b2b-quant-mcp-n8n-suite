@@ -244,23 +244,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-antt-freight-cte-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "routeId": "Verified ID / CT-e",
-                      "origin": "Verified Origin",
-                      "destination": "Verified Destination",
-                      "distanceKm": 1250.0,
-                      "axles": 1250.0,
-                      "cargoType": "Verified Cargo Type",
-                      "anttMinimumFloorBRL": 1250.0,
-                      "chargedFreightBRL": 1250.0,
-                      "differenceBRL": 1250.0,
-                      "complianceStatus": "Verified ANTT Status",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "routeId": "ROT-001",
+                      "sourceType": "ROUTE_SIMULATION",
+                      "origin": "Campinas/SP",
+                      "destination": "Goiânia/GO",
+                      "distanceKm": 815.0,
+                      "axles": 6,
+                      "cargoType": "carga_geral",
+                      "ccdRatePerKm": 6.678,
+                      "ccLoadUnloadFee": 681.9,
+                      "anttMinimumFloorBRL": 6124.47,
+                      "chargedFreightBRL": 6800.0,
+                      "differenceBRL": 675.53,
+                      "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+                      "estimatedFineRiskBRL": 0.0,
+                      "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
                     }
                   ]
                 }
@@ -277,23 +279,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-antt-freight-cte-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "routeId": "Verified ID / CT-e",
-                      "origin": "Verified Origin",
-                      "destination": "Verified Destination",
-                      "distanceKm": 1250.0,
-                      "axles": 1250.0,
-                      "cargoType": "Verified Cargo Type",
-                      "anttMinimumFloorBRL": 1250.0,
-                      "chargedFreightBRL": 1250.0,
-                      "differenceBRL": 1250.0,
-                      "complianceStatus": "Verified ANTT Status",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "routeId": "ROT-001",
+                      "sourceType": "ROUTE_SIMULATION",
+                      "origin": "Campinas/SP",
+                      "destination": "Goiânia/GO",
+                      "distanceKm": 815.0,
+                      "axles": 6,
+                      "cargoType": "carga_geral",
+                      "ccdRatePerKm": 6.678,
+                      "ccLoadUnloadFee": 681.9,
+                      "anttMinimumFloorBRL": 6124.47,
+                      "chargedFreightBRL": 6800.0,
+                      "differenceBRL": 675.53,
+                      "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+                      "estimatedFineRiskBRL": 0.0,
+                      "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
                     }
                   ]
                 }
@@ -501,23 +505,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-antt-freight-cte-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "routeId": "Verified ID / CT-e",
-                      "origin": "Verified Origin",
-                      "destination": "Verified Destination",
-                      "distanceKm": 1250.0,
-                      "axles": 1250.0,
-                      "cargoType": "Verified Cargo Type",
-                      "anttMinimumFloorBRL": 1250.0,
-                      "chargedFreightBRL": 1250.0,
-                      "differenceBRL": 1250.0,
-                      "complianceStatus": "Verified ANTT Status",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "routeId": "ROT-001",
+                      "sourceType": "ROUTE_SIMULATION",
+                      "origin": "Campinas/SP",
+                      "destination": "Goiânia/GO",
+                      "distanceKm": 815.0,
+                      "axles": 6,
+                      "cargoType": "carga_geral",
+                      "ccdRatePerKm": 6.678,
+                      "ccLoadUnloadFee": 681.9,
+                      "anttMinimumFloorBRL": 6124.47,
+                      "chargedFreightBRL": 6800.0,
+                      "differenceBRL": 675.53,
+                      "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+                      "estimatedFineRiskBRL": 0.0,
+                      "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
                     }
                   ]
                 }
@@ -534,23 +540,25 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-antt-freight-cte-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "routeId": "Verified ID / CT-e",
-                      "origin": "Verified Origin",
-                      "destination": "Verified Destination",
-                      "distanceKm": 1250.0,
-                      "axles": 1250.0,
-                      "cargoType": "Verified Cargo Type",
-                      "anttMinimumFloorBRL": 1250.0,
-                      "chargedFreightBRL": 1250.0,
-                      "differenceBRL": 1250.0,
-                      "complianceStatus": "Verified ANTT Status",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "routeId": "ROT-001",
+                      "sourceType": "ROUTE_SIMULATION",
+                      "origin": "Campinas/SP",
+                      "destination": "Goiânia/GO",
+                      "distanceKm": 815.0,
+                      "axles": 6,
+                      "cargoType": "carga_geral",
+                      "ccdRatePerKm": 6.678,
+                      "ccLoadUnloadFee": 681.9,
+                      "anttMinimumFloorBRL": 6124.47,
+                      "chargedFreightBRL": 6800.0,
+                      "differenceBRL": 675.53,
+                      "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+                      "estimatedFineRiskBRL": 0.0,
+                      "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
                     }
                   ]
                 }
@@ -784,88 +792,109 @@
             "type": "string",
             "title": "ID / CT-e",
             "description": "ID / CT-e extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": "Verified ID / CT-e"
+            "example": "ROT-001"
           },
           "origin": {
             "type": "string",
             "title": "Origin",
             "description": "Origin extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": "Verified Origin"
+            "example": "Campinas/SP"
           },
           "destination": {
             "type": "string",
             "title": "Destination",
             "description": "Destination extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": "Verified Destination"
+            "example": "Goiânia/GO"
           },
           "distanceKm": {
             "type": "number",
             "title": "Distance (km)",
             "description": "Distance (km) extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": 1250.0
+            "example": 815.0
           },
           "axles": {
-            "type": "number",
+            "type": "integer",
             "title": "Axles",
             "description": "Axles extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": 1250.0
+            "example": 6
           },
           "cargoType": {
             "type": "string",
             "title": "Cargo Type",
             "description": "Cargo Type extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": "Verified Cargo Type"
+            "example": "carga_geral"
           },
           "anttMinimumFloorBRL": {
             "type": "number",
             "title": "ANTT Floor (BRL)",
             "description": "ANTT Floor (BRL) extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": 1250.0
+            "example": 6124.47
           },
           "chargedFreightBRL": {
             "type": "number",
             "title": "Charged Freight (BRL)",
             "description": "Charged Freight (BRL) extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": 1250.0
+            "example": 6800.0
           },
           "differenceBRL": {
             "type": "number",
             "title": "Difference (BRL)",
             "description": "Difference (BRL) extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": 1250.0
+            "example": 675.53
           },
           "complianceStatus": {
             "type": "string",
             "title": "ANTT Status",
             "description": "ANTT Status extracted and validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
-            "example": "Verified ANTT Status"
+            "example": "CONFORME_ACIMA_DO_PISO"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "sourceType": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "sourceType",
+            "description": "sourceType returned by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
+            "example": "ROUTE_SIMULATION"
+          },
+          "ccdRatePerKm": {
+            "type": "number",
+            "title": "ccdRatePerKm",
+            "description": "ccdRatePerKm validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
+            "example": 6.678
+          },
+          "ccLoadUnloadFee": {
+            "type": "number",
+            "title": "ccLoadUnloadFee",
+            "description": "ccLoadUnloadFee validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
+            "example": 681.9
+          },
+          "estimatedFineRiskBRL": {
+            "type": "number",
+            "title": "estimatedFineRiskBRL",
+            "description": "estimatedFineRiskBRL validated by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
+            "example": 0.0
+          },
+          "recommendedAction": {
+            "type": "string",
+            "title": "recommendedAction",
+            "description": "recommendedAction returned by Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor.",
+            "example": "Operação regular acima do piso mínimo obrigatório da ANTT."
           }
         },
         "example": {
-          "routeId": "Verified ID / CT-e",
-          "origin": "Verified Origin",
-          "destination": "Verified Destination",
-          "distanceKm": 1250.0,
-          "axles": 1250.0,
-          "cargoType": "Verified Cargo Type",
-          "anttMinimumFloorBRL": 1250.0,
-          "chargedFreightBRL": 1250.0,
-          "differenceBRL": 1250.0,
-          "complianceStatus": "Verified ANTT Status",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "routeId": "ROT-001",
+          "sourceType": "ROUTE_SIMULATION",
+          "origin": "Campinas/SP",
+          "destination": "Goiânia/GO",
+          "distanceKm": 815.0,
+          "axles": 6,
+          "cargoType": "carga_geral",
+          "ccdRatePerKm": 6.678,
+          "ccLoadUnloadFee": 681.9,
+          "anttMinimumFloorBRL": 6124.47,
+          "chargedFreightBRL": 6800.0,
+          "differenceBRL": 675.53,
+          "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+          "estimatedFineRiskBRL": 0.0,
+          "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
         }
       },
       "BrazilAnttFreightCteAuditorResponseEnvelope": {
@@ -908,23 +937,25 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-antt-freight-cte-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "routeId": "Verified ID / CT-e",
-              "origin": "Verified Origin",
-              "destination": "Verified Destination",
-              "distanceKm": 1250.0,
-              "axles": 1250.0,
-              "cargoType": "Verified Cargo Type",
-              "anttMinimumFloorBRL": 1250.0,
-              "chargedFreightBRL": 1250.0,
-              "differenceBRL": 1250.0,
-              "complianceStatus": "Verified ANTT Status",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil ANTT Minimum Freight Calculator & CT-e XML Batch Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "routeId": "ROT-001",
+              "sourceType": "ROUTE_SIMULATION",
+              "origin": "Campinas/SP",
+              "destination": "Goiânia/GO",
+              "distanceKm": 815.0,
+              "axles": 6,
+              "cargoType": "carga_geral",
+              "ccdRatePerKm": 6.678,
+              "ccLoadUnloadFee": 681.9,
+              "anttMinimumFloorBRL": 6124.47,
+              "chargedFreightBRL": 6800.0,
+              "differenceBRL": 675.53,
+              "complianceStatus": "CONFORME_ACIMA_DO_PISO",
+              "estimatedFineRiskBRL": 0.0,
+              "recommendedAction": "Operação regular acima do piso mínimo obrigatório da ANTT."
             }
           ]
         }

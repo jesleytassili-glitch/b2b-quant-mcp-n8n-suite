@@ -233,24 +233,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "icann-rdap-domain-whois-brand-recon",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-                      "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-                      "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-                      "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-                      "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-                      "domainAgeYears": 94.5,
+                      "domainName": "stripe.com",
+                      "registryHandle": "891022_DOMAIN_COM-VRSN",
+                      "registrarName": "SafeNames Ltd.",
+                      "registrationDate": "1995-09-12T04:00:00Z",
+                      "expirationDate": "2027-09-11T04:00:00Z",
+                      "domainAgeYears": 31.0,
                       "transferLocked": true,
-                      "dnssecSigned": true,
-                      "nameserversCount": 88,
-                      "domainTrustScore": 88,
-                      "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dnssecSigned": false,
+                      "nameserversCount": 4,
+                      "domainTrustScore": 92,
+                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -267,24 +264,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "icann-rdap-domain-whois-brand-recon",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-                      "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-                      "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-                      "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-                      "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-                      "domainAgeYears": 94.5,
+                      "domainName": "stripe.com",
+                      "registryHandle": "891022_DOMAIN_COM-VRSN",
+                      "registrarName": "SafeNames Ltd.",
+                      "registrationDate": "1995-09-12T04:00:00Z",
+                      "expirationDate": "2027-09-11T04:00:00Z",
+                      "domainAgeYears": 31.0,
                       "transferLocked": true,
-                      "dnssecSigned": true,
-                      "nameserversCount": 88,
-                      "domainTrustScore": 88,
-                      "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dnssecSigned": false,
+                      "nameserversCount": 4,
+                      "domainTrustScore": 92,
+                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -481,24 +475,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "icann-rdap-domain-whois-brand-recon",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-                      "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-                      "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-                      "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-                      "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-                      "domainAgeYears": 94.5,
+                      "domainName": "stripe.com",
+                      "registryHandle": "891022_DOMAIN_COM-VRSN",
+                      "registrarName": "SafeNames Ltd.",
+                      "registrationDate": "1995-09-12T04:00:00Z",
+                      "expirationDate": "2027-09-11T04:00:00Z",
+                      "domainAgeYears": 31.0,
                       "transferLocked": true,
-                      "dnssecSigned": true,
-                      "nameserversCount": 88,
-                      "domainTrustScore": 88,
-                      "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dnssecSigned": false,
+                      "nameserversCount": 4,
+                      "domainTrustScore": 92,
+                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -515,24 +506,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "icann-rdap-domain-whois-brand-recon",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-                      "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-                      "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-                      "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-                      "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-                      "domainAgeYears": 94.5,
+                      "domainName": "stripe.com",
+                      "registryHandle": "891022_DOMAIN_COM-VRSN",
+                      "registrarName": "SafeNames Ltd.",
+                      "registrationDate": "1995-09-12T04:00:00Z",
+                      "expirationDate": "2027-09-11T04:00:00Z",
+                      "domainAgeYears": 31.0,
                       "transferLocked": true,
-                      "dnssecSigned": true,
-                      "nameserversCount": 88,
-                      "domainTrustScore": 88,
-                      "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "dnssecSigned": false,
+                      "nameserversCount": 4,
+                      "domainTrustScore": 92,
+                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -715,37 +703,37 @@
             "type": "string",
             "title": "Domain Name",
             "description": "ASCII LDH domain name audited.",
-            "example": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)"
+            "example": "stripe.com"
           },
           "registryHandle": {
             "type": "string",
             "title": "Registry Handle ID",
             "description": "Official registry ROID / Handle.",
-            "example": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)"
+            "example": "891022_DOMAIN_COM-VRSN"
           },
           "registrarName": {
             "type": "string",
             "title": "Accredited Registrar",
             "description": "ICANN-accredited registrar legal name.",
-            "example": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)"
+            "example": "SafeNames Ltd."
           },
           "registrationDate": {
             "type": "string",
             "title": "Creation / Registration Date",
             "description": "Original domain registration timestamp (ISO-8601).",
-            "example": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)"
+            "example": "1995-09-12T04:00:00Z"
           },
           "expirationDate": {
             "type": "string",
             "title": "Registry Expiration Date",
             "description": "Upcoming domain expiration timestamp (ISO-8601).",
-            "example": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)"
+            "example": "2027-09-11T04:00:00Z"
           },
           "domainAgeYears": {
             "type": "number",
             "title": "Estimated Domain Age (Years)",
             "description": "Domain longevity in years since creation.",
-            "example": 94.5
+            "example": 31.0
           },
           "transferLocked": {
             "type": "boolean",
@@ -757,53 +745,39 @@
             "type": "boolean",
             "title": "DNSSEC Delegation Signed",
             "description": "True if DNSSEC cryptographic signing is enabled.",
-            "example": true
+            "example": false
           },
           "nameserversCount": {
             "type": "integer",
             "title": "Nameservers Count",
             "description": "Number of authoritative DNS nameservers.",
-            "example": 88
+            "example": 4
           },
           "domainTrustScore": {
             "type": "integer",
             "title": "Domain Trust Score (0-100)",
             "description": "Quantitative brand security and antifraud longevity score (0-100).",
-            "example": 88
+            "example": 92
           },
           "markdownWhoisBrief": {
             "type": "string",
             "title": "Markdown RDAP & Brand Security Dossier",
             "description": "Executive Markdown dossier for KYB antifraud, brand protection, and M&A due diligence.",
-            "example": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
           }
         },
         "example": {
-          "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-          "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-          "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-          "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-          "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-          "domainAgeYears": 94.5,
+          "domainName": "stripe.com",
+          "registryHandle": "891022_DOMAIN_COM-VRSN",
+          "registrarName": "SafeNames Ltd.",
+          "registrationDate": "1995-09-12T04:00:00Z",
+          "expirationDate": "2027-09-11T04:00:00Z",
+          "domainAgeYears": 31.0,
           "transferLocked": true,
-          "dnssecSigned": true,
-          "nameserversCount": 88,
-          "domainTrustScore": 88,
-          "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "dnssecSigned": false,
+          "nameserversCount": 4,
+          "domainTrustScore": 92,
+          "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
         }
       },
       "IcannRdapDomainWhoisBrandReconResponseEnvelope": {
@@ -846,24 +820,21 @@
         "example": {
           "status": "succeeded",
           "actor": "icann-rdap-domain-whois-brand-recon",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "domainName": "Verified Domain Name (icann-rdap-domain-whois-brand-recon)",
-              "registryHandle": "Verified Registry Handle ID (icann-rdap-domain-whois-brand-recon)",
-              "registrarName": "Verified Accredited Registrar (icann-rdap-domain-whois-brand-recon)",
-              "registrationDate": "Verified Creation / Registration Date (icann-rdap-domain-whois-brand-recon)",
-              "expirationDate": "Verified Registry Expiration Date (icann-rdap-domain-whois-brand-recon)",
-              "domainAgeYears": 94.5,
+              "domainName": "stripe.com",
+              "registryHandle": "891022_DOMAIN_COM-VRSN",
+              "registrarName": "SafeNames Ltd.",
+              "registrationDate": "1995-09-12T04:00:00Z",
+              "expirationDate": "2027-09-11T04:00:00Z",
+              "domainAgeYears": 31.0,
               "transferLocked": true,
-              "dnssecSigned": true,
-              "nameserversCount": 88,
-              "domainTrustScore": 88,
-              "markdownWhoisBrief": "Verified Markdown RDAP & Brand Security Dossier (icann-rdap-domain-whois-brand-recon)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "dnssecSigned": false,
+              "nameserversCount": 4,
+              "domainTrustScore": 92,
+              "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
             }
           ]
         }

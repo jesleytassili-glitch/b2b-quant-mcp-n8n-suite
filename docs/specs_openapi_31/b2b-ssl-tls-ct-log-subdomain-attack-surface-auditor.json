@@ -234,24 +234,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "isWildcard": true,
-                      "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "attackSurfaceRiskScore": 88,
-                      "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "certificateId": "30076179807",
+                      "rootDomain": "cloud.com",
+                      "subdomain": "verify.cloud.com",
+                      "commonName": "verify.cloud.com",
+                      "issuerName": "Let's Encrypt",
+                      "notBefore": "2026-10-12",
+                      "notAfter": "2027-01-10",
+                      "isWildcard": false,
+                      "shadowItExposure": "STANDARD_PRODUCTION",
+                      "attackSurfaceRiskScore": 63,
+                      "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
                     }
                   ]
                 }
@@ -268,24 +265,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "isWildcard": true,
-                      "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "attackSurfaceRiskScore": 88,
-                      "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "certificateId": "30076179807",
+                      "rootDomain": "cloud.com",
+                      "subdomain": "verify.cloud.com",
+                      "commonName": "verify.cloud.com",
+                      "issuerName": "Let's Encrypt",
+                      "notBefore": "2026-10-12",
+                      "notAfter": "2027-01-10",
+                      "isWildcard": false,
+                      "shadowItExposure": "STANDARD_PRODUCTION",
+                      "attackSurfaceRiskScore": 63,
+                      "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
                     }
                   ]
                 }
@@ -483,24 +477,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "isWildcard": true,
-                      "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "attackSurfaceRiskScore": 88,
-                      "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "certificateId": "30076179807",
+                      "rootDomain": "cloud.com",
+                      "subdomain": "verify.cloud.com",
+                      "commonName": "verify.cloud.com",
+                      "issuerName": "Let's Encrypt",
+                      "notBefore": "2026-10-12",
+                      "notAfter": "2027-01-10",
+                      "isWildcard": false,
+                      "shadowItExposure": "STANDARD_PRODUCTION",
+                      "attackSurfaceRiskScore": 63,
+                      "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
                     }
                   ]
                 }
@@ -517,24 +508,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "isWildcard": true,
-                      "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "attackSurfaceRiskScore": 88,
-                      "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "certificateId": "30076179807",
+                      "rootDomain": "cloud.com",
+                      "subdomain": "verify.cloud.com",
+                      "commonName": "verify.cloud.com",
+                      "issuerName": "Let's Encrypt",
+                      "notBefore": "2026-10-12",
+                      "notAfter": "2027-01-10",
+                      "isWildcard": false,
+                      "shadowItExposure": "STANDARD_PRODUCTION",
+                      "attackSurfaceRiskScore": 63,
+                      "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
                     }
                   ]
                 }
@@ -725,95 +713,81 @@
             "type": "string",
             "title": "CT Log Certificate ID",
             "description": "Official Certificate Transparency (crt.sh) log entry ID.",
-            "example": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "30076179807"
           },
           "rootDomain": {
             "type": "string",
             "title": "Corporate Root Domain",
             "description": "Audited parent domain.",
-            "example": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "cloud.com"
           },
           "subdomain": {
             "type": "string",
             "title": "Discovered Subdomain / SAN",
             "description": "Subject Alternative Name (SAN) or subdomain discovered in CT logs.",
-            "example": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "verify.cloud.com"
           },
           "commonName": {
             "type": "string",
             "title": "Certificate Common Name (CN)",
             "description": "Primary X.509 Common Name.",
-            "example": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "verify.cloud.com"
           },
           "issuerName": {
             "type": "string",
             "title": "Certificate Authority (CA)",
             "description": "Issuing Certificate Authority organization.",
-            "example": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "Let's Encrypt"
           },
           "notBefore": {
             "type": "string",
             "title": "Valid Not Before",
             "description": "ISO date when certificate validity begins.",
-            "example": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "2026-10-12"
           },
           "notAfter": {
             "type": "string",
             "title": "Valid Not After (Expiry)",
             "description": "ISO date when certificate expires.",
-            "example": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "2027-01-10"
           },
           "isWildcard": {
             "type": "boolean",
             "title": "Is Wildcard Certificate",
             "description": "True if the certificate covers *.domain wildcard scope.",
-            "example": true
+            "example": false
           },
           "shadowItExposure": {
             "type": "string",
             "title": "Shadow IT / Environment Classification",
             "description": "HIGH_RISK_DEV_STAGING_ADMIN, WILDCARD_BROAD_SCOPE, or STANDARD_PRODUCTION.",
-            "example": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
+            "example": "STANDARD_PRODUCTION"
           },
           "attackSurfaceRiskScore": {
             "type": "integer",
             "title": "Attack Surface Risk Score (0-100)",
             "description": "Quantitative EASM & SecOps exposure score (0-100).",
-            "example": 88
+            "example": 63
           },
           "markdownSecOpsBrief": {
             "type": "string",
             "title": "Markdown EASM & SecOps Recon Brief",
             "description": "Executive Markdown advisory for SOC teams, MSSPs, and automated EASM workflows.",
-            "example": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
           }
         },
         "example": {
-          "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "isWildcard": true,
-          "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "attackSurfaceRiskScore": 88,
-          "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "certificateId": "30076179807",
+          "rootDomain": "cloud.com",
+          "subdomain": "verify.cloud.com",
+          "commonName": "verify.cloud.com",
+          "issuerName": "Let's Encrypt",
+          "notBefore": "2026-10-12",
+          "notAfter": "2027-01-10",
+          "isWildcard": false,
+          "shadowItExposure": "STANDARD_PRODUCTION",
+          "attackSurfaceRiskScore": 63,
+          "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
         }
       },
       "B2bSslTlsCtLogSubdomainAttackSurfaceAuditorResponseEnvelope": {
@@ -856,24 +830,21 @@
         "example": {
           "status": "succeeded",
           "actor": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "certificateId": "Verified CT Log Certificate ID (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "rootDomain": "Verified Corporate Root Domain (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "subdomain": "Verified Discovered Subdomain / SAN (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "commonName": "Verified Certificate Common Name (CN) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "issuerName": "Verified Certificate Authority (CA) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "notBefore": "Verified Valid Not Before (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "notAfter": "Verified Valid Not After (Expiry) (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "isWildcard": true,
-              "shadowItExposure": "Verified Shadow IT / Environment Classification (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "attackSurfaceRiskScore": 88,
-              "markdownSecOpsBrief": "Verified Markdown EASM & SecOps Recon Brief (b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "certificateId": "30076179807",
+              "rootDomain": "cloud.com",
+              "subdomain": "verify.cloud.com",
+              "commonName": "verify.cloud.com",
+              "issuerName": "Let's Encrypt",
+              "notBefore": "2026-10-12",
+              "notAfter": "2027-01-10",
+              "isWildcard": false,
+              "shadowItExposure": "STANDARD_PRODUCTION",
+              "attackSurfaceRiskScore": 63,
+              "markdownSecOpsBrief": "# B2B SSL/TLS CT LOG & ATTACK SURFACE RECON BRIEF: verify.cloud.com\n\n## 1. Subdomain & X.509 Certificate Identity\n- **CT Certificate ID:** `30076179807`\n- **Corporate Root Domain:** `cloud.com`\n- **Discovered Subdomain / SAN:** **`verify.cloud.com`**\n- **Common Name (CN):** `verify.cloud.com`\n- **Issuing Certificate Authority:** Let's Encrypt\n\n## 2. EASM Exposure Classification & Validity\n- **Attack Surface Risk Score:** **63/100**\n- **Exposure Classification:** **`STANDARD_PRODUCTION`**\n- **Wildcard Scope (`*.domain`):** `False`\n- **Valid From (`notBefore`):** `2026-10-12`\n- **Expires On (`notAfter`):** `2027-01-10`"
             }
           ]
         }

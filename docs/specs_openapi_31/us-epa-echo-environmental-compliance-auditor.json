@@ -236,24 +236,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-epa-echo-environmental-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-                      "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-                      "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-                      "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-                      "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+                      "registryId": "110000463178",
+                      "facilityName": "BAYTOWN OLEFINS PLANT",
+                      "city": "BAYTOWN",
+                      "state": "TX",
+                      "complianceStatus": "Significant Violation",
                       "sncFlag": true,
-                      "quartersInNonCompliance": 88,
-                      "totalPenaltiesUsd": 94.5,
-                      "environmentalLiabilityScore": 88,
-                      "inspectionCount5Yr": 88,
-                      "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "quartersInNonCompliance": 12,
+                      "totalPenaltiesUsd": 2204913.0,
+                      "environmentalLiabilityScore": 100,
+                      "inspectionCount5Yr": 11,
+                      "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
                     }
                   ]
                 }
@@ -270,24 +267,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-epa-echo-environmental-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-                      "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-                      "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-                      "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-                      "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+                      "registryId": "110000463178",
+                      "facilityName": "BAYTOWN OLEFINS PLANT",
+                      "city": "BAYTOWN",
+                      "state": "TX",
+                      "complianceStatus": "Significant Violation",
                       "sncFlag": true,
-                      "quartersInNonCompliance": 88,
-                      "totalPenaltiesUsd": 94.5,
-                      "environmentalLiabilityScore": 88,
-                      "inspectionCount5Yr": 88,
-                      "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "quartersInNonCompliance": 12,
+                      "totalPenaltiesUsd": 2204913.0,
+                      "environmentalLiabilityScore": 100,
+                      "inspectionCount5Yr": 11,
+                      "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
                     }
                   ]
                 }
@@ -487,24 +481,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-epa-echo-environmental-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-                      "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-                      "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-                      "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-                      "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+                      "registryId": "110000463178",
+                      "facilityName": "BAYTOWN OLEFINS PLANT",
+                      "city": "BAYTOWN",
+                      "state": "TX",
+                      "complianceStatus": "Significant Violation",
                       "sncFlag": true,
-                      "quartersInNonCompliance": 88,
-                      "totalPenaltiesUsd": 94.5,
-                      "environmentalLiabilityScore": 88,
-                      "inspectionCount5Yr": 88,
-                      "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "quartersInNonCompliance": 12,
+                      "totalPenaltiesUsd": 2204913.0,
+                      "environmentalLiabilityScore": 100,
+                      "inspectionCount5Yr": 11,
+                      "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
                     }
                   ]
                 }
@@ -521,24 +512,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-epa-echo-environmental-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-                      "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-                      "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-                      "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-                      "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+                      "registryId": "110000463178",
+                      "facilityName": "BAYTOWN OLEFINS PLANT",
+                      "city": "BAYTOWN",
+                      "state": "TX",
+                      "complianceStatus": "Significant Violation",
                       "sncFlag": true,
-                      "quartersInNonCompliance": 88,
-                      "totalPenaltiesUsd": 94.5,
-                      "environmentalLiabilityScore": 88,
-                      "inspectionCount5Yr": 88,
-                      "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "quartersInNonCompliance": 12,
+                      "totalPenaltiesUsd": 2204913.0,
+                      "environmentalLiabilityScore": 100,
+                      "inspectionCount5Yr": 11,
+                      "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
                     }
                   ]
                 }
@@ -745,31 +733,31 @@
             "type": "string",
             "title": "EPA Registry ID",
             "description": "Official U.S. EPA Facility Registry Service (FRS) identifier.",
-            "example": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)"
+            "example": "110000463178"
           },
           "facilityName": {
             "type": "string",
             "title": "Facility Name",
             "description": "Regulated industrial plant or facility name.",
-            "example": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)"
+            "example": "BAYTOWN OLEFINS PLANT"
           },
           "city": {
             "type": "string",
             "title": "City",
             "description": "City where the facility is located.",
-            "example": "Verified City (us-epa-echo-environmental-compliance-auditor)"
+            "example": "BAYTOWN"
           },
           "state": {
             "type": "string",
             "title": "State",
             "description": "2-letter US State code.",
-            "example": "Verified State (us-epa-echo-environmental-compliance-auditor)"
+            "example": "TX"
           },
           "complianceStatus": {
             "type": "string",
             "title": "EPA Compliance Status",
             "description": "Current compliance status across Clean Air, Clean Water, and RCRA statutes.",
-            "example": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)"
+            "example": "Significant Violation"
           },
           "sncFlag": {
             "type": "boolean",
@@ -781,59 +769,45 @@
             "type": "integer",
             "title": "Quarters in Non-Compliance (3-Yr)",
             "description": "Number of quarters (0 to 12) in non-compliance over the last 3 years.",
-            "example": 88
+            "example": 12
           },
           "totalPenaltiesUsd": {
             "type": "number",
             "title": "Total Penalties (USD)",
             "description": "Cumulative formal enforcement monetary penalties assessed in USD.",
-            "example": 94.5
+            "example": 2204913.0
           },
           "environmentalLiabilityScore": {
             "type": "integer",
             "title": "Environmental Liability Score (0-100)",
             "description": "Quantitative ESG and environmental liability risk score (0-100).",
-            "example": 88
+            "example": 100
           },
           "inspectionCount5Yr": {
             "type": "integer",
             "title": "Inspections (5-Yr)",
             "description": "Total federal and state regulatory inspections conducted.",
-            "example": 88
+            "example": 11
           },
           "markdownEsgDueDiligenceBrief": {
             "type": "string",
             "title": "Markdown ESG & M&A Due Diligence Brief",
             "description": "Executive environmental liability dossier for commercial real estate, M&A, and ESG risk teams.",
-            "example": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
           }
         },
         "example": {
-          "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-          "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-          "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-          "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-          "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+          "registryId": "110000463178",
+          "facilityName": "BAYTOWN OLEFINS PLANT",
+          "city": "BAYTOWN",
+          "state": "TX",
+          "complianceStatus": "Significant Violation",
           "sncFlag": true,
-          "quartersInNonCompliance": 88,
-          "totalPenaltiesUsd": 94.5,
-          "environmentalLiabilityScore": 88,
-          "inspectionCount5Yr": 88,
-          "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "quartersInNonCompliance": 12,
+          "totalPenaltiesUsd": 2204913.0,
+          "environmentalLiabilityScore": 100,
+          "inspectionCount5Yr": 11,
+          "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
         }
       },
       "UsEpaEchoEnvironmentalComplianceAuditorResponseEnvelope": {
@@ -876,24 +850,21 @@
         "example": {
           "status": "succeeded",
           "actor": "us-epa-echo-environmental-compliance-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "registryId": "Verified EPA Registry ID (us-epa-echo-environmental-compliance-auditor)",
-              "facilityName": "Verified Facility Name (us-epa-echo-environmental-compliance-auditor)",
-              "city": "Verified City (us-epa-echo-environmental-compliance-auditor)",
-              "state": "Verified State (us-epa-echo-environmental-compliance-auditor)",
-              "complianceStatus": "Verified EPA Compliance Status (us-epa-echo-environmental-compliance-auditor)",
+              "registryId": "110000463178",
+              "facilityName": "BAYTOWN OLEFINS PLANT",
+              "city": "BAYTOWN",
+              "state": "TX",
+              "complianceStatus": "Significant Violation",
               "sncFlag": true,
-              "quartersInNonCompliance": 88,
-              "totalPenaltiesUsd": 94.5,
-              "environmentalLiabilityScore": 88,
-              "inspectionCount5Yr": 88,
-              "markdownEsgDueDiligenceBrief": "Verified Markdown ESG & M&A Due Diligence Brief (us-epa-echo-environmental-compliance-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US EPA ECHO Environmental Compliance & ESG Penalty Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "quartersInNonCompliance": 12,
+              "totalPenaltiesUsd": 2204913.0,
+              "environmentalLiabilityScore": 100,
+              "inspectionCount5Yr": 11,
+              "markdownEsgDueDiligenceBrief": "# US EPA ECHO ENVIRONMENTAL & ESG DUE DILIGENCE BRIEF: 110000463178\n\n## 1. Facility Identification & Jurisdiction\n- **Facility Name:** BAYTOWN OLEFINS PLANT\n- **EPA FRS Registry ID:** `110000463178`\n- **Location:** BAYTOWN, TX\n- **Environmental Liability Score:** **100/100** (CRITICAL ENVIRONMENTAL LIABILITY (PHASE II ESA RECOMMENDED))\n\n## 2. Multi-Statute Compliance & Enforcement Profile (CAA / CWA / RCRA)\n- **Current Compliance Status:** Significant Violation\n- **Significant Non-Complier (SNC / HPV Flag):** YES (Active Alert)\n- **Quarters in Non-Compliance (3-Year Window):** 12 / 12 quarters\n- **Cumulative Monetary Penalties Assessed:** $2,204,913.00 USD\n- **Regulatory Inspections (5-Year Window):** 11"
             }
           ]
         }

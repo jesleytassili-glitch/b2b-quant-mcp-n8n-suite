@@ -237,35 +237,53 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-nhtsa-vehicle-vin-recall-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "vin": "5UXWX7C5*BA",
                       "isValidVinFormat": true,
-                      "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "recallsCount": 88,
-                      "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "checkDigitValid": false,
+                      "make": "BMW",
+                      "model": "X3",
+                      "modelYear": 2011,
+                      "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+                      "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+                      "engineCylinders": 6,
+                      "displacementL": 3.0,
+                      "fuelTypePrimary": "Gasoline",
+                      "driveType": "AWD/All-Wheel Drive",
+                      "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+                      "plantCity": "MUNICH",
+                      "plantCountry": "GERMANY",
+                      "errorCode": "6",
+                      "recallsCount": 4,
+                      "fleetSafetyStatus": "RECALL_ALERT",
                       "recallsSummary": [
-                        "VERIFIED_PRIMARY_SOURCE"
+                        {
+                          "campaignNumber": "17V683000",
+                          "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                          "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                          "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+                        },
+                        {
+                          "campaignNumber": "16V333000",
+                          "component": "CHILD SEAT:LATCH STRAP",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                          "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                          "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+                        },
+                        {
+                          "campaignNumber": "11V341000",
+                          "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                          "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                          "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                          "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+                        }
                       ],
-                      "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "source": "U.S. NHTSA vPIC & Recalls API",
+                      "auditedAt": "2026-11-03T21:16:52.487645+00:00"
                     }
                   ]
                 }
@@ -282,35 +300,53 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-nhtsa-vehicle-vin-recall-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "vin": "5UXWX7C5*BA",
                       "isValidVinFormat": true,
-                      "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "recallsCount": 88,
-                      "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "checkDigitValid": false,
+                      "make": "BMW",
+                      "model": "X3",
+                      "modelYear": 2011,
+                      "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+                      "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+                      "engineCylinders": 6,
+                      "displacementL": 3.0,
+                      "fuelTypePrimary": "Gasoline",
+                      "driveType": "AWD/All-Wheel Drive",
+                      "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+                      "plantCity": "MUNICH",
+                      "plantCountry": "GERMANY",
+                      "errorCode": "6",
+                      "recallsCount": 4,
+                      "fleetSafetyStatus": "RECALL_ALERT",
                       "recallsSummary": [
-                        "VERIFIED_PRIMARY_SOURCE"
+                        {
+                          "campaignNumber": "17V683000",
+                          "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                          "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                          "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+                        },
+                        {
+                          "campaignNumber": "16V333000",
+                          "component": "CHILD SEAT:LATCH STRAP",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                          "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                          "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+                        },
+                        {
+                          "campaignNumber": "11V341000",
+                          "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                          "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                          "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                          "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+                        }
                       ],
-                      "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "source": "U.S. NHTSA vPIC & Recalls API",
+                      "auditedAt": "2026-11-03T21:16:52.487645+00:00"
                     }
                   ]
                 }
@@ -511,35 +547,53 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-nhtsa-vehicle-vin-recall-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "vin": "5UXWX7C5*BA",
                       "isValidVinFormat": true,
-                      "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "recallsCount": 88,
-                      "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "checkDigitValid": false,
+                      "make": "BMW",
+                      "model": "X3",
+                      "modelYear": 2011,
+                      "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+                      "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+                      "engineCylinders": 6,
+                      "displacementL": 3.0,
+                      "fuelTypePrimary": "Gasoline",
+                      "driveType": "AWD/All-Wheel Drive",
+                      "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+                      "plantCity": "MUNICH",
+                      "plantCountry": "GERMANY",
+                      "errorCode": "6",
+                      "recallsCount": 4,
+                      "fleetSafetyStatus": "RECALL_ALERT",
                       "recallsSummary": [
-                        "VERIFIED_PRIMARY_SOURCE"
+                        {
+                          "campaignNumber": "17V683000",
+                          "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                          "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                          "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+                        },
+                        {
+                          "campaignNumber": "16V333000",
+                          "component": "CHILD SEAT:LATCH STRAP",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                          "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                          "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+                        },
+                        {
+                          "campaignNumber": "11V341000",
+                          "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                          "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                          "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                          "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+                        }
                       ],
-                      "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "source": "U.S. NHTSA vPIC & Recalls API",
+                      "auditedAt": "2026-11-03T21:16:52.487645+00:00"
                     }
                   ]
                 }
@@ -556,35 +610,53 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-nhtsa-vehicle-vin-recall-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "vin": "5UXWX7C5*BA",
                       "isValidVinFormat": true,
-                      "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "recallsCount": 88,
-                      "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+                      "checkDigitValid": false,
+                      "make": "BMW",
+                      "model": "X3",
+                      "modelYear": 2011,
+                      "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+                      "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+                      "engineCylinders": 6,
+                      "displacementL": 3.0,
+                      "fuelTypePrimary": "Gasoline",
+                      "driveType": "AWD/All-Wheel Drive",
+                      "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+                      "plantCity": "MUNICH",
+                      "plantCountry": "GERMANY",
+                      "errorCode": "6",
+                      "recallsCount": 4,
+                      "fleetSafetyStatus": "RECALL_ALERT",
                       "recallsSummary": [
-                        "VERIFIED_PRIMARY_SOURCE"
+                        {
+                          "campaignNumber": "17V683000",
+                          "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                          "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                          "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+                        },
+                        {
+                          "campaignNumber": "16V333000",
+                          "component": "CHILD SEAT:LATCH STRAP",
+                          "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                          "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                          "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+                        },
+                        {
+                          "campaignNumber": "11V341000",
+                          "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                          "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                          "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                          "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+                        }
                       ],
-                      "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "source": "U.S. NHTSA vPIC & Recalls API",
+                      "auditedAt": "2026-11-03T21:16:52.487645+00:00"
                     }
                   ]
                 }
@@ -787,7 +859,7 @@
             "type": "string",
             "title": "VIN",
             "description": "VIN",
-            "example": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "5UXWX7C5*BA"
           },
           "isValidVinFormat": {
             "type": "boolean",
@@ -799,153 +871,187 @@
             "type": "string",
             "title": "Make",
             "description": "Make",
-            "example": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "BMW"
           },
           "model": {
             "type": "string",
             "title": "Model",
             "description": "Model",
-            "example": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "X3"
           },
           "modelYear": {
             "type": "string",
             "title": "Model Year",
             "description": "Model Year",
-            "example": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": 2011
           },
           "vehicleType": {
             "type": "string",
             "title": "Vehicle Type",
             "description": "Vehicle Type",
-            "example": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "MULTIPURPOSE PASSENGER VEHICLE (MPV)"
           },
           "bodyClass": {
             "type": "string",
             "title": "Body Class",
             "description": "Body Class",
-            "example": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]"
           },
           "engineCylinders": {
             "type": "string",
             "title": "Engine Cylinders",
             "description": "Engine Cylinders",
-            "example": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": 6
           },
           "displacementL": {
             "type": "string",
             "title": "Displacement (L)",
             "description": "Displacement (L)",
-            "example": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": 3.0
           },
           "fuelTypePrimary": {
             "type": "string",
             "title": "Primary Fuel Type",
             "description": "Primary Fuel Type",
-            "example": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "Gasoline"
           },
           "driveType": {
             "type": "string",
             "title": "Drive Type",
             "description": "Drive Type",
-            "example": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "AWD/All-Wheel Drive"
           },
           "manufacturer": {
             "type": "string",
             "title": "Manufacturer",
             "description": "Manufacturer",
-            "example": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA"
           },
           "plantCity": {
             "type": "string",
             "title": "Plant City",
             "description": "Plant City",
-            "example": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "MUNICH"
           },
           "plantCountry": {
             "type": "string",
             "title": "Plant Country",
             "description": "Plant Country",
-            "example": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "GERMANY"
           },
           "errorCode": {
             "type": "string",
             "title": "NHTSA Error Code",
             "description": "NHTSA Error Code",
-            "example": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "6"
           },
           "recallsCount": {
             "type": "integer",
             "title": "Recalls Count",
             "description": "Recalls Count",
-            "example": 88
+            "example": 4
           },
           "fleetSafetyStatus": {
             "type": "string",
             "title": "Fleet Safety Status",
             "description": "Fleet Safety Status",
-            "example": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "RECALL_ALERT"
           },
           "recallsSummary": {
             "type": "array",
             "title": "Recalls Summary",
             "description": "Recalls Summary",
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": true
             },
             "example": [
-              "VERIFIED_PRIMARY_SOURCE"
+              {
+                "campaignNumber": "17V683000",
+                "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+              },
+              {
+                "campaignNumber": "16V333000",
+                "component": "CHILD SEAT:LATCH STRAP",
+                "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+              },
+              {
+                "campaignNumber": "11V341000",
+                "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+              }
             ]
           },
           "source": {
             "type": "string",
             "title": "Data Source",
             "description": "Data Source",
-            "example": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "U.S. NHTSA vPIC & Recalls API"
           },
           "auditedAt": {
             "type": "string",
             "title": "Audited At (UTC)",
             "description": "Audited At (UTC)",
-            "example": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)"
+            "example": "2026-11-03T21:16:52.487645+00:00"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "checkDigitValid": {
+            "type": "boolean",
+            "title": "checkDigitValid",
+            "description": "checkDigitValid validated by US NHTSA Vehicle VIN Decoder & Safety Recall Auditor.",
+            "example": false
           }
         },
         "example": {
-          "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+          "vin": "5UXWX7C5*BA",
           "isValidVinFormat": true,
-          "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-          "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-          "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-          "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-          "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-          "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-          "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-          "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-          "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-          "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-          "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-          "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-          "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-          "recallsCount": 88,
-          "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+          "checkDigitValid": false,
+          "make": "BMW",
+          "model": "X3",
+          "modelYear": 2011,
+          "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+          "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+          "engineCylinders": 6,
+          "displacementL": 3.0,
+          "fuelTypePrimary": "Gasoline",
+          "driveType": "AWD/All-Wheel Drive",
+          "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+          "plantCity": "MUNICH",
+          "plantCountry": "GERMANY",
+          "errorCode": "6",
+          "recallsCount": 4,
+          "fleetSafetyStatus": "RECALL_ALERT",
           "recallsSummary": [
-            "VERIFIED_PRIMARY_SOURCE"
+            {
+              "campaignNumber": "17V683000",
+              "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+              "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+              "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+              "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+            },
+            {
+              "campaignNumber": "16V333000",
+              "component": "CHILD SEAT:LATCH STRAP",
+              "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+              "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+              "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+            },
+            {
+              "campaignNumber": "11V341000",
+              "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+              "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+              "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+              "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+            }
           ],
-          "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-          "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "source": "U.S. NHTSA vPIC & Recalls API",
+          "auditedAt": "2026-11-03T21:16:52.487645+00:00"
         }
       },
       "UsNhtsaVehicleVinRecallAuditorResponseEnvelope": {
@@ -988,35 +1094,53 @@
         "example": {
           "status": "succeeded",
           "actor": "us-nhtsa-vehicle-vin-recall-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "vin": "Verified VIN (us-nhtsa-vehicle-vin-recall-auditor)",
+              "vin": "5UXWX7C5*BA",
               "isValidVinFormat": true,
-              "make": "Verified Make (us-nhtsa-vehicle-vin-recall-auditor)",
-              "model": "Verified Model (us-nhtsa-vehicle-vin-recall-auditor)",
-              "modelYear": "Verified Model Year (us-nhtsa-vehicle-vin-recall-auditor)",
-              "vehicleType": "Verified Vehicle Type (us-nhtsa-vehicle-vin-recall-auditor)",
-              "bodyClass": "Verified Body Class (us-nhtsa-vehicle-vin-recall-auditor)",
-              "engineCylinders": "Verified Engine Cylinders (us-nhtsa-vehicle-vin-recall-auditor)",
-              "displacementL": "Verified Displacement (L) (us-nhtsa-vehicle-vin-recall-auditor)",
-              "fuelTypePrimary": "Verified Primary Fuel Type (us-nhtsa-vehicle-vin-recall-auditor)",
-              "driveType": "Verified Drive Type (us-nhtsa-vehicle-vin-recall-auditor)",
-              "manufacturer": "Verified Manufacturer (us-nhtsa-vehicle-vin-recall-auditor)",
-              "plantCity": "Verified Plant City (us-nhtsa-vehicle-vin-recall-auditor)",
-              "plantCountry": "Verified Plant Country (us-nhtsa-vehicle-vin-recall-auditor)",
-              "errorCode": "Verified NHTSA Error Code (us-nhtsa-vehicle-vin-recall-auditor)",
-              "recallsCount": 88,
-              "fleetSafetyStatus": "Verified Fleet Safety Status (us-nhtsa-vehicle-vin-recall-auditor)",
+              "checkDigitValid": false,
+              "make": "BMW",
+              "model": "X3",
+              "modelYear": 2011,
+              "vehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+              "bodyClass": "Sport Utility Vehicle [SUV]/Multipurpose Vehicle [MPV]",
+              "engineCylinders": 6,
+              "displacementL": 3.0,
+              "fuelTypePrimary": "Gasoline",
+              "driveType": "AWD/All-Wheel Drive",
+              "manufacturer": "BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA",
+              "plantCity": "MUNICH",
+              "plantCountry": "GERMANY",
+              "errorCode": "6",
+              "recallsCount": 4,
+              "fleetSafetyStatus": "RECALL_ALERT",
               "recallsSummary": [
-                "VERIFIED_PRIMARY_SOURCE"
+                {
+                  "campaignNumber": "17V683000",
+                  "component": "ENGINE AND ENGINE COOLING:EXHAUST SYSTEM:EMISSION CONTROL:CRANKCASE (PCV)",
+                  "summary": "BMW of North America, LLC (BMW) is recalling certain 2008-2011 128i and 2007-2011 328i, 328xi, 328i xDrive, 525i, 525xi, 528i, 528xi, 530i, 530xi, X3 3.0si, X3 xDrive30i, X5 xDrive30i, Z4 3.0i, Z4 3.0si and Z4 sDrive30i vehicles.  The heater for the positive crankcase ventilation (PCV) valve may sho",
+                  "consequence": "An electrical short can cause the parts within the PCV valve to melt, increasing the risk of a fire, even when the vehicle is not in use.",
+                  "remedy": "BMW will notify owners, and dealers will replace the PCV valve heater, free of charge.  Interim letters were mailed on November 27, 2017.  Owners will receive a second notification by the end of October 2018.  Owners may contact BMW customer service "
+                },
+                {
+                  "campaignNumber": "16V333000",
+                  "component": "CHILD SEAT:LATCH STRAP",
+                  "summary": "BMW of North America, LLC (BMW) is recalling certain model year 2011-2017, X3 sDrive28i, X3 xDrive28i and X3 xDrive35i, vehicles manufactured July 2, 2010 to April 14, 2016, 2015-2017 X3 xDrive28d vehicles manufactured March 10, 2014 to March 31, 2016, and 2015-2017 x4 xDrive28i, X4 xDrive35i and X4",
+                  "consequence": "Damaged lower anchor bars may increase the child's risk of injury in the event of a crash.",
+                  "remedy": "BMW will notify owners, and dealers will weld a reinforcing bracket to the lower anchor bars and the vehicle body, free of  charge.  The recall began on July 13, 2016.  Owners may contact BMW customer service at 1-800-525-7417."
+                },
+                {
+                  "campaignNumber": "11V341000",
+                  "component": "STEERING:ELECTRIC POWER ASSIST SYSTEM",
+                  "summary": "BMW IS RECALLING CERTAIN MODEL YEAR 2011 X3 PASSENGER VEHICLES MANUFACTURED FROM APRIL 27, 2011, THROUGH JUNE 8, 2011.  A CONTROL MODULE IN THE ELECTRIC POWER STEERING (EPS) UNIT MAY MALFUNCTION, RESULTING IN A SUDDEN LOSS OF POWER STEERING ASSISTANCE.",
+                  "consequence": "SUDDEN LOSS OF POWER STEERING ASSISTANCE COULD INCREASE THE RISK OF A CRASH.",
+                  "remedy": "BMW WILL NOTIFY OWNERS AND DEALERS WILL REPAIR THE VEHICLES FREE OF CHARGE.  THE SAFETY RECALL IS EXPECTED TO BEGIN DURING AUGUST 2011.  OWNERS MAY CONTACT BMW CUSTOMER RELATIONS AND SERVICES AT 1-800-525-7417."
+                }
               ],
-              "source": "Verified Data Source (us-nhtsa-vehicle-vin-recall-auditor)",
-              "auditedAt": "Verified Audited At (UTC) (us-nhtsa-vehicle-vin-recall-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US NHTSA Vehicle VIN Decoder & Safety Recall Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "source": "U.S. NHTSA vPIC & Recalls API",
+              "auditedAt": "2026-11-03T21:16:52.487645+00:00"
             }
           ]
         }

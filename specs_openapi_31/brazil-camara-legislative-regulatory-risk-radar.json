@@ -234,22 +234,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-camara-legislative-regulatory-risk-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billYear": 88,
-                      "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-                      "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-                      "regulatoryRiskScore": 88,
-                      "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "propositionId": "2648838",
+                      "billCode": "PL 5662/2026",
+                      "billType": "PL",
+                      "billYear": 2026,
+                      "presentationDate": "2026-10-26T13:27",
+                      "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+                      "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+                      "regulatoryRiskScore": 76,
+                      "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
                     }
                   ]
                 }
@@ -266,22 +263,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-camara-legislative-regulatory-risk-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billYear": 88,
-                      "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-                      "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-                      "regulatoryRiskScore": 88,
-                      "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "propositionId": "2648838",
+                      "billCode": "PL 5662/2026",
+                      "billType": "PL",
+                      "billYear": 2026,
+                      "presentationDate": "2026-10-26T13:27",
+                      "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+                      "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+                      "regulatoryRiskScore": 76,
+                      "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
                     }
                   ]
                 }
@@ -479,22 +473,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-camara-legislative-regulatory-risk-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billYear": 88,
-                      "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-                      "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-                      "regulatoryRiskScore": 88,
-                      "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "propositionId": "2648838",
+                      "billCode": "PL 5662/2026",
+                      "billType": "PL",
+                      "billYear": 2026,
+                      "presentationDate": "2026-10-26T13:27",
+                      "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+                      "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+                      "regulatoryRiskScore": 76,
+                      "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
                     }
                   ]
                 }
@@ -511,22 +502,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-camara-legislative-regulatory-risk-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-                      "billYear": 88,
-                      "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-                      "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-                      "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-                      "regulatoryRiskScore": 88,
-                      "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "propositionId": "2648838",
+                      "billCode": "PL 5662/2026",
+                      "billType": "PL",
+                      "billYear": 2026,
+                      "presentationDate": "2026-10-26T13:27",
+                      "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+                      "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+                      "regulatoryRiskScore": 76,
+                      "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
                     }
                   ]
                 }
@@ -717,81 +705,67 @@
             "type": "string",
             "title": "Proposition ID",
             "description": "Official Camara dos Deputados proposition ID.",
-            "example": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "2648838"
           },
           "billCode": {
             "type": "string",
             "title": "Bill Code (Tipo N/Ano)",
             "description": "Formatted legislative identifier (e.g., PL 1156/2026).",
-            "example": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "PL 5662/2026"
           },
           "billType": {
             "type": "string",
             "title": "Proposition Type",
             "description": "PL, PLP, PEC, or MPV.",
-            "example": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "PL"
           },
           "billYear": {
             "type": "integer",
             "title": "Presentation Year",
             "description": "Year the bill was introduced.",
-            "example": 88
+            "example": 2026
           },
           "presentationDate": {
             "type": "string",
             "title": "Presentation Date",
             "description": "ISO timestamp of presentation.",
-            "example": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "2026-10-26T13:27"
           },
           "summaryEmenta": {
             "type": "string",
             "title": "Official Bill Summary (Ementa)",
             "description": "Official summary of the legislative proposal.",
-            "example": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
           },
           "officialUri": {
             "type": "string",
             "title": "Official API URI",
             "description": "Direct link to the proposition record.",
-            "example": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)"
+            "example": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838"
           },
           "regulatoryRiskScore": {
             "type": "integer",
             "title": "Regulatory Impact & Risk Score (0-100)",
             "description": "Quantitative corporate and tax impact score (0-100).",
-            "example": 88
+            "example": 76
           },
           "markdownGovRelBrief": {
             "type": "string",
             "title": "Markdown GovRel & Legal Brief",
             "description": "Executive report for law firms, tax advisors, and corporate GovRel teams.",
-            "example": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
           }
         },
         "example": {
-          "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-          "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-          "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-          "billYear": 88,
-          "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-          "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-          "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-          "regulatoryRiskScore": 88,
-          "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "propositionId": "2648838",
+          "billCode": "PL 5662/2026",
+          "billType": "PL",
+          "billYear": 2026,
+          "presentationDate": "2026-10-26T13:27",
+          "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+          "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+          "regulatoryRiskScore": 76,
+          "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
         }
       },
       "BrazilCamaraLegislativeRegulatoryRiskRadarResponseEnvelope": {
@@ -834,22 +808,19 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-camara-legislative-regulatory-risk-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "propositionId": "Verified Proposition ID (brazil-camara-legislative-regulatory-risk-radar)",
-              "billCode": "Verified Bill Code (Tipo N/Ano) (brazil-camara-legislative-regulatory-risk-radar)",
-              "billType": "Verified Proposition Type (brazil-camara-legislative-regulatory-risk-radar)",
-              "billYear": 88,
-              "presentationDate": "Verified Presentation Date (brazil-camara-legislative-regulatory-risk-radar)",
-              "summaryEmenta": "Verified Official Bill Summary (Ementa) (brazil-camara-legislative-regulatory-risk-radar)",
-              "officialUri": "Verified Official API URI (brazil-camara-legislative-regulatory-risk-radar)",
-              "regulatoryRiskScore": 88,
-              "markdownGovRelBrief": "Verified Markdown GovRel & Legal Brief (brazil-camara-legislative-regulatory-risk-radar)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Congress Legislative Bills & Tax Regulatory Risk Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "propositionId": "2648838",
+              "billCode": "PL 5662/2026",
+              "billType": "PL",
+              "billYear": 2026,
+              "presentationDate": "2026-10-26T13:27",
+              "summaryEmenta": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade.",
+              "officialUri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838",
+              "regulatoryRiskScore": 76,
+              "markdownGovRelBrief": "# BRAZIL CONGRESS LEGISLATIVE & REGULATORY RISK BRIEF: PL 5662/2026\n\n## 1. Proposition Identity\n- **Bill Code:** **`PL 5662/2026`**\n- **Proposition ID:** `2648838`\n- **Type / Year:** `PL / 2026`\n- **Presentation Date:** `2026-10-26T13:27`\n- **Official API URI:** https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648838\n\n## 2. Corporate & Tax Impact Analysis\n- **Regulatory Impact & Risk Score:** **76/100**\n- **Official Summary (Ementa):** Altera a Lei nº 13.146, de 6 de julho de 2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência), para assegurar a gratuidade do estacionamento vinculado a estabelecimento de saúde ou de habilitação e reabilitação para veículo utilizado no transporte de pessoa com deficiência com comprometimento de mobilidade."
             }
           ]
         }

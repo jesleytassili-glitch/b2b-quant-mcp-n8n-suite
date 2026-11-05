@@ -235,24 +235,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fdic-bankfind-institution-financial-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-                      "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-                      "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-                      "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+                      "certNumber": "628",
+                      "institutionName": "JPMorgan Chase Bank, National Association",
+                      "city": "Columbus",
+                      "state": "OH",
+                      "regulator": "OCC",
                       "activeStatus": true,
-                      "totalAssetsMillionsUsd": 94.5,
-                      "totalDepositsMillionsUsd": 94.5,
-                      "equityRatioPct": 94.5,
-                      "roaPct": 94.5,
-                      "counterpartyHealthScore": 88,
-                      "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "totalAssetsMillionsUsd": 4091315.0,
+                      "totalDepositsMillionsUsd": 2820284.0,
+                      "equityRatioPct": 8.35,
+                      "roaPct": 1.59,
+                      "counterpartyHealthScore": 85,
+                      "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
                     }
                   ]
                 }
@@ -269,24 +267,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fdic-bankfind-institution-financial-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-                      "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-                      "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-                      "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+                      "certNumber": "628",
+                      "institutionName": "JPMorgan Chase Bank, National Association",
+                      "city": "Columbus",
+                      "state": "OH",
+                      "regulator": "OCC",
                       "activeStatus": true,
-                      "totalAssetsMillionsUsd": 94.5,
-                      "totalDepositsMillionsUsd": 94.5,
-                      "equityRatioPct": 94.5,
-                      "roaPct": 94.5,
-                      "counterpartyHealthScore": 88,
-                      "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "totalAssetsMillionsUsd": 4091315.0,
+                      "totalDepositsMillionsUsd": 2820284.0,
+                      "equityRatioPct": 8.35,
+                      "roaPct": 1.59,
+                      "counterpartyHealthScore": 85,
+                      "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
                     }
                   ]
                 }
@@ -485,24 +481,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fdic-bankfind-institution-financial-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-                      "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-                      "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-                      "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+                      "certNumber": "628",
+                      "institutionName": "JPMorgan Chase Bank, National Association",
+                      "city": "Columbus",
+                      "state": "OH",
+                      "regulator": "OCC",
                       "activeStatus": true,
-                      "totalAssetsMillionsUsd": 94.5,
-                      "totalDepositsMillionsUsd": 94.5,
-                      "equityRatioPct": 94.5,
-                      "roaPct": 94.5,
-                      "counterpartyHealthScore": 88,
-                      "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "totalAssetsMillionsUsd": 4091315.0,
+                      "totalDepositsMillionsUsd": 2820284.0,
+                      "equityRatioPct": 8.35,
+                      "roaPct": 1.59,
+                      "counterpartyHealthScore": 85,
+                      "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
                     }
                   ]
                 }
@@ -519,24 +513,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fdic-bankfind-institution-financial-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-                      "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-                      "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-                      "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+                      "certNumber": "628",
+                      "institutionName": "JPMorgan Chase Bank, National Association",
+                      "city": "Columbus",
+                      "state": "OH",
+                      "regulator": "OCC",
                       "activeStatus": true,
-                      "totalAssetsMillionsUsd": 94.5,
-                      "totalDepositsMillionsUsd": 94.5,
-                      "equityRatioPct": 94.5,
-                      "roaPct": 94.5,
-                      "counterpartyHealthScore": 88,
-                      "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "totalAssetsMillionsUsd": 4091315.0,
+                      "totalDepositsMillionsUsd": 2820284.0,
+                      "equityRatioPct": 8.35,
+                      "roaPct": 1.59,
+                      "counterpartyHealthScore": 85,
+                      "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
                     }
                   ]
                 }
@@ -732,25 +724,25 @@
             "type": "string",
             "title": "FDIC Certificate #",
             "description": "Official unique FDIC Certificate Number.",
-            "example": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)"
+            "example": "628"
           },
           "institutionName": {
             "type": "string",
             "title": "Institution Name",
             "description": "Official legal name of the banking institution.",
-            "example": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)"
+            "example": "JPMorgan Chase Bank, National Association"
           },
           "city": {
             "type": "string",
             "title": "Headquarters City",
             "description": "City of headquarters.",
-            "example": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)"
+            "example": "Columbus"
           },
           "state": {
             "type": "string",
             "title": "State",
             "description": "2-letter US State abbreviation.",
-            "example": "Verified State (us-fdic-bankfind-institution-financial-auditor)"
+            "example": "OH"
           },
           "activeStatus": {
             "type": "boolean",
@@ -762,65 +754,58 @@
             "type": "number",
             "title": "Total Assets ($ Millions)",
             "description": "Total consolidated assets reported in millions of USD.",
-            "example": 94.5
+            "example": 4091315.0
           },
           "totalDepositsMillionsUsd": {
             "type": "number",
             "title": "Total Deposits ($ Millions)",
             "description": "Total domestic and foreign deposits in millions of USD.",
-            "example": 94.5
+            "example": 2820284.0
           },
           "equityRatioPct": {
             "type": "number",
             "title": "Equity-to-Assets Ratio (%)",
             "description": "Tier/Book Equity capital as a percentage of total assets.",
-            "example": 94.5
+            "example": 8.35
           },
           "roaPct": {
             "type": "number",
             "title": "Return on Assets — ROA (%)",
             "description": "Net income as a percentage of average total assets.",
-            "example": 94.5
+            "example": 1.59
           },
           "counterpartyHealthScore": {
             "type": "integer",
             "title": "Counterparty Health Score (0-100)",
             "description": "Quantitative treasury solvency & capital adequacy score (0-100).",
-            "example": 88
+            "example": 85
           },
           "markdownTreasuryRiskBrief": {
             "type": "string",
             "title": "Markdown Treasury Counterparty Risk Brief",
             "description": "Executive Markdown dossier for CFOs, Corporate Treasurers, and Fintech Risk Teams.",
-            "example": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)"
+            "example": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "regulator": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "regulator",
+            "description": "regulator returned by US FDIC BankFind Institution & Solvency Risk Auditor.",
+            "example": "OCC"
           }
         },
         "example": {
-          "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-          "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-          "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-          "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+          "certNumber": "628",
+          "institutionName": "JPMorgan Chase Bank, National Association",
+          "city": "Columbus",
+          "state": "OH",
+          "regulator": "OCC",
           "activeStatus": true,
-          "totalAssetsMillionsUsd": 94.5,
-          "totalDepositsMillionsUsd": 94.5,
-          "equityRatioPct": 94.5,
-          "roaPct": 94.5,
-          "counterpartyHealthScore": 88,
-          "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "totalAssetsMillionsUsd": 4091315.0,
+          "totalDepositsMillionsUsd": 2820284.0,
+          "equityRatioPct": 8.35,
+          "roaPct": 1.59,
+          "counterpartyHealthScore": 85,
+          "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
         }
       },
       "UsFdicBankfindInstitutionFinancialAuditorResponseEnvelope": {
@@ -863,24 +848,22 @@
         "example": {
           "status": "succeeded",
           "actor": "us-fdic-bankfind-institution-financial-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "certNumber": "Verified FDIC Certificate # (us-fdic-bankfind-institution-financial-auditor)",
-              "institutionName": "Verified Institution Name (us-fdic-bankfind-institution-financial-auditor)",
-              "city": "Verified Headquarters City (us-fdic-bankfind-institution-financial-auditor)",
-              "state": "Verified State (us-fdic-bankfind-institution-financial-auditor)",
+              "certNumber": "628",
+              "institutionName": "JPMorgan Chase Bank, National Association",
+              "city": "Columbus",
+              "state": "OH",
+              "regulator": "OCC",
               "activeStatus": true,
-              "totalAssetsMillionsUsd": 94.5,
-              "totalDepositsMillionsUsd": 94.5,
-              "equityRatioPct": 94.5,
-              "roaPct": 94.5,
-              "counterpartyHealthScore": 88,
-              "markdownTreasuryRiskBrief": "Verified Markdown Treasury Counterparty Risk Brief (us-fdic-bankfind-institution-financial-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US FDIC BankFind Institution & Solvency Risk Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "totalAssetsMillionsUsd": 4091315.0,
+              "totalDepositsMillionsUsd": 2820284.0,
+              "equityRatioPct": 8.35,
+              "roaPct": 1.59,
+              "counterpartyHealthScore": 85,
+              "markdownTreasuryRiskBrief": "# US FDIC TREASURY COUNTERPARTY SOLVENCY BRIEF: JPMorgan Chase Bank, National Association (CERT #628)\n\n## 1. Institution & Regulatory Identification\n- **Institution Legal Name:** JPMorgan Chase Bank, National Association\n- **FDIC Certificate Number:** `628`\n- **Headquarters:** Columbus, OH\n- **Primary Federal Regulator:** `OCC`\n- **FDIC Insurance Status:** ACTIVE (Insured)\n- **Counterparty Health Score:** **85/100** (TIER-1 STRONG SOLVENCY / APPROVED COUNTERPARTY)\n\n## 2. Balance Sheet & Capital Adequacy Metrics\n- **Total Consolidated Assets:** $4,091,315.00 Million USD\n- **Total Deposits:** $2,820,284.00 Million USD\n- **Equity-to-Assets Capital Ratio:** 8.35%\n- **Return on Assets (ROA):** 1.59%"
             }
           ]
         }

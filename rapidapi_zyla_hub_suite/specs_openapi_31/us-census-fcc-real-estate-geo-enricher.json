@@ -234,24 +234,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-census-fcc-real-estate-geo-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "realEstateInvestmentScore": 88,
-                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "censusBlockFips": "360610031002008",
+                      "censusTractFips": "36061003100",
+                      "countyFips": "36061",
+                      "countyName": "New York County",
+                      "stateCode": "NY",
+                      "stateName": "New York",
+                      "latitude": 40.7128,
+                      "longitude": -74.006,
+                      "realEstateInvestmentScore": 100,
+                      "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+                      "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
                     }
                   ]
                 }
@@ -268,24 +265,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-census-fcc-real-estate-geo-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "realEstateInvestmentScore": 88,
-                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "censusBlockFips": "360610031002008",
+                      "censusTractFips": "36061003100",
+                      "countyFips": "36061",
+                      "countyName": "New York County",
+                      "stateCode": "NY",
+                      "stateName": "New York",
+                      "latitude": 40.7128,
+                      "longitude": -74.006,
+                      "realEstateInvestmentScore": 100,
+                      "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+                      "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
                     }
                   ]
                 }
@@ -483,24 +477,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-census-fcc-real-estate-geo-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "realEstateInvestmentScore": 88,
-                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "censusBlockFips": "360610031002008",
+                      "censusTractFips": "36061003100",
+                      "countyFips": "36061",
+                      "countyName": "New York County",
+                      "stateCode": "NY",
+                      "stateName": "New York",
+                      "latitude": 40.7128,
+                      "longitude": -74.006,
+                      "realEstateInvestmentScore": 100,
+                      "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+                      "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
                     }
                   ]
                 }
@@ -517,24 +508,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-census-fcc-real-estate-geo-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-                      "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-                      "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-                      "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-                      "latitude": 94.5,
-                      "longitude": 94.5,
-                      "realEstateInvestmentScore": 88,
-                      "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-                      "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "censusBlockFips": "360610031002008",
+                      "censusTractFips": "36061003100",
+                      "countyFips": "36061",
+                      "countyName": "New York County",
+                      "stateCode": "NY",
+                      "stateName": "New York",
+                      "latitude": 40.7128,
+                      "longitude": -74.006,
+                      "realEstateInvestmentScore": 100,
+                      "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+                      "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
                     }
                   ]
                 }
@@ -725,95 +713,81 @@
             "type": "string",
             "title": "15-Digit Census Block FIPS",
             "description": "Official 15-digit U.S. Census Block FIPS identifier.",
-            "example": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)"
+            "example": "360610031002008"
           },
           "censusTractFips": {
             "type": "string",
             "title": "11-Digit Census Tract FIPS",
             "description": "11-digit Census Tract code used for HUD, Fannie Mae, and Opportunity Zone underwriting.",
-            "example": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)"
+            "example": "36061003100"
           },
           "countyFips": {
             "type": "string",
             "title": "5-Digit County FIPS",
             "description": "Official 5-digit U.S. County FIPS code.",
-            "example": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)"
+            "example": "36061"
           },
           "countyName": {
             "type": "string",
             "title": "County Name",
             "description": "Official County or Parish name.",
-            "example": "Verified County Name (us-census-fcc-real-estate-geo-enricher)"
+            "example": "New York County"
           },
           "stateCode": {
             "type": "string",
             "title": "State USPS Code",
             "description": "Two-letter U.S. State or Territory code.",
-            "example": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)"
+            "example": "NY"
           },
           "stateName": {
             "type": "string",
             "title": "State Name",
             "description": "Full U.S. State name.",
-            "example": "Verified State Name (us-census-fcc-real-estate-geo-enricher)"
+            "example": "New York"
           },
           "latitude": {
             "type": "number",
             "title": "Latitude",
             "description": "Property latitude coordinate.",
-            "example": 94.5
+            "example": 40.7128
           },
           "longitude": {
             "type": "number",
             "title": "Longitude",
             "description": "Property longitude coordinate.",
-            "example": 94.5
+            "example": -74.006
           },
           "realEstateInvestmentScore": {
             "type": "integer",
             "title": "PropTech Investment Score (0-100)",
             "description": "Quantitative commercial corridor and metro tier score (0-100).",
-            "example": 88
+            "example": 100
           },
           "bboxSummary": {
             "type": "string",
             "title": "Census Block Bounding Box",
             "description": "Geographic bounding box coordinates [minLon, minLat, maxLon, maxLat].",
-            "example": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)"
+            "example": "[-74.007225, 40.71217, -74.004059, 40.714166]"
           },
           "markdownPropertyBrief": {
             "type": "string",
             "title": "Markdown PropTech & FIPS Dossier",
             "description": "Executive Markdown brief for real estate underwriting, insurance, and franchise siting.",
-            "example": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
           }
         },
         "example": {
-          "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-          "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-          "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-          "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-          "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-          "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-          "latitude": 94.5,
-          "longitude": 94.5,
-          "realEstateInvestmentScore": 88,
-          "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-          "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "censusBlockFips": "360610031002008",
+          "censusTractFips": "36061003100",
+          "countyFips": "36061",
+          "countyName": "New York County",
+          "stateCode": "NY",
+          "stateName": "New York",
+          "latitude": 40.7128,
+          "longitude": -74.006,
+          "realEstateInvestmentScore": 100,
+          "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+          "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
         }
       },
       "UsCensusFccRealEstateGeoEnricherResponseEnvelope": {
@@ -856,24 +830,21 @@
         "example": {
           "status": "succeeded",
           "actor": "us-census-fcc-real-estate-geo-enricher",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "censusBlockFips": "Verified 15-Digit Census Block FIPS (us-census-fcc-real-estate-geo-enricher)",
-              "censusTractFips": "Verified 11-Digit Census Tract FIPS (us-census-fcc-real-estate-geo-enricher)",
-              "countyFips": "Verified 5-Digit County FIPS (us-census-fcc-real-estate-geo-enricher)",
-              "countyName": "Verified County Name (us-census-fcc-real-estate-geo-enricher)",
-              "stateCode": "Verified State USPS Code (us-census-fcc-real-estate-geo-enricher)",
-              "stateName": "Verified State Name (us-census-fcc-real-estate-geo-enricher)",
-              "latitude": 94.5,
-              "longitude": 94.5,
-              "realEstateInvestmentScore": 88,
-              "bboxSummary": "Verified Census Block Bounding Box (us-census-fcc-real-estate-geo-enricher)",
-              "markdownPropertyBrief": "Verified Markdown PropTech & FIPS Dossier (us-census-fcc-real-estate-geo-enricher)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US Real Estate Census Tract, FIPS & PropTech Geo Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "censusBlockFips": "360610031002008",
+              "censusTractFips": "36061003100",
+              "countyFips": "36061",
+              "countyName": "New York County",
+              "stateCode": "NY",
+              "stateName": "New York",
+              "latitude": 40.7128,
+              "longitude": -74.006,
+              "realEstateInvestmentScore": 100,
+              "bboxSummary": "[-74.007225, 40.71217, -74.004059, 40.714166]",
+              "markdownPropertyBrief": "# US REAL ESTATE CENSUS TRACT & FIPS UNDERWRITING BRIEF: New York County, NY\n\n## 1. Official U.S. Census Geography Identifiers\n- **15-Digit Census Block FIPS:** `360610031002008`\n- **11-Digit Census Tract FIPS (HUD / Opportunity Zone):** `36061003100`\n- **5-Digit County FIPS:** `36061`\n- **County & State:** New York County, New York (`NY`)\n\n## 2. Geospatial & PropTech Underwriting Intelligence\n- **Coordinates (Lat, Lon):** `40.7128, -74.006`\n- **Block Bounding Box:** `[-74.007225, 40.71217, -74.004059, 40.714166]`\n- **PropTech Institutional Liquidity Score:** **100/100**"
             }
           ]
         }

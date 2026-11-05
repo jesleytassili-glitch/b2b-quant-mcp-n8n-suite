@@ -234,24 +234,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-ted-public-tenders-procurement-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-                      "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-                      "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-                      "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-                      "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-                      "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-                      "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-                      "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-                      "estimatedValueEur": 94.5,
-                      "bidOpportunityScore": 88,
-                      "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "publicationNumber": "674231-2026",
+                      "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+                      "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+                      "buyerCountryIso3": "CZE",
+                      "cpvCode": "48730000",
+                      "procedureType": "Open Procedure",
+                      "publicationDate": "2026-10-01",
+                      "deadlineDate": "2026-11-04",
+                      "estimatedValueEur": 5300000,
+                      "bidOpportunityScore": 94,
+                      "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
                     }
                   ]
                 }
@@ -268,24 +265,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-ted-public-tenders-procurement-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-                      "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-                      "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-                      "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-                      "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-                      "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-                      "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-                      "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-                      "estimatedValueEur": 94.5,
-                      "bidOpportunityScore": 88,
-                      "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "publicationNumber": "674231-2026",
+                      "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+                      "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+                      "buyerCountryIso3": "CZE",
+                      "cpvCode": "48730000",
+                      "procedureType": "Open Procedure",
+                      "publicationDate": "2026-10-01",
+                      "deadlineDate": "2026-11-04",
+                      "estimatedValueEur": 5300000,
+                      "bidOpportunityScore": 94,
+                      "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
                     }
                   ]
                 }
@@ -483,24 +477,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-ted-public-tenders-procurement-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-                      "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-                      "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-                      "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-                      "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-                      "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-                      "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-                      "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-                      "estimatedValueEur": 94.5,
-                      "bidOpportunityScore": 88,
-                      "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "publicationNumber": "674231-2026",
+                      "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+                      "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+                      "buyerCountryIso3": "CZE",
+                      "cpvCode": "48730000",
+                      "procedureType": "Open Procedure",
+                      "publicationDate": "2026-10-01",
+                      "deadlineDate": "2026-11-04",
+                      "estimatedValueEur": 5300000,
+                      "bidOpportunityScore": 94,
+                      "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
                     }
                   ]
                 }
@@ -517,24 +508,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-ted-public-tenders-procurement-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-                      "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-                      "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-                      "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-                      "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-                      "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-                      "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-                      "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-                      "estimatedValueEur": 94.5,
-                      "bidOpportunityScore": 88,
-                      "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "publicationNumber": "674231-2026",
+                      "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+                      "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+                      "buyerCountryIso3": "CZE",
+                      "cpvCode": "48730000",
+                      "procedureType": "Open Procedure",
+                      "publicationDate": "2026-10-01",
+                      "deadlineDate": "2026-11-04",
+                      "estimatedValueEur": 5300000,
+                      "bidOpportunityScore": 94,
+                      "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
                     }
                   ]
                 }
@@ -725,95 +713,81 @@
             "type": "string",
             "title": "EU TED Publication Number",
             "description": "Official Supplement to the Official Journal of the EU (OJ S) notice ID.",
-            "example": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)"
+            "example": "674231-2026"
           },
           "noticeTitle": {
             "type": "string",
             "title": "Tender / Contract Title",
             "description": "Official title of the public procurement notice.",
-            "example": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)"
+            "example": "Czechia – Security software package – SW pro SIEM"
           },
           "buyerName": {
             "type": "string",
             "title": "Contracting Authority (Buyer)",
             "description": "European ministry, agency, or public utility issuing the tender.",
-            "example": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)"
+            "example": "Středisko společných činností AV ČR, v. v. i."
           },
           "buyerCountryIso3": {
             "type": "string",
             "title": "Buyer Country (ISO-3)",
             "description": "3-letter ISO code of the contracting authority country.",
-            "example": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)"
+            "example": "CZE"
           },
           "cpvCode": {
             "type": "string",
             "title": "Primary CPV Code",
             "description": "8-digit EU Common Procurement Vocabulary classification code.",
-            "example": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)"
+            "example": "48730000"
           },
           "procedureType": {
             "type": "string",
             "title": "Procurement Procedure Type",
             "description": "Open, Restricted, Competitive Dialogue, or Framework Agreement.",
-            "example": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)"
+            "example": "Open Procedure"
           },
           "publicationDate": {
             "type": "string",
             "title": "Publication Date",
             "description": "ISO date when the notice was published on EU TED.",
-            "example": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)"
+            "example": "2026-10-01"
           },
           "deadlineDate": {
             "type": "string",
             "title": "Submission Deadline Date",
             "description": "ISO deadline for submitting bids or requests to participate.",
-            "example": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)"
+            "example": "2026-11-04"
           },
           "estimatedValueEur": {
             "type": "number",
             "title": "Estimated Contract Value (EUR)",
             "description": "Estimated or awarded contract value in Euros (EUR).",
-            "example": 94.5
+            "example": 5300000
           },
           "bidOpportunityScore": {
             "type": "integer",
             "title": "Bid Opportunity Score (0-100)",
             "description": "Quantitative B2G capture score combining contract value, open procedure openness, and CPV match (0-100).",
-            "example": 88
+            "example": 94
           },
           "markdownProcurementBrief": {
             "type": "string",
             "title": "Markdown B2G Capture & Proposal Brief",
             "description": "Executive Markdown brief for European B2G capture teams and automated RFP pipelines.",
-            "example": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
           }
         },
         "example": {
-          "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-          "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-          "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-          "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-          "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-          "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-          "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-          "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-          "estimatedValueEur": 94.5,
-          "bidOpportunityScore": 88,
-          "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "publicationNumber": "674231-2026",
+          "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+          "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+          "buyerCountryIso3": "CZE",
+          "cpvCode": "48730000",
+          "procedureType": "Open Procedure",
+          "publicationDate": "2026-10-01",
+          "deadlineDate": "2026-11-04",
+          "estimatedValueEur": 5300000,
+          "bidOpportunityScore": 94,
+          "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
         }
       },
       "EuTedPublicTendersProcurementRadarResponseEnvelope": {
@@ -856,24 +830,21 @@
         "example": {
           "status": "succeeded",
           "actor": "eu-ted-public-tenders-procurement-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "publicationNumber": "Verified EU TED Publication Number (eu-ted-public-tenders-procurement-radar)",
-              "noticeTitle": "Verified Tender / Contract Title (eu-ted-public-tenders-procurement-radar)",
-              "buyerName": "Verified Contracting Authority (Buyer) (eu-ted-public-tenders-procurement-radar)",
-              "buyerCountryIso3": "Verified Buyer Country (ISO-3) (eu-ted-public-tenders-procurement-radar)",
-              "cpvCode": "Verified Primary CPV Code (eu-ted-public-tenders-procurement-radar)",
-              "procedureType": "Verified Procurement Procedure Type (eu-ted-public-tenders-procurement-radar)",
-              "publicationDate": "Verified Publication Date (eu-ted-public-tenders-procurement-radar)",
-              "deadlineDate": "Verified Submission Deadline Date (eu-ted-public-tenders-procurement-radar)",
-              "estimatedValueEur": 94.5,
-              "bidOpportunityScore": 88,
-              "markdownProcurementBrief": "Verified Markdown B2G Capture & Proposal Brief (eu-ted-public-tenders-procurement-radar)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — EU TED Public Tenders & B2G Procurement Intelligence Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "publicationNumber": "674231-2026",
+              "noticeTitle": "Czechia – Security software package – SW pro SIEM",
+              "buyerName": "Středisko společných činností AV ČR, v. v. i.",
+              "buyerCountryIso3": "CZE",
+              "cpvCode": "48730000",
+              "procedureType": "Open Procedure",
+              "publicationDate": "2026-10-01",
+              "deadlineDate": "2026-11-04",
+              "estimatedValueEur": 5300000,
+              "bidOpportunityScore": 94,
+              "markdownProcurementBrief": "# EU TED PUBLIC PROCUREMENT BRIEF: 674231-2026\n\n## 1. Contracting Authority & Notice Identity\n- **Publication Number (OJ S):** `674231-2026`\n- **Tender Title:** **Czechia – Security software package – SW pro SIEM**\n- **Contracting Authority:** Středisko společných činností AV ČR, v. v. i. (`CZE`)\n- **Primary CPV Classification:** `48730000`\n- **Procedure Type:** `Open Procedure`\n\n## 2. Financial Valuation, Timeline & B2G Capture Score\n- **Bid Opportunity Score:** **94/100**\n- **Estimated Contract Value:** **€5,300,000.00 EUR**\n- **Publication Date:** `2026-10-01`\n- **Submission Deadline:** **`2026-11-04`**"
             }
           ]
         }

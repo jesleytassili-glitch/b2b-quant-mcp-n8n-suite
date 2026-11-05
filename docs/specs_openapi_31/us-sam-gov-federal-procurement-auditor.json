@@ -235,24 +235,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sam-gov-federal-procurement-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-                      "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-                      "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardAmountUsd": 94.5,
-                      "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-                      "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-                      "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-                      "b2gOpportunityScore": 88,
-                      "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-                      "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "awardId": "FA862118F6251",
+                      "recipientName": "LOCKHEED MARTIN CORPORATION",
+                      "awardingAgency": "Department of Defense",
+                      "awardingSubAgency": "Department of the Air Force",
+                      "awardAmountUsd": 666315748.84,
+                      "startDate": "2018-02-08",
+                      "endDate": "2027-01-31",
+                      "contractAwardType": "DELIVERY ORDER",
+                      "b2gOpportunityScore": 100,
+                      "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+                      "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
                     }
                   ]
                 }
@@ -269,24 +266,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sam-gov-federal-procurement-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-                      "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-                      "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardAmountUsd": 94.5,
-                      "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-                      "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-                      "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-                      "b2gOpportunityScore": 88,
-                      "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-                      "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "awardId": "FA862118F6251",
+                      "recipientName": "LOCKHEED MARTIN CORPORATION",
+                      "awardingAgency": "Department of Defense",
+                      "awardingSubAgency": "Department of the Air Force",
+                      "awardAmountUsd": 666315748.84,
+                      "startDate": "2018-02-08",
+                      "endDate": "2027-01-31",
+                      "contractAwardType": "DELIVERY ORDER",
+                      "b2gOpportunityScore": 100,
+                      "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+                      "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
                     }
                   ]
                 }
@@ -485,24 +479,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sam-gov-federal-procurement-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-                      "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-                      "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardAmountUsd": 94.5,
-                      "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-                      "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-                      "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-                      "b2gOpportunityScore": 88,
-                      "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-                      "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "awardId": "FA862118F6251",
+                      "recipientName": "LOCKHEED MARTIN CORPORATION",
+                      "awardingAgency": "Department of Defense",
+                      "awardingSubAgency": "Department of the Air Force",
+                      "awardAmountUsd": 666315748.84,
+                      "startDate": "2018-02-08",
+                      "endDate": "2027-01-31",
+                      "contractAwardType": "DELIVERY ORDER",
+                      "b2gOpportunityScore": 100,
+                      "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+                      "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
                     }
                   ]
                 }
@@ -519,24 +510,21 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-sam-gov-federal-procurement-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-                      "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-                      "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-                      "awardAmountUsd": 94.5,
-                      "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-                      "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-                      "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-                      "b2gOpportunityScore": 88,
-                      "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-                      "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "awardId": "FA862118F6251",
+                      "recipientName": "LOCKHEED MARTIN CORPORATION",
+                      "awardingAgency": "Department of Defense",
+                      "awardingSubAgency": "Department of the Air Force",
+                      "awardAmountUsd": 666315748.84,
+                      "startDate": "2018-02-08",
+                      "endDate": "2027-01-31",
+                      "contractAwardType": "DELIVERY ORDER",
+                      "b2gOpportunityScore": 100,
+                      "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+                      "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
                     }
                   ]
                 }
@@ -737,95 +725,81 @@
             "type": "string",
             "title": "Federal Award ID (PIID)",
             "description": "Official Procurement Instrument Identifier (PIID).",
-            "example": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)"
+            "example": "FA862118F6251"
           },
           "recipientName": {
             "type": "string",
             "title": "Contractor / Recipient Name",
             "description": "Legal entity awarded the federal contract.",
-            "example": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)"
+            "example": "LOCKHEED MARTIN CORPORATION"
           },
           "awardingAgency": {
             "type": "string",
             "title": "Awarding Agency",
             "description": "Top-tier U.S. Federal Department or Agency.",
-            "example": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)"
+            "example": "Department of Defense"
           },
           "awardingSubAgency": {
             "type": "string",
             "title": "Awarding Sub-Agency",
             "description": "Specific bureau, command, or sub-agency.",
-            "example": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)"
+            "example": "Department of the Air Force"
           },
           "awardAmountUsd": {
             "type": "number",
             "title": "Award Amount (USD)",
             "description": "Total federal contract award amount in USD.",
-            "example": 94.5
+            "example": 666315748.84
           },
           "startDate": {
             "type": "string",
             "title": "Start Date",
             "description": "Contract period of performance start date (YYYY-MM-DD).",
-            "example": "Verified Start Date (us-sam-gov-federal-procurement-auditor)"
+            "example": "2018-02-08"
           },
           "endDate": {
             "type": "string",
             "title": "End Date",
             "description": "Contract period of performance end/renewal date (YYYY-MM-DD).",
-            "example": "Verified End Date (us-sam-gov-federal-procurement-auditor)"
+            "example": "2027-01-31"
           },
           "contractAwardType": {
             "type": "string",
             "title": "Contract Award Type",
             "description": "Federal procurement instrument type (Definitive Contract, Delivery Order, BPA Call, Purchase Order).",
-            "example": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)"
+            "example": "DELIVERY ORDER"
           },
           "b2gOpportunityScore": {
             "type": "integer",
             "title": "B2G Opportunity Score (0-100)",
             "description": "Quantitative score evaluating contract value, recompete window, and B2G subcontracting potential (0-100).",
-            "example": 88
+            "example": 100
           },
           "description": {
             "type": "string",
             "title": "Contract Scope Description",
             "description": "Official summary of goods or services procured.",
-            "example": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)"
+            "example": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
           },
           "markdownProcurementBrief": {
             "type": "string",
             "title": "Markdown B2G Procurement Intelligence Brief",
             "description": "Executive Markdown dossier for GovCon capture teams, B2B sales, and AI RAG agents.",
-            "example": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
           }
         },
         "example": {
-          "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-          "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-          "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-          "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-          "awardAmountUsd": 94.5,
-          "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-          "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-          "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-          "b2gOpportunityScore": 88,
-          "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-          "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "awardId": "FA862118F6251",
+          "recipientName": "LOCKHEED MARTIN CORPORATION",
+          "awardingAgency": "Department of Defense",
+          "awardingSubAgency": "Department of the Air Force",
+          "awardAmountUsd": 666315748.84,
+          "startDate": "2018-02-08",
+          "endDate": "2027-01-31",
+          "contractAwardType": "DELIVERY ORDER",
+          "b2gOpportunityScore": 100,
+          "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+          "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
         }
       },
       "UsSamGovFederalProcurementAuditorResponseEnvelope": {
@@ -868,24 +842,21 @@
         "example": {
           "status": "succeeded",
           "actor": "us-sam-gov-federal-procurement-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "awardId": "Verified Federal Award ID (PIID) (us-sam-gov-federal-procurement-auditor)",
-              "recipientName": "Verified Contractor / Recipient Name (us-sam-gov-federal-procurement-auditor)",
-              "awardingAgency": "Verified Awarding Agency (us-sam-gov-federal-procurement-auditor)",
-              "awardingSubAgency": "Verified Awarding Sub-Agency (us-sam-gov-federal-procurement-auditor)",
-              "awardAmountUsd": 94.5,
-              "startDate": "Verified Start Date (us-sam-gov-federal-procurement-auditor)",
-              "endDate": "Verified End Date (us-sam-gov-federal-procurement-auditor)",
-              "contractAwardType": "Verified Contract Award Type (us-sam-gov-federal-procurement-auditor)",
-              "b2gOpportunityScore": 88,
-              "description": "Verified Contract Scope Description (us-sam-gov-federal-procurement-auditor)",
-              "markdownProcurementBrief": "Verified Markdown B2G Procurement Intelligence Brief (us-sam-gov-federal-procurement-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US Federal Contracts & SAM.gov Procurement B2G Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "awardId": "FA862118F6251",
+              "recipientName": "LOCKHEED MARTIN CORPORATION",
+              "awardingAgency": "Department of Defense",
+              "awardingSubAgency": "Department of the Air Force",
+              "awardAmountUsd": 666315748.84,
+              "startDate": "2018-02-08",
+              "endDate": "2027-01-31",
+              "contractAwardType": "DELIVERY ORDER",
+              "b2gOpportunityScore": 100,
+              "description": "IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO",
+              "markdownProcurementBrief": "# US FEDERAL PROCUREMENT & SAM.GOV B2G BRIEF: FA862118F6251\n\n## 1. Award & Prime Contractor Summary\n- **Federal Award ID (PIID):** `FA862118F6251`\n- **Winning Prime Contractor:** LOCKHEED MARTIN CORPORATION\n- **Contract Obligation Value:** **$666,315,748.84 USD**\n- **B2G Opportunity Score:** **100/100** (PRIME SUBCONTRACTING & RECOMPETE TARGET)\n\n## 2. Federal Agency & Performance Timeline\n- **Awarding Agency:** Department of Defense\n- **Awarding Sub-Agency / Command:** Department of the Air Force\n- **Contract Instrument Type:** DELIVERY ORDER\n- **Period of Performance:** 2018-02-08 to 2027-01-31\n\n## 3. Scope of Work & Requirement Description\n- **Official Award Description:** IGF::OT::IGF  AFSOC ACTS AWARD OF CONTRACT FOR CLS, ENGINEERING, INSTRUCTION, CYBERSECURITY, DMO"
             }
           ]
         }

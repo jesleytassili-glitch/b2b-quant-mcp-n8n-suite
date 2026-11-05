@@ -234,21 +234,18 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "kybTrustScore": 88,
-                      "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "ispbCode": "00556603",
+                      "institutionName": "BANCO BARI S.A.",
+                      "shortName": "BANCO BARI S.A.",
+                      "participationModality": "Provedor de Conta Transacional",
+                      "participationType": "Direta",
+                      "operationStartDate": "N/A",
+                      "kybTrustScore": 95,
+                      "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
                     }
                   ]
                 }
@@ -265,21 +262,18 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "kybTrustScore": 88,
-                      "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "ispbCode": "00556603",
+                      "institutionName": "BANCO BARI S.A.",
+                      "shortName": "BANCO BARI S.A.",
+                      "participationModality": "Provedor de Conta Transacional",
+                      "participationType": "Direta",
+                      "operationStartDate": "N/A",
+                      "kybTrustScore": 95,
+                      "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
                     }
                   ]
                 }
@@ -477,21 +471,18 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "kybTrustScore": 88,
-                      "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "ispbCode": "00556603",
+                      "institutionName": "BANCO BARI S.A.",
+                      "shortName": "BANCO BARI S.A.",
+                      "participationModality": "Provedor de Conta Transacional",
+                      "participationType": "Direta",
+                      "operationStartDate": "N/A",
+                      "kybTrustScore": 95,
+                      "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
                     }
                   ]
                 }
@@ -508,21 +499,18 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "kybTrustScore": 88,
-                      "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "ispbCode": "00556603",
+                      "institutionName": "BANCO BARI S.A.",
+                      "shortName": "BANCO BARI S.A.",
+                      "participationModality": "Provedor de Conta Transacional",
+                      "participationType": "Direta",
+                      "operationStartDate": "N/A",
+                      "kybTrustScore": 95,
+                      "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
                     }
                   ]
                 }
@@ -713,74 +701,60 @@
             "type": "string",
             "title": "ISPB Code (8 Digits)",
             "description": "Official Central Bank of Brazil ISPB identifier.",
-            "example": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "00556603"
           },
           "institutionName": {
             "type": "string",
             "title": "Legal Institution Name",
             "description": "Full corporate name registered in the SPI.",
-            "example": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "BANCO BARI S.A."
           },
           "shortName": {
             "type": "string",
             "title": "Short Trading Name",
             "description": "Abbreviated clearing name.",
-            "example": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "BANCO BARI S.A."
           },
           "participationModality": {
             "type": "string",
             "title": "Pix Participation Modality",
             "description": "Role in the Pix ecosystem.",
-            "example": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "Provedor de Conta Transacional"
           },
           "participationType": {
             "type": "string",
             "title": "SPI Settlement Type",
             "description": "Direct (Direta) or Indirect (Indireta) settlement.",
-            "example": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "Direta"
           },
           "operationStartDate": {
             "type": "string",
             "title": "Operation Start Date",
             "description": "Official Pix SPI activation timestamp.",
-            "example": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)"
+            "example": "N/A"
           },
           "kybTrustScore": {
             "type": "integer",
             "title": "KYB & Clearing Trust Score (0-100)",
             "description": "Quantitative AML/KYB clearing reliability score (0-100).",
-            "example": 88
+            "example": 95
           },
           "markdownKybDossier": {
             "type": "string",
             "title": "Markdown Financial KYB Dossier",
             "description": "Executive report for FinTech BaaS, treasury, and AML compliance teams.",
-            "example": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
           }
         },
         "example": {
-          "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "kybTrustScore": 88,
-          "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "ispbCode": "00556603",
+          "institutionName": "BANCO BARI S.A.",
+          "shortName": "BANCO BARI S.A.",
+          "participationModality": "Provedor de Conta Transacional",
+          "participationType": "Direta",
+          "operationStartDate": "N/A",
+          "kybTrustScore": 95,
+          "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
         }
       },
       "BrazilPixIspbCvmFinancialKybAuditorResponseEnvelope": {
@@ -823,21 +797,18 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-pix-ispb-cvm-financial-kyb-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "ispbCode": "Verified ISPB Code (8 Digits) (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "institutionName": "Verified Legal Institution Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "shortName": "Verified Short Trading Name (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "participationModality": "Verified Pix Participation Modality (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "participationType": "Verified SPI Settlement Type (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "operationStartDate": "Verified Operation Start Date (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "kybTrustScore": 88,
-              "markdownKybDossier": "Verified Markdown Financial KYB Dossier (brazil-pix-ispb-cvm-financial-kyb-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Pix ISPB, COMPE & CVM Financial Institution KYB Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "ispbCode": "00556603",
+              "institutionName": "BANCO BARI S.A.",
+              "shortName": "BANCO BARI S.A.",
+              "participationModality": "Provedor de Conta Transacional",
+              "participationType": "Direta",
+              "operationStartDate": "N/A",
+              "kybTrustScore": 95,
+              "markdownKybDossier": "# BRAZIL CENTRAL BANK PIX (ISPB) KYB & CLEARING DOSSIER: BANCO BARI S.A.\n\n## 1. Institution Clearing Identity\n- **ISPB Code (8 Digits):** `00556603`\n- **Legal Institution Name:** **BANCO BARI S.A.**\n- **Short Clearing Name:** `BANCO BARI S.A.`\n\n## 2. SPI Settlement & AML/KYB Assessment\n- **KYB & Clearing Trust Score:** **95/100**\n- **SPI Settlement Type:** **`Direta`**\n- **Participation Modality:** `Provedor de Conta Transacional`\n- **Operation Start Date:** `N/A`"
             }
           ]
         }

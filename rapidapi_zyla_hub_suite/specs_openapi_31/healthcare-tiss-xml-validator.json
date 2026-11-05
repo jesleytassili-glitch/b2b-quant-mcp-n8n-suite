@@ -235,22 +235,37 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "healthcare-tiss-xml-validator",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "loteNumero": "Verified Batch #",
-                      "registroANS": "Verified ANS Insurer ID",
-                      "tissVersion": "Verified TISS Version",
-                      "guiasCount": 1250.0,
-                      "valorTotalLoteBRL": 1250.0,
-                      "statusConformidade": "Verified Compliance Status",
-                      "originalHash": "Verified Original Hash",
-                      "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-                      "errorsFoundCount": 1250.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "loteNumero": "202610",
+                      "registroANS": "326305",
+                      "tissVersion": "4.03.00",
+                      "guiasCount": 1,
+                      "valorTotalLoteBRL": 180.0,
+                      "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+                      "originalHash": "INVALID_HASH_000",
+                      "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+                      "hashWasRepaired": true,
+                      "errorsFoundCount": 1,
+                      "glosaRiskAlerts": [
+                        "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "warnings": [
+                        "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "proceduresAudited": [
+                        {
+                          "guia": "G-001",
+                          "codigoTUSS": "10101012",
+                          "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                          "valorBRL": 180.0,
+                          "valido8Digitos": true
+                        }
+                      ],
+                      "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+                      "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
                     }
                   ]
                 }
@@ -267,22 +282,37 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "healthcare-tiss-xml-validator",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "loteNumero": "Verified Batch #",
-                      "registroANS": "Verified ANS Insurer ID",
-                      "tissVersion": "Verified TISS Version",
-                      "guiasCount": 1250.0,
-                      "valorTotalLoteBRL": 1250.0,
-                      "statusConformidade": "Verified Compliance Status",
-                      "originalHash": "Verified Original Hash",
-                      "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-                      "errorsFoundCount": 1250.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "loteNumero": "202610",
+                      "registroANS": "326305",
+                      "tissVersion": "4.03.00",
+                      "guiasCount": 1,
+                      "valorTotalLoteBRL": 180.0,
+                      "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+                      "originalHash": "INVALID_HASH_000",
+                      "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+                      "hashWasRepaired": true,
+                      "errorsFoundCount": 1,
+                      "glosaRiskAlerts": [
+                        "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "warnings": [
+                        "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "proceduresAudited": [
+                        {
+                          "guia": "G-001",
+                          "codigoTUSS": "10101012",
+                          "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                          "valorBRL": 180.0,
+                          "valido8Digitos": true
+                        }
+                      ],
+                      "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+                      "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
                     }
                   ]
                 }
@@ -481,22 +511,37 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "healthcare-tiss-xml-validator",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "loteNumero": "Verified Batch #",
-                      "registroANS": "Verified ANS Insurer ID",
-                      "tissVersion": "Verified TISS Version",
-                      "guiasCount": 1250.0,
-                      "valorTotalLoteBRL": 1250.0,
-                      "statusConformidade": "Verified Compliance Status",
-                      "originalHash": "Verified Original Hash",
-                      "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-                      "errorsFoundCount": 1250.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "loteNumero": "202610",
+                      "registroANS": "326305",
+                      "tissVersion": "4.03.00",
+                      "guiasCount": 1,
+                      "valorTotalLoteBRL": 180.0,
+                      "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+                      "originalHash": "INVALID_HASH_000",
+                      "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+                      "hashWasRepaired": true,
+                      "errorsFoundCount": 1,
+                      "glosaRiskAlerts": [
+                        "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "warnings": [
+                        "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "proceduresAudited": [
+                        {
+                          "guia": "G-001",
+                          "codigoTUSS": "10101012",
+                          "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                          "valorBRL": 180.0,
+                          "valido8Digitos": true
+                        }
+                      ],
+                      "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+                      "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
                     }
                   ]
                 }
@@ -513,22 +558,37 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "healthcare-tiss-xml-validator",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "loteNumero": "Verified Batch #",
-                      "registroANS": "Verified ANS Insurer ID",
-                      "tissVersion": "Verified TISS Version",
-                      "guiasCount": 1250.0,
-                      "valorTotalLoteBRL": 1250.0,
-                      "statusConformidade": "Verified Compliance Status",
-                      "originalHash": "Verified Original Hash",
-                      "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-                      "errorsFoundCount": 1250.0,
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "loteNumero": "202610",
+                      "registroANS": "326305",
+                      "tissVersion": "4.03.00",
+                      "guiasCount": 1,
+                      "valorTotalLoteBRL": 180.0,
+                      "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+                      "originalHash": "INVALID_HASH_000",
+                      "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+                      "hashWasRepaired": true,
+                      "errorsFoundCount": 1,
+                      "glosaRiskAlerts": [
+                        "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "warnings": [
+                        "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+                      ],
+                      "proceduresAudited": [
+                        {
+                          "guia": "G-001",
+                          "codigoTUSS": "10101012",
+                          "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                          "valorBRL": 180.0,
+                          "valido8Digitos": true
+                        }
+                      ],
+                      "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+                      "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
                     }
                   ]
                 }
@@ -715,81 +775,143 @@
             "type": "string",
             "title": "Batch #",
             "description": "Batch # extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified Batch #"
+            "example": "202610"
           },
           "registroANS": {
             "type": "string",
             "title": "ANS Insurer ID",
             "description": "ANS Insurer ID extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified ANS Insurer ID"
+            "example": "326305"
           },
           "tissVersion": {
             "type": "string",
             "title": "TISS Version",
             "description": "TISS Version extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified TISS Version"
+            "example": "4.03.00"
           },
           "guiasCount": {
-            "type": "number",
+            "type": "integer",
             "title": "Guides Count",
             "description": "Guides Count extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": 1250.0
+            "example": 1
           },
           "valorTotalLoteBRL": {
             "type": "number",
             "title": "Batch Total (BRL)",
             "description": "Batch Total (BRL) extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": 1250.0
+            "example": 180.0
           },
           "statusConformidade": {
             "type": "string",
             "title": "Compliance Status",
             "description": "Compliance Status extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified Compliance Status"
+            "example": "CORRIGIDO_PRONTO_ENVIO"
           },
           "originalHash": {
             "type": "string",
             "title": "Original Hash",
             "description": "Original Hash extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified Original Hash"
+            "example": "INVALID_HASH_000"
           },
           "calculatedAnsMd5Hash": {
             "type": "string",
             "title": "Valid ANS MD5 Hash",
             "description": "Valid ANS MD5 Hash extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": "Verified Valid ANS MD5 Hash"
+            "example": "9aaabf2776dab3e0da33d63354db4298"
           },
           "errorsFoundCount": {
-            "type": "number",
+            "type": "integer",
             "title": "Glosa Risks Found",
             "description": "Glosa Risks Found extracted and validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
-            "example": 1250.0
+            "example": 1
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
+          "hashWasRepaired": {
+            "type": "boolean",
+            "title": "hashWasRepaired",
+            "description": "hashWasRepaired validated by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": true
           },
-          "ragMarkdownBrief": {
+          "glosaRiskAlerts": {
+            "type": "array",
+            "title": "glosaRiskAlerts",
+            "description": "glosaRiskAlerts array returned by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "title": "warnings",
+            "description": "warnings array returned by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+            ]
+          },
+          "proceduresAudited": {
+            "type": "array",
+            "title": "proceduresAudited",
+            "description": "proceduresAudited array returned by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "example": [
+              {
+                "guia": "G-001",
+                "codigoTUSS": "10101012",
+                "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                "valorBRL": 180.0,
+                "valido8Digitos": true
+              }
+            ]
+          },
+          "lgpdCompliance": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "lgpdCompliance",
+            "description": "lgpdCompliance returned by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)"
+          },
+          "repairedXml": {
+            "type": "string",
+            "title": "repairedXml",
+            "description": "repairedXml returned by Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer.",
+            "example": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
           }
         },
         "example": {
-          "loteNumero": "Verified Batch #",
-          "registroANS": "Verified ANS Insurer ID",
-          "tissVersion": "Verified TISS Version",
-          "guiasCount": 1250.0,
-          "valorTotalLoteBRL": 1250.0,
-          "statusConformidade": "Verified Compliance Status",
-          "originalHash": "Verified Original Hash",
-          "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-          "errorsFoundCount": 1250.0,
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "loteNumero": "202610",
+          "registroANS": "326305",
+          "tissVersion": "4.03.00",
+          "guiasCount": 1,
+          "valorTotalLoteBRL": 180.0,
+          "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+          "originalHash": "INVALID_HASH_000",
+          "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+          "hashWasRepaired": true,
+          "errorsFoundCount": 1,
+          "glosaRiskAlerts": [
+            "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+          ],
+          "warnings": [
+            "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+          ],
+          "proceduresAudited": [
+            {
+              "guia": "G-001",
+              "codigoTUSS": "10101012",
+              "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+              "valorBRL": 180.0,
+              "valido8Digitos": true
+            }
+          ],
+          "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+          "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
         }
       },
       "HealthcareTissXmlValidatorResponseEnvelope": {
@@ -832,22 +954,37 @@
         "example": {
           "status": "succeeded",
           "actor": "healthcare-tiss-xml-validator",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "loteNumero": "Verified Batch #",
-              "registroANS": "Verified ANS Insurer ID",
-              "tissVersion": "Verified TISS Version",
-              "guiasCount": 1250.0,
-              "valorTotalLoteBRL": 1250.0,
-              "statusConformidade": "Verified Compliance Status",
-              "originalHash": "Verified Original Hash",
-              "calculatedAnsMd5Hash": "Verified Valid ANS MD5 Hash",
-              "errorsFoundCount": 1250.0,
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Healthcare TISS 4.03.00 XML Validator & Hash Fixer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "loteNumero": "202610",
+              "registroANS": "326305",
+              "tissVersion": "4.03.00",
+              "guiasCount": 1,
+              "valorTotalLoteBRL": 180.0,
+              "statusConformidade": "CORRIGIDO_PRONTO_ENVIO",
+              "originalHash": "INVALID_HASH_000",
+              "calculatedAnsMd5Hash": "9aaabf2776dab3e0da33d63354db4298",
+              "hashWasRepaired": true,
+              "errorsFoundCount": 1,
+              "glosaRiskAlerts": [
+                "REJEIÇÃO DE LOTE (Hash MD5 Inválido): O XML contém <hash>INVALID_HASH_000</hash>, mas o cálculo oficial ANS dos dados é '9aaabf2776dab3e0da33d63354db4298'."
+              ],
+              "warnings": [
+                "Auto-Fix Aplicado: Tag <hash> atualizada automaticamente para '9aaabf2776dab3e0da33d63354db4298'."
+              ],
+              "proceduresAudited": [
+                {
+                  "guia": "G-001",
+                  "codigoTUSS": "10101012",
+                  "descricaoReferencia": "Consulta em consultório (no horário normal ou preestabelecido)",
+                  "valorBRL": 180.0,
+                  "valido8Digitos": true
+                }
+              ],
+              "lgpdCompliance": "STATELESS_RAM_ONLY (Zero Patient PII Persisted)",
+              "repairedXml": "<ans:mensagemTISS xmlns:ans=\"http://www.ans.gov.br/padroes/tiss/schemas\"><ans:cabecalho><ans:identificacaoTransacao><ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao><ans:sequencialTransacao>1042</ans:sequencialTransacao></ans:identificacaoTransacao><ans:destino><ans:registroANS>326305</ans:registroANS></ans:destino><ans:Padrao>4.03.00</ans:Padrao></ans:cabecalho><ans:prestadorParaOperadora><ans:loteGuias><ans:numeroLote>202610</ans:numeroLote><ans:guiasTISS><ans:guiaConsulta><ans:numeroGuiaPrestador>G-001</ans:numeroGuiaPrestador><ans:dadosBeneficiario><ans:numeroCarteira>009988776655</ans:numeroCarteira></ans:dadosBeneficiario><ans:dadosAtendimento><ans:procedimento><ans:codigoTabela>22</ans:codigoTabela><ans:codigoProcedimento>10101012</ans:codigoProcedimento><ans:valorProcedimento>180.00</ans:valorProcedimento></ans:procedimento></ans:dadosAtendimento></ans:guiaConsulta></ans..."
             }
           ]
         }

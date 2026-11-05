@@ -234,22 +234,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-bcb-ptax-sgs-financial-contract-indexer",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "latestRateValue": 94.5,
-                      "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "contractBaseValueBrl": 94.5,
-                      "adjustedContractValueBrl": 94.5,
-                      "financialImpactScore": 88,
-                      "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "indicatorCode": "432",
+                      "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+                      "referenceDate": "04/11/2026",
+                      "latestRateValue": 13.75,
+                      "unitType": "% a.a.",
+                      "contractBaseValueBrl": 10000,
+                      "adjustedContractValueBrl": 11375,
+                      "financialImpactScore": 92,
+                      "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
                     }
                   ]
                 }
@@ -266,22 +263,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-bcb-ptax-sgs-financial-contract-indexer",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "latestRateValue": 94.5,
-                      "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "contractBaseValueBrl": 94.5,
-                      "adjustedContractValueBrl": 94.5,
-                      "financialImpactScore": 88,
-                      "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "indicatorCode": "432",
+                      "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+                      "referenceDate": "04/11/2026",
+                      "latestRateValue": 13.75,
+                      "unitType": "% a.a.",
+                      "contractBaseValueBrl": 10000,
+                      "adjustedContractValueBrl": 11375,
+                      "financialImpactScore": 92,
+                      "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
                     }
                   ]
                 }
@@ -479,22 +473,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-bcb-ptax-sgs-financial-contract-indexer",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "latestRateValue": 94.5,
-                      "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "contractBaseValueBrl": 94.5,
-                      "adjustedContractValueBrl": 94.5,
-                      "financialImpactScore": 88,
-                      "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "indicatorCode": "432",
+                      "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+                      "referenceDate": "04/11/2026",
+                      "latestRateValue": 13.75,
+                      "unitType": "% a.a.",
+                      "contractBaseValueBrl": 10000,
+                      "adjustedContractValueBrl": 11375,
+                      "financialImpactScore": 92,
+                      "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
                     }
                   ]
                 }
@@ -511,22 +502,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-bcb-ptax-sgs-financial-contract-indexer",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "latestRateValue": 94.5,
-                      "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "contractBaseValueBrl": 94.5,
-                      "adjustedContractValueBrl": 94.5,
-                      "financialImpactScore": 88,
-                      "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "indicatorCode": "432",
+                      "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+                      "referenceDate": "04/11/2026",
+                      "latestRateValue": 13.75,
+                      "unitType": "% a.a.",
+                      "contractBaseValueBrl": 10000,
+                      "adjustedContractValueBrl": 11375,
+                      "financialImpactScore": 92,
+                      "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
                     }
                   ]
                 }
@@ -717,81 +705,67 @@
             "type": "string",
             "title": "Indicator Code",
             "description": "BCB SGS series code.",
-            "example": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)"
+            "example": "432"
           },
           "indicatorName": {
             "type": "string",
             "title": "Indicator Name",
             "description": "Official macroeconomic indicator name.",
-            "example": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)"
+            "example": "Taxa Selic Meta (COPOM BCB)"
           },
           "referenceDate": {
             "type": "string",
             "title": "Reference Date",
             "description": "Latest official publication date (DD/MM/YYYY).",
-            "example": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)"
+            "example": "04/11/2026"
           },
           "latestRateValue": {
             "type": "number",
             "title": "Latest Rate / Value",
             "description": "Latest official value or rate published by BCB.",
-            "example": 94.5
+            "example": 13.75
           },
           "unitType": {
             "type": "string",
             "title": "Unit / Periodicity",
             "description": "Rate unit (% p.a., % p.m., BRL/USD).",
-            "example": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)"
+            "example": "% a.a."
           },
           "contractBaseValueBrl": {
             "type": "number",
             "title": "Base Contract Value (BRL)",
             "description": "Input contract principal in BRL.",
-            "example": 94.5
+            "example": 10000
           },
           "adjustedContractValueBrl": {
             "type": "number",
             "title": "Adjusted Contract Value (BRL)",
             "description": "Simulated adjusted value in BRL.",
-            "example": 94.5
+            "example": 11375
           },
           "financialImpactScore": {
             "type": "integer",
             "title": "Financial Impact Score (0-100)",
             "description": "Quantitative treasury materiality score (0-100).",
-            "example": 88
+            "example": 92
           },
           "markdownTreasuryBrief": {
             "type": "string",
             "title": "Markdown Treasury & ERP Brief",
             "description": "Executive report for CFOs, ERPs, and legal contract automation.",
-            "example": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
           }
         },
         "example": {
-          "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-          "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-          "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-          "latestRateValue": 94.5,
-          "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-          "contractBaseValueBrl": 94.5,
-          "adjustedContractValueBrl": 94.5,
-          "financialImpactScore": 88,
-          "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "indicatorCode": "432",
+          "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+          "referenceDate": "04/11/2026",
+          "latestRateValue": 13.75,
+          "unitType": "% a.a.",
+          "contractBaseValueBrl": 10000,
+          "adjustedContractValueBrl": 11375,
+          "financialImpactScore": 92,
+          "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
         }
       },
       "BrazilBcbPtaxSgsFinancialContractIndexerResponseEnvelope": {
@@ -834,22 +808,19 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-bcb-ptax-sgs-financial-contract-indexer",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "indicatorCode": "Verified Indicator Code (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-              "indicatorName": "Verified Indicator Name (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-              "referenceDate": "Verified Reference Date (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-              "latestRateValue": 94.5,
-              "unitType": "Verified Unit / Periodicity (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-              "contractBaseValueBrl": 94.5,
-              "adjustedContractValueBrl": 94.5,
-              "financialImpactScore": 88,
-              "markdownTreasuryBrief": "Verified Markdown Treasury & ERP Brief (brazil-bcb-ptax-sgs-financial-contract-indexer)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil Central Bank PTAX, Selic, CDI & IPCA Contract Indexer\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "indicatorCode": "432",
+              "indicatorName": "Taxa Selic Meta (COPOM BCB)",
+              "referenceDate": "04/11/2026",
+              "latestRateValue": 13.75,
+              "unitType": "% a.a.",
+              "contractBaseValueBrl": 10000,
+              "adjustedContractValueBrl": 11375,
+              "financialImpactScore": 92,
+              "markdownTreasuryBrief": "# BRAZIL CENTRAL BANK (BCB SGS) CONTRACT & TREASURY BRIEF: Taxa Selic Meta (COPOM BCB)\n\n## 1. Official Macroeconomic Series\n- **SGS Series Code:** `432`\n- **Indicator Name:** **Taxa Selic Meta (COPOM BCB)**\n- **Reference Date:** `04/11/2026`\n- **Latest Official Rate:** **`13.75 % a.a.`**\n\n## 2. Automated B2B Contract / Invoice Simulation\n- **Base Principal Value (BRL):** `R$ 10,000.00`\n- **Adjusted Value / FX Conversion:** **`R$ 11,375.00`**\n- **Financial Impact Score:** **92/100**"
             }
           ]
         }

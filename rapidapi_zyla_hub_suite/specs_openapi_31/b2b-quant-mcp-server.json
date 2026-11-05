@@ -246,27 +246,46 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-quant-mcp-server",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-                      "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-                      "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-                      "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-                      "pricePerEventUsd": 94.5,
-                      "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-                      "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-                      "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-                      "readinessScore": 88,
+                      "operationMode": "invoke_tool",
+                      "toolName": "us_sec_edgar_filings_insider_radar",
+                      "domainCategory": "FINTECH_SEC_TAX",
+                      "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+                      "readinessScore": 99,
+                      "dispatchedItemCount": 1,
                       "mcpJsonRpcEnvelope": {
-                        "source": "official_registry",
-                        "verified": true
+                        "jsonrpc": "2.0",
+                        "id": "tools-call-us-sec-edgar-filings-insider-radar",
+                        "method": "tools/call",
+                        "result": {
+                          "protocolVersion": "2025-03-26",
+                          "toolName": "us_sec_edgar_filings_insider_radar",
+                          "isError": false,
+                          "structuredContent": [
+                            {
+                              "accessionNumber": "0000320193-26-000026",
+                              "cik": "0000320193",
+                              "ticker": "AAPL",
+                              "companyName": "Apple Inc.",
+                              "formType": "10-K",
+                              "filingDate": "2026-11-03",
+                              "reportDate": "2026-09-26",
+                              "governanceAlertScore": 84,
+                              "itemsSummary": "10-K",
+                              "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                              "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                            }
+                          ]
+                        }
                       },
-                      "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+                      "actorSlug": "REG-B2B-QUANT-MC-2026",
+                      "pricePerEventUsd": 94.5,
+                      "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+                      "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
                     }
                   ]
                 }
@@ -283,27 +302,46 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-quant-mcp-server",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-                      "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-                      "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-                      "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-                      "pricePerEventUsd": 94.5,
-                      "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-                      "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-                      "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-                      "readinessScore": 88,
+                      "operationMode": "invoke_tool",
+                      "toolName": "us_sec_edgar_filings_insider_radar",
+                      "domainCategory": "FINTECH_SEC_TAX",
+                      "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+                      "readinessScore": 99,
+                      "dispatchedItemCount": 1,
                       "mcpJsonRpcEnvelope": {
-                        "source": "official_registry",
-                        "verified": true
+                        "jsonrpc": "2.0",
+                        "id": "tools-call-us-sec-edgar-filings-insider-radar",
+                        "method": "tools/call",
+                        "result": {
+                          "protocolVersion": "2025-03-26",
+                          "toolName": "us_sec_edgar_filings_insider_radar",
+                          "isError": false,
+                          "structuredContent": [
+                            {
+                              "accessionNumber": "0000320193-26-000026",
+                              "cik": "0000320193",
+                              "ticker": "AAPL",
+                              "companyName": "Apple Inc.",
+                              "formType": "10-K",
+                              "filingDate": "2026-11-03",
+                              "reportDate": "2026-09-26",
+                              "governanceAlertScore": 84,
+                              "itemsSummary": "10-K",
+                              "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                              "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                            }
+                          ]
+                        }
                       },
-                      "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+                      "actorSlug": "REG-B2B-QUANT-MC-2026",
+                      "pricePerEventUsd": 94.5,
+                      "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+                      "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
                     }
                   ]
                 }
@@ -513,27 +551,46 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-quant-mcp-server",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-                      "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-                      "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-                      "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-                      "pricePerEventUsd": 94.5,
-                      "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-                      "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-                      "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-                      "readinessScore": 88,
+                      "operationMode": "invoke_tool",
+                      "toolName": "us_sec_edgar_filings_insider_radar",
+                      "domainCategory": "FINTECH_SEC_TAX",
+                      "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+                      "readinessScore": 99,
+                      "dispatchedItemCount": 1,
                       "mcpJsonRpcEnvelope": {
-                        "source": "official_registry",
-                        "verified": true
+                        "jsonrpc": "2.0",
+                        "id": "tools-call-us-sec-edgar-filings-insider-radar",
+                        "method": "tools/call",
+                        "result": {
+                          "protocolVersion": "2025-03-26",
+                          "toolName": "us_sec_edgar_filings_insider_radar",
+                          "isError": false,
+                          "structuredContent": [
+                            {
+                              "accessionNumber": "0000320193-26-000026",
+                              "cik": "0000320193",
+                              "ticker": "AAPL",
+                              "companyName": "Apple Inc.",
+                              "formType": "10-K",
+                              "filingDate": "2026-11-03",
+                              "reportDate": "2026-09-26",
+                              "governanceAlertScore": 84,
+                              "itemsSummary": "10-K",
+                              "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                              "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                            }
+                          ]
+                        }
                       },
-                      "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+                      "actorSlug": "REG-B2B-QUANT-MC-2026",
+                      "pricePerEventUsd": 94.5,
+                      "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+                      "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
                     }
                   ]
                 }
@@ -550,27 +607,46 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "b2b-quant-mcp-server",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-                      "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-                      "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-                      "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-                      "pricePerEventUsd": 94.5,
-                      "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-                      "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-                      "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-                      "readinessScore": 88,
+                      "operationMode": "invoke_tool",
+                      "toolName": "us_sec_edgar_filings_insider_radar",
+                      "domainCategory": "FINTECH_SEC_TAX",
+                      "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+                      "readinessScore": 99,
+                      "dispatchedItemCount": 1,
                       "mcpJsonRpcEnvelope": {
-                        "source": "official_registry",
-                        "verified": true
+                        "jsonrpc": "2.0",
+                        "id": "tools-call-us-sec-edgar-filings-insider-radar",
+                        "method": "tools/call",
+                        "result": {
+                          "protocolVersion": "2025-03-26",
+                          "toolName": "us_sec_edgar_filings_insider_radar",
+                          "isError": false,
+                          "structuredContent": [
+                            {
+                              "accessionNumber": "0000320193-26-000026",
+                              "cik": "0000320193",
+                              "ticker": "AAPL",
+                              "companyName": "Apple Inc.",
+                              "formType": "10-K",
+                              "filingDate": "2026-11-03",
+                              "reportDate": "2026-09-26",
+                              "governanceAlertScore": 84,
+                              "itemsSummary": "10-K",
+                              "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                              "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                            }
+                          ]
+                        }
                       },
-                      "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+                      "actorSlug": "REG-B2B-QUANT-MC-2026",
+                      "pricePerEventUsd": 94.5,
+                      "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+                      "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
                     }
                   ]
                 }
@@ -828,25 +904,25 @@
             "type": "string",
             "title": "MCP Operation Mode",
             "description": "Executed router mode: list_catalog, invoke_tool, or export_mcp_config.",
-            "example": "Verified MCP Operation Mode (b2b-quant-mcp-server)"
+            "example": "invoke_tool"
           },
           "toolName": {
             "type": "string",
             "title": "MCP Tool Name",
             "description": "Canonical MCP tool identifier (underscore format).",
-            "example": "Verified MCP Tool Name (b2b-quant-mcp-server)"
+            "example": "us_sec_edgar_filings_insider_radar"
           },
           "actorSlug": {
             "type": "string",
             "title": "Apify Actor Slug",
             "description": "Full @b2b-quant-apis Actor slug on Apify Store.",
-            "example": "Verified Apify Actor Slug (b2b-quant-mcp-server)"
+            "example": "REG-B2B-QUANT-MC-2026"
           },
           "domainCategory": {
             "type": "string",
             "title": "B2B Domain Category",
             "description": "Classified vertical category (FINANCE_KYB, GOVCON_PROCUREMENT, SECOPS_CYBER, etc.).",
-            "example": "Verified B2B Domain Category (b2b-quant-mcp-server)"
+            "example": "FINTECH_SEC_TAX"
           },
           "pricePerEventUsd": {
             "type": "number",
@@ -858,25 +934,25 @@
             "type": "string",
             "title": "Streamable HTTP MCP Endpoint",
             "description": "Direct Hosted Apify MCP Server URL for this tool.",
-            "example": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)"
+            "example": "REG-B2B-QUANT-MC-2026"
           },
           "x402SolanaEndpoint": {
             "type": "string",
             "title": "x402 Solana USDC Endpoint",
             "description": "Stateless x402 endpoint settling in USDC on Solana Mainnet.",
-            "example": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)"
+            "example": "REG-B2B-QUANT-MC-2026"
           },
           "executionStatus": {
             "type": "string",
             "title": "Execution / Validation Status",
             "description": "READY_IN_CATALOG, LIVE_DISPATCH_SUCCEEDED, DETERMINISTIC_VALIDATED_ENVELOPE, or CONFIG_EXPORTED.",
-            "example": "Verified Execution / Validation Status (b2b-quant-mcp-server)"
+            "example": "LIVE_DISPATCH_SUCCEEDED"
           },
           "readinessScore": {
             "type": "integer",
             "title": "M2M & Agent Readiness Score (0-100)",
             "description": "Quantitative schema, MCP, and x402 readiness score (0-100).",
-            "example": 88
+            "example": 99
           },
           "mcpJsonRpcEnvelope": {
             "type": "object",
@@ -884,46 +960,81 @@
             "description": "Complete JSON-RPC 2.0 tools/list, tools/call, or configuration payload.",
             "additionalProperties": true,
             "example": {
-              "source": "official_registry",
-              "verified": true
+              "jsonrpc": "2.0",
+              "id": "tools-call-us-sec-edgar-filings-insider-radar",
+              "method": "tools/call",
+              "result": {
+                "protocolVersion": "2025-03-26",
+                "toolName": "us_sec_edgar_filings_insider_radar",
+                "isError": false,
+                "structuredContent": [
+                  {
+                    "accessionNumber": "0000320193-26-000026",
+                    "cik": "0000320193",
+                    "ticker": "AAPL",
+                    "companyName": "Apple Inc.",
+                    "formType": "10-K",
+                    "filingDate": "2026-11-03",
+                    "reportDate": "2026-09-26",
+                    "governanceAlertScore": 84,
+                    "itemsSummary": "10-K",
+                    "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                    "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                  }
+                ]
+              }
             }
           },
           "markdownMcpBrief": {
             "type": "string",
             "title": "Markdown MCP & x402 Integration Brief",
             "description": "Executive Markdown documentation and 1-Click setup snippet for AI Agents.",
-            "example": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)"
+            "example": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "dispatchedItemCount": {
+            "type": "integer",
+            "title": "dispatchedItemCount",
+            "description": "dispatchedItemCount validated by B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools).",
+            "example": 1
           }
         },
         "example": {
-          "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-          "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-          "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-          "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-          "pricePerEventUsd": 94.5,
-          "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-          "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-          "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-          "readinessScore": 88,
+          "operationMode": "invoke_tool",
+          "toolName": "us_sec_edgar_filings_insider_radar",
+          "domainCategory": "FINTECH_SEC_TAX",
+          "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+          "readinessScore": 99,
+          "dispatchedItemCount": 1,
           "mcpJsonRpcEnvelope": {
-            "source": "official_registry",
-            "verified": true
+            "jsonrpc": "2.0",
+            "id": "tools-call-us-sec-edgar-filings-insider-radar",
+            "method": "tools/call",
+            "result": {
+              "protocolVersion": "2025-03-26",
+              "toolName": "us_sec_edgar_filings_insider_radar",
+              "isError": false,
+              "structuredContent": [
+                {
+                  "accessionNumber": "0000320193-26-000026",
+                  "cik": "0000320193",
+                  "ticker": "AAPL",
+                  "companyName": "Apple Inc.",
+                  "formType": "10-K",
+                  "filingDate": "2026-11-03",
+                  "reportDate": "2026-09-26",
+                  "governanceAlertScore": 84,
+                  "itemsSummary": "10-K",
+                  "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                  "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                }
+              ]
+            }
           },
-          "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+          "actorSlug": "REG-B2B-QUANT-MC-2026",
+          "pricePerEventUsd": 94.5,
+          "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+          "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
         }
       },
       "B2bQuantMcpServerResponseEnvelope": {
@@ -966,27 +1077,46 @@
         "example": {
           "status": "succeeded",
           "actor": "b2b-quant-mcp-server",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "operationMode": "Verified MCP Operation Mode (b2b-quant-mcp-server)",
-              "toolName": "Verified MCP Tool Name (b2b-quant-mcp-server)",
-              "actorSlug": "Verified Apify Actor Slug (b2b-quant-mcp-server)",
-              "domainCategory": "Verified B2B Domain Category (b2b-quant-mcp-server)",
-              "pricePerEventUsd": 94.5,
-              "mcpStreamableHttpUrl": "Verified Streamable HTTP MCP Endpoint (b2b-quant-mcp-server)",
-              "x402SolanaEndpoint": "Verified x402 Solana USDC Endpoint (b2b-quant-mcp-server)",
-              "executionStatus": "Verified Execution / Validation Status (b2b-quant-mcp-server)",
-              "readinessScore": 88,
+              "operationMode": "invoke_tool",
+              "toolName": "us_sec_edgar_filings_insider_radar",
+              "domainCategory": "FINTECH_SEC_TAX",
+              "executionStatus": "LIVE_DISPATCH_SUCCEEDED",
+              "readinessScore": 99,
+              "dispatchedItemCount": 1,
               "mcpJsonRpcEnvelope": {
-                "source": "official_registry",
-                "verified": true
+                "jsonrpc": "2.0",
+                "id": "tools-call-us-sec-edgar-filings-insider-radar",
+                "method": "tools/call",
+                "result": {
+                  "protocolVersion": "2025-03-26",
+                  "toolName": "us_sec_edgar_filings_insider_radar",
+                  "isError": false,
+                  "structuredContent": [
+                    {
+                      "accessionNumber": "0000320193-26-000026",
+                      "cik": "0000320193",
+                      "ticker": "AAPL",
+                      "companyName": "Apple Inc.",
+                      "formType": "10-K",
+                      "filingDate": "2026-11-03",
+                      "reportDate": "2026-09-26",
+                      "governanceAlertScore": 84,
+                      "itemsSummary": "10-K",
+                      "edgarDocumentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+                      "markdownGovernanceBrief": "# SEC EDGAR GOVERNANCE & COMPLIANCE BRIEF: AAPL (10-K)\n\n## 1. Registrant & Filing Identification\n- **Company Name:** Apple Inc.\n- **Ticker / CIK:** `AAPL` / `0000320193`\n- **Accession Number:** `0000320193-26-000026`\n- **Form Type:** `10-K` (STANDARD STATUTORY DISCLOSURE)\n- **Governance Alert Score:** **84/100**\n\n## 2. Regulatory Timeline & Disclosure Scope\n- **SEC Filing Date:** 2026-11-03\n- **Period of Report:** 2026-09-26\n- **Material Items / Primary Description:** 10-K\n- **Official SEC EDGAR Archive URL:** https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+                    }
+                  ]
+                }
               },
-              "markdownMcpBrief": "Verified Markdown MCP & x402 Integration Brief (b2b-quant-mcp-server)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — B2B Regulatory, KYB, FinTech & SecOps MCP Server (30 Tools)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "markdownMcpBrief": "# B2B REGULATORY & COMPLIANCE MCP ROUTER BRIEF: `us_sec_edgar_filings_insider_radar`\n\n- **Operation Mode:** `invoke_tool`\n- **Dispatched Domain Engine:** `us_sec_edgar_filings_insider_radar` (`FINTECH_SEC_TAX`)\n- **Execution Status:** `LIVE_DISPATCH_SUCCEEDED` (1 structured record returned)\n- **Readiness Score:** 99/100",
+              "actorSlug": "REG-B2B-QUANT-MC-2026",
+              "pricePerEventUsd": 94.5,
+              "mcpStreamableHttpUrl": "REG-B2B-QUANT-MC-2026",
+              "x402SolanaEndpoint": "REG-B2B-QUANT-MC-2026"
             }
           ]
         }

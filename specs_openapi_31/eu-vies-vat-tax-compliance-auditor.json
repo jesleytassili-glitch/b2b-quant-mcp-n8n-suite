@@ -234,24 +234,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-vies-vat-tax-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-                      "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-                      "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "fullVatNumber": "IE6388047V",
+                      "countryCode": "IE",
+                      "vatNumber": "6388047V",
+                      "requesterCountryCode": "DE",
                       "syntaxValid": true,
                       "viesActive": true,
-                      "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-                      "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-                      "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-                      "complianceRiskScore": 88,
-                      "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-                      "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "traderName": "GOOGLE IRELAND LIMITED",
+                      "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+                      "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+                      "complianceRiskScore": 5,
+                      "verificationSource": "EU_VIES_LIVE_API",
+                      "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
                     }
                   ]
                 }
@@ -268,24 +266,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-vies-vat-tax-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-                      "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-                      "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "fullVatNumber": "IE6388047V",
+                      "countryCode": "IE",
+                      "vatNumber": "6388047V",
+                      "requesterCountryCode": "DE",
                       "syntaxValid": true,
                       "viesActive": true,
-                      "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-                      "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-                      "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-                      "complianceRiskScore": 88,
-                      "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-                      "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "traderName": "GOOGLE IRELAND LIMITED",
+                      "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+                      "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+                      "complianceRiskScore": 5,
+                      "verificationSource": "EU_VIES_LIVE_API",
+                      "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
                     }
                   ]
                 }
@@ -483,24 +479,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-vies-vat-tax-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-                      "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-                      "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "fullVatNumber": "IE6388047V",
+                      "countryCode": "IE",
+                      "vatNumber": "6388047V",
+                      "requesterCountryCode": "DE",
                       "syntaxValid": true,
                       "viesActive": true,
-                      "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-                      "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-                      "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-                      "complianceRiskScore": 88,
-                      "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-                      "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "traderName": "GOOGLE IRELAND LIMITED",
+                      "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+                      "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+                      "complianceRiskScore": 5,
+                      "verificationSource": "EU_VIES_LIVE_API",
+                      "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
                     }
                   ]
                 }
@@ -517,24 +511,22 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "eu-vies-vat-tax-compliance-auditor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-                      "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-                      "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+                      "fullVatNumber": "IE6388047V",
+                      "countryCode": "IE",
+                      "vatNumber": "6388047V",
+                      "requesterCountryCode": "DE",
                       "syntaxValid": true,
                       "viesActive": true,
-                      "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-                      "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-                      "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-                      "complianceRiskScore": 88,
-                      "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-                      "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "traderName": "GOOGLE IRELAND LIMITED",
+                      "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+                      "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+                      "complianceRiskScore": 5,
+                      "verificationSource": "EU_VIES_LIVE_API",
+                      "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
                     }
                   ]
                 }
@@ -725,19 +717,19 @@
             "type": "string",
             "title": "Full VAT Number",
             "description": "Normalized EU VAT identifier including Member State prefix.",
-            "example": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)"
+            "example": "IE6388047V"
           },
           "countryCode": {
             "type": "string",
             "title": "Member State Code",
             "description": "2-letter EU VIES jurisdiction code (AT, BE, DE, EL, ES, FR, IE, IT, NL, XI, etc.).",
-            "example": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)"
+            "example": "IE"
           },
           "vatNumber": {
             "type": "string",
             "title": "National VAT Number",
             "description": "National numeric/alphanumeric VAT digits without country prefix.",
-            "example": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)"
+            "example": "6388047V"
           },
           "syntaxValid": {
             "type": "boolean",
@@ -755,65 +747,58 @@
             "type": "string",
             "title": "Registered Trader Name",
             "description": "Legal company name returned by the European Commission VIES registry.",
-            "example": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)"
+            "example": "GOOGLE IRELAND LIMITED"
           },
           "traderAddress": {
             "type": "string",
             "title": "Registered Address",
             "description": "Official corporate address on file in the Member State tax registry.",
-            "example": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)"
+            "example": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4"
           },
           "reverseChargeStatus": {
             "type": "string",
             "title": "Reverse Charge Eligibility",
             "description": "Tax invoicing determination (ELIGIBLE_INTRA_EU_0_VAT, DOMESTIC_STANDARD_VAT, or DO_NOT_ZERO_RATE).",
-            "example": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)"
+            "example": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE"
           },
           "complianceRiskScore": {
             "type": "integer",
             "title": "Compliance Risk Score (0-100)",
             "description": "Quantitative tax audit risk score (0 = lowest risk/verified active, 100 = invalid/high risk).",
-            "example": 88
+            "example": 5
           },
           "verificationSource": {
             "type": "string",
             "title": "Verification Source",
             "description": "Indicates EU_VIES_LIVE_API or ALGORITHMIC_FALLBACK_MS_MAINTENANCE.",
-            "example": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)"
+            "example": "EU_VIES_LIVE_API"
           },
           "markdownVatCertificate": {
             "type": "string",
             "title": "Markdown Tax Compliance Certificate",
             "description": "Audit-ready Markdown VAT compliance certificate for ERP/Finance attachment.",
-            "example": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)"
+            "example": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "requesterCountryCode": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "requesterCountryCode",
+            "description": "requesterCountryCode returned by EU VIES VAT Number Validator & Reverse Charge Tax Auditor.",
+            "example": "DE"
           }
         },
         "example": {
-          "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-          "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-          "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+          "fullVatNumber": "IE6388047V",
+          "countryCode": "IE",
+          "vatNumber": "6388047V",
+          "requesterCountryCode": "DE",
           "syntaxValid": true,
           "viesActive": true,
-          "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-          "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-          "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-          "complianceRiskScore": 88,
-          "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-          "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "traderName": "GOOGLE IRELAND LIMITED",
+          "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+          "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+          "complianceRiskScore": 5,
+          "verificationSource": "EU_VIES_LIVE_API",
+          "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
         }
       },
       "EuViesVatTaxComplianceAuditorResponseEnvelope": {
@@ -856,24 +841,22 @@
         "example": {
           "status": "succeeded",
           "actor": "eu-vies-vat-tax-compliance-auditor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "fullVatNumber": "Verified Full VAT Number (eu-vies-vat-tax-compliance-auditor)",
-              "countryCode": "Verified Member State Code (eu-vies-vat-tax-compliance-auditor)",
-              "vatNumber": "Verified National VAT Number (eu-vies-vat-tax-compliance-auditor)",
+              "fullVatNumber": "IE6388047V",
+              "countryCode": "IE",
+              "vatNumber": "6388047V",
+              "requesterCountryCode": "DE",
               "syntaxValid": true,
               "viesActive": true,
-              "traderName": "Verified Registered Trader Name (eu-vies-vat-tax-compliance-auditor)",
-              "traderAddress": "Verified Registered Address (eu-vies-vat-tax-compliance-auditor)",
-              "reverseChargeStatus": "Verified Reverse Charge Eligibility (eu-vies-vat-tax-compliance-auditor)",
-              "complianceRiskScore": 88,
-              "verificationSource": "Verified Verification Source (eu-vies-vat-tax-compliance-auditor)",
-              "markdownVatCertificate": "Verified Markdown Tax Compliance Certificate (eu-vies-vat-tax-compliance-auditor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — EU VIES VAT Number Validator & Reverse Charge Tax Auditor\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "traderName": "GOOGLE IRELAND LIMITED",
+              "traderAddress": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+              "reverseChargeStatus": "ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE",
+              "complianceRiskScore": 5,
+              "verificationSource": "EU_VIES_LIVE_API",
+              "markdownVatCertificate": "# EU VIES VAT & REVERSE CHARGE COMPLIANCE CERTIFICATE: IE6388047V\n\n## 1. Tax Identification & Jurisdiction\n- **Full EU VAT Number:** `IE6388047V`\n- **Member State Code:** `IE` (National ID: `6388047V`)\n- **Seller / Invoicing Jurisdiction:** `DE`\n- **Structural Regex Checksum:** PASS (Valid Format)\n- **VIES Cross-Border Status:** ACTIVE (Valid for Intra-EU)\n\n## 2. Registered Corporate Entity Details\n- **Legal Trader Name:** GOOGLE IRELAND LIMITED\n- **Registered Address:** 3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4\n- **Verification Source:** `EU_VIES_LIVE_API`\n\n## 3. Tax Determination (Directive 2006/112/EC Art. 196)\n- **Invoicing Treatment:** **ELIGIBLE_INTRA_EU_0_VAT_REVERSE_CHARGE**\n- **Audit Risk Score:** **5/100** (Lower is safer)"
             }
           ]
         }

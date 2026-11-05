@@ -236,24 +236,30 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fda-recalls-safety-monitor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-                      "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-                      "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-                      "severityScore": 88,
-                      "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-                      "state": "Verified State (us-fda-recalls-safety-monitor)",
-                      "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-                      "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-                      "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-                      "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-                      "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "recallNumber": "D-0026-2027",
+                      "eventId": "99867",
+                      "domain": "drug",
+                      "classification": "Class II",
+                      "severityScore": 75,
+                      "recallingFirm": "Carolina Infusion, LLC",
+                      "city": "Ridgeland",
+                      "state": "SC",
+                      "country": "United States",
+                      "status": "Ongoing",
+                      "voluntaryMandated": "Voluntary: Firm initiated",
+                      "reportDate": "2026-10-14",
+                      "recallInitiationDate": "2026-09-10",
+                      "centerClassificationDate": "2026-10-08",
+                      "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+                      "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+                      "productQuantity": "82.9 mls - in patient specific syringe dose",
+                      "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+                      "distributionPattern": "Nationwide within the U.S",
+                      "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
                     }
                   ]
                 }
@@ -270,24 +276,30 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fda-recalls-safety-monitor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-                      "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-                      "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-                      "severityScore": 88,
-                      "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-                      "state": "Verified State (us-fda-recalls-safety-monitor)",
-                      "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-                      "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-                      "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-                      "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-                      "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "recallNumber": "D-0026-2027",
+                      "eventId": "99867",
+                      "domain": "drug",
+                      "classification": "Class II",
+                      "severityScore": 75,
+                      "recallingFirm": "Carolina Infusion, LLC",
+                      "city": "Ridgeland",
+                      "state": "SC",
+                      "country": "United States",
+                      "status": "Ongoing",
+                      "voluntaryMandated": "Voluntary: Firm initiated",
+                      "reportDate": "2026-10-14",
+                      "recallInitiationDate": "2026-09-10",
+                      "centerClassificationDate": "2026-10-08",
+                      "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+                      "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+                      "productQuantity": "82.9 mls - in patient specific syringe dose",
+                      "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+                      "distributionPattern": "Nationwide within the U.S",
+                      "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
                     }
                   ]
                 }
@@ -487,24 +499,30 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fda-recalls-safety-monitor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-                      "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-                      "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-                      "severityScore": 88,
-                      "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-                      "state": "Verified State (us-fda-recalls-safety-monitor)",
-                      "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-                      "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-                      "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-                      "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-                      "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "recallNumber": "D-0026-2027",
+                      "eventId": "99867",
+                      "domain": "drug",
+                      "classification": "Class II",
+                      "severityScore": 75,
+                      "recallingFirm": "Carolina Infusion, LLC",
+                      "city": "Ridgeland",
+                      "state": "SC",
+                      "country": "United States",
+                      "status": "Ongoing",
+                      "voluntaryMandated": "Voluntary: Firm initiated",
+                      "reportDate": "2026-10-14",
+                      "recallInitiationDate": "2026-09-10",
+                      "centerClassificationDate": "2026-10-08",
+                      "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+                      "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+                      "productQuantity": "82.9 mls - in patient specific syringe dose",
+                      "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+                      "distributionPattern": "Nationwide within the U.S",
+                      "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
                     }
                   ]
                 }
@@ -521,24 +539,30 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-fda-recalls-safety-monitor",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-                      "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-                      "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-                      "severityScore": 88,
-                      "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-                      "state": "Verified State (us-fda-recalls-safety-monitor)",
-                      "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-                      "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-                      "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-                      "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-                      "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "recallNumber": "D-0026-2027",
+                      "eventId": "99867",
+                      "domain": "drug",
+                      "classification": "Class II",
+                      "severityScore": 75,
+                      "recallingFirm": "Carolina Infusion, LLC",
+                      "city": "Ridgeland",
+                      "state": "SC",
+                      "country": "United States",
+                      "status": "Ongoing",
+                      "voluntaryMandated": "Voluntary: Firm initiated",
+                      "reportDate": "2026-10-14",
+                      "recallInitiationDate": "2026-09-10",
+                      "centerClassificationDate": "2026-10-08",
+                      "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+                      "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+                      "productQuantity": "82.9 mls - in patient specific syringe dose",
+                      "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+                      "distributionPattern": "Nationwide within the U.S",
+                      "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
                     }
                   ]
                 }
@@ -756,95 +780,144 @@
             "type": "string",
             "title": "Recall Number",
             "description": "Official FDA recall event or enforcement number.",
-            "example": "Verified Recall Number (us-fda-recalls-safety-monitor)"
+            "example": "D-0026-2027"
           },
           "domain": {
             "type": "string",
             "title": "FDA Domain",
             "description": "Regulatory domain (food, drug, device).",
-            "example": "Verified FDA Domain (us-fda-recalls-safety-monitor)"
+            "example": "drug"
           },
           "classification": {
             "type": "string",
             "title": "Classification",
             "description": "FDA hazard severity class (Class I, Class II, Class III).",
-            "example": "Verified Classification (us-fda-recalls-safety-monitor)"
+            "example": "Class II"
           },
           "severityScore": {
             "type": "integer",
             "title": "Severity Score (0-100)",
             "description": "Quantitative risk score based on hazard class, recall status, and nationwide distribution.",
-            "example": 88
+            "example": 75
           },
           "recallingFirm": {
             "type": "string",
             "title": "Recalling Firm",
             "description": "Manufacturer, distributor, or firm initiating the recall.",
-            "example": "Verified Recalling Firm (us-fda-recalls-safety-monitor)"
+            "example": "Carolina Infusion, LLC"
           },
           "state": {
             "type": "string",
             "title": "State",
             "description": "2-letter US State code of the recalling firm.",
-            "example": "Verified State (us-fda-recalls-safety-monitor)"
+            "example": "SC"
           },
           "status": {
             "type": "string",
             "title": "Recall Status",
             "description": "Current enforcement status (Ongoing, Completed, Terminated, Pending).",
-            "example": "Verified Recall Status (us-fda-recalls-safety-monitor)"
+            "example": "Ongoing"
           },
           "reportDate": {
             "type": "string",
             "title": "Report Date",
             "description": "Formatted FDA enforcement report date (YYYY-MM-DD).",
-            "example": "Verified Report Date (us-fda-recalls-safety-monitor)"
+            "example": "2026-10-14"
           },
           "reasonForRecall": {
             "type": "string",
             "title": "Reason for Recall",
             "description": "Official FDA summary of the defect, contamination, or safety hazard.",
-            "example": "Verified Reason for Recall (us-fda-recalls-safety-monitor)"
+            "example": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product."
           },
           "productDescription": {
             "type": "string",
             "title": "Product Description",
             "description": "Detailed description of the recalled product, packaging, and brand.",
-            "example": "Verified Product Description (us-fda-recalls-safety-monitor)"
+            "example": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936"
           },
           "markdownLegalBrief": {
             "type": "string",
             "title": "Markdown Legal & Compliance Brief",
             "description": "Ready-to-use Markdown dossier for Product Liability litigation and supply chain QA.",
-            "example": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)"
+            "example": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "eventId": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "eventId",
+            "description": "eventId returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "99867"
+          },
+          "city": {
+            "type": "string",
+            "title": "city",
+            "description": "city returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "Ridgeland"
+          },
+          "country": {
+            "type": "string",
+            "title": "country",
+            "description": "country returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "United States"
+          },
+          "voluntaryMandated": {
+            "type": "string",
+            "title": "voluntaryMandated",
+            "description": "voluntaryMandated returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "Voluntary: Firm initiated"
+          },
+          "recallInitiationDate": {
+            "type": "string",
+            "title": "recallInitiationDate",
+            "description": "recallInitiationDate returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "2026-09-10"
+          },
+          "centerClassificationDate": {
+            "type": "string",
+            "title": "centerClassificationDate",
+            "description": "centerClassificationDate returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "2026-10-08"
+          },
+          "productQuantity": {
+            "type": "string",
+            "title": "productQuantity",
+            "description": "productQuantity returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "82.9 mls - in patient specific syringe dose"
+          },
+          "codeInfo": {
+            "type": "string",
+            "title": "codeInfo",
+            "description": "codeInfo returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. ."
+          },
+          "distributionPattern": {
+            "type": "string",
+            "title": "distributionPattern",
+            "description": "distributionPattern returned by US FDA Recalls & Safety Monitor (Food, Drug & Devices).",
+            "example": "Nationwide within the U.S"
           }
         },
         "example": {
-          "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-          "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-          "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-          "severityScore": 88,
-          "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-          "state": "Verified State (us-fda-recalls-safety-monitor)",
-          "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-          "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-          "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-          "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-          "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "recallNumber": "D-0026-2027",
+          "eventId": "99867",
+          "domain": "drug",
+          "classification": "Class II",
+          "severityScore": 75,
+          "recallingFirm": "Carolina Infusion, LLC",
+          "city": "Ridgeland",
+          "state": "SC",
+          "country": "United States",
+          "status": "Ongoing",
+          "voluntaryMandated": "Voluntary: Firm initiated",
+          "reportDate": "2026-10-14",
+          "recallInitiationDate": "2026-09-10",
+          "centerClassificationDate": "2026-10-08",
+          "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+          "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+          "productQuantity": "82.9 mls - in patient specific syringe dose",
+          "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+          "distributionPattern": "Nationwide within the U.S",
+          "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
         }
       },
       "UsFdaRecallsSafetyMonitorResponseEnvelope": {
@@ -887,24 +960,30 @@
         "example": {
           "status": "succeeded",
           "actor": "us-fda-recalls-safety-monitor",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "recallNumber": "Verified Recall Number (us-fda-recalls-safety-monitor)",
-              "domain": "Verified FDA Domain (us-fda-recalls-safety-monitor)",
-              "classification": "Verified Classification (us-fda-recalls-safety-monitor)",
-              "severityScore": 88,
-              "recallingFirm": "Verified Recalling Firm (us-fda-recalls-safety-monitor)",
-              "state": "Verified State (us-fda-recalls-safety-monitor)",
-              "status": "Verified Recall Status (us-fda-recalls-safety-monitor)",
-              "reportDate": "Verified Report Date (us-fda-recalls-safety-monitor)",
-              "reasonForRecall": "Verified Reason for Recall (us-fda-recalls-safety-monitor)",
-              "productDescription": "Verified Product Description (us-fda-recalls-safety-monitor)",
-              "markdownLegalBrief": "Verified Markdown Legal & Compliance Brief (us-fda-recalls-safety-monitor)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US FDA Recalls & Safety Monitor (Food, Drug & Devices)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "recallNumber": "D-0026-2027",
+              "eventId": "99867",
+              "domain": "drug",
+              "classification": "Class II",
+              "severityScore": 75,
+              "recallingFirm": "Carolina Infusion, LLC",
+              "city": "Ridgeland",
+              "state": "SC",
+              "country": "United States",
+              "status": "Ongoing",
+              "voluntaryMandated": "Voluntary: Firm initiated",
+              "reportDate": "2026-10-14",
+              "recallInitiationDate": "2026-09-10",
+              "centerClassificationDate": "2026-10-08",
+              "reasonForRecall": "Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.",
+              "productDescription": "SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on dosage per specific patient prescription, Carolina Infusion LLC, 95 Bees Creek Road, Ridgeland, SC 29936",
+              "productQuantity": "82.9 mls - in patient specific syringe dose",
+              "codeInfo": "Lot: 07242026@1, BUD: 9/7/2026; 08032026@20, BUD: 9/17/2026; 08312026@16, BUD: 10/15/2026; 08242026@28, BUD: 10/8/2026; 08072026@16, BUD: 9/21/2026. .",
+              "distributionPattern": "Nationwide within the U.S",
+              "markdownLegalBrief": "# FDA ENFORCEMENT & PRODUCT LIABILITY BRIEF: D-0026-2027\n\n## 1. Executive Risk Summary\n- **Regulatory Domain:** FDA DRUG\n- **Hazard Classification:** Class II (MODERATE / REVERSIBLE HAZARD)\n- **Quantitative Severity Score:** 75/100\n- **Enforcement Status:** Ongoing\n- **Report Date:** 2026-10-14 (Initiated: 2026-09-10)\n\n## 2. Recalling Entity & Jurisdiction\n- **Recalling Firm:** Carolina Infusion, LLC\n- **Location:** Ridgeland, SC (United States)\n- **Action Type:** Voluntary: Firm initiated\n- **Distribution Scope:** Nationwide within the U.S\n\n## 3. Defect & Hazard Analysis\n- **Reason for Recall:** Lack of Assurance of Sterility: Related to formulation using bacteriostic water; Related to processing equipment used in compounded product.\n- **Affected Product Description:** SEMAGLUTIDE/CYANOCOBALAMIN 9/2 MG/ML INJECTABLE, Packaged in single-use dosage syringes, total mL dispensed based on..."
             }
           ]
         }

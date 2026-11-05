@@ -237,24 +237,32 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-healthcare-npi-provider-lead-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-                      "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-                      "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-                      "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-                      "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-                      "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-                      "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-                      "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-                      "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-                      "leadQualityScore": 88,
-                      "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "npiNumber": "1104969039",
+                      "providerType": "NPI-2 (Organization)",
+                      "enumerationType": "NPI-2",
+                      "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+                      "credential": "N/A",
+                      "primarySpecialty": "Dentist, General Practice",
+                      "taxonomyCode": "1223G0001X",
+                      "LicenseNumber": "DN 12408",
+                      "licenseNumber": "DN 12408",
+                      "licenseState": "FL",
+                      "city": "MIAMI",
+                      "state": "FL",
+                      "postalCode": "33169-4470",
+                      "phone": "305-652-8338",
+                      "fax": "305-653-5807",
+                      "addressLine": "636 NW 183RD ST",
+                      "authorizedOfficial": "TODD SMITH (dentist)",
+                      "status": "Active",
+                      "lastUpdated": "2008-06-13",
+                      "leadQualityScore": 100,
+                      "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+                      "extractedAt": "2026-11-03T21:16:47.797009+00:00"
                     }
                   ]
                 }
@@ -271,24 +279,32 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-healthcare-npi-provider-lead-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-                      "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-                      "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-                      "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-                      "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-                      "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-                      "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-                      "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-                      "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-                      "leadQualityScore": 88,
-                      "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "npiNumber": "1104969039",
+                      "providerType": "NPI-2 (Organization)",
+                      "enumerationType": "NPI-2",
+                      "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+                      "credential": "N/A",
+                      "primarySpecialty": "Dentist, General Practice",
+                      "taxonomyCode": "1223G0001X",
+                      "LicenseNumber": "DN 12408",
+                      "licenseNumber": "DN 12408",
+                      "licenseState": "FL",
+                      "city": "MIAMI",
+                      "state": "FL",
+                      "postalCode": "33169-4470",
+                      "phone": "305-652-8338",
+                      "fax": "305-653-5807",
+                      "addressLine": "636 NW 183RD ST",
+                      "authorizedOfficial": "TODD SMITH (dentist)",
+                      "status": "Active",
+                      "lastUpdated": "2008-06-13",
+                      "leadQualityScore": 100,
+                      "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+                      "extractedAt": "2026-11-03T21:16:47.797009+00:00"
                     }
                   ]
                 }
@@ -489,24 +505,32 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-healthcare-npi-provider-lead-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-                      "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-                      "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-                      "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-                      "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-                      "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-                      "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-                      "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-                      "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-                      "leadQualityScore": 88,
-                      "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "npiNumber": "1104969039",
+                      "providerType": "NPI-2 (Organization)",
+                      "enumerationType": "NPI-2",
+                      "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+                      "credential": "N/A",
+                      "primarySpecialty": "Dentist, General Practice",
+                      "taxonomyCode": "1223G0001X",
+                      "LicenseNumber": "DN 12408",
+                      "licenseNumber": "DN 12408",
+                      "licenseState": "FL",
+                      "city": "MIAMI",
+                      "state": "FL",
+                      "postalCode": "33169-4470",
+                      "phone": "305-652-8338",
+                      "fax": "305-653-5807",
+                      "addressLine": "636 NW 183RD ST",
+                      "authorizedOfficial": "TODD SMITH (dentist)",
+                      "status": "Active",
+                      "lastUpdated": "2008-06-13",
+                      "leadQualityScore": 100,
+                      "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+                      "extractedAt": "2026-11-03T21:16:47.797009+00:00"
                     }
                   ]
                 }
@@ -523,24 +547,32 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-healthcare-npi-provider-lead-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-                      "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-                      "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-                      "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-                      "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-                      "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-                      "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-                      "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-                      "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-                      "leadQualityScore": 88,
-                      "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "npiNumber": "1104969039",
+                      "providerType": "NPI-2 (Organization)",
+                      "enumerationType": "NPI-2",
+                      "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+                      "credential": "N/A",
+                      "primarySpecialty": "Dentist, General Practice",
+                      "taxonomyCode": "1223G0001X",
+                      "LicenseNumber": "DN 12408",
+                      "licenseNumber": "DN 12408",
+                      "licenseState": "FL",
+                      "city": "MIAMI",
+                      "state": "FL",
+                      "postalCode": "33169-4470",
+                      "phone": "305-652-8338",
+                      "fax": "305-653-5807",
+                      "addressLine": "636 NW 183RD ST",
+                      "authorizedOfficial": "TODD SMITH (dentist)",
+                      "status": "Active",
+                      "lastUpdated": "2008-06-13",
+                      "leadQualityScore": 100,
+                      "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+                      "extractedAt": "2026-11-03T21:16:47.797009+00:00"
                     }
                   ]
                 }
@@ -757,95 +789,158 @@
             "type": "string",
             "title": "NPI Number",
             "description": "NPI Number",
-            "example": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)"
+            "example": "1104969039"
           },
           "providerType": {
             "type": "string",
             "title": "Provider Type",
             "description": "Provider Type",
-            "example": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)"
+            "example": "NPI-2 (Organization)"
           },
           "fullNameOrOrgName": {
             "type": "string",
             "title": "Full Name / Organization",
             "description": "Full Name / Organization",
-            "example": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)"
+            "example": "183 DENTAL GROUP, PA"
           },
           "primarySpecialty": {
             "type": "string",
             "title": "Primary Specialty",
             "description": "Primary Specialty",
-            "example": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)"
+            "example": "Dentist, General Practice"
           },
           "LicenseNumber": {
             "type": "string",
             "title": "State License Number",
             "description": "State License Number",
-            "example": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)"
+            "example": "DN 12408"
           },
           "city": {
             "type": "string",
             "title": "City",
             "description": "City",
-            "example": "Verified City (us-healthcare-npi-provider-lead-enricher)"
+            "example": "MIAMI"
           },
           "state": {
             "type": "string",
             "title": "State",
             "description": "State",
-            "example": "Verified State (us-healthcare-npi-provider-lead-enricher)"
+            "example": "FL"
           },
           "phone": {
             "type": "string",
             "title": "Direct Phone",
             "description": "Direct Phone",
-            "example": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)"
+            "example": "305-652-8338"
           },
           "addressLine": {
             "type": "string",
             "title": "Practice Address",
             "description": "Practice Address",
-            "example": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)"
+            "example": "636 NW 183RD ST"
           },
           "leadQualityScore": {
             "type": "integer",
             "title": "Lead Quality Score (0-100)",
             "description": "Lead Quality Score (0-100)",
-            "example": 88
+            "example": 100
           },
           "markdownLeadCard": {
             "type": "string",
             "title": "Markdown Lead Dossier",
             "description": "Markdown Lead Dossier",
-            "example": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)"
+            "example": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "enumerationType": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "enumerationType",
+            "description": "enumerationType returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "NPI-2"
+          },
+          "credential": {
+            "type": "string",
+            "title": "credential",
+            "description": "credential returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "N/A"
+          },
+          "taxonomyCode": {
+            "type": "string",
+            "title": "taxonomyCode",
+            "description": "taxonomyCode returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "1223G0001X"
+          },
+          "licenseNumber": {
+            "type": "string",
+            "title": "licenseNumber",
+            "description": "licenseNumber returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "DN 12408"
+          },
+          "licenseState": {
+            "type": "string",
+            "title": "licenseState",
+            "description": "licenseState returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "FL"
+          },
+          "postalCode": {
+            "type": "string",
+            "title": "postalCode",
+            "description": "postalCode returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "33169-4470"
+          },
+          "fax": {
+            "type": "string",
+            "title": "fax",
+            "description": "fax returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "305-653-5807"
+          },
+          "authorizedOfficial": {
+            "type": "string",
+            "title": "authorizedOfficial",
+            "description": "authorizedOfficial returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "TODD SMITH (dentist)"
+          },
+          "status": {
+            "type": "string",
+            "title": "status",
+            "description": "status returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "Active"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "title": "lastUpdated",
+            "description": "lastUpdated returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "2008-06-13"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "extractedAt",
+            "description": "extractedAt returned by US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API).",
+            "example": "2026-11-03T21:16:47.797009+00:00"
           }
         },
         "example": {
-          "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-          "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-          "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-          "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-          "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-          "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-          "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-          "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-          "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-          "leadQualityScore": 88,
-          "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "npiNumber": "1104969039",
+          "providerType": "NPI-2 (Organization)",
+          "enumerationType": "NPI-2",
+          "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+          "credential": "N/A",
+          "primarySpecialty": "Dentist, General Practice",
+          "taxonomyCode": "1223G0001X",
+          "LicenseNumber": "DN 12408",
+          "licenseNumber": "DN 12408",
+          "licenseState": "FL",
+          "city": "MIAMI",
+          "state": "FL",
+          "postalCode": "33169-4470",
+          "phone": "305-652-8338",
+          "fax": "305-653-5807",
+          "addressLine": "636 NW 183RD ST",
+          "authorizedOfficial": "TODD SMITH (dentist)",
+          "status": "Active",
+          "lastUpdated": "2008-06-13",
+          "leadQualityScore": 100,
+          "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+          "extractedAt": "2026-11-03T21:16:47.797009+00:00"
         }
       },
       "UsHealthcareNpiProviderLeadEnricherResponseEnvelope": {
@@ -888,24 +983,32 @@
         "example": {
           "status": "succeeded",
           "actor": "us-healthcare-npi-provider-lead-enricher",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "npiNumber": "Verified NPI Number (us-healthcare-npi-provider-lead-enricher)",
-              "providerType": "Verified Provider Type (us-healthcare-npi-provider-lead-enricher)",
-              "fullNameOrOrgName": "Verified Full Name / Organization (us-healthcare-npi-provider-lead-enricher)",
-              "primarySpecialty": "Verified Primary Specialty (us-healthcare-npi-provider-lead-enricher)",
-              "LicenseNumber": "Verified State License Number (us-healthcare-npi-provider-lead-enricher)",
-              "city": "Verified City (us-healthcare-npi-provider-lead-enricher)",
-              "state": "Verified State (us-healthcare-npi-provider-lead-enricher)",
-              "phone": "Verified Direct Phone (us-healthcare-npi-provider-lead-enricher)",
-              "addressLine": "Verified Practice Address (us-healthcare-npi-provider-lead-enricher)",
-              "leadQualityScore": 88,
-              "markdownLeadCard": "Verified Markdown Lead Dossier (us-healthcare-npi-provider-lead-enricher)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US Healthcare NPI Doctor & Clinic Lead Enricher (CMS API)\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "npiNumber": "1104969039",
+              "providerType": "NPI-2 (Organization)",
+              "enumerationType": "NPI-2",
+              "fullNameOrOrgName": "183 DENTAL GROUP, PA",
+              "credential": "N/A",
+              "primarySpecialty": "Dentist, General Practice",
+              "taxonomyCode": "1223G0001X",
+              "LicenseNumber": "DN 12408",
+              "licenseNumber": "DN 12408",
+              "licenseState": "FL",
+              "city": "MIAMI",
+              "state": "FL",
+              "postalCode": "33169-4470",
+              "phone": "305-652-8338",
+              "fax": "305-653-5807",
+              "addressLine": "636 NW 183RD ST",
+              "authorizedOfficial": "TODD SMITH (dentist)",
+              "status": "Active",
+              "lastUpdated": "2008-06-13",
+              "leadQualityScore": 100,
+              "markdownLeadCard": "### 183 DENTAL GROUP, PA (NPI: 1104969039)\n- **Type:** NPI-2 (Organization) | **Specialty:** Dentist, General Practice (`1223G0001X`)\n- **State License:** `DN 12408` (FL) | **Lead Score:** 100/100\n- **Practice Address:** 636 NW 183RD ST, MIAMI, FL 33169-4470\n- **Direct Phone:** 305-652-8338 | **Fax:** 305-653-5807",
+              "extractedAt": "2026-11-03T21:16:47.797009+00:00"
             }
           ]
         }

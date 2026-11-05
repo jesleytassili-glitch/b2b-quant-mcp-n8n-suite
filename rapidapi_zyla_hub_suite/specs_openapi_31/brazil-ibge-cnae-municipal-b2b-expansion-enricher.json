@@ -234,22 +234,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "permittedActivitiesCount": 88,
-                      "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "b2bFitScore": 88,
-                      "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cnaeSubclassId": "6201501",
+                      "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+                      "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+                      "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+                      "permittedActivitiesCount": 5,
+                      "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+                      "targetUf": "SP",
+                      "b2bFitScore": 98,
+                      "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
                     }
                   ]
                 }
@@ -266,22 +263,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "permittedActivitiesCount": 88,
-                      "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "b2bFitScore": 88,
-                      "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cnaeSubclassId": "6201501",
+                      "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+                      "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+                      "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+                      "permittedActivitiesCount": 5,
+                      "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+                      "targetUf": "SP",
+                      "b2bFitScore": 98,
+                      "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
                     }
                   ]
                 }
@@ -479,22 +473,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "permittedActivitiesCount": 88,
-                      "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "b2bFitScore": 88,
-                      "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cnaeSubclassId": "6201501",
+                      "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+                      "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+                      "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+                      "permittedActivitiesCount": 5,
+                      "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+                      "targetUf": "SP",
+                      "b2bFitScore": 98,
+                      "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
                     }
                   ]
                 }
@@ -511,22 +502,19 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "permittedActivitiesCount": 88,
-                      "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "b2bFitScore": 88,
-                      "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "cnaeSubclassId": "6201501",
+                      "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+                      "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+                      "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+                      "permittedActivitiesCount": 5,
+                      "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+                      "targetUf": "SP",
+                      "b2bFitScore": 98,
+                      "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
                     }
                   ]
                 }
@@ -717,81 +705,67 @@
             "type": "string",
             "title": "CNAE 7-Digit Code",
             "description": "Official 7-digit CNAE 2.3 subclass identifier.",
-            "example": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "6201501"
           },
           "cnaeDescription": {
             "type": "string",
             "title": "Official CNAE Description",
             "description": "Official IBGE CONCLA subclass description.",
-            "example": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA"
           },
           "sectionCode": {
             "type": "string",
             "title": "Macro Section",
             "description": "IBGE macro economic section.",
-            "example": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "J - INFORMAÇÃO E COMUNICAÇÃO"
           },
           "divisionDescription": {
             "type": "string",
             "title": "Economic Division",
             "description": "IBGE 2-digit division description.",
-            "example": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO"
           },
           "permittedActivitiesCount": {
             "type": "integer",
             "title": "Permitted Activities Count",
             "description": "Total specific activities covered by this CNAE.",
-            "example": 88
+            "example": 5
           },
           "sampleActivities": {
             "type": "string",
             "title": "Sample Covered Activities",
             "description": "Top activities included in this CNAE.",
-            "example": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
           },
           "targetUf": {
             "type": "string",
             "title": "Target State UF",
             "description": "Queried Brazilian state UF.",
-            "example": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
+            "example": "SP"
           },
           "b2bFitScore": {
             "type": "integer",
             "title": "B2B Tax & Expansion Fit Score (0-100)",
             "description": "Quantitative score for B2B segmentation and fiscal clarity (0-100).",
-            "example": 88
+            "example": 98
           },
           "markdownCnaeDossier": {
             "type": "string",
             "title": "Markdown Fiscal & B2B Segmentation Dossier",
             "description": "Executive report for accountants, ERPs, and B2B lead segmentation.",
-            "example": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)"
-          },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
-            "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "example": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
           }
         },
         "example": {
-          "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "permittedActivitiesCount": 88,
-          "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "b2bFitScore": 88,
-          "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "cnaeSubclassId": "6201501",
+          "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+          "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+          "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+          "permittedActivitiesCount": 5,
+          "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+          "targetUf": "SP",
+          "b2bFitScore": 98,
+          "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
         }
       },
       "BrazilIbgeCnaeMunicipalB2bExpansionEnricherResponseEnvelope": {
@@ -834,22 +808,19 @@
         "example": {
           "status": "succeeded",
           "actor": "brazil-ibge-cnae-municipal-b2b-expansion-enricher",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "cnaeSubclassId": "Verified CNAE 7-Digit Code (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "cnaeDescription": "Verified Official CNAE Description (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "sectionCode": "Verified Macro Section (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "divisionDescription": "Verified Economic Division (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "permittedActivitiesCount": 88,
-              "sampleActivities": "Verified Sample Covered Activities (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "targetUf": "Verified Target State UF (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "b2bFitScore": 88,
-              "markdownCnaeDossier": "Verified Markdown Fiscal & B2B Segmentation Dossier (brazil-ibge-cnae-municipal-b2b-expansion-enricher)",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — Brazil IBGE CNAE 2.3 & Municipal Code B2B Tax Enricher\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "cnaeSubclassId": "6201501",
+              "cnaeDescription": "DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA",
+              "sectionCode": "J - INFORMAÇÃO E COMUNICAÇÃO",
+              "divisionDescription": "ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+              "permittedActivitiesCount": 5,
+              "sampleActivities": "DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA",
+              "targetUf": "SP",
+              "b2bFitScore": 98,
+              "markdownCnaeDossier": "# BRAZIL IBGE CNAE 2.3 FISCAL & B2B SEGMENTATION DOSSIER: 6201501\n\n## 1. Official CONCLA / IBGE Classification\n- **CNAE Subclass (7 Digits):** `6201501`\n- **Official Description:** **DESENVOLVIMENTO DE PROGRAMAS DE COMPUTADOR SOB ENCOMENDA**\n- **Macro Section:** `J - INFORMAÇÃO E COMUNICAÇÃO`\n- **Economic Division:** `ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO`\n- **Target State UF:** `SP`\n\n## 2. Covered Tax Activities & B2B ICP Score\n- **B2B Tax & Expansion Fit Score:** **98/100**\n- **Permitted Activities Count:** `5`\n- **Sample Covered Activities:** DESENVOLVIMENTO DE SISTEMAS E SOFTWARE SOB ENCOMENDA; PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS SOB ENCOMENDA; MODELAGEM DE BANCO DE DADOS SOB ENCOMENDA; DESENVOLVIMENTO DE APLICATIVO INFORMÁTICO SOB ENCOMENDA"
             }
           ]
         }

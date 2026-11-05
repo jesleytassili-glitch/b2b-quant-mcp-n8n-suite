@@ -234,23 +234,73 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-clinical-trials-biotech-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "nctId": "Verified NCT ID",
-                      "briefTitle": "Verified Brief Title",
-                      "overallStatus": "Verified Status",
-                      "leadSponsorName": "Verified Lead Sponsor",
-                      "leadSponsorClass": "Verified Sponsor Class",
-                      "phases": "Verified Phases",
-                      "enrollmentCount": 1250.0,
-                      "conditions": "Verified Conditions",
-                      "locationsCount": 1250.0,
-                      "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "nctId": "NCT05835037",
+                      "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+                      "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+                      "overallStatus": "RECRUITING",
+                      "leadSponsorName": "University of Maryland, Baltimore",
+                      "leadSponsorClass": "OTHER",
+                      "collaborators": [],
+                      "studyType": "INTERVENTIONAL",
+                      "phases": [
+                        "PHASE4"
+                      ],
+                      "enrollmentCount": 200,
+                      "enrollmentType": "ESTIMATED",
+                      "conditions": [
+                        "Prediabetic State",
+                        "Hyperglycemia"
+                      ],
+                      "keywords": [],
+                      "interventions": [
+                        {
+                          "type": "DRUG",
+                          "name": "Zinc Gluconate 30 MG",
+                          "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+                        },
+                        {
+                          "type": "DRUG",
+                          "name": "Placebo",
+                          "description": "Participants will take one placebo tablet per day for 1 year"
+                        }
+                      ],
+                      "interventionNames": [
+                        "Zinc Gluconate 30 MG",
+                        "Placebo"
+                      ],
+                      "centralContacts": [
+                        {
+                          "name": "Toni I Pollin, PhD",
+                          "role": "CONTACT",
+                          "phone": "410-706-1630",
+                          "email": "tpollin@som.umaryland.edu"
+                        },
+                        {
+                          "name": "Hilary B Whitlatch, MD",
+                          "role": "CONTACT",
+                          "phone": "443-682-6800",
+                          "email": "hwhitlatch@som.umaryland.edu"
+                        }
+                      ],
+                      "locationsCount": 1,
+                      "sampleLocations": [
+                        {
+                          "facility": "Amish Research Clinic",
+                          "city": "Lancaster",
+                          "state": "Pennsylvania",
+                          "country": "United States",
+                          "status": "RECRUITING"
+                        }
+                      ],
+                      "startDate": "2024-02-16",
+                      "completionDate": "2028-07",
+                      "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+                      "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+                      "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
                     }
                   ]
                 }
@@ -267,23 +317,73 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-clinical-trials-biotech-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "nctId": "Verified NCT ID",
-                      "briefTitle": "Verified Brief Title",
-                      "overallStatus": "Verified Status",
-                      "leadSponsorName": "Verified Lead Sponsor",
-                      "leadSponsorClass": "Verified Sponsor Class",
-                      "phases": "Verified Phases",
-                      "enrollmentCount": 1250.0,
-                      "conditions": "Verified Conditions",
-                      "locationsCount": 1250.0,
-                      "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "nctId": "NCT05835037",
+                      "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+                      "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+                      "overallStatus": "RECRUITING",
+                      "leadSponsorName": "University of Maryland, Baltimore",
+                      "leadSponsorClass": "OTHER",
+                      "collaborators": [],
+                      "studyType": "INTERVENTIONAL",
+                      "phases": [
+                        "PHASE4"
+                      ],
+                      "enrollmentCount": 200,
+                      "enrollmentType": "ESTIMATED",
+                      "conditions": [
+                        "Prediabetic State",
+                        "Hyperglycemia"
+                      ],
+                      "keywords": [],
+                      "interventions": [
+                        {
+                          "type": "DRUG",
+                          "name": "Zinc Gluconate 30 MG",
+                          "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+                        },
+                        {
+                          "type": "DRUG",
+                          "name": "Placebo",
+                          "description": "Participants will take one placebo tablet per day for 1 year"
+                        }
+                      ],
+                      "interventionNames": [
+                        "Zinc Gluconate 30 MG",
+                        "Placebo"
+                      ],
+                      "centralContacts": [
+                        {
+                          "name": "Toni I Pollin, PhD",
+                          "role": "CONTACT",
+                          "phone": "410-706-1630",
+                          "email": "tpollin@som.umaryland.edu"
+                        },
+                        {
+                          "name": "Hilary B Whitlatch, MD",
+                          "role": "CONTACT",
+                          "phone": "443-682-6800",
+                          "email": "hwhitlatch@som.umaryland.edu"
+                        }
+                      ],
+                      "locationsCount": 1,
+                      "sampleLocations": [
+                        {
+                          "facility": "Amish Research Clinic",
+                          "city": "Lancaster",
+                          "state": "Pennsylvania",
+                          "country": "United States",
+                          "status": "RECRUITING"
+                        }
+                      ],
+                      "startDate": "2024-02-16",
+                      "completionDate": "2028-07",
+                      "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+                      "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+                      "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
                     }
                   ]
                 }
@@ -481,23 +581,73 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-clinical-trials-biotech-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "nctId": "Verified NCT ID",
-                      "briefTitle": "Verified Brief Title",
-                      "overallStatus": "Verified Status",
-                      "leadSponsorName": "Verified Lead Sponsor",
-                      "leadSponsorClass": "Verified Sponsor Class",
-                      "phases": "Verified Phases",
-                      "enrollmentCount": 1250.0,
-                      "conditions": "Verified Conditions",
-                      "locationsCount": 1250.0,
-                      "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "nctId": "NCT05835037",
+                      "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+                      "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+                      "overallStatus": "RECRUITING",
+                      "leadSponsorName": "University of Maryland, Baltimore",
+                      "leadSponsorClass": "OTHER",
+                      "collaborators": [],
+                      "studyType": "INTERVENTIONAL",
+                      "phases": [
+                        "PHASE4"
+                      ],
+                      "enrollmentCount": 200,
+                      "enrollmentType": "ESTIMATED",
+                      "conditions": [
+                        "Prediabetic State",
+                        "Hyperglycemia"
+                      ],
+                      "keywords": [],
+                      "interventions": [
+                        {
+                          "type": "DRUG",
+                          "name": "Zinc Gluconate 30 MG",
+                          "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+                        },
+                        {
+                          "type": "DRUG",
+                          "name": "Placebo",
+                          "description": "Participants will take one placebo tablet per day for 1 year"
+                        }
+                      ],
+                      "interventionNames": [
+                        "Zinc Gluconate 30 MG",
+                        "Placebo"
+                      ],
+                      "centralContacts": [
+                        {
+                          "name": "Toni I Pollin, PhD",
+                          "role": "CONTACT",
+                          "phone": "410-706-1630",
+                          "email": "tpollin@som.umaryland.edu"
+                        },
+                        {
+                          "name": "Hilary B Whitlatch, MD",
+                          "role": "CONTACT",
+                          "phone": "443-682-6800",
+                          "email": "hwhitlatch@som.umaryland.edu"
+                        }
+                      ],
+                      "locationsCount": 1,
+                      "sampleLocations": [
+                        {
+                          "facility": "Amish Research Clinic",
+                          "city": "Lancaster",
+                          "state": "Pennsylvania",
+                          "country": "United States",
+                          "status": "RECRUITING"
+                        }
+                      ],
+                      "startDate": "2024-02-16",
+                      "completionDate": "2028-07",
+                      "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+                      "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+                      "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
                     }
                   ]
                 }
@@ -514,23 +664,73 @@
                 "example": {
                   "status": "succeeded",
                   "actor": "us-clinical-trials-biotech-radar",
-                  "marketplace": "rapidapi_zyla_hub",
                   "engineVersion": "3.0.0",
                   "count": 1,
                   "data": [
                     {
-                      "nctId": "Verified NCT ID",
-                      "briefTitle": "Verified Brief Title",
-                      "overallStatus": "Verified Status",
-                      "leadSponsorName": "Verified Lead Sponsor",
-                      "leadSponsorClass": "Verified Sponsor Class",
-                      "phases": "Verified Phases",
-                      "enrollmentCount": 1250.0,
-                      "conditions": "Verified Conditions",
-                      "locationsCount": 1250.0,
-                      "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-                      "quantScore": 91.5,
-                      "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+                      "nctId": "NCT05835037",
+                      "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+                      "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+                      "overallStatus": "RECRUITING",
+                      "leadSponsorName": "University of Maryland, Baltimore",
+                      "leadSponsorClass": "OTHER",
+                      "collaborators": [],
+                      "studyType": "INTERVENTIONAL",
+                      "phases": [
+                        "PHASE4"
+                      ],
+                      "enrollmentCount": 200,
+                      "enrollmentType": "ESTIMATED",
+                      "conditions": [
+                        "Prediabetic State",
+                        "Hyperglycemia"
+                      ],
+                      "keywords": [],
+                      "interventions": [
+                        {
+                          "type": "DRUG",
+                          "name": "Zinc Gluconate 30 MG",
+                          "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+                        },
+                        {
+                          "type": "DRUG",
+                          "name": "Placebo",
+                          "description": "Participants will take one placebo tablet per day for 1 year"
+                        }
+                      ],
+                      "interventionNames": [
+                        "Zinc Gluconate 30 MG",
+                        "Placebo"
+                      ],
+                      "centralContacts": [
+                        {
+                          "name": "Toni I Pollin, PhD",
+                          "role": "CONTACT",
+                          "phone": "410-706-1630",
+                          "email": "tpollin@som.umaryland.edu"
+                        },
+                        {
+                          "name": "Hilary B Whitlatch, MD",
+                          "role": "CONTACT",
+                          "phone": "443-682-6800",
+                          "email": "hwhitlatch@som.umaryland.edu"
+                        }
+                      ],
+                      "locationsCount": 1,
+                      "sampleLocations": [
+                        {
+                          "facility": "Amish Research Clinic",
+                          "city": "Lancaster",
+                          "state": "Pennsylvania",
+                          "country": "United States",
+                          "status": "RECRUITING"
+                        }
+                      ],
+                      "startDate": "2024-02-16",
+                      "completionDate": "2028-07",
+                      "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+                      "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+                      "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
                     }
                   ]
                 }
@@ -725,88 +925,272 @@
             "type": "string",
             "title": "NCT ID",
             "description": "NCT ID extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified NCT ID"
+            "example": "NCT05835037"
           },
           "briefTitle": {
             "type": "string",
             "title": "Brief Title",
             "description": "Brief Title extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Brief Title"
+            "example": "Effect of Zinc on Glucose Homeostasis"
           },
           "overallStatus": {
             "type": "string",
             "title": "Status",
             "description": "Status extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Status"
+            "example": "RECRUITING"
           },
           "leadSponsorName": {
             "type": "string",
             "title": "Lead Sponsor",
             "description": "Lead Sponsor extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Lead Sponsor"
+            "example": "University of Maryland, Baltimore"
           },
           "leadSponsorClass": {
             "type": "string",
             "title": "Sponsor Class",
             "description": "Sponsor Class extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Sponsor Class"
+            "example": "OTHER"
           },
           "phases": {
-            "type": "string",
+            "type": "array",
             "title": "Phases",
             "description": "Phases extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Phases"
+            "example": [
+              "PHASE4"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "enrollmentCount": {
-            "type": "number",
+            "type": "integer",
             "title": "Enrollment",
             "description": "Enrollment extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": 1250.0
+            "example": 200
           },
           "conditions": {
-            "type": "string",
+            "type": "array",
             "title": "Conditions",
             "description": "Conditions extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "Verified Conditions"
+            "example": [
+              "Prediabetic State",
+              "Hyperglycemia"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "locationsCount": {
-            "type": "number",
+            "type": "integer",
             "title": "Clinical Sites",
             "description": "Clinical Sites extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": 1250.0
+            "example": 1
           },
           "studyUrl": {
             "type": "string",
             "title": "ClinicalTrials.gov URL",
             "description": "ClinicalTrials.gov URL extracted and validated by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
-            "example": "https://registry.gov.br/us-clinical-trials-biotech-radar"
+            "example": "https://clinicaltrials.gov/study/NCT05835037"
           },
-          "quantScore": {
-            "type": "number",
-            "title": "Quantitative Compliance & Opportunity Score (0-100)",
-            "description": "Normalized deterministic score from 0 to 100 generated by the quantitative engine.",
-            "example": 91.5
-          },
-          "ragMarkdownBrief": {
+          "officialTitle": {
             "type": "string",
-            "title": "Executive RAG Markdown Brief",
-            "description": "LLM-ready executive summary formatted in Markdown for RAG pipelines and compliance dossiers.",
-            "example": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+            "title": "officialTitle",
+            "description": "officialTitle returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes"
+          },
+          "collaborators": {
+            "type": "array",
+            "title": "collaborators",
+            "description": "collaborators array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          },
+          "studyType": {
+            "type": "string",
+            "title": "studyType",
+            "description": "studyType returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "INTERVENTIONAL"
+          },
+          "enrollmentType": {
+            "type": "string",
+            "title": "enrollmentType",
+            "description": "enrollmentType returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "ESTIMATED"
+          },
+          "keywords": {
+            "type": "array",
+            "title": "keywords",
+            "description": "keywords array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          },
+          "interventions": {
+            "type": "array",
+            "title": "interventions",
+            "description": "interventions array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "example": [
+              {
+                "type": "DRUG",
+                "name": "Zinc Gluconate 30 MG",
+                "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+              },
+              {
+                "type": "DRUG",
+                "name": "Placebo",
+                "description": "Participants will take one placebo tablet per day for 1 year"
+              }
+            ]
+          },
+          "interventionNames": {
+            "type": "array",
+            "title": "interventionNames",
+            "description": "interventionNames array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Zinc Gluconate 30 MG",
+              "Placebo"
+            ]
+          },
+          "centralContacts": {
+            "type": "array",
+            "title": "centralContacts",
+            "description": "centralContacts array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "example": [
+              {
+                "name": "Toni I Pollin, PhD",
+                "role": "CONTACT",
+                "phone": "410-706-1630",
+                "email": "tpollin@som.umaryland.edu"
+              },
+              {
+                "name": "Hilary B Whitlatch, MD",
+                "role": "CONTACT",
+                "phone": "443-682-6800",
+                "email": "hwhitlatch@som.umaryland.edu"
+              }
+            ]
+          },
+          "sampleLocations": {
+            "type": "array",
+            "title": "sampleLocations",
+            "description": "sampleLocations array returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "example": [
+              {
+                "facility": "Amish Research Clinic",
+                "city": "Lancaster",
+                "state": "Pennsylvania",
+                "country": "United States",
+                "status": "RECRUITING"
+              }
+            ]
+          },
+          "startDate": {
+            "type": "string",
+            "title": "startDate",
+            "description": "startDate returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "2024-02-16"
+          },
+          "completionDate": {
+            "type": "string",
+            "title": "completionDate",
+            "description": "completionDate returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "2028-07"
+          },
+          "scrapedAt": {
+            "type": "string",
+            "title": "scrapedAt",
+            "description": "scrapedAt returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "2026-11-03T21:16:50.826632+00:00"
+          },
+          "markdownTrialBrief": {
+            "type": "string",
+            "title": "markdownTrialBrief",
+            "description": "markdownTrialBrief returned by US ClinicalTrials.gov Biotech & Pharma Study Radar.",
+            "example": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
           }
         },
         "example": {
-          "nctId": "Verified NCT ID",
-          "briefTitle": "Verified Brief Title",
-          "overallStatus": "Verified Status",
-          "leadSponsorName": "Verified Lead Sponsor",
-          "leadSponsorClass": "Verified Sponsor Class",
-          "phases": "Verified Phases",
-          "enrollmentCount": 1250.0,
-          "conditions": "Verified Conditions",
-          "locationsCount": 1250.0,
-          "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-          "quantScore": 91.5,
-          "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+          "nctId": "NCT05835037",
+          "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+          "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+          "overallStatus": "RECRUITING",
+          "leadSponsorName": "University of Maryland, Baltimore",
+          "leadSponsorClass": "OTHER",
+          "collaborators": [],
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE4"
+          ],
+          "enrollmentCount": 200,
+          "enrollmentType": "ESTIMATED",
+          "conditions": [
+            "Prediabetic State",
+            "Hyperglycemia"
+          ],
+          "keywords": [],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Zinc Gluconate 30 MG",
+              "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "description": "Participants will take one placebo tablet per day for 1 year"
+            }
+          ],
+          "interventionNames": [
+            "Zinc Gluconate 30 MG",
+            "Placebo"
+          ],
+          "centralContacts": [
+            {
+              "name": "Toni I Pollin, PhD",
+              "role": "CONTACT",
+              "phone": "410-706-1630",
+              "email": "tpollin@som.umaryland.edu"
+            },
+            {
+              "name": "Hilary B Whitlatch, MD",
+              "role": "CONTACT",
+              "phone": "443-682-6800",
+              "email": "hwhitlatch@som.umaryland.edu"
+            }
+          ],
+          "locationsCount": 1,
+          "sampleLocations": [
+            {
+              "facility": "Amish Research Clinic",
+              "city": "Lancaster",
+              "state": "Pennsylvania",
+              "country": "United States",
+              "status": "RECRUITING"
+            }
+          ],
+          "startDate": "2024-02-16",
+          "completionDate": "2028-07",
+          "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+          "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+          "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
         }
       },
       "UsClinicalTrialsBiotechRadarResponseEnvelope": {
@@ -849,23 +1233,73 @@
         "example": {
           "status": "succeeded",
           "actor": "us-clinical-trials-biotech-radar",
-          "marketplace": "rapidapi_zyla_hub",
           "engineVersion": "3.0.0",
           "count": 1,
           "data": [
             {
-              "nctId": "Verified NCT ID",
-              "briefTitle": "Verified Brief Title",
-              "overallStatus": "Verified Status",
-              "leadSponsorName": "Verified Lead Sponsor",
-              "leadSponsorClass": "Verified Sponsor Class",
-              "phases": "Verified Phases",
-              "enrollmentCount": 1250.0,
-              "conditions": "Verified Conditions",
-              "locationsCount": 1250.0,
-              "studyUrl": "https://registry.gov.br/us-clinical-trials-biotech-radar",
-              "quantScore": 91.5,
-              "ragMarkdownBrief": "### Executive Audit Brief — US ClinicalTrials.gov Biotech & Pharma Study Radar\n- **Status:** VERIFIED\n- **Quantitative Score:** 91.5/100"
+              "nctId": "NCT05835037",
+              "briefTitle": "Effect of Zinc on Glucose Homeostasis",
+              "officialTitle": "Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes",
+              "overallStatus": "RECRUITING",
+              "leadSponsorName": "University of Maryland, Baltimore",
+              "leadSponsorClass": "OTHER",
+              "collaborators": [],
+              "studyType": "INTERVENTIONAL",
+              "phases": [
+                "PHASE4"
+              ],
+              "enrollmentCount": 200,
+              "enrollmentType": "ESTIMATED",
+              "conditions": [
+                "Prediabetic State",
+                "Hyperglycemia"
+              ],
+              "keywords": [],
+              "interventions": [
+                {
+                  "type": "DRUG",
+                  "name": "Zinc Gluconate 30 MG",
+                  "description": "Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year"
+                },
+                {
+                  "type": "DRUG",
+                  "name": "Placebo",
+                  "description": "Participants will take one placebo tablet per day for 1 year"
+                }
+              ],
+              "interventionNames": [
+                "Zinc Gluconate 30 MG",
+                "Placebo"
+              ],
+              "centralContacts": [
+                {
+                  "name": "Toni I Pollin, PhD",
+                  "role": "CONTACT",
+                  "phone": "410-706-1630",
+                  "email": "tpollin@som.umaryland.edu"
+                },
+                {
+                  "name": "Hilary B Whitlatch, MD",
+                  "role": "CONTACT",
+                  "phone": "443-682-6800",
+                  "email": "hwhitlatch@som.umaryland.edu"
+                }
+              ],
+              "locationsCount": 1,
+              "sampleLocations": [
+                {
+                  "facility": "Amish Research Clinic",
+                  "city": "Lancaster",
+                  "state": "Pennsylvania",
+                  "country": "United States",
+                  "status": "RECRUITING"
+                }
+              ],
+              "startDate": "2024-02-16",
+              "completionDate": "2028-07",
+              "studyUrl": "https://clinicaltrials.gov/study/NCT05835037",
+              "scrapedAt": "2026-11-03T21:16:50.826632+00:00",
+              "markdownTrialBrief": "## [NCT05835037] Effect of Zinc on Glucose Homeostasis\n- **Official Title**: Clinical and Nutrigenetic Assessment of Zinc in Participants With Prediabetes\n- **Recruitment Status**: `RECRUITING`\n- **Lead Sponsor**: University of Maryland, Baltimore (`OTHER`)\n- **Trial Phase(s)**: `PHASE4`\n- **Target Enrollment**: 200 participants\n- **Conditions**: Prediabetic State, Hyperglycemia\n- **Participating Clinical Sites**: 1 locations\n- **Study URL**: https://clinicaltrials.gov/study/NCT05835037\n- **Interventions / Drugs**:\n  - **DRUG**: Zinc Gluconate 30 MG — Participants will take one tablet per day (30 mg Zinc gluconate) for 1 year\n  - **DRUG**: Placebo — Participants will take one placebo tablet per day for 1 year\n- **Central Study Contacts**:\n  - **Toni I Pollin, PhD** (CONTACT) | Email: `tpollin@som.umaryland.edu` | Phone: `410-706-1630`\n  - **Hilary B Whitlatch, MD** (CONTACT) | Email: ..."
             }
           ]
         }
