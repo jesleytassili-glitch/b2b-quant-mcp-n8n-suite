@@ -139,3 +139,17 @@ curl -X POST "https://api.apify.com/v2/acts/b2b-quant-apis~multi-ats-tech-job-bo
 ## License
 
 Released under the [MIT License](./LICENSE).
+
+<!-- PSEO_DOCS_PORTAL_V48 -->
+## 📚 Live Documentation & API Reference (pSEO Portal v4.8)
+
+Official developer documentation, interactive OpenAPI specifications, and ready-to-use SDK code samples:
+
+- 🌐 **[Central API Documentation Portal](https://jesleytassili-glitch.github.io/docs/index.html)** — Directory of 31 institutional REST & MCP endpoints.
+- 📑 **[Agent-Friendly Index (Markdown)](https://jesleytassili-glitch.github.io/docs/index.md)** — Optimized for AI Agents, Claude Code & AutoGPT.
+- 🚀 **[US SEC EDGAR Institutional Filings API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-us-sec-edgar-financial-filings.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-us-sec-edgar-financial-filings.md))
+- 🚀 **[OFAC Sanctions & PEP Real-Time Screening API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.md))
+- 🚀 **[CVM Brazil Corporate Governance Filings API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-cvm-brazil-corporate-filings.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-cvm-brazil-corporate-filings.md))
+
+*High-availability SLA hosted on GitHub Pages with enterprise distribution across RapidAPI, Zyla API Hub, and Apify Store.*
+<!-- /PSEO_DOCS_PORTAL_V48 -->
