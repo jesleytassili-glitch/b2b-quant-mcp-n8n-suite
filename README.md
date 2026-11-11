@@ -143,13 +143,14 @@ Released under the [MIT License](./LICENSE).
 <!-- PSEO_DOCS_PORTAL_V48 -->
 ## 📚 Live Documentation & API Reference (pSEO Portal v4.8)
 
-Official developer documentation, interactive OpenAPI specifications, and ready-to-use SDK code samples:
+Official developer documentation, interactive OpenAPI 3.0.3 specifications, and ready-to-use SDK code samples:
 
 - 🌐 **[Central API Documentation Portal](https://jesleytassili-glitch.github.io/docs/index.html)** — Directory of 31 institutional REST & MCP endpoints.
-- 📑 **[Agent-Friendly Index (Markdown)](https://jesleytassili-glitch.github.io/docs/index.md)** — Optimized for AI Agents, Claude Code & AutoGPT.
-- 🚀 **[US SEC EDGAR Institutional Filings API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-us-sec-edgar-financial-filings.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-us-sec-edgar-financial-filings.md))
-- 🚀 **[OFAC Sanctions & PEP Real-Time Screening API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.md))
-- 🚀 **[CVM Brazil Corporate Governance Filings API](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-cvm-brazil-corporate-filings.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-cvm-brazil-corporate-filings.md))
+- 🤖 **[LLM & AI Agent Discovery (`llms.txt`)](https://jesleytassili-glitch.github.io/llms.txt)** — Structured GEO index for Claude Code, Cursor & Autonomous Agents.
+- 🚀 **[US SEC EDGAR Filings & Insider Radar API](https://jesleytassili-glitch.github.io/docs/us-sec-edgar-filings-insider-radar.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/us-sec-edgar-filings-insider-radar.md))
+- 🚀 **[Global Sanctions, PEP & Interpol Watchlist Screener API](https://jesleytassili-glitch.github.io/docs/global-sanctions-pep-interpol-watchlist-screener.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/global-sanctions-pep-interpol-watchlist-screener.md))
+- 🚀 **[Brazil PIX, ISPB & CVM Financial KYB Auditor API](https://jesleytassili-glitch.github.io/docs/brazil-pix-ispb-cvm-financial-kyb-auditor.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/brazil-pix-ispb-cvm-financial-kyb-auditor.md))
+- 🚀 **[Brazil Gov Procurement PNCP Radar API](https://jesleytassili-glitch.github.io/docs/b2b-gov-procurement-pncp-radar.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-gov-procurement-pncp-radar.md))
 
 *High-availability SLA hosted on GitHub Pages with enterprise distribution across RapidAPI, Zyla API Hub, and Apify Store.*
 <!-- /PSEO_DOCS_PORTAL_V48 -->
