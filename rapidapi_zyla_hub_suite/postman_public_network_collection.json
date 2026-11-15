@@ -1332,7 +1332,7 @@
     },
     {
       "name": "10. Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher (brazil-b2b-cnpj-qsa-lead-enricher)",
-      "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via BrasilAPI and OpenCNPJA. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Company Data`",
+      "description": "Mathematical Modulo 11 validator and batch B2B company lead enricher for Brazilian CNPJs via Brazilian federal corporate registries. Extracts Razao Social, Nome Fantasia, Situacao Cadastral, CNAEs, Capital Social, Simples Nacional/MEI status, partners (QSA), and contact details.\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-b2b-cnpj-qsa-lead-enricher.json`\n- **RapidAPI Category:** `Business`\n- **Zyla Hub Category:** `Company Data`",
       "item": [
         {
           "name": "POST /v2/acts/b2b-quant-apis~brazil-b2b-cnpj-qsa-lead-enricher/run-sync-get-dataset-items — Execute Brazil B2B CNPJ, Partners (QSA) & CNAE Lead Enricher (Apify Cloud Sync)",
@@ -2627,11 +2627,11 @@
       ]
     },
     {
-      "name": "19. ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor (icann-rdap-domain-whois-brand-recon)",
-      "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
+      "name": "19. Domain Registration WHOIS, Brand & Antifraud Auditor (icann-rdap-domain-whois-brand-recon)",
+      "description": "Audits corporate and e-commerce domains via official Domain & Verisign WHOIS JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/icann-rdap-domain-whois-brand-recon.json`\n- **RapidAPI Category:** `Cybersecurity`\n- **Zyla Hub Category:** `Security`",
       "item": [
         {
-          "name": "POST /v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items — Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor (Apify Cloud Sync)",
+          "name": "POST /v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items — Execute Domain Registration WHOIS, Brand & Antifraud Auditor (Apify Cloud Sync)",
           "request": {
             "method": "POST",
             "header": [
@@ -2702,7 +2702,7 @@
           }
         },
         {
-          "name": "POST /v1/icann-rdap-domain-whois-brand-recon — Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor (Gateway Route)",
+          "name": "POST /v1/icann-rdap-domain-whois-brand-recon — Execute Domain Registration WHOIS, Brand & Antifraud Auditor (Gateway Route)",
           "request": {
             "method": "POST",
             "header": [
@@ -3348,7 +3348,7 @@
     },
     {
       "name": "24. Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor (brazil-cep-geocoordinates-logistics-auditor)",
-      "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via BrasilAPI v2 & ViaCEP fallback. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json`\n- **RapidAPI Category:** `Logistics`\n- **Zyla Hub Category:** `Logistics & Shipping`",
+      "description": "Batch geocodes and validates Brazilian 8-digit postal codes (CEPs) via official Brazilian postal & IBGE registries. Extracts Latitude/Longitude, 7-digit IBGE city code (for NF-e/CT-e), state UF, neighborhood, and Last-Mile Delivery Scores (0-100).\n\n- **Primary Backend Base URL:** `https://api.apify.com`\n- **Canonical OpenAPI 3.0.3 Spec URL:** `https://jesleytassili-glitch.github.io/specs_openapi_31/brazil-cep-geocoordinates-logistics-auditor.json`\n- **RapidAPI Category:** `Logistics`\n- **Zyla Hub Category:** `Logistics & Shipping`",
       "item": [
         {
           "name": "POST /v2/acts/b2b-quant-apis~brazil-cep-geocoordinates-logistics-auditor/run-sync-get-dataset-items — Execute Brazil CEP Geocoordinates, IBGE Code & Logistics Auditor (Apify Cloud Sync)",

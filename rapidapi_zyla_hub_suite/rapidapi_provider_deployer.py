@@ -507,7 +507,7 @@ def build_activation_playbook_markdown(manifest: dict[str, Any]) -> str:
                 cl_slaves = cl.get("slaves", [])
                 for ep in cl.get("endpoints", []):
                     b_url = str(ep.get("base_url") or "")
-                    m = _re.search(r"b2b-quant-apis~([a-z0-9-]+)", b_url)
+                    m = _re.search(r"(?:b2b-quant-apis~|/v1/)([a-z0-9-]+)", b_url)
                     ep_slug = m.group(1) if m else str(cl.get("product_key") or "")
                     if ep_slug:
                         ep_clean = _re.sub(

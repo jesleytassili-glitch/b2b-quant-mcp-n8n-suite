@@ -172,7 +172,7 @@ MARKETPLACE_TAXONOMY: dict[str, dict[str, Any]] = {
     "icann-rdap-domain-whois-brand-recon": {
         "rapidapi_category": "Cybersecurity",
         "zyla_category": "Security",
-        "seo_tags": ["icann-rdap", "whois-lookup", "domain-age", "brand-protection", "dnssec-audit", "anti-phishing", "threat-intelligence"],
+        "seo_tags": ["domain-registration", "whois-lookup", "domain-age", "brand-protection", "dnssec-audit", "anti-phishing", "threat-intelligence"],
         "buyer_persona": "Brand Protection Agencies, SOC Threat Hunters, Fraud Prevention Engines, and Domain Registrars",
     },
     "cisa-kev-ransomware-vulnerability-auditor": {
@@ -857,6 +857,14 @@ def _sanitize_vendor_strings(value: Any) -> Any:
             ("ReceitaWS", "Brazilian federal tax registry"),
             ("(crt.sh)", "(CT)"),
             ("crt.sh", "Certificate Transparency logs"),
+            ("ICANN RDAP DOMAIN WHOIS", "DOMAIN REGISTRATION WHOIS RECON"),
+            ("ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor", "Domain Registration WHOIS, Brand & Antifraud Auditor"),
+            ("ICANN RDAP Official Domain WHOIS Audited", "Domain Registration WHOIS Audited"),
+            ("ICANN RDAP Official Domain WHOIS", "Domain Registration WHOIS"),
+            ("ICANN RDAP", "Domain Registration WHOIS"),
+            ("ICANN Accredited Registrar", "Accredited Registrar"),
+            ("ICANN", "Domain"),
+            ("RDAP", "WHOIS"),
         )
         for old, new in replacements:
             cleaned = cleaned.replace(old, new)
@@ -1285,6 +1293,7 @@ def generate_apis_json_catalog(
         origin_url=origin_url,
         gateway_url=gateway_url,
     )
+    catalog = _sanitize_vendor_strings(catalog)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(catalog, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
     return output_path
@@ -1441,6 +1450,7 @@ def generate_postman_public_collection(
         origin_url=origin_url,
         gateway_url=gateway_url,
     )
+    col = _sanitize_vendor_strings(col)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(col, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
     return output_path

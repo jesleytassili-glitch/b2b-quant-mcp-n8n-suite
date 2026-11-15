@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+    "title": "Domain Registration WHOIS, Brand & Antifraud Auditor",
     "version": "3.0.0",
-    "description": "Audits corporate and e-commerce domains via official ICANN & Verisign RDAP JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor)\n- **Target B2B Buyers:** Brand Protection Agencies, SOC Threat Hunters, Fraud Prevention Engines, and Domain Registrars.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`ICANN RDAP Official Domain WHOIS Audited`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** icann-rdap, whois-lookup, domain-age, brand-protection, dnssec-audit, anti-phishing, threat-intelligence.",
+    "description": "Audits corporate and e-commerce domains via official Domain & Verisign WHOIS JSON registries (Zero-Key, replaces paid WHOIS APIs). Extracts registration/expiration dates, registrar, DNSSEC, lock status, and Domain Trust Scores (0-100).\n\n### Enterprise B2B Value Proposition (Domain Registration WHOIS, Brand & Antifraud Auditor)\n- **Target B2B Buyers:** Brand Protection Agencies, SOC Threat Hunters, Fraud Prevention Engines, and Domain Registrars.\n- **Zero External API Keys Required:** Connects directly to authoritative government, regulatory, and financial primary registries with built-in retry/backoff and deterministic schema normalization.\n- **Quantitative Scoring & RAG Briefs:** Every record is enriched with a quantitative 0-100 risk/viability score and an LLM-ready Markdown executive brief (`Domain Registration WHOIS Audited`).\n- **Backend Proxy Secret Injection:** RapidAPI Studio and Zyla API Hub inject `Authorization: Bearer <APIFY_API_TOKEN>` invisibly at the proxy layer when forwarding synchronous calls to `https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items`.\n- **Marketplace Categories:** RapidAPI `Cybersecurity` | Zyla API Hub `Security`.\n- **Subscription Tiers (USD):** `BASIC` ($0.00/mo, 15 req/mo hard cap), `PRO` ($19.00/mo, 1,000 req/mo + $0.02/extra), `ULTRA` ($49.00/mo, 5,000 req/mo + $0.015/extra), `MEGA` ($149.00/mo, 25,000 req/mo + $0.010/extra).\n- **SEO Keywords:** domain-registration, whois-lookup, domain-age, brand-protection, dnssec-audit, anti-phishing, threat-intelligence.",
     "termsOfService": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/",
     "contact": {
       "name": "B2B Quant APIs (@b2b-quant-apis)",
@@ -18,7 +18,7 @@
     "x-rapidapi-category": "Cybersecurity",
     "x-zyla-category": "Security",
     "x-seo-tags": [
-      "icann-rdap",
+      "domain-registration",
       "whois-lookup",
       "domain-age",
       "brand-protection",
@@ -85,7 +85,7 @@
     "x-github-release-tag": "v2.2.0"
   },
   "externalDocs": {
-    "description": "Official B2B Documentation & Schema Reference for ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+    "description": "Official B2B Documentation & Schema Reference for Domain Registration WHOIS, Brand & Antifraud Auditor",
     "url": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/actors/icann-rdap-domain-whois-brand-recon.html"
   },
   "servers": [
@@ -108,8 +108,8 @@
       "description": "RapidAPI Hub primary category: Cybersecurity (Zyla Hub: Security)"
     },
     {
-      "name": "icann-rdap",
-      "description": "B2B SEO Search Tag: icann-rdap"
+      "name": "domain-registration",
+      "description": "B2B SEO Search Tag: domain-registration"
     },
     {
       "name": "whois-lookup",
@@ -154,11 +154,11 @@
     "/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_sync_icann_rdap_domain_whois_brand_recon",
-        "summary": "Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor (Apify Cloud Synchronous POST)",
-        "description": "Synchronous stateless execution of **ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "summary": "Execute Domain Registration WHOIS, Brand & Antifraud Auditor (Apify Cloud Synchronous POST)",
+        "description": "Synchronous stateless execution of **Domain Registration WHOIS, Brand & Antifraud Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Cybersecurity",
-          "icann-rdap",
+          "domain-registration",
           "whois-lookup",
           "domain-age",
           "brand-protection",
@@ -247,7 +247,7 @@
                       "dnssecSigned": false,
                       "nameserversCount": 4,
                       "domainTrustScore": 92,
-                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+                      "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -278,7 +278,7 @@
                       "dnssecSigned": false,
                       "nameserversCount": 4,
                       "domainTrustScore": 92,
-                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+                      "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -336,7 +336,7 @@
     "/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon": {
       "get": {
         "operationId": "status_icann_rdap_domain_whois_brand_recon",
-        "summary": "Actor Metadata & Live Connectivity Check for ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+        "summary": "Actor Metadata & Live Connectivity Check for Domain Registration WHOIS, Brand & Antifraud Auditor",
         "description": "Immediate `HTTP 200` status and metadata health check for `icann-rdap-domain-whois-brand-recon` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon` and `GET /v1/icann-rdap-domain-whois-brand-recon/health`) without starting a container build or run.",
         "tags": [
           "Cybersecurity"
@@ -396,11 +396,11 @@
     "/v1/icann-rdap-domain-whois-brand-recon": {
       "post": {
         "operationId": "execute_icann_rdap_domain_whois_brand_recon",
-        "summary": "Execute ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
-        "description": "Synchronous stateless execution of **ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
+        "summary": "Execute Domain Registration WHOIS, Brand & Antifraud Auditor",
+        "description": "Synchronous stateless execution of **Domain Registration WHOIS, Brand & Antifraud Auditor**. RapidAPI Studio and Zyla API Hub inject the backend secret header `Authorization: Bearer <APIFY_API_TOKEN>` invisibly to the end user, validate `X-RapidAPI-Proxy-Secret` / `X-Zyla-Proxy-Secret` in constant time (`hmac.compare_digest`), inject quota headers (`X-RateLimit-Remaining`, `X-Engine-Version`), and return deterministic JSON records.",
         "tags": [
           "Cybersecurity",
-          "icann-rdap",
+          "domain-registration",
           "whois-lookup",
           "domain-age",
           "brand-protection",
@@ -489,7 +489,7 @@
                       "dnssecSigned": false,
                       "nameserversCount": 4,
                       "domainTrustScore": 92,
-                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+                      "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -520,7 +520,7 @@
                       "dnssecSigned": false,
                       "nameserversCount": 4,
                       "domainTrustScore": 92,
-                      "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+                      "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
                     }
                   ]
                 }
@@ -578,7 +578,7 @@
     "/v1/icann-rdap-domain-whois-brand-recon/health": {
       "get": {
         "operationId": "health_icann_rdap_domain_whois_brand_recon",
-        "summary": "Health & SLA Check for ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor",
+        "summary": "Health & SLA Check for Domain Registration WHOIS, Brand & Antifraud Auditor",
         "description": "Immediate `HTTP 200` status and metadata health check for `icann-rdap-domain-whois-brand-recon` on RapidAPI Studio and Zyla API Hub (`GET https://api.apify.com/v2/acts/b2b-quant-apis~icann-rdap-domain-whois-brand-recon` and `GET /v1/icann-rdap-domain-whois-brand-recon/health`) without starting a container build or run.",
         "tags": [
           "Cybersecurity"
@@ -666,13 +666,13 @@
     "schemas": {
       "IcannRdapDomainWhoisBrandReconRequest": {
         "type": "object",
-        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Request Schema",
-        "description": "Configure comma-separated domain names and maximum domains to audit against official ICANN/Verisign RDAP registries.",
+        "title": "Domain Registration WHOIS, Brand & Antifraud Auditor Request Schema",
+        "description": "Configure comma-separated domain names and maximum domains to audit against official Domain/Verisign WHOIS registries.",
         "properties": {
           "domains": {
             "type": "string",
             "title": "Domain Names (Comma-Separated)",
-            "description": "Comma-separated domain names to audit via official RDAP (e.g., 'stripe.com,cloudflare.com,shopify.com').",
+            "description": "Comma-separated domain names to audit via official WHOIS (e.g., 'stripe.com,cloudflare.com,shopify.com').",
             "default": "stripe.com,cloudflare.com,shopify.com",
             "example": "stripe.com,cloudflare.com,shopify.com"
           },
@@ -696,7 +696,7 @@
       },
       "IcannRdapDomainWhoisBrandReconRecord": {
         "type": "object",
-        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Output Record",
+        "title": "Domain Registration WHOIS, Brand & Antifraud Auditor Output Record",
         "description": "Enriched B2B dataset item returned by `icann-rdap-domain-whois-brand-recon`.",
         "properties": {
           "domainName": {
@@ -714,7 +714,7 @@
           "registrarName": {
             "type": "string",
             "title": "Accredited Registrar",
-            "description": "ICANN-accredited registrar legal name.",
+            "description": "Domain-accredited registrar legal name.",
             "example": "SafeNames Ltd."
           },
           "registrationDate": {
@@ -761,9 +761,9 @@
           },
           "markdownWhoisBrief": {
             "type": "string",
-            "title": "Markdown RDAP & Brand Security Dossier",
+            "title": "Markdown WHOIS & Brand Security Dossier",
             "description": "Executive Markdown dossier for KYB antifraud, brand protection, and M&A due diligence.",
-            "example": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+            "example": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
           }
         },
         "example": {
@@ -777,12 +777,12 @@
           "dnssecSigned": false,
           "nameserversCount": 4,
           "domainTrustScore": 92,
-          "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+          "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
         }
       },
       "IcannRdapDomainWhoisBrandReconResponseEnvelope": {
         "type": "object",
-        "title": "ICANN RDAP Official Domain WHOIS, Brand & Antifraud Auditor Synchronous Response Envelope",
+        "title": "Domain Registration WHOIS, Brand & Antifraud Auditor Synchronous Response Envelope",
         "required": [
           "status",
           "actor",
@@ -834,7 +834,7 @@
               "dnssecSigned": false,
               "nameserversCount": 4,
               "domainTrustScore": 92,
-              "markdownWhoisBrief": "# ICANN RDAP DOMAIN WHOIS & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **ICANN Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
+              "markdownWhoisBrief": "# DOMAIN REGISTRATION WHOIS RECON & BRAND SECURITY AUDIT: stripe.com\n\n## 1. Registry & Registrar Identity\n- **Domain Name:** `stripe.com`\n- **Registry Handle (ROID):** `891022_DOMAIN_COM-VRSN`\n- **Accredited Registrar:** **SafeNames Ltd.**\n- **Domain Trust Score:** **92/100**\n\n## 2. Lifecycle Timestamps & Security Posture\n- **Registration Date:** `1995-09-12T04:00:00Z` (Age: **31.0 years**)\n- **Expiration Date:** `2027-09-11T04:00:00Z`\n- **Transfer Lock Protection:** `True`\n- **DNSSEC Delegation Signed:** `False`\n- **Authoritative Nameservers:** `4`"
             }
           ]
         }

@@ -427,8 +427,8 @@ def load_live_marketplace_deployments(
                     )
                 for ep in cluster.get("endpoints", []):
                     base_u = str(ep.get("base_url") or "")
-                    # Ex: https://api.apify.com/v2/acts/b2b-quant-apis~<slug>/run-sync-get-dataset-items
-                    m_slug = re.search(r"b2b-quant-apis~([a-z0-9-]+)", base_u)
+                    # Ex: https://api.apify.com/v2/acts/b2b-quant-apis~<slug>/run-sync-get-dataset-items ou https://b2b-quant-apis--zyla-json-bridge.apify.actor/v1/<slug>
+                    m_slug = re.search(r"(?:b2b-quant-apis~|/v1/)([a-z0-9-]+)", base_u)
                     ep_slug = m_slug.group(1) if m_slug else str(master_pk or "")
                     if ep_slug:
                         ep_name_raw = str(ep.get("name") or "")

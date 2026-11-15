@@ -2,7 +2,7 @@
   "status": "succeeded",
   "service": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor",
   "slug": "b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-  "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+  "description": "Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
   "protocol": "x402",
   "x402Version": 1,
   "wallet": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
@@ -58,7 +58,7 @@
         "certificateId": {
           "type": "string",
           "title": "CT Log Certificate ID",
-          "description": "Official Certificate Transparency (crt.sh) log entry ID."
+          "description": "Public Certificate Transparency (CT) log entry ID."
         },
         "rootDomain": {
           "type": "string",
@@ -188,7 +188,7 @@
         "asset": "USDC",
         "payTo": "DuaKjymBXrmawGgg5gK8D1zT2w1NCqjmb7B1XKHRYc5T",
         "resource": "https://jesleytassili-glitch.github.io/b2b-quant-mcp-n8n-suite/v1/x402/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor",
-        "description": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Discovers exposed corporate subdomains and SSL/TLS certificates via official Certificate Transparency (crt.sh) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
+        "description": "B2B SSL/TLS CT Log & Subdomain Attack Surface Recon Auditor — Discovers exposed corporate subdomains and SSL/TLS certificates via public Certificate Transparency (CT) logs. Flags wildcard certificates, shadow IT staging/dev endpoints, expiring certs, and computes an Attack Surface Risk Score (0-100).",
         "mimeType": "application/json",
         "maxTimeoutSeconds": 120,
         "extra": {
